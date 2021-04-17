@@ -1,0 +1,7 @@
+OrderedDictionary {
+	'3DTransform/src/3DTransform' : #SquotTonelSerializer,
+	'OpenGL/src/OpenGL' : #SquotTonelSerializer,
+	'GLFW/src/GLFW' : #SquotTonelSerializer,
+	'OpenGLObjects/src/OpenGLObjects' : #SquotTonelSerializer,
+	'LearnOpenGL/src/LearnOpenGL' : #SquotTonelSerializer
+}
