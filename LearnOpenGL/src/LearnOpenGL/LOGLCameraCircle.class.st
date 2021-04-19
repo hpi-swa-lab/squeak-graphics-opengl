@@ -5,12 +5,12 @@ Class {
 	#name : #LOGLCameraCircle,
 	#superclass : #LOGLCoordinateSystemsMultiple,
 	#category : #'LearnOpenGL-GettingStarted',
-	#commentStamp : 'stlu 2/1/2021 13:43'
+	#'squeak_changestamp' : 'stlu 2/1/2021 13:43'
 }
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 2/1/2021 13:36'
+	#'squeak_changestamp' : 'stlu 2/1/2021 13:36'
 }
 LOGLCameraCircle >> viewMatrix [
 

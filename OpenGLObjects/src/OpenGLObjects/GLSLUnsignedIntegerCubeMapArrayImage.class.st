@@ -2,12 +2,12 @@ Class {
 	#name : #GLSLUnsignedIntegerCubeMapArrayImage,
 	#superclass : #GLSLImage,
 	#category : #'OpenGLObjects-Types',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/15/2020 13:03'
+	#'squeak_changestamp' : 'stlu 12/15/2020 13:03'
 }
 GLSLUnsignedIntegerCubeMapArrayImage class >> declarators [
 
@@ -16,7 +16,7 @@ GLSLUnsignedIntegerCubeMapArrayImage class >> declarators [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/15/2020 13:03'
+	#'squeak_changestamp' : 'stlu 12/15/2020 13:03'
 }
 GLSLUnsignedIntegerCubeMapArrayImage class >> enum [
 
@@ -25,7 +25,7 @@ GLSLUnsignedIntegerCubeMapArrayImage class >> enum [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/15/2020 13:03'
+	#'squeak_changestamp' : 'stlu 12/15/2020 13:03'
 }
 GLSLUnsignedIntegerCubeMapArrayImage class >> enumName [
 
@@ -34,7 +34,7 @@ GLSLUnsignedIntegerCubeMapArrayImage class >> enumName [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/15/2020 13:03'
+	#'squeak_changestamp' : 'stlu 12/15/2020 13:03'
 }
 GLSLUnsignedIntegerCubeMapArrayImage class >> pixelType [
 
@@ -43,7 +43,7 @@ GLSLUnsignedIntegerCubeMapArrayImage class >> pixelType [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/15/2020 13:03'
+	#'squeak_changestamp' : 'stlu 12/15/2020 13:03'
 }
 GLSLUnsignedIntegerCubeMapArrayImage class >> squeakName [
 

@@ -5,12 +5,12 @@ Class {
 		'resourceClass'
 	],
 	#category : #'OpenGLObjects-Programs',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 1/10/2021 23:12'
+	#'squeak_changestamp' : 'stlu 1/10/2021 23:12'
 }
 GLNullProgramResource class >> program: aProgram name: aString resourceClass: aResourceClass [
 
@@ -21,7 +21,7 @@ GLNullProgramResource class >> program: aProgram name: aString resourceClass: aR
 
 {
 	#category : #'error handling',
-	#timestamp : 'stlu 1/10/2021 21:49'
+	#'squeak_changestamp' : 'stlu 1/10/2021 21:49'
 }
 GLNullProgramResource >> doesNotUnderstand: aMessage [
 
@@ -30,7 +30,7 @@ GLNullProgramResource >> doesNotUnderstand: aMessage [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 1/10/2021 23:00'
+	#'squeak_changestamp' : 'stlu 1/10/2021 23:00'
 }
 GLNullProgramResource >> isNull [
 
@@ -39,7 +39,7 @@ GLNullProgramResource >> isNull [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/10/2021 23:12'
+	#'squeak_changestamp' : 'stlu 1/10/2021 23:12'
 }
 GLNullProgramResource >> resourceClass [
 
@@ -48,7 +48,7 @@ GLNullProgramResource >> resourceClass [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/10/2021 23:12'
+	#'squeak_changestamp' : 'stlu 1/10/2021 23:12'
 }
 GLNullProgramResource >> resourceClass: anObject [
 
@@ -57,7 +57,7 @@ GLNullProgramResource >> resourceClass: anObject [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/10/2021 23:03'
+	#'squeak_changestamp' : 'stlu 1/10/2021 23:03'
 }
 GLNullProgramResource >> type [
 
@@ -66,7 +66,7 @@ GLNullProgramResource >> type [
 
 {
 	#category : #interface,
-	#timestamp : 'stlu 1/10/2021 23:18'
+	#'squeak_changestamp' : 'stlu 1/10/2021 23:18'
 }
 GLNullProgramResource >> value [
 
@@ -75,7 +75,7 @@ GLNullProgramResource >> value [
 
 {
 	#category : #interface,
-	#timestamp : 'stlu 1/10/2021 23:18'
+	#'squeak_changestamp' : 'stlu 1/10/2021 23:18'
 }
 GLNullProgramResource >> value: anObject [
 

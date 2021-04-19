@@ -9,12 +9,12 @@ Class {
 		'camera'
 	],
 	#category : #'LearnOpenGL-GettingStarted',
-	#commentStamp : 'stlu 2/1/2021 14:24'
+	#'squeak_changestamp' : 'stlu 2/1/2021 14:24'
 }
 
 {
 	#category : #'input handling',
-	#timestamp : 'stlu 2/1/2021 15:02'
+	#'squeak_changestamp' : 'stlu 2/1/2021 15:02'
 }
 LOGLCameraClass >> cursorPositionChanged: newPosition [
 
@@ -29,7 +29,7 @@ LOGLCameraClass >> cursorPositionChanged: newPosition [
 
 {
 	#category : #'input handling',
-	#timestamp : 'stlu 2/12/2021 00:47'
+	#'squeak_changestamp' : 'stlu 2/12/2021 00:47'
 }
 LOGLCameraClass >> processInput: deltaTime [
 
@@ -53,7 +53,7 @@ LOGLCameraClass >> processInput: deltaTime [
 
 {
 	#category : #'input handling',
-	#timestamp : 'stlu 2/1/2021 14:53'
+	#'squeak_changestamp' : 'stlu 2/1/2021 14:53'
 }
 LOGLCameraClass >> scrolledBy: aPoint [
 
@@ -62,7 +62,7 @@ LOGLCameraClass >> scrolledBy: aPoint [
 
 {
 	#category : #running,
-	#timestamp : 'stlu 2/1/2021 15:05'
+	#'squeak_changestamp' : 'stlu 2/1/2021 15:05'
 }
 LOGLCameraClass >> setUp [
 
@@ -72,7 +72,7 @@ LOGLCameraClass >> setUp [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 2/1/2021 15:02'
+	#'squeak_changestamp' : 'stlu 2/1/2021 15:02'
 }
 LOGLCameraClass >> viewMatrix [
 

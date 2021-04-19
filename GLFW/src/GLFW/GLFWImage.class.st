@@ -5,12 +5,12 @@ Class {
 		'GLFWConstants'
 	],
 	#category : #'GLFW-Core',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #'field definition',
-	#timestamp : 'stlu 10/20/2020 22:04'
+	#'squeak_changestamp' : 'stlu 10/20/2020 22:04'
 }
 GLFWImage class >> fields [ "self defineFields"
 

@@ -9,12 +9,12 @@ Class {
 		'command'
 	],
 	#category : #'OpenGL-Generation',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 4/11/2021 13:50'
+	#'squeak_changestamp' : 'stlu 4/11/2021 13:50'
 }
 GLGenParameter class >> fromXMLTag: tag [
 
@@ -25,7 +25,7 @@ GLGenParameter class >> fromXMLTag: tag [
 
 {
 	#category : #helpers,
-	#timestamp : 'stlu 10/31/2020 23:49'
+	#'squeak_changestamp' : 'stlu 10/31/2020 23:49'
 }
 GLGenParameter class >> getType: xmlTag [
 
@@ -42,7 +42,7 @@ GLGenParameter class >> getType: xmlTag [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 10/31/2020 22:19'
+	#'squeak_changestamp' : 'stlu 10/31/2020 22:19'
 }
 GLGenParameter >> command [
 
@@ -51,7 +51,7 @@ GLGenParameter >> command [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 4/11/2021 13:52'
+	#'squeak_changestamp' : 'stlu 4/11/2021 13:52'
 }
 GLGenParameter >> command: aCommand [
 
@@ -60,7 +60,7 @@ GLGenParameter >> command: aCommand [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 10/31/2020 22:19'
+	#'squeak_changestamp' : 'stlu 10/31/2020 22:19'
 }
 GLGenParameter >> group [
 
@@ -69,7 +69,7 @@ GLGenParameter >> group [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 4/12/2021 17:25'
+	#'squeak_changestamp' : 'stlu 4/12/2021 17:25'
 }
 GLGenParameter >> group: anObject [
 
@@ -78,7 +78,7 @@ GLGenParameter >> group: anObject [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 4/12/2021 16:58'
+	#'squeak_changestamp' : 'stlu 4/12/2021 16:58'
 }
 GLGenParameter >> initializeWithXMLTag: paramTag [
 
@@ -91,7 +91,7 @@ GLGenParameter >> initializeWithXMLTag: paramTag [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 10/31/2020 22:19'
+	#'squeak_changestamp' : 'stlu 10/31/2020 22:19'
 }
 GLGenParameter >> length [
 
@@ -100,7 +100,7 @@ GLGenParameter >> length [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 4/12/2021 17:25'
+	#'squeak_changestamp' : 'stlu 4/12/2021 17:25'
 }
 GLGenParameter >> length: anObject [
 
@@ -109,7 +109,7 @@ GLGenParameter >> length: anObject [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 4/12/2021 17:26'
+	#'squeak_changestamp' : 'stlu 4/12/2021 17:26'
 }
 GLGenParameter >> name [
 
@@ -118,7 +118,7 @@ GLGenParameter >> name [
 
 {
 	#category : #printing,
-	#timestamp : 'stlu 11/1/2020 20:50'
+	#'squeak_changestamp' : 'stlu 11/1/2020 20:50'
 }
 GLGenParameter >> printOn: aStream [
 
@@ -130,7 +130,7 @@ GLGenParameter >> printOn: aStream [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 10/31/2020 22:19'
+	#'squeak_changestamp' : 'stlu 10/31/2020 22:19'
 }
 GLGenParameter >> type [
 
@@ -139,7 +139,7 @@ GLGenParameter >> type [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 4/12/2021 17:25'
+	#'squeak_changestamp' : 'stlu 4/12/2021 17:25'
 }
 GLGenParameter >> type: anObject [
 

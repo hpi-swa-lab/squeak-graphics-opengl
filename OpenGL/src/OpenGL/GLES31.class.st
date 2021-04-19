@@ -2,12 +2,12 @@ Class {
 	#name : #GLES31,
 	#superclass : #GLES30,
 	#category : #'OpenGL-Versions',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 4/15/2021 18:02'
+	#'squeak_changestamp' : 'stlu 4/15/2021 18:02'
 }
 GLES31 class >> major [
 
@@ -16,7 +16,7 @@ GLES31 class >> major [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 4/15/2021 18:01'
+	#'squeak_changestamp' : 'stlu 4/15/2021 18:01'
 }
 GLES31 class >> minor [
 

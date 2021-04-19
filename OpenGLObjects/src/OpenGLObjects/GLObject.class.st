@@ -23,12 +23,12 @@ Class {
 		'GLConstants'
 	],
 	#category : #'OpenGLObjects-Core',
-	#commentStamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 
 {
 	#category : #allocation,
-	#timestamp : 'stlu 12/1/2020 02:57'
+	#'squeak_changestamp' : 'stlu 12/1/2020 02:57'
 }
 GLObject class >> allocate [
 	"Allocates an object with OpenGL. Returns the allocated object's id."
@@ -37,7 +37,7 @@ GLObject class >> allocate [
 
 {
 	#category : #allocation,
-	#timestamp : 'stlu 11/30/2020 19:45'
+	#'squeak_changestamp' : 'stlu 11/30/2020 19:45'
 }
 GLObject class >> allocate: n [
 	"Allocates n objects with OpenGL. Returns an array of the ids of the allocated objects."
@@ -49,7 +49,7 @@ GLObject class >> allocate: n [
 
 {
 	#category : #allocation,
-	#timestamp : 'stlu 11/30/2020 19:44'
+	#'squeak_changestamp' : 'stlu 11/30/2020 19:44'
 }
 GLObject class >> allocate: n in: anIntegerArray [
 	"Allocates n objects with OpenGL. Stores the allocated objects' ids in anIntegerArray."
@@ -58,7 +58,7 @@ GLObject class >> allocate: n in: anIntegerArray [
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 10/29/2020 01:25'
+	#'squeak_changestamp' : 'stlu 10/29/2020 01:25'
 }
 GLObject class >> create [
 
@@ -67,7 +67,7 @@ GLObject class >> create [
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 10/29/2020 01:25'
+	#'squeak_changestamp' : 'stlu 10/29/2020 01:25'
 }
 GLObject class >> id: anInteger [
 
@@ -78,7 +78,7 @@ GLObject class >> id: anInteger [
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 GLObject class >> new [
 
@@ -87,7 +87,7 @@ GLObject class >> new [
 
 {
 	#category : #converting,
-	#timestamp : 'stlu 10/29/2020 12:10'
+	#'squeak_changestamp' : 'stlu 10/29/2020 12:10'
 }
 GLObject class >> newFrom: glObject [
 
@@ -96,7 +96,7 @@ GLObject class >> newFrom: glObject [
 
 {
 	#category : #comparing,
-	#timestamp : 'stlu 12/3/2020 16:01'
+	#'squeak_changestamp' : 'stlu 12/3/2020 16:01'
 }
 GLObject >> = otherObject [
 
@@ -109,7 +109,7 @@ GLObject >> = otherObject [
 
 {
 	#category : #'initialize-release',
-	#timestamp : 'stlu 10/26/2020 12:11'
+	#'squeak_changestamp' : 'stlu 10/26/2020 12:11'
 }
 GLObject >> cleanUp [
 
@@ -118,7 +118,7 @@ GLObject >> cleanUp [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 10/29/2020 01:33'
+	#'squeak_changestamp' : 'stlu 10/29/2020 01:33'
 }
 GLObject >> context [
 
@@ -127,7 +127,7 @@ GLObject >> context [
 
 {
 	#category : #'initialize-release',
-	#timestamp : 'stlu 10/29/2020 01:29'
+	#'squeak_changestamp' : 'stlu 10/29/2020 01:29'
 }
 GLObject >> delete [
 
@@ -136,7 +136,7 @@ GLObject >> delete [
 
 {
 	#category : #comparing,
-	#timestamp : 'stlu 12/3/2020 16:06'
+	#'squeak_changestamp' : 'stlu 12/3/2020 16:06'
 }
 GLObject >> hash [
 
@@ -145,7 +145,7 @@ GLObject >> hash [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 GLObject >> id [
 
@@ -154,7 +154,7 @@ GLObject >> id [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/3/2020 16:36'
+	#'squeak_changestamp' : 'stlu 11/3/2020 16:36'
 }
 GLObject >> id: anInteger [
 
@@ -163,7 +163,7 @@ GLObject >> id: anInteger [
 
 {
 	#category : #'initialize-release',
-	#timestamp : 'stlu 10/26/2020 12:08'
+	#'squeak_changestamp' : 'stlu 10/26/2020 12:08'
 }
 GLObject >> initialize [
 
@@ -172,7 +172,7 @@ GLObject >> initialize [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 12/14/2020 12:10'
+	#'squeak_changestamp' : 'stlu 12/14/2020 12:10'
 }
 GLObject >> isAllocated [
 
@@ -181,7 +181,7 @@ GLObject >> isAllocated [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 1/9/2021 14:40'
+	#'squeak_changestamp' : 'stlu 1/9/2021 14:40'
 }
 GLObject >> isBound [
 
@@ -190,7 +190,7 @@ GLObject >> isBound [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 1/9/2021 14:41'
+	#'squeak_changestamp' : 'stlu 1/9/2021 14:41'
 }
 GLObject >> isBoundTo: targetEnum [
 
@@ -199,7 +199,7 @@ GLObject >> isBoundTo: targetEnum [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 10/29/2020 12:12'
+	#'squeak_changestamp' : 'stlu 10/29/2020 12:12'
 }
 GLObject >> isBuffer [
 
@@ -208,7 +208,7 @@ GLObject >> isBuffer [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 10/29/2020 12:14'
+	#'squeak_changestamp' : 'stlu 10/29/2020 12:14'
 }
 GLObject >> isFrameBuffer [
 
@@ -217,7 +217,7 @@ GLObject >> isFrameBuffer [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 10/29/2020 12:12'
+	#'squeak_changestamp' : 'stlu 10/29/2020 12:12'
 }
 GLObject >> isProgram [
 
@@ -226,7 +226,7 @@ GLObject >> isProgram [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 10/29/2020 12:12'
+	#'squeak_changestamp' : 'stlu 10/29/2020 12:12'
 }
 GLObject >> isShader [
 
@@ -235,7 +235,7 @@ GLObject >> isShader [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 10/29/2020 12:12'
+	#'squeak_changestamp' : 'stlu 10/29/2020 12:12'
 }
 GLObject >> isTexture [
 
@@ -244,7 +244,7 @@ GLObject >> isTexture [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 10/29/2020 12:14'
+	#'squeak_changestamp' : 'stlu 10/29/2020 12:14'
 }
 GLObject >> isVertexArray [
 
@@ -253,7 +253,7 @@ GLObject >> isVertexArray [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 10/26/2020 12:08'
+	#'squeak_changestamp' : 'stlu 10/26/2020 12:08'
 }
 GLObject >> library [
 
@@ -262,7 +262,7 @@ GLObject >> library [
 
 {
 	#category : #printing,
-	#timestamp : 'stlu 12/1/2020 03:08'
+	#'squeak_changestamp' : 'stlu 12/1/2020 03:08'
 }
 GLObject >> printOn: aStream [
 
@@ -274,7 +274,7 @@ GLObject >> printOn: aStream [
 
 {
 	#category : #'initialize-release',
-	#timestamp : 'stlu 4/15/2021 11:58'
+	#'squeak_changestamp' : 'stlu 4/15/2021 11:58'
 }
 GLObject >> register [
 

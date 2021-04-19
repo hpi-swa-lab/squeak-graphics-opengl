@@ -2,12 +2,12 @@ Class {
 	#name : #GL20,
 	#superclass : #GL15,
 	#category : #'OpenGL-Versions',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 4/15/2021 18:02'
+	#'squeak_changestamp' : 'stlu 4/15/2021 18:02'
 }
 GL20 class >> major [
 
@@ -16,7 +16,7 @@ GL20 class >> major [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 4/15/2021 18:01'
+	#'squeak_changestamp' : 'stlu 4/15/2021 18:01'
 }
 GL20 class >> minor [
 

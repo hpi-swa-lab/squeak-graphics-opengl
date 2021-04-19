@@ -20,12 +20,12 @@ Class {
 		'extensions'
 	],
 	#category : #'OpenGL-Generation',
-	#commentStamp : 'stlu 11/6/2020 17:57'
+	#'squeak_changestamp' : 'stlu 11/6/2020 17:57'
 }
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 10/31/2020 23:18'
+	#'squeak_changestamp' : 'stlu 10/31/2020 23:18'
 }
 GLGenRegistry class >> fromFile: filePath [
 
@@ -34,7 +34,7 @@ GLGenRegistry class >> fromFile: filePath [
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 11/6/2020 17:49'
+	#'squeak_changestamp' : 'stlu 11/6/2020 17:49'
 }
 GLGenRegistry class >> fromUrl: urlString [
 
@@ -46,7 +46,7 @@ GLGenRegistry class >> fromUrl: urlString [
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 11/6/2020 17:52'
+	#'squeak_changestamp' : 'stlu 11/6/2020 17:52'
 }
 GLGenRegistry class >> fromWeb [
 
@@ -55,7 +55,7 @@ GLGenRegistry class >> fromWeb [
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 4/11/2021 13:32'
+	#'squeak_changestamp' : 'stlu 4/11/2021 13:32'
 }
 GLGenRegistry class >> fromXML: xml [
 
@@ -64,7 +64,7 @@ GLGenRegistry class >> fromXML: xml [
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 4/11/2021 13:32'
+	#'squeak_changestamp' : 'stlu 4/11/2021 13:32'
 }
 GLGenRegistry class >> fromXMLTag: tag [
 
@@ -75,7 +75,7 @@ GLGenRegistry class >> fromXMLTag: tag [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/2/2020 13:20'
+	#'squeak_changestamp' : 'stlu 11/2/2020 13:20'
 }
 GLGenRegistry >> addCommand: command [
 
@@ -87,7 +87,7 @@ GLGenRegistry >> addCommand: command [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/2/2020 13:20'
+	#'squeak_changestamp' : 'stlu 11/2/2020 13:20'
 }
 GLGenRegistry >> addEnum: enum [
 
@@ -99,7 +99,7 @@ GLGenRegistry >> addEnum: enum [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 2/17/2021 17:45'
+	#'squeak_changestamp' : 'stlu 2/17/2021 17:45'
 }
 GLGenRegistry >> addExtension: extension [
 
@@ -110,7 +110,7 @@ GLGenRegistry >> addExtension: extension [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 4/11/2021 13:36'
+	#'squeak_changestamp' : 'stlu 4/11/2021 13:36'
 }
 GLGenRegistry >> addType: aType [
 
@@ -121,7 +121,7 @@ GLGenRegistry >> addType: aType [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 4/12/2021 19:41'
+	#'squeak_changestamp' : 'stlu 4/12/2021 19:41'
 }
 GLGenRegistry >> commandNamed: aString [
 
@@ -130,7 +130,7 @@ GLGenRegistry >> commandNamed: aString [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 10/31/2020 22:19'
+	#'squeak_changestamp' : 'stlu 10/31/2020 22:19'
 }
 GLGenRegistry >> commands [
 
@@ -139,7 +139,7 @@ GLGenRegistry >> commands [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 4/12/2021 19:41'
+	#'squeak_changestamp' : 'stlu 4/12/2021 19:41'
 }
 GLGenRegistry >> enumNamed: aString [
 
@@ -148,7 +148,7 @@ GLGenRegistry >> enumNamed: aString [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 10/31/2020 22:19'
+	#'squeak_changestamp' : 'stlu 10/31/2020 22:19'
 }
 GLGenRegistry >> enums [
 
@@ -157,7 +157,7 @@ GLGenRegistry >> enums [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 4/12/2021 19:51'
+	#'squeak_changestamp' : 'stlu 4/12/2021 19:51'
 }
 GLGenRegistry >> gatherCommands: registryTag [
 
@@ -177,7 +177,7 @@ GLGenRegistry >> gatherCommands: registryTag [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 4/12/2021 19:42'
+	#'squeak_changestamp' : 'stlu 4/12/2021 19:42'
 }
 GLGenRegistry >> gatherEnums: registryTag [
 
@@ -206,7 +206,7 @@ GLGenRegistry >> gatherEnums: registryTag [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 4/12/2021 13:18'
+	#'squeak_changestamp' : 'stlu 4/12/2021 13:18'
 }
 GLGenRegistry >> gatherExtensions: registryTag [
 
@@ -242,7 +242,7 @@ GLGenRegistry >> gatherExtensions: registryTag [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 4/12/2021 19:42'
+	#'squeak_changestamp' : 'stlu 4/12/2021 19:42'
 }
 GLGenRegistry >> gatherFeatures: registryTag [
 
@@ -269,7 +269,7 @@ GLGenRegistry >> gatherFeatures: registryTag [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 4/12/2021 16:59'
+	#'squeak_changestamp' : 'stlu 4/12/2021 16:59'
 }
 GLGenRegistry >> gatherTypes: registryTag [
 
@@ -280,7 +280,7 @@ GLGenRegistry >> gatherTypes: registryTag [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 4/11/2021 13:35'
+	#'squeak_changestamp' : 'stlu 4/11/2021 13:35'
 }
 GLGenRegistry >> initialize [
 
@@ -293,7 +293,7 @@ GLGenRegistry >> initialize [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 4/11/2021 13:59'
+	#'squeak_changestamp' : 'stlu 4/11/2021 13:59'
 }
 GLGenRegistry >> initializeWithXMLTag: registryTag [
 
@@ -308,7 +308,7 @@ GLGenRegistry >> initializeWithXMLTag: registryTag [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 4/12/2021 19:41'
+	#'squeak_changestamp' : 'stlu 4/12/2021 19:41'
 }
 GLGenRegistry >> typeNamed: aString [
 
@@ -317,7 +317,7 @@ GLGenRegistry >> typeNamed: aString [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 4/11/2021 13:41'
+	#'squeak_changestamp' : 'stlu 4/11/2021 13:41'
 }
 GLGenRegistry >> types [
 

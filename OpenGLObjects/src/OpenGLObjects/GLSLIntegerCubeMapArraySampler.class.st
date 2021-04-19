@@ -2,12 +2,12 @@ Class {
 	#name : #GLSLIntegerCubeMapArraySampler,
 	#superclass : #GLSLSampler,
 	#category : #'OpenGLObjects-Types',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/15/2020 13:04'
+	#'squeak_changestamp' : 'stlu 12/15/2020 13:04'
 }
 GLSLIntegerCubeMapArraySampler class >> declarators [
 
@@ -16,7 +16,7 @@ GLSLIntegerCubeMapArraySampler class >> declarators [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/15/2020 13:04'
+	#'squeak_changestamp' : 'stlu 12/15/2020 13:04'
 }
 GLSLIntegerCubeMapArraySampler class >> enum [
 
@@ -25,7 +25,7 @@ GLSLIntegerCubeMapArraySampler class >> enum [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/15/2020 13:04'
+	#'squeak_changestamp' : 'stlu 12/15/2020 13:04'
 }
 GLSLIntegerCubeMapArraySampler class >> enumName [
 
@@ -34,7 +34,7 @@ GLSLIntegerCubeMapArraySampler class >> enumName [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/15/2020 13:04'
+	#'squeak_changestamp' : 'stlu 12/15/2020 13:04'
 }
 GLSLIntegerCubeMapArraySampler class >> pixelType [
 
@@ -43,7 +43,7 @@ GLSLIntegerCubeMapArraySampler class >> pixelType [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/15/2020 13:04'
+	#'squeak_changestamp' : 'stlu 12/15/2020 13:04'
 }
 GLSLIntegerCubeMapArraySampler class >> squeakName [
 

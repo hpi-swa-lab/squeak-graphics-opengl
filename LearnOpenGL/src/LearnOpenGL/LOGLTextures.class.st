@@ -8,12 +8,12 @@ Class {
 		'texture'
 	],
 	#category : #'LearnOpenGL-GettingStarted',
-	#commentStamp : 'stlu 1/4/2021 04:37'
+	#'squeak_changestamp' : 'stlu 1/4/2021 04:37'
 }
 
 {
 	#category : #shaders,
-	#timestamp : 'stlu 1/4/2021 04:41'
+	#'squeak_changestamp' : 'stlu 1/4/2021 04:41'
 }
 LOGLTextures >> fragmentShaderSource [
 
@@ -31,7 +31,7 @@ void main() {
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 1/7/2021 11:19'
+	#'squeak_changestamp' : 'stlu 1/7/2021 11:19'
 }
 LOGLTextures >> isWireframe [
 
@@ -40,7 +40,7 @@ LOGLTextures >> isWireframe [
 
 {
 	#category : #rendering,
-	#timestamp : 'stlu 1/7/2021 11:29'
+	#'squeak_changestamp' : 'stlu 1/7/2021 11:29'
 }
 LOGLTextures >> render [
 
@@ -51,7 +51,7 @@ LOGLTextures >> render [
 
 {
 	#category : #running,
-	#timestamp : 'stlu 4/16/2021 15:30'
+	#'squeak_changestamp' : 'stlu 4/16/2021 15:30'
 }
 LOGLTextures >> setUp [
 
@@ -83,7 +83,7 @@ LOGLTextures >> setUp [
 
 {
 	#category : #shaders,
-	#timestamp : 'stlu 1/4/2021 04:42'
+	#'squeak_changestamp' : 'stlu 1/4/2021 04:42'
 }
 LOGLTextures >> vertexShaderSource [
 
@@ -101,7 +101,7 @@ void main() {
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/4/2021 05:41'
+	#'squeak_changestamp' : 'stlu 1/4/2021 05:41'
 }
 LOGLTextures >> vertices [
 

@@ -2,7 +2,7 @@ Extension { #name : #SignedWordArray }
 
 {
 	#category : #'*3DTransform',
-	#timestamp : 'stlu 1/22/2021 13:37'
+	#'squeak_changestamp' : 'stlu 1/22/2021 13:37'
 }
 SignedWordArray >> integerAt: index [
 	| word |
@@ -17,7 +17,7 @@ SignedWordArray >> integerAt: index [
 
 {
 	#category : #'*3DTransform',
-	#timestamp : 'stlu 1/22/2021 13:37'
+	#'squeak_changestamp' : 'stlu 1/22/2021 13:37'
 }
 SignedWordArray >> integerAt: index put: anInteger [
 	| word |

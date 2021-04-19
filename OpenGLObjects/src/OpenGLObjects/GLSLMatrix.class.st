@@ -2,12 +2,12 @@ Class {
 	#name : #GLSLMatrix,
 	#superclass : #GLSLType,
 	#category : #'OpenGLObjects-Types',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #'instance creation',
-	#timestamp : 'zagto 12/15/2020 16:20'
+	#'squeak_changestamp' : 'zagto 12/15/2020 16:20'
 }
 GLSLMatrix class >> componentType: type numColumns: columns numRows: rows [
 	self allSubclassesDo: [ :cls |
@@ -19,7 +19,7 @@ GLSLMatrix class >> componentType: type numColumns: columns numRows: rows [
 
 {
 	#category : #'*OpenGLObjects-Generation',
-	#timestamp : 'stlu 12/15/2020 12:49'
+	#'squeak_changestamp' : 'stlu 12/15/2020 12:49'
 }
 GLSLMatrix class >> generateClasses [
 
@@ -45,7 +45,7 @@ GLSLMatrix class >> generateClasses [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/23/2020 13:12'
+	#'squeak_changestamp' : 'stlu 11/23/2020 13:12'
 }
 GLSLMatrix class >> numColumns [
 
@@ -54,7 +54,7 @@ GLSLMatrix class >> numColumns [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/14/2020 19:02'
+	#'squeak_changestamp' : 'stlu 12/14/2020 19:02'
 }
 GLSLMatrix class >> numComponents [
 
@@ -63,7 +63,7 @@ GLSLMatrix class >> numComponents [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/23/2020 13:12'
+	#'squeak_changestamp' : 'stlu 11/23/2020 13:12'
 }
 GLSLMatrix class >> numRows [
 
@@ -72,7 +72,7 @@ GLSLMatrix class >> numRows [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/23/2020 15:15'
+	#'squeak_changestamp' : 'stlu 11/23/2020 15:15'
 }
 GLSLMatrix >> componentType [
 
@@ -81,7 +81,7 @@ GLSLMatrix >> componentType [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 12/14/2020 18:22'
+	#'squeak_changestamp' : 'stlu 12/14/2020 18:22'
 }
 GLSLMatrix >> isMatrix [
 
@@ -90,7 +90,7 @@ GLSLMatrix >> isMatrix [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/23/2020 13:11'
+	#'squeak_changestamp' : 'stlu 11/23/2020 13:11'
 }
 GLSLMatrix >> numColumns [
 
@@ -99,7 +99,7 @@ GLSLMatrix >> numColumns [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/14/2020 19:01'
+	#'squeak_changestamp' : 'stlu 12/14/2020 19:01'
 }
 GLSLMatrix >> numComponents [
 
@@ -108,7 +108,7 @@ GLSLMatrix >> numComponents [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/23/2020 13:11'
+	#'squeak_changestamp' : 'stlu 11/23/2020 13:11'
 }
 GLSLMatrix >> numRows [
 

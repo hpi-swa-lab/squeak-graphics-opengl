@@ -2,12 +2,12 @@ Class {
 	#name : #GLRectangleTexture,
 	#superclass : #GLTexture,
 	#category : #'OpenGLObjects-Textures',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 3/14/2021 22:39'
+	#'squeak_changestamp' : 'stlu 3/14/2021 22:39'
 }
 GLRectangleTexture class >> bound [
 
@@ -16,7 +16,7 @@ GLRectangleTexture class >> bound [
 
 {
 	#category : #private,
-	#timestamp : 'stlu 3/15/2021 11:51'
+	#'squeak_changestamp' : 'stlu 3/15/2021 11:51'
 }
 GLRectangleTexture class >> privateSetBinding: aTexture [
 
@@ -25,7 +25,7 @@ GLRectangleTexture class >> privateSetBinding: aTexture [
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 10/29/2020 00:43'
+	#'squeak_changestamp' : 'stlu 10/29/2020 00:43'
 }
 GLRectangleTexture class >> target [
 

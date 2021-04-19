@@ -6,12 +6,12 @@ Class {
 	#superclass : #VectorArray,
 	#type : #words,
 	#category : #'3DTransform-Arrays',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Texture2Array class >> contentsClass [
 	^Vector2
@@ -19,7 +19,7 @@ Texture2Array class >> contentsClass [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Texture2Array >> at: index put: value [
 	value isPoint

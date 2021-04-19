@@ -2,12 +2,12 @@ Class {
 	#name : #GLES10,
 	#superclass : #GLVersion,
 	#category : #'OpenGL-Versions',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 4/15/2021 13:58'
+	#'squeak_changestamp' : 'stlu 4/15/2021 13:58'
 }
 GLES10 class >> api [
 
@@ -16,7 +16,7 @@ GLES10 class >> api [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 4/15/2021 18:02'
+	#'squeak_changestamp' : 'stlu 4/15/2021 18:02'
 }
 GLES10 class >> major [
 
@@ -25,7 +25,7 @@ GLES10 class >> major [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 4/15/2021 18:01'
+	#'squeak_changestamp' : 'stlu 4/15/2021 18:01'
 }
 GLES10 class >> minor [
 
@@ -34,7 +34,7 @@ GLES10 class >> minor [
 
 {
 	#category : #printing,
-	#timestamp : 'stlu 4/17/2021 09:54'
+	#'squeak_changestamp' : 'stlu 4/17/2021 09:54'
 }
 GLES10 >> apiString [
 
@@ -43,7 +43,7 @@ GLES10 >> apiString [
 
 {
 	#category : #parameters,
-	#timestamp : 'stlu 4/15/2021 19:16'
+	#'squeak_changestamp' : 'stlu 4/15/2021 19:16'
 }
 GLES10 >> getVersion: aLibrary [
 
@@ -56,7 +56,7 @@ GLES10 >> getVersion: aLibrary [
 
 {
 	#category : #'external functions',
-	#timestamp : 'stlu 4/15/2021 13:58'
+	#'squeak_changestamp' : 'stlu 4/15/2021 13:58'
 }
 GLES10 >> moduleName [
 

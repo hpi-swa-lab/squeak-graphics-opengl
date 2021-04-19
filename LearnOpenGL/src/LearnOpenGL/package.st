@@ -1,1 +1,4 @@
-Package { #name : #LearnOpenGL }
+Package {
+	#'squeak_changestamp' : true,
+	#name : #LearnOpenGL
+}

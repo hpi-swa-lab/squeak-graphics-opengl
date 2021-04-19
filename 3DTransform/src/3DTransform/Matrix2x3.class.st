@@ -31,12 +31,12 @@ Class {
 		'Zero'
 	],
 	#category : #'3DTransform',
-	#commentStamp : 'stlu 9/1/2020 17:53'
+	#'squeak_changestamp' : 'stlu 9/1/2020 17:53'
 }
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Matrix2x3 class >> identity [
 
@@ -45,7 +45,7 @@ Matrix2x3 class >> identity [
 
 {
 	#category : #'class initialization',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Matrix2x3 class >> initialize [
 
@@ -55,7 +55,7 @@ Matrix2x3 class >> initialize [
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Matrix2x3 class >> new [
 
@@ -64,7 +64,7 @@ Matrix2x3 class >> new [
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Matrix2x3 class >> withAngle: degrees [
 
@@ -73,7 +73,7 @@ Matrix2x3 class >> withAngle: degrees [
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Matrix2x3 class >> withOffset: aScalar [
 
@@ -82,7 +82,7 @@ Matrix2x3 class >> withOffset: aScalar [
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Matrix2x3 class >> withRotation: degrees [
 
@@ -91,7 +91,7 @@ Matrix2x3 class >> withRotation: degrees [
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Matrix2x3 class >> withScale: aScalar [
 
@@ -100,7 +100,7 @@ Matrix2x3 class >> withScale: aScalar [
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Matrix2x3 class >> zero [
 
@@ -109,7 +109,7 @@ Matrix2x3 class >> zero [
 
 {
 	#category : #composing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Matrix2x3 >> * m2 [
 	"Perform a matrix multiplication."
@@ -118,7 +118,7 @@ Matrix2x3 >> * m2 [
 
 {
 	#category : #composing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Matrix2x3 >> *= m2 [
 	"Perform a matrix multiplication."
@@ -127,7 +127,7 @@ Matrix2x3 >> *= m2 [
 
 {
 	#category : #comparing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Matrix2x3 >> = aMatrix2x3 [
 
@@ -144,7 +144,7 @@ Matrix2x3 >> = aMatrix2x3 [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Matrix2x3 >> a11 [
 
@@ -153,7 +153,7 @@ Matrix2x3 >> a11 [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Matrix2x3 >> a11: anObject [
 
@@ -162,7 +162,7 @@ Matrix2x3 >> a11: anObject [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Matrix2x3 >> a12 [
 
@@ -171,7 +171,7 @@ Matrix2x3 >> a12 [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Matrix2x3 >> a12: anObject [
 
@@ -180,7 +180,7 @@ Matrix2x3 >> a12: anObject [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Matrix2x3 >> a13 [
 
@@ -189,7 +189,7 @@ Matrix2x3 >> a13 [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Matrix2x3 >> a13: anObject [
 
@@ -198,7 +198,7 @@ Matrix2x3 >> a13: anObject [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Matrix2x3 >> a21 [
 
@@ -207,7 +207,7 @@ Matrix2x3 >> a21 [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Matrix2x3 >> a21: anObject [
 
@@ -216,7 +216,7 @@ Matrix2x3 >> a21: anObject [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Matrix2x3 >> a22 [
 
@@ -225,7 +225,7 @@ Matrix2x3 >> a22 [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Matrix2x3 >> a22: anObject [
 
@@ -234,7 +234,7 @@ Matrix2x3 >> a22: anObject [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Matrix2x3 >> a23 [
 
@@ -243,7 +243,7 @@ Matrix2x3 >> a23 [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Matrix2x3 >> a23: anObject [
 
@@ -252,7 +252,7 @@ Matrix2x3 >> a23: anObject [
 
 {
 	#category : #converting,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Matrix2x3 >> asMatrix2x3 [
 
@@ -261,7 +261,7 @@ Matrix2x3 >> asMatrix2x3 [
 
 {
 	#category : #converting,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Matrix2x3 >> asMatrix4x4 [
 
@@ -280,7 +280,7 @@ Matrix2x3 >> asMatrix4x4 [
 
 {
 	#category : #converting,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Matrix2x3 >> asMatrixTransform2x3 [
 
@@ -296,7 +296,7 @@ Matrix2x3 >> asMatrixTransform2x3 [
 
 {
 	#category : #composing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Matrix2x3 >> composeWithLocal: aMatrix2x3 [
 	"Compose the receiver with the local transformation passed in."
@@ -320,7 +320,7 @@ Matrix2x3 >> composeWithLocal: aMatrix2x3 [
 
 {
 	#category : #composing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Matrix2x3 >> composedWithLocal: aTransformation [
 	"Return the composition of the receiver and the local transformation passed in"
@@ -329,7 +329,7 @@ Matrix2x3 >> composedWithLocal: aTransformation [
 
 {
 	#category : #'transforming rects',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Matrix2x3 >> globalBoundsToLocal: aRectangle [
 	"not the prettiest method, but quite a bit faster than super"
@@ -366,7 +366,7 @@ Matrix2x3 >> globalBoundsToLocal: aRectangle [
 
 {
 	#category : #'transforming points',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Matrix2x3 >> globalPointToLocal: aPoint [
 	"Transform aPoint from global coordinates into local coordinates"
@@ -381,7 +381,7 @@ Matrix2x3 >> globalPointToLocal: aPoint [
 
 {
 	#category : #comparing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Matrix2x3 >> hash [
 
@@ -396,7 +396,7 @@ Matrix2x3 >> hash [
 
 {
 	#category : #transforming,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Matrix2x3 >> inverseTransformation [
 	"Answers the inverse transformation of the receiver."
@@ -405,7 +405,7 @@ Matrix2x3 >> inverseTransformation [
 
 {
 	#category : #transforming,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Matrix2x3 >> invert [
 	"The inverse transformation is computed by first calculating
@@ -421,7 +421,7 @@ Matrix2x3 >> invert [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Matrix2x3 >> isIdentity [
 
@@ -435,7 +435,7 @@ Matrix2x3 >> isIdentity [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Matrix2x3 >> isMatrix2x3 [
 
@@ -444,7 +444,7 @@ Matrix2x3 >> isMatrix2x3 [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Matrix2x3 >> isPureTranslation [
 
@@ -456,7 +456,7 @@ Matrix2x3 >> isPureTranslation [
 
 {
 	#category : #'transforming rects',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Matrix2x3 >> localBoundsToGlobal: aRectangle [
 	"not the prettiest method, but quite a bit faster than super"
@@ -493,7 +493,7 @@ Matrix2x3 >> localBoundsToGlobal: aRectangle [
 
 {
 	#category : #'transforming points',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Matrix2x3 >> localPointToGlobal: aPoint [
 	"Transform aPoint from local coordinates into global coordinates"
@@ -506,7 +506,7 @@ Matrix2x3 >> localPointToGlobal: aPoint [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Matrix2x3 >> offset [
 
@@ -515,7 +515,7 @@ Matrix2x3 >> offset [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Matrix2x3 >> offset: aScalar [
 
@@ -524,7 +524,7 @@ Matrix2x3 >> offset: aScalar [
 
 {
 	#category : #printing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Matrix2x3 >> printOn: aStream [
 
@@ -538,7 +538,7 @@ Matrix2x3 >> printOn: aStream [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Matrix2x3 >> setAngle: degrees [
 	"Set the raw rotation angle in the receiver"
@@ -552,7 +552,7 @@ Matrix2x3 >> setAngle: degrees [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Matrix2x3 >> setIdentity [
 
@@ -562,7 +562,7 @@ Matrix2x3 >> setIdentity [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Matrix2x3 >> setOffset: aPoint [
 	"Set the raw offset in the receiver"
@@ -572,7 +572,7 @@ Matrix2x3 >> setOffset: aPoint [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Matrix2x3 >> setScale: aPoint [
 	"Set the raw scale in the receiver"
@@ -582,7 +582,7 @@ Matrix2x3 >> setScale: aPoint [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Matrix2x3 >> setZero [
 

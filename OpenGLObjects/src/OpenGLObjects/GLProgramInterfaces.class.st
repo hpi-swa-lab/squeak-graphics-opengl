@@ -7,12 +7,12 @@ Class {
 		'inputs'
 	],
 	#category : #'OpenGLObjects-Programs',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 12/13/2020 15:28'
+	#'squeak_changestamp' : 'stlu 12/13/2020 15:28'
 }
 GLProgramInterfaces class >> program: aProgram [
 
@@ -23,7 +23,7 @@ GLProgramInterfaces class >> program: aProgram [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 19:43'
+	#'squeak_changestamp' : 'stlu 11/13/2020 19:43'
 }
 GLProgramInterfaces >> atomicCounterBuffers [
 
@@ -32,7 +32,7 @@ GLProgramInterfaces >> atomicCounterBuffers [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 19:45'
+	#'squeak_changestamp' : 'stlu 11/13/2020 19:45'
 }
 GLProgramInterfaces >> bufferVariables [
 
@@ -41,7 +41,7 @@ GLProgramInterfaces >> bufferVariables [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 1/10/2021 23:07'
+	#'squeak_changestamp' : 'stlu 1/10/2021 23:07'
 }
 GLProgramInterfaces >> initializeWithProgram: aProgram [
 
@@ -52,7 +52,7 @@ GLProgramInterfaces >> initializeWithProgram: aProgram [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 19:42'
+	#'squeak_changestamp' : 'stlu 11/13/2020 19:42'
 }
 GLProgramInterfaces >> inputs [
 
@@ -61,7 +61,7 @@ GLProgramInterfaces >> inputs [
 
 {
 	#category : #initialization,
-	#timestamp : 'zagto 1/5/2021 17:38'
+	#'squeak_changestamp' : 'zagto 1/5/2021 17:38'
 }
 GLProgramInterfaces >> migrateResourcesFrom: another [
 
@@ -70,7 +70,7 @@ GLProgramInterfaces >> migrateResourcesFrom: another [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/13/2020 14:57'
+	#'squeak_changestamp' : 'stlu 12/13/2020 14:57'
 }
 GLProgramInterfaces >> outputs [
 
@@ -79,7 +79,7 @@ GLProgramInterfaces >> outputs [
 
 {
 	#category : #printing,
-	#timestamp : 'stlu 12/13/2020 15:48'
+	#'squeak_changestamp' : 'stlu 12/13/2020 15:48'
 }
 GLProgramInterfaces >> printOn: aStream [
 
@@ -88,7 +88,7 @@ GLProgramInterfaces >> printOn: aStream [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 19:42'
+	#'squeak_changestamp' : 'stlu 11/13/2020 19:42'
 }
 GLProgramInterfaces >> program [
 
@@ -97,7 +97,7 @@ GLProgramInterfaces >> program [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 19:45'
+	#'squeak_changestamp' : 'stlu 11/13/2020 19:45'
 }
 GLProgramInterfaces >> shaderStorageBlocks [
 
@@ -106,7 +106,7 @@ GLProgramInterfaces >> shaderStorageBlocks [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 19:43'
+	#'squeak_changestamp' : 'stlu 11/13/2020 19:43'
 }
 GLProgramInterfaces >> subroutineUniforms [
 
@@ -115,7 +115,7 @@ GLProgramInterfaces >> subroutineUniforms [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 19:43'
+	#'squeak_changestamp' : 'stlu 11/13/2020 19:43'
 }
 GLProgramInterfaces >> subroutines [
 
@@ -124,7 +124,7 @@ GLProgramInterfaces >> subroutines [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 19:45'
+	#'squeak_changestamp' : 'stlu 11/13/2020 19:45'
 }
 GLProgramInterfaces >> transformFeedbackBuffers [
 
@@ -133,7 +133,7 @@ GLProgramInterfaces >> transformFeedbackBuffers [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 19:44'
+	#'squeak_changestamp' : 'stlu 11/13/2020 19:44'
 }
 GLProgramInterfaces >> transformFeedbackVaryings [
 
@@ -142,7 +142,7 @@ GLProgramInterfaces >> transformFeedbackVaryings [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 19:43'
+	#'squeak_changestamp' : 'stlu 11/13/2020 19:43'
 }
 GLProgramInterfaces >> uniformBlocks [
 
@@ -151,7 +151,7 @@ GLProgramInterfaces >> uniformBlocks [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 19:42'
+	#'squeak_changestamp' : 'stlu 11/13/2020 19:42'
 }
 GLProgramInterfaces >> uniforms [
 

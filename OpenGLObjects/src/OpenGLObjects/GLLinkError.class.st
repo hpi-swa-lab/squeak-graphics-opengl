@@ -6,12 +6,12 @@ Class {
 		'infoLog'
 	],
 	#category : #'OpenGLObjects-Errors',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 10/27/2020 12:51'
+	#'squeak_changestamp' : 'stlu 10/27/2020 12:51'
 }
 GLLinkError class >> program: glProgram infoLog: aString [
 
@@ -23,7 +23,7 @@ GLLinkError class >> program: glProgram infoLog: aString [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 10/27/2020 12:51'
+	#'squeak_changestamp' : 'stlu 10/27/2020 12:51'
 }
 GLLinkError >> infoLog [
 
@@ -32,7 +32,7 @@ GLLinkError >> infoLog [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 10/27/2020 12:51'
+	#'squeak_changestamp' : 'stlu 10/27/2020 12:51'
 }
 GLLinkError >> infoLog: anObject [
 
@@ -41,7 +41,7 @@ GLLinkError >> infoLog: anObject [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 10/27/2020 12:51'
+	#'squeak_changestamp' : 'stlu 10/27/2020 12:51'
 }
 GLLinkError >> messageText [
 
@@ -50,7 +50,7 @@ GLLinkError >> messageText [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 10/27/2020 12:51'
+	#'squeak_changestamp' : 'stlu 10/27/2020 12:51'
 }
 GLLinkError >> program [
 
@@ -59,7 +59,7 @@ GLLinkError >> program [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 10/27/2020 12:51'
+	#'squeak_changestamp' : 'stlu 10/27/2020 12:51'
 }
 GLLinkError >> program: anObject [
 

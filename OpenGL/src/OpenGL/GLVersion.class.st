@@ -16,12 +16,12 @@ Class {
 		'GLConstants'
 	],
 	#category : #'OpenGL-Versions',
-	#commentStamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 4/16/2021 10:23'
+	#'squeak_changestamp' : 'stlu 4/16/2021 10:23'
 }
 GLVersion class >> api [
 
@@ -30,7 +30,7 @@ GLVersion class >> api [
 
 {
 	#category : #querying,
-	#timestamp : 'stlu 4/16/2021 10:38'
+	#'squeak_changestamp' : 'stlu 4/16/2021 10:38'
 }
 GLVersion class >> api: aSymbol [
 
@@ -39,7 +39,7 @@ GLVersion class >> api: aSymbol [
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 4/16/2021 10:25'
+	#'squeak_changestamp' : 'stlu 4/16/2021 10:25'
 }
 GLVersion class >> api: apiSymbol major: major minor: minor [
 
@@ -48,7 +48,7 @@ GLVersion class >> api: apiSymbol major: major minor: minor [
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 4/16/2021 10:24'
+	#'squeak_changestamp' : 'stlu 4/16/2021 10:24'
 }
 GLVersion class >> api: apiSymbol major: major minor: minor profile: profileSymbol [
 
@@ -57,7 +57,7 @@ GLVersion class >> api: apiSymbol major: major minor: minor profile: profileSymb
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 2/18/2021 22:36'
+	#'squeak_changestamp' : 'stlu 2/18/2021 22:36'
 }
 GLVersion class >> defaultProfile [
 
@@ -66,7 +66,7 @@ GLVersion class >> defaultProfile [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 4/15/2021 18:02'
+	#'squeak_changestamp' : 'stlu 4/15/2021 18:02'
 }
 GLVersion class >> major [
 
@@ -75,7 +75,7 @@ GLVersion class >> major [
 
 {
 	#category : #querying,
-	#timestamp : 'stlu 4/16/2021 10:23'
+	#'squeak_changestamp' : 'stlu 4/16/2021 10:23'
 }
 GLVersion class >> major: major minor: minor [
 
@@ -85,7 +85,7 @@ GLVersion class >> major: major minor: minor [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 4/15/2021 18:01'
+	#'squeak_changestamp' : 'stlu 4/15/2021 18:01'
 }
 GLVersion class >> minor [
 
@@ -94,7 +94,7 @@ GLVersion class >> minor [
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 4/15/2021 14:20'
+	#'squeak_changestamp' : 'stlu 4/15/2021 14:20'
 }
 GLVersion class >> new [
 
@@ -103,7 +103,7 @@ GLVersion class >> new [
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 4/15/2021 18:07'
+	#'squeak_changestamp' : 'stlu 4/15/2021 18:07'
 }
 GLVersion class >> profile: aSymbol [
 
@@ -114,7 +114,7 @@ GLVersion class >> profile: aSymbol [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/2/2020 15:11'
+	#'squeak_changestamp' : 'stlu 11/2/2020 15:11'
 }
 GLVersion >> api [
 
@@ -123,7 +123,7 @@ GLVersion >> api [
 
 {
 	#category : #printing,
-	#timestamp : 'stlu 4/17/2021 09:57'
+	#'squeak_changestamp' : 'stlu 4/17/2021 09:57'
 }
 GLVersion >> apiString [
 
@@ -132,7 +132,7 @@ GLVersion >> apiString [
 
 {
 	#category : #converting,
-	#timestamp : 'stlu 4/16/2021 10:30'
+	#'squeak_changestamp' : 'stlu 4/16/2021 10:30'
 }
 GLVersion >> asNumber [
 
@@ -142,7 +142,7 @@ GLVersion >> asNumber [
 
 {
 	#category : #parameters,
-	#timestamp : 'stlu 4/15/2021 19:11'
+	#'squeak_changestamp' : 'stlu 4/15/2021 19:11'
 }
 GLVersion >> getExtensions: aLibrary [
 
@@ -153,7 +153,7 @@ GLVersion >> getExtensions: aLibrary [
 
 {
 	#category : #parameters,
-	#timestamp : 'stlu 4/16/2021 14:08'
+	#'squeak_changestamp' : 'stlu 4/16/2021 14:08'
 }
 GLVersion >> getProfile: aLibrary [
 
@@ -162,7 +162,7 @@ GLVersion >> getProfile: aLibrary [
 
 {
 	#category : #parameters,
-	#timestamp : 'stlu 4/15/2021 19:14'
+	#'squeak_changestamp' : 'stlu 4/15/2021 19:14'
 }
 GLVersion >> getShadingLanguageVersion: aLibrary [
 
@@ -171,7 +171,7 @@ GLVersion >> getShadingLanguageVersion: aLibrary [
 
 {
 	#category : #parameters,
-	#timestamp : 'stlu 4/15/2021 19:19'
+	#'squeak_changestamp' : 'stlu 4/15/2021 19:19'
 }
 GLVersion >> getVersion: aLibrary [
 	"Returns an array of two elements, the major version and the minor version."
@@ -180,7 +180,7 @@ GLVersion >> getVersion: aLibrary [
 
 {
 	#category : #'version testing',
-	#timestamp : 'stlu 4/16/2021 20:30'
+	#'squeak_changestamp' : 'stlu 4/16/2021 20:30'
 }
 GLVersion >> includesMethod: aRegistryMethod [
 
@@ -195,7 +195,7 @@ GLVersion >> includesMethod: aRegistryMethod [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 4/15/2021 18:07'
+	#'squeak_changestamp' : 'stlu 4/15/2021 18:07'
 }
 GLVersion >> initializeWithProfile: aSymbol [
 
@@ -204,7 +204,7 @@ GLVersion >> initializeWithProfile: aSymbol [
 
 {
 	#category : #'version testing',
-	#timestamp : 'stlu 4/17/2021 10:21'
+	#'squeak_changestamp' : 'stlu 4/17/2021 10:21'
 }
 GLVersion >> isAPI: apiSymbol [
 
@@ -213,7 +213,7 @@ GLVersion >> isAPI: apiSymbol [
 
 {
 	#category : #'version testing',
-	#timestamp : 'stlu 4/16/2021 20:39'
+	#'squeak_changestamp' : 'stlu 4/16/2021 20:39'
 }
 GLVersion >> isBelowMajor: major minor: minor [
 
@@ -224,7 +224,7 @@ GLVersion >> isBelowMajor: major minor: minor [
 
 {
 	#category : #'version testing',
-	#timestamp : 'stlu 4/16/2021 20:41'
+	#'squeak_changestamp' : 'stlu 4/16/2021 20:41'
 }
 GLVersion >> isBelowVersionString: versionString [
 
@@ -237,7 +237,7 @@ GLVersion >> isBelowVersionString: versionString [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 4/15/2021 18:06'
+	#'squeak_changestamp' : 'stlu 4/15/2021 18:06'
 }
 GLVersion >> major [
 
@@ -246,7 +246,7 @@ GLVersion >> major [
 
 {
 	#category : #'version testing',
-	#timestamp : 'stlu 4/17/2021 10:21'
+	#'squeak_changestamp' : 'stlu 4/17/2021 10:21'
 }
 GLVersion >> matchesProfile: profileSymbol [
 
@@ -259,7 +259,7 @@ GLVersion >> matchesProfile: profileSymbol [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 4/15/2021 18:06'
+	#'squeak_changestamp' : 'stlu 4/15/2021 18:06'
 }
 GLVersion >> minor [
 
@@ -268,7 +268,7 @@ GLVersion >> minor [
 
 {
 	#category : #'external functions',
-	#timestamp : 'stlu 4/15/2021 19:19'
+	#'squeak_changestamp' : 'stlu 4/15/2021 19:19'
 }
 GLVersion >> moduleName [
 
@@ -277,7 +277,7 @@ GLVersion >> moduleName [
 
 {
 	#category : #printing,
-	#timestamp : 'stlu 4/17/2021 10:10'
+	#'squeak_changestamp' : 'stlu 4/17/2021 10:10'
 }
 GLVersion >> printOn: aStream [
 
@@ -295,7 +295,7 @@ GLVersion >> printOn: aStream [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/3/2020 12:53'
+	#'squeak_changestamp' : 'stlu 11/3/2020 12:53'
 }
 GLVersion >> profile [
 
@@ -304,7 +304,7 @@ GLVersion >> profile [
 
 {
 	#category : #printing,
-	#timestamp : 'stlu 4/17/2021 10:08'
+	#'squeak_changestamp' : 'stlu 4/17/2021 10:08'
 }
 GLVersion >> profileString [
 
@@ -313,7 +313,7 @@ GLVersion >> profileString [
 
 {
 	#category : #printing,
-	#timestamp : 'stlu 4/17/2021 09:57'
+	#'squeak_changestamp' : 'stlu 4/17/2021 09:57'
 }
 GLVersion >> versionString [
 

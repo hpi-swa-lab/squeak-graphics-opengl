@@ -2,12 +2,12 @@ Class {
 	#name : #GLSLVoid,
 	#superclass : #GLSLType,
 	#category : #'OpenGLObjects-Types',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/21/2020 13:36'
+	#'squeak_changestamp' : 'stlu 12/21/2020 13:36'
 }
 GLSLVoid class >> declarators [
 

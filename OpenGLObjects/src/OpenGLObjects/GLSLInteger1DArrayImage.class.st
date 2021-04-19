@@ -2,12 +2,12 @@ Class {
 	#name : #GLSLInteger1DArrayImage,
 	#superclass : #GLSLImage,
 	#category : #'OpenGLObjects-Types',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/15/2020 13:03'
+	#'squeak_changestamp' : 'stlu 12/15/2020 13:03'
 }
 GLSLInteger1DArrayImage class >> declarators [
 
@@ -16,7 +16,7 @@ GLSLInteger1DArrayImage class >> declarators [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/15/2020 13:03'
+	#'squeak_changestamp' : 'stlu 12/15/2020 13:03'
 }
 GLSLInteger1DArrayImage class >> enum [
 
@@ -25,7 +25,7 @@ GLSLInteger1DArrayImage class >> enum [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/15/2020 13:03'
+	#'squeak_changestamp' : 'stlu 12/15/2020 13:03'
 }
 GLSLInteger1DArrayImage class >> enumName [
 
@@ -34,7 +34,7 @@ GLSLInteger1DArrayImage class >> enumName [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/15/2020 13:03'
+	#'squeak_changestamp' : 'stlu 12/15/2020 13:03'
 }
 GLSLInteger1DArrayImage class >> pixelType [
 
@@ -43,7 +43,7 @@ GLSLInteger1DArrayImage class >> pixelType [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/15/2020 13:03'
+	#'squeak_changestamp' : 'stlu 12/15/2020 13:03'
 }
 GLSLInteger1DArrayImage class >> squeakName [
 

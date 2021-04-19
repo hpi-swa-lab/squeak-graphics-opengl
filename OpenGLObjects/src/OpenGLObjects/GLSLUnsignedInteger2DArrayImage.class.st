@@ -2,12 +2,12 @@ Class {
 	#name : #GLSLUnsignedInteger2DArrayImage,
 	#superclass : #GLSLImage,
 	#category : #'OpenGLObjects-Types',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/15/2020 13:03'
+	#'squeak_changestamp' : 'stlu 12/15/2020 13:03'
 }
 GLSLUnsignedInteger2DArrayImage class >> declarators [
 
@@ -16,7 +16,7 @@ GLSLUnsignedInteger2DArrayImage class >> declarators [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/15/2020 13:03'
+	#'squeak_changestamp' : 'stlu 12/15/2020 13:03'
 }
 GLSLUnsignedInteger2DArrayImage class >> enum [
 
@@ -25,7 +25,7 @@ GLSLUnsignedInteger2DArrayImage class >> enum [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/15/2020 13:03'
+	#'squeak_changestamp' : 'stlu 12/15/2020 13:03'
 }
 GLSLUnsignedInteger2DArrayImage class >> enumName [
 
@@ -34,7 +34,7 @@ GLSLUnsignedInteger2DArrayImage class >> enumName [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/15/2020 13:03'
+	#'squeak_changestamp' : 'stlu 12/15/2020 13:03'
 }
 GLSLUnsignedInteger2DArrayImage class >> pixelType [
 
@@ -43,7 +43,7 @@ GLSLUnsignedInteger2DArrayImage class >> pixelType [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/15/2020 13:03'
+	#'squeak_changestamp' : 'stlu 12/15/2020 13:03'
 }
 GLSLUnsignedInteger2DArrayImage class >> squeakName [
 

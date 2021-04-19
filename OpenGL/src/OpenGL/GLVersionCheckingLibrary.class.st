@@ -11,12 +11,12 @@ Class {
 		'targetExtensions'
 	],
 	#category : #'OpenGL-API',
-	#commentStamp : 'stlu 4/14/2021 15:19'
+	#'squeak_changestamp' : 'stlu 4/14/2021 15:19'
 }
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 4/16/2021 17:56'
+	#'squeak_changestamp' : 'stlu 4/16/2021 17:56'
 }
 GLVersionCheckingLibrary class >> around: aLibrary [
 
@@ -28,7 +28,7 @@ GLVersionCheckingLibrary class >> around: aLibrary [
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 4/16/2021 17:55'
+	#'squeak_changestamp' : 'stlu 4/16/2021 17:55'
 }
 GLVersionCheckingLibrary class >> around: aLibrary targetVersion: aVersion [
 
@@ -40,7 +40,7 @@ GLVersionCheckingLibrary class >> around: aLibrary targetVersion: aVersion [
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 4/17/2021 10:32'
+	#'squeak_changestamp' : 'stlu 4/17/2021 10:32'
 }
 GLVersionCheckingLibrary class >> around: aLibrary targetVersion: aVersion targetExtensions: collectionOfSymbols [
 
@@ -54,7 +54,7 @@ GLVersionCheckingLibrary class >> around: aLibrary targetVersion: aVersion targe
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 4/16/2021 17:29'
+	#'squeak_changestamp' : 'stlu 4/16/2021 17:29'
 }
 GLVersionCheckingLibrary class >> new [
 
@@ -63,7 +63,7 @@ GLVersionCheckingLibrary class >> new [
 
 {
 	#category : #'error handling',
-	#timestamp : 'stlu 4/16/2021 17:32'
+	#'squeak_changestamp' : 'stlu 4/16/2021 17:32'
 }
 GLVersionCheckingLibrary >> doesNotUnderstand: aMessage [
 
@@ -75,7 +75,7 @@ GLVersionCheckingLibrary >> doesNotUnderstand: aMessage [
 
 {
 	#category : #'version testing',
-	#timestamp : 'stlu 4/17/2021 10:27'
+	#'squeak_changestamp' : 'stlu 4/17/2021 10:27'
 }
 GLVersionCheckingLibrary >> glAPI: apiSymbol extension: extensionSymbol [
 
@@ -84,7 +84,7 @@ GLVersionCheckingLibrary >> glAPI: apiSymbol extension: extensionSymbol [
 
 {
 	#category : #'version testing',
-	#timestamp : 'stlu 4/17/2021 10:39'
+	#'squeak_changestamp' : 'stlu 4/17/2021 10:39'
 }
 GLVersionCheckingLibrary >> glAPI: apiSymbol profile: profileSymbol extension: extensionSymbol [
 
@@ -96,7 +96,7 @@ GLVersionCheckingLibrary >> glAPI: apiSymbol profile: profileSymbol extension: e
 
 {
 	#category : #'version testing',
-	#timestamp : 'stlu 4/17/2021 10:24'
+	#'squeak_changestamp' : 'stlu 4/17/2021 10:24'
 }
 GLVersionCheckingLibrary >> glAPI: apiSymbol profile: profileSymbol since: versionString [
 
@@ -108,7 +108,7 @@ GLVersionCheckingLibrary >> glAPI: apiSymbol profile: profileSymbol since: versi
 
 {
 	#category : #'version testing',
-	#timestamp : 'stlu 4/17/2021 10:24'
+	#'squeak_changestamp' : 'stlu 4/17/2021 10:24'
 }
 GLVersionCheckingLibrary >> glAPI: apiSymbol profile: profileSymbol until: versionString [
 
@@ -120,7 +120,7 @@ GLVersionCheckingLibrary >> glAPI: apiSymbol profile: profileSymbol until: versi
 
 {
 	#category : #'version testing',
-	#timestamp : 'stlu 4/17/2021 10:25'
+	#'squeak_changestamp' : 'stlu 4/17/2021 10:25'
 }
 GLVersionCheckingLibrary >> glAPI: apiSymbol since: versionString [
 
@@ -129,7 +129,7 @@ GLVersionCheckingLibrary >> glAPI: apiSymbol since: versionString [
 
 {
 	#category : #'version testing',
-	#timestamp : 'stlu 4/17/2021 10:25'
+	#'squeak_changestamp' : 'stlu 4/17/2021 10:25'
 }
 GLVersionCheckingLibrary >> glAPI: apiSymbol until: versionString [
 
@@ -138,7 +138,7 @@ GLVersionCheckingLibrary >> glAPI: apiSymbol until: versionString [
 
 {
 	#category : #'error handling',
-	#timestamp : 'stlu 4/17/2021 10:49'
+	#'squeak_changestamp' : 'stlu 4/17/2021 10:49'
 }
 GLVersionCheckingLibrary >> install: aSelector [
 
@@ -155,7 +155,7 @@ GLVersionCheckingLibrary >> install: aSelector [
 
 {
 	#category : #'version testing',
-	#timestamp : 'stlu 4/17/2021 10:26'
+	#'squeak_changestamp' : 'stlu 4/17/2021 10:26'
 }
 GLVersionCheckingLibrary >> isAvailableMethod: aRegistryMethod [
 
@@ -170,7 +170,7 @@ GLVersionCheckingLibrary >> isAvailableMethod: aRegistryMethod [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 4/16/2021 17:29'
+	#'squeak_changestamp' : 'stlu 4/16/2021 17:29'
 }
 GLVersionCheckingLibrary >> library [
 
@@ -179,7 +179,7 @@ GLVersionCheckingLibrary >> library [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 4/16/2021 17:29'
+	#'squeak_changestamp' : 'stlu 4/16/2021 17:29'
 }
 GLVersionCheckingLibrary >> library: anObject [
 
@@ -188,7 +188,7 @@ GLVersionCheckingLibrary >> library: anObject [
 
 {
 	#category : #'error handling',
-	#timestamp : 'stlu 4/17/2021 10:50'
+	#'squeak_changestamp' : 'stlu 4/17/2021 10:50'
 }
 GLVersionCheckingLibrary >> passthroughTemplate [
 
@@ -199,7 +199,7 @@ GLVersionCheckingLibrary >> passthroughTemplate [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 4/16/2021 17:54'
+	#'squeak_changestamp' : 'stlu 4/16/2021 17:54'
 }
 GLVersionCheckingLibrary >> targetExtensions [
 
@@ -208,7 +208,7 @@ GLVersionCheckingLibrary >> targetExtensions [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 4/16/2021 17:58'
+	#'squeak_changestamp' : 'stlu 4/16/2021 17:58'
 }
 GLVersionCheckingLibrary >> targetExtensions: collectionOfSymbols [
 
@@ -217,7 +217,7 @@ GLVersionCheckingLibrary >> targetExtensions: collectionOfSymbols [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 4/16/2021 17:30'
+	#'squeak_changestamp' : 'stlu 4/16/2021 17:30'
 }
 GLVersionCheckingLibrary >> targetVersion [
 
@@ -226,7 +226,7 @@ GLVersionCheckingLibrary >> targetVersion [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 4/16/2021 17:30'
+	#'squeak_changestamp' : 'stlu 4/16/2021 17:30'
 }
 GLVersionCheckingLibrary >> targetVersion: anObject [
 
@@ -235,7 +235,7 @@ GLVersionCheckingLibrary >> targetVersion: anObject [
 
 {
 	#category : #'error handling',
-	#timestamp : 'stlu 4/17/2021 10:52'
+	#'squeak_changestamp' : 'stlu 4/17/2021 10:52'
 }
 GLVersionCheckingLibrary >> versionError [
 
@@ -244,7 +244,7 @@ GLVersionCheckingLibrary >> versionError [
 
 {
 	#category : #'error handling',
-	#timestamp : 'stlu 4/17/2021 10:51'
+	#'squeak_changestamp' : 'stlu 4/17/2021 10:51'
 }
 GLVersionCheckingLibrary >> versionErrorTemplate [
 

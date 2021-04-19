@@ -2,12 +2,12 @@ Class {
 	#name : #GLSLFloat,
 	#superclass : #GLSLScalar,
 	#category : #'OpenGLObjects-Types',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/14/2020 16:49'
+	#'squeak_changestamp' : 'stlu 12/14/2020 16:49'
 }
 GLSLFloat class >> commandInitials [
 
@@ -16,7 +16,7 @@ GLSLFloat class >> commandInitials [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/14/2020 16:49'
+	#'squeak_changestamp' : 'stlu 12/14/2020 16:49'
 }
 GLSLFloat class >> declarators [
 
@@ -25,7 +25,7 @@ GLSLFloat class >> declarators [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/14/2020 16:49'
+	#'squeak_changestamp' : 'stlu 12/14/2020 16:49'
 }
 GLSLFloat class >> enum [
 
@@ -34,7 +34,7 @@ GLSLFloat class >> enum [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/14/2020 16:49'
+	#'squeak_changestamp' : 'stlu 12/14/2020 16:49'
 }
 GLSLFloat class >> enumName [
 
@@ -43,7 +43,7 @@ GLSLFloat class >> enumName [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/14/2020 16:49'
+	#'squeak_changestamp' : 'stlu 12/14/2020 16:49'
 }
 GLSLFloat class >> glslInitials [
 
@@ -52,7 +52,7 @@ GLSLFloat class >> glslInitials [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/14/2020 16:49'
+	#'squeak_changestamp' : 'stlu 12/14/2020 16:49'
 }
 GLSLFloat class >> squeakArrayClass [
 
@@ -61,7 +61,7 @@ GLSLFloat class >> squeakArrayClass [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/14/2020 16:49'
+	#'squeak_changestamp' : 'stlu 12/14/2020 16:49'
 }
 GLSLFloat class >> squeakName [
 
@@ -70,7 +70,7 @@ GLSLFloat class >> squeakName [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 12/14/2020 18:28'
+	#'squeak_changestamp' : 'stlu 12/14/2020 18:28'
 }
 GLSLFloat >> isFloat [
 
@@ -79,7 +79,7 @@ GLSLFloat >> isFloat [
 
 {
 	#category : #'program resources',
-	#timestamp : 'stlu 11/23/2020 17:10'
+	#'squeak_changestamp' : 'stlu 11/23/2020 17:10'
 }
 GLSLFloat >> setUniform: aUniform toArray: aRawBitsArray count: numElements [
 
@@ -88,7 +88,7 @@ GLSLFloat >> setUniform: aUniform toArray: aRawBitsArray count: numElements [
 
 {
 	#category : #'program resources',
-	#timestamp : 'stlu 1/8/2021 18:47'
+	#'squeak_changestamp' : 'stlu 1/8/2021 18:47'
 }
 GLSLFloat >> setUniform: aUniform toObject: anObject [
 

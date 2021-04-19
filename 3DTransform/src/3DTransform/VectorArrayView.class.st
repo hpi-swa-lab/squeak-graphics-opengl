@@ -7,12 +7,12 @@ Class {
 		'stride'
 	],
 	#category : #'3DTransform-Views',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 1/21/2021 16:25'
+	#'squeak_changestamp' : 'stlu 1/21/2021 16:25'
 }
 VectorArrayView class >> startVector: aVector size: size stride: stride [
 
@@ -25,7 +25,7 @@ VectorArrayView class >> startVector: aVector size: size stride: stride [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/19/2021 00:06'
+	#'squeak_changestamp' : 'stlu 1/19/2021 00:06'
 }
 VectorArrayView >> at: index [
 
@@ -34,7 +34,7 @@ VectorArrayView >> at: index [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/19/2021 00:07'
+	#'squeak_changestamp' : 'stlu 1/19/2021 00:07'
 }
 VectorArrayView >> at: index put: value [
 
@@ -43,7 +43,7 @@ VectorArrayView >> at: index put: value [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/19/2021 00:08'
+	#'squeak_changestamp' : 'stlu 1/19/2021 00:08'
 }
 VectorArrayView >> size [
 
@@ -52,7 +52,7 @@ VectorArrayView >> size [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/19/2021 00:08'
+	#'squeak_changestamp' : 'stlu 1/19/2021 00:08'
 }
 VectorArrayView >> size: anObject [
 
@@ -61,7 +61,7 @@ VectorArrayView >> size: anObject [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/19/2021 00:08'
+	#'squeak_changestamp' : 'stlu 1/19/2021 00:08'
 }
 VectorArrayView >> startVector [
 
@@ -70,7 +70,7 @@ VectorArrayView >> startVector [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/19/2021 00:08'
+	#'squeak_changestamp' : 'stlu 1/19/2021 00:08'
 }
 VectorArrayView >> startVector: anObject [
 
@@ -79,7 +79,7 @@ VectorArrayView >> startVector: anObject [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/19/2021 00:08'
+	#'squeak_changestamp' : 'stlu 1/19/2021 00:08'
 }
 VectorArrayView >> stride [
 
@@ -88,7 +88,7 @@ VectorArrayView >> stride [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/19/2021 00:08'
+	#'squeak_changestamp' : 'stlu 1/19/2021 00:08'
 }
 VectorArrayView >> stride: anObject [
 
@@ -97,7 +97,7 @@ VectorArrayView >> stride: anObject [
 
 {
 	#category : #converting,
-	#timestamp : 'stlu 1/21/2021 16:31'
+	#'squeak_changestamp' : 'stlu 1/21/2021 16:31'
 }
 VectorArrayView >> transposed [
 

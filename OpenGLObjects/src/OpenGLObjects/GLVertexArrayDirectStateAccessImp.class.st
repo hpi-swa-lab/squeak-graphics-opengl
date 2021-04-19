@@ -2,12 +2,12 @@ Class {
 	#name : #GLVertexArrayDirectStateAccessImp,
 	#superclass : #GLVertexArrayImp,
 	#category : #'OpenGLObjects-VertexArrays',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #'vertex attributes',
-	#timestamp : 'stlu 3/17/2021 12:32'
+	#'squeak_changestamp' : 'stlu 3/17/2021 12:32'
 }
 GLVertexArrayDirectStateAccessImp >> disableVertexAttribute: aVertexAttribute [
 
@@ -18,7 +18,7 @@ GLVertexArrayDirectStateAccessImp >> disableVertexAttribute: aVertexAttribute [
 
 {
 	#category : #'vertex attributes',
-	#timestamp : 'stlu 3/17/2021 12:08'
+	#'squeak_changestamp' : 'stlu 3/17/2021 12:08'
 }
 GLVertexArrayDirectStateAccessImp >> enableVertexAttribute: aVertexAttribute [
 
@@ -29,7 +29,7 @@ GLVertexArrayDirectStateAccessImp >> enableVertexAttribute: aVertexAttribute [
 
 {
 	#category : #'vertex attributes',
-	#timestamp : 'stlu 3/17/2021 12:46'
+	#'squeak_changestamp' : 'stlu 3/17/2021 12:46'
 }
 GLVertexArrayDirectStateAccessImp >> vertexAttribute: aVertexAttribute associateVertexBufferBinding: aVertexBufferBinding [
 
@@ -41,7 +41,7 @@ GLVertexArrayDirectStateAccessImp >> vertexAttribute: aVertexAttribute associate
 
 {
 	#category : #'vertex attributes',
-	#timestamp : 'stlu 3/17/2021 12:52'
+	#'squeak_changestamp' : 'stlu 3/17/2021 12:52'
 }
 GLVertexArrayDirectStateAccessImp >> vertexAttribute: aVertexAttribute doubleFormat: typeEnum numComponents: numComponents offset: relativeByteOffset [
 
@@ -55,7 +55,7 @@ GLVertexArrayDirectStateAccessImp >> vertexAttribute: aVertexAttribute doubleFor
 
 {
 	#category : #'vertex attributes',
-	#timestamp : 'stlu 3/17/2021 12:51'
+	#'squeak_changestamp' : 'stlu 3/17/2021 12:51'
 }
 GLVertexArrayDirectStateAccessImp >> vertexAttribute: aVertexAttribute floatFormat: typeEnum numComponents: numComponents offset: relativeByteOffset normalize: shouldNormalize [
 
@@ -70,7 +70,7 @@ GLVertexArrayDirectStateAccessImp >> vertexAttribute: aVertexAttribute floatForm
 
 {
 	#category : #'vertex attributes',
-	#timestamp : 'stlu 3/17/2021 12:51'
+	#'squeak_changestamp' : 'stlu 3/17/2021 12:51'
 }
 GLVertexArrayDirectStateAccessImp >> vertexAttribute: aVertexAttribute integerFormat: typeEnum numComponents: numComponents offset: relativeByteOffset [
 
@@ -84,7 +84,7 @@ GLVertexArrayDirectStateAccessImp >> vertexAttribute: aVertexAttribute integerFo
 
 {
 	#category : #'vertex buffer bindings',
-	#timestamp : 'stlu 3/17/2021 22:26'
+	#'squeak_changestamp' : 'stlu 3/17/2021 22:26'
 }
 GLVertexArrayDirectStateAccessImp >> vertexBufferBinding: aVertexBufferBinding buffer: aBuffer stride: byteStride offset: byteOffset [
 
@@ -98,7 +98,7 @@ GLVertexArrayDirectStateAccessImp >> vertexBufferBinding: aVertexBufferBinding b
 
 {
 	#category : #'vertex buffer bindings',
-	#timestamp : 'stlu 3/17/2021 23:17'
+	#'squeak_changestamp' : 'stlu 3/17/2021 23:17'
 }
 GLVertexArrayDirectStateAccessImp >> vertexBufferBinding: aVertexBufferBinding instanceDivisor: instanceDivisor [
 

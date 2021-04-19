@@ -8,12 +8,12 @@ Class {
 		'stateAccessImp'
 	],
 	#category : #'OpenGLObjects-Programs',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 12/16/2020 20:46'
+	#'squeak_changestamp' : 'stlu 12/16/2020 20:46'
 }
 GLUniform class >> allInProgram: aProgram [
 
@@ -22,7 +22,7 @@ GLUniform class >> allInProgram: aProgram [
 
 {
 	#category : #'*OpenGLObjects-Generation',
-	#timestamp : 'stlu 12/14/2020 14:22'
+	#'squeak_changestamp' : 'stlu 12/14/2020 14:22'
 }
 GLUniform class >> arraySetterTemplate [
 
@@ -33,7 +33,7 @@ GLUniform class >> arraySetterTemplate [
 
 {
 	#category : #'*OpenGLObjects-Generation',
-	#timestamp : 'stlu 12/14/2020 14:06'
+	#'squeak_changestamp' : 'stlu 12/14/2020 14:06'
 }
 GLUniform class >> generateSetterInferface [
 
@@ -44,7 +44,7 @@ GLUniform class >> generateSetterInferface [
 
 {
 	#category : #querying,
-	#timestamp : 'stlu 12/13/2020 14:26'
+	#'squeak_changestamp' : 'stlu 12/13/2020 14:26'
 }
 GLUniform class >> getPropertiesToQuery [
 
@@ -58,7 +58,7 @@ GLUniform class >> getPropertiesToQuery [
 
 {
 	#category : #querying,
-	#timestamp : 'stlu 12/16/2020 18:54'
+	#'squeak_changestamp' : 'stlu 12/16/2020 18:54'
 }
 GLUniform class >> interfaceEnum [
 
@@ -67,7 +67,7 @@ GLUniform class >> interfaceEnum [
 
 {
 	#category : #'*OpenGLObjects-Generation',
-	#timestamp : 'stlu 12/14/2020 14:22'
+	#'squeak_changestamp' : 'stlu 12/14/2020 14:22'
 }
 GLUniform class >> matrixSetterTemplate [
 
@@ -82,7 +82,7 @@ GLUniform class >> matrixSetterTemplate [
 
 {
 	#category : #'*OpenGLObjects-Generation',
-	#timestamp : 'stlu 12/14/2020 14:22'
+	#'squeak_changestamp' : 'stlu 12/14/2020 14:22'
 }
 GLUniform class >> scalarSetterTemplate [
 
@@ -93,7 +93,7 @@ GLUniform class >> scalarSetterTemplate [
 
 {
 	#category : #getting,
-	#timestamp : 'stlu 12/16/2020 19:38'
+	#'squeak_changestamp' : 'stlu 12/16/2020 19:38'
 }
 GLUniform >> getValue [
 
@@ -102,7 +102,7 @@ GLUniform >> getValue [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 4/15/2021 12:18'
+	#'squeak_changestamp' : 'stlu 4/15/2021 12:18'
 }
 GLUniform >> initialize [
 
@@ -112,7 +112,7 @@ GLUniform >> initialize [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 12/14/2020 16:17'
+	#'squeak_changestamp' : 'stlu 12/14/2020 16:17'
 }
 GLUniform >> initializeProperties: aWordArray [
 
@@ -122,7 +122,7 @@ GLUniform >> initializeProperties: aWordArray [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 12/16/2020 18:45'
+	#'squeak_changestamp' : 'stlu 12/16/2020 18:45'
 }
 GLUniform >> isUniform [
 
@@ -131,7 +131,7 @@ GLUniform >> isUniform [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/13/2020 14:33'
+	#'squeak_changestamp' : 'stlu 12/13/2020 14:33'
 }
 GLUniform >> location [
 
@@ -140,7 +140,7 @@ GLUniform >> location [
 
 {
 	#category : #printing,
-	#timestamp : 'stlu 1/10/2021 12:43'
+	#'squeak_changestamp' : 'stlu 1/10/2021 12:43'
 }
 GLUniform >> printOn: aStream [
 
@@ -152,7 +152,7 @@ GLUniform >> printOn: aStream [
 
 {
 	#category : #'setting - arrays',
-	#timestamp : 'stlu 12/14/2020 14:24'
+	#'squeak_changestamp' : 'stlu 12/14/2020 14:24'
 }
 GLUniform >> setTo1ComponentDoubleArray: aFloat64Array count: numElements [
 
@@ -161,7 +161,7 @@ GLUniform >> setTo1ComponentDoubleArray: aFloat64Array count: numElements [
 
 {
 	#category : #'setting - arrays',
-	#timestamp : 'stlu 12/14/2020 14:24'
+	#'squeak_changestamp' : 'stlu 12/14/2020 14:24'
 }
 GLUniform >> setTo1ComponentFloatArray: aFloat32Array count: numElements [
 
@@ -170,7 +170,7 @@ GLUniform >> setTo1ComponentFloatArray: aFloat32Array count: numElements [
 
 {
 	#category : #'setting - arrays',
-	#timestamp : 'stlu 12/14/2020 14:24'
+	#'squeak_changestamp' : 'stlu 12/14/2020 14:24'
 }
 GLUniform >> setTo1ComponentIntegerArray: anIntegerArray count: numElements [
 
@@ -179,7 +179,7 @@ GLUniform >> setTo1ComponentIntegerArray: anIntegerArray count: numElements [
 
 {
 	#category : #'setting - arrays',
-	#timestamp : 'stlu 12/14/2020 14:24'
+	#'squeak_changestamp' : 'stlu 12/14/2020 14:24'
 }
 GLUniform >> setTo1ComponentUnsignedIntegerArray: aWordArray count: numElements [
 
@@ -188,7 +188,7 @@ GLUniform >> setTo1ComponentUnsignedIntegerArray: aWordArray count: numElements 
 
 {
 	#category : #'setting - arrays',
-	#timestamp : 'stlu 12/14/2020 14:24'
+	#'squeak_changestamp' : 'stlu 12/14/2020 14:24'
 }
 GLUniform >> setTo2ComponentDoubleArray: aFloat64Array count: numElements [
 
@@ -197,7 +197,7 @@ GLUniform >> setTo2ComponentDoubleArray: aFloat64Array count: numElements [
 
 {
 	#category : #'setting - arrays',
-	#timestamp : 'stlu 12/14/2020 14:24'
+	#'squeak_changestamp' : 'stlu 12/14/2020 14:24'
 }
 GLUniform >> setTo2ComponentFloatArray: aFloat32Array count: numElements [
 
@@ -206,7 +206,7 @@ GLUniform >> setTo2ComponentFloatArray: aFloat32Array count: numElements [
 
 {
 	#category : #'setting - arrays',
-	#timestamp : 'stlu 12/14/2020 14:24'
+	#'squeak_changestamp' : 'stlu 12/14/2020 14:24'
 }
 GLUniform >> setTo2ComponentIntegerArray: anIntegerArray count: numElements [
 
@@ -215,7 +215,7 @@ GLUniform >> setTo2ComponentIntegerArray: anIntegerArray count: numElements [
 
 {
 	#category : #'setting - arrays',
-	#timestamp : 'stlu 12/14/2020 14:24'
+	#'squeak_changestamp' : 'stlu 12/14/2020 14:24'
 }
 GLUniform >> setTo2ComponentUnsignedIntegerArray: aWordArray count: numElements [
 
@@ -224,7 +224,7 @@ GLUniform >> setTo2ComponentUnsignedIntegerArray: aWordArray count: numElements 
 
 {
 	#category : #'setting - arrays',
-	#timestamp : 'stlu 12/14/2020 14:24'
+	#'squeak_changestamp' : 'stlu 12/14/2020 14:24'
 }
 GLUniform >> setTo3ComponentDoubleArray: aFloat64Array count: numElements [
 
@@ -233,7 +233,7 @@ GLUniform >> setTo3ComponentDoubleArray: aFloat64Array count: numElements [
 
 {
 	#category : #'setting - arrays',
-	#timestamp : 'stlu 12/14/2020 14:24'
+	#'squeak_changestamp' : 'stlu 12/14/2020 14:24'
 }
 GLUniform >> setTo3ComponentFloatArray: aFloat32Array count: numElements [
 
@@ -242,7 +242,7 @@ GLUniform >> setTo3ComponentFloatArray: aFloat32Array count: numElements [
 
 {
 	#category : #'setting - arrays',
-	#timestamp : 'stlu 12/14/2020 14:24'
+	#'squeak_changestamp' : 'stlu 12/14/2020 14:24'
 }
 GLUniform >> setTo3ComponentIntegerArray: anIntegerArray count: numElements [
 
@@ -251,7 +251,7 @@ GLUniform >> setTo3ComponentIntegerArray: anIntegerArray count: numElements [
 
 {
 	#category : #'setting - arrays',
-	#timestamp : 'stlu 12/14/2020 14:24'
+	#'squeak_changestamp' : 'stlu 12/14/2020 14:24'
 }
 GLUniform >> setTo3ComponentUnsignedIntegerArray: aWordArray count: numElements [
 
@@ -260,7 +260,7 @@ GLUniform >> setTo3ComponentUnsignedIntegerArray: aWordArray count: numElements 
 
 {
 	#category : #'setting - arrays',
-	#timestamp : 'stlu 12/14/2020 14:24'
+	#'squeak_changestamp' : 'stlu 12/14/2020 14:24'
 }
 GLUniform >> setTo4ComponentDoubleArray: aFloat64Array count: numElements [
 
@@ -269,7 +269,7 @@ GLUniform >> setTo4ComponentDoubleArray: aFloat64Array count: numElements [
 
 {
 	#category : #'setting - arrays',
-	#timestamp : 'stlu 12/14/2020 14:24'
+	#'squeak_changestamp' : 'stlu 12/14/2020 14:24'
 }
 GLUniform >> setTo4ComponentFloatArray: aFloat32Array count: numElements [
 
@@ -278,7 +278,7 @@ GLUniform >> setTo4ComponentFloatArray: aFloat32Array count: numElements [
 
 {
 	#category : #'setting - arrays',
-	#timestamp : 'stlu 12/14/2020 14:24'
+	#'squeak_changestamp' : 'stlu 12/14/2020 14:24'
 }
 GLUniform >> setTo4ComponentIntegerArray: anIntegerArray count: numElements [
 
@@ -287,7 +287,7 @@ GLUniform >> setTo4ComponentIntegerArray: anIntegerArray count: numElements [
 
 {
 	#category : #'setting - arrays',
-	#timestamp : 'stlu 12/14/2020 14:24'
+	#'squeak_changestamp' : 'stlu 12/14/2020 14:24'
 }
 GLUniform >> setTo4ComponentUnsignedIntegerArray: aWordArray count: numElements [
 
@@ -296,7 +296,7 @@ GLUniform >> setTo4ComponentUnsignedIntegerArray: aWordArray count: numElements 
 
 {
 	#category : #setting,
-	#timestamp : 'stlu 11/23/2020 16:04'
+	#'squeak_changestamp' : 'stlu 11/23/2020 16:04'
 }
 GLUniform >> setTo: anObject [
 
@@ -305,7 +305,7 @@ GLUniform >> setTo: anObject [
 
 {
 	#category : #setting,
-	#timestamp : 'stlu 11/23/2020 16:04'
+	#'squeak_changestamp' : 'stlu 11/23/2020 16:04'
 }
 GLUniform >> setToArray: aRawBitsArray [
 
@@ -314,7 +314,7 @@ GLUniform >> setToArray: aRawBitsArray [
 
 {
 	#category : #setting,
-	#timestamp : 'stlu 11/23/2020 16:04'
+	#'squeak_changestamp' : 'stlu 11/23/2020 16:04'
 }
 GLUniform >> setToArray: aRawBitsArray count: numElements [ 
 
@@ -323,7 +323,7 @@ GLUniform >> setToArray: aRawBitsArray count: numElements [
 
 {
 	#category : #'setting - scalars',
-	#timestamp : 'stlu 12/14/2020 14:24'
+	#'squeak_changestamp' : 'stlu 12/14/2020 14:24'
 }
 GLUniform >> setToDouble: aDouble [
 
@@ -332,7 +332,7 @@ GLUniform >> setToDouble: aDouble [
 
 {
 	#category : #'setting - matrices',
-	#timestamp : 'stlu 12/14/2020 14:24'
+	#'squeak_changestamp' : 'stlu 12/14/2020 14:24'
 }
 GLUniform >> setToDoubleMatrices2x2: aFloat64Array count: numMatrices transpose: isRowMajor [
 
@@ -345,7 +345,7 @@ GLUniform >> setToDoubleMatrices2x2: aFloat64Array count: numMatrices transpose:
 
 {
 	#category : #'setting - matrices',
-	#timestamp : 'stlu 12/14/2020 14:24'
+	#'squeak_changestamp' : 'stlu 12/14/2020 14:24'
 }
 GLUniform >> setToDoubleMatrices2x3: aFloat64Array count: numMatrices transpose: isRowMajor [
 
@@ -358,7 +358,7 @@ GLUniform >> setToDoubleMatrices2x3: aFloat64Array count: numMatrices transpose:
 
 {
 	#category : #'setting - matrices',
-	#timestamp : 'stlu 12/14/2020 14:24'
+	#'squeak_changestamp' : 'stlu 12/14/2020 14:24'
 }
 GLUniform >> setToDoubleMatrices2x4: aFloat64Array count: numMatrices transpose: isRowMajor [
 
@@ -371,7 +371,7 @@ GLUniform >> setToDoubleMatrices2x4: aFloat64Array count: numMatrices transpose:
 
 {
 	#category : #'setting - matrices',
-	#timestamp : 'stlu 12/14/2020 14:24'
+	#'squeak_changestamp' : 'stlu 12/14/2020 14:24'
 }
 GLUniform >> setToDoubleMatrices3x2: aFloat64Array count: numMatrices transpose: isRowMajor [
 
@@ -384,7 +384,7 @@ GLUniform >> setToDoubleMatrices3x2: aFloat64Array count: numMatrices transpose:
 
 {
 	#category : #'setting - matrices',
-	#timestamp : 'stlu 12/14/2020 14:24'
+	#'squeak_changestamp' : 'stlu 12/14/2020 14:24'
 }
 GLUniform >> setToDoubleMatrices3x3: aFloat64Array count: numMatrices transpose: isRowMajor [
 
@@ -397,7 +397,7 @@ GLUniform >> setToDoubleMatrices3x3: aFloat64Array count: numMatrices transpose:
 
 {
 	#category : #'setting - matrices',
-	#timestamp : 'stlu 12/14/2020 14:24'
+	#'squeak_changestamp' : 'stlu 12/14/2020 14:24'
 }
 GLUniform >> setToDoubleMatrices3x4: aFloat64Array count: numMatrices transpose: isRowMajor [
 
@@ -410,7 +410,7 @@ GLUniform >> setToDoubleMatrices3x4: aFloat64Array count: numMatrices transpose:
 
 {
 	#category : #'setting - matrices',
-	#timestamp : 'stlu 12/14/2020 14:24'
+	#'squeak_changestamp' : 'stlu 12/14/2020 14:24'
 }
 GLUniform >> setToDoubleMatrices4x2: aFloat64Array count: numMatrices transpose: isRowMajor [
 
@@ -423,7 +423,7 @@ GLUniform >> setToDoubleMatrices4x2: aFloat64Array count: numMatrices transpose:
 
 {
 	#category : #'setting - matrices',
-	#timestamp : 'stlu 12/14/2020 14:24'
+	#'squeak_changestamp' : 'stlu 12/14/2020 14:24'
 }
 GLUniform >> setToDoubleMatrices4x3: aFloat64Array count: numMatrices transpose: isRowMajor [
 
@@ -436,7 +436,7 @@ GLUniform >> setToDoubleMatrices4x3: aFloat64Array count: numMatrices transpose:
 
 {
 	#category : #'setting - matrices',
-	#timestamp : 'stlu 12/14/2020 14:24'
+	#'squeak_changestamp' : 'stlu 12/14/2020 14:24'
 }
 GLUniform >> setToDoubleMatrices4x4: aFloat64Array count: numMatrices transpose: isRowMajor [
 
@@ -449,7 +449,7 @@ GLUniform >> setToDoubleMatrices4x4: aFloat64Array count: numMatrices transpose:
 
 {
 	#category : #'setting - scalars',
-	#timestamp : 'stlu 12/14/2020 14:24'
+	#'squeak_changestamp' : 'stlu 12/14/2020 14:24'
 }
 GLUniform >> setToDoubles: double1 _: double2 [
 
@@ -458,7 +458,7 @@ GLUniform >> setToDoubles: double1 _: double2 [
 
 {
 	#category : #'setting - scalars',
-	#timestamp : 'stlu 12/14/2020 14:24'
+	#'squeak_changestamp' : 'stlu 12/14/2020 14:24'
 }
 GLUniform >> setToDoubles: double1 _: double2 _: double3 [
 
@@ -467,7 +467,7 @@ GLUniform >> setToDoubles: double1 _: double2 _: double3 [
 
 {
 	#category : #'setting - scalars',
-	#timestamp : 'stlu 12/14/2020 14:24'
+	#'squeak_changestamp' : 'stlu 12/14/2020 14:24'
 }
 GLUniform >> setToDoubles: double1 _: double2 _: double3 _: double4 [
 
@@ -476,7 +476,7 @@ GLUniform >> setToDoubles: double1 _: double2 _: double3 _: double4 [
 
 {
 	#category : #'setting - scalars',
-	#timestamp : 'stlu 12/14/2020 14:24'
+	#'squeak_changestamp' : 'stlu 12/14/2020 14:24'
 }
 GLUniform >> setToFloat: aFloat [
 
@@ -485,7 +485,7 @@ GLUniform >> setToFloat: aFloat [
 
 {
 	#category : #'setting - matrices',
-	#timestamp : 'stlu 12/14/2020 14:24'
+	#'squeak_changestamp' : 'stlu 12/14/2020 14:24'
 }
 GLUniform >> setToFloatMatrices2x2: aFloat32Array count: numMatrices transpose: isRowMajor [
 
@@ -498,7 +498,7 @@ GLUniform >> setToFloatMatrices2x2: aFloat32Array count: numMatrices transpose: 
 
 {
 	#category : #'setting - matrices',
-	#timestamp : 'stlu 12/14/2020 14:24'
+	#'squeak_changestamp' : 'stlu 12/14/2020 14:24'
 }
 GLUniform >> setToFloatMatrices2x3: aFloat32Array count: numMatrices transpose: isRowMajor [
 
@@ -511,7 +511,7 @@ GLUniform >> setToFloatMatrices2x3: aFloat32Array count: numMatrices transpose: 
 
 {
 	#category : #'setting - matrices',
-	#timestamp : 'stlu 12/14/2020 14:24'
+	#'squeak_changestamp' : 'stlu 12/14/2020 14:24'
 }
 GLUniform >> setToFloatMatrices2x4: aFloat32Array count: numMatrices transpose: isRowMajor [
 
@@ -524,7 +524,7 @@ GLUniform >> setToFloatMatrices2x4: aFloat32Array count: numMatrices transpose: 
 
 {
 	#category : #'setting - matrices',
-	#timestamp : 'stlu 12/14/2020 14:24'
+	#'squeak_changestamp' : 'stlu 12/14/2020 14:24'
 }
 GLUniform >> setToFloatMatrices3x2: aFloat32Array count: numMatrices transpose: isRowMajor [
 
@@ -537,7 +537,7 @@ GLUniform >> setToFloatMatrices3x2: aFloat32Array count: numMatrices transpose: 
 
 {
 	#category : #'setting - matrices',
-	#timestamp : 'stlu 12/14/2020 14:24'
+	#'squeak_changestamp' : 'stlu 12/14/2020 14:24'
 }
 GLUniform >> setToFloatMatrices3x3: aFloat32Array count: numMatrices transpose: isRowMajor [
 
@@ -550,7 +550,7 @@ GLUniform >> setToFloatMatrices3x3: aFloat32Array count: numMatrices transpose: 
 
 {
 	#category : #'setting - matrices',
-	#timestamp : 'stlu 12/14/2020 14:24'
+	#'squeak_changestamp' : 'stlu 12/14/2020 14:24'
 }
 GLUniform >> setToFloatMatrices3x4: aFloat32Array count: numMatrices transpose: isRowMajor [
 
@@ -563,7 +563,7 @@ GLUniform >> setToFloatMatrices3x4: aFloat32Array count: numMatrices transpose: 
 
 {
 	#category : #'setting - matrices',
-	#timestamp : 'stlu 12/14/2020 14:24'
+	#'squeak_changestamp' : 'stlu 12/14/2020 14:24'
 }
 GLUniform >> setToFloatMatrices4x2: aFloat32Array count: numMatrices transpose: isRowMajor [
 
@@ -576,7 +576,7 @@ GLUniform >> setToFloatMatrices4x2: aFloat32Array count: numMatrices transpose: 
 
 {
 	#category : #'setting - matrices',
-	#timestamp : 'stlu 12/14/2020 14:24'
+	#'squeak_changestamp' : 'stlu 12/14/2020 14:24'
 }
 GLUniform >> setToFloatMatrices4x3: aFloat32Array count: numMatrices transpose: isRowMajor [
 
@@ -589,7 +589,7 @@ GLUniform >> setToFloatMatrices4x3: aFloat32Array count: numMatrices transpose: 
 
 {
 	#category : #'setting - matrices',
-	#timestamp : 'stlu 12/14/2020 14:24'
+	#'squeak_changestamp' : 'stlu 12/14/2020 14:24'
 }
 GLUniform >> setToFloatMatrices4x4: aFloat32Array count: numMatrices transpose: isRowMajor [
 
@@ -602,7 +602,7 @@ GLUniform >> setToFloatMatrices4x4: aFloat32Array count: numMatrices transpose: 
 
 {
 	#category : #'setting - scalars',
-	#timestamp : 'stlu 12/14/2020 14:24'
+	#'squeak_changestamp' : 'stlu 12/14/2020 14:24'
 }
 GLUniform >> setToFloats: float1 _: float2 [
 
@@ -611,7 +611,7 @@ GLUniform >> setToFloats: float1 _: float2 [
 
 {
 	#category : #'setting - scalars',
-	#timestamp : 'stlu 12/14/2020 14:24'
+	#'squeak_changestamp' : 'stlu 12/14/2020 14:24'
 }
 GLUniform >> setToFloats: float1 _: float2 _: float3 [
 
@@ -620,7 +620,7 @@ GLUniform >> setToFloats: float1 _: float2 _: float3 [
 
 {
 	#category : #'setting - scalars',
-	#timestamp : 'stlu 12/14/2020 14:24'
+	#'squeak_changestamp' : 'stlu 12/14/2020 14:24'
 }
 GLUniform >> setToFloats: float1 _: float2 _: float3 _: float4 [
 
@@ -629,7 +629,7 @@ GLUniform >> setToFloats: float1 _: float2 _: float3 _: float4 [
 
 {
 	#category : #'setting - scalars',
-	#timestamp : 'stlu 12/14/2020 14:24'
+	#'squeak_changestamp' : 'stlu 12/14/2020 14:24'
 }
 GLUniform >> setToInteger: anInteger [
 
@@ -638,7 +638,7 @@ GLUniform >> setToInteger: anInteger [
 
 {
 	#category : #'setting - scalars',
-	#timestamp : 'stlu 12/14/2020 14:24'
+	#'squeak_changestamp' : 'stlu 12/14/2020 14:24'
 }
 GLUniform >> setToIntegers: int1 _: int2 [
 
@@ -647,7 +647,7 @@ GLUniform >> setToIntegers: int1 _: int2 [
 
 {
 	#category : #'setting - scalars',
-	#timestamp : 'stlu 12/14/2020 14:24'
+	#'squeak_changestamp' : 'stlu 12/14/2020 14:24'
 }
 GLUniform >> setToIntegers: int1 _: int2 _: int3 [
 
@@ -656,7 +656,7 @@ GLUniform >> setToIntegers: int1 _: int2 _: int3 [
 
 {
 	#category : #'setting - scalars',
-	#timestamp : 'stlu 12/14/2020 14:24'
+	#'squeak_changestamp' : 'stlu 12/14/2020 14:24'
 }
 GLUniform >> setToIntegers: int1 _: int2 _: int3 _: int4 [
 
@@ -665,7 +665,7 @@ GLUniform >> setToIntegers: int1 _: int2 _: int3 _: int4 [
 
 {
 	#category : #setting,
-	#timestamp : 'stlu 11/23/2020 16:05'
+	#'squeak_changestamp' : 'stlu 11/23/2020 16:05'
 }
 GLUniform >> setToObject: anObject [
 
@@ -674,7 +674,7 @@ GLUniform >> setToObject: anObject [
 
 {
 	#category : #'setting - scalars',
-	#timestamp : 'stlu 12/14/2020 14:24'
+	#'squeak_changestamp' : 'stlu 12/14/2020 14:24'
 }
 GLUniform >> setToUnsignedInteger: anUnsignedInteger [
 
@@ -683,7 +683,7 @@ GLUniform >> setToUnsignedInteger: anUnsignedInteger [
 
 {
 	#category : #'setting - scalars',
-	#timestamp : 'stlu 12/14/2020 14:24'
+	#'squeak_changestamp' : 'stlu 12/14/2020 14:24'
 }
 GLUniform >> setToUnsignedIntegers: uint1 _: uint2 [
 
@@ -692,7 +692,7 @@ GLUniform >> setToUnsignedIntegers: uint1 _: uint2 [
 
 {
 	#category : #'setting - scalars',
-	#timestamp : 'stlu 12/14/2020 14:24'
+	#'squeak_changestamp' : 'stlu 12/14/2020 14:24'
 }
 GLUniform >> setToUnsignedIntegers: uint1 _: uint2 _: uint3 [
 
@@ -701,7 +701,7 @@ GLUniform >> setToUnsignedIntegers: uint1 _: uint2 _: uint3 [
 
 {
 	#category : #'setting - scalars',
-	#timestamp : 'stlu 12/14/2020 14:24'
+	#'squeak_changestamp' : 'stlu 12/14/2020 14:24'
 }
 GLUniform >> setToUnsignedIntegers: uint1 _: uint2 _: uint3 _: uint4 [
 
@@ -710,7 +710,7 @@ GLUniform >> setToUnsignedIntegers: uint1 _: uint2 _: uint3 _: uint4 [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/16/2020 00:39'
+	#'squeak_changestamp' : 'stlu 11/16/2020 00:39'
 }
 GLUniform >> type [
 
@@ -719,7 +719,7 @@ GLUniform >> type [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/16/2020 19:48'
+	#'squeak_changestamp' : 'stlu 12/16/2020 19:48'
 }
 GLUniform >> value [
 
@@ -728,7 +728,7 @@ GLUniform >> value [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/16/2020 19:39'
+	#'squeak_changestamp' : 'stlu 12/16/2020 19:39'
 }
 GLUniform >> value: anObject [
 

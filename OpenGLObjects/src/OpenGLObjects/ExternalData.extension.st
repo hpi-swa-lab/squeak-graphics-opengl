@@ -2,7 +2,7 @@ Extension { #name : #ExternalData }
 
 {
 	#category : #'*OpenGLObjects',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 ExternalData class >> allocate: aNumber type: aType do: aBlock [
 

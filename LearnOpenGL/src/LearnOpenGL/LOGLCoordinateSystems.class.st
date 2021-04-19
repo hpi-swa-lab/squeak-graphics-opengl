@@ -5,12 +5,12 @@ Class {
 	#name : #LOGLCoordinateSystems,
 	#superclass : #LOGLTransformations,
 	#category : #'LearnOpenGL-GettingStarted',
-	#commentStamp : 'stlu 1/29/2021 15:17'
+	#'squeak_changestamp' : 'stlu 1/29/2021 15:17'
 }
 
 {
 	#category : #running,
-	#timestamp : 'stlu 3/15/2021 16:26'
+	#'squeak_changestamp' : 'stlu 3/15/2021 16:26'
 }
 LOGLCoordinateSystems >> draw [
 
@@ -25,7 +25,7 @@ LOGLCoordinateSystems >> draw [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/29/2021 17:36'
+	#'squeak_changestamp' : 'stlu 1/29/2021 17:36'
 }
 LOGLCoordinateSystems >> projectionMatrix [
 
@@ -39,7 +39,7 @@ LOGLCoordinateSystems >> projectionMatrix [
 
 {
 	#category : #shaders,
-	#timestamp : 'stlu 1/29/2021 14:13'
+	#'squeak_changestamp' : 'stlu 1/29/2021 14:13'
 }
 LOGLCoordinateSystems >> vertexShaderSource [
 
@@ -62,7 +62,7 @@ void main()
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/29/2021 17:36'
+	#'squeak_changestamp' : 'stlu 1/29/2021 17:36'
 }
 LOGLCoordinateSystems >> viewMatrix [
 

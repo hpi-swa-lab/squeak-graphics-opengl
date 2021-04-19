@@ -2,12 +2,12 @@ Class {
 	#name : #GLSLInteger3DSampler,
 	#superclass : #GLSLSampler,
 	#category : #'OpenGLObjects-Types',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/15/2020 13:04'
+	#'squeak_changestamp' : 'stlu 12/15/2020 13:04'
 }
 GLSLInteger3DSampler class >> declarators [
 
@@ -16,7 +16,7 @@ GLSLInteger3DSampler class >> declarators [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/15/2020 13:04'
+	#'squeak_changestamp' : 'stlu 12/15/2020 13:04'
 }
 GLSLInteger3DSampler class >> enum [
 
@@ -25,7 +25,7 @@ GLSLInteger3DSampler class >> enum [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/15/2020 13:04'
+	#'squeak_changestamp' : 'stlu 12/15/2020 13:04'
 }
 GLSLInteger3DSampler class >> enumName [
 
@@ -34,7 +34,7 @@ GLSLInteger3DSampler class >> enumName [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/15/2020 13:04'
+	#'squeak_changestamp' : 'stlu 12/15/2020 13:04'
 }
 GLSLInteger3DSampler class >> pixelType [
 
@@ -43,7 +43,7 @@ GLSLInteger3DSampler class >> pixelType [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/15/2020 13:04'
+	#'squeak_changestamp' : 'stlu 12/15/2020 13:04'
 }
 GLSLInteger3DSampler class >> squeakName [
 

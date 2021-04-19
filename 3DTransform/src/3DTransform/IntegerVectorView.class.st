@@ -2,12 +2,12 @@ Class {
 	#name : #IntegerVectorView,
 	#superclass : #VectorView,
 	#category : #'3DTransform-Views',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/22/2021 13:39'
+	#'squeak_changestamp' : 'stlu 1/22/2021 13:39'
 }
 IntegerVectorView class >> storeClass [
 
@@ -16,7 +16,7 @@ IntegerVectorView class >> storeClass [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/22/2021 13:42'
+	#'squeak_changestamp' : 'stlu 1/22/2021 13:42'
 }
 IntegerVectorView >> at: index [
 
@@ -25,7 +25,7 @@ IntegerVectorView >> at: index [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/22/2021 13:42'
+	#'squeak_changestamp' : 'stlu 1/22/2021 13:42'
 }
 IntegerVectorView >> at: index put: value [
 

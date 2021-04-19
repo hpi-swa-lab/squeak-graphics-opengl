@@ -5,12 +5,12 @@ Class {
 		'GLFWConstants'
 	],
 	#category : #'GLFW-Core',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #'as yet unclassified',
-	#timestamp : 'stlu 10/20/2020 22:06'
+	#'squeak_changestamp' : 'stlu 10/20/2020 22:06'
 }
 GLFWGammaRamp class >> fields [ "self defineFields"
 

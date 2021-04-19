@@ -2,12 +2,12 @@ Class {
 	#name : #GLSLDouble,
 	#superclass : #GLSLScalar,
 	#category : #'OpenGLObjects-Types',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/14/2020 16:49'
+	#'squeak_changestamp' : 'stlu 12/14/2020 16:49'
 }
 GLSLDouble class >> commandInitials [
 
@@ -16,7 +16,7 @@ GLSLDouble class >> commandInitials [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/14/2020 16:49'
+	#'squeak_changestamp' : 'stlu 12/14/2020 16:49'
 }
 GLSLDouble class >> declarators [
 
@@ -25,7 +25,7 @@ GLSLDouble class >> declarators [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/14/2020 16:49'
+	#'squeak_changestamp' : 'stlu 12/14/2020 16:49'
 }
 GLSLDouble class >> enum [
 
@@ -34,7 +34,7 @@ GLSLDouble class >> enum [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/14/2020 16:49'
+	#'squeak_changestamp' : 'stlu 12/14/2020 16:49'
 }
 GLSLDouble class >> enumName [
 
@@ -43,7 +43,7 @@ GLSLDouble class >> enumName [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/14/2020 16:49'
+	#'squeak_changestamp' : 'stlu 12/14/2020 16:49'
 }
 GLSLDouble class >> glslInitials [
 
@@ -52,7 +52,7 @@ GLSLDouble class >> glslInitials [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/14/2020 16:49'
+	#'squeak_changestamp' : 'stlu 12/14/2020 16:49'
 }
 GLSLDouble class >> squeakArrayClass [
 
@@ -61,7 +61,7 @@ GLSLDouble class >> squeakArrayClass [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/14/2020 16:49'
+	#'squeak_changestamp' : 'stlu 12/14/2020 16:49'
 }
 GLSLDouble class >> squeakName [
 
@@ -70,7 +70,7 @@ GLSLDouble class >> squeakName [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 12/14/2020 18:28'
+	#'squeak_changestamp' : 'stlu 12/14/2020 18:28'
 }
 GLSLDouble >> isDouble [
 
@@ -79,7 +79,7 @@ GLSLDouble >> isDouble [
 
 {
 	#category : #'program resources',
-	#timestamp : 'stlu 11/23/2020 17:10'
+	#'squeak_changestamp' : 'stlu 11/23/2020 17:10'
 }
 GLSLDouble >> setUniform: aUniform toArray: aRawBitsArray count: numElements [
 
@@ -88,7 +88,7 @@ GLSLDouble >> setUniform: aUniform toArray: aRawBitsArray count: numElements [
 
 {
 	#category : #'program resources',
-	#timestamp : 'stlu 1/8/2021 18:47'
+	#'squeak_changestamp' : 'stlu 1/8/2021 18:47'
 }
 GLSLDouble >> setUniform: aUniform toObject: anObject [
 

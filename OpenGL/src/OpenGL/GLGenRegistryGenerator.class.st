@@ -5,12 +5,12 @@ Class {
 		'targetClass'
 	],
 	#category : #'OpenGL-Generation',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #'method sources',
-	#timestamp : 'stlu 4/13/2021 12:14'
+	#'squeak_changestamp' : 'stlu 4/13/2021 12:14'
 }
 GLGenRegistryGenerator >> commandCategory: aCommand [
 
@@ -22,7 +22,7 @@ GLGenRegistryGenerator >> commandCategory: aCommand [
 
 {
 	#category : #'method sources',
-	#timestamp : 'stlu 4/13/2021 12:28'
+	#'squeak_changestamp' : 'stlu 4/13/2021 12:28'
 }
 GLGenRegistryGenerator >> commandSource: aCommand [
 
@@ -39,7 +39,7 @@ GLGenRegistryGenerator >> commandSource: aCommand [
 
 {
 	#category : #'method sources',
-	#timestamp : 'stlu 4/13/2021 12:14'
+	#'squeak_changestamp' : 'stlu 4/13/2021 12:14'
 }
 GLGenRegistryGenerator >> enumCategory: anEnum [
 
@@ -51,7 +51,7 @@ GLGenRegistryGenerator >> enumCategory: anEnum [
 
 {
 	#category : #'method sources',
-	#timestamp : 'stlu 12/28/2020 18:17'
+	#'squeak_changestamp' : 'stlu 12/28/2020 18:17'
 }
 GLGenRegistryGenerator >> enumSignature: anEnum [
 
@@ -64,7 +64,7 @@ GLGenRegistryGenerator >> enumSignature: anEnum [
 
 {
 	#category : #'method sources',
-	#timestamp : 'stlu 4/13/2021 12:31'
+	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLGenRegistryGenerator >> enumSource: anEnum [
 
@@ -80,7 +80,7 @@ GLGenRegistryGenerator >> enumSource: anEnum [
 
 {
 	#category : #generation,
-	#timestamp : 'stlu 4/12/2021 17:20'
+	#'squeak_changestamp' : 'stlu 4/12/2021 17:20'
 }
 GLGenRegistryGenerator >> generate: aRegistry [
 
@@ -89,7 +89,7 @@ GLGenRegistryGenerator >> generate: aRegistry [
 
 {
 	#category : #generation,
-	#timestamp : 'stlu 4/12/2021 18:47'
+	#'squeak_changestamp' : 'stlu 4/12/2021 18:47'
 }
 GLGenRegistryGenerator >> generateCommand: aCommand [
 
@@ -105,7 +105,7 @@ GLGenRegistryGenerator >> generateCommand: aCommand [
 
 {
 	#category : #generation,
-	#timestamp : 'stlu 4/12/2021 20:19'
+	#'squeak_changestamp' : 'stlu 4/12/2021 20:19'
 }
 GLGenRegistryGenerator >> generateCommands: aCollection [
 
@@ -119,7 +119,7 @@ GLGenRegistryGenerator >> generateCommands: aCollection [
 
 {
 	#category : #generation,
-	#timestamp : 'stlu 4/12/2021 18:32'
+	#'squeak_changestamp' : 'stlu 4/12/2021 18:32'
 }
 GLGenRegistryGenerator >> generateEnum: anEnum [
 
@@ -131,7 +131,7 @@ GLGenRegistryGenerator >> generateEnum: anEnum [
 
 {
 	#category : #generation,
-	#timestamp : 'stlu 4/12/2021 20:19'
+	#'squeak_changestamp' : 'stlu 4/12/2021 20:19'
 }
 GLGenRegistryGenerator >> generateEnums: aCollection [
 
@@ -145,7 +145,7 @@ GLGenRegistryGenerator >> generateEnums: aCollection [
 
 {
 	#category : #generation,
-	#timestamp : 'stlu 4/12/2021 20:20'
+	#'squeak_changestamp' : 'stlu 4/12/2021 20:20'
 }
 GLGenRegistryGenerator >> generateRegistry: aRegistry [
 
@@ -156,7 +156,7 @@ GLGenRegistryGenerator >> generateRegistry: aRegistry [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 4/12/2021 18:17'
+	#'squeak_changestamp' : 'stlu 4/12/2021 18:17'
 }
 GLGenRegistryGenerator >> initialize [
 
@@ -166,7 +166,7 @@ GLGenRegistryGenerator >> initialize [
 
 {
 	#category : #'method sources',
-	#timestamp : 'stlu 4/13/2021 12:26'
+	#'squeak_changestamp' : 'stlu 4/13/2021 12:26'
 }
 GLGenRegistryGenerator >> printCommandPragmas: aCommand on: aStream [
 
@@ -215,7 +215,7 @@ GLGenRegistryGenerator >> printCommandPragmas: aCommand on: aStream [
 
 {
 	#category : #'method sources',
-	#timestamp : 'stlu 3/3/2021 15:07'
+	#'squeak_changestamp' : 'stlu 3/3/2021 15:07'
 }
 GLGenRegistryGenerator >> printCommandSignature: aCommand on: aStream [
 
@@ -241,7 +241,7 @@ GLGenRegistryGenerator >> printCommandSignature: aCommand on: aStream [
 
 {
 	#category : #'method sources',
-	#timestamp : 'stlu 4/12/2021 13:56'
+	#'squeak_changestamp' : 'stlu 4/12/2021 13:56'
 }
 GLGenRegistryGenerator >> printDefinitionPragma: anArray on: aStream [
 
@@ -277,7 +277,7 @@ GLGenRegistryGenerator >> printDefinitionPragma: anArray on: aStream [
 
 {
 	#category : #'method sources',
-	#timestamp : 'stlu 4/13/2021 12:24'
+	#'squeak_changestamp' : 'stlu 4/13/2021 12:24'
 }
 GLGenRegistryGenerator >> printDefinitionPragmas: aRegistryObject on: aStream [
 
@@ -290,7 +290,7 @@ GLGenRegistryGenerator >> printDefinitionPragmas: aRegistryObject on: aStream [
 
 {
 	#category : #'method sources',
-	#timestamp : 'stlu 4/13/2021 12:20'
+	#'squeak_changestamp' : 'stlu 4/13/2021 12:20'
 }
 GLGenRegistryGenerator >> printEnumPragmas: anEnum on: aStream [
 
@@ -347,7 +347,7 @@ GLGenRegistryGenerator >> printEnumPragmas: anEnum on: aStream [
 
 {
 	#category : #'method sources',
-	#timestamp : 'stlu 4/13/2021 12:22'
+	#'squeak_changestamp' : 'stlu 4/13/2021 12:22'
 }
 GLGenRegistryGenerator >> printEnumSignature: anEnum on: aStream [
 
@@ -356,7 +356,7 @@ GLGenRegistryGenerator >> printEnumSignature: anEnum on: aStream [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 4/12/2021 18:16'
+	#'squeak_changestamp' : 'stlu 4/12/2021 18:16'
 }
 GLGenRegistryGenerator >> targetClass [
 
@@ -365,7 +365,7 @@ GLGenRegistryGenerator >> targetClass [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 4/12/2021 18:16'
+	#'squeak_changestamp' : 'stlu 4/12/2021 18:16'
 }
 GLGenRegistryGenerator >> targetClass: anObject [
 

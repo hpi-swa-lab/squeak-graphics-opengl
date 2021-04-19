@@ -2,12 +2,12 @@ Class {
 	#name : #GLDisplayFrameBuffer,
 	#superclass : #GLFrameBuffer,
 	#category : #'OpenGLObjects-FrameBuffers',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #allocation,
-	#timestamp : 'stlu 11/30/2020 19:50'
+	#'squeak_changestamp' : 'stlu 11/30/2020 19:50'
 }
 GLDisplayFrameBuffer class >> allocate [
 
@@ -16,7 +16,7 @@ GLDisplayFrameBuffer class >> allocate [
 
 {
 	#category : #allocation,
-	#timestamp : 'stlu 11/30/2020 19:51'
+	#'squeak_changestamp' : 'stlu 11/30/2020 19:51'
 }
 GLDisplayFrameBuffer class >> allocate: n in: anIntegerArray [
 
@@ -25,7 +25,7 @@ GLDisplayFrameBuffer class >> allocate: n in: anIntegerArray [
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 12/3/2020 19:28'
+	#'squeak_changestamp' : 'stlu 12/3/2020 19:28'
 }
 GLDisplayFrameBuffer class >> create [
 
@@ -34,7 +34,7 @@ GLDisplayFrameBuffer class >> create [
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 4/15/2021 11:37'
+	#'squeak_changestamp' : 'stlu 4/15/2021 11:37'
 }
 GLDisplayFrameBuffer class >> initializeBindings [
 
@@ -46,7 +46,7 @@ GLDisplayFrameBuffer class >> initializeBindings [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 12/14/2020 12:15'
+	#'squeak_changestamp' : 'stlu 12/14/2020 12:15'
 }
 GLDisplayFrameBuffer >> isAllocated [
 

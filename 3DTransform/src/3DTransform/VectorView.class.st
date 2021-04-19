@@ -8,12 +8,12 @@ Class {
 		'stride'
 	],
 	#category : #'3DTransform-Views',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 1/22/2021 11:34'
+	#'squeak_changestamp' : 'stlu 1/22/2021 11:34'
 }
 VectorView class >> new: sizeRequested [
 
@@ -26,7 +26,7 @@ VectorView class >> new: sizeRequested [
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 1/25/2021 20:22'
+	#'squeak_changestamp' : 'stlu 1/25/2021 20:22'
 }
 VectorView class >> packedStore: aCollection [
 
@@ -39,7 +39,7 @@ VectorView class >> packedStore: aCollection [
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 1/18/2021 23:10'
+	#'squeak_changestamp' : 'stlu 1/18/2021 23:10'
 }
 VectorView class >> store: aCollection size: size start: start stride: stride [
 
@@ -48,7 +48,7 @@ VectorView class >> store: aCollection size: size start: start stride: stride [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/21/2021 18:21'
+	#'squeak_changestamp' : 'stlu 1/21/2021 18:21'
 }
 VectorView class >> storeClass [
 
@@ -57,7 +57,7 @@ VectorView class >> storeClass [
 
 {
 	#category : #arithmetic,
-	#timestamp : 'stlu 1/25/2021 20:23'
+	#'squeak_changestamp' : 'stlu 1/25/2021 20:23'
 }
 VectorView >> * numberOrVector [
 	"Component-wise multiplication."
@@ -71,7 +71,7 @@ VectorView >> * numberOrVector [
 
 {
 	#category : #arithmetic,
-	#timestamp : 'stlu 1/22/2021 13:33'
+	#'squeak_changestamp' : 'stlu 1/22/2021 13:33'
 }
 VectorView >> ** scalarOrVector [
 
@@ -80,7 +80,7 @@ VectorView >> ** scalarOrVector [
 
 {
 	#category : #arithmetic,
-	#timestamp : 'stlu 1/25/2021 20:40'
+	#'squeak_changestamp' : 'stlu 1/25/2021 20:40'
 }
 VectorView >> *= numberOrVector [
 	"Component-wise multiplication."
@@ -96,7 +96,7 @@ VectorView >> *= numberOrVector [
 
 {
 	#category : #arithmetic,
-	#timestamp : 'stlu 1/26/2021 00:04'
+	#'squeak_changestamp' : 'stlu 1/26/2021 00:04'
 }
 VectorView >> + numberOrVector [
 
@@ -110,7 +110,7 @@ VectorView >> + numberOrVector [
 
 {
 	#category : #arithmetic,
-	#timestamp : 'stlu 1/25/2021 23:59'
+	#'squeak_changestamp' : 'stlu 1/25/2021 23:59'
 }
 VectorView >> += numberOrVector [
 	"Component-wise addition."
@@ -126,7 +126,7 @@ VectorView >> += numberOrVector [
 
 {
 	#category : #arithmetic,
-	#timestamp : 'stlu 1/26/2021 00:04'
+	#'squeak_changestamp' : 'stlu 1/26/2021 00:04'
 }
 VectorView >> - numberOrVector [
 
@@ -140,7 +140,7 @@ VectorView >> - numberOrVector [
 
 {
 	#category : #arithmetic,
-	#timestamp : 'stlu 1/26/2021 00:01'
+	#'squeak_changestamp' : 'stlu 1/26/2021 00:01'
 }
 VectorView >> -= numberOrVector [
 	"Component-wise substraction."
@@ -156,7 +156,7 @@ VectorView >> -= numberOrVector [
 
 {
 	#category : #arithmetic,
-	#timestamp : 'stlu 1/26/2021 00:04'
+	#'squeak_changestamp' : 'stlu 1/26/2021 00:04'
 }
 VectorView >> / numberOrVector [
 
@@ -170,7 +170,7 @@ VectorView >> / numberOrVector [
 
 {
 	#category : #arithmetic,
-	#timestamp : 'stlu 1/26/2021 00:01'
+	#'squeak_changestamp' : 'stlu 1/26/2021 00:01'
 }
 VectorView >> /= numberOrVector [
 	"Component-wise division."
@@ -186,7 +186,7 @@ VectorView >> /= numberOrVector [
 
 {
 	#category : #arithmetic,
-	#timestamp : 'stlu 1/26/2021 00:03'
+	#'squeak_changestamp' : 'stlu 1/26/2021 00:03'
 }
 VectorView >> \\ scalarOrVector [
 	"Component-wise modulo."
@@ -197,7 +197,7 @@ VectorView >> \\ scalarOrVector [
 
 {
 	#category : #arithmetic,
-	#timestamp : 'stlu 1/26/2021 00:03'
+	#'squeak_changestamp' : 'stlu 1/26/2021 00:03'
 }
 VectorView >> \\= numberOrVector [
 	"Component-wise modulo."
@@ -209,7 +209,7 @@ VectorView >> \\= numberOrVector [
 
 {
 	#category : #common,
-	#timestamp : 'stlu 1/22/2021 13:33'
+	#'squeak_changestamp' : 'stlu 1/22/2021 13:33'
 }
 VectorView >> abs [
 
@@ -218,7 +218,7 @@ VectorView >> abs [
 
 {
 	#category : #adapting,
-	#timestamp : 'stlu 1/22/2021 16:32'
+	#'squeak_changestamp' : 'stlu 1/22/2021 16:32'
 }
 VectorView >> adaptToNumber: aNumber andSend: selector [
 
@@ -227,7 +227,7 @@ VectorView >> adaptToNumber: aNumber andSend: selector [
 
 {
 	#category : #trigonometric,
-	#timestamp : 'stlu 1/22/2021 13:20'
+	#'squeak_changestamp' : 'stlu 1/22/2021 13:20'
 }
 VectorView >> arCosh [
 
@@ -236,7 +236,7 @@ VectorView >> arCosh [
 
 {
 	#category : #trigonometric,
-	#timestamp : 'stlu 1/22/2021 13:20'
+	#'squeak_changestamp' : 'stlu 1/22/2021 13:20'
 }
 VectorView >> arSinh [
 
@@ -245,7 +245,7 @@ VectorView >> arSinh [
 
 {
 	#category : #trigonometric,
-	#timestamp : 'stlu 1/22/2021 13:20'
+	#'squeak_changestamp' : 'stlu 1/22/2021 13:20'
 }
 VectorView >> arTanh [
 
@@ -254,7 +254,7 @@ VectorView >> arTanh [
 
 {
 	#category : #trigonometric,
-	#timestamp : 'stlu 1/22/2021 13:20'
+	#'squeak_changestamp' : 'stlu 1/22/2021 13:20'
 }
 VectorView >> arcCos [
 
@@ -263,7 +263,7 @@ VectorView >> arcCos [
 
 {
 	#category : #trigonometric,
-	#timestamp : 'stlu 1/22/2021 13:20'
+	#'squeak_changestamp' : 'stlu 1/22/2021 13:20'
 }
 VectorView >> arcSin [
 
@@ -272,7 +272,7 @@ VectorView >> arcSin [
 
 {
 	#category : #trigonometric,
-	#timestamp : 'stlu 1/22/2021 13:20'
+	#'squeak_changestamp' : 'stlu 1/22/2021 13:20'
 }
 VectorView >> arcTan [
 
@@ -281,7 +281,7 @@ VectorView >> arcTan [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/18/2021 21:54'
+	#'squeak_changestamp' : 'stlu 1/18/2021 21:54'
 }
 VectorView >> at: anIndex [
 
@@ -290,7 +290,7 @@ VectorView >> at: anIndex [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/18/2021 21:54'
+	#'squeak_changestamp' : 'stlu 1/18/2021 21:54'
 }
 VectorView >> at: anIndex put: anObject [
 
@@ -299,7 +299,7 @@ VectorView >> at: anIndex put: anObject [
 
 {
 	#category : #common,
-	#timestamp : 'stlu 1/22/2021 13:56'
+	#'squeak_changestamp' : 'stlu 1/22/2021 13:56'
 }
 VectorView >> ceiling [
 
@@ -308,7 +308,7 @@ VectorView >> ceiling [
 
 {
 	#category : #common,
-	#timestamp : 'stlu 1/22/2021 15:09'
+	#'squeak_changestamp' : 'stlu 1/22/2021 15:09'
 }
 VectorView >> clampHigh: max [
 
@@ -317,7 +317,7 @@ VectorView >> clampHigh: max [
 
 {
 	#category : #common,
-	#timestamp : 'stlu 1/22/2021 15:09'
+	#'squeak_changestamp' : 'stlu 1/22/2021 15:09'
 }
 VectorView >> clampLow: min [
 
@@ -326,7 +326,7 @@ VectorView >> clampLow: min [
 
 {
 	#category : #common,
-	#timestamp : 'stlu 1/22/2021 15:07'
+	#'squeak_changestamp' : 'stlu 1/22/2021 15:07'
 }
 VectorView >> clampLow: min high: max [
 
@@ -335,7 +335,7 @@ VectorView >> clampLow: min high: max [
 
 {
 	#category : #copying,
-	#timestamp : 'stlu 1/19/2021 00:04'
+	#'squeak_changestamp' : 'stlu 1/19/2021 00:04'
 }
 VectorView >> copyWithOffset: offset [
 
@@ -344,7 +344,7 @@ VectorView >> copyWithOffset: offset [
 
 {
 	#category : #trigonometric,
-	#timestamp : 'stlu 1/22/2021 13:20'
+	#'squeak_changestamp' : 'stlu 1/22/2021 13:20'
 }
 VectorView >> cos [
 
@@ -353,7 +353,7 @@ VectorView >> cos [
 
 {
 	#category : #trigonometric,
-	#timestamp : 'stlu 1/22/2021 13:20'
+	#'squeak_changestamp' : 'stlu 1/22/2021 13:20'
 }
 VectorView >> cosh [
 
@@ -362,7 +362,7 @@ VectorView >> cosh [
 
 {
 	#category : #trigonometric,
-	#timestamp : 'stlu 1/22/2021 13:20'
+	#'squeak_changestamp' : 'stlu 1/22/2021 13:20'
 }
 VectorView >> degreesToRadians [
 
@@ -371,7 +371,7 @@ VectorView >> degreesToRadians [
 
 {
 	#category : #geometry,
-	#timestamp : 'stlu 1/25/2021 17:59'
+	#'squeak_changestamp' : 'stlu 1/25/2021 17:59'
 }
 VectorView >> dot: aVector [
 
@@ -388,7 +388,7 @@ VectorView >> dot: aVector [
 
 {
 	#category : #exponential,
-	#timestamp : 'stlu 1/22/2021 13:33'
+	#'squeak_changestamp' : 'stlu 1/22/2021 13:33'
 }
 VectorView >> exp [
 
@@ -397,7 +397,7 @@ VectorView >> exp [
 
 {
 	#category : #exponential,
-	#timestamp : 'stlu 1/22/2021 13:52'
+	#'squeak_changestamp' : 'stlu 1/22/2021 13:52'
 }
 VectorView >> exp2 [
 
@@ -406,7 +406,7 @@ VectorView >> exp2 [
 
 {
 	#category : #common,
-	#timestamp : 'stlu 1/22/2021 13:49'
+	#'squeak_changestamp' : 'stlu 1/22/2021 13:49'
 }
 VectorView >> floor [
 
@@ -415,7 +415,7 @@ VectorView >> floor [
 
 {
 	#category : #common,
-	#timestamp : 'stlu 1/22/2021 13:56'
+	#'squeak_changestamp' : 'stlu 1/22/2021 13:56'
 }
 VectorView >> fractionPart [
 
@@ -424,7 +424,7 @@ VectorView >> fractionPart [
 
 {
 	#category : #exponential,
-	#timestamp : 'stlu 1/22/2021 13:55'
+	#'squeak_changestamp' : 'stlu 1/22/2021 13:55'
 }
 VectorView >> inverseSqrt [
 
@@ -433,7 +433,7 @@ VectorView >> inverseSqrt [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 1/25/2021 17:57'
+	#'squeak_changestamp' : 'stlu 1/25/2021 17:57'
 }
 VectorView >> isPacked [
 
@@ -445,7 +445,7 @@ VectorView >> isPacked [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 1/19/2021 13:07'
+	#'squeak_changestamp' : 'stlu 1/19/2021 13:07'
 }
 VectorView >> isVector [
 
@@ -454,7 +454,7 @@ VectorView >> isVector [
 
 {
 	#category : #exponential,
-	#timestamp : 'stlu 1/22/2021 13:33'
+	#'squeak_changestamp' : 'stlu 1/22/2021 13:33'
 }
 VectorView >> log [
 
@@ -463,7 +463,7 @@ VectorView >> log [
 
 {
 	#category : #exponential,
-	#timestamp : 'stlu 1/22/2021 13:33'
+	#'squeak_changestamp' : 'stlu 1/22/2021 13:33'
 }
 VectorView >> log2 [
 
@@ -472,7 +472,7 @@ VectorView >> log2 [
 
 {
 	#category : #common,
-	#timestamp : 'stlu 1/22/2021 15:40'
+	#'squeak_changestamp' : 'stlu 1/22/2021 15:40'
 }
 VectorView >> max: scalarOrVector [
 
@@ -483,7 +483,7 @@ VectorView >> max: scalarOrVector [
 
 {
 	#category : #common,
-	#timestamp : 'stlu 1/22/2021 15:39'
+	#'squeak_changestamp' : 'stlu 1/22/2021 15:39'
 }
 VectorView >> min: scalarOrVector [
 
@@ -494,7 +494,7 @@ VectorView >> min: scalarOrVector [
 
 {
 	#category : #common,
-	#timestamp : 'stlu 1/22/2021 15:50'
+	#'squeak_changestamp' : 'stlu 1/22/2021 15:50'
 }
 VectorView >> min: aMin max: aMax [
 
@@ -507,7 +507,7 @@ VectorView >> min: aMin max: aMax [
 
 {
 	#category : #common,
-	#timestamp : 'stlu 1/22/2021 15:51'
+	#'squeak_changestamp' : 'stlu 1/22/2021 15:51'
 }
 VectorView >> mix: scalarOrVector alpha: blendFactor [
 
@@ -520,7 +520,7 @@ VectorView >> mix: scalarOrVector alpha: blendFactor [
 
 {
 	#category : #arithmetic,
-	#timestamp : 'stlu 1/22/2021 16:40'
+	#'squeak_changestamp' : 'stlu 1/22/2021 16:40'
 }
 VectorView >> negated [
 
@@ -529,7 +529,7 @@ VectorView >> negated [
 
 {
 	#category : #copying,
-	#timestamp : 'stlu 1/21/2021 17:34'
+	#'squeak_changestamp' : 'stlu 1/21/2021 17:34'
 }
 VectorView >> postCopy [
 
@@ -538,7 +538,7 @@ VectorView >> postCopy [
 
 {
 	#category : #trigonometric,
-	#timestamp : 'stlu 1/22/2021 13:20'
+	#'squeak_changestamp' : 'stlu 1/22/2021 13:20'
 }
 VectorView >> radiansToDegrees [
 
@@ -547,7 +547,7 @@ VectorView >> radiansToDegrees [
 
 {
 	#category : #exponential,
-	#timestamp : 'stlu 1/22/2021 15:40'
+	#'squeak_changestamp' : 'stlu 1/22/2021 15:40'
 }
 VectorView >> raisedTo: scalarOrVector [
 
@@ -558,7 +558,7 @@ VectorView >> raisedTo: scalarOrVector [
 
 {
 	#category : #arithmetic,
-	#timestamp : 'stlu 1/22/2021 16:41'
+	#'squeak_changestamp' : 'stlu 1/22/2021 16:41'
 }
 VectorView >> reciprocal [
 
@@ -567,7 +567,7 @@ VectorView >> reciprocal [
 
 {
 	#category : #common,
-	#timestamp : 'stlu 1/22/2021 13:51'
+	#'squeak_changestamp' : 'stlu 1/22/2021 13:51'
 }
 VectorView >> roundEven [
 
@@ -576,7 +576,7 @@ VectorView >> roundEven [
 
 {
 	#category : #common,
-	#timestamp : 'stlu 1/22/2021 13:50'
+	#'squeak_changestamp' : 'stlu 1/22/2021 13:50'
 }
 VectorView >> rounded [
 
@@ -585,7 +585,7 @@ VectorView >> rounded [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 1/18/2021 23:10'
+	#'squeak_changestamp' : 'stlu 1/18/2021 23:10'
 }
 VectorView >> setStore: aCollection size: numComponents start: startIndex stride: theStride [
 
@@ -597,7 +597,7 @@ VectorView >> setStore: aCollection size: numComponents start: startIndex stride
 
 {
 	#category : #common,
-	#timestamp : 'stlu 1/22/2021 13:48'
+	#'squeak_changestamp' : 'stlu 1/22/2021 13:48'
 }
 VectorView >> sign [
 
@@ -606,7 +606,7 @@ VectorView >> sign [
 
 {
 	#category : #trigonometric,
-	#timestamp : 'stlu 1/22/2021 13:20'
+	#'squeak_changestamp' : 'stlu 1/22/2021 13:20'
 }
 VectorView >> sin [
 
@@ -615,7 +615,7 @@ VectorView >> sin [
 
 {
 	#category : #trigonometric,
-	#timestamp : 'stlu 1/22/2021 13:20'
+	#'squeak_changestamp' : 'stlu 1/22/2021 13:20'
 }
 VectorView >> sinh [
 
@@ -624,7 +624,7 @@ VectorView >> sinh [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/18/2021 22:58'
+	#'squeak_changestamp' : 'stlu 1/18/2021 22:58'
 }
 VectorView >> size [
 
@@ -633,7 +633,7 @@ VectorView >> size [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/18/2021 22:53'
+	#'squeak_changestamp' : 'stlu 1/18/2021 22:53'
 }
 VectorView >> size: anObject [
 
@@ -642,7 +642,7 @@ VectorView >> size: anObject [
 
 {
 	#category : #exponential,
-	#timestamp : 'stlu 1/22/2021 13:33'
+	#'squeak_changestamp' : 'stlu 1/22/2021 13:33'
 }
 VectorView >> sqrt [
 
@@ -651,7 +651,7 @@ VectorView >> sqrt [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/18/2021 23:09'
+	#'squeak_changestamp' : 'stlu 1/18/2021 23:09'
 }
 VectorView >> start [
 
@@ -660,7 +660,7 @@ VectorView >> start [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/18/2021 23:09'
+	#'squeak_changestamp' : 'stlu 1/18/2021 23:09'
 }
 VectorView >> start: anObject [
 
@@ -669,7 +669,7 @@ VectorView >> start: anObject [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/18/2021 22:53'
+	#'squeak_changestamp' : 'stlu 1/18/2021 22:53'
 }
 VectorView >> store [
 
@@ -678,7 +678,7 @@ VectorView >> store [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/18/2021 22:53'
+	#'squeak_changestamp' : 'stlu 1/18/2021 22:53'
 }
 VectorView >> store: anObject [
 
@@ -687,7 +687,7 @@ VectorView >> store: anObject [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/18/2021 22:53'
+	#'squeak_changestamp' : 'stlu 1/18/2021 22:53'
 }
 VectorView >> stride [
 
@@ -696,7 +696,7 @@ VectorView >> stride [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/18/2021 22:53'
+	#'squeak_changestamp' : 'stlu 1/18/2021 22:53'
 }
 VectorView >> stride: anObject [
 
@@ -705,7 +705,7 @@ VectorView >> stride: anObject [
 
 {
 	#category : #trigonometric,
-	#timestamp : 'stlu 1/22/2021 13:20'
+	#'squeak_changestamp' : 'stlu 1/22/2021 13:20'
 }
 VectorView >> tan [
 
@@ -714,7 +714,7 @@ VectorView >> tan [
 
 {
 	#category : #trigonometric,
-	#timestamp : 'stlu 1/22/2021 13:20'
+	#'squeak_changestamp' : 'stlu 1/22/2021 13:20'
 }
 VectorView >> tanh [
 
@@ -723,7 +723,7 @@ VectorView >> tanh [
 
 {
 	#category : #common,
-	#timestamp : 'stlu 1/22/2021 13:49'
+	#'squeak_changestamp' : 'stlu 1/22/2021 13:49'
 }
 VectorView >> truncated [
 
@@ -732,7 +732,7 @@ VectorView >> truncated [
 
 {
 	#category : #swizzling,
-	#timestamp : 'stlu 1/18/2021 22:37'
+	#'squeak_changestamp' : 'stlu 1/18/2021 22:37'
 }
 VectorView >> w [
 
@@ -741,7 +741,7 @@ VectorView >> w [
 
 {
 	#category : #swizzling,
-	#timestamp : 'stlu 1/18/2021 23:03'
+	#'squeak_changestamp' : 'stlu 1/18/2021 23:03'
 }
 VectorView >> w: value [
 
@@ -750,7 +750,7 @@ VectorView >> w: value [
 
 {
 	#category : #enumerating,
-	#timestamp : 'stlu 1/25/2021 20:29'
+	#'squeak_changestamp' : 'stlu 1/25/2021 20:29'
 }
 VectorView >> with: vectorOrNumber collect: twoArgBlock [ 
 
@@ -762,7 +762,7 @@ VectorView >> with: vectorOrNumber collect: twoArgBlock [
 
 {
 	#category : #enumerating,
-	#timestamp : 'stlu 1/25/2021 20:28'
+	#'squeak_changestamp' : 'stlu 1/25/2021 20:28'
 }
 VectorView >> with: vectorOrNumber collect: twoArgBlock into: resultCollection [
 
@@ -785,7 +785,7 @@ VectorView >> with: vectorOrNumber collect: twoArgBlock into: resultCollection [
 
 {
 	#category : #enumerating,
-	#timestamp : 'stlu 1/25/2021 20:35'
+	#'squeak_changestamp' : 'stlu 1/25/2021 20:35'
 }
 VectorView >> with: vectorOrNumber1 with: vectorOrNumber2 collect: threeArgBlock [ 
 
@@ -798,7 +798,7 @@ VectorView >> with: vectorOrNumber1 with: vectorOrNumber2 collect: threeArgBlock
 
 {
 	#category : #enumerating,
-	#timestamp : 'stlu 1/25/2021 20:34'
+	#'squeak_changestamp' : 'stlu 1/25/2021 20:34'
 }
 VectorView >> with: vectorOrNumber1 with: vectorOrNumber2 collect: threeArgBlock into: resultCollection [
 
@@ -824,7 +824,7 @@ VectorView >> with: vectorOrNumber1 with: vectorOrNumber2 collect: threeArgBlock
 
 {
 	#category : #enumerating,
-	#timestamp : 'stlu 1/25/2021 20:08'
+	#'squeak_changestamp' : 'stlu 1/25/2021 20:08'
 }
 VectorView >> with: vectorOrNumber withIndexDo: threeArgBlock [
 
@@ -842,7 +842,7 @@ VectorView >> with: vectorOrNumber withIndexDo: threeArgBlock [
 
 {
 	#category : #swizzling,
-	#timestamp : 'stlu 1/18/2021 21:52'
+	#'squeak_changestamp' : 'stlu 1/18/2021 21:52'
 }
 VectorView >> x [
 
@@ -851,7 +851,7 @@ VectorView >> x [
 
 {
 	#category : #swizzling,
-	#timestamp : 'stlu 1/18/2021 23:04'
+	#'squeak_changestamp' : 'stlu 1/18/2021 23:04'
 }
 VectorView >> x: value [
 
@@ -860,7 +860,7 @@ VectorView >> x: value [
 
 {
 	#category : #swizzling,
-	#timestamp : 'stlu 1/18/2021 22:36'
+	#'squeak_changestamp' : 'stlu 1/18/2021 22:36'
 }
 VectorView >> y [
 
@@ -869,7 +869,7 @@ VectorView >> y [
 
 {
 	#category : #swizzling,
-	#timestamp : 'stlu 1/18/2021 23:04'
+	#'squeak_changestamp' : 'stlu 1/18/2021 23:04'
 }
 VectorView >> y: value [
 
@@ -878,7 +878,7 @@ VectorView >> y: value [
 
 {
 	#category : #swizzling,
-	#timestamp : 'stlu 1/18/2021 22:37'
+	#'squeak_changestamp' : 'stlu 1/18/2021 22:37'
 }
 VectorView >> z [
 
@@ -887,7 +887,7 @@ VectorView >> z [
 
 {
 	#category : #swizzling,
-	#timestamp : 'stlu 1/18/2021 23:04'
+	#'squeak_changestamp' : 'stlu 1/18/2021 23:04'
 }
 VectorView >> z: value [
 

@@ -2,7 +2,7 @@ Extension { #name : #Object }
 
 {
 	#category : #'*OpenGLObjects',
-	#timestamp : 'stlu 11/23/2020 16:03'
+	#'squeak_changestamp' : 'stlu 11/23/2020 16:03'
 }
 Object >> setAsValueOfUniform: aUniform [
 

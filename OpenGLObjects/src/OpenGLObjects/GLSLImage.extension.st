@@ -2,7 +2,7 @@ Extension { #name : #GLSLImage }
 
 {
 	#category : #'*OpenGLObjects-Generation',
-	#timestamp : 'stlu 12/15/2020 13:03'
+	#'squeak_changestamp' : 'stlu 12/15/2020 13:03'
 }
 GLSLImage class >> generateClasses [
 

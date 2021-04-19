@@ -2,12 +2,12 @@ Class {
 	#name : #GLSLSampler,
 	#superclass : #GLSLType,
 	#category : #'OpenGLObjects-Types',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #'*OpenGLObjects-Generation',
-	#timestamp : 'stlu 12/15/2020 13:04'
+	#'squeak_changestamp' : 'stlu 12/15/2020 13:04'
 }
 GLSLSampler class >> generateClasses [
 
@@ -45,7 +45,7 @@ GLSLSampler class >> generateClasses [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/15/2020 13:02'
+	#'squeak_changestamp' : 'stlu 12/15/2020 13:02'
 }
 GLSLSampler class >> pixelType [
 
@@ -54,7 +54,7 @@ GLSLSampler class >> pixelType [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 12/14/2020 18:23'
+	#'squeak_changestamp' : 'stlu 12/14/2020 18:23'
 }
 GLSLSampler >> isSampler [
 
@@ -63,7 +63,7 @@ GLSLSampler >> isSampler [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/15/2020 13:01'
+	#'squeak_changestamp' : 'stlu 12/15/2020 13:01'
 }
 GLSLSampler >> pixelType [
 
@@ -72,7 +72,7 @@ GLSLSampler >> pixelType [
 
 {
 	#category : #'program resources',
-	#timestamp : 'stlu 11/23/2020 17:05'
+	#'squeak_changestamp' : 'stlu 11/23/2020 17:05'
 }
 GLSLSampler >> setUniform: aUniform toArray: aRawBitsArray count: numElements [
 
@@ -81,7 +81,7 @@ GLSLSampler >> setUniform: aUniform toArray: aRawBitsArray count: numElements [
 
 {
 	#category : #'program resources',
-	#timestamp : 'stlu 1/6/2021 14:15'
+	#'squeak_changestamp' : 'stlu 1/6/2021 14:15'
 }
 GLSLSampler >> setUniform: aUniform toObject: anObject [
 

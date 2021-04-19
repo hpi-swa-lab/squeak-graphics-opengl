@@ -2,12 +2,12 @@ Class {
 	#name : #GLDirectProgramInterfaceQueryImp,
 	#superclass : #GLProgramInterfaceQueryImp,
 	#category : #'OpenGLObjects-Programs',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #inputs,
-	#timestamp : 'stlu 12/13/2020 15:52'
+	#'squeak_changestamp' : 'stlu 12/13/2020 15:52'
 }
 GLDirectProgramInterfaceQueryImp >> getInputs: aProgram [
 
@@ -16,7 +16,7 @@ GLDirectProgramInterfaceQueryImp >> getInputs: aProgram [
 
 {
 	#category : #'resource querying',
-	#timestamp : 'stlu 12/16/2020 18:54'
+	#'squeak_changestamp' : 'stlu 12/16/2020 18:54'
 }
 GLDirectProgramInterfaceQueryImp >> getResource: aResourceClass program: aProgram at: index [
 
@@ -39,7 +39,7 @@ GLDirectProgramInterfaceQueryImp >> getResource: aResourceClass program: aProgra
 
 {
 	#category : #'resource querying',
-	#timestamp : 'stlu 12/16/2020 18:54'
+	#'squeak_changestamp' : 'stlu 12/16/2020 18:54'
 }
 GLDirectProgramInterfaceQueryImp >> getResources: aResourceClass program: aProgram [
 
@@ -58,7 +58,7 @@ GLDirectProgramInterfaceQueryImp >> getResources: aResourceClass program: aProgr
 
 {
 	#category : #uniforms,
-	#timestamp : 'stlu 12/13/2020 14:55'
+	#'squeak_changestamp' : 'stlu 12/13/2020 14:55'
 }
 GLDirectProgramInterfaceQueryImp >> getUniforms: aProgram [
 
@@ -67,7 +67,7 @@ GLDirectProgramInterfaceQueryImp >> getUniforms: aProgram [
 
 {
 	#category : #'resource querying',
-	#timestamp : 'stlu 12/13/2020 14:47'
+	#'squeak_changestamp' : 'stlu 12/13/2020 14:47'
 }
 GLDirectProgramInterfaceQueryImp >> queryInterface: interfaceEnum program: aProgram property: propertyEnum [
 
@@ -83,7 +83,7 @@ GLDirectProgramInterfaceQueryImp >> queryInterface: interfaceEnum program: aProg
 
 {
 	#category : #'resource querying',
-	#timestamp : 'stlu 12/13/2020 14:42'
+	#'squeak_changestamp' : 'stlu 12/13/2020 14:42'
 }
 GLDirectProgramInterfaceQueryImp >> queryResourceName: nameLength program: aProgram interface: interfaceEnum at: index [
 
@@ -101,7 +101,7 @@ GLDirectProgramInterfaceQueryImp >> queryResourceName: nameLength program: aProg
 
 {
 	#category : #'resource querying',
-	#timestamp : 'stlu 12/13/2020 14:42'
+	#'squeak_changestamp' : 'stlu 12/13/2020 14:42'
 }
 GLDirectProgramInterfaceQueryImp >> queryResourceProperties: aWordArray program: aProgram interface: interfaceEnum at: index [
 

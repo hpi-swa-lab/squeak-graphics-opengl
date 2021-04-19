@@ -10,12 +10,12 @@ Class {
 		'Levels'
 	],
 	#category : #'LearnOpenGL-Breakout',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #levels,
-	#timestamp : 'stlu 1/7/2021 14:33'
+	#'squeak_changestamp' : 'stlu 1/7/2021 14:33'
 }
 LOGLBreakoutLevel class >> four [
 
@@ -30,7 +30,7 @@ LOGLBreakoutLevel class >> four [
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 1/7/2021 15:52'
+	#'squeak_changestamp' : 'stlu 1/7/2021 15:52'
 }
 LOGLBreakoutLevel class >> fromArray: anArray extent: levelExtent [
 
@@ -41,7 +41,7 @@ LOGLBreakoutLevel class >> fromArray: anArray extent: levelExtent [
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 1/7/2021 15:53'
+	#'squeak_changestamp' : 'stlu 1/7/2021 15:53'
 }
 LOGLBreakoutLevel class >> fromString: aString extent: levelExtent [
 
@@ -54,7 +54,7 @@ LOGLBreakoutLevel class >> fromString: aString extent: levelExtent [
 
 {
 	#category : #'class initialization',
-	#timestamp : 'stlu 1/7/2021 14:33'
+	#'squeak_changestamp' : 'stlu 1/7/2021 14:33'
 }
 LOGLBreakoutLevel class >> initialize [
 
@@ -68,7 +68,7 @@ LOGLBreakoutLevel class >> initialize [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/7/2021 16:06'
+	#'squeak_changestamp' : 'stlu 1/7/2021 16:06'
 }
 LOGLBreakoutLevel class >> levels [
 
@@ -77,7 +77,7 @@ LOGLBreakoutLevel class >> levels [
 
 {
 	#category : #levels,
-	#timestamp : 'stlu 1/7/2021 14:32'
+	#'squeak_changestamp' : 'stlu 1/7/2021 14:32'
 }
 LOGLBreakoutLevel class >> one [
 
@@ -94,7 +94,7 @@ LOGLBreakoutLevel class >> one [
 
 {
 	#category : #levels,
-	#timestamp : 'stlu 1/7/2021 14:33'
+	#'squeak_changestamp' : 'stlu 1/7/2021 14:33'
 }
 LOGLBreakoutLevel class >> three [
 
@@ -112,7 +112,7 @@ LOGLBreakoutLevel class >> three [
 
 {
 	#category : #levels,
-	#timestamp : 'stlu 1/7/2021 14:32'
+	#'squeak_changestamp' : 'stlu 1/7/2021 14:32'
 }
 LOGLBreakoutLevel class >> two [
 
@@ -129,7 +129,7 @@ LOGLBreakoutLevel class >> two [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/7/2021 14:07'
+	#'squeak_changestamp' : 'stlu 1/7/2021 14:07'
 }
 LOGLBreakoutLevel >> bricks [
 
@@ -138,7 +138,7 @@ LOGLBreakoutLevel >> bricks [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/7/2021 14:07'
+	#'squeak_changestamp' : 'stlu 1/7/2021 14:07'
 }
 LOGLBreakoutLevel >> bricks: anObject [
 
@@ -147,7 +147,7 @@ LOGLBreakoutLevel >> bricks: anObject [
 
 {
 	#category : #rendering,
-	#timestamp : 'stlu 1/7/2021 15:51'
+	#'squeak_changestamp' : 'stlu 1/7/2021 15:51'
 }
 LOGLBreakoutLevel >> draw: aRenderer [
 
@@ -158,7 +158,7 @@ LOGLBreakoutLevel >> draw: aRenderer [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 1/8/2021 11:59'
+	#'squeak_changestamp' : 'stlu 1/8/2021 11:59'
 }
 LOGLBreakoutLevel >> initializeFrom: anArray extent: levelExtent [
 
@@ -205,7 +205,7 @@ LOGLBreakoutLevel >> initializeFrom: anArray extent: levelExtent [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 1/7/2021 15:50'
+	#'squeak_changestamp' : 'stlu 1/7/2021 15:50'
 }
 LOGLBreakoutLevel >> isCompleted [
 
@@ -215,7 +215,7 @@ LOGLBreakoutLevel >> isCompleted [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 1/8/2021 12:00'
+	#'squeak_changestamp' : 'stlu 1/8/2021 12:00'
 }
 LOGLBreakoutLevel >> reset [
 

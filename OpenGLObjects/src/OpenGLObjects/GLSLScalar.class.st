@@ -2,12 +2,12 @@ Class {
 	#name : #GLSLScalar,
 	#superclass : #GLSLType,
 	#category : #'OpenGLObjects-Types',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/23/2020 11:51'
+	#'squeak_changestamp' : 'stlu 11/23/2020 11:51'
 }
 GLSLScalar class >> commandInitials [
 
@@ -16,7 +16,7 @@ GLSLScalar class >> commandInitials [
 
 {
 	#category : #'*OpenGLObjects-Generation',
-	#timestamp : 'stlu 11/23/2020 11:41'
+	#'squeak_changestamp' : 'stlu 11/23/2020 11:41'
 }
 GLSLScalar class >> compileGLSLInitialsAccessor: stringOrSymbol [
 
@@ -27,7 +27,7 @@ GLSLScalar class >> compileGLSLInitialsAccessor: stringOrSymbol [
 
 {
 	#category : #'*OpenGLObjects-Generation',
-	#timestamp : 'stlu 11/19/2020 18:46'
+	#'squeak_changestamp' : 'stlu 11/19/2020 18:46'
 }
 GLSLScalar class >> compileInitialsAccessor: stringOrSymbol [
 
@@ -38,7 +38,7 @@ GLSLScalar class >> compileInitialsAccessor: stringOrSymbol [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/15/2020 13:05'
+	#'squeak_changestamp' : 'stlu 12/15/2020 13:05'
 }
 GLSLScalar class >> componentType [
 
@@ -47,7 +47,7 @@ GLSLScalar class >> componentType [
 
 {
 	#category : #'*OpenGLObjects-Generation',
-	#timestamp : 'stlu 12/14/2020 16:49'
+	#'squeak_changestamp' : 'stlu 12/14/2020 16:49'
 }
 GLSLScalar class >> generateClasses [
 
@@ -76,7 +76,7 @@ GLSLScalar class >> generateClasses [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/23/2020 11:51'
+	#'squeak_changestamp' : 'stlu 11/23/2020 11:51'
 }
 GLSLScalar class >> glslInitials [
 
@@ -85,7 +85,7 @@ GLSLScalar class >> glslInitials [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/15/2020 13:15'
+	#'squeak_changestamp' : 'stlu 12/15/2020 13:15'
 }
 GLSLScalar >> componentType [
 
@@ -94,7 +94,7 @@ GLSLScalar >> componentType [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 12/14/2020 18:27'
+	#'squeak_changestamp' : 'stlu 12/14/2020 18:27'
 }
 GLSLScalar >> isBoolean [
 
@@ -103,7 +103,7 @@ GLSLScalar >> isBoolean [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 12/14/2020 18:27'
+	#'squeak_changestamp' : 'stlu 12/14/2020 18:27'
 }
 GLSLScalar >> isDouble [
 
@@ -112,7 +112,7 @@ GLSLScalar >> isDouble [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 12/14/2020 18:27'
+	#'squeak_changestamp' : 'stlu 12/14/2020 18:27'
 }
 GLSLScalar >> isFloat [
 
@@ -121,7 +121,7 @@ GLSLScalar >> isFloat [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 12/14/2020 18:27'
+	#'squeak_changestamp' : 'stlu 12/14/2020 18:27'
 }
 GLSLScalar >> isInteger [
 
@@ -130,7 +130,7 @@ GLSLScalar >> isInteger [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 12/14/2020 18:23'
+	#'squeak_changestamp' : 'stlu 12/14/2020 18:23'
 }
 GLSLScalar >> isScalar [
 
@@ -139,7 +139,7 @@ GLSLScalar >> isScalar [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 12/14/2020 18:27'
+	#'squeak_changestamp' : 'stlu 12/14/2020 18:27'
 }
 GLSLScalar >> isUnsignedInteger [
 
@@ -148,7 +148,7 @@ GLSLScalar >> isUnsignedInteger [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/14/2020 18:50'
+	#'squeak_changestamp' : 'stlu 12/14/2020 18:50'
 }
 GLSLScalar >> numComponents [
 

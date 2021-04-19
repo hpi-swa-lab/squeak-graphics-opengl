@@ -2,12 +2,12 @@ Class {
 	#name : #GL32,
 	#superclass : #GL31,
 	#category : #'OpenGL-Versions',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 4/15/2021 18:02'
+	#'squeak_changestamp' : 'stlu 4/15/2021 18:02'
 }
 GL32 class >> major [
 
@@ -16,7 +16,7 @@ GL32 class >> major [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 4/15/2021 18:01'
+	#'squeak_changestamp' : 'stlu 4/15/2021 18:01'
 }
 GL32 class >> minor [
 
@@ -25,7 +25,7 @@ GL32 class >> minor [
 
 {
 	#category : #parameters,
-	#timestamp : 'stlu 4/16/2021 14:11'
+	#'squeak_changestamp' : 'stlu 4/16/2021 14:11'
 }
 GL32 >> getProfile: aLibrary [
 

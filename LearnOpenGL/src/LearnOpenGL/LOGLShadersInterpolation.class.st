@@ -5,12 +5,12 @@ Class {
 	#name : #LOGLShadersInterpolation,
 	#superclass : #LOGLHelloTriangle,
 	#category : #'LearnOpenGL-GettingStarted',
-	#commentStamp : 'stlu 1/4/2021 04:08'
+	#'squeak_changestamp' : 'stlu 1/4/2021 04:08'
 }
 
 {
 	#category : #shaders,
-	#timestamp : 'stlu 1/4/2021 04:13'
+	#'squeak_changestamp' : 'stlu 1/4/2021 04:13'
 }
 LOGLShadersInterpolation >> fragmentShaderSource [
 
@@ -24,7 +24,7 @@ void main() {
 
 {
 	#category : #running,
-	#timestamp : 'stlu 4/16/2021 15:30'
+	#'squeak_changestamp' : 'stlu 4/16/2021 15:30'
 }
 LOGLShadersInterpolation >> setUp [
 
@@ -46,7 +46,7 @@ LOGLShadersInterpolation >> setUp [
 
 {
 	#category : #shaders,
-	#timestamp : 'stlu 1/4/2021 04:15'
+	#'squeak_changestamp' : 'stlu 1/4/2021 04:15'
 }
 LOGLShadersInterpolation >> vertexShaderSource [
 
@@ -64,7 +64,7 @@ void main() {
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/4/2021 04:49'
+	#'squeak_changestamp' : 'stlu 1/4/2021 04:49'
 }
 LOGLShadersInterpolation >> vertices [
 

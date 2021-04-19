@@ -2,12 +2,12 @@ Class {
 	#name : #GLSLDoubleMatrix2x3,
 	#superclass : #GLSLMatrix,
 	#category : #'OpenGLObjects-Types',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/15/2020 12:49'
+	#'squeak_changestamp' : 'stlu 12/15/2020 12:49'
 }
 GLSLDoubleMatrix2x3 class >> componentType [
 
@@ -16,7 +16,7 @@ GLSLDoubleMatrix2x3 class >> componentType [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/15/2020 12:49'
+	#'squeak_changestamp' : 'stlu 12/15/2020 12:49'
 }
 GLSLDoubleMatrix2x3 class >> declarators [
 
@@ -25,7 +25,7 @@ GLSLDoubleMatrix2x3 class >> declarators [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/15/2020 12:49'
+	#'squeak_changestamp' : 'stlu 12/15/2020 12:49'
 }
 GLSLDoubleMatrix2x3 class >> enum [
 
@@ -34,7 +34,7 @@ GLSLDoubleMatrix2x3 class >> enum [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/15/2020 12:49'
+	#'squeak_changestamp' : 'stlu 12/15/2020 12:49'
 }
 GLSLDoubleMatrix2x3 class >> enumName [
 
@@ -43,7 +43,7 @@ GLSLDoubleMatrix2x3 class >> enumName [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/15/2020 12:49'
+	#'squeak_changestamp' : 'stlu 12/15/2020 12:49'
 }
 GLSLDoubleMatrix2x3 class >> numColumns [
 
@@ -52,7 +52,7 @@ GLSLDoubleMatrix2x3 class >> numColumns [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/15/2020 12:49'
+	#'squeak_changestamp' : 'stlu 12/15/2020 12:49'
 }
 GLSLDoubleMatrix2x3 class >> numRows [
 
@@ -61,7 +61,7 @@ GLSLDoubleMatrix2x3 class >> numRows [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/15/2020 12:49'
+	#'squeak_changestamp' : 'stlu 12/15/2020 12:49'
 }
 GLSLDoubleMatrix2x3 class >> squeakName [
 

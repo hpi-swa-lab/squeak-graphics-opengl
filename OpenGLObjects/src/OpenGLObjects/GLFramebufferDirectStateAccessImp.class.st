@@ -2,12 +2,12 @@ Class {
 	#name : #GLFramebufferDirectStateAccessImp,
 	#superclass : #GLFramebufferStateAccessImp,
 	#category : #'OpenGLObjects-FrameBuffers',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #blitting,
-	#timestamp : 'stlu 1/9/2021 14:27'
+	#'squeak_changestamp' : 'stlu 1/9/2021 14:27'
 }
 GLFramebufferDirectStateAccessImp >> blit: mask from: readFramebuffer bounds: readBounds to: drawFramebuffer bounds: drawBounds filter: filterEnum [
 
@@ -28,7 +28,7 @@ GLFramebufferDirectStateAccessImp >> blit: mask from: readFramebuffer bounds: re
 
 {
 	#category : #completion,
-	#timestamp : 'stlu 3/15/2021 12:26'
+	#'squeak_changestamp' : 'stlu 3/15/2021 12:26'
 }
 GLFramebufferDirectStateAccessImp >> frameBuffer: aFrameBuffer completionStatusFor: targetEnum [
 
@@ -39,7 +39,7 @@ GLFramebufferDirectStateAccessImp >> frameBuffer: aFrameBuffer completionStatusF
 
 {
 	#category : #attachments,
-	#timestamp : 'stlu 1/9/2021 14:03'
+	#'squeak_changestamp' : 'stlu 1/9/2021 14:03'
 }
 GLFramebufferDirectStateAccessImp >> framebuffer: aFramebuffer attach2DTexture: a2DTexture level: mipMapLevel to: attachmentEnum [
 
@@ -52,7 +52,7 @@ GLFramebufferDirectStateAccessImp >> framebuffer: aFramebuffer attach2DTexture: 
 
 {
 	#category : #attachments,
-	#timestamp : 'stlu 3/15/2021 13:15'
+	#'squeak_changestamp' : 'stlu 3/15/2021 13:15'
 }
 GLFramebufferDirectStateAccessImp >> framebuffer: aFramebuffer attachRenderbuffer: aRenderbuffer to: attachmentEnum [
 
@@ -65,7 +65,7 @@ GLFramebufferDirectStateAccessImp >> framebuffer: aFramebuffer attachRenderbuffe
 
 {
 	#category : #clearing,
-	#timestamp : 'stlu 3/11/2021 14:22'
+	#'squeak_changestamp' : 'stlu 3/11/2021 14:22'
 }
 GLFramebufferDirectStateAccessImp >> framebuffer: aFrameBuffer clearColorBuffer: drawBufferEnum toFloat32Vector4: aFloat32Array [
 
@@ -78,7 +78,7 @@ GLFramebufferDirectStateAccessImp >> framebuffer: aFrameBuffer clearColorBuffer:
 
 {
 	#category : #clearing,
-	#timestamp : 'stlu 3/11/2021 14:28'
+	#'squeak_changestamp' : 'stlu 3/11/2021 14:28'
 }
 GLFramebufferDirectStateAccessImp >> framebuffer: aFrameBuffer clearColorBuffer: drawBufferEnum toIntegerVector4: anIntegerArray [
 
@@ -91,7 +91,7 @@ GLFramebufferDirectStateAccessImp >> framebuffer: aFrameBuffer clearColorBuffer:
 
 {
 	#category : #clearing,
-	#timestamp : 'stlu 3/11/2021 14:28'
+	#'squeak_changestamp' : 'stlu 3/11/2021 14:28'
 }
 GLFramebufferDirectStateAccessImp >> framebuffer: aFrameBuffer clearColorBuffer: drawBufferEnum toUnsignedIntegerVector4: aWordArray [
 
@@ -104,7 +104,7 @@ GLFramebufferDirectStateAccessImp >> framebuffer: aFrameBuffer clearColorBuffer:
 
 {
 	#category : #clearing,
-	#timestamp : 'stlu 3/11/2021 14:23'
+	#'squeak_changestamp' : 'stlu 3/11/2021 14:23'
 }
 GLFramebufferDirectStateAccessImp >> framebuffer: aFrameBuffer clearDepthBufferTo: aFloat [
 
@@ -117,7 +117,7 @@ GLFramebufferDirectStateAccessImp >> framebuffer: aFrameBuffer clearDepthBufferT
 
 {
 	#category : #clearing,
-	#timestamp : 'stlu 3/11/2021 14:28'
+	#'squeak_changestamp' : 'stlu 3/11/2021 14:28'
 }
 GLFramebufferDirectStateAccessImp >> framebuffer: aFrameBuffer clearStencilBufferTo: anInteger [
 

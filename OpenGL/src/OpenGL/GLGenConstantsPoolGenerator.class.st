@@ -5,12 +5,12 @@ Class {
 		'targetClass'
 	],
 	#category : #'OpenGL-Generation',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #'constants pool',
-	#timestamp : 'stlu 4/12/2021 18:09'
+	#'squeak_changestamp' : 'stlu 4/12/2021 18:09'
 }
 GLGenConstantsPoolGenerator >> generate: aRegistry [
 
@@ -19,7 +19,7 @@ GLGenConstantsPoolGenerator >> generate: aRegistry [
 
 {
 	#category : #'constants pool',
-	#timestamp : 'stlu 4/12/2021 18:09'
+	#'squeak_changestamp' : 'stlu 4/12/2021 18:09'
 }
 GLGenConstantsPoolGenerator >> generate: aRegistry into: aClass [
 
@@ -31,7 +31,7 @@ GLGenConstantsPoolGenerator >> generate: aRegistry into: aClass [
 
 {
 	#category : #'constants pool',
-	#timestamp : 'stlu 4/12/2021 18:07'
+	#'squeak_changestamp' : 'stlu 4/12/2021 18:07'
 }
 GLGenConstantsPoolGenerator >> generateInitializers: aRegistry into: aClass [
 
@@ -74,7 +74,7 @@ GLGenConstantsPoolGenerator >> generateInitializers: aRegistry into: aClass [
 
 {
 	#category : #'constants pool',
-	#timestamp : 'stlu 4/12/2021 18:04'
+	#'squeak_changestamp' : 'stlu 4/12/2021 18:04'
 }
 GLGenConstantsPoolGenerator >> generateVariables: aRegistry into: aClass [
 
@@ -101,7 +101,7 @@ GLGenConstantsPoolGenerator >> generateVariables: aRegistry into: aClass [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 4/12/2021 18:06'
+	#'squeak_changestamp' : 'stlu 4/12/2021 18:06'
 }
 GLGenConstantsPoolGenerator >> initialize [
 
@@ -111,7 +111,7 @@ GLGenConstantsPoolGenerator >> initialize [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 4/12/2021 18:05'
+	#'squeak_changestamp' : 'stlu 4/12/2021 18:05'
 }
 GLGenConstantsPoolGenerator >> targetClass [
 
@@ -120,7 +120,7 @@ GLGenConstantsPoolGenerator >> targetClass [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 4/12/2021 18:05'
+	#'squeak_changestamp' : 'stlu 4/12/2021 18:05'
 }
 GLGenConstantsPoolGenerator >> targetClass: anObject [
 

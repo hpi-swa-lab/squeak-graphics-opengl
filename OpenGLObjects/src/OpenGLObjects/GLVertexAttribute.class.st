@@ -16,12 +16,12 @@ Class {
 		'GLConstants'
 	],
 	#category : #'OpenGLObjects-VertexArrays',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 3/16/2021 13:40'
+	#'squeak_changestamp' : 'stlu 3/16/2021 13:40'
 }
 GLVertexAttribute class >> vertexArray: aVertexArray location: anInteger [
 
@@ -32,7 +32,7 @@ GLVertexAttribute class >> vertexArray: aVertexArray location: anInteger [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 3/17/2021 23:00'
+	#'squeak_changestamp' : 'stlu 3/17/2021 23:00'
 }
 GLVertexAttribute >> actualType [
 
@@ -41,7 +41,7 @@ GLVertexAttribute >> actualType [
 
 {
 	#category : #'vertex buffer binding',
-	#timestamp : 'stlu 3/17/2021 23:03'
+	#'squeak_changestamp' : 'stlu 3/17/2021 23:03'
 }
 GLVertexAttribute >> associateVertexBufferBinding: aVertexBufferBinding [
 
@@ -53,7 +53,7 @@ GLVertexAttribute >> associateVertexBufferBinding: aVertexBufferBinding [
 
 {
 	#category : #'vertex buffer binding',
-	#timestamp : 'stlu 3/17/2021 12:43'
+	#'squeak_changestamp' : 'stlu 3/17/2021 12:43'
 }
 GLVertexAttribute >> associateVertexBufferBindingAt: anInteger [
 
@@ -62,7 +62,7 @@ GLVertexAttribute >> associateVertexBufferBindingAt: anInteger [
 
 {
 	#category : #activation,
-	#timestamp : 'stlu 3/17/2021 23:03'
+	#'squeak_changestamp' : 'stlu 3/17/2021 23:03'
 }
 GLVertexAttribute >> disable [
 
@@ -72,7 +72,7 @@ GLVertexAttribute >> disable [
 
 {
 	#category : #activation,
-	#timestamp : 'stlu 3/17/2021 23:03'
+	#'squeak_changestamp' : 'stlu 3/17/2021 23:03'
 }
 GLVertexAttribute >> enable [
 
@@ -82,7 +82,7 @@ GLVertexAttribute >> enable [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 3/17/2021 23:00'
+	#'squeak_changestamp' : 'stlu 3/17/2021 23:00'
 }
 GLVertexAttribute >> format [
 
@@ -91,7 +91,7 @@ GLVertexAttribute >> format [
 
 {
 	#category : #format,
-	#timestamp : 'stlu 3/17/2021 23:03'
+	#'squeak_changestamp' : 'stlu 3/17/2021 23:03'
 }
 GLVertexAttribute >> formatAsDouble: formatEnum numComponents: vectorSize offset: relativeByteOffset [
 
@@ -108,7 +108,7 @@ GLVertexAttribute >> formatAsDouble: formatEnum numComponents: vectorSize offset
 
 {
 	#category : #format,
-	#timestamp : 'stlu 3/17/2021 13:22'
+	#'squeak_changestamp' : 'stlu 3/17/2021 13:22'
 }
 GLVertexAttribute >> formatAsFloat: formatEnum numComponents: vectorSize offset: relativeByteOffset [
 
@@ -121,7 +121,7 @@ GLVertexAttribute >> formatAsFloat: formatEnum numComponents: vectorSize offset:
 
 {
 	#category : #format,
-	#timestamp : 'stlu 3/17/2021 23:03'
+	#'squeak_changestamp' : 'stlu 3/17/2021 23:03'
 }
 GLVertexAttribute >> formatAsFloat: formatEnum numComponents: vectorSize offset: relativeByteOffset normalize: shouldNormalize [
 
@@ -141,7 +141,7 @@ GLVertexAttribute >> formatAsFloat: formatEnum numComponents: vectorSize offset:
 
 {
 	#category : #format,
-	#timestamp : 'stlu 3/17/2021 23:04'
+	#'squeak_changestamp' : 'stlu 3/17/2021 23:04'
 }
 GLVertexAttribute >> formatAsInteger: formatEnum numComponents: vectorSize offset: relativeByteOffset [
 
@@ -158,7 +158,7 @@ GLVertexAttribute >> formatAsInteger: formatEnum numComponents: vectorSize offse
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 3/17/2021 13:21'
+	#'squeak_changestamp' : 'stlu 3/17/2021 13:21'
 }
 GLVertexAttribute >> initializeForVertexArray: aVertexArray location: anInteger [
 
@@ -178,7 +178,7 @@ GLVertexAttribute >> initializeForVertexArray: aVertexArray location: anInteger 
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 3/14/2021 12:30'
+	#'squeak_changestamp' : 'stlu 3/14/2021 12:30'
 }
 GLVertexAttribute >> isEnabled [
 
@@ -187,7 +187,7 @@ GLVertexAttribute >> isEnabled [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 3/15/2021 17:28'
+	#'squeak_changestamp' : 'stlu 3/15/2021 17:28'
 }
 GLVertexAttribute >> location [
 
@@ -196,7 +196,7 @@ GLVertexAttribute >> location [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 3/17/2021 23:00'
+	#'squeak_changestamp' : 'stlu 3/17/2021 23:00'
 }
 GLVertexAttribute >> normalize [
 
@@ -205,7 +205,7 @@ GLVertexAttribute >> normalize [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 3/17/2021 23:00'
+	#'squeak_changestamp' : 'stlu 3/17/2021 23:00'
 }
 GLVertexAttribute >> numComponents [
 
@@ -214,7 +214,7 @@ GLVertexAttribute >> numComponents [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 3/17/2021 23:00'
+	#'squeak_changestamp' : 'stlu 3/17/2021 23:00'
 }
 GLVertexAttribute >> offset [
 
@@ -223,7 +223,7 @@ GLVertexAttribute >> offset [
 
 {
 	#category : #printing,
-	#timestamp : 'stlu 3/14/2021 12:42'
+	#'squeak_changestamp' : 'stlu 3/14/2021 12:42'
 }
 GLVertexAttribute >> printOn: aStream [
 
@@ -233,7 +233,7 @@ GLVertexAttribute >> printOn: aStream [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 3/14/2021 12:30'
+	#'squeak_changestamp' : 'stlu 3/14/2021 12:30'
 }
 GLVertexAttribute >> vertexArray [
 
@@ -242,7 +242,7 @@ GLVertexAttribute >> vertexArray [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 3/17/2021 12:37'
+	#'squeak_changestamp' : 'stlu 3/17/2021 12:37'
 }
 GLVertexAttribute >> vertexBufferBinding [
 

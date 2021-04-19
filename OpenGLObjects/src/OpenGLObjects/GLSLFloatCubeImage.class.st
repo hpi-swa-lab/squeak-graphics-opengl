@@ -2,12 +2,12 @@ Class {
 	#name : #GLSLFloatCubeImage,
 	#superclass : #GLSLImage,
 	#category : #'OpenGLObjects-Types',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/15/2020 13:03'
+	#'squeak_changestamp' : 'stlu 12/15/2020 13:03'
 }
 GLSLFloatCubeImage class >> declarators [
 
@@ -16,7 +16,7 @@ GLSLFloatCubeImage class >> declarators [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/15/2020 13:03'
+	#'squeak_changestamp' : 'stlu 12/15/2020 13:03'
 }
 GLSLFloatCubeImage class >> enum [
 
@@ -25,7 +25,7 @@ GLSLFloatCubeImage class >> enum [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/15/2020 13:03'
+	#'squeak_changestamp' : 'stlu 12/15/2020 13:03'
 }
 GLSLFloatCubeImage class >> enumName [
 
@@ -34,7 +34,7 @@ GLSLFloatCubeImage class >> enumName [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/15/2020 13:03'
+	#'squeak_changestamp' : 'stlu 12/15/2020 13:03'
 }
 GLSLFloatCubeImage class >> pixelType [
 
@@ -43,7 +43,7 @@ GLSLFloatCubeImage class >> pixelType [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/15/2020 13:03'
+	#'squeak_changestamp' : 'stlu 12/15/2020 13:03'
 }
 GLSLFloatCubeImage class >> squeakName [
 

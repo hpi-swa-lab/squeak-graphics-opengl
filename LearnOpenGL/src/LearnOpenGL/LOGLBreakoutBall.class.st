@@ -8,12 +8,12 @@ Class {
 		'isPassthrough'
 	],
 	#category : #'LearnOpenGL-Breakout',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 1/8/2021 10:37'
+	#'squeak_changestamp' : 'stlu 1/8/2021 10:37'
 }
 LOGLBreakoutBall class >> position: position radius: radius velocity: velocity sprite: sprite [
 
@@ -29,7 +29,7 @@ LOGLBreakoutBall class >> position: position radius: radius velocity: velocity s
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 1/9/2021 18:13'
+	#'squeak_changestamp' : 'stlu 1/9/2021 18:13'
 }
 LOGLBreakoutBall >> initialize [
 
@@ -41,7 +41,7 @@ LOGLBreakoutBall >> initialize [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/9/2021 18:14'
+	#'squeak_changestamp' : 'stlu 1/9/2021 18:14'
 }
 LOGLBreakoutBall >> isPassthrough [
 
@@ -50,7 +50,7 @@ LOGLBreakoutBall >> isPassthrough [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/9/2021 18:14'
+	#'squeak_changestamp' : 'stlu 1/9/2021 18:14'
 }
 LOGLBreakoutBall >> isPassthrough: anObject [
 
@@ -59,7 +59,7 @@ LOGLBreakoutBall >> isPassthrough: anObject [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/7/2021 18:02'
+	#'squeak_changestamp' : 'stlu 1/7/2021 18:02'
 }
 LOGLBreakoutBall >> isSticky [
 
@@ -68,7 +68,7 @@ LOGLBreakoutBall >> isSticky [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/7/2021 18:02'
+	#'squeak_changestamp' : 'stlu 1/7/2021 18:02'
 }
 LOGLBreakoutBall >> isSticky: anObject [
 
@@ -77,7 +77,7 @@ LOGLBreakoutBall >> isSticky: anObject [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/7/2021 18:02'
+	#'squeak_changestamp' : 'stlu 1/7/2021 18:02'
 }
 LOGLBreakoutBall >> isStuck [
 
@@ -86,7 +86,7 @@ LOGLBreakoutBall >> isStuck [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/7/2021 18:02'
+	#'squeak_changestamp' : 'stlu 1/7/2021 18:02'
 }
 LOGLBreakoutBall >> isStuck: anObject [
 
@@ -95,7 +95,7 @@ LOGLBreakoutBall >> isStuck: anObject [
 
 {
 	#category : #movement,
-	#timestamp : 'stlu 1/7/2021 18:51'
+	#'squeak_changestamp' : 'stlu 1/7/2021 18:51'
 }
 LOGLBreakoutBall >> move: elapsedSeconds width: windowWidth [
 
@@ -117,7 +117,7 @@ LOGLBreakoutBall >> move: elapsedSeconds width: windowWidth [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/7/2021 18:02'
+	#'squeak_changestamp' : 'stlu 1/7/2021 18:02'
 }
 LOGLBreakoutBall >> radius [
 
@@ -126,7 +126,7 @@ LOGLBreakoutBall >> radius [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/7/2021 18:02'
+	#'squeak_changestamp' : 'stlu 1/7/2021 18:02'
 }
 LOGLBreakoutBall >> radius: anObject [
 
@@ -135,7 +135,7 @@ LOGLBreakoutBall >> radius: anObject [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 1/9/2021 18:14'
+	#'squeak_changestamp' : 'stlu 1/9/2021 18:14'
 }
 LOGLBreakoutBall >> resetTo: aPosition velocity: aVelocity [
 

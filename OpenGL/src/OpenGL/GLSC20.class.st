@@ -2,12 +2,12 @@ Class {
 	#name : #GLSC20,
 	#superclass : #GLVersion,
 	#category : #'OpenGL-Versions',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 4/15/2021 14:01'
+	#'squeak_changestamp' : 'stlu 4/15/2021 14:01'
 }
 GLSC20 class >> api [
 
@@ -16,7 +16,7 @@ GLSC20 class >> api [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 4/15/2021 18:02'
+	#'squeak_changestamp' : 'stlu 4/15/2021 18:02'
 }
 GLSC20 class >> major [
 
@@ -25,7 +25,7 @@ GLSC20 class >> major [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 4/15/2021 18:01'
+	#'squeak_changestamp' : 'stlu 4/15/2021 18:01'
 }
 GLSC20 class >> minor [
 
@@ -34,7 +34,7 @@ GLSC20 class >> minor [
 
 {
 	#category : #printing,
-	#timestamp : 'stlu 4/17/2021 09:54'
+	#'squeak_changestamp' : 'stlu 4/17/2021 09:54'
 }
 GLSC20 >> apiString [
 
@@ -43,7 +43,7 @@ GLSC20 >> apiString [
 
 {
 	#category : #parameters,
-	#timestamp : 'stlu 4/15/2021 19:18'
+	#'squeak_changestamp' : 'stlu 4/15/2021 19:18'
 }
 GLSC20 >> getShadingLanguageVersion: aLibrary [
 
@@ -56,7 +56,7 @@ GLSC20 >> getShadingLanguageVersion: aLibrary [
 
 {
 	#category : #parameters,
-	#timestamp : 'stlu 4/15/2021 19:18'
+	#'squeak_changestamp' : 'stlu 4/15/2021 19:18'
 }
 GLSC20 >> getVersion: aLibrary [
 
@@ -69,7 +69,7 @@ GLSC20 >> getVersion: aLibrary [
 
 {
 	#category : #'external functions',
-	#timestamp : 'stlu 4/15/2021 19:21'
+	#'squeak_changestamp' : 'stlu 4/15/2021 19:21'
 }
 GLSC20 >> moduleName [
 

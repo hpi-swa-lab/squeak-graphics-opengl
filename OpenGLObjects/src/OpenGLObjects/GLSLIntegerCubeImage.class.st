@@ -2,12 +2,12 @@ Class {
 	#name : #GLSLIntegerCubeImage,
 	#superclass : #GLSLImage,
 	#category : #'OpenGLObjects-Types',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/15/2020 13:03'
+	#'squeak_changestamp' : 'stlu 12/15/2020 13:03'
 }
 GLSLIntegerCubeImage class >> declarators [
 
@@ -16,7 +16,7 @@ GLSLIntegerCubeImage class >> declarators [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/15/2020 13:03'
+	#'squeak_changestamp' : 'stlu 12/15/2020 13:03'
 }
 GLSLIntegerCubeImage class >> enum [
 
@@ -25,7 +25,7 @@ GLSLIntegerCubeImage class >> enum [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/15/2020 13:03'
+	#'squeak_changestamp' : 'stlu 12/15/2020 13:03'
 }
 GLSLIntegerCubeImage class >> enumName [
 
@@ -34,7 +34,7 @@ GLSLIntegerCubeImage class >> enumName [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/15/2020 13:03'
+	#'squeak_changestamp' : 'stlu 12/15/2020 13:03'
 }
 GLSLIntegerCubeImage class >> pixelType [
 
@@ -43,7 +43,7 @@ GLSLIntegerCubeImage class >> pixelType [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/15/2020 13:03'
+	#'squeak_changestamp' : 'stlu 12/15/2020 13:03'
 }
 GLSLIntegerCubeImage class >> squeakName [
 

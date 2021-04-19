@@ -2,7 +2,7 @@ Extension { #name : #GLSLSampler }
 
 {
 	#category : #'*OpenGLObjects-Generation',
-	#timestamp : 'stlu 12/15/2020 13:04'
+	#'squeak_changestamp' : 'stlu 12/15/2020 13:04'
 }
 GLSLSampler class >> generateClasses [
 

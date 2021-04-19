@@ -2,12 +2,12 @@ Class {
 	#name : #GLSLVector,
 	#superclass : #GLSLType,
 	#category : #'OpenGLObjects-Types',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/15/2020 13:06'
+	#'squeak_changestamp' : 'stlu 12/15/2020 13:06'
 }
 GLSLVector class >> componentType [
 
@@ -16,7 +16,7 @@ GLSLVector class >> componentType [
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 12/15/2020 13:13'
+	#'squeak_changestamp' : 'stlu 12/15/2020 13:13'
 }
 GLSLVector class >> componentType: type numComponents: size [
 	size = 1 ifTrue: [ ^ type ].
@@ -30,7 +30,7 @@ GLSLVector class >> componentType: type numComponents: size [
 
 {
 	#category : #'*OpenGLObjects-Generation',
-	#timestamp : 'stlu 12/15/2020 13:04'
+	#'squeak_changestamp' : 'stlu 12/15/2020 13:04'
 }
 GLSLVector class >> generateClasses [
 
@@ -52,7 +52,7 @@ GLSLVector class >> generateClasses [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/23/2020 13:21'
+	#'squeak_changestamp' : 'stlu 11/23/2020 13:21'
 }
 GLSLVector class >> numComponents [
 
@@ -61,7 +61,7 @@ GLSLVector class >> numComponents [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/15/2020 13:15'
+	#'squeak_changestamp' : 'stlu 12/15/2020 13:15'
 }
 GLSLVector >> componentType [
 
@@ -70,7 +70,7 @@ GLSLVector >> componentType [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 12/14/2020 18:23'
+	#'squeak_changestamp' : 'stlu 12/14/2020 18:23'
 }
 GLSLVector >> isVector [
 
@@ -79,7 +79,7 @@ GLSLVector >> isVector [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/23/2020 13:23'
+	#'squeak_changestamp' : 'stlu 11/23/2020 13:23'
 }
 GLSLVector >> numComponents [
 

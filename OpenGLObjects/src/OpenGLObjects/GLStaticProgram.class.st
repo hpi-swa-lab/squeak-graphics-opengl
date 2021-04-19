@@ -2,12 +2,12 @@ Class {
 	#name : #GLStaticProgram,
 	#superclass : #GLProgram,
 	#category : #'OpenGLObjects-Programs',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #'shader code',
-	#timestamp : 'stlu 11/13/2020 16:39'
+	#'squeak_changestamp' : 'stlu 11/13/2020 16:39'
 }
 GLStaticProgram class >> fragmentShader [
 
@@ -16,7 +16,7 @@ GLStaticProgram class >> fragmentShader [
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 12/3/2020 18:58'
+	#'squeak_changestamp' : 'stlu 12/3/2020 18:58'
 }
 GLStaticProgram class >> instance [
 
@@ -27,7 +27,7 @@ GLStaticProgram class >> instance [
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 12/8/2020 15:29'
+	#'squeak_changestamp' : 'stlu 12/8/2020 15:29'
 }
 GLStaticProgram class >> instanceOrNil [
 
@@ -38,7 +38,7 @@ GLStaticProgram class >> instanceOrNil [
 
 {
 	#category : #'shader code',
-	#timestamp : 'stlu 11/13/2020 16:39'
+	#'squeak_changestamp' : 'stlu 11/13/2020 16:39'
 }
 GLStaticProgram class >> vertexShader [
 
@@ -47,7 +47,7 @@ GLStaticProgram class >> vertexShader [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 4/17/2021 22:30'
+	#'squeak_changestamp' : 'stlu 4/17/2021 22:30'
 }
 GLStaticProgram >> initialize [
 
@@ -57,7 +57,7 @@ GLStaticProgram >> initialize [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 11/13/2020 15:50'
+	#'squeak_changestamp' : 'stlu 11/13/2020 15:50'
 }
 GLStaticProgram >> initializeShaders [
 
@@ -79,7 +79,7 @@ GLStaticProgram >> initializeShaders [
 
 {
 	#category : #initialization,
-	#timestamp : 'zagto 1/5/2021 17:33'
+	#'squeak_changestamp' : 'zagto 1/5/2021 17:33'
 }
 GLStaticProgram >> updateShaders [
 

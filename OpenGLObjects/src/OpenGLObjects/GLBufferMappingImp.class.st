@@ -2,12 +2,12 @@ Class {
 	#name : #GLBufferMappingImp,
 	#superclass : #GLObjectImp,
 	#category : #'OpenGLObjects-Buffers',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #'as yet unclassified',
-	#timestamp : 'stlu 12/28/2020 12:43'
+	#'squeak_changestamp' : 'stlu 12/28/2020 12:43'
 }
 GLBufferMappingImp >> mapBuffer: aBuffer access: accessEnum [
 
@@ -16,7 +16,7 @@ GLBufferMappingImp >> mapBuffer: aBuffer access: accessEnum [
 
 {
 	#category : #'as yet unclassified',
-	#timestamp : 'stlu 12/28/2020 12:44'
+	#'squeak_changestamp' : 'stlu 12/28/2020 12:44'
 }
 GLBufferMappingImp >> mapBuffer: aBuffer offset: byteOffset length: byteLength access: accessFlags [
 
@@ -25,7 +25,7 @@ GLBufferMappingImp >> mapBuffer: aBuffer offset: byteOffset length: byteLength a
 
 {
 	#category : #'as yet unclassified',
-	#timestamp : 'stlu 12/28/2020 12:45'
+	#'squeak_changestamp' : 'stlu 12/28/2020 12:45'
 }
 GLBufferMappingImp >> unmapBuffer: aBuffer [
 

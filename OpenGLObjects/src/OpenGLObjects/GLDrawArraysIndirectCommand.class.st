@@ -2,12 +2,12 @@ Class {
 	#name : #GLDrawArraysIndirectCommand,
 	#superclass : #ExternalStructure,
 	#category : #'OpenGLObjects-VertexArrays',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #'field definition',
-	#timestamp : 'stlu 3/14/2021 13:25'
+	#'squeak_changestamp' : 'stlu 3/14/2021 13:25'
 }
 GLDrawArraysIndirectCommand class >> fields [
 	"

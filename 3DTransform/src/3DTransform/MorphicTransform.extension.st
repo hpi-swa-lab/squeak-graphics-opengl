@@ -2,7 +2,7 @@ Extension { #name : #MorphicTransform }
 
 {
 	#category : #'*3DTransform',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 MorphicTransform >> asMatrix2x3 [
 
@@ -13,7 +13,7 @@ MorphicTransform >> asMatrix2x3 [
 
 {
 	#category : #'*3DTransform',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 MorphicTransform >> asMatrix4x4 [
 

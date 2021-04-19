@@ -7,12 +7,12 @@ Class {
 		'vertexArrayImp'
 	],
 	#category : #'OpenGL-Core',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 3/17/2021 23:04'
+	#'squeak_changestamp' : 'stlu 3/17/2021 23:04'
 }
 GLObjectImps class >> current [
 
@@ -21,7 +21,7 @@ GLObjectImps class >> current [
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 4/15/2021 12:24'
+	#'squeak_changestamp' : 'stlu 4/15/2021 12:24'
 }
 GLObjectImps class >> forVersion: aVersion [
 
@@ -32,7 +32,7 @@ GLObjectImps class >> forVersion: aVersion [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 4/15/2021 12:40'
+	#'squeak_changestamp' : 'stlu 4/15/2021 12:40'
 }
 GLObjectImps >> initializeForVersion: aVersion [
 
@@ -45,7 +45,7 @@ GLObjectImps >> initializeForVersion: aVersion [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/13/2020 14:59'
+	#'squeak_changestamp' : 'stlu 12/13/2020 14:59'
 }
 GLObjectImps >> programInterfaceQuery [
 
@@ -54,7 +54,7 @@ GLObjectImps >> programInterfaceQuery [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/13/2020 14:59'
+	#'squeak_changestamp' : 'stlu 12/13/2020 14:59'
 }
 GLObjectImps >> programInterfaceQuery: anObject [
 
@@ -63,7 +63,7 @@ GLObjectImps >> programInterfaceQuery: anObject [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/13/2020 17:10'
+	#'squeak_changestamp' : 'stlu 12/13/2020 17:10'
 }
 GLObjectImps >> uniformSetter [
 
@@ -72,7 +72,7 @@ GLObjectImps >> uniformSetter [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/13/2020 17:10'
+	#'squeak_changestamp' : 'stlu 12/13/2020 17:10'
 }
 GLObjectImps >> uniformSetter: anObject [
 
@@ -81,7 +81,7 @@ GLObjectImps >> uniformSetter: anObject [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 3/17/2021 12:34'
+	#'squeak_changestamp' : 'stlu 3/17/2021 12:34'
 }
 GLObjectImps >> vertexArrayImp [
 
@@ -90,7 +90,7 @@ GLObjectImps >> vertexArrayImp [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 3/17/2021 12:34'
+	#'squeak_changestamp' : 'stlu 3/17/2021 12:34'
 }
 GLObjectImps >> vertexArrayImp: anObject [
 

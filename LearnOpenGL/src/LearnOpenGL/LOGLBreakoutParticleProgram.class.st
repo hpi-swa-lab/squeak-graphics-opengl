@@ -2,12 +2,12 @@ Class {
 	#name : #LOGLBreakoutParticleProgram,
 	#superclass : #GLStaticProgram,
 	#category : #'LearnOpenGL-Breakout',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #'shader code',
-	#timestamp : 'stlu 1/8/2021 15:01'
+	#'squeak_changestamp' : 'stlu 1/8/2021 15:01'
 }
 LOGLBreakoutParticleProgram class >> fragmentShader [
 
@@ -26,7 +26,7 @@ void main()
 
 {
 	#category : #'shader code',
-	#timestamp : 'stlu 1/8/2021 12:20'
+	#'squeak_changestamp' : 'stlu 1/8/2021 12:20'
 }
 LOGLBreakoutParticleProgram class >> vertexShader [
 

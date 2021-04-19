@@ -2,12 +2,12 @@ Class {
 	#name : #GLProgramInterfaceQueryImp,
 	#superclass : #GLObjectImp,
 	#category : #'OpenGLObjects-Programs',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #inputs,
-	#timestamp : 'stlu 12/14/2020 13:04'
+	#'squeak_changestamp' : 'stlu 12/14/2020 13:04'
 }
 GLProgramInterfaceQueryImp >> getInputs: aProgram [
 
@@ -16,7 +16,7 @@ GLProgramInterfaceQueryImp >> getInputs: aProgram [
 
 {
 	#category : #uniforms,
-	#timestamp : 'stlu 12/14/2020 13:04'
+	#'squeak_changestamp' : 'stlu 12/14/2020 13:04'
 }
 GLProgramInterfaceQueryImp >> getUniforms: aProgram [
 

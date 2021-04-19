@@ -2,12 +2,12 @@ Class {
 	#name : #GLSLFloatBufferImage,
 	#superclass : #GLSLImage,
 	#category : #'OpenGLObjects-Types',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/15/2020 13:03'
+	#'squeak_changestamp' : 'stlu 12/15/2020 13:03'
 }
 GLSLFloatBufferImage class >> declarators [
 
@@ -16,7 +16,7 @@ GLSLFloatBufferImage class >> declarators [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/15/2020 13:03'
+	#'squeak_changestamp' : 'stlu 12/15/2020 13:03'
 }
 GLSLFloatBufferImage class >> enum [
 
@@ -25,7 +25,7 @@ GLSLFloatBufferImage class >> enum [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/15/2020 13:03'
+	#'squeak_changestamp' : 'stlu 12/15/2020 13:03'
 }
 GLSLFloatBufferImage class >> enumName [
 
@@ -34,7 +34,7 @@ GLSLFloatBufferImage class >> enumName [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/15/2020 13:03'
+	#'squeak_changestamp' : 'stlu 12/15/2020 13:03'
 }
 GLSLFloatBufferImage class >> pixelType [
 
@@ -43,7 +43,7 @@ GLSLFloatBufferImage class >> pixelType [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/15/2020 13:03'
+	#'squeak_changestamp' : 'stlu 12/15/2020 13:03'
 }
 GLSLFloatBufferImage class >> squeakName [
 

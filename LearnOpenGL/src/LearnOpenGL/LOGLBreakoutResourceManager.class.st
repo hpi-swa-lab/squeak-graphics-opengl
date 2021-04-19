@@ -5,12 +5,12 @@ Class {
 		'textures'
 	],
 	#category : #'LearnOpenGL-Breakout',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #retrieval,
-	#timestamp : 'stlu 1/7/2021 15:37'
+	#'squeak_changestamp' : 'stlu 1/7/2021 15:37'
 }
 LOGLBreakoutResourceManager class >> getTexture: name [
 
@@ -19,7 +19,7 @@ LOGLBreakoutResourceManager class >> getTexture: name [
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 1/7/2021 16:00'
+	#'squeak_changestamp' : 'stlu 1/7/2021 16:00'
 }
 LOGLBreakoutResourceManager class >> instance [
 
@@ -28,7 +28,7 @@ LOGLBreakoutResourceManager class >> instance [
 
 {
 	#category : #loading,
-	#timestamp : 'stlu 1/7/2021 15:37'
+	#'squeak_changestamp' : 'stlu 1/7/2021 15:37'
 }
 LOGLBreakoutResourceManager class >> loadTexture: aForm as: name [
 
@@ -37,7 +37,7 @@ LOGLBreakoutResourceManager class >> loadTexture: aForm as: name [
 
 {
 	#category : #loading,
-	#timestamp : 'stlu 1/7/2021 15:33'
+	#'squeak_changestamp' : 'stlu 1/7/2021 15:33'
 }
 LOGLBreakoutResourceManager >> getTexture: name [
 
@@ -46,7 +46,7 @@ LOGLBreakoutResourceManager >> getTexture: name [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 1/7/2021 15:23'
+	#'squeak_changestamp' : 'stlu 1/7/2021 15:23'
 }
 LOGLBreakoutResourceManager >> initialize [
 
@@ -56,7 +56,7 @@ LOGLBreakoutResourceManager >> initialize [
 
 {
 	#category : #loading,
-	#timestamp : 'stlu 1/7/2021 15:29'
+	#'squeak_changestamp' : 'stlu 1/7/2021 15:29'
 }
 LOGLBreakoutResourceManager >> loadTexture: aForm as: name [
 

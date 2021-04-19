@@ -2,12 +2,12 @@ Class {
 	#name : #GLSLBoolean,
 	#superclass : #GLSLScalar,
 	#category : #'OpenGLObjects-Types',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/14/2020 16:49'
+	#'squeak_changestamp' : 'stlu 12/14/2020 16:49'
 }
 GLSLBoolean class >> commandInitials [
 
@@ -16,7 +16,7 @@ GLSLBoolean class >> commandInitials [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/14/2020 16:49'
+	#'squeak_changestamp' : 'stlu 12/14/2020 16:49'
 }
 GLSLBoolean class >> declarators [
 
@@ -25,7 +25,7 @@ GLSLBoolean class >> declarators [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/14/2020 16:49'
+	#'squeak_changestamp' : 'stlu 12/14/2020 16:49'
 }
 GLSLBoolean class >> enum [
 
@@ -34,7 +34,7 @@ GLSLBoolean class >> enum [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/14/2020 16:49'
+	#'squeak_changestamp' : 'stlu 12/14/2020 16:49'
 }
 GLSLBoolean class >> enumName [
 
@@ -43,7 +43,7 @@ GLSLBoolean class >> enumName [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/14/2020 16:49'
+	#'squeak_changestamp' : 'stlu 12/14/2020 16:49'
 }
 GLSLBoolean class >> glslInitials [
 
@@ -52,7 +52,7 @@ GLSLBoolean class >> glslInitials [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/14/2020 16:49'
+	#'squeak_changestamp' : 'stlu 12/14/2020 16:49'
 }
 GLSLBoolean class >> squeakArrayClass [
 
@@ -61,7 +61,7 @@ GLSLBoolean class >> squeakArrayClass [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/14/2020 16:49'
+	#'squeak_changestamp' : 'stlu 12/14/2020 16:49'
 }
 GLSLBoolean class >> squeakName [
 
@@ -70,7 +70,7 @@ GLSLBoolean class >> squeakName [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/14/2020 16:57'
+	#'squeak_changestamp' : 'stlu 12/14/2020 16:57'
 }
 GLSLBoolean >> actualComponentType [
 
@@ -79,7 +79,7 @@ GLSLBoolean >> actualComponentType [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 12/14/2020 18:28'
+	#'squeak_changestamp' : 'stlu 12/14/2020 18:28'
 }
 GLSLBoolean >> isBoolean [
 
@@ -88,7 +88,7 @@ GLSLBoolean >> isBoolean [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 12/14/2020 18:55'
+	#'squeak_changestamp' : 'stlu 12/14/2020 18:55'
 }
 GLSLBoolean >> isScalar [
 
@@ -97,7 +97,7 @@ GLSLBoolean >> isScalar [
 
 {
 	#category : #'program resources',
-	#timestamp : 'stlu 11/23/2020 17:09'
+	#'squeak_changestamp' : 'stlu 11/23/2020 17:09'
 }
 GLSLBoolean >> setUniform: aUniform toArray: aRawBitsArray count: numElements [
 
@@ -106,7 +106,7 @@ GLSLBoolean >> setUniform: aUniform toArray: aRawBitsArray count: numElements [
 
 {
 	#category : #'program resources',
-	#timestamp : 'stlu 1/8/2021 18:42'
+	#'squeak_changestamp' : 'stlu 1/8/2021 18:42'
 }
 GLSLBoolean >> setUniform: aUniform toObject: anObject [
 

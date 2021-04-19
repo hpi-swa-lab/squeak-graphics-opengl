@@ -16,12 +16,12 @@ Class {
 		'GLConstants'
 	],
 	#category : #'OpenGL-API',
-	#commentStamp : 'stlu 4/14/2021 14:40'
+	#'squeak_changestamp' : 'stlu 4/14/2021 14:40'
 }
 
 {
 	#category : #examples,
-	#timestamp : 'stlu 4/16/2021 14:34'
+	#'squeak_changestamp' : 'stlu 4/16/2021 14:34'
 }
 GLLibrary class >> example1 [ "self example1"
 	"A minimal OpenGL example.
@@ -46,7 +46,7 @@ GLLibrary class >> example1 [ "self example1"
 
 {
 	#category : #examples,
-	#timestamp : 'stlu 4/17/2021 11:19'
+	#'squeak_changestamp' : 'stlu 4/17/2021 11:19'
 }
 GLLibrary class >> example2 [ "self example2"
 	"A very simple OpenGL 1.0 example showing a rotating red rectangle on white background.
@@ -78,7 +78,7 @@ GLLibrary class >> example2 [ "self example2"
 
 {
 	#category : #'class initialization',
-	#timestamp : 'stlu 4/15/2021 11:18'
+	#'squeak_changestamp' : 'stlu 4/15/2021 11:18'
 }
 GLLibrary class >> initialize [
 
@@ -88,7 +88,7 @@ GLLibrary class >> initialize [
 
 {
 	#category : #'class initialization',
-	#timestamp : 'stlu 4/14/2021 18:26'
+	#'squeak_changestamp' : 'stlu 4/14/2021 18:26'
 }
 GLLibrary class >> initializeErrorMessages [
 
@@ -108,7 +108,7 @@ GLLibrary class >> initializeErrorMessages [
 
 {
 	#category : #'class initialization',
-	#timestamp : 'stlu 4/15/2021 10:56'
+	#'squeak_changestamp' : 'stlu 4/15/2021 10:56'
 }
 GLLibrary class >> initializeGL [
 
@@ -118,7 +118,7 @@ GLLibrary class >> initializeGL [
 
 {
 	#category : #'context state',
-	#timestamp : 'stlu 4/15/2021 12:02'
+	#'squeak_changestamp' : 'stlu 4/15/2021 12:02'
 }
 GLLibrary >> at: aKey [
 
@@ -128,7 +128,7 @@ GLLibrary >> at: aKey [
 
 {
 	#category : #'context state',
-	#timestamp : 'stlu 4/15/2021 12:02'
+	#'squeak_changestamp' : 'stlu 4/15/2021 12:02'
 }
 GLLibrary >> at: aKey ifAbsentPut: aBlock [
 
@@ -138,7 +138,7 @@ GLLibrary >> at: aKey ifAbsentPut: aBlock [
 
 {
 	#category : #'context state',
-	#timestamp : 'stlu 4/15/2021 12:02'
+	#'squeak_changestamp' : 'stlu 4/15/2021 12:02'
 }
 GLLibrary >> at: aKey put: aValue [
 
@@ -148,7 +148,7 @@ GLLibrary >> at: aKey put: aValue [
 
 {
 	#category : #'error handling',
-	#timestamp : 'stlu 4/14/2021 18:24'
+	#'squeak_changestamp' : 'stlu 4/14/2021 18:24'
 }
 GLLibrary >> checkForError [
 	"Check for any OpenGL errors, and raise an Error if any exist."
@@ -160,7 +160,7 @@ GLLibrary >> checkForError [
 
 {
 	#category : #'convencience api',
-	#timestamp : 'stlu 4/15/2021 12:05'
+	#'squeak_changestamp' : 'stlu 4/15/2021 12:05'
 }
 GLLibrary >> clearColor: aColor [
 
@@ -173,7 +173,7 @@ GLLibrary >> clearColor: aColor [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 4/15/2021 14:18'
+	#'squeak_changestamp' : 'stlu 4/15/2021 14:18'
 }
 GLLibrary >> context [
 
@@ -182,7 +182,7 @@ GLLibrary >> context [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 4/15/2021 22:01'
+	#'squeak_changestamp' : 'stlu 4/15/2021 22:01'
 }
 GLLibrary >> context: aContext [
 
@@ -191,7 +191,7 @@ GLLibrary >> context: aContext [
 
 {
 	#category : #'context handling',
-	#timestamp : 'stlu 4/16/2021 09:51'
+	#'squeak_changestamp' : 'stlu 4/16/2021 09:51'
 }
 GLLibrary >> destroy [
 
@@ -201,7 +201,7 @@ GLLibrary >> destroy [
 
 {
 	#category : #'context handling',
-	#timestamp : 'stlu 4/16/2021 09:51'
+	#'squeak_changestamp' : 'stlu 4/16/2021 09:51'
 }
 GLLibrary >> endFrame [
 
@@ -211,7 +211,7 @@ GLLibrary >> endFrame [
 
 {
 	#category : #'convencience api',
-	#timestamp : 'stlu 4/15/2021 19:11'
+	#'squeak_changestamp' : 'stlu 4/15/2021 19:11'
 }
 GLLibrary >> extensions [
 
@@ -220,7 +220,7 @@ GLLibrary >> extensions [
 
 {
 	#category : #'convencience api',
-	#timestamp : 'stlu 4/15/2021 18:24'
+	#'squeak_changestamp' : 'stlu 4/15/2021 18:24'
 }
 GLLibrary >> extensionsString [
 
@@ -229,7 +229,7 @@ GLLibrary >> extensionsString [
 
 {
 	#category : #'state access',
-	#timestamp : 'stlu 4/15/2021 11:54'
+	#'squeak_changestamp' : 'stlu 4/15/2021 11:54'
 }
 GLLibrary >> getIntegerParameter: enum [
 
@@ -239,7 +239,7 @@ GLLibrary >> getIntegerParameter: enum [
 
 {
 	#category : #'state access',
-	#timestamp : 'stlu 4/15/2021 11:54'
+	#'squeak_changestamp' : 'stlu 4/15/2021 11:54'
 }
 GLLibrary >> getIntegerParameters: enum size: numElements [
 
@@ -249,7 +249,7 @@ GLLibrary >> getIntegerParameters: enum size: numElements [
 
 {
 	#category : #'state access',
-	#timestamp : 'stlu 4/15/2021 11:55'
+	#'squeak_changestamp' : 'stlu 4/15/2021 11:55'
 }
 GLLibrary >> getStringParameter: enum [
 
@@ -259,7 +259,7 @@ GLLibrary >> getStringParameter: enum [
 
 {
 	#category : #'state access',
-	#timestamp : 'stlu 4/15/2021 11:56'
+	#'squeak_changestamp' : 'stlu 4/15/2021 11:56'
 }
 GLLibrary >> getStringParameter: enum at: index [
 
@@ -269,7 +269,7 @@ GLLibrary >> getStringParameter: enum at: index [
 
 {
 	#category : #'state access',
-	#timestamp : 'stlu 4/15/2021 11:53'
+	#'squeak_changestamp' : 'stlu 4/15/2021 11:53'
 }
 GLLibrary >> integerStateNamed: enum [
 
@@ -281,7 +281,7 @@ GLLibrary >> integerStateNamed: enum [
 
 {
 	#category : #'state access',
-	#timestamp : 'stlu 4/15/2021 11:52'
+	#'squeak_changestamp' : 'stlu 4/15/2021 11:52'
 }
 GLLibrary >> integerStateNamed: enum ofSize: numElements [
 
@@ -293,7 +293,7 @@ GLLibrary >> integerStateNamed: enum ofSize: numElements [
 
 {
 	#category : #activation,
-	#timestamp : 'stlu 4/16/2021 09:50'
+	#'squeak_changestamp' : 'stlu 4/16/2021 09:50'
 }
 GLLibrary >> makeCurrentDuring: aBlock [
 
@@ -321,7 +321,7 @@ GLLibrary >> makeCurrentDuring: aBlock [
 
 {
 	#category : #limits,
-	#timestamp : 'stlu 4/15/2021 18:37'
+	#'squeak_changestamp' : 'stlu 4/15/2021 18:37'
 }
 GLLibrary >> maxArrayTextureLayers [
 	"Maximum number of layers allowed in an array texture. At least 256."
@@ -330,7 +330,7 @@ GLLibrary >> maxArrayTextureLayers [
 
 {
 	#category : #limits,
-	#timestamp : 'stlu 4/15/2021 18:37'
+	#'squeak_changestamp' : 'stlu 4/15/2021 18:37'
 }
 GLLibrary >> maxCombinedTextureImageUnits [
 	"Maximum number of texture image units. At least 80."
@@ -339,7 +339,7 @@ GLLibrary >> maxCombinedTextureImageUnits [
 
 {
 	#category : #limits,
-	#timestamp : 'stlu 4/15/2021 18:37'
+	#'squeak_changestamp' : 'stlu 4/15/2021 18:37'
 }
 GLLibrary >> maxTextureSize [
 	"Rough estimate of the largest texture that the GL can handle. At least 1024."
@@ -348,7 +348,7 @@ GLLibrary >> maxTextureSize [
 
 {
 	#category : #limits,
-	#timestamp : 'stlu 4/15/2021 18:38'
+	#'squeak_changestamp' : 'stlu 4/15/2021 18:38'
 }
 GLLibrary >> maxUniformBlockSize [
 	"Maximum size in basic machine units of a uniform block. At least 16384."
@@ -357,7 +357,7 @@ GLLibrary >> maxUniformBlockSize [
 
 {
 	#category : #limits,
-	#timestamp : 'stlu 4/15/2021 18:38'
+	#'squeak_changestamp' : 'stlu 4/15/2021 18:38'
 }
 GLLibrary >> maxUniformBufferBindings [
 	"Maximum number of uniform buffer binding points on the context. At least 36."
@@ -366,7 +366,7 @@ GLLibrary >> maxUniformBufferBindings [
 
 {
 	#category : #limits,
-	#timestamp : 'stlu 4/15/2021 18:39'
+	#'squeak_changestamp' : 'stlu 4/15/2021 18:39'
 }
 GLLibrary >> maxUniformLocations [
 	"Maximum number of explicitly assignable uniform locations. At least 1024."
@@ -375,7 +375,7 @@ GLLibrary >> maxUniformLocations [
 
 {
 	#category : #limits,
-	#timestamp : 'stlu 4/15/2021 18:39'
+	#'squeak_changestamp' : 'stlu 4/15/2021 18:39'
 }
 GLLibrary >> maxVaryingComponents [
 	"Number of components for varying variables. At least 60."
@@ -384,7 +384,7 @@ GLLibrary >> maxVaryingComponents [
 
 {
 	#category : #limits,
-	#timestamp : 'stlu 4/15/2021 18:38'
+	#'squeak_changestamp' : 'stlu 4/15/2021 18:38'
 }
 GLLibrary >> maxVaryingVectors [
 	"Number of 4-vectors for varying variables. Equivalent to #maxVaryingComponents / 4. At least 15."
@@ -393,7 +393,7 @@ GLLibrary >> maxVaryingVectors [
 
 {
 	#category : #limits,
-	#timestamp : 'stlu 4/15/2021 18:39'
+	#'squeak_changestamp' : 'stlu 4/15/2021 18:39'
 }
 GLLibrary >> maxVertexAttributeBindings [
 	"Maximum number of vertex buffers that may be bound."
@@ -402,7 +402,7 @@ GLLibrary >> maxVertexAttributeBindings [
 
 {
 	#category : #limits,
-	#timestamp : 'stlu 4/15/2021 19:08'
+	#'squeak_changestamp' : 'stlu 4/15/2021 19:08'
 }
 GLLibrary >> maxVertexAttributes [
 	"Maximum number of 4-component generic vertex attributes accessible to a vertex shader. At least 16."
@@ -412,7 +412,7 @@ GLLibrary >> maxVertexAttributes [
 
 {
 	#category : #'error handling',
-	#timestamp : 'stlu 4/14/2021 18:26'
+	#'squeak_changestamp' : 'stlu 4/14/2021 18:26'
 }
 GLLibrary >> messageForErrorCode: anInteger [
 
@@ -423,7 +423,7 @@ GLLibrary >> messageForErrorCode: anInteger [
 
 {
 	#category : #'context handling',
-	#timestamp : 'stlu 4/15/2021 11:34'
+	#'squeak_changestamp' : 'stlu 4/15/2021 11:34'
 }
 GLLibrary >> newFrameDo: aBlock. [
 
@@ -439,7 +439,7 @@ GLLibrary >> newFrameDo: aBlock. [
 
 {
 	#category : #'convencience api',
-	#timestamp : 'stlu 4/15/2021 18:23'
+	#'squeak_changestamp' : 'stlu 4/15/2021 18:23'
 }
 GLLibrary >> numExtensions [
 
@@ -448,7 +448,7 @@ GLLibrary >> numExtensions [
 
 {
 	#category : #'convencience api',
-	#timestamp : 'stlu 4/16/2021 14:12'
+	#'squeak_changestamp' : 'stlu 4/16/2021 14:12'
 }
 GLLibrary >> profile [
 
@@ -457,7 +457,7 @@ GLLibrary >> profile [
 
 {
 	#category : #'context state',
-	#timestamp : 'stlu 4/16/2021 09:50'
+	#'squeak_changestamp' : 'stlu 4/16/2021 09:50'
 }
 GLLibrary >> programs [
 
@@ -467,7 +467,7 @@ GLLibrary >> programs [
 
 {
 	#category : #'convencience api',
-	#timestamp : 'stlu 4/15/2021 18:32'
+	#'squeak_changestamp' : 'stlu 4/15/2021 18:32'
 }
 GLLibrary >> rendererString [
 
@@ -476,7 +476,7 @@ GLLibrary >> rendererString [
 
 {
 	#category : #'convencience api',
-	#timestamp : 'stlu 4/15/2021 19:21'
+	#'squeak_changestamp' : 'stlu 4/15/2021 19:21'
 }
 GLLibrary >> shadingLanguageVersion [
 
@@ -485,7 +485,7 @@ GLLibrary >> shadingLanguageVersion [
 
 {
 	#category : #'convencience api',
-	#timestamp : 'stlu 4/15/2021 18:33'
+	#'squeak_changestamp' : 'stlu 4/15/2021 18:33'
 }
 GLLibrary >> shadingLanguageVersionString [
 
@@ -494,7 +494,7 @@ GLLibrary >> shadingLanguageVersionString [
 
 {
 	#category : #'context handling',
-	#timestamp : 'stlu 4/16/2021 09:51'
+	#'squeak_changestamp' : 'stlu 4/16/2021 09:51'
 }
 GLLibrary >> shouldClose [
 
@@ -504,7 +504,7 @@ GLLibrary >> shouldClose [
 
 {
 	#category : #'state access',
-	#timestamp : 'stlu 4/15/2021 11:51'
+	#'squeak_changestamp' : 'stlu 4/15/2021 11:51'
 }
 GLLibrary >> stringStateNamed: enum [
 
@@ -516,7 +516,7 @@ GLLibrary >> stringStateNamed: enum [
 
 {
 	#category : #'state access',
-	#timestamp : 'stlu 4/15/2021 11:51'
+	#'squeak_changestamp' : 'stlu 4/15/2021 11:51'
 }
 GLLibrary >> stringStateNamed: enum at: index [
 
@@ -528,7 +528,7 @@ GLLibrary >> stringStateNamed: enum at: index [
 
 {
 	#category : #'context handling',
-	#timestamp : 'stlu 4/16/2021 09:51'
+	#'squeak_changestamp' : 'stlu 4/16/2021 09:51'
 }
 GLLibrary >> swapBuffers [
 
@@ -538,7 +538,7 @@ GLLibrary >> swapBuffers [
 
 {
 	#category : #'context state',
-	#timestamp : 'stlu 4/16/2021 09:51'
+	#'squeak_changestamp' : 'stlu 4/16/2021 09:51'
 }
 GLLibrary >> userData [
 
@@ -547,7 +547,7 @@ GLLibrary >> userData [
 
 {
 	#category : #'convencience api',
-	#timestamp : 'stlu 4/15/2021 18:34'
+	#'squeak_changestamp' : 'stlu 4/15/2021 18:34'
 }
 GLLibrary >> vendorString [
 
@@ -556,7 +556,7 @@ GLLibrary >> vendorString [
 
 {
 	#category : #'convencience api',
-	#timestamp : 'stlu 4/15/2021 19:22'
+	#'squeak_changestamp' : 'stlu 4/15/2021 19:22'
 }
 GLLibrary >> version [
 
@@ -565,7 +565,7 @@ GLLibrary >> version [
 
 {
 	#category : #'convencience api',
-	#timestamp : 'stlu 4/15/2021 18:34'
+	#'squeak_changestamp' : 'stlu 4/15/2021 18:34'
 }
 GLLibrary >> versionString [
 
@@ -574,7 +574,7 @@ GLLibrary >> versionString [
 
 {
 	#category : #'convencience api',
-	#timestamp : 'stlu 4/15/2021 12:08'
+	#'squeak_changestamp' : 'stlu 4/15/2021 12:08'
 }
 GLLibrary >> viewport [
 
@@ -587,7 +587,7 @@ GLLibrary >> viewport [
 
 {
 	#category : #'convencience api',
-	#timestamp : 'stlu 4/15/2021 12:05'
+	#'squeak_changestamp' : 'stlu 4/15/2021 12:05'
 }
 GLLibrary >> viewport: aRectangle [
 
@@ -600,7 +600,7 @@ GLLibrary >> viewport: aRectangle [
 
 {
 	#category : #'convencience api',
-	#timestamp : 'stlu 4/15/2021 12:07'
+	#'squeak_changestamp' : 'stlu 4/15/2021 12:07'
 }
 GLLibrary >> viewport: aRectangle during: aBlock [
 
@@ -613,7 +613,7 @@ GLLibrary >> viewport: aRectangle during: aBlock [
 
 {
 	#category : #converting,
-	#timestamp : 'stlu 4/16/2021 15:23'
+	#'squeak_changestamp' : 'stlu 4/16/2021 15:23'
 }
 GLLibrary >> withErrorChecking [
 
@@ -622,7 +622,7 @@ GLLibrary >> withErrorChecking [
 
 {
 	#category : #converting,
-	#timestamp : 'stlu 4/17/2021 10:40'
+	#'squeak_changestamp' : 'stlu 4/17/2021 10:40'
 }
 GLLibrary >> withVersionChecking [
 
@@ -631,7 +631,7 @@ GLLibrary >> withVersionChecking [
 
 {
 	#category : #converting,
-	#timestamp : 'stlu 4/17/2021 10:42'
+	#'squeak_changestamp' : 'stlu 4/17/2021 10:42'
 }
 GLLibrary >> withVersionChecking: targetVersion [
 
@@ -642,7 +642,7 @@ GLLibrary >> withVersionChecking: targetVersion [
 
 {
 	#category : #converting,
-	#timestamp : 'stlu 4/17/2021 10:42'
+	#'squeak_changestamp' : 'stlu 4/17/2021 10:42'
 }
 GLLibrary >> withVersionChecking: targetVersion extensions: collectionOfSymbols [
 

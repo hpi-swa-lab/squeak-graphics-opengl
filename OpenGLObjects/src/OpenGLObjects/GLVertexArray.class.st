@@ -7,12 +7,12 @@ Class {
 		'vertexAttributes'
 	],
 	#category : #'OpenGLObjects-VertexArrays',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #allocation,
-	#timestamp : 'stlu 11/30/2020 19:49'
+	#'squeak_changestamp' : 'stlu 11/30/2020 19:49'
 }
 GLVertexArray class >> allocate: n in: anIntegerArray [
 
@@ -21,7 +21,7 @@ GLVertexArray class >> allocate: n in: anIntegerArray [
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 3/14/2021 22:12'
+	#'squeak_changestamp' : 'stlu 3/14/2021 22:12'
 }
 GLVertexArray class >> bound [
 
@@ -30,7 +30,7 @@ GLVertexArray class >> bound [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 3/17/2021 11:30'
+	#'squeak_changestamp' : 'stlu 3/17/2021 11:30'
 }
 GLVertexArray class >> maxNumVertexAttributes [
 
@@ -40,7 +40,7 @@ GLVertexArray class >> maxNumVertexAttributes [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 3/17/2021 11:30'
+	#'squeak_changestamp' : 'stlu 3/17/2021 11:30'
 }
 GLVertexArray class >> maxNumVertexBufferBindings [
 
@@ -50,7 +50,7 @@ GLVertexArray class >> maxNumVertexBufferBindings [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 3/17/2021 11:30'
+	#'squeak_changestamp' : 'stlu 3/17/2021 11:30'
 }
 GLVertexArray class >> maxVertexAttributeOffset [
 
@@ -60,7 +60,7 @@ GLVertexArray class >> maxVertexAttributeOffset [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 3/17/2021 11:30'
+	#'squeak_changestamp' : 'stlu 3/17/2021 11:30'
 }
 GLVertexArray class >> maxVertexAttributeStride [
 
@@ -70,7 +70,7 @@ GLVertexArray class >> maxVertexAttributeStride [
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 3/16/2021 16:17'
+	#'squeak_changestamp' : 'stlu 3/16/2021 16:17'
 }
 GLVertexArray class >> unbind [
 
@@ -81,7 +81,7 @@ GLVertexArray class >> unbind [
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 3/14/2021 22:11'
+	#'squeak_changestamp' : 'stlu 3/14/2021 22:11'
 }
 GLVertexArray >> bind [
 
@@ -91,7 +91,7 @@ GLVertexArray >> bind [
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 3/14/2021 22:10'
+	#'squeak_changestamp' : 'stlu 3/14/2021 22:10'
 }
 GLVertexArray >> boundDuring: aBlock [
 
@@ -106,7 +106,7 @@ GLVertexArray >> boundDuring: aBlock [
 
 {
 	#category : #'initialize-release',
-	#timestamp : 'stlu 11/3/2020 15:41'
+	#'squeak_changestamp' : 'stlu 11/3/2020 15:41'
 }
 GLVertexArray >> delete [
 
@@ -115,7 +115,7 @@ GLVertexArray >> delete [
 
 {
 	#category : #rendering,
-	#timestamp : 'stlu 3/14/2021 16:58'
+	#'squeak_changestamp' : 'stlu 3/14/2021 16:58'
 }
 GLVertexArray >> drawArrays: primitiveTypeEnum command: aDrawArraysIndirectCommand [
 
@@ -127,7 +127,7 @@ GLVertexArray >> drawArrays: primitiveTypeEnum command: aDrawArraysIndirectComma
 
 {
 	#category : #rendering,
-	#timestamp : 'stlu 3/14/2021 17:13'
+	#'squeak_changestamp' : 'stlu 3/14/2021 17:13'
 }
 GLVertexArray >> drawArrays: primitiveTypeEnum count: numVertices [
 
@@ -139,7 +139,7 @@ GLVertexArray >> drawArrays: primitiveTypeEnum count: numVertices [
 
 {
 	#category : #rendering,
-	#timestamp : 'stlu 3/14/2021 17:13'
+	#'squeak_changestamp' : 'stlu 3/14/2021 17:13'
 }
 GLVertexArray >> drawArrays: primitiveTypeEnum count: numVertices numInstances: numInstances [
 
@@ -152,7 +152,7 @@ GLVertexArray >> drawArrays: primitiveTypeEnum count: numVertices numInstances: 
 
 {
 	#category : #rendering,
-	#timestamp : 'stlu 3/14/2021 17:12'
+	#'squeak_changestamp' : 'stlu 3/14/2021 17:12'
 }
 GLVertexArray >> drawArrays: primitiveTypeEnum count: numVertices numInstances: numInstances baseInstance: baseInstance [
 
@@ -166,7 +166,7 @@ GLVertexArray >> drawArrays: primitiveTypeEnum count: numVertices numInstances: 
 
 {
 	#category : #rendering,
-	#timestamp : 'stlu 3/14/2021 17:01'
+	#'squeak_changestamp' : 'stlu 3/14/2021 17:01'
 }
 GLVertexArray >> drawArrays: primitiveTypeEnum count: numVertices startingAt: startingIndex [
 
@@ -179,7 +179,7 @@ GLVertexArray >> drawArrays: primitiveTypeEnum count: numVertices startingAt: st
 
 {
 	#category : #rendering,
-	#timestamp : 'stlu 3/14/2021 17:02'
+	#'squeak_changestamp' : 'stlu 3/14/2021 17:02'
 }
 GLVertexArray >> drawArrays: primitiveTypeEnum count: numVertices startingAt: startingIndex numInstances: numInstances [
 
@@ -193,7 +193,7 @@ GLVertexArray >> drawArrays: primitiveTypeEnum count: numVertices startingAt: st
 
 {
 	#category : #rendering,
-	#timestamp : 'stlu 3/14/2021 17:02'
+	#'squeak_changestamp' : 'stlu 3/14/2021 17:02'
 }
 GLVertexArray >> drawArrays: primitiveTypeEnum count: numVertices startingAt: startingIndex numInstances: numInstances baseInstance: baseInstance [
 
@@ -208,7 +208,7 @@ GLVertexArray >> drawArrays: primitiveTypeEnum count: numVertices startingAt: st
 
 {
 	#category : #'rendering - indexed',
-	#timestamp : 'stlu 3/14/2021 17:59'
+	#'squeak_changestamp' : 'stlu 3/14/2021 17:59'
 }
 GLVertexArray >> drawElements: primitiveTypeEnum count: numVertices startingAt: elementBufferOffset type: indexTypeEnum [
 	"indexTypeEnum must be one of UNSIGNED_BYTE, UNSIGNED_SHORT, or UNSIGNED_INT"
@@ -222,7 +222,7 @@ GLVertexArray >> drawElements: primitiveTypeEnum count: numVertices startingAt: 
 
 {
 	#category : #'initialize-release',
-	#timestamp : 'stlu 3/17/2021 12:30'
+	#'squeak_changestamp' : 'stlu 3/17/2021 12:30'
 }
 GLVertexArray >> initialize [
 
@@ -239,7 +239,7 @@ GLVertexArray >> initialize [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 12/14/2020 12:13'
+	#'squeak_changestamp' : 'stlu 12/14/2020 12:13'
 }
 GLVertexArray >> isAllocated [
 
@@ -248,7 +248,7 @@ GLVertexArray >> isAllocated [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 10/29/2020 12:15'
+	#'squeak_changestamp' : 'stlu 10/29/2020 12:15'
 }
 GLVertexArray >> isVertexArray [
 
@@ -257,7 +257,7 @@ GLVertexArray >> isVertexArray [
 
 {
 	#category : #rendering,
-	#timestamp : 'stlu 3/15/2021 16:09'
+	#'squeak_changestamp' : 'stlu 3/15/2021 16:09'
 }
 GLVertexArray >> multiDrawArrays: primitiveTypeEnum counts: rawBitsCountsArray startIndices: rawBitsStartsArray drawCount: drawCount [
 
@@ -271,7 +271,7 @@ GLVertexArray >> multiDrawArrays: primitiveTypeEnum counts: rawBitsCountsArray s
 
 {
 	#category : #rendering,
-	#timestamp : 'stlu 3/15/2021 16:10'
+	#'squeak_changestamp' : 'stlu 3/15/2021 16:10'
 }
 GLVertexArray >> multiDrawArraysIndirect: primitiveTypeEnum commands: rawBitsArrayOfDrawArraysIndirectCommand drawCount: drawCount stride: byteStride [
 
@@ -286,7 +286,7 @@ GLVertexArray >> multiDrawArraysIndirect: primitiveTypeEnum commands: rawBitsArr
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 3/17/2021 12:31'
+	#'squeak_changestamp' : 'stlu 3/17/2021 12:31'
 }
 GLVertexArray >> vertexAttributeAt: location [
 
@@ -295,7 +295,7 @@ GLVertexArray >> vertexAttributeAt: location [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 3/17/2021 12:31'
+	#'squeak_changestamp' : 'stlu 3/17/2021 12:31'
 }
 GLVertexArray >> vertexAttributes [
 
@@ -304,7 +304,7 @@ GLVertexArray >> vertexAttributes [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 3/17/2021 11:27'
+	#'squeak_changestamp' : 'stlu 3/17/2021 11:27'
 }
 GLVertexArray >> vertexBufferBindingAt: location [
 
@@ -313,7 +313,7 @@ GLVertexArray >> vertexBufferBindingAt: location [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 3/17/2021 11:27'
+	#'squeak_changestamp' : 'stlu 3/17/2021 11:27'
 }
 GLVertexArray >> vertexBufferBindings [
 

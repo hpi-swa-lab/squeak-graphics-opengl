@@ -2,12 +2,12 @@ Class {
 	#name : #GLSLUnsignedInteger,
 	#superclass : #GLSLScalar,
 	#category : #'OpenGLObjects-Types',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/14/2020 16:49'
+	#'squeak_changestamp' : 'stlu 12/14/2020 16:49'
 }
 GLSLUnsignedInteger class >> commandInitials [
 
@@ -16,7 +16,7 @@ GLSLUnsignedInteger class >> commandInitials [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/14/2020 16:49'
+	#'squeak_changestamp' : 'stlu 12/14/2020 16:49'
 }
 GLSLUnsignedInteger class >> declarators [
 
@@ -25,7 +25,7 @@ GLSLUnsignedInteger class >> declarators [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/14/2020 16:49'
+	#'squeak_changestamp' : 'stlu 12/14/2020 16:49'
 }
 GLSLUnsignedInteger class >> enum [
 
@@ -34,7 +34,7 @@ GLSLUnsignedInteger class >> enum [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/14/2020 16:49'
+	#'squeak_changestamp' : 'stlu 12/14/2020 16:49'
 }
 GLSLUnsignedInteger class >> enumName [
 
@@ -43,7 +43,7 @@ GLSLUnsignedInteger class >> enumName [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/14/2020 16:49'
+	#'squeak_changestamp' : 'stlu 12/14/2020 16:49'
 }
 GLSLUnsignedInteger class >> glslInitials [
 
@@ -52,7 +52,7 @@ GLSLUnsignedInteger class >> glslInitials [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/14/2020 16:49'
+	#'squeak_changestamp' : 'stlu 12/14/2020 16:49'
 }
 GLSLUnsignedInteger class >> squeakArrayClass [
 
@@ -61,7 +61,7 @@ GLSLUnsignedInteger class >> squeakArrayClass [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/14/2020 16:49'
+	#'squeak_changestamp' : 'stlu 12/14/2020 16:49'
 }
 GLSLUnsignedInteger class >> squeakName [
 
@@ -70,7 +70,7 @@ GLSLUnsignedInteger class >> squeakName [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 12/14/2020 18:29'
+	#'squeak_changestamp' : 'stlu 12/14/2020 18:29'
 }
 GLSLUnsignedInteger >> isUnsignedInteger [
 
@@ -79,7 +79,7 @@ GLSLUnsignedInteger >> isUnsignedInteger [
 
 {
 	#category : #'program resources',
-	#timestamp : 'stlu 11/23/2020 17:11'
+	#'squeak_changestamp' : 'stlu 11/23/2020 17:11'
 }
 GLSLUnsignedInteger >> setUniform: aUniform toArray: aRawBitsArray count: numElements [
 
@@ -88,7 +88,7 @@ GLSLUnsignedInteger >> setUniform: aUniform toArray: aRawBitsArray count: numEle
 
 {
 	#category : #'program resources',
-	#timestamp : 'stlu 1/8/2021 18:49'
+	#'squeak_changestamp' : 'stlu 1/8/2021 18:49'
 }
 GLSLUnsignedInteger >> setUniform: aUniform toObject: anObject [
 

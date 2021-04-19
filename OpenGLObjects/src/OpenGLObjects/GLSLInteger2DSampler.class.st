@@ -2,12 +2,12 @@ Class {
 	#name : #GLSLInteger2DSampler,
 	#superclass : #GLSLSampler,
 	#category : #'OpenGLObjects-Types',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/15/2020 13:04'
+	#'squeak_changestamp' : 'stlu 12/15/2020 13:04'
 }
 GLSLInteger2DSampler class >> declarators [
 
@@ -16,7 +16,7 @@ GLSLInteger2DSampler class >> declarators [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/15/2020 13:04'
+	#'squeak_changestamp' : 'stlu 12/15/2020 13:04'
 }
 GLSLInteger2DSampler class >> enum [
 
@@ -25,7 +25,7 @@ GLSLInteger2DSampler class >> enum [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/15/2020 13:04'
+	#'squeak_changestamp' : 'stlu 12/15/2020 13:04'
 }
 GLSLInteger2DSampler class >> enumName [
 
@@ -34,7 +34,7 @@ GLSLInteger2DSampler class >> enumName [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/15/2020 13:04'
+	#'squeak_changestamp' : 'stlu 12/15/2020 13:04'
 }
 GLSLInteger2DSampler class >> pixelType [
 
@@ -43,7 +43,7 @@ GLSLInteger2DSampler class >> pixelType [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/15/2020 13:04'
+	#'squeak_changestamp' : 'stlu 12/15/2020 13:04'
 }
 GLSLInteger2DSampler class >> squeakName [
 

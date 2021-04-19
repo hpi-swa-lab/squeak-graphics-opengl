@@ -8,12 +8,12 @@ Class {
 		'texture2'
 	],
 	#category : #'LearnOpenGL-GettingStarted',
-	#commentStamp : 'stlu 1/7/2021 11:22'
+	#'squeak_changestamp' : 'stlu 1/7/2021 11:22'
 }
 
 {
 	#category : #running,
-	#timestamp : 'stlu 1/29/2021 15:11'
+	#'squeak_changestamp' : 'stlu 1/29/2021 15:11'
 }
 LOGLTransformations >> draw [
 
@@ -27,7 +27,7 @@ LOGLTransformations >> draw [
 
 {
 	#category : #shaders,
-	#timestamp : 'stlu 1/7/2021 11:26'
+	#'squeak_changestamp' : 'stlu 1/7/2021 11:26'
 }
 LOGLTransformations >> fragmentShaderSource [
 
@@ -49,7 +49,7 @@ void main()
 
 {
 	#category : #running,
-	#timestamp : 'stlu 1/29/2021 15:12'
+	#'squeak_changestamp' : 'stlu 1/29/2021 15:12'
 }
 LOGLTransformations >> render [
 
@@ -61,7 +61,7 @@ LOGLTransformations >> render [
 
 {
 	#category : #running,
-	#timestamp : 'stlu 4/16/2021 15:32'
+	#'squeak_changestamp' : 'stlu 4/16/2021 15:32'
 }
 LOGLTransformations >> setUp [
 
@@ -84,7 +84,7 @@ LOGLTransformations >> setUp [
 
 {
 	#category : #shaders,
-	#timestamp : 'stlu 1/7/2021 11:26'
+	#'squeak_changestamp' : 'stlu 1/7/2021 11:26'
 }
 LOGLTransformations >> vertexShaderSource [
 

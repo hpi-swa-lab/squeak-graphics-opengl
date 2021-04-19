@@ -7,5 +7,5 @@ Class {
 		'stride'
 	],
 	#category : #'3DTransform-Views',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }

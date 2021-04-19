@@ -2,12 +2,12 @@ Class {
 	#name : #DoubleVectorView,
 	#superclass : #VectorView,
 	#category : #'3DTransform-Views',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/22/2021 12:52'
+	#'squeak_changestamp' : 'stlu 1/22/2021 12:52'
 }
 DoubleVectorView class >> storeClass [
 
@@ -16,7 +16,7 @@ DoubleVectorView class >> storeClass [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/22/2021 12:46'
+	#'squeak_changestamp' : 'stlu 1/22/2021 12:46'
 }
 DoubleVectorView >> at: index [
 
@@ -25,7 +25,7 @@ DoubleVectorView >> at: index [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/22/2021 12:52'
+	#'squeak_changestamp' : 'stlu 1/22/2021 12:52'
 }
 DoubleVectorView >> at: index put: value [
 

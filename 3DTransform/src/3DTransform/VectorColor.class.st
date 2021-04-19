@@ -6,12 +6,12 @@ Class {
 	#superclass : #Vector,
 	#type : #words,
 	#category : #'3DTransform-Vectors',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 VectorColor class >> numElements [
 	^4
@@ -19,7 +19,7 @@ VectorColor class >> numElements [
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 VectorColor class >> r: rValue g: gValue b: bValue [
 	^self new r: rValue g: gValue b: bValue a: 1.0
@@ -27,7 +27,7 @@ VectorColor class >> r: rValue g: gValue b: bValue [
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 VectorColor class >> r: rValue g: gValue b: bValue a: aValue [
 	^self new r: rValue g: gValue b: bValue a: aValue
@@ -35,7 +35,7 @@ VectorColor class >> r: rValue g: gValue b: bValue a: aValue [
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 VectorColor class >> red: r green: g blue: b alpha: a [
 	"Create an initialize a color vector."
@@ -54,7 +54,7 @@ VectorColor class >> red: r green: g blue: b alpha: a [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 VectorColor >> a [
 	^self floatAt: 4
@@ -62,7 +62,7 @@ VectorColor >> a [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 VectorColor >> alpha [
 	^self floatAt: 4
@@ -70,7 +70,7 @@ VectorColor >> alpha [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 VectorColor >> alpha: aNumber [
 	self floatAt: 4 put: aNumber
@@ -78,7 +78,7 @@ VectorColor >> alpha: aNumber [
 
 {
 	#category : #converting,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 VectorColor >> asColor [
 	^Color r: self red g: self green b: self blue alpha: self alpha
@@ -86,7 +86,7 @@ VectorColor >> asColor [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 VectorColor >> asVector3 [
 
@@ -95,7 +95,7 @@ VectorColor >> asVector3 [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 VectorColor >> asVector4 [
 
@@ -104,7 +104,7 @@ VectorColor >> asVector4 [
 
 {
 	#category : #converting,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 VectorColor >> asVectorColor [
 
@@ -113,7 +113,7 @@ VectorColor >> asVectorColor [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 VectorColor >> b [
 	^self floatAt: 3
@@ -121,7 +121,7 @@ VectorColor >> b [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 VectorColor >> blue [
 	^self floatAt: 3
@@ -129,7 +129,7 @@ VectorColor >> blue [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 VectorColor >> blue: aNumber [
 	self floatAt: 3 put: aNumber
@@ -137,7 +137,7 @@ VectorColor >> blue: aNumber [
 
 {
 	#category : #converting,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 VectorColor >> copyFrom: array [
 
@@ -149,7 +149,7 @@ VectorColor >> copyFrom: array [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 VectorColor >> g [
 	^self floatAt: 2
@@ -157,7 +157,7 @@ VectorColor >> g [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 VectorColor >> green [
 	^self floatAt: 2
@@ -165,7 +165,7 @@ VectorColor >> green [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 VectorColor >> green: aNumber [
 	self floatAt: 2 put: aNumber
@@ -173,7 +173,7 @@ VectorColor >> green: aNumber [
 
 {
 	#category : #interpolating,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 VectorColor >> interpolateTo: end at: amountDone [
 	"Return the color vector yielded by interpolating from the state of the object to the specified end state at the specified amount done"
@@ -196,7 +196,7 @@ VectorColor >> interpolateTo: end at: amountDone [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 VectorColor >> isZero [
 	^self alpha isZero
@@ -204,7 +204,7 @@ VectorColor >> isZero [
 
 {
 	#category : #converting,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 VectorColor >> pixelValue32 [
 	^self asColor pixelWordForDepth: 32
@@ -212,7 +212,7 @@ VectorColor >> pixelValue32 [
 
 {
 	#category : #private,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 VectorColor >> privateLoadFrom: srcObject [
 	| color |
@@ -225,7 +225,7 @@ VectorColor >> privateLoadFrom: srcObject [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 VectorColor >> r [
 	^self floatAt: 1
@@ -233,7 +233,7 @@ VectorColor >> r [
 
 {
 	#category : #initialize,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 VectorColor >> r: rValue g: gValue b: bValue a: aValue [
 	self red: rValue.
@@ -244,7 +244,7 @@ VectorColor >> r: rValue g: gValue b: bValue a: aValue [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 VectorColor >> red [
 	^self floatAt: 1
@@ -252,7 +252,7 @@ VectorColor >> red [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 VectorColor >> red: aNumber [
 	self floatAt: 1 put: aNumber

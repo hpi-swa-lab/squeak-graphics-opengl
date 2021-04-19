@@ -2,12 +2,12 @@ Class {
 	#name : #LOGLBreakoutPostProcessingProgram,
 	#superclass : #GLStaticProgram,
 	#category : #'LearnOpenGL-Breakout',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #'shader code',
-	#timestamp : 'stlu 3/6/2021 15:03'
+	#'squeak_changestamp' : 'stlu 3/6/2021 15:03'
 }
 LOGLBreakoutPostProcessingProgram class >> fragmentShader: out inputs: in uniforms: u [
 
@@ -36,7 +36,7 @@ LOGLBreakoutPostProcessingProgram class >> fragmentShader: out inputs: in unifor
 
 {
 	#category : #'shader code',
-	#timestamp : 'stlu 1/10/2021 00:38'
+	#'squeak_changestamp' : 'stlu 1/10/2021 00:38'
 }
 LOGLBreakoutPostProcessingProgram class >> glslFragmentShader [
 
@@ -90,7 +90,7 @@ void main()
 
 {
 	#category : #'shader code',
-	#timestamp : 'stlu 2/23/2021 16:41'
+	#'squeak_changestamp' : 'stlu 2/23/2021 16:41'
 }
 LOGLBreakoutPostProcessingProgram class >> glslVertexShader [
 
@@ -126,7 +126,7 @@ void main() {
 
 {
 	#category : #'shader code',
-	#timestamp : 'stlu 1/10/2021 00:33'
+	#'squeak_changestamp' : 'stlu 1/10/2021 00:33'
 }
 LOGLBreakoutPostProcessingProgram class >> vertexShader: out inputs: in uniforms: u [
 

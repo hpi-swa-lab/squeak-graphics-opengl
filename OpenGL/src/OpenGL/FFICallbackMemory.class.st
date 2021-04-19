@@ -23,12 +23,12 @@ Class {
 		'LifoCallbackSemaphore'
 	],
 	#category : #'OpenGL-FFI-Support',
-	#commentStamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 
 {
 	#category : #'executable pages',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 FFICallbackMemory class >> allocateExecutableBlock [
 
@@ -52,7 +52,7 @@ FFICallbackMemory class >> allocateExecutableBlock [
 
 {
 	#category : #'executable pages',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 FFICallbackMemory class >> allocateExecutablePage [
 	"Forward allocation to ExternalAddress, which already sends primitives to allocate memory."
@@ -62,7 +62,7 @@ FFICallbackMemory class >> allocateExecutablePage [
 
 {
 	#category : #'class initialization',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 FFICallbackMemory class >> ensureInSpecialObjectsArray [
 	"FFICallbackMemory must be in the specialObjectsArray to enable the FFI callback mechanism.  Because of
@@ -96,7 +96,7 @@ FFICallbackMemory class >> ensureInSpecialObjectsArray [
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 FFICallbackMemory class >> fromInteger: anInteger [
 	"Like the extension in ExternalAddress, but duplicate byte size to follow the alien format as expected in the IA32ABI plugin."
@@ -108,7 +108,7 @@ FFICallbackMemory class >> fromInteger: anInteger [
 
 {
 	#category : #'class initialization',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 FFICallbackMemory class >> initialize [
 
@@ -123,7 +123,7 @@ FFICallbackMemory class >> initialize [
 
 {
 	#category : #callbacks,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 FFICallbackMemory class >> invokeCallbackContext: vmCallbackContextAddress [ "<Integer>" "^<FFICallbackReturnValue>"
 	"The low-level entry-point for callbacks sent from the VM/IA32ABI plugin.
@@ -150,7 +150,7 @@ FFICallbackMemory class >> invokeCallbackContext: vmCallbackContextAddress [ "<I
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 FFICallbackMemory class >> new [
 	"Only used for holding (alien) pointers."
@@ -160,7 +160,7 @@ FFICallbackMemory class >> new [
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 FFICallbackMemory class >> new: n [
 	
@@ -169,7 +169,7 @@ FFICallbackMemory class >> new: n [
 
 {
 	#category : #'system startup',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 FFICallbackMemory class >> startUp: resuming [
 	"Any thunks in the finalization registry at the time the image comes up in a new session MUST NOT be finalized and should  immediately be discarded. Their thunk pointers are no longer valid."
@@ -180,7 +180,7 @@ FFICallbackMemory class >> startUp: resuming [
 
 {
 	#category : #'class initialization',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 FFICallbackMemory class >> unload [
 
@@ -189,7 +189,7 @@ FFICallbackMemory class >> unload [
 
 {
 	#category : #'alien compatibility',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 FFICallbackMemory >> addressField [ "^<Integer>"
 	<primitive: 'primAddressField' module: 'IA32ABI' error: errorCode>
@@ -200,7 +200,7 @@ FFICallbackMemory >> addressField [ "^<Integer>"
 
 {
 	#category : #'alien compatibility',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 FFICallbackMemory >> addressFieldPut: value [ "<Integer> ^<Integer>"
 	<primitive: 'primAddressFieldPut' module: 'IA32ABI' error: errorCode>
@@ -213,7 +213,7 @@ FFICallbackMemory >> addressFieldPut: value [ "<Integer> ^<Integer>"
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 FFICallbackMemory >> byteSize [
 	"Answer the number of bytes that are allocated when following the #externalPointer."
@@ -222,7 +222,7 @@ FFICallbackMemory >> byteSize [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 FFICallbackMemory >> externalPointer [
 	"Answer the address that points to allocated memory of #byteSize num bytes."
@@ -231,7 +231,7 @@ FFICallbackMemory >> externalPointer [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 FFICallbackMemory >> externalPointer: anExternalAddress [
 
@@ -247,7 +247,7 @@ FFICallbackMemory >> externalPointer: anExternalAddress [
 
 {
 	#category : #callbacks,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 FFICallbackMemory >> primSignal: aSemaphore "<Semaphore>" andReturnAs: typeCode "<SmallInteger>" fromContext: context [ "<MethodContext>"
 	<primitive: 'primReturnAsFromContextThrough' module: 'IA32ABI' error: ec>
@@ -256,7 +256,7 @@ FFICallbackMemory >> primSignal: aSemaphore "<Semaphore>" andReturnAs: typeCode 
 
 {
 	#category : #'alien compatibility',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 FFICallbackMemory >> sizeField [ "^<Integer>"
 	<primitive: 'primSizeField' module: 'IA32ABI' error: errorCode>
@@ -268,7 +268,7 @@ FFICallbackMemory >> sizeField [ "^<Integer>"
 
 {
 	#category : #'alien compatibility',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 FFICallbackMemory >> sizeFieldPut: size [ "<Integer> ^<Integer>"
 	<primitive: 'primSizeFieldPut' module: 'IA32ABI' error: errorCode>

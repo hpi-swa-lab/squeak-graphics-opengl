@@ -6,12 +6,12 @@ Class {
 	#superclass : #VectorArray,
 	#type : #words,
 	#category : #'3DTransform-Arrays',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 VectorColor4Array class >> contentsClass [
 	^VectorColor
@@ -19,7 +19,7 @@ VectorColor4Array class >> contentsClass [
 
 {
 	#category : #'special ops',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 VectorColor4Array >> += aColor [
 	"Add the given color to all the elements in the receiver"
@@ -38,7 +38,7 @@ VectorColor4Array >> += aColor [
 
 {
 	#category : #'special ops',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 VectorColor4Array >> add: aColor4 at: index [
 	| baseIdx |
@@ -52,7 +52,7 @@ VectorColor4Array >> add: aColor4 at: index [
 
 {
 	#category : #'special ops',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 VectorColor4Array >> clampAllFrom: minValue to: maxValue [
 	"Clamp all elements in the receiver to be in the range (minValue, maxValue)"
@@ -67,7 +67,7 @@ VectorColor4Array >> clampAllFrom: minValue to: maxValue [
 
 {
 	#category : #'special ops',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 VectorColor4Array >> fillWith: anInteger [
 	<primitive: 145>

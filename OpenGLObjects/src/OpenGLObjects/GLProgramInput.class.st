@@ -6,12 +6,12 @@ Class {
 		'type'
 	],
 	#category : #'OpenGLObjects-Programs',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 12/16/2020 20:45'
+	#'squeak_changestamp' : 'stlu 12/16/2020 20:45'
 }
 GLProgramInput class >> allInProgram: aProgram [
 
@@ -20,7 +20,7 @@ GLProgramInput class >> allInProgram: aProgram [
 
 {
 	#category : #querying,
-	#timestamp : 'stlu 12/13/2020 16:08'
+	#'squeak_changestamp' : 'stlu 12/13/2020 16:08'
 }
 GLProgramInput class >> getPropertiesToQuery [
 
@@ -34,7 +34,7 @@ GLProgramInput class >> getPropertiesToQuery [
 
 {
 	#category : #querying,
-	#timestamp : 'stlu 12/16/2020 18:57'
+	#'squeak_changestamp' : 'stlu 12/16/2020 18:57'
 }
 GLProgramInput class >> interfaceEnum [
 
@@ -43,7 +43,7 @@ GLProgramInput class >> interfaceEnum [
 
 {
 	#category : #configuration,
-	#timestamp : 'stlu 12/27/2020 15:54'
+	#'squeak_changestamp' : 'stlu 12/27/2020 15:54'
 }
 GLProgramInput >> buffer: aBuffer offset: byteOffset stride: byteStride components: numComponents [
 
@@ -57,7 +57,7 @@ GLProgramInput >> buffer: aBuffer offset: byteOffset stride: byteStride componen
 
 {
 	#category : #configuration,
-	#timestamp : 'stlu 12/22/2020 14:42'
+	#'squeak_changestamp' : 'stlu 12/22/2020 14:42'
 }
 GLProgramInput >> components: numComponents stride: byteStride offset: byteOffset [
 
@@ -74,7 +74,7 @@ GLProgramInput >> components: numComponents stride: byteStride offset: byteOffse
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 12/14/2020 16:17'
+	#'squeak_changestamp' : 'stlu 12/14/2020 16:17'
 }
 GLProgramInput >> initializeProperties: aWordArray [
 
@@ -84,7 +84,7 @@ GLProgramInput >> initializeProperties: aWordArray [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 12/16/2020 18:46'
+	#'squeak_changestamp' : 'stlu 12/16/2020 18:46'
 }
 GLProgramInput >> isInput [
 
@@ -93,7 +93,7 @@ GLProgramInput >> isInput [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/16/2020 18:46'
+	#'squeak_changestamp' : 'stlu 12/16/2020 18:46'
 }
 GLProgramInput >> location [
 
@@ -102,7 +102,7 @@ GLProgramInput >> location [
 
 {
 	#category : #printing,
-	#timestamp : 'stlu 1/10/2021 12:44'
+	#'squeak_changestamp' : 'stlu 1/10/2021 12:44'
 }
 GLProgramInput >> printOn: aStream [
 
@@ -114,7 +114,7 @@ GLProgramInput >> printOn: aStream [
 
 {
 	#category : #configuration,
-	#timestamp : 'stlu 3/17/2021 23:29'
+	#'squeak_changestamp' : 'stlu 3/17/2021 23:29'
 }
 GLProgramInput >> stride: byteStride offset: byteOffset [
 
@@ -124,7 +124,7 @@ GLProgramInput >> stride: byteStride offset: byteOffset [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/16/2020 18:46'
+	#'squeak_changestamp' : 'stlu 12/16/2020 18:46'
 }
 GLProgramInput >> type [
 

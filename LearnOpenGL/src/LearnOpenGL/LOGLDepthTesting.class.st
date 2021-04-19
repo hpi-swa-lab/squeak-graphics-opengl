@@ -15,12 +15,12 @@ Class {
 		'planeTexture'
 	],
 	#category : #'LearnOpenGL-Advanced',
-	#commentStamp : 'stlu 3/13/2021 00:47'
+	#'squeak_changestamp' : 'stlu 3/13/2021 00:47'
 }
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 3/13/2021 00:59'
+	#'squeak_changestamp' : 'stlu 3/13/2021 00:59'
 }
 LOGLDepthTesting >> cubeVertices [
 
@@ -71,7 +71,7 @@ LOGLDepthTesting >> cubeVertices [
 
 {
 	#category : #shaders,
-	#timestamp : 'stlu 3/13/2021 00:57'
+	#'squeak_changestamp' : 'stlu 3/13/2021 00:57'
 }
 LOGLDepthTesting >> fragmentShaderSource [
 
@@ -90,7 +90,7 @@ void main()
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 3/13/2021 01:02'
+	#'squeak_changestamp' : 'stlu 3/13/2021 01:02'
 }
 LOGLDepthTesting >> planeVertices [
 
@@ -107,7 +107,7 @@ LOGLDepthTesting >> planeVertices [
 
 {
 	#category : #running,
-	#timestamp : 'stlu 4/15/2021 12:10'
+	#'squeak_changestamp' : 'stlu 4/15/2021 12:10'
 }
 LOGLDepthTesting >> render [
 
@@ -136,7 +136,7 @@ LOGLDepthTesting >> render [
 
 {
 	#category : #running,
-	#timestamp : 'stlu 4/16/2021 15:32'
+	#'squeak_changestamp' : 'stlu 4/16/2021 15:32'
 }
 LOGLDepthTesting >> setUp [
 
@@ -196,7 +196,7 @@ LOGLDepthTesting >> setUp [
 
 {
 	#category : #shaders,
-	#timestamp : 'stlu 3/13/2021 00:57'
+	#'squeak_changestamp' : 'stlu 3/13/2021 00:57'
 }
 LOGLDepthTesting >> vertexShaderSource [
 

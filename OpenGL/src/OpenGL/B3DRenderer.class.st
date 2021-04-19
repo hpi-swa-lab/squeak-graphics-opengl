@@ -5,12 +5,12 @@ Class {
 		'handle'
 	],
 	#category : #'OpenGL-Core',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 11/9/2020 14:58'
+	#'squeak_changestamp' : 'stlu 11/9/2020 14:58'
 }
 B3DRenderer class >> bounds: bounds [
 
@@ -19,7 +19,7 @@ B3DRenderer class >> bounds: bounds [
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 11/9/2020 17:57'
+	#'squeak_changestamp' : 'stlu 11/9/2020 17:57'
 }
 B3DRenderer class >> bounds: bounds flags: flags [
 	"flag is a bitwise OR of
@@ -42,7 +42,7 @@ B3DRenderer class >> bounds: bounds flags: flags [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/9/2020 14:52'
+	#'squeak_changestamp' : 'stlu 11/9/2020 14:52'
 }
 B3DRenderer class >> defaultFlags [
 
@@ -53,7 +53,7 @@ B3DRenderer class >> defaultFlags [
 
 {
 	#category : #private,
-	#timestamp : 'stlu 11/9/2020 17:52'
+	#'squeak_changestamp' : 'stlu 11/9/2020 17:52'
 }
 B3DRenderer class >> handle: aHandle [
 
@@ -64,7 +64,7 @@ B3DRenderer class >> handle: aHandle [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 10/16/2020 12:34'
+	#'squeak_changestamp' : 'stlu 10/16/2020 12:34'
 }
 B3DRenderer class >> isAvailable [
 
@@ -73,7 +73,7 @@ B3DRenderer class >> isAvailable [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/9/2020 17:45'
+	#'squeak_changestamp' : 'stlu 11/9/2020 17:45'
 }
 B3DRenderer class >> pluginVersion [
 	"self pluginVersion"
@@ -83,7 +83,7 @@ B3DRenderer class >> pluginVersion [
 
 {
 	#category : #private,
-	#timestamp : 'stlu 11/9/2020 17:56'
+	#'squeak_changestamp' : 'stlu 11/9/2020 17:56'
 }
 B3DRenderer class >> primCreateRenderer: flags x: x y: y w: w h: h [
 
@@ -93,7 +93,7 @@ B3DRenderer class >> primCreateRenderer: flags x: x y: y w: w h: h [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/9/2020 15:52'
+	#'squeak_changestamp' : 'stlu 11/9/2020 15:52'
 }
 B3DRenderer class >> verbosityLevel: newLevel [
 	"Primitive. Set the reporting level for the engine. Values are
@@ -111,7 +111,7 @@ B3DRenderer class >> verbosityLevel: newLevel [
 
 {
 	#category : #activation,
-	#timestamp : 'stlu 11/9/2020 18:01'
+	#'squeak_changestamp' : 'stlu 11/9/2020 18:01'
 }
 B3DRenderer >> activate [
     "Hack! We can't make it explicitly but getting a property requires to have me current, so..."
@@ -120,7 +120,7 @@ B3DRenderer >> activate [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/9/2020 18:01'
+	#'squeak_changestamp' : 'stlu 11/9/2020 18:01'
 }
 B3DRenderer >> bounds: aRectangle [
 
@@ -134,7 +134,7 @@ B3DRenderer >> bounds: aRectangle [
 
 {
 	#category : #activation,
-	#timestamp : 'stlu 11/9/2020 18:22'
+	#'squeak_changestamp' : 'stlu 11/9/2020 18:22'
 }
 B3DRenderer >> deactivate [
     "We can't really do that..."
@@ -142,7 +142,7 @@ B3DRenderer >> deactivate [
 
 {
 	#category : #'initialize-release',
-	#timestamp : 'stlu 11/9/2020 15:44'
+	#'squeak_changestamp' : 'stlu 11/9/2020 15:44'
 }
 B3DRenderer >> destroy [
 
@@ -151,7 +151,7 @@ B3DRenderer >> destroy [
 
 {
 	#category : #'initialize-release',
-	#timestamp : 'stlu 11/9/2020 17:53'
+	#'squeak_changestamp' : 'stlu 11/9/2020 17:53'
 }
 B3DRenderer >> initializeWithHandle: aHandle [
 
@@ -160,7 +160,7 @@ B3DRenderer >> initializeWithHandle: aHandle [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 11/9/2020 17:59'
+	#'squeak_changestamp' : 'stlu 11/9/2020 17:59'
 }
 B3DRenderer >> isOverlay [
 
@@ -169,7 +169,7 @@ B3DRenderer >> isOverlay [
 
 {
 	#category : #'primitives-renderer',
-	#timestamp : 'stlu 11/9/2020 15:02'
+	#'squeak_changestamp' : 'stlu 11/9/2020 15:02'
 }
 B3DRenderer >> primDestroyRenderer: aHandle [
 
@@ -179,7 +179,7 @@ B3DRenderer >> primDestroyRenderer: aHandle [
 
 {
 	#category : #'primitives-renderer',
-	#timestamp : 'stlu 11/9/2020 18:05'
+	#'squeak_changestamp' : 'stlu 11/9/2020 18:05'
 }
 B3DRenderer >> primIsOverlayRenderer: aHandle [
 
@@ -189,7 +189,7 @@ B3DRenderer >> primIsOverlayRenderer: aHandle [
 
 {
 	#category : #'primitives-renderer',
-	#timestamp : 'stlu 11/9/2020 18:19'
+	#'squeak_changestamp' : 'stlu 11/9/2020 18:19'
 }
 B3DRenderer >> primRenderer: aHandle getProperty: propNumber [
 	"Returns a renderer property or 0 if the property does not exist.
@@ -207,7 +207,7 @@ B3DRenderer >> primRenderer: aHandle getProperty: propNumber [
 
 {
 	#category : #'primitives-renderer',
-	#timestamp : 'stlu 11/9/2020 18:01'
+	#'squeak_changestamp' : 'stlu 11/9/2020 18:01'
 }
 B3DRenderer >> primRenderer: aHandle setBufferRectX: left y: top w: width h: height [
 
@@ -217,7 +217,7 @@ B3DRenderer >> primRenderer: aHandle setBufferRectX: left y: top w: width h: hei
 
 {
 	#category : #'primitives-renderer',
-	#timestamp : 'stlu 11/9/2020 18:01'
+	#'squeak_changestamp' : 'stlu 11/9/2020 18:01'
 }
 B3DRenderer >> primRenderer: aHandle setProperty: propNumber toInteger: value [
 
@@ -227,7 +227,7 @@ B3DRenderer >> primRenderer: aHandle setProperty: propNumber toInteger: value [
 
 {
 	#category : #'primitives-renderer',
-	#timestamp : 'stlu 11/9/2020 15:28'
+	#'squeak_changestamp' : 'stlu 11/9/2020 15:28'
 }
 B3DRenderer >> primSwapBuffers: aHandle [
 	"Primitive. Finish all rendering operations on the receiver.
@@ -238,7 +238,7 @@ B3DRenderer >> primSwapBuffers: aHandle [
 
 {
 	#category : #'initialize-release',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 B3DRenderer >> swapBuffers [
 

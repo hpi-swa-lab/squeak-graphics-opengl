@@ -17,12 +17,12 @@ Class {
 		'library'
 	],
 	#category : #'OpenGL-API',
-	#commentStamp : 'stlu 4/14/2021 15:16'
+	#'squeak_changestamp' : 'stlu 4/14/2021 15:16'
 }
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 4/17/2021 10:29'
+	#'squeak_changestamp' : 'stlu 4/17/2021 10:29'
 }
 GLErrorCheckingLibrary class >> around: aLibrary [
 
@@ -34,7 +34,7 @@ GLErrorCheckingLibrary class >> around: aLibrary [
 
 {
 	#category : #'error handling',
-	#timestamp : 'stlu 4/16/2021 14:56'
+	#'squeak_changestamp' : 'stlu 4/16/2021 14:56'
 }
 GLErrorCheckingLibrary >> doesNotUnderstand: aMessage [
 
@@ -46,7 +46,7 @@ GLErrorCheckingLibrary >> doesNotUnderstand: aMessage [
 
 {
 	#category : #'error handling',
-	#timestamp : 'stlu 4/16/2021 15:25'
+	#'squeak_changestamp' : 'stlu 4/16/2021 15:25'
 }
 GLErrorCheckingLibrary >> errorCheckingTemplate [
 
@@ -60,7 +60,7 @@ GLErrorCheckingLibrary >> errorCheckingTemplate [
 
 {
 	#category : #'error handling',
-	#timestamp : 'stlu 4/16/2021 15:32'
+	#'squeak_changestamp' : 'stlu 4/16/2021 15:32'
 }
 GLErrorCheckingLibrary >> getError [
 	"Manual passtrhough. Do not check the error checking for errors."
@@ -69,7 +69,7 @@ GLErrorCheckingLibrary >> getError [
 
 {
 	#category : #'error handling',
-	#timestamp : 'stlu 4/16/2021 15:24'
+	#'squeak_changestamp' : 'stlu 4/16/2021 15:24'
 }
 GLErrorCheckingLibrary >> install: aSelector [
 
@@ -86,7 +86,7 @@ GLErrorCheckingLibrary >> install: aSelector [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 4/15/2021 22:23'
+	#'squeak_changestamp' : 'stlu 4/15/2021 22:23'
 }
 GLErrorCheckingLibrary >> library [
 
@@ -95,7 +95,7 @@ GLErrorCheckingLibrary >> library [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 4/17/2021 10:29'
+	#'squeak_changestamp' : 'stlu 4/17/2021 10:29'
 }
 GLErrorCheckingLibrary >> library: aLibrary [
 
@@ -104,7 +104,7 @@ GLErrorCheckingLibrary >> library: aLibrary [
 
 {
 	#category : #'error handling',
-	#timestamp : 'stlu 4/16/2021 15:20'
+	#'squeak_changestamp' : 'stlu 4/16/2021 15:20'
 }
 GLErrorCheckingLibrary >> passthroughTemplate [
 

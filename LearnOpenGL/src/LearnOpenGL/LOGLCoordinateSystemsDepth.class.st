@@ -5,12 +5,12 @@ Class {
 	#name : #LOGLCoordinateSystemsDepth,
 	#superclass : #LOGLCoordinateSystems,
 	#category : #'LearnOpenGL-GettingStarted',
-	#commentStamp : 'stlu 1/29/2021 15:17'
+	#'squeak_changestamp' : 'stlu 1/29/2021 15:17'
 }
 
 {
 	#category : #running,
-	#timestamp : 'stlu 3/15/2021 16:20'
+	#'squeak_changestamp' : 'stlu 3/15/2021 16:20'
 }
 LOGLCoordinateSystemsDepth >> draw [
 
@@ -27,7 +27,7 @@ LOGLCoordinateSystemsDepth >> draw [
 
 {
 	#category : #running,
-	#timestamp : 'stlu 1/29/2021 15:15'
+	#'squeak_changestamp' : 'stlu 1/29/2021 15:15'
 }
 LOGLCoordinateSystemsDepth >> render [
 
@@ -37,7 +37,7 @@ LOGLCoordinateSystemsDepth >> render [
 
 {
 	#category : #running,
-	#timestamp : 'stlu 1/29/2021 15:08'
+	#'squeak_changestamp' : 'stlu 1/29/2021 15:08'
 }
 LOGLCoordinateSystemsDepth >> setUp [
 
@@ -47,7 +47,7 @@ LOGLCoordinateSystemsDepth >> setUp [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/29/2021 14:59'
+	#'squeak_changestamp' : 'stlu 1/29/2021 14:59'
 }
 LOGLCoordinateSystemsDepth >> vertices [
 

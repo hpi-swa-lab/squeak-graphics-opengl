@@ -11,12 +11,12 @@ Class {
 		'instance'
 	],
 	#category : #'OpenGLObjects-Types',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #'*OpenGLObjects-Generation',
-	#timestamp : 'stlu 11/23/2020 11:45'
+	#'squeak_changestamp' : 'stlu 11/23/2020 11:45'
 }
 GLSLType class >> compileAccessor: name value: return [
 
@@ -25,7 +25,7 @@ GLSLType class >> compileAccessor: name value: return [
 
 {
 	#category : #'*OpenGLObjects-Generation',
-	#timestamp : 'stlu 11/23/2020 11:44'
+	#'squeak_changestamp' : 'stlu 11/23/2020 11:44'
 }
 GLSLType class >> compileAccessor: name value: return classified: category [
 
@@ -36,7 +36,7 @@ GLSLType class >> compileAccessor: name value: return classified: category [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/19/2020 18:00'
+	#'squeak_changestamp' : 'stlu 11/19/2020 18:00'
 }
 GLSLType class >> declarator [
 
@@ -47,7 +47,7 @@ GLSLType class >> declarator [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/19/2020 17:58'
+	#'squeak_changestamp' : 'stlu 11/19/2020 17:58'
 }
 GLSLType class >> declarators [
 
@@ -56,7 +56,7 @@ GLSLType class >> declarators [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/23/2020 12:46'
+	#'squeak_changestamp' : 'stlu 11/23/2020 12:46'
 }
 GLSLType class >> enum [
 	"Returns the type's corresponding OpenGL enum value or nil if there is none."
@@ -65,7 +65,7 @@ GLSLType class >> enum [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/23/2020 12:46'
+	#'squeak_changestamp' : 'stlu 11/23/2020 12:46'
 }
 GLSLType class >> enumName [
 	"Returns the type's corresponding OpenGL enum name without the 'GL_' prefix"
@@ -74,7 +74,7 @@ GLSLType class >> enumName [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/19/2020 06:44'
+	#'squeak_changestamp' : 'stlu 11/19/2020 06:44'
 }
 GLSLType class >> forEnum: anInteger [
 
@@ -83,7 +83,7 @@ GLSLType class >> forEnum: anInteger [
 
 {
 	#category : #'class initialization',
-	#timestamp : 'stlu 11/19/2020 06:19'
+	#'squeak_changestamp' : 'stlu 11/19/2020 06:19'
 }
 GLSLType class >> initialize [
 
@@ -92,7 +92,7 @@ GLSLType class >> initialize [
 
 {
 	#category : #'class initialization',
-	#timestamp : 'stlu 11/19/2020 06:16'
+	#'squeak_changestamp' : 'stlu 11/19/2020 06:16'
 }
 GLSLType class >> initializeEnumTable [
 
@@ -104,7 +104,7 @@ GLSLType class >> initializeEnumTable [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/19/2020 06:30'
+	#'squeak_changestamp' : 'stlu 11/19/2020 06:30'
 }
 GLSLType class >> instance [
 
@@ -113,7 +113,7 @@ GLSLType class >> instance [
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 12/14/2020 16:19'
+	#'squeak_changestamp' : 'stlu 12/14/2020 16:19'
 }
 GLSLType class >> numElements: arraySize enum: typeEnum [
 
@@ -124,7 +124,7 @@ GLSLType class >> numElements: arraySize enum: typeEnum [
 
 {
 	#category : #'*OpenGLObjects-Generation',
-	#timestamp : 'stlu 11/23/2020 11:14'
+	#'squeak_changestamp' : 'stlu 11/23/2020 11:14'
 }
 GLSLType class >> removeAllSubclasses [
 
@@ -133,7 +133,7 @@ GLSLType class >> removeAllSubclasses [
 
 {
 	#category : #'*OpenGLObjects-Generation',
-	#timestamp : 'stlu 11/19/2020 17:47'
+	#'squeak_changestamp' : 'stlu 11/19/2020 17:47'
 }
 GLSLType class >> subclass: symbolOrString [
 
@@ -146,7 +146,7 @@ GLSLType class >> subclass: symbolOrString [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/23/2020 18:09'
+	#'squeak_changestamp' : 'stlu 11/23/2020 18:09'
 }
 GLSLType >> actualComponentType [
 
@@ -155,7 +155,7 @@ GLSLType >> actualComponentType [
 
 {
 	#category : #printing,
-	#timestamp : 'stlu 1/10/2021 12:35'
+	#'squeak_changestamp' : 'stlu 1/10/2021 12:35'
 }
 GLSLType >> declarationNamed: aString [
 
@@ -165,7 +165,7 @@ GLSLType >> declarationNamed: aString [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/19/2020 17:58'
+	#'squeak_changestamp' : 'stlu 11/19/2020 17:58'
 }
 GLSLType >> declarator [
 
@@ -174,7 +174,7 @@ GLSLType >> declarator [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/22/2020 13:51'
+	#'squeak_changestamp' : 'stlu 12/22/2020 13:51'
 }
 GLSLType >> enum [
 
@@ -183,7 +183,7 @@ GLSLType >> enum [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 12/14/2020 18:22'
+	#'squeak_changestamp' : 'stlu 12/14/2020 18:22'
 }
 GLSLType >> isArray [
 
@@ -192,7 +192,7 @@ GLSLType >> isArray [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 12/14/2020 18:21'
+	#'squeak_changestamp' : 'stlu 12/14/2020 18:21'
 }
 GLSLType >> isImage [
 
@@ -201,7 +201,7 @@ GLSLType >> isImage [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 12/14/2020 18:22'
+	#'squeak_changestamp' : 'stlu 12/14/2020 18:22'
 }
 GLSLType >> isMatrix [
 
@@ -210,7 +210,7 @@ GLSLType >> isMatrix [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 12/14/2020 18:22'
+	#'squeak_changestamp' : 'stlu 12/14/2020 18:22'
 }
 GLSLType >> isSampler [
 
@@ -219,7 +219,7 @@ GLSLType >> isSampler [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 12/14/2020 18:22'
+	#'squeak_changestamp' : 'stlu 12/14/2020 18:22'
 }
 GLSLType >> isScalar [
 
@@ -228,7 +228,7 @@ GLSLType >> isScalar [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 12/14/2020 18:22'
+	#'squeak_changestamp' : 'stlu 12/14/2020 18:22'
 }
 GLSLType >> isVector [
 
@@ -237,7 +237,7 @@ GLSLType >> isVector [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/23/2020 16:15'
+	#'squeak_changestamp' : 'stlu 11/23/2020 16:15'
 }
 GLSLType >> numElements [
 
@@ -246,7 +246,7 @@ GLSLType >> numElements [
 
 {
 	#category : #printing,
-	#timestamp : 'stlu 1/10/2021 12:35'
+	#'squeak_changestamp' : 'stlu 1/10/2021 12:35'
 }
 GLSLType >> printDeclarationNamed: aString on: aStream [
 
@@ -258,7 +258,7 @@ GLSLType >> printDeclarationNamed: aString on: aStream [
 
 {
 	#category : #printing,
-	#timestamp : 'stlu 11/19/2020 17:58'
+	#'squeak_changestamp' : 'stlu 11/19/2020 17:58'
 }
 GLSLType >> printOn: aStream [
 
@@ -269,7 +269,7 @@ GLSLType >> printOn: aStream [
 
 {
 	#category : #'program resources',
-	#timestamp : 'stlu 11/23/2020 16:15'
+	#'squeak_changestamp' : 'stlu 11/23/2020 16:15'
 }
 GLSLType >> setUniform: aUniform toArray: aRawBitsArray [
 
@@ -278,7 +278,7 @@ GLSLType >> setUniform: aUniform toArray: aRawBitsArray [
 
 {
 	#category : #'program resources',
-	#timestamp : 'stlu 11/23/2020 16:08'
+	#'squeak_changestamp' : 'stlu 11/23/2020 16:08'
 }
 GLSLType >> setUniform: aUniform toArray: aRawBitsArray count: numElements [
 
@@ -287,7 +287,7 @@ GLSLType >> setUniform: aUniform toArray: aRawBitsArray count: numElements [
 
 {
 	#category : #'program resources',
-	#timestamp : 'stlu 11/23/2020 16:08'
+	#'squeak_changestamp' : 'stlu 11/23/2020 16:08'
 }
 GLSLType >> setUniform: aUniform toObject: anObject [
 

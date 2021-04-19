@@ -5,12 +5,12 @@ Class {
 		'GLFWConstants'
 	],
 	#category : #'GLFW-Core',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 GLFWWindow class >> current [
 
@@ -19,7 +19,7 @@ GLFWWindow class >> current [
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 1/6/2021 14:00'
+	#'squeak_changestamp' : 'stlu 1/6/2021 14:00'
 }
 GLFWWindow class >> extent: aPoint title: aString [
 
@@ -28,7 +28,7 @@ GLFWWindow class >> extent: aPoint title: aString [
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 1/6/2021 14:00'
+	#'squeak_changestamp' : 'stlu 1/6/2021 14:00'
 }
 GLFWWindow class >> extent: aPoint title: aString monitor: monitor share: window [
 
@@ -42,7 +42,7 @@ GLFWWindow class >> extent: aPoint title: aString monitor: monitor share: window
 
 {
 	#category : #private,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 GLFWWindow class >> window: aWindow [
 
@@ -53,7 +53,7 @@ GLFWWindow class >> window: aWindow [
 
 {
 	#category : #comparing,
-	#timestamp : 'stlu 10/26/2020 19:58'
+	#'squeak_changestamp' : 'stlu 10/26/2020 19:58'
 }
 GLFWWindow >> = otherWindow [
 
@@ -64,7 +64,7 @@ GLFWWindow >> = otherWindow [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 10/21/2020 21:11'
+	#'squeak_changestamp' : 'stlu 10/21/2020 21:11'
 }
 GLFWWindow >> aspectRatio: pointOrNumber [
 
@@ -81,7 +81,7 @@ GLFWWindow >> aspectRatio: pointOrNumber [
 
 {
 	#category : #callbacks,
-	#timestamp : 'stlu 2/12/2021 23:54'
+	#'squeak_changestamp' : 'stlu 2/12/2021 23:54'
 }
 GLFWWindow >> closeCallback: aBlock [
 
@@ -90,7 +90,7 @@ GLFWWindow >> closeCallback: aBlock [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 10/21/2020 20:53'
+	#'squeak_changestamp' : 'stlu 10/21/2020 20:53'
 }
 GLFWWindow >> contentScale [
 	"The ratio between the current DPI and the platform's default DPI."
@@ -103,7 +103,7 @@ GLFWWindow >> contentScale [
 
 {
 	#category : #callbacks,
-	#timestamp : 'stlu 2/12/2021 23:57'
+	#'squeak_changestamp' : 'stlu 2/12/2021 23:57'
 }
 GLFWWindow >> contentScaleCallback: aBlock [
 
@@ -112,7 +112,7 @@ GLFWWindow >> contentScaleCallback: aBlock [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 10/19/2020 15:58'
+	#'squeak_changestamp' : 'stlu 10/19/2020 15:58'
 }
 GLFWWindow >> context [
 
@@ -121,7 +121,7 @@ GLFWWindow >> context [
 
 {
 	#category : #'mouse input',
-	#timestamp : 'stlu 2/13/2021 00:24'
+	#'squeak_changestamp' : 'stlu 2/13/2021 00:24'
 }
 GLFWWindow >> cursor: aCursor [
 
@@ -130,7 +130,7 @@ GLFWWindow >> cursor: aCursor [
 
 {
 	#category : #cursor,
-	#timestamp : 'stlu 2/12/2021 00:21'
+	#'squeak_changestamp' : 'stlu 2/12/2021 00:21'
 }
 GLFWWindow >> cursorMode [
 
@@ -139,7 +139,7 @@ GLFWWindow >> cursorMode [
 
 {
 	#category : #cursor,
-	#timestamp : 'stlu 2/12/2021 00:22'
+	#'squeak_changestamp' : 'stlu 2/12/2021 00:22'
 }
 GLFWWindow >> cursorMode: mode [
 
@@ -148,7 +148,7 @@ GLFWWindow >> cursorMode: mode [
 
 {
 	#category : #'mouse input',
-	#timestamp : 'stlu 2/1/2021 14:43'
+	#'squeak_changestamp' : 'stlu 2/1/2021 14:43'
 }
 GLFWWindow >> cursorPosCallback: aBlock [
 	"aBlock needs to have three arguments: The window, the x coordinate of the cursor and the y coordinate of the cursor."
@@ -157,7 +157,7 @@ GLFWWindow >> cursorPosCallback: aBlock [
 
 {
 	#category : #'mouse input',
-	#timestamp : 'stlu 2/13/2021 00:21'
+	#'squeak_changestamp' : 'stlu 2/13/2021 00:21'
 }
 GLFWWindow >> cursorPosition [
 
@@ -170,7 +170,7 @@ GLFWWindow >> cursorPosition [
 
 {
 	#category : #'mouse input',
-	#timestamp : 'stlu 2/13/2021 00:21'
+	#'squeak_changestamp' : 'stlu 2/13/2021 00:21'
 }
 GLFWWindow >> cursorPosition: aPoint [
 
@@ -179,7 +179,7 @@ GLFWWindow >> cursorPosition: aPoint [
 
 {
 	#category : #'initialize-release',
-	#timestamp : 'stlu 10/21/2020 21:12'
+	#'squeak_changestamp' : 'stlu 10/21/2020 21:12'
 }
 GLFWWindow >> destroy [
 
@@ -188,7 +188,7 @@ GLFWWindow >> destroy [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 2/12/2021 00:22'
+	#'squeak_changestamp' : 'stlu 2/12/2021 00:22'
 }
 GLFWWindow >> disableAspectRatio [
 
@@ -197,7 +197,7 @@ GLFWWindow >> disableAspectRatio [
 
 {
 	#category : #cursor,
-	#timestamp : 'stlu 2/12/2021 00:22'
+	#'squeak_changestamp' : 'stlu 2/12/2021 00:22'
 }
 GLFWWindow >> disableCursor [
 
@@ -206,7 +206,7 @@ GLFWWindow >> disableCursor [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/16/2020 13:40'
+	#'squeak_changestamp' : 'stlu 12/16/2020 13:40'
 }
 GLFWWindow >> extent [
 	"Returns the extent (in screen coordinates) of the window's content area.
@@ -220,7 +220,7 @@ GLFWWindow >> extent [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 10/21/2020 21:11'
+	#'squeak_changestamp' : 'stlu 10/21/2020 21:11'
 }
 GLFWWindow >> extent: aPoint [
 
@@ -229,7 +229,7 @@ GLFWWindow >> extent: aPoint [
 
 {
 	#category : #callbacks,
-	#timestamp : 'stlu 2/12/2021 23:54'
+	#'squeak_changestamp' : 'stlu 2/12/2021 23:54'
 }
 GLFWWindow >> extentCallback: aBlock [
 
@@ -238,7 +238,7 @@ GLFWWindow >> extentCallback: aBlock [
 
 {
 	#category : #visibility,
-	#timestamp : 'stlu 10/21/2020 21:26'
+	#'squeak_changestamp' : 'stlu 10/21/2020 21:26'
 }
 GLFWWindow >> focus [
 	"Brings the window to front and sets input focus. The window should already be visible and not iconified."
@@ -248,7 +248,7 @@ GLFWWindow >> focus [
 
 {
 	#category : #callbacks,
-	#timestamp : 'stlu 2/12/2021 23:55'
+	#'squeak_changestamp' : 'stlu 2/12/2021 23:55'
 }
 GLFWWindow >> focusCallback: aBlock [
 
@@ -257,7 +257,7 @@ GLFWWindow >> focusCallback: aBlock [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/16/2020 13:36'
+	#'squeak_changestamp' : 'stlu 12/16/2020 13:36'
 }
 GLFWWindow >> frameWidths [
 	"Returns the width (in screen coordinates) of each edge of the window's frame.
@@ -274,7 +274,7 @@ GLFWWindow >> frameWidths [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/16/2020 13:41'
+	#'squeak_changestamp' : 'stlu 12/16/2020 13:41'
 }
 GLFWWindow >> framebufferExtent [
 	"Returns the extent (in pixels) of the window's framebuffer."
@@ -287,7 +287,7 @@ GLFWWindow >> framebufferExtent [
 
 {
 	#category : #context,
-	#timestamp : 'stlu 2/12/2021 23:56'
+	#'squeak_changestamp' : 'stlu 2/12/2021 23:56'
 }
 GLFWWindow >> framebufferExtentCallback: aBlock [
 
@@ -296,7 +296,7 @@ GLFWWindow >> framebufferExtentCallback: aBlock [
 
 {
 	#category : #private,
-	#timestamp : 'stlu 2/12/2021 20:37'
+	#'squeak_changestamp' : 'stlu 2/12/2021 20:37'
 }
 GLFWWindow >> getAttribute: enum [
 
@@ -305,7 +305,7 @@ GLFWWindow >> getAttribute: enum [
 
 {
 	#category : #'keyboard input',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 GLFWWindow >> getKey: key [
 
@@ -314,7 +314,7 @@ GLFWWindow >> getKey: key [
 
 {
 	#category : #'mouse input',
-	#timestamp : 'stlu 2/13/2021 00:20'
+	#'squeak_changestamp' : 'stlu 2/13/2021 00:20'
 }
 GLFWWindow >> getMouseButton: button [
 
@@ -323,7 +323,7 @@ GLFWWindow >> getMouseButton: button [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 2/12/2021 20:46'
+	#'squeak_changestamp' : 'stlu 2/12/2021 20:46'
 }
 GLFWWindow >> hasTransparentFramebuffer [
 
@@ -332,7 +332,7 @@ GLFWWindow >> hasTransparentFramebuffer [
 
 {
 	#category : #comparing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 GLFWWindow >> hash [
 
@@ -341,7 +341,7 @@ GLFWWindow >> hash [
 
 {
 	#category : #visibility,
-	#timestamp : 'stlu 10/21/2020 21:18'
+	#'squeak_changestamp' : 'stlu 10/21/2020 21:18'
 }
 GLFWWindow >> hide [
 	"Hides the window if it was previously visible. If the window is already hidden or is in full screen mode, this function does nothing."
@@ -350,7 +350,7 @@ GLFWWindow >> hide [
 
 {
 	#category : #cursor,
-	#timestamp : 'stlu 2/12/2021 00:22'
+	#'squeak_changestamp' : 'stlu 2/12/2021 00:22'
 }
 GLFWWindow >> hideCursor [
 
@@ -359,7 +359,7 @@ GLFWWindow >> hideCursor [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 2/12/2021 20:25'
+	#'squeak_changestamp' : 'stlu 2/12/2021 20:25'
 }
 GLFWWindow >> icon: aForm [
 
@@ -369,7 +369,7 @@ GLFWWindow >> icon: aForm [
 
 {
 	#category : #visibility,
-	#timestamp : 'stlu 10/21/2020 21:18'
+	#'squeak_changestamp' : 'stlu 10/21/2020 21:18'
 }
 GLFWWindow >> iconify [
 	"Iconifies (minimizes) the window if it was previously restored. If the window is already iconified, this function does nothing. If the specified window is a full screen window, the original monitor resolution is restored until the window is restored."
@@ -378,7 +378,7 @@ GLFWWindow >> iconify [
 
 {
 	#category : #callbacks,
-	#timestamp : 'stlu 2/12/2021 23:55'
+	#'squeak_changestamp' : 'stlu 2/12/2021 23:55'
 }
 GLFWWindow >> iconifyCallback: aBlock [
 
@@ -387,7 +387,7 @@ GLFWWindow >> iconifyCallback: aBlock [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 2/12/2021 20:45'
+	#'squeak_changestamp' : 'stlu 2/12/2021 20:45'
 }
 GLFWWindow >> isAutoIconified [
 
@@ -396,7 +396,7 @@ GLFWWindow >> isAutoIconified [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 2/12/2021 23:48'
+	#'squeak_changestamp' : 'stlu 2/12/2021 23:48'
 }
 GLFWWindow >> isAutoIconified: aBoolean [
 
@@ -405,7 +405,7 @@ GLFWWindow >> isAutoIconified: aBoolean [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 2/12/2021 00:22'
+	#'squeak_changestamp' : 'stlu 2/12/2021 00:22'
 }
 GLFWWindow >> isCursorDisabled [
 
@@ -414,7 +414,7 @@ GLFWWindow >> isCursorDisabled [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 2/12/2021 00:22'
+	#'squeak_changestamp' : 'stlu 2/12/2021 00:22'
 }
 GLFWWindow >> isCursorHidden [
 
@@ -423,7 +423,7 @@ GLFWWindow >> isCursorHidden [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 2/12/2021 00:23'
+	#'squeak_changestamp' : 'stlu 2/12/2021 00:23'
 }
 GLFWWindow >> isCursorNormal [
 
@@ -432,7 +432,7 @@ GLFWWindow >> isCursorNormal [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 2/12/2021 20:45'
+	#'squeak_changestamp' : 'stlu 2/12/2021 20:45'
 }
 GLFWWindow >> isDecorated [
 
@@ -441,7 +441,7 @@ GLFWWindow >> isDecorated [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 2/12/2021 23:47'
+	#'squeak_changestamp' : 'stlu 2/12/2021 23:47'
 }
 GLFWWindow >> isDecorated: aBoolean [
 
@@ -450,7 +450,7 @@ GLFWWindow >> isDecorated: aBoolean [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 2/12/2021 20:46'
+	#'squeak_changestamp' : 'stlu 2/12/2021 20:46'
 }
 GLFWWindow >> isFloating [
 
@@ -459,7 +459,7 @@ GLFWWindow >> isFloating [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 2/12/2021 23:47'
+	#'squeak_changestamp' : 'stlu 2/12/2021 23:47'
 }
 GLFWWindow >> isFloating: aBoolean [
 
@@ -468,7 +468,7 @@ GLFWWindow >> isFloating: aBoolean [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 2/12/2021 20:41'
+	#'squeak_changestamp' : 'stlu 2/12/2021 20:41'
 }
 GLFWWindow >> isFocused [
 
@@ -477,7 +477,7 @@ GLFWWindow >> isFocused [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 2/12/2021 20:47'
+	#'squeak_changestamp' : 'stlu 2/12/2021 20:47'
 }
 GLFWWindow >> isFocusedOnShow [
 
@@ -486,7 +486,7 @@ GLFWWindow >> isFocusedOnShow [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 2/12/2021 23:48'
+	#'squeak_changestamp' : 'stlu 2/12/2021 23:48'
 }
 GLFWWindow >> isFocusedOnShow: aBoolean [
 
@@ -495,7 +495,7 @@ GLFWWindow >> isFocusedOnShow: aBoolean [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 2/12/2021 20:45'
+	#'squeak_changestamp' : 'stlu 2/12/2021 20:45'
 }
 GLFWWindow >> isHovered [
 
@@ -504,7 +504,7 @@ GLFWWindow >> isHovered [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 2/12/2021 20:42'
+	#'squeak_changestamp' : 'stlu 2/12/2021 20:42'
 }
 GLFWWindow >> isIconified [
 
@@ -513,7 +513,7 @@ GLFWWindow >> isIconified [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 2/12/2021 20:44'
+	#'squeak_changestamp' : 'stlu 2/12/2021 20:44'
 }
 GLFWWindow >> isMaximized [
 
@@ -522,7 +522,7 @@ GLFWWindow >> isMaximized [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 2/12/2021 20:45'
+	#'squeak_changestamp' : 'stlu 2/12/2021 20:45'
 }
 GLFWWindow >> isResizable [
 
@@ -531,7 +531,7 @@ GLFWWindow >> isResizable [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 2/12/2021 23:47'
+	#'squeak_changestamp' : 'stlu 2/12/2021 23:47'
 }
 GLFWWindow >> isResizable: aBoolean [
 
@@ -540,7 +540,7 @@ GLFWWindow >> isResizable: aBoolean [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 2/12/2021 20:45'
+	#'squeak_changestamp' : 'stlu 2/12/2021 20:45'
 }
 GLFWWindow >> isVisible [
 
@@ -549,7 +549,7 @@ GLFWWindow >> isVisible [
 
 {
 	#category : #'keyboard input',
-	#timestamp : 'stlu 1/7/2021 17:06'
+	#'squeak_changestamp' : 'stlu 1/7/2021 17:06'
 }
 GLFWWindow >> keyCallback: aBlock [
 
@@ -558,7 +558,7 @@ GLFWWindow >> keyCallback: aBlock [
 
 {
 	#category : #'keyboard input',
-	#timestamp : 'stlu 2/13/2021 00:08'
+	#'squeak_changestamp' : 'stlu 2/13/2021 00:08'
 }
 GLFWWindow >> lockKeyMods [
 
@@ -567,7 +567,7 @@ GLFWWindow >> lockKeyMods [
 
 {
 	#category : #'keyboard input',
-	#timestamp : 'stlu 2/13/2021 00:08'
+	#'squeak_changestamp' : 'stlu 2/13/2021 00:08'
 }
 GLFWWindow >> lockKeyMods: aBoolean [
 
@@ -576,7 +576,7 @@ GLFWWindow >> lockKeyMods: aBoolean [
 
 {
 	#category : #context,
-	#timestamp : 'stlu 10/21/2020 21:12'
+	#'squeak_changestamp' : 'stlu 10/21/2020 21:12'
 }
 GLFWWindow >> makeCurrent [
 
@@ -585,7 +585,7 @@ GLFWWindow >> makeCurrent [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 2/12/2021 00:23'
+	#'squeak_changestamp' : 'stlu 2/12/2021 00:23'
 }
 GLFWWindow >> maxExtent: aPoint [
 
@@ -594,7 +594,7 @@ GLFWWindow >> maxExtent: aPoint [
 
 {
 	#category : #visibility,
-	#timestamp : 'stlu 10/21/2020 21:18'
+	#'squeak_changestamp' : 'stlu 10/21/2020 21:18'
 }
 GLFWWindow >> maximize [
 	"Maximizes the window if it was previously not maximized. If the window is already maximized, this function does nothing. If the specified window is a full screen window, this function does nothing."
@@ -603,7 +603,7 @@ GLFWWindow >> maximize [
 
 {
 	#category : #callbacks,
-	#timestamp : 'stlu 2/12/2021 23:56'
+	#'squeak_changestamp' : 'stlu 2/12/2021 23:56'
 }
 GLFWWindow >> maximizeCallback: aBlock [
 
@@ -612,7 +612,7 @@ GLFWWindow >> maximizeCallback: aBlock [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 2/12/2021 00:23'
+	#'squeak_changestamp' : 'stlu 2/12/2021 00:23'
 }
 GLFWWindow >> minExtent: aPoint [
 
@@ -621,7 +621,7 @@ GLFWWindow >> minExtent: aPoint [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 10/21/2020 21:11'
+	#'squeak_changestamp' : 'stlu 10/21/2020 21:11'
 }
 GLFWWindow >> minExtent: minPoint maxExtent: maxPoint [
 
@@ -635,7 +635,7 @@ GLFWWindow >> minExtent: minPoint maxExtent: maxPoint [
 
 {
 	#category : #monitor,
-	#timestamp : 'stlu 10/21/2020 21:37'
+	#'squeak_changestamp' : 'stlu 10/21/2020 21:37'
 }
 GLFWWindow >> monitor [
 	"Returns the handle of the monitor this window is in full screen on. Returns nil if the window is in windowed mode or an error occured."
@@ -648,7 +648,7 @@ GLFWWindow >> monitor [
 
 {
 	#category : #monitor,
-	#timestamp : 'stlu 10/22/2020 15:57'
+	#'squeak_changestamp' : 'stlu 10/22/2020 15:57'
 }
 GLFWWindow >> monitor: aMonitor bounds: aRectangle refreshRate: hertz [
 	"Sets the monitor that the window uses for full screen mode or, if the monitor is nil, makes it windowed mode.
@@ -667,7 +667,7 @@ GLFWWindow >> monitor: aMonitor bounds: aRectangle refreshRate: hertz [
 
 {
 	#category : #'mouse input',
-	#timestamp : 'stlu 10/21/2020 21:12'
+	#'squeak_changestamp' : 'stlu 10/21/2020 21:12'
 }
 GLFWWindow >> mouseButtonCallback: aBlock [
 
@@ -676,7 +676,7 @@ GLFWWindow >> mouseButtonCallback: aBlock [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 10/21/2020 20:55'
+	#'squeak_changestamp' : 'stlu 10/21/2020 20:55'
 }
 GLFWWindow >> opacity [
 
@@ -685,7 +685,7 @@ GLFWWindow >> opacity [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 10/21/2020 21:11'
+	#'squeak_changestamp' : 'stlu 10/21/2020 21:11'
 }
 GLFWWindow >> opacity: aFloat [
 	"Set the opacity of the window, including any decorations.
@@ -695,7 +695,7 @@ GLFWWindow >> opacity: aFloat [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 10/21/2020 14:13'
+	#'squeak_changestamp' : 'stlu 10/21/2020 14:13'
 }
 GLFWWindow >> position [
 
@@ -708,7 +708,7 @@ GLFWWindow >> position [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 10/21/2020 21:11'
+	#'squeak_changestamp' : 'stlu 10/21/2020 21:11'
 }
 GLFWWindow >> position: aPoint [
 
@@ -717,7 +717,7 @@ GLFWWindow >> position: aPoint [
 
 {
 	#category : #callbacks,
-	#timestamp : 'stlu 2/12/2021 23:53'
+	#'squeak_changestamp' : 'stlu 2/12/2021 23:53'
 }
 GLFWWindow >> positionCallback: aBlock [
 
@@ -726,7 +726,7 @@ GLFWWindow >> positionCallback: aBlock [
 
 {
 	#category : #'mouse input',
-	#timestamp : 'stlu 2/13/2021 00:09'
+	#'squeak_changestamp' : 'stlu 2/13/2021 00:09'
 }
 GLFWWindow >> rawMouseMotion [
 
@@ -735,7 +735,7 @@ GLFWWindow >> rawMouseMotion [
 
 {
 	#category : #'mouse input',
-	#timestamp : 'stlu 2/13/2021 00:10'
+	#'squeak_changestamp' : 'stlu 2/13/2021 00:10'
 }
 GLFWWindow >> rawMouseMotion: aBoolean [
 
@@ -744,7 +744,7 @@ GLFWWindow >> rawMouseMotion: aBoolean [
 
 {
 	#category : #callbacks,
-	#timestamp : 'stlu 2/12/2021 23:55'
+	#'squeak_changestamp' : 'stlu 2/12/2021 23:55'
 }
 GLFWWindow >> refreshCallback: aBlock [
 
@@ -753,7 +753,7 @@ GLFWWindow >> refreshCallback: aBlock [
 
 {
 	#category : #visibility,
-	#timestamp : 'stlu 10/21/2020 21:24'
+	#'squeak_changestamp' : 'stlu 10/21/2020 21:24'
 }
 GLFWWindow >> requestAttention [
 	"Requests user attention to the specified window.  On platforms where this is not supported, attention is requested to the application as a whole. Once the user has given attention, usually by focusing the window or application, the system will end the request automatically."
@@ -762,7 +762,7 @@ GLFWWindow >> requestAttention [
 
 {
 	#category : #visibility,
-	#timestamp : 'stlu 10/21/2020 21:18'
+	#'squeak_changestamp' : 'stlu 10/21/2020 21:18'
 }
 GLFWWindow >> restore [
 	"Restores the window if it was previously iconified (minimized) or maximized. If the window is already restored, this function does nothing. If the window is a full screen window, the resolution chosen for the window is restored on the selected monitor."
@@ -771,7 +771,7 @@ GLFWWindow >> restore [
 
 {
 	#category : #cursor,
-	#timestamp : 'stlu 2/12/2021 00:23'
+	#'squeak_changestamp' : 'stlu 2/12/2021 00:23'
 }
 GLFWWindow >> restoreCursor [
 
@@ -780,7 +780,7 @@ GLFWWindow >> restoreCursor [
 
 {
 	#category : #'mouse input',
-	#timestamp : 'stlu 2/1/2021 14:48'
+	#'squeak_changestamp' : 'stlu 2/1/2021 14:48'
 }
 GLFWWindow >> scrollCallback: aBlock [
 	"aBlock needs to have three arguments: The window, the x scroll offset and the y scroll offset."
@@ -789,7 +789,7 @@ GLFWWindow >> scrollCallback: aBlock [
 
 {
 	#category : #private,
-	#timestamp : 'stlu 2/12/2021 20:38'
+	#'squeak_changestamp' : 'stlu 2/12/2021 20:38'
 }
 GLFWWindow >> setAttribute: enum to: value [
 
@@ -798,7 +798,7 @@ GLFWWindow >> setAttribute: enum to: value [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 GLFWWindow >> shouldClose [
 
@@ -807,7 +807,7 @@ GLFWWindow >> shouldClose [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 10/21/2020 21:11'
+	#'squeak_changestamp' : 'stlu 10/21/2020 21:11'
 }
 GLFWWindow >> shouldClose: aBoolean [
 
@@ -816,7 +816,7 @@ GLFWWindow >> shouldClose: aBoolean [
 
 {
 	#category : #visibility,
-	#timestamp : 'stlu 10/21/2020 21:19'
+	#'squeak_changestamp' : 'stlu 10/21/2020 21:19'
 }
 GLFWWindow >> show [
 	"Makes the window visible if it was previously hidden. If the window is already visible or is in full screen mode, this function does nothing. By default, windowed mode windows are focused when shown."
@@ -825,7 +825,7 @@ GLFWWindow >> show [
 
 {
 	#category : #'keyboard input',
-	#timestamp : 'stlu 2/13/2021 00:07'
+	#'squeak_changestamp' : 'stlu 2/13/2021 00:07'
 }
 GLFWWindow >> stickyKeys [
 
@@ -834,7 +834,7 @@ GLFWWindow >> stickyKeys [
 
 {
 	#category : #'keyboard input',
-	#timestamp : 'stlu 2/13/2021 00:05'
+	#'squeak_changestamp' : 'stlu 2/13/2021 00:05'
 }
 GLFWWindow >> stickyKeys: aBoolean [
 
@@ -843,7 +843,7 @@ GLFWWindow >> stickyKeys: aBoolean [
 
 {
 	#category : #'mouse input',
-	#timestamp : 'stlu 2/13/2021 00:07'
+	#'squeak_changestamp' : 'stlu 2/13/2021 00:07'
 }
 GLFWWindow >> stickyMouseButtons [
 
@@ -852,7 +852,7 @@ GLFWWindow >> stickyMouseButtons [
 
 {
 	#category : #'mouse input',
-	#timestamp : 'stlu 2/13/2021 00:06'
+	#'squeak_changestamp' : 'stlu 2/13/2021 00:06'
 }
 GLFWWindow >> stickyMouseButtons: aBoolean [
 
@@ -861,7 +861,7 @@ GLFWWindow >> stickyMouseButtons: aBoolean [
 
 {
 	#category : #context,
-	#timestamp : 'stlu 10/21/2020 21:13'
+	#'squeak_changestamp' : 'stlu 10/21/2020 21:13'
 }
 GLFWWindow >> swapBuffers [
 
@@ -870,7 +870,7 @@ GLFWWindow >> swapBuffers [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 10/21/2020 21:12'
+	#'squeak_changestamp' : 'stlu 10/21/2020 21:12'
 }
 GLFWWindow >> title: aString [
 
@@ -879,7 +879,7 @@ GLFWWindow >> title: aString [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 2/12/2021 23:52'
+	#'squeak_changestamp' : 'stlu 2/12/2021 23:52'
 }
 GLFWWindow >> userPointer [
 
@@ -888,7 +888,7 @@ GLFWWindow >> userPointer [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 2/12/2021 23:52'
+	#'squeak_changestamp' : 'stlu 2/12/2021 23:52'
 }
 GLFWWindow >> userPointer: pointer [
 

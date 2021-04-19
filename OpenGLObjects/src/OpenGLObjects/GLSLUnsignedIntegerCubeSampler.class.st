@@ -2,12 +2,12 @@ Class {
 	#name : #GLSLUnsignedIntegerCubeSampler,
 	#superclass : #GLSLSampler,
 	#category : #'OpenGLObjects-Types',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/15/2020 13:04'
+	#'squeak_changestamp' : 'stlu 12/15/2020 13:04'
 }
 GLSLUnsignedIntegerCubeSampler class >> declarators [
 
@@ -16,7 +16,7 @@ GLSLUnsignedIntegerCubeSampler class >> declarators [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/15/2020 13:04'
+	#'squeak_changestamp' : 'stlu 12/15/2020 13:04'
 }
 GLSLUnsignedIntegerCubeSampler class >> enum [
 
@@ -25,7 +25,7 @@ GLSLUnsignedIntegerCubeSampler class >> enum [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/15/2020 13:04'
+	#'squeak_changestamp' : 'stlu 12/15/2020 13:04'
 }
 GLSLUnsignedIntegerCubeSampler class >> enumName [
 
@@ -34,7 +34,7 @@ GLSLUnsignedIntegerCubeSampler class >> enumName [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/15/2020 13:04'
+	#'squeak_changestamp' : 'stlu 12/15/2020 13:04'
 }
 GLSLUnsignedIntegerCubeSampler class >> pixelType [
 
@@ -43,7 +43,7 @@ GLSLUnsignedIntegerCubeSampler class >> pixelType [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/15/2020 13:04'
+	#'squeak_changestamp' : 'stlu 12/15/2020 13:04'
 }
 GLSLUnsignedIntegerCubeSampler class >> squeakName [
 

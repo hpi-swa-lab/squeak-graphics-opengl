@@ -13,12 +13,12 @@ Class {
 		'GLConstants'
 	],
 	#category : #'OpenGLObjects-VertexArrays',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 3/16/2021 16:03'
+	#'squeak_changestamp' : 'stlu 3/16/2021 16:03'
 }
 GLVertexBufferBinding class >> vertexArray: aVertexArray location: anInteger [
 
@@ -29,7 +29,7 @@ GLVertexBufferBinding class >> vertexArray: aVertexArray location: anInteger [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 3/14/2021 12:33'
+	#'squeak_changestamp' : 'stlu 3/14/2021 12:33'
 }
 GLVertexBufferBinding >> buffer [
 
@@ -38,7 +38,7 @@ GLVertexBufferBinding >> buffer [
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 3/17/2021 22:37'
+	#'squeak_changestamp' : 'stlu 3/17/2021 22:37'
 }
 GLVertexBufferBinding >> buffer: aBuffer [
 
@@ -50,7 +50,7 @@ GLVertexBufferBinding >> buffer: aBuffer [
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 3/17/2021 22:37'
+	#'squeak_changestamp' : 'stlu 3/17/2021 22:37'
 }
 GLVertexBufferBinding >> buffer: aBuffer stride: byteStride [
 
@@ -62,7 +62,7 @@ GLVertexBufferBinding >> buffer: aBuffer stride: byteStride [
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 3/17/2021 23:04'
+	#'squeak_changestamp' : 'stlu 3/17/2021 23:04'
 }
 GLVertexBufferBinding >> buffer: aBuffer stride: byteStride offset: byteOffset [
 
@@ -78,7 +78,7 @@ GLVertexBufferBinding >> buffer: aBuffer stride: byteStride offset: byteOffset [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 3/16/2021 16:03'
+	#'squeak_changestamp' : 'stlu 3/16/2021 16:03'
 }
 GLVertexBufferBinding >> initializeForVertexArray: aVertexArray location: anInteger [
 
@@ -93,7 +93,7 @@ GLVertexBufferBinding >> initializeForVertexArray: aVertexArray location: anInte
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 3/14/2021 12:33'
+	#'squeak_changestamp' : 'stlu 3/14/2021 12:33'
 }
 GLVertexBufferBinding >> instanceDivisor [
 
@@ -102,7 +102,7 @@ GLVertexBufferBinding >> instanceDivisor [
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 3/17/2021 23:04'
+	#'squeak_changestamp' : 'stlu 3/17/2021 23:04'
 }
 GLVertexBufferBinding >> instanceDivisor: advancePerInstance [
 
@@ -114,7 +114,7 @@ GLVertexBufferBinding >> instanceDivisor: advancePerInstance [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 3/15/2021 17:30'
+	#'squeak_changestamp' : 'stlu 3/15/2021 17:30'
 }
 GLVertexBufferBinding >> location [
 
@@ -123,7 +123,7 @@ GLVertexBufferBinding >> location [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 3/14/2021 12:33'
+	#'squeak_changestamp' : 'stlu 3/14/2021 12:33'
 }
 GLVertexBufferBinding >> offset [
 
@@ -132,7 +132,7 @@ GLVertexBufferBinding >> offset [
 
 {
 	#category : #printing,
-	#timestamp : 'stlu 3/14/2021 12:42'
+	#'squeak_changestamp' : 'stlu 3/14/2021 12:42'
 }
 GLVertexBufferBinding >> printOn: aStream [
 
@@ -142,7 +142,7 @@ GLVertexBufferBinding >> printOn: aStream [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 3/14/2021 12:33'
+	#'squeak_changestamp' : 'stlu 3/14/2021 12:33'
 }
 GLVertexBufferBinding >> stride [
 
@@ -151,7 +151,7 @@ GLVertexBufferBinding >> stride [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 3/14/2021 12:33'
+	#'squeak_changestamp' : 'stlu 3/14/2021 12:33'
 }
 GLVertexBufferBinding >> vertexArray [
 

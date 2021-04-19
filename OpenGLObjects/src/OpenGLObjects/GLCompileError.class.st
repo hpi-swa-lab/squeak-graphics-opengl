@@ -6,12 +6,12 @@ Class {
 		'infoLog'
 	],
 	#category : #'OpenGLObjects-Errors',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 10/26/2020 17:38'
+	#'squeak_changestamp' : 'stlu 10/26/2020 17:38'
 }
 GLCompileError class >> shader: glShader infoLog: aString [
 
@@ -23,7 +23,7 @@ GLCompileError class >> shader: glShader infoLog: aString [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 10/26/2020 17:35'
+	#'squeak_changestamp' : 'stlu 10/26/2020 17:35'
 }
 GLCompileError >> infoLog [
 
@@ -32,7 +32,7 @@ GLCompileError >> infoLog [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 10/26/2020 17:35'
+	#'squeak_changestamp' : 'stlu 10/26/2020 17:35'
 }
 GLCompileError >> infoLog: anObject [
 
@@ -41,7 +41,7 @@ GLCompileError >> infoLog: anObject [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 10/27/2020 12:09'
+	#'squeak_changestamp' : 'stlu 10/27/2020 12:09'
 }
 GLCompileError >> messageText [
 
@@ -50,7 +50,7 @@ GLCompileError >> messageText [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 10/26/2020 17:34'
+	#'squeak_changestamp' : 'stlu 10/26/2020 17:34'
 }
 GLCompileError >> shader [
 
@@ -59,7 +59,7 @@ GLCompileError >> shader [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 10/26/2020 17:35'
+	#'squeak_changestamp' : 'stlu 10/26/2020 17:35'
 }
 GLCompileError >> shader: aGLShader [
 

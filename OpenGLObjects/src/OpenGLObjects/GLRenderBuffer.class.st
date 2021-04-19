@@ -2,12 +2,12 @@ Class {
 	#name : #GLRenderBuffer,
 	#superclass : #GLObject,
 	#category : #'OpenGLObjects-FrameBuffers',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #allocation,
-	#timestamp : 'stlu 1/8/2021 18:10'
+	#'squeak_changestamp' : 'stlu 1/8/2021 18:10'
 }
 GLRenderBuffer class >> allocate: n in: anIntegerArray [
 
@@ -16,7 +16,7 @@ GLRenderBuffer class >> allocate: n in: anIntegerArray [
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 3/14/2021 22:22'
+	#'squeak_changestamp' : 'stlu 3/14/2021 22:22'
 }
 GLRenderBuffer class >> bound [
 
@@ -25,7 +25,7 @@ GLRenderBuffer class >> bound [
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 3/14/2021 22:23'
+	#'squeak_changestamp' : 'stlu 3/14/2021 22:23'
 }
 GLRenderBuffer class >> unbind [
 
@@ -35,7 +35,7 @@ GLRenderBuffer class >> unbind [
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 3/14/2021 22:20'
+	#'squeak_changestamp' : 'stlu 3/14/2021 22:20'
 }
 GLRenderBuffer >> bind [
 
@@ -45,7 +45,7 @@ GLRenderBuffer >> bind [
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 3/14/2021 22:17'
+	#'squeak_changestamp' : 'stlu 3/14/2021 22:17'
 }
 GLRenderBuffer >> boundDuring: aBlock [
 
@@ -60,7 +60,7 @@ GLRenderBuffer >> boundDuring: aBlock [
 
 {
 	#category : #storage,
-	#timestamp : 'stlu 1/9/2021 14:15'
+	#'squeak_changestamp' : 'stlu 1/9/2021 14:15'
 }
 GLRenderBuffer >> initializeStorage: extent format: internalFormatEnum samples: numSamples [
 
@@ -73,7 +73,7 @@ GLRenderBuffer >> initializeStorage: extent format: internalFormatEnum samples: 
 
 {
 	#category : #imps,
-	#timestamp : 'stlu 1/9/2021 14:14'
+	#'squeak_changestamp' : 'stlu 1/9/2021 14:14'
 }
 GLRenderBuffer >> stateAccessImp [
 

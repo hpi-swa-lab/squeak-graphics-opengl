@@ -6,12 +6,12 @@ Class {
 	#superclass : #VectorArray,
 	#type : #words,
 	#category : #'3DTransform-Arrays',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Vector2Array class >> contentsClass [
 	^Vector2

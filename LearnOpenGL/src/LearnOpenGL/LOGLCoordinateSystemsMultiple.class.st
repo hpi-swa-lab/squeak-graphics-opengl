@@ -5,12 +5,12 @@ Class {
 	#name : #LOGLCoordinateSystemsMultiple,
 	#superclass : #LOGLCoordinateSystemsDepth,
 	#category : #'LearnOpenGL-GettingStarted',
-	#commentStamp : 'stlu 2/1/2021 13:50'
+	#'squeak_changestamp' : 'stlu 2/1/2021 13:50'
 }
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/29/2021 17:30'
+	#'squeak_changestamp' : 'stlu 1/29/2021 17:30'
 }
 LOGLCoordinateSystemsMultiple >> cubePositions [
 
@@ -29,7 +29,7 @@ LOGLCoordinateSystemsMultiple >> cubePositions [
 
 {
 	#category : #running,
-	#timestamp : 'stlu 3/15/2021 16:20'
+	#'squeak_changestamp' : 'stlu 3/15/2021 16:20'
 }
 LOGLCoordinateSystemsMultiple >> draw [
 

@@ -2,12 +2,12 @@ Class {
 	#name : #GLRenderbufferDirectStateAccessImp,
 	#superclass : #GLRenderbufferStateAccessImp,
 	#category : #'OpenGLObjects-FrameBuffers',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #storage,
-	#timestamp : 'stlu 1/9/2021 14:13'
+	#'squeak_changestamp' : 'stlu 1/9/2021 14:13'
 }
 GLRenderbufferDirectStateAccessImp >> renderbuffer: aRenderbuffer initializeStorage: extent format: internalFormatEnum samples: numSamples [
 

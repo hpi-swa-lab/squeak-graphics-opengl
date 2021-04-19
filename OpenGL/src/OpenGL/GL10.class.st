@@ -2,12 +2,12 @@ Class {
 	#name : #GL10,
 	#superclass : #GLVersion,
 	#category : #'OpenGL-Versions',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 4/15/2021 13:56'
+	#'squeak_changestamp' : 'stlu 4/15/2021 13:56'
 }
 GL10 class >> api [
 
@@ -16,7 +16,7 @@ GL10 class >> api [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 4/15/2021 18:02'
+	#'squeak_changestamp' : 'stlu 4/15/2021 18:02'
 }
 GL10 class >> major [
 
@@ -25,7 +25,7 @@ GL10 class >> major [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 4/15/2021 18:01'
+	#'squeak_changestamp' : 'stlu 4/15/2021 18:01'
 }
 GL10 class >> minor [
 
@@ -34,7 +34,7 @@ GL10 class >> minor [
 
 {
 	#category : #printing,
-	#timestamp : 'stlu 4/17/2021 09:54'
+	#'squeak_changestamp' : 'stlu 4/17/2021 09:54'
 }
 GL10 >> apiString [
 
@@ -43,7 +43,7 @@ GL10 >> apiString [
 
 {
 	#category : #parameters,
-	#timestamp : 'stlu 4/15/2021 19:14'
+	#'squeak_changestamp' : 'stlu 4/15/2021 19:14'
 }
 GL10 >> getShadingLanguageVersion: aLibrary [
 
@@ -56,7 +56,7 @@ GL10 >> getShadingLanguageVersion: aLibrary [
 
 {
 	#category : #parameters,
-	#timestamp : 'stlu 4/15/2021 19:15'
+	#'squeak_changestamp' : 'stlu 4/15/2021 19:15'
 }
 GL10 >> getVersion: aLibrary [
 
@@ -69,7 +69,7 @@ GL10 >> getVersion: aLibrary [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 4/15/2021 13:56'
+	#'squeak_changestamp' : 'stlu 4/15/2021 13:56'
 }
 GL10 >> moduleName [
 

@@ -2,12 +2,12 @@ Class {
 	#name : #GLSLFloat2DMultisampleArraySampler,
 	#superclass : #GLSLSampler,
 	#category : #'OpenGLObjects-Types',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/15/2020 13:04'
+	#'squeak_changestamp' : 'stlu 12/15/2020 13:04'
 }
 GLSLFloat2DMultisampleArraySampler class >> declarators [
 
@@ -16,7 +16,7 @@ GLSLFloat2DMultisampleArraySampler class >> declarators [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/15/2020 13:04'
+	#'squeak_changestamp' : 'stlu 12/15/2020 13:04'
 }
 GLSLFloat2DMultisampleArraySampler class >> enum [
 
@@ -25,7 +25,7 @@ GLSLFloat2DMultisampleArraySampler class >> enum [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/15/2020 13:04'
+	#'squeak_changestamp' : 'stlu 12/15/2020 13:04'
 }
 GLSLFloat2DMultisampleArraySampler class >> enumName [
 
@@ -34,7 +34,7 @@ GLSLFloat2DMultisampleArraySampler class >> enumName [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/15/2020 13:04'
+	#'squeak_changestamp' : 'stlu 12/15/2020 13:04'
 }
 GLSLFloat2DMultisampleArraySampler class >> pixelType [
 
@@ -43,7 +43,7 @@ GLSLFloat2DMultisampleArraySampler class >> pixelType [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/15/2020 13:04'
+	#'squeak_changestamp' : 'stlu 12/15/2020 13:04'
 }
 GLSLFloat2DMultisampleArraySampler class >> squeakName [
 

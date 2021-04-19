@@ -2,7 +2,7 @@ Extension { #name : #GLSLScalar }
 
 {
 	#category : #'*OpenGLObjects-Generation',
-	#timestamp : 'stlu 11/23/2020 11:41'
+	#'squeak_changestamp' : 'stlu 11/23/2020 11:41'
 }
 GLSLScalar class >> compileGLSLInitialsAccessor: stringOrSymbol [
 
@@ -13,7 +13,7 @@ GLSLScalar class >> compileGLSLInitialsAccessor: stringOrSymbol [
 
 {
 	#category : #'*OpenGLObjects-Generation',
-	#timestamp : 'stlu 11/19/2020 18:46'
+	#'squeak_changestamp' : 'stlu 11/19/2020 18:46'
 }
 GLSLScalar class >> compileInitialsAccessor: stringOrSymbol [
 
@@ -24,7 +24,7 @@ GLSLScalar class >> compileInitialsAccessor: stringOrSymbol [
 
 {
 	#category : #'*OpenGLObjects-Generation',
-	#timestamp : 'stlu 12/14/2020 16:49'
+	#'squeak_changestamp' : 'stlu 12/14/2020 16:49'
 }
 GLSLScalar class >> generateClasses [
 

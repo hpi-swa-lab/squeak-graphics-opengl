@@ -2,12 +2,12 @@ Class {
 	#name : #GLSLUnsignedInteger2DRectSampler,
 	#superclass : #GLSLSampler,
 	#category : #'OpenGLObjects-Types',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/15/2020 13:04'
+	#'squeak_changestamp' : 'stlu 12/15/2020 13:04'
 }
 GLSLUnsignedInteger2DRectSampler class >> declarators [
 
@@ -16,7 +16,7 @@ GLSLUnsignedInteger2DRectSampler class >> declarators [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/15/2020 13:04'
+	#'squeak_changestamp' : 'stlu 12/15/2020 13:04'
 }
 GLSLUnsignedInteger2DRectSampler class >> enum [
 
@@ -25,7 +25,7 @@ GLSLUnsignedInteger2DRectSampler class >> enum [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/15/2020 13:04'
+	#'squeak_changestamp' : 'stlu 12/15/2020 13:04'
 }
 GLSLUnsignedInteger2DRectSampler class >> enumName [
 
@@ -34,7 +34,7 @@ GLSLUnsignedInteger2DRectSampler class >> enumName [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/15/2020 13:04'
+	#'squeak_changestamp' : 'stlu 12/15/2020 13:04'
 }
 GLSLUnsignedInteger2DRectSampler class >> pixelType [
 
@@ -43,7 +43,7 @@ GLSLUnsignedInteger2DRectSampler class >> pixelType [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/15/2020 13:04'
+	#'squeak_changestamp' : 'stlu 12/15/2020 13:04'
 }
 GLSLUnsignedInteger2DRectSampler class >> squeakName [
 

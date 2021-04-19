@@ -14,12 +14,12 @@ Class {
 		'zoom'
 	],
 	#category : #'LearnOpenGL-Core',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 12/16/2020 13:13'
+	#'squeak_changestamp' : 'stlu 12/16/2020 13:13'
 }
 LOGLCamera class >> position: posVector [
 
@@ -30,7 +30,7 @@ LOGLCamera class >> position: posVector [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/16/2020 13:06'
+	#'squeak_changestamp' : 'stlu 12/16/2020 13:06'
 }
 LOGLCamera >> front [
 
@@ -39,7 +39,7 @@ LOGLCamera >> front [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 12/16/2020 13:05'
+	#'squeak_changestamp' : 'stlu 12/16/2020 13:05'
 }
 LOGLCamera >> initialize [
 
@@ -57,7 +57,7 @@ LOGLCamera >> initialize [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/16/2020 13:06'
+	#'squeak_changestamp' : 'stlu 12/16/2020 13:06'
 }
 LOGLCamera >> mouseSensitivity [
 
@@ -66,7 +66,7 @@ LOGLCamera >> mouseSensitivity [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/16/2020 13:06'
+	#'squeak_changestamp' : 'stlu 12/16/2020 13:06'
 }
 LOGLCamera >> mouseSensitivity: anObject [
 
@@ -75,7 +75,7 @@ LOGLCamera >> mouseSensitivity: anObject [
 
 {
 	#category : #movement,
-	#timestamp : 'stlu 2/1/2021 14:36'
+	#'squeak_changestamp' : 'stlu 2/1/2021 14:36'
 }
 LOGLCamera >> moveBackward: deltaTime [
 
@@ -84,7 +84,7 @@ LOGLCamera >> moveBackward: deltaTime [
 
 {
 	#category : #movement,
-	#timestamp : 'stlu 2/1/2021 14:34'
+	#'squeak_changestamp' : 'stlu 2/1/2021 14:34'
 }
 LOGLCamera >> moveBy: aVector [
 
@@ -93,7 +93,7 @@ LOGLCamera >> moveBy: aVector [
 
 {
 	#category : #movement,
-	#timestamp : 'stlu 2/1/2021 14:36'
+	#'squeak_changestamp' : 'stlu 2/1/2021 14:36'
 }
 LOGLCamera >> moveForward: deltaTime [
 
@@ -102,7 +102,7 @@ LOGLCamera >> moveForward: deltaTime [
 
 {
 	#category : #movement,
-	#timestamp : 'stlu 2/1/2021 14:35'
+	#'squeak_changestamp' : 'stlu 2/1/2021 14:35'
 }
 LOGLCamera >> moveLeft: deltaTime [
 
@@ -111,7 +111,7 @@ LOGLCamera >> moveLeft: deltaTime [
 
 {
 	#category : #movement,
-	#timestamp : 'stlu 2/1/2021 14:36'
+	#'squeak_changestamp' : 'stlu 2/1/2021 14:36'
 }
 LOGLCamera >> moveRight: deltaTime [
 
@@ -120,7 +120,7 @@ LOGLCamera >> moveRight: deltaTime [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/16/2020 13:06'
+	#'squeak_changestamp' : 'stlu 12/16/2020 13:06'
 }
 LOGLCamera >> movementSpeed [
 
@@ -129,7 +129,7 @@ LOGLCamera >> movementSpeed [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/16/2020 13:06'
+	#'squeak_changestamp' : 'stlu 12/16/2020 13:06'
 }
 LOGLCamera >> movementSpeed: anObject [
 
@@ -138,7 +138,7 @@ LOGLCamera >> movementSpeed: anObject [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/16/2020 13:06'
+	#'squeak_changestamp' : 'stlu 12/16/2020 13:06'
 }
 LOGLCamera >> pitch [
 
@@ -147,7 +147,7 @@ LOGLCamera >> pitch [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/16/2020 13:08'
+	#'squeak_changestamp' : 'stlu 12/16/2020 13:08'
 }
 LOGLCamera >> pitch: anObject [
 
@@ -157,7 +157,7 @@ LOGLCamera >> pitch: anObject [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/16/2020 13:06'
+	#'squeak_changestamp' : 'stlu 12/16/2020 13:06'
 }
 LOGLCamera >> position [
 
@@ -166,7 +166,7 @@ LOGLCamera >> position [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/16/2020 13:06'
+	#'squeak_changestamp' : 'stlu 12/16/2020 13:06'
 }
 LOGLCamera >> position: anObject [
 
@@ -176,7 +176,7 @@ LOGLCamera >> position: anObject [
 
 {
 	#category : #updating,
-	#timestamp : 'stlu 2/1/2021 14:13'
+	#'squeak_changestamp' : 'stlu 2/1/2021 14:13'
 }
 LOGLCamera >> processMouseMove: offset [
 
@@ -191,7 +191,7 @@ LOGLCamera >> processMouseMove: offset [
 
 {
 	#category : #updating,
-	#timestamp : 'stlu 2/1/2021 14:14'
+	#'squeak_changestamp' : 'stlu 2/1/2021 14:14'
 }
 LOGLCamera >> processMouseScroll: offset [
 
@@ -200,7 +200,7 @@ LOGLCamera >> processMouseScroll: offset [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/16/2020 13:06'
+	#'squeak_changestamp' : 'stlu 12/16/2020 13:06'
 }
 LOGLCamera >> right [
 
@@ -209,7 +209,7 @@ LOGLCamera >> right [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/16/2020 13:06'
+	#'squeak_changestamp' : 'stlu 12/16/2020 13:06'
 }
 LOGLCamera >> up [
 
@@ -218,7 +218,7 @@ LOGLCamera >> up [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/16/2020 13:08'
+	#'squeak_changestamp' : 'stlu 12/16/2020 13:08'
 }
 LOGLCamera >> up: anObject [
 
@@ -228,7 +228,7 @@ LOGLCamera >> up: anObject [
 
 {
 	#category : #updating,
-	#timestamp : 'stlu 12/16/2020 13:16'
+	#'squeak_changestamp' : 'stlu 12/16/2020 13:16'
 }
 LOGLCamera >> updateCameraVectors [
 
@@ -242,7 +242,7 @@ LOGLCamera >> updateCameraVectors [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 2/1/2021 14:19'
+	#'squeak_changestamp' : 'stlu 2/1/2021 14:19'
 }
 LOGLCamera >> viewMatrix [
 
@@ -254,7 +254,7 @@ LOGLCamera >> viewMatrix [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/16/2020 13:06'
+	#'squeak_changestamp' : 'stlu 12/16/2020 13:06'
 }
 LOGLCamera >> worldUp [
 
@@ -263,7 +263,7 @@ LOGLCamera >> worldUp [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/16/2020 13:11'
+	#'squeak_changestamp' : 'stlu 12/16/2020 13:11'
 }
 LOGLCamera >> worldUp: anObject [
 
@@ -273,7 +273,7 @@ LOGLCamera >> worldUp: anObject [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/16/2020 13:06'
+	#'squeak_changestamp' : 'stlu 12/16/2020 13:06'
 }
 LOGLCamera >> yaw [
 
@@ -282,7 +282,7 @@ LOGLCamera >> yaw [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/16/2020 13:08'
+	#'squeak_changestamp' : 'stlu 12/16/2020 13:08'
 }
 LOGLCamera >> yaw: anObject [
 
@@ -292,7 +292,7 @@ LOGLCamera >> yaw: anObject [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/16/2020 13:06'
+	#'squeak_changestamp' : 'stlu 12/16/2020 13:06'
 }
 LOGLCamera >> zoom [
 
@@ -301,7 +301,7 @@ LOGLCamera >> zoom [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/16/2020 13:06'
+	#'squeak_changestamp' : 'stlu 12/16/2020 13:06'
 }
 LOGLCamera >> zoom: anObject [
 

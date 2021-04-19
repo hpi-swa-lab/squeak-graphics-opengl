@@ -2,12 +2,12 @@ Class {
 	#name : #GL2DArrayTexture,
 	#superclass : #GLTexture,
 	#category : #'OpenGLObjects-Textures',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 3/14/2021 22:33'
+	#'squeak_changestamp' : 'stlu 3/14/2021 22:33'
 }
 GL2DArrayTexture class >> bound [
 
@@ -16,7 +16,7 @@ GL2DArrayTexture class >> bound [
 
 {
 	#category : #private,
-	#timestamp : 'stlu 3/15/2021 11:50'
+	#'squeak_changestamp' : 'stlu 3/15/2021 11:50'
 }
 GL2DArrayTexture class >> privateSetBinding: aTexture [
 
@@ -25,7 +25,7 @@ GL2DArrayTexture class >> privateSetBinding: aTexture [
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 10/29/2020 00:42'
+	#'squeak_changestamp' : 'stlu 10/29/2020 00:42'
 }
 GL2DArrayTexture class >> target [
 

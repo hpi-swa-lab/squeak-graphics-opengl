@@ -8,12 +8,12 @@ Class {
 		'ebo'
 	],
 	#category : #'LearnOpenGL-GettingStarted',
-	#commentStamp : 'stlu 1/4/2021 04:08'
+	#'squeak_changestamp' : 'stlu 1/4/2021 04:08'
 }
 
 {
 	#category : #running,
-	#timestamp : 'stlu 3/15/2021 16:27'
+	#'squeak_changestamp' : 'stlu 3/15/2021 16:27'
 }
 LOGLHelloTriangleIndexed >> draw [
 
@@ -26,7 +26,7 @@ LOGLHelloTriangleIndexed >> draw [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/22/2020 15:01'
+	#'squeak_changestamp' : 'stlu 12/22/2020 15:01'
 }
 LOGLHelloTriangleIndexed >> indices [
 
@@ -38,7 +38,7 @@ LOGLHelloTriangleIndexed >> indices [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 1/7/2021 11:16'
+	#'squeak_changestamp' : 'stlu 1/7/2021 11:16'
 }
 LOGLHelloTriangleIndexed >> isWireframe [
 
@@ -47,7 +47,7 @@ LOGLHelloTriangleIndexed >> isWireframe [
 
 {
 	#category : #running,
-	#timestamp : 'stlu 4/16/2021 15:33'
+	#'squeak_changestamp' : 'stlu 4/16/2021 15:33'
 }
 LOGLHelloTriangleIndexed >> setUp [
 
@@ -66,7 +66,7 @@ LOGLHelloTriangleIndexed >> setUp [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/22/2020 14:37'
+	#'squeak_changestamp' : 'stlu 12/22/2020 14:37'
 }
 LOGLHelloTriangleIndexed >> vertices [
 

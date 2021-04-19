@@ -6,12 +6,12 @@ Class {
 		'interfaces'
 	],
 	#category : #'OpenGLObjects-Programs',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #allocation,
-	#timestamp : 'stlu 11/3/2020 15:38'
+	#'squeak_changestamp' : 'stlu 11/3/2020 15:38'
 }
 GLProgram class >> allocate [
 
@@ -20,7 +20,7 @@ GLProgram class >> allocate [
 
 {
 	#category : #allocation,
-	#timestamp : 'stlu 11/30/2020 19:52'
+	#'squeak_changestamp' : 'stlu 11/30/2020 19:52'
 }
 GLProgram class >> allocate: n in: anIntegerArray [
 
@@ -30,7 +30,7 @@ GLProgram class >> allocate: n in: anIntegerArray [
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 3/14/2021 19:50'
+	#'squeak_changestamp' : 'stlu 3/14/2021 19:50'
 }
 GLProgram class >> bound [
 
@@ -39,7 +39,7 @@ GLProgram class >> bound [
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 2/8/2021 12:55'
+	#'squeak_changestamp' : 'stlu 2/8/2021 12:55'
 }
 GLProgram class >> shaders: aCollection [
 
@@ -51,7 +51,7 @@ GLProgram class >> shaders: aCollection [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/3/2020 19:05'
+	#'squeak_changestamp' : 'stlu 12/3/2020 19:05'
 }
 GLProgram class >> target [
 
@@ -60,7 +60,7 @@ GLProgram class >> target [
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 3/14/2021 22:02'
+	#'squeak_changestamp' : 'stlu 3/14/2021 22:02'
 }
 GLProgram class >> unbind [
 
@@ -70,7 +70,7 @@ GLProgram class >> unbind [
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 2/8/2021 12:55'
+	#'squeak_changestamp' : 'stlu 2/8/2021 12:55'
 }
 GLProgram class >> vertexShader: vertexShader fragmentShader: fragmentShader [
 
@@ -83,7 +83,7 @@ GLProgram class >> vertexShader: vertexShader fragmentShader: fragmentShader [
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 2/8/2021 12:54'
+	#'squeak_changestamp' : 'stlu 2/8/2021 12:54'
 }
 GLProgram class >> vertexShaderMethod: vertexMethodReference fragmentShaderMethod: fragmentMethodReference [
 
@@ -102,7 +102,7 @@ GLProgram class >> vertexShaderMethod: vertexMethodReference fragmentShaderMetho
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 12/22/2020 14:04'
+	#'squeak_changestamp' : 'stlu 12/22/2020 14:04'
 }
 GLProgram class >> vertexSource: vertexGLSLString fragmentSource: fragmentGLSLString [
 
@@ -124,7 +124,7 @@ GLProgram class >> vertexSource: vertexGLSLString fragmentSource: fragmentGLSLSt
 
 {
 	#category : #actions,
-	#timestamp : 'stlu 11/3/2020 15:36'
+	#'squeak_changestamp' : 'stlu 11/3/2020 15:36'
 }
 GLProgram >> attachShader: glShader [
 
@@ -134,7 +134,7 @@ GLProgram >> attachShader: glShader [
 
 {
 	#category : #actions,
-	#timestamp : 'stlu 2/8/2021 12:56'
+	#'squeak_changestamp' : 'stlu 2/8/2021 12:56'
 }
 GLProgram >> attachShaders: aCollection [
 
@@ -144,7 +144,7 @@ GLProgram >> attachShaders: aCollection [
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 3/14/2021 19:59'
+	#'squeak_changestamp' : 'stlu 3/14/2021 19:59'
 }
 GLProgram >> bind [
 
@@ -154,7 +154,7 @@ GLProgram >> bind [
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 3/14/2021 22:07'
+	#'squeak_changestamp' : 'stlu 3/14/2021 22:07'
 }
 GLProgram >> boundDuring: aBlock [
 
@@ -169,7 +169,7 @@ GLProgram >> boundDuring: aBlock [
 
 {
 	#category : #actions,
-	#timestamp : 'stlu 12/8/2020 16:30'
+	#'squeak_changestamp' : 'stlu 12/8/2020 16:30'
 }
 GLProgram >> detachShader: aShader [
 
@@ -179,7 +179,7 @@ GLProgram >> detachShader: aShader [
 
 {
 	#category : #actions,
-	#timestamp : 'stlu 12/13/2020 15:24'
+	#'squeak_changestamp' : 'stlu 12/13/2020 15:24'
 }
 GLProgram >> detachShaders [
 
@@ -189,7 +189,7 @@ GLProgram >> detachShaders [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/3/2020 16:55'
+	#'squeak_changestamp' : 'stlu 11/3/2020 16:55'
 }
 GLProgram >> getAttribute: attributeName [
 
@@ -200,7 +200,7 @@ GLProgram >> getAttribute: attributeName [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/3/2020 15:36'
+	#'squeak_changestamp' : 'stlu 11/3/2020 15:36'
 }
 GLProgram >> getBinary [
 
@@ -215,7 +215,7 @@ GLProgram >> getBinary [
 
 {
 	#category : #'error handling',
-	#timestamp : 'stlu 12/8/2020 17:27'
+	#'squeak_changestamp' : 'stlu 12/8/2020 17:27'
 }
 GLProgram >> getInfoLog [
 
@@ -229,7 +229,7 @@ GLProgram >> getInfoLog [
 
 {
 	#category : #'error handling',
-	#timestamp : 'stlu 10/28/2020 14:37'
+	#'squeak_changestamp' : 'stlu 10/28/2020 14:37'
 }
 GLProgram >> getInfoLogLength [
 
@@ -238,7 +238,7 @@ GLProgram >> getInfoLogLength [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 10/27/2020 12:27'
+	#'squeak_changestamp' : 'stlu 10/27/2020 12:27'
 }
 GLProgram >> getNumAttributes [
 
@@ -247,7 +247,7 @@ GLProgram >> getNumAttributes [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 10/27/2020 12:28'
+	#'squeak_changestamp' : 'stlu 10/27/2020 12:28'
 }
 GLProgram >> getNumUniforms [
 
@@ -256,7 +256,7 @@ GLProgram >> getNumUniforms [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 12/13/2020 15:59'
+	#'squeak_changestamp' : 'stlu 12/13/2020 15:59'
 }
 GLProgram >> initialize [
 
@@ -266,7 +266,7 @@ GLProgram >> initialize [
 
 {
 	#category : #'accessing-resources',
-	#timestamp : 'stlu 12/16/2020 19:59'
+	#'squeak_changestamp' : 'stlu 12/16/2020 19:59'
 }
 GLProgram >> inputs [
 
@@ -275,7 +275,7 @@ GLProgram >> inputs [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 12/14/2020 12:12'
+	#'squeak_changestamp' : 'stlu 12/14/2020 12:12'
 }
 GLProgram >> isAllocated [
 
@@ -284,7 +284,7 @@ GLProgram >> isAllocated [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 10/27/2020 12:17'
+	#'squeak_changestamp' : 'stlu 10/27/2020 12:17'
 }
 GLProgram >> isFlaggedForDeletion [
 
@@ -293,7 +293,7 @@ GLProgram >> isFlaggedForDeletion [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 10/29/2020 12:16'
+	#'squeak_changestamp' : 'stlu 10/29/2020 12:16'
 }
 GLProgram >> isProgram [
 
@@ -302,7 +302,7 @@ GLProgram >> isProgram [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 11/3/2020 15:37'
+	#'squeak_changestamp' : 'stlu 11/3/2020 15:37'
 }
 GLProgram >> isValid [
 
@@ -312,7 +312,7 @@ GLProgram >> isValid [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 10/27/2020 12:17'
+	#'squeak_changestamp' : 'stlu 10/27/2020 12:17'
 }
 GLProgram >> lastLinkingSucceeded [
 
@@ -321,7 +321,7 @@ GLProgram >> lastLinkingSucceeded [
 
 {
 	#category : #actions,
-	#timestamp : 'stlu 12/14/2020 12:29'
+	#'squeak_changestamp' : 'stlu 12/14/2020 12:29'
 }
 GLProgram >> link [
 
@@ -333,7 +333,7 @@ GLProgram >> link [
 
 {
 	#category : #'error handling',
-	#timestamp : 'stlu 12/14/2020 12:23'
+	#'squeak_changestamp' : 'stlu 12/14/2020 12:23'
 }
 GLProgram >> linkingFailed [
 
@@ -342,7 +342,7 @@ GLProgram >> linkingFailed [
 
 {
 	#category : #actions,
-	#timestamp : 'stlu 12/16/2020 19:59'
+	#'squeak_changestamp' : 'stlu 12/16/2020 19:59'
 }
 GLProgram >> linkingSucceeded [
 
@@ -351,7 +351,7 @@ GLProgram >> linkingSucceeded [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 GLProgram >> shaders [
 
@@ -360,7 +360,7 @@ GLProgram >> shaders [
 
 {
 	#category : #'accessing-resources',
-	#timestamp : 'stlu 12/16/2020 19:59'
+	#'squeak_changestamp' : 'stlu 12/16/2020 19:59'
 }
 GLProgram >> uniforms [
 
@@ -369,7 +369,7 @@ GLProgram >> uniforms [
 
 {
 	#category : #updating,
-	#timestamp : 'stlu 2/7/2021 15:39'
+	#'squeak_changestamp' : 'stlu 2/7/2021 15:39'
 }
 GLProgram >> update: anAspect with: anObject [
 	"Receive a change notice from an object of whom the receiver is a 
@@ -382,7 +382,7 @@ GLProgram >> update: anAspect with: anObject [
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 3/14/2021 19:33'
+	#'squeak_changestamp' : 'stlu 3/14/2021 19:33'
 }
 GLProgram >> useDuring: aBlock [
 
@@ -392,7 +392,7 @@ GLProgram >> useDuring: aBlock [
 
 {
 	#category : #actions,
-	#timestamp : 'stlu 12/14/2020 12:17'
+	#'squeak_changestamp' : 'stlu 12/14/2020 12:17'
 }
 GLProgram >> validate [
 

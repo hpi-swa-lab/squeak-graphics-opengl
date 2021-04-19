@@ -6,12 +6,12 @@ Class {
 	#superclass : #Float32Array,
 	#type : #words,
 	#category : #'3DTransform-Vectors',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #island,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Vector class >> howToPassAsArgument [
 	"We clone all vectors, even the array ones to point out that manipulation of those vectors outside of some context is not a goof idea. We may reassess this later."
@@ -20,7 +20,7 @@ Vector class >> howToPassAsArgument [
 
 {
 	#category : #'class initialization',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Vector class >> initialize [
 	"Vector initialize"
@@ -29,7 +29,7 @@ Vector class >> initialize [
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Vector class >> new [
 	^super new: self numElements
@@ -37,7 +37,7 @@ Vector class >> new [
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Vector class >> numElements [
 	^0
@@ -45,7 +45,7 @@ Vector class >> numElements [
 
 {
 	#category : #'as yet unclassified',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Vector >> copyFrom: array [
 
@@ -56,7 +56,7 @@ Vector >> copyFrom: array [
 
 {
 	#category : #initialize,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Vector >> loadFrom: srcObject [
 	self == srcObject ifTrue:[^self].
@@ -67,7 +67,7 @@ Vector >> loadFrom: srcObject [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Vector >> numElements [
 	^self class numElements
@@ -75,7 +75,7 @@ Vector >> numElements [
 
 {
 	#category : #private,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Vector >> privateLoadFrom: srcObject [
 	"Load the receiver from the given source object."
@@ -84,7 +84,7 @@ Vector >> privateLoadFrom: srcObject [
 
 {
 	#category : #private,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Vector >> replaceFrom: start to: stop with: replacement startingAt: repStart [ 
 	"Primitive. This destructively replaces elements from start to stop in the receiver starting at index, repStart, in the collection, replacement. Answer the receiver. Range checks are performed in the primitive only. Optional. See Object documentation whatIsAPrimitive."
@@ -98,7 +98,7 @@ Vector >> replaceFrom: start to: stop with: replacement startingAt: repStart [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Vector >> wordAt: index [
 	<primitive: 60>
@@ -107,7 +107,7 @@ Vector >> wordAt: index [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Vector >> wordAt: index put: value [
 	<primitive: 61>

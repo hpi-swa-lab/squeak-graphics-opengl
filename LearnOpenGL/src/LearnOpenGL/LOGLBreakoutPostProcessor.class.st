@@ -14,12 +14,12 @@ Class {
 		'vao'
 	],
 	#category : #'LearnOpenGL-Breakout',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 1/8/2021 15:41'
+	#'squeak_changestamp' : 'stlu 1/8/2021 15:41'
 }
 LOGLBreakoutPostProcessor class >> extent: aPoint [
 
@@ -31,7 +31,7 @@ LOGLBreakoutPostProcessor class >> extent: aPoint [
 
 {
 	#category : #rendering,
-	#timestamp : 'stlu 4/15/2021 12:10'
+	#'squeak_changestamp' : 'stlu 4/15/2021 12:10'
 }
 LOGLBreakoutPostProcessor >> beginRender [
 
@@ -42,7 +42,7 @@ LOGLBreakoutPostProcessor >> beginRender [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 1/8/2021 16:25'
+	#'squeak_changestamp' : 'stlu 1/8/2021 16:25'
 }
 LOGLBreakoutPostProcessor >> blurKernel [
 
@@ -55,7 +55,7 @@ LOGLBreakoutPostProcessor >> blurKernel [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/8/2021 15:34'
+	#'squeak_changestamp' : 'stlu 1/8/2021 15:34'
 }
 LOGLBreakoutPostProcessor >> chaos [
 
@@ -64,7 +64,7 @@ LOGLBreakoutPostProcessor >> chaos [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/8/2021 15:34'
+	#'squeak_changestamp' : 'stlu 1/8/2021 15:34'
 }
 LOGLBreakoutPostProcessor >> chaos: anObject [
 
@@ -73,7 +73,7 @@ LOGLBreakoutPostProcessor >> chaos: anObject [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/8/2021 15:34'
+	#'squeak_changestamp' : 'stlu 1/8/2021 15:34'
 }
 LOGLBreakoutPostProcessor >> confusion [
 
@@ -82,7 +82,7 @@ LOGLBreakoutPostProcessor >> confusion [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/8/2021 15:34'
+	#'squeak_changestamp' : 'stlu 1/8/2021 15:34'
 }
 LOGLBreakoutPostProcessor >> confusion: anObject [
 
@@ -91,7 +91,7 @@ LOGLBreakoutPostProcessor >> confusion: anObject [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 1/8/2021 16:23'
+	#'squeak_changestamp' : 'stlu 1/8/2021 16:23'
 }
 LOGLBreakoutPostProcessor >> edgeKernel [
 
@@ -104,7 +104,7 @@ LOGLBreakoutPostProcessor >> edgeKernel [
 
 {
 	#category : #rendering,
-	#timestamp : 'stlu 1/9/2021 14:44'
+	#'squeak_changestamp' : 'stlu 1/9/2021 14:44'
 }
 LOGLBreakoutPostProcessor >> endRender [
 
@@ -119,7 +119,7 @@ LOGLBreakoutPostProcessor >> endRender [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/8/2021 15:34'
+	#'squeak_changestamp' : 'stlu 1/8/2021 15:34'
 }
 LOGLBreakoutPostProcessor >> extent [
 
@@ -128,7 +128,7 @@ LOGLBreakoutPostProcessor >> extent [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/8/2021 15:34'
+	#'squeak_changestamp' : 'stlu 1/8/2021 15:34'
 }
 LOGLBreakoutPostProcessor >> extent: anObject [
 
@@ -137,7 +137,7 @@ LOGLBreakoutPostProcessor >> extent: anObject [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 3/15/2021 13:16'
+	#'squeak_changestamp' : 'stlu 3/15/2021 13:16'
 }
 LOGLBreakoutPostProcessor >> initialize [
 
@@ -185,7 +185,7 @@ LOGLBreakoutPostProcessor >> initialize [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 1/10/2021 19:11'
+	#'squeak_changestamp' : 'stlu 1/10/2021 19:11'
 }
 LOGLBreakoutPostProcessor >> initializeRenderData [
 
@@ -212,7 +212,7 @@ LOGLBreakoutPostProcessor >> initializeRenderData [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 1/8/2021 17:56'
+	#'squeak_changestamp' : 'stlu 1/8/2021 17:56'
 }
 LOGLBreakoutPostProcessor >> offsets [
 
@@ -234,7 +234,7 @@ LOGLBreakoutPostProcessor >> offsets [
 
 {
 	#category : #rendering,
-	#timestamp : 'stlu 3/15/2021 16:19'
+	#'squeak_changestamp' : 'stlu 3/15/2021 16:19'
 }
 LOGLBreakoutPostProcessor >> render: secs [
 
@@ -251,7 +251,7 @@ LOGLBreakoutPostProcessor >> render: secs [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/8/2021 15:34'
+	#'squeak_changestamp' : 'stlu 1/8/2021 15:34'
 }
 LOGLBreakoutPostProcessor >> shake [
 
@@ -260,7 +260,7 @@ LOGLBreakoutPostProcessor >> shake [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/8/2021 15:34'
+	#'squeak_changestamp' : 'stlu 1/8/2021 15:34'
 }
 LOGLBreakoutPostProcessor >> shake: anObject [
 
@@ -269,7 +269,7 @@ LOGLBreakoutPostProcessor >> shake: anObject [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/8/2021 15:34'
+	#'squeak_changestamp' : 'stlu 1/8/2021 15:34'
 }
 LOGLBreakoutPostProcessor >> texture [
 
@@ -278,7 +278,7 @@ LOGLBreakoutPostProcessor >> texture [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/8/2021 15:34'
+	#'squeak_changestamp' : 'stlu 1/8/2021 15:34'
 }
 LOGLBreakoutPostProcessor >> texture: anObject [
 
@@ -287,7 +287,7 @@ LOGLBreakoutPostProcessor >> texture: anObject [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 1/8/2021 16:13'
+	#'squeak_changestamp' : 'stlu 1/8/2021 16:13'
 }
 LOGLBreakoutPostProcessor >> vertices [
 

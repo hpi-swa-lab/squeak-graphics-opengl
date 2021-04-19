@@ -8,12 +8,12 @@ Class {
 		'GLFWConstants'
 	],
 	#category : #'GLFW-OpenGL',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 4/16/2021 10:35'
+	#'squeak_changestamp' : 'stlu 4/16/2021 10:35'
 }
 GLFWContext class >> newIn: bounds version: aGLVersion title: aString [
 
@@ -26,7 +26,7 @@ GLFWContext class >> newIn: bounds version: aGLVersion title: aString [
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 2/12/2021 22:59'
+	#'squeak_changestamp' : 'stlu 2/12/2021 22:59'
 }
 GLFWContext class >> window: aWindow [
 
@@ -41,7 +41,7 @@ GLFWContext class >> window: aWindow [
 
 {
 	#category : #activation,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 GLFWContext >> activate [
 
@@ -50,7 +50,7 @@ GLFWContext >> activate [
 
 {
 	#category : #'client api',
-	#timestamp : 'stlu 2/12/2021 22:40'
+	#'squeak_changestamp' : 'stlu 2/12/2021 22:40'
 }
 GLFWContext >> clientAPI [
 
@@ -59,7 +59,7 @@ GLFWContext >> clientAPI [
 
 {
 	#category : #'client api',
-	#timestamp : 'stlu 2/12/2021 22:39'
+	#'squeak_changestamp' : 'stlu 2/12/2021 22:39'
 }
 GLFWContext >> clientAPIMajorVersion [
 
@@ -68,7 +68,7 @@ GLFWContext >> clientAPIMajorVersion [
 
 {
 	#category : #'client api',
-	#timestamp : 'stlu 2/12/2021 22:40'
+	#'squeak_changestamp' : 'stlu 2/12/2021 22:40'
 }
 GLFWContext >> clientAPIMinorVersion [
 
@@ -77,7 +77,7 @@ GLFWContext >> clientAPIMinorVersion [
 
 {
 	#category : #'client api',
-	#timestamp : 'stlu 2/12/2021 22:39'
+	#'squeak_changestamp' : 'stlu 2/12/2021 22:39'
 }
 GLFWContext >> clientAPIName [
 
@@ -94,7 +94,7 @@ GLFWContext >> clientAPIName [
 
 {
 	#category : #'client api',
-	#timestamp : 'stlu 2/12/2021 22:40'
+	#'squeak_changestamp' : 'stlu 2/12/2021 22:40'
 }
 GLFWContext >> clientAPIRevision [
 
@@ -103,7 +103,7 @@ GLFWContext >> clientAPIRevision [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 2/12/2021 22:41'
+	#'squeak_changestamp' : 'stlu 2/12/2021 22:41'
 }
 GLFWContext >> creationAPI [
 
@@ -112,7 +112,7 @@ GLFWContext >> creationAPI [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 2/12/2021 22:41'
+	#'squeak_changestamp' : 'stlu 2/12/2021 22:41'
 }
 GLFWContext >> creationAPIName [
 
@@ -126,7 +126,7 @@ GLFWContext >> creationAPIName [
 
 {
 	#category : #activation,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 GLFWContext >> deactivate [
 
@@ -135,7 +135,7 @@ GLFWContext >> deactivate [
 
 {
 	#category : #'context actions',
-	#timestamp : 'stlu 12/8/2020 17:47'
+	#'squeak_changestamp' : 'stlu 12/8/2020 17:47'
 }
 GLFWContext >> destroy [
 
@@ -147,7 +147,7 @@ GLFWContext >> destroy [
 
 {
 	#category : #'context actions',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 GLFWContext >> endFrame [
 
@@ -156,7 +156,7 @@ GLFWContext >> endFrame [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 2/12/2021 22:41'
+	#'squeak_changestamp' : 'stlu 2/12/2021 22:41'
 }
 GLFWContext >> generatesErrors [
 
@@ -165,7 +165,7 @@ GLFWContext >> generatesErrors [
 
 {
 	#category : #'initialize-release',
-	#timestamp : 'stlu 4/16/2021 13:00'
+	#'squeak_changestamp' : 'stlu 4/16/2021 13:00'
 }
 GLFWContext >> initializeVersion [
 
@@ -178,7 +178,7 @@ GLFWContext >> initializeVersion [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 2/12/2021 22:43'
+	#'squeak_changestamp' : 'stlu 2/12/2021 22:43'
 }
 GLFWContext >> isDebug [
 
@@ -187,7 +187,7 @@ GLFWContext >> isDebug [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 2/12/2021 22:42'
+	#'squeak_changestamp' : 'stlu 2/12/2021 22:42'
 }
 GLFWContext >> isForwardCompatible [
 
@@ -196,7 +196,7 @@ GLFWContext >> isForwardCompatible [
 
 {
 	#category : #'client api',
-	#timestamp : 'stlu 4/16/2021 10:13'
+	#'squeak_changestamp' : 'stlu 4/16/2021 10:13'
 }
 GLFWContext >> openGLProfile [
 
@@ -208,7 +208,7 @@ GLFWContext >> openGLProfile [
 
 {
 	#category : #'client api',
-	#timestamp : 'stlu 2/12/2021 22:43'
+	#'squeak_changestamp' : 'stlu 2/12/2021 22:43'
 }
 GLFWContext >> openGLProfileName [
 
@@ -222,7 +222,7 @@ GLFWContext >> openGLProfileName [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 2/12/2021 22:44'
+	#'squeak_changestamp' : 'stlu 2/12/2021 22:44'
 }
 GLFWContext >> releaseBehavior [
 
@@ -231,7 +231,7 @@ GLFWContext >> releaseBehavior [
 
 {
 	#category : #'context actions',
-	#timestamp : 'stlu 4/16/2021 14:07'
+	#'squeak_changestamp' : 'stlu 4/16/2021 14:07'
 }
 GLFWContext >> resolveFunctionAddress: functionName [
 
@@ -242,7 +242,7 @@ GLFWContext >> resolveFunctionAddress: functionName [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 2/12/2021 22:45'
+	#'squeak_changestamp' : 'stlu 2/12/2021 22:45'
 }
 GLFWContext >> robustness [
 
@@ -251,7 +251,7 @@ GLFWContext >> robustness [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 GLFWContext >> shouldClose [
 
@@ -260,7 +260,7 @@ GLFWContext >> shouldClose [
 
 {
 	#category : #'context actions',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 GLFWContext >> swapBuffers [
 
@@ -269,7 +269,7 @@ GLFWContext >> swapBuffers [
 
 {
 	#category : #'context actions',
-	#timestamp : 'stlu 10/19/2020 16:50'
+	#'squeak_changestamp' : 'stlu 10/19/2020 16:50'
 }
 GLFWContext >> useMorphicEventHandling [
 
@@ -298,7 +298,7 @@ GLFWContext >> useMorphicEventHandling [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 GLFWContext >> window [
 
@@ -307,7 +307,7 @@ GLFWContext >> window [
 
 {
 	#category : #'initialize-release',
-	#timestamp : 'stlu 10/19/2020 15:54'
+	#'squeak_changestamp' : 'stlu 10/19/2020 15:54'
 }
 GLFWContext >> window: aWindow [
 

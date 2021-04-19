@@ -21,12 +21,12 @@ Class {
 		'CompletionStatusDescriptions'
 	],
 	#category : #'OpenGLObjects-FrameBuffers',
-	#commentStamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 
 {
 	#category : #allocation,
-	#timestamp : 'stlu 11/30/2020 19:49'
+	#'squeak_changestamp' : 'stlu 11/30/2020 19:49'
 }
 GLFrameBuffer class >> allocate: n in: anIntegerArray [
 
@@ -35,7 +35,7 @@ GLFrameBuffer class >> allocate: n in: anIntegerArray [
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 3/14/2021 18:37'
+	#'squeak_changestamp' : 'stlu 3/14/2021 18:37'
 }
 GLFrameBuffer class >> boundToDraw [
 
@@ -44,7 +44,7 @@ GLFrameBuffer class >> boundToDraw [
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 3/14/2021 18:36'
+	#'squeak_changestamp' : 'stlu 3/14/2021 18:36'
 }
 GLFrameBuffer class >> boundToRead [
 
@@ -53,7 +53,7 @@ GLFrameBuffer class >> boundToRead [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/3/2020 14:54'
+	#'squeak_changestamp' : 'stlu 12/3/2020 14:54'
 }
 GLFrameBuffer class >> defaultTarget [
 
@@ -62,7 +62,7 @@ GLFrameBuffer class >> defaultTarget [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/3/2020 19:28'
+	#'squeak_changestamp' : 'stlu 12/3/2020 19:28'
 }
 GLFrameBuffer class >> display [
 
@@ -71,7 +71,7 @@ GLFrameBuffer class >> display [
 
 {
 	#category : #'class initialization',
-	#timestamp : 'stlu 1/9/2021 13:46'
+	#'squeak_changestamp' : 'stlu 1/9/2021 13:46'
 }
 GLFrameBuffer class >> initialize [
 
@@ -89,7 +89,7 @@ GLFrameBuffer class >> initialize [
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 3/15/2021 12:43'
+	#'squeak_changestamp' : 'stlu 3/15/2021 12:43'
 }
 GLFrameBuffer class >> unbind [
 
@@ -98,7 +98,7 @@ GLFrameBuffer class >> unbind [
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 3/15/2021 12:42'
+	#'squeak_changestamp' : 'stlu 3/15/2021 12:42'
 }
 GLFrameBuffer class >> unbindFromDraw [
 
@@ -107,7 +107,7 @@ GLFrameBuffer class >> unbindFromDraw [
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 3/15/2021 12:42'
+	#'squeak_changestamp' : 'stlu 3/15/2021 12:42'
 }
 GLFrameBuffer class >> unbindFromRead [
 
@@ -116,7 +116,7 @@ GLFrameBuffer class >> unbindFromRead [
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 3/15/2021 12:42'
+	#'squeak_changestamp' : 'stlu 3/15/2021 12:42'
 }
 GLFrameBuffer class >> unbindFromReadAndDraw [
 
@@ -125,7 +125,7 @@ GLFrameBuffer class >> unbindFromReadAndDraw [
 
 {
 	#category : #converting,
-	#timestamp : 'stlu 11/3/2020 15:35'
+	#'squeak_changestamp' : 'stlu 11/3/2020 15:35'
 }
 GLFrameBuffer >> asFormOfExtent: aPoint [
 
@@ -152,7 +152,7 @@ GLFrameBuffer >> asFormOfExtent: aPoint [
 
 {
 	#category : #attachments,
-	#timestamp : 'stlu 1/9/2021 14:05'
+	#'squeak_changestamp' : 'stlu 1/9/2021 14:05'
 }
 GLFrameBuffer >> attach2DTexture: a2DTexture level: mipMapLevel to: attachmentEnum [
 
@@ -165,7 +165,7 @@ GLFrameBuffer >> attach2DTexture: a2DTexture level: mipMapLevel to: attachmentEn
 
 {
 	#category : #attachments,
-	#timestamp : 'stlu 1/9/2021 14:05'
+	#'squeak_changestamp' : 'stlu 1/9/2021 14:05'
 }
 GLFrameBuffer >> attach2DTexture: a2DTexture to: attachmentEnum [
 
@@ -178,7 +178,7 @@ GLFrameBuffer >> attach2DTexture: a2DTexture to: attachmentEnum [
 
 {
 	#category : #attachments,
-	#timestamp : 'stlu 1/9/2021 13:58'
+	#'squeak_changestamp' : 'stlu 1/9/2021 13:58'
 }
 GLFrameBuffer >> attachRenderbuffer: aRenderbuffer to: attachmentEnum [
 
@@ -190,7 +190,7 @@ GLFrameBuffer >> attachRenderbuffer: aRenderbuffer to: attachmentEnum [
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 3/15/2021 12:13'
+	#'squeak_changestamp' : 'stlu 3/15/2021 12:13'
 }
 GLFrameBuffer >> bind [
 
@@ -199,7 +199,7 @@ GLFrameBuffer >> bind [
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 3/15/2021 12:13'
+	#'squeak_changestamp' : 'stlu 3/15/2021 12:13'
 }
 GLFrameBuffer >> bindToDraw [
 
@@ -209,7 +209,7 @@ GLFrameBuffer >> bindToDraw [
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 3/15/2021 12:12'
+	#'squeak_changestamp' : 'stlu 3/15/2021 12:12'
 }
 GLFrameBuffer >> bindToRead [
 
@@ -219,7 +219,7 @@ GLFrameBuffer >> bindToRead [
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 3/15/2021 13:14'
+	#'squeak_changestamp' : 'stlu 3/15/2021 13:14'
 }
 GLFrameBuffer >> bindToReadAndDraw [
 
@@ -231,7 +231,7 @@ GLFrameBuffer >> bindToReadAndDraw [
 
 {
 	#category : #blitting,
-	#timestamp : 'stlu 1/9/2021 14:31'
+	#'squeak_changestamp' : 'stlu 1/9/2021 14:31'
 }
 GLFrameBuffer >> blit: bufferMask into: otherFramebuffer from: readBounds to: drawBounds [
 
@@ -245,7 +245,7 @@ GLFrameBuffer >> blit: bufferMask into: otherFramebuffer from: readBounds to: dr
 
 {
 	#category : #blitting,
-	#timestamp : 'stlu 1/9/2021 14:31'
+	#'squeak_changestamp' : 'stlu 1/9/2021 14:31'
 }
 GLFrameBuffer >> blit: bufferMask into: otherFramebuffer from: readBounds to: drawBounds filter: filterEnum [
 
@@ -260,7 +260,7 @@ GLFrameBuffer >> blit: bufferMask into: otherFramebuffer from: readBounds to: dr
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 3/15/2021 12:14'
+	#'squeak_changestamp' : 'stlu 3/15/2021 12:14'
 }
 GLFrameBuffer >> boundDuring: aBlock [
 
@@ -269,7 +269,7 @@ GLFrameBuffer >> boundDuring: aBlock [
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 3/15/2021 12:08'
+	#'squeak_changestamp' : 'stlu 3/15/2021 12:08'
 }
 GLFrameBuffer >> boundToDrawDuring: aBlock [
 
@@ -285,7 +285,7 @@ GLFrameBuffer >> boundToDrawDuring: aBlock [
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 3/15/2021 12:10'
+	#'squeak_changestamp' : 'stlu 3/15/2021 12:10'
 }
 GLFrameBuffer >> boundToReadAndDrawDuring: aBlock [
 
@@ -305,7 +305,7 @@ GLFrameBuffer >> boundToReadAndDrawDuring: aBlock [
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 3/15/2021 12:02'
+	#'squeak_changestamp' : 'stlu 3/15/2021 12:02'
 }
 GLFrameBuffer >> boundToReadDuring: aBlock [
 
@@ -320,7 +320,7 @@ GLFrameBuffer >> boundToReadDuring: aBlock [
 
 {
 	#category : #completion,
-	#timestamp : 'stlu 3/15/2021 12:30'
+	#'squeak_changestamp' : 'stlu 3/15/2021 12:30'
 }
 GLFrameBuffer >> checkCompletionStatus [
 
@@ -330,7 +330,7 @@ GLFrameBuffer >> checkCompletionStatus [
 
 {
 	#category : #completion,
-	#timestamp : 'stlu 3/15/2021 12:31'
+	#'squeak_changestamp' : 'stlu 3/15/2021 12:31'
 }
 GLFrameBuffer >> checkCompletionStatusFor: targetEnum [
 
@@ -342,7 +342,7 @@ GLFrameBuffer >> checkCompletionStatusFor: targetEnum [
 
 {
 	#category : #completion,
-	#timestamp : 'stlu 3/15/2021 12:31'
+	#'squeak_changestamp' : 'stlu 3/15/2021 12:31'
 }
 GLFrameBuffer >> checkCompletionStatusForDraw [
 
@@ -351,7 +351,7 @@ GLFrameBuffer >> checkCompletionStatusForDraw [
 
 {
 	#category : #completion,
-	#timestamp : 'stlu 3/15/2021 12:31'
+	#'squeak_changestamp' : 'stlu 3/15/2021 12:31'
 }
 GLFrameBuffer >> checkCompletionStatusForRead [
 
@@ -360,7 +360,7 @@ GLFrameBuffer >> checkCompletionStatusForRead [
 
 {
 	#category : #clearing,
-	#timestamp : 'stlu 3/11/2021 14:23'
+	#'squeak_changestamp' : 'stlu 3/11/2021 14:23'
 }
 GLFrameBuffer >> clearBuffers: bufferBitMask [
 
@@ -369,7 +369,7 @@ GLFrameBuffer >> clearBuffers: bufferBitMask [
 
 {
 	#category : #clearing,
-	#timestamp : 'stlu 3/11/2021 14:07'
+	#'squeak_changestamp' : 'stlu 3/11/2021 14:07'
 }
 GLFrameBuffer >> clearColorBuffer: i to: aColor [
 
@@ -379,7 +379,7 @@ GLFrameBuffer >> clearColorBuffer: i to: aColor [
 
 {
 	#category : #clearing,
-	#timestamp : 'stlu 3/11/2021 14:25'
+	#'squeak_changestamp' : 'stlu 3/11/2021 14:25'
 }
 GLFrameBuffer >> clearColorBuffer: i toFloat32Vector4: aFloat32Array [
 
@@ -391,7 +391,7 @@ GLFrameBuffer >> clearColorBuffer: i toFloat32Vector4: aFloat32Array [
 
 {
 	#category : #clearing,
-	#timestamp : 'stlu 3/11/2021 14:25'
+	#'squeak_changestamp' : 'stlu 3/11/2021 14:25'
 }
 GLFrameBuffer >> clearColorBuffer: i toIntegerVector4: anIntegerArray [
 
@@ -403,7 +403,7 @@ GLFrameBuffer >> clearColorBuffer: i toIntegerVector4: anIntegerArray [
 
 {
 	#category : #clearing,
-	#timestamp : 'stlu 3/11/2021 14:25'
+	#'squeak_changestamp' : 'stlu 3/11/2021 14:25'
 }
 GLFrameBuffer >> clearColorBuffer: i toUnsignedIntegerVector4: aWordArray [
 
@@ -415,7 +415,7 @@ GLFrameBuffer >> clearColorBuffer: i toUnsignedIntegerVector4: aWordArray [
 
 {
 	#category : #clearing,
-	#timestamp : 'stlu 3/11/2021 14:25'
+	#'squeak_changestamp' : 'stlu 3/11/2021 14:25'
 }
 GLFrameBuffer >> clearDepthBufferTo: aFloat [
 
@@ -425,7 +425,7 @@ GLFrameBuffer >> clearDepthBufferTo: aFloat [
 
 {
 	#category : #clearing,
-	#timestamp : 'stlu 3/11/2021 14:26'
+	#'squeak_changestamp' : 'stlu 3/11/2021 14:26'
 }
 GLFrameBuffer >> clearStencilBufferTo: anInteger [
 
@@ -435,7 +435,7 @@ GLFrameBuffer >> clearStencilBufferTo: anInteger [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 10/26/2020 12:27'
+	#'squeak_changestamp' : 'stlu 10/26/2020 12:27'
 }
 GLFrameBuffer >> colorAttachment0 [
 
@@ -444,7 +444,7 @@ GLFrameBuffer >> colorAttachment0 [
 
 {
 	#category : #completion,
-	#timestamp : 'stlu 3/15/2021 13:15'
+	#'squeak_changestamp' : 'stlu 3/15/2021 13:15'
 }
 GLFrameBuffer >> completionStatusFor: targetEnum [
 
@@ -455,7 +455,7 @@ GLFrameBuffer >> completionStatusFor: targetEnum [
 
 {
 	#category : #'initialize-release',
-	#timestamp : 'stlu 11/3/2020 15:35'
+	#'squeak_changestamp' : 'stlu 11/3/2020 15:35'
 }
 GLFrameBuffer >> delete [
 	
@@ -464,7 +464,7 @@ GLFrameBuffer >> delete [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 12/14/2020 12:12'
+	#'squeak_changestamp' : 'stlu 12/14/2020 12:12'
 }
 GLFrameBuffer >> isAllocated [
 
@@ -473,7 +473,7 @@ GLFrameBuffer >> isAllocated [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 10/29/2020 12:16'
+	#'squeak_changestamp' : 'stlu 10/29/2020 12:16'
 }
 GLFrameBuffer >> isFrameBuffer [
 
@@ -482,7 +482,7 @@ GLFrameBuffer >> isFrameBuffer [
 
 {
 	#category : #imps,
-	#timestamp : 'stlu 1/9/2021 13:56'
+	#'squeak_changestamp' : 'stlu 1/9/2021 13:56'
 }
 GLFrameBuffer >> stateAccessImp [
 
@@ -491,7 +491,7 @@ GLFrameBuffer >> stateAccessImp [
 
 {
 	#category : #attachments,
-	#timestamp : 'stlu 10/26/2020 12:26'
+	#'squeak_changestamp' : 'stlu 10/26/2020 12:26'
 }
 GLFrameBuffer >> texture2D: aTexture [
 
@@ -500,7 +500,7 @@ GLFrameBuffer >> texture2D: aTexture [
 
 {
 	#category : #attachments,
-	#timestamp : 'stlu 11/3/2020 15:36'
+	#'squeak_changestamp' : 'stlu 11/3/2020 15:36'
 }
 GLFrameBuffer >> texture2D: aTexture attachment: anAttachment [
 	
@@ -517,7 +517,7 @@ GLFrameBuffer >> texture2D: aTexture attachment: anAttachment [
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 3/15/2021 12:35'
+	#'squeak_changestamp' : 'stlu 3/15/2021 12:35'
 }
 GLFrameBuffer >> unbind [
 
@@ -526,7 +526,7 @@ GLFrameBuffer >> unbind [
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 3/15/2021 12:44'
+	#'squeak_changestamp' : 'stlu 3/15/2021 12:44'
 }
 GLFrameBuffer >> unbindFromDraw [
 
@@ -536,7 +536,7 @@ GLFrameBuffer >> unbindFromDraw [
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 3/15/2021 12:34'
+	#'squeak_changestamp' : 'stlu 3/15/2021 12:34'
 }
 GLFrameBuffer >> unbindFromRead [
 
@@ -545,7 +545,7 @@ GLFrameBuffer >> unbindFromRead [
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 3/15/2021 12:35'
+	#'squeak_changestamp' : 'stlu 3/15/2021 12:35'
 }
 GLFrameBuffer >> unbindFromReadAndDraw [
 

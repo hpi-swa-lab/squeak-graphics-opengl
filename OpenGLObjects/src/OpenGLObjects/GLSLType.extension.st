@@ -2,7 +2,7 @@ Extension { #name : #GLSLType }
 
 {
 	#category : #'*OpenGLObjects-Generation',
-	#timestamp : 'stlu 11/23/2020 11:45'
+	#'squeak_changestamp' : 'stlu 11/23/2020 11:45'
 }
 GLSLType class >> compileAccessor: name value: return [
 
@@ -11,7 +11,7 @@ GLSLType class >> compileAccessor: name value: return [
 
 {
 	#category : #'*OpenGLObjects-Generation',
-	#timestamp : 'stlu 11/23/2020 11:44'
+	#'squeak_changestamp' : 'stlu 11/23/2020 11:44'
 }
 GLSLType class >> compileAccessor: name value: return classified: category [
 
@@ -22,7 +22,7 @@ GLSLType class >> compileAccessor: name value: return classified: category [
 
 {
 	#category : #'*OpenGLObjects-Generation',
-	#timestamp : 'stlu 11/23/2020 11:14'
+	#'squeak_changestamp' : 'stlu 11/23/2020 11:14'
 }
 GLSLType class >> removeAllSubclasses [
 
@@ -31,7 +31,7 @@ GLSLType class >> removeAllSubclasses [
 
 {
 	#category : #'*OpenGLObjects-Generation',
-	#timestamp : 'stlu 11/19/2020 17:47'
+	#'squeak_changestamp' : 'stlu 11/19/2020 17:47'
 }
 GLSLType class >> subclass: symbolOrString [
 

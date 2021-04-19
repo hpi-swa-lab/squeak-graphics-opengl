@@ -8,12 +8,12 @@ Class {
 		'life'
 	],
 	#category : #'LearnOpenGL-Breakout',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/6/2021 11:13'
+	#'squeak_changestamp' : 'stlu 1/6/2021 11:13'
 }
 LOGLBreakoutParticle >> color [
 
@@ -22,7 +22,7 @@ LOGLBreakoutParticle >> color [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/6/2021 11:13'
+	#'squeak_changestamp' : 'stlu 1/6/2021 11:13'
 }
 LOGLBreakoutParticle >> color: anObject [
 
@@ -31,7 +31,7 @@ LOGLBreakoutParticle >> color: anObject [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 1/8/2021 15:22'
+	#'squeak_changestamp' : 'stlu 1/8/2021 15:22'
 }
 LOGLBreakoutParticle >> initialize [
 
@@ -44,7 +44,7 @@ LOGLBreakoutParticle >> initialize [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 1/6/2021 11:18'
+	#'squeak_changestamp' : 'stlu 1/6/2021 11:18'
 }
 LOGLBreakoutParticle >> isAlive [
 
@@ -53,7 +53,7 @@ LOGLBreakoutParticle >> isAlive [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/6/2021 11:13'
+	#'squeak_changestamp' : 'stlu 1/6/2021 11:13'
 }
 LOGLBreakoutParticle >> life [
 
@@ -62,7 +62,7 @@ LOGLBreakoutParticle >> life [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/6/2021 11:13'
+	#'squeak_changestamp' : 'stlu 1/6/2021 11:13'
 }
 LOGLBreakoutParticle >> life: anObject [
 
@@ -71,7 +71,7 @@ LOGLBreakoutParticle >> life: anObject [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/6/2021 11:13'
+	#'squeak_changestamp' : 'stlu 1/6/2021 11:13'
 }
 LOGLBreakoutParticle >> position [
 
@@ -80,7 +80,7 @@ LOGLBreakoutParticle >> position [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/6/2021 11:13'
+	#'squeak_changestamp' : 'stlu 1/6/2021 11:13'
 }
 LOGLBreakoutParticle >> position: anObject [
 
@@ -89,7 +89,7 @@ LOGLBreakoutParticle >> position: anObject [
 
 {
 	#category : #updating,
-	#timestamp : 'stlu 1/6/2021 12:02'
+	#'squeak_changestamp' : 'stlu 1/6/2021 12:02'
 }
 LOGLBreakoutParticle >> respawn: aGameObject offset: offset [
 
@@ -104,7 +104,7 @@ LOGLBreakoutParticle >> respawn: aGameObject offset: offset [
 
 {
 	#category : #updating,
-	#timestamp : 'stlu 1/8/2021 15:13'
+	#'squeak_changestamp' : 'stlu 1/8/2021 15:13'
 }
 LOGLBreakoutParticle >> update: elpasedSecs [
 
@@ -116,7 +116,7 @@ LOGLBreakoutParticle >> update: elpasedSecs [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/6/2021 11:13'
+	#'squeak_changestamp' : 'stlu 1/6/2021 11:13'
 }
 LOGLBreakoutParticle >> velocity [
 
@@ -125,7 +125,7 @@ LOGLBreakoutParticle >> velocity [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/6/2021 11:13'
+	#'squeak_changestamp' : 'stlu 1/6/2021 11:13'
 }
 LOGLBreakoutParticle >> velocity: anObject [
 

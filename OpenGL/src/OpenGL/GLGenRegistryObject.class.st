@@ -10,12 +10,12 @@ Class {
 		'Suffixes'
 	],
 	#category : #'OpenGL-Generation',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 3/5/2021 12:58'
+	#'squeak_changestamp' : 'stlu 3/5/2021 12:58'
 }
 GLGenRegistryObject class >> suffixes [
 
@@ -25,7 +25,7 @@ GLGenRegistryObject class >> suffixes [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 4/12/2021 19:37'
+	#'squeak_changestamp' : 'stlu 4/12/2021 19:37'
 }
 GLGenRegistryObject >> addAlias: aString [
 
@@ -35,7 +35,7 @@ GLGenRegistryObject >> addAlias: aString [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 4/12/2021 18:49'
+	#'squeak_changestamp' : 'stlu 4/12/2021 18:49'
 }
 GLGenRegistryObject >> aliases [
 
@@ -44,7 +44,7 @@ GLGenRegistryObject >> aliases [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 4/11/2021 12:56'
+	#'squeak_changestamp' : 'stlu 4/11/2021 12:56'
 }
 GLGenRegistryObject >> definitions [
 
@@ -53,7 +53,7 @@ GLGenRegistryObject >> definitions [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 4/12/2021 18:49'
+	#'squeak_changestamp' : 'stlu 4/12/2021 18:49'
 }
 GLGenRegistryObject >> definitions: anObject [
 
@@ -62,7 +62,7 @@ GLGenRegistryObject >> definitions: anObject [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 4/12/2021 18:50'
+	#'squeak_changestamp' : 'stlu 4/12/2021 18:50'
 }
 GLGenRegistryObject >> initialize [
 
@@ -71,7 +71,7 @@ GLGenRegistryObject >> initialize [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 4/12/2021 18:30'
+	#'squeak_changestamp' : 'stlu 4/12/2021 18:30'
 }
 GLGenRegistryObject >> isOnlyDefinedInExtensions [
 
@@ -81,7 +81,7 @@ GLGenRegistryObject >> isOnlyDefinedInExtensions [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/1/2020 19:34'
+	#'squeak_changestamp' : 'stlu 11/1/2020 19:34'
 }
 GLGenRegistryObject >> name [
 
@@ -90,7 +90,7 @@ GLGenRegistryObject >> name [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/1/2020 21:29'
+	#'squeak_changestamp' : 'stlu 11/1/2020 21:29'
 }
 GLGenRegistryObject >> name: stringOrSymbol [
 
@@ -99,7 +99,7 @@ GLGenRegistryObject >> name: stringOrSymbol [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 4/12/2021 12:50'
+	#'squeak_changestamp' : 'stlu 4/12/2021 12:50'
 }
 GLGenRegistryObject >> removeIn: apiSymbol profile: profileSymbolOrNil version: versionString [
 
@@ -108,7 +108,7 @@ GLGenRegistryObject >> removeIn: apiSymbol profile: profileSymbolOrNil version: 
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 4/12/2021 12:51'
+	#'squeak_changestamp' : 'stlu 4/12/2021 12:51'
 }
 GLGenRegistryObject >> requireIn: apiSymbol profile: profileSymbolOrNil extension: extensionName [
 
@@ -117,7 +117,7 @@ GLGenRegistryObject >> requireIn: apiSymbol profile: profileSymbolOrNil extensio
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 4/12/2021 12:50'
+	#'squeak_changestamp' : 'stlu 4/12/2021 12:50'
 }
 GLGenRegistryObject >> requireIn: apiSymbol profile: profileSymbolOrNil version: versionString [
 

@@ -2,12 +2,12 @@ Class {
 	#name : #GLSLUnsignedIntegerVector3,
 	#superclass : #GLSLVector,
 	#category : #'OpenGLObjects-Types',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/15/2020 13:04'
+	#'squeak_changestamp' : 'stlu 12/15/2020 13:04'
 }
 GLSLUnsignedIntegerVector3 class >> componentType [
 
@@ -16,7 +16,7 @@ GLSLUnsignedIntegerVector3 class >> componentType [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/15/2020 13:04'
+	#'squeak_changestamp' : 'stlu 12/15/2020 13:04'
 }
 GLSLUnsignedIntegerVector3 class >> declarators [
 
@@ -25,7 +25,7 @@ GLSLUnsignedIntegerVector3 class >> declarators [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/15/2020 13:04'
+	#'squeak_changestamp' : 'stlu 12/15/2020 13:04'
 }
 GLSLUnsignedIntegerVector3 class >> enum [
 
@@ -34,7 +34,7 @@ GLSLUnsignedIntegerVector3 class >> enum [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/15/2020 13:04'
+	#'squeak_changestamp' : 'stlu 12/15/2020 13:04'
 }
 GLSLUnsignedIntegerVector3 class >> enumName [
 
@@ -43,7 +43,7 @@ GLSLUnsignedIntegerVector3 class >> enumName [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/15/2020 13:04'
+	#'squeak_changestamp' : 'stlu 12/15/2020 13:04'
 }
 GLSLUnsignedIntegerVector3 class >> numComponents [
 
@@ -52,7 +52,7 @@ GLSLUnsignedIntegerVector3 class >> numComponents [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/15/2020 13:04'
+	#'squeak_changestamp' : 'stlu 12/15/2020 13:04'
 }
 GLSLUnsignedIntegerVector3 class >> squeakName [
 

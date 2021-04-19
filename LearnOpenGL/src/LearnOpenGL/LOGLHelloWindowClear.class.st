@@ -5,12 +5,12 @@ Class {
 	#name : #LOGLHelloWindowClear,
 	#superclass : #LOGLHelloWindow,
 	#category : #'LearnOpenGL-GettingStarted',
-	#commentStamp : 'stlu 12/14/2020 15:50'
+	#'squeak_changestamp' : 'stlu 12/14/2020 15:50'
 }
 
 {
 	#category : #rendering,
-	#timestamp : 'stlu 4/15/2021 12:10'
+	#'squeak_changestamp' : 'stlu 4/15/2021 12:10'
 }
 LOGLHelloWindowClear >> render [
 

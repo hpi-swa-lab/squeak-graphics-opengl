@@ -2,7 +2,7 @@ Extension { #name : #GLUniformStateAccessImp }
 
 {
 	#category : #'*OpenGLObjects-Generation',
-	#timestamp : 'stlu 11/23/2020 15:47'
+	#'squeak_changestamp' : 'stlu 11/23/2020 15:47'
 }
 GLUniformStateAccessImp class >> arraySetterTemplate [
 
@@ -13,7 +13,7 @@ GLUniformStateAccessImp class >> arraySetterTemplate [
 
 {
 	#category : #'*OpenGLObjects-Generation',
-	#timestamp : 'stlu 12/14/2020 14:09'
+	#'squeak_changestamp' : 'stlu 12/14/2020 14:09'
 }
 GLUniformStateAccessImp class >> generate [
 
@@ -24,7 +24,7 @@ GLUniformStateAccessImp class >> generate [
 
 {
 	#category : #'*OpenGLObjects-Generation',
-	#timestamp : 'stlu 12/14/2020 16:57'
+	#'squeak_changestamp' : 'stlu 12/14/2020 16:57'
 }
 GLUniformStateAccessImp class >> generateArrayInterfaceFor: aClass classified: categorySymbol [
 
@@ -41,7 +41,7 @@ GLUniformStateAccessImp class >> generateArrayInterfaceFor: aClass classified: c
 
 {
 	#category : #'*OpenGLObjects-Generation',
-	#timestamp : 'stlu 12/14/2020 16:19'
+	#'squeak_changestamp' : 'stlu 12/14/2020 16:19'
 }
 GLUniformStateAccessImp class >> generateMatrixInterfaceFor: aClass classified: categorySymbol [
 
@@ -59,7 +59,7 @@ GLUniformStateAccessImp class >> generateMatrixInterfaceFor: aClass classified: 
 
 {
 	#category : #'*OpenGLObjects-Generation',
-	#timestamp : 'stlu 12/14/2020 16:57'
+	#'squeak_changestamp' : 'stlu 12/14/2020 16:57'
 }
 GLUniformStateAccessImp class >> generateScalarInterfaceFor: aClass classified: categorySymbol [
 
@@ -88,7 +88,7 @@ GLUniformStateAccessImp class >> generateScalarInterfaceFor: aClass classified: 
 
 {
 	#category : #'*OpenGLObjects-Generation',
-	#timestamp : 'stlu 11/23/2020 17:48'
+	#'squeak_changestamp' : 'stlu 11/23/2020 17:48'
 }
 GLUniformStateAccessImp class >> generateTypeDoubleDispatch [
 
@@ -97,7 +97,7 @@ GLUniformStateAccessImp class >> generateTypeDoubleDispatch [
 
 {
 	#category : #'*OpenGLObjects-Generation',
-	#timestamp : 'stlu 12/14/2020 16:22'
+	#'squeak_changestamp' : 'stlu 12/14/2020 16:22'
 }
 GLUniformStateAccessImp class >> generateVectorTypeDoubleDispatch [
 
@@ -113,7 +113,7 @@ GLUniformStateAccessImp class >> generateVectorTypeDoubleDispatch [
 
 {
 	#category : #'*OpenGLObjects-Generation',
-	#timestamp : 'stlu 11/23/2020 15:48'
+	#'squeak_changestamp' : 'stlu 11/23/2020 15:48'
 }
 GLUniformStateAccessImp class >> matrixSetterTemplate [
 
@@ -124,7 +124,7 @@ GLUniformStateAccessImp class >> matrixSetterTemplate [
 
 {
 	#category : #'*OpenGLObjects-Generation',
-	#timestamp : 'stlu 11/23/2020 15:49'
+	#'squeak_changestamp' : 'stlu 11/23/2020 15:49'
 }
 GLUniformStateAccessImp class >> scalarSetterTemplate [
 

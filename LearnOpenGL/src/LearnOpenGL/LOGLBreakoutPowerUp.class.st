@@ -7,12 +7,12 @@ Class {
 		'isActivated'
 	],
 	#category : #'LearnOpenGL-Breakout',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 1/9/2021 15:38'
+	#'squeak_changestamp' : 'stlu 1/9/2021 15:38'
 }
 LOGLBreakoutPowerUp class >> type: typeSymbol color: aColor duration: secs position: position sprite: aTexture [
 
@@ -29,7 +29,7 @@ LOGLBreakoutPowerUp class >> type: typeSymbol color: aColor duration: secs posit
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/9/2021 18:02'
+	#'squeak_changestamp' : 'stlu 1/9/2021 18:02'
 }
 LOGLBreakoutPowerUp >> duration [
 
@@ -38,7 +38,7 @@ LOGLBreakoutPowerUp >> duration [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/9/2021 18:02'
+	#'squeak_changestamp' : 'stlu 1/9/2021 18:02'
 }
 LOGLBreakoutPowerUp >> duration: anObject [
 
@@ -47,7 +47,7 @@ LOGLBreakoutPowerUp >> duration: anObject [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 1/9/2021 15:40'
+	#'squeak_changestamp' : 'stlu 1/9/2021 15:40'
 }
 LOGLBreakoutPowerUp >> initialize [
 
@@ -57,7 +57,7 @@ LOGLBreakoutPowerUp >> initialize [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/9/2021 18:02'
+	#'squeak_changestamp' : 'stlu 1/9/2021 18:02'
 }
 LOGLBreakoutPowerUp >> isActivated [
 
@@ -66,7 +66,7 @@ LOGLBreakoutPowerUp >> isActivated [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/9/2021 18:02'
+	#'squeak_changestamp' : 'stlu 1/9/2021 18:02'
 }
 LOGLBreakoutPowerUp >> isActivated: anObject [
 
@@ -75,7 +75,7 @@ LOGLBreakoutPowerUp >> isActivated: anObject [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/9/2021 18:02'
+	#'squeak_changestamp' : 'stlu 1/9/2021 18:02'
 }
 LOGLBreakoutPowerUp >> type [
 
@@ -84,7 +84,7 @@ LOGLBreakoutPowerUp >> type [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/9/2021 18:02'
+	#'squeak_changestamp' : 'stlu 1/9/2021 18:02'
 }
 LOGLBreakoutPowerUp >> type: anObject [
 

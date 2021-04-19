@@ -6,12 +6,12 @@ Class {
 	#superclass : #Vector,
 	#type : #words,
 	#category : #'3DTransform-Vectors',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Vector2 class >> from: anArray [
 
@@ -20,7 +20,7 @@ Vector2 class >> from: anArray [
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Vector2 class >> numElements [
 	^2
@@ -28,7 +28,7 @@ Vector2 class >> numElements [
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Vector2 class >> u: uValue v: vValue [
 	^self new u: uValue v: vValue
@@ -36,7 +36,7 @@ Vector2 class >> u: uValue v: vValue [
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Vector2 class >> x: uValue y: vValue [
 	^self new x: uValue y: vValue
@@ -44,7 +44,7 @@ Vector2 class >> x: uValue y: vValue [
 
 {
 	#category : #converting,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Vector2 >> asPoint [
 	^self x @ self y
@@ -52,7 +52,7 @@ Vector2 >> asPoint [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Vector2 >> u [
 	^self floatAt: 1
@@ -60,7 +60,7 @@ Vector2 >> u [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Vector2 >> u: aFloat [
 	self floatAt: 1 put: aFloat
@@ -68,7 +68,7 @@ Vector2 >> u: aFloat [
 
 {
 	#category : #initialize,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Vector2 >> u: uValue v: vValue [
 	self u: uValue.
@@ -77,7 +77,7 @@ Vector2 >> u: uValue v: vValue [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Vector2 >> v [
 	^self floatAt: 2
@@ -85,7 +85,7 @@ Vector2 >> v [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Vector2 >> v: aFloat [
 	self floatAt: 2 put: aFloat
@@ -93,7 +93,7 @@ Vector2 >> v: aFloat [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Vector2 >> x [
 	^self at: 1
@@ -101,7 +101,7 @@ Vector2 >> x [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Vector2 >> x: aFloat [
 	self floatAt: 1 put: aFloat
@@ -109,7 +109,7 @@ Vector2 >> x: aFloat [
 
 {
 	#category : #initialize,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Vector2 >> x: uValue y: vValue [
 	self x: uValue.
@@ -118,7 +118,7 @@ Vector2 >> x: uValue y: vValue [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Vector2 >> y [
 	^self at: 2
@@ -126,7 +126,7 @@ Vector2 >> y [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Vector2 >> y: aFloat [
 	self floatAt: 2 put: aFloat

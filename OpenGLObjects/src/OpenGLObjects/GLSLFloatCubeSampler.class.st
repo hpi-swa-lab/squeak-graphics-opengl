@@ -2,12 +2,12 @@ Class {
 	#name : #GLSLFloatCubeSampler,
 	#superclass : #GLSLSampler,
 	#category : #'OpenGLObjects-Types',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/15/2020 13:04'
+	#'squeak_changestamp' : 'stlu 12/15/2020 13:04'
 }
 GLSLFloatCubeSampler class >> declarators [
 
@@ -16,7 +16,7 @@ GLSLFloatCubeSampler class >> declarators [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/15/2020 13:04'
+	#'squeak_changestamp' : 'stlu 12/15/2020 13:04'
 }
 GLSLFloatCubeSampler class >> enum [
 
@@ -25,7 +25,7 @@ GLSLFloatCubeSampler class >> enum [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/15/2020 13:04'
+	#'squeak_changestamp' : 'stlu 12/15/2020 13:04'
 }
 GLSLFloatCubeSampler class >> enumName [
 
@@ -34,7 +34,7 @@ GLSLFloatCubeSampler class >> enumName [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/15/2020 13:04'
+	#'squeak_changestamp' : 'stlu 12/15/2020 13:04'
 }
 GLSLFloatCubeSampler class >> pixelType [
 
@@ -43,7 +43,7 @@ GLSLFloatCubeSampler class >> pixelType [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/15/2020 13:04'
+	#'squeak_changestamp' : 'stlu 12/15/2020 13:04'
 }
 GLSLFloatCubeSampler class >> squeakName [
 

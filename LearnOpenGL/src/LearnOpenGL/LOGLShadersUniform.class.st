@@ -5,12 +5,12 @@ Class {
 	#name : #LOGLShadersUniform,
 	#superclass : #LOGLHelloTriangle,
 	#category : #'LearnOpenGL-GettingStarted',
-	#commentStamp : 'stlu 1/4/2021 04:08'
+	#'squeak_changestamp' : 'stlu 1/4/2021 04:08'
 }
 
 {
 	#category : #shaders,
-	#timestamp : 'stlu 1/4/2021 03:46'
+	#'squeak_changestamp' : 'stlu 1/4/2021 03:46'
 }
 LOGLShadersUniform >> fragmentShaderSource [
 
@@ -24,7 +24,7 @@ void main() {
 
 {
 	#category : #running,
-	#timestamp : 'stlu 1/4/2021 04:04'
+	#'squeak_changestamp' : 'stlu 1/4/2021 04:04'
 }
 LOGLShadersUniform >> render [
 

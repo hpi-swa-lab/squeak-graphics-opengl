@@ -2,12 +2,12 @@ Class {
 	#name : #LOGLImages,
 	#superclass : #Object,
 	#category : #'LearnOpenGL-Core',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #images,
-	#timestamp : 'stlu 1/6/2021 14:06'
+	#'squeak_changestamp' : 'stlu 1/6/2021 14:06'
 }
 LOGLImages class >> awesomeface [
 
@@ -16,7 +16,7 @@ LOGLImages class >> awesomeface [
 
 {
 	#category : #images,
-	#timestamp : 'stlu 1/7/2021 16:03'
+	#'squeak_changestamp' : 'stlu 1/7/2021 16:03'
 }
 LOGLImages class >> background [
 
@@ -25,7 +25,7 @@ LOGLImages class >> background [
 
 {
 	#category : #images,
-	#timestamp : 'stlu 1/7/2021 16:02'
+	#'squeak_changestamp' : 'stlu 1/7/2021 16:02'
 }
 LOGLImages class >> block [
 
@@ -34,7 +34,7 @@ LOGLImages class >> block [
 
 {
 	#category : #images,
-	#timestamp : 'stlu 1/9/2021 15:42'
+	#'squeak_changestamp' : 'stlu 1/9/2021 15:42'
 }
 LOGLImages class >> chaosPowerUp [
 
@@ -43,7 +43,7 @@ LOGLImages class >> chaosPowerUp [
 
 {
 	#category : #compiling,
-	#timestamp : 'stlu 1/4/2021 05:14'
+	#'squeak_changestamp' : 'stlu 1/4/2021 05:14'
 }
 LOGLImages class >> compile: selector fromFileNamed: fileName [
 
@@ -62,7 +62,7 @@ LOGLImages class >> compile: selector fromFileNamed: fileName [
 
 {
 	#category : #images,
-	#timestamp : 'stlu 1/9/2021 15:42'
+	#'squeak_changestamp' : 'stlu 1/9/2021 15:42'
 }
 LOGLImages class >> confusePowerUp [
 
@@ -71,7 +71,7 @@ LOGLImages class >> confusePowerUp [
 
 {
 	#category : #images,
-	#timestamp : 'stlu 1/4/2021 05:18'
+	#'squeak_changestamp' : 'stlu 1/4/2021 05:18'
 }
 LOGLImages class >> container [
 
@@ -80,7 +80,7 @@ LOGLImages class >> container [
 
 {
 	#category : #images,
-	#timestamp : 'stlu 1/9/2021 15:42'
+	#'squeak_changestamp' : 'stlu 1/9/2021 15:42'
 }
 LOGLImages class >> increasePowerUp [
 
@@ -89,7 +89,7 @@ LOGLImages class >> increasePowerUp [
 
 {
 	#category : #images,
-	#timestamp : 'stlu 3/13/2021 01:22'
+	#'squeak_changestamp' : 'stlu 3/13/2021 01:22'
 }
 LOGLImages class >> marble [
 
@@ -98,7 +98,7 @@ LOGLImages class >> marble [
 
 {
 	#category : #images,
-	#timestamp : 'stlu 3/13/2021 01:22'
+	#'squeak_changestamp' : 'stlu 3/13/2021 01:22'
 }
 LOGLImages class >> metal [
 
@@ -107,7 +107,7 @@ LOGLImages class >> metal [
 
 {
 	#category : #images,
-	#timestamp : 'stlu 1/7/2021 16:36'
+	#'squeak_changestamp' : 'stlu 1/7/2021 16:36'
 }
 LOGLImages class >> paddle [
 
@@ -116,7 +116,7 @@ LOGLImages class >> paddle [
 
 {
 	#category : #images,
-	#timestamp : 'stlu 1/8/2021 12:17'
+	#'squeak_changestamp' : 'stlu 1/8/2021 12:17'
 }
 LOGLImages class >> particle [
 
@@ -125,7 +125,7 @@ LOGLImages class >> particle [
 
 {
 	#category : #images,
-	#timestamp : 'stlu 1/9/2021 15:43'
+	#'squeak_changestamp' : 'stlu 1/9/2021 15:43'
 }
 LOGLImages class >> passthroughPowerUp [
 
@@ -134,7 +134,7 @@ LOGLImages class >> passthroughPowerUp [
 
 {
 	#category : #images,
-	#timestamp : 'stlu 1/7/2021 16:02'
+	#'squeak_changestamp' : 'stlu 1/7/2021 16:02'
 }
 LOGLImages class >> solidBlock [
 
@@ -143,7 +143,7 @@ LOGLImages class >> solidBlock [
 
 {
 	#category : #images,
-	#timestamp : 'stlu 1/9/2021 15:41'
+	#'squeak_changestamp' : 'stlu 1/9/2021 15:41'
 }
 LOGLImages class >> speedPowerUp [
 
@@ -152,7 +152,7 @@ LOGLImages class >> speedPowerUp [
 
 {
 	#category : #images,
-	#timestamp : 'stlu 1/9/2021 15:42'
+	#'squeak_changestamp' : 'stlu 1/9/2021 15:42'
 }
 LOGLImages class >> stickyPowerUp [
 

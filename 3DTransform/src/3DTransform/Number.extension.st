@@ -2,7 +2,7 @@ Extension { #name : #Number }
 
 {
 	#category : #'*3DTransform',
-	#timestamp : 'stlu 1/22/2021 13:54'
+	#'squeak_changestamp' : 'stlu 1/22/2021 13:54'
 }
 Number >> exp2 [
 
@@ -11,7 +11,7 @@ Number >> exp2 [
 
 {
 	#category : #'*3DTransform',
-	#timestamp : 'stlu 1/22/2021 13:54'
+	#'squeak_changestamp' : 'stlu 1/22/2021 13:54'
 }
 Number >> inverseSqrt [
 
@@ -20,7 +20,7 @@ Number >> inverseSqrt [
 
 {
 	#category : #'*3DTransform',
-	#timestamp : 'stlu 1/22/2021 15:58'
+	#'squeak_changestamp' : 'stlu 1/22/2021 15:58'
 }
 Number >> mix: other alpha: alpha [
 	"Returns a linear blend of the receiver and other."
@@ -29,7 +29,7 @@ Number >> mix: other alpha: alpha [
 
 {
 	#category : #'*3DTransform',
-	#timestamp : 'stlu 1/22/2021 13:51'
+	#'squeak_changestamp' : 'stlu 1/22/2021 13:51'
 }
 Number >> roundEven [
 

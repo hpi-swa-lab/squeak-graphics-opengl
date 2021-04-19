@@ -2,7 +2,7 @@ Extension { #name : #GLUniform }
 
 {
 	#category : #'*OpenGLObjects-Generation',
-	#timestamp : 'stlu 12/14/2020 14:22'
+	#'squeak_changestamp' : 'stlu 12/14/2020 14:22'
 }
 GLUniform class >> arraySetterTemplate [
 
@@ -13,7 +13,7 @@ GLUniform class >> arraySetterTemplate [
 
 {
 	#category : #'*OpenGLObjects-Generation',
-	#timestamp : 'stlu 12/14/2020 14:06'
+	#'squeak_changestamp' : 'stlu 12/14/2020 14:06'
 }
 GLUniform class >> generateSetterInferface [
 
@@ -24,7 +24,7 @@ GLUniform class >> generateSetterInferface [
 
 {
 	#category : #'*OpenGLObjects-Generation',
-	#timestamp : 'stlu 12/14/2020 14:22'
+	#'squeak_changestamp' : 'stlu 12/14/2020 14:22'
 }
 GLUniform class >> matrixSetterTemplate [
 
@@ -39,7 +39,7 @@ GLUniform class >> matrixSetterTemplate [
 
 {
 	#category : #'*OpenGLObjects-Generation',
-	#timestamp : 'stlu 12/14/2020 14:22'
+	#'squeak_changestamp' : 'stlu 12/14/2020 14:22'
 }
 GLUniform class >> scalarSetterTemplate [
 

@@ -13,12 +13,12 @@ Class {
 		'propertiesToQuery'
 	],
 	#category : #'OpenGLObjects-Programs',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 12/16/2020 20:44'
+	#'squeak_changestamp' : 'stlu 12/16/2020 20:44'
 }
 GLProgramResource class >> allInProgram: aProgram [
 
@@ -27,7 +27,7 @@ GLProgramResource class >> allInProgram: aProgram [
 
 {
 	#category : #querying,
-	#timestamp : 'stlu 12/13/2020 14:25'
+	#'squeak_changestamp' : 'stlu 12/13/2020 14:25'
 }
 GLProgramResource class >> getPropertiesToQuery [
 
@@ -36,7 +36,7 @@ GLProgramResource class >> getPropertiesToQuery [
 
 {
 	#category : #querying,
-	#timestamp : 'stlu 12/16/2020 18:57'
+	#'squeak_changestamp' : 'stlu 12/16/2020 18:57'
 }
 GLProgramResource class >> interfaceEnum [
 
@@ -45,7 +45,7 @@ GLProgramResource class >> interfaceEnum [
 
 {
 	#category : #private,
-	#timestamp : 'stlu 12/13/2020 14:10'
+	#'squeak_changestamp' : 'stlu 12/13/2020 14:10'
 }
 GLProgramResource class >> program: aProgram name: aString [
 
@@ -56,7 +56,7 @@ GLProgramResource class >> program: aProgram name: aString [
 
 {
 	#category : #private,
-	#timestamp : 'stlu 12/13/2020 14:30'
+	#'squeak_changestamp' : 'stlu 12/13/2020 14:30'
 }
 GLProgramResource class >> program: aProgram name: aString properties: aWordArray [
 
@@ -66,7 +66,7 @@ GLProgramResource class >> program: aProgram name: aString properties: aWordArra
 
 {
 	#category : #querying,
-	#timestamp : 'stlu 12/13/2020 14:24'
+	#'squeak_changestamp' : 'stlu 12/13/2020 14:24'
 }
 GLProgramResource class >> propertiesToQuery [
 
@@ -76,7 +76,7 @@ GLProgramResource class >> propertiesToQuery [
 
 {
 	#category : #querying,
-	#timestamp : 'stlu 4/15/2021 12:17'
+	#'squeak_changestamp' : 'stlu 4/15/2021 12:17'
 }
 GLProgramResource class >> queryImp [
 
@@ -85,7 +85,7 @@ GLProgramResource class >> queryImp [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 12/13/2020 14:31'
+	#'squeak_changestamp' : 'stlu 12/13/2020 14:31'
 }
 GLProgramResource >> initializeProperties: aWorldArray [
 
@@ -94,7 +94,7 @@ GLProgramResource >> initializeProperties: aWorldArray [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 12/16/2020 18:46'
+	#'squeak_changestamp' : 'stlu 12/16/2020 18:46'
 }
 GLProgramResource >> isInput [
 
@@ -103,7 +103,7 @@ GLProgramResource >> isInput [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 1/10/2021 23:00'
+	#'squeak_changestamp' : 'stlu 1/10/2021 23:00'
 }
 GLProgramResource >> isNull [
 
@@ -112,7 +112,7 @@ GLProgramResource >> isNull [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 12/16/2020 18:46'
+	#'squeak_changestamp' : 'stlu 12/16/2020 18:46'
 }
 GLProgramResource >> isUniform [
 
@@ -121,7 +121,7 @@ GLProgramResource >> isUniform [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/13/2020 14:09'
+	#'squeak_changestamp' : 'stlu 12/13/2020 14:09'
 }
 GLProgramResource >> name [
 
@@ -130,7 +130,7 @@ GLProgramResource >> name [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/16/2020 00:27'
+	#'squeak_changestamp' : 'stlu 11/16/2020 00:27'
 }
 GLProgramResource >> name: anObject [
 
@@ -139,7 +139,7 @@ GLProgramResource >> name: anObject [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/16/2020 00:27'
+	#'squeak_changestamp' : 'stlu 11/16/2020 00:27'
 }
 GLProgramResource >> program [
 
@@ -148,7 +148,7 @@ GLProgramResource >> program [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/16/2020 00:27'
+	#'squeak_changestamp' : 'stlu 11/16/2020 00:27'
 }
 GLProgramResource >> program: anObject [
 
@@ -157,7 +157,7 @@ GLProgramResource >> program: anObject [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/8/2021 18:37'
+	#'squeak_changestamp' : 'stlu 1/8/2021 18:37'
 }
 GLProgramResource >> type [
 

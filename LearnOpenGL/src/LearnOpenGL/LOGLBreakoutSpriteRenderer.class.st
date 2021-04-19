@@ -6,12 +6,12 @@ Class {
 		'vao'
 	],
 	#category : #'LearnOpenGL-Breakout',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #rendering,
-	#timestamp : 'stlu 1/7/2021 16:17'
+	#'squeak_changestamp' : 'stlu 1/7/2021 16:17'
 }
 LOGLBreakoutSpriteRenderer >> drawSprite: aTexture position: position [
 
@@ -23,7 +23,7 @@ LOGLBreakoutSpriteRenderer >> drawSprite: aTexture position: position [
 
 {
 	#category : #rendering,
-	#timestamp : 'stlu 1/7/2021 16:17'
+	#'squeak_changestamp' : 'stlu 1/7/2021 16:17'
 }
 LOGLBreakoutSpriteRenderer >> drawSprite: aTexture position: position extent: extent [
 
@@ -36,7 +36,7 @@ LOGLBreakoutSpriteRenderer >> drawSprite: aTexture position: position extent: ex
 
 {
 	#category : #rendering,
-	#timestamp : 'stlu 1/7/2021 16:17'
+	#'squeak_changestamp' : 'stlu 1/7/2021 16:17'
 }
 LOGLBreakoutSpriteRenderer >> drawSprite: aTexture position: position extent: extent rotation: degrees [
 
@@ -50,7 +50,7 @@ LOGLBreakoutSpriteRenderer >> drawSprite: aTexture position: position extent: ex
 
 {
 	#category : #rendering,
-	#timestamp : 'stlu 3/15/2021 16:19'
+	#'squeak_changestamp' : 'stlu 3/15/2021 16:19'
 }
 LOGLBreakoutSpriteRenderer >> drawSprite: aTexture position: position extent: extent rotation: degrees color: color [
 
@@ -75,7 +75,7 @@ LOGLBreakoutSpriteRenderer >> drawSprite: aTexture position: position extent: ex
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 1/7/2021 14:00'
+	#'squeak_changestamp' : 'stlu 1/7/2021 14:00'
 }
 LOGLBreakoutSpriteRenderer >> initialize [
 
@@ -98,7 +98,7 @@ LOGLBreakoutSpriteRenderer >> initialize [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/6/2021 13:54'
+	#'squeak_changestamp' : 'stlu 1/6/2021 13:54'
 }
 LOGLBreakoutSpriteRenderer >> projection: aMatrix4x4 [
 
@@ -107,7 +107,7 @@ LOGLBreakoutSpriteRenderer >> projection: aMatrix4x4 [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/6/2021 13:33'
+	#'squeak_changestamp' : 'stlu 1/6/2021 13:33'
 }
 LOGLBreakoutSpriteRenderer >> vertices [
 

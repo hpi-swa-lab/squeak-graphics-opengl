@@ -2,12 +2,12 @@ Class {
 	#name : #GLTexture,
 	#superclass : #GLObject,
 	#category : #'OpenGLObjects-Textures',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #allocation,
-	#timestamp : 'stlu 11/30/2020 19:54'
+	#'squeak_changestamp' : 'stlu 11/30/2020 19:54'
 }
 GLTexture class >> allocate: n in: anIntegerArray [
 
@@ -16,7 +16,7 @@ GLTexture class >> allocate: n in: anIntegerArray [
 
 {
 	#category : #private,
-	#timestamp : 'stlu 3/15/2021 11:46'
+	#'squeak_changestamp' : 'stlu 3/15/2021 11:46'
 }
 GLTexture class >> privateSetBinding: aTexture [
 
@@ -25,7 +25,7 @@ GLTexture class >> privateSetBinding: aTexture [
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 3/15/2021 11:40'
+	#'squeak_changestamp' : 'stlu 3/15/2021 11:40'
 }
 GLTexture class >> unbind [
 
@@ -35,7 +35,7 @@ GLTexture class >> unbind [
 
 {
 	#category : #'texture parameters',
-	#timestamp : 'stlu 1/4/2021 10:12'
+	#'squeak_changestamp' : 'stlu 1/4/2021 10:12'
 }
 GLTexture >> baseLevel [
 
@@ -46,7 +46,7 @@ GLTexture >> baseLevel [
 
 {
 	#category : #'texture parameters',
-	#timestamp : 'stlu 1/4/2021 10:13'
+	#'squeak_changestamp' : 'stlu 1/4/2021 10:13'
 }
 GLTexture >> baseLevel: anInteger [
 
@@ -58,7 +58,7 @@ GLTexture >> baseLevel: anInteger [
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 3/15/2021 11:54'
+	#'squeak_changestamp' : 'stlu 3/15/2021 11:54'
 }
 GLTexture >> bind [
 
@@ -68,7 +68,7 @@ GLTexture >> bind [
 
 {
 	#category : #'sampling parameters',
-	#timestamp : 'stlu 1/4/2021 10:13'
+	#'squeak_changestamp' : 'stlu 1/4/2021 10:13'
 }
 GLTexture >> borderColor [
 
@@ -82,7 +82,7 @@ GLTexture >> borderColor [
 
 {
 	#category : #'sampling parameters',
-	#timestamp : 'stlu 1/4/2021 10:13'
+	#'squeak_changestamp' : 'stlu 1/4/2021 10:13'
 }
 GLTexture >> borderColor: aColor [
 
@@ -94,7 +94,7 @@ GLTexture >> borderColor: aColor [
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 3/15/2021 11:53'
+	#'squeak_changestamp' : 'stlu 3/15/2021 11:53'
 }
 GLTexture >> boundDuring: aBlock [
 
@@ -109,7 +109,7 @@ GLTexture >> boundDuring: aBlock [
 
 {
 	#category : #'sampling parameters',
-	#timestamp : 'stlu 1/4/2021 10:32'
+	#'squeak_changestamp' : 'stlu 1/4/2021 10:32'
 }
 GLTexture >> comparisonFunction [
 
@@ -120,7 +120,7 @@ GLTexture >> comparisonFunction [
 
 {
 	#category : #'sampling parameters',
-	#timestamp : 'stlu 1/4/2021 10:32'
+	#'squeak_changestamp' : 'stlu 1/4/2021 10:32'
 }
 GLTexture >> comparisonFunction: enum [
 
@@ -132,7 +132,7 @@ GLTexture >> comparisonFunction: enum [
 
 {
 	#category : #'sampling parameters',
-	#timestamp : 'stlu 1/4/2021 10:31'
+	#'squeak_changestamp' : 'stlu 1/4/2021 10:31'
 }
 GLTexture >> comparisonMode [
 
@@ -143,7 +143,7 @@ GLTexture >> comparisonMode [
 
 {
 	#category : #'sampling parameters',
-	#timestamp : 'stlu 1/4/2021 10:31'
+	#'squeak_changestamp' : 'stlu 1/4/2021 10:31'
 }
 GLTexture >> comparisonMode: enum [
 
@@ -155,7 +155,7 @@ GLTexture >> comparisonMode: enum [
 
 {
 	#category : #'texture parameters',
-	#timestamp : 'stlu 1/4/2021 10:13'
+	#'squeak_changestamp' : 'stlu 1/4/2021 10:13'
 }
 GLTexture >> depthStencilMode [
 
@@ -166,7 +166,7 @@ GLTexture >> depthStencilMode [
 
 {
 	#category : #'texture parameters',
-	#timestamp : 'stlu 1/4/2021 10:13'
+	#'squeak_changestamp' : 'stlu 1/4/2021 10:13'
 }
 GLTexture >> depthStencilMode: enum [
 
@@ -178,7 +178,7 @@ GLTexture >> depthStencilMode: enum [
 
 {
 	#category : #mipmaps,
-	#timestamp : 'stlu 1/4/2021 10:13'
+	#'squeak_changestamp' : 'stlu 1/4/2021 10:13'
 }
 GLTexture >> generateMipmap [
 
@@ -187,7 +187,7 @@ GLTexture >> generateMipmap [
 
 {
 	#category : #'image loading',
-	#timestamp : 'stlu 1/4/2021 13:52'
+	#'squeak_changestamp' : 'stlu 1/4/2021 13:52'
 }
 GLTexture >> imageData: aRawBitsArray level: lodNumber extent: extent interalFormat: internalFormat format: format type: type [
 
@@ -205,7 +205,7 @@ GLTexture >> imageData: aRawBitsArray level: lodNumber extent: extent interalFor
 
 {
 	#category : #'image loading',
-	#timestamp : 'stlu 1/4/2021 13:19'
+	#'squeak_changestamp' : 'stlu 1/4/2021 13:19'
 }
 GLTexture >> imageForm: aForm [
 
@@ -225,7 +225,7 @@ GLTexture >> imageForm: aForm [
 
 {
 	#category : #'texture parameters',
-	#timestamp : 'stlu 1/4/2021 10:13'
+	#'squeak_changestamp' : 'stlu 1/4/2021 10:13'
 }
 GLTexture >> imageFormatCompatibilityType [
 
@@ -236,7 +236,7 @@ GLTexture >> imageFormatCompatibilityType [
 
 {
 	#category : #'texture parameters',
-	#timestamp : 'stlu 1/4/2021 10:13'
+	#'squeak_changestamp' : 'stlu 1/4/2021 10:13'
 }
 GLTexture >> immutableFormat [
 
@@ -247,7 +247,7 @@ GLTexture >> immutableFormat [
 
 {
 	#category : #'texture parameters',
-	#timestamp : 'stlu 1/4/2021 10:14'
+	#'squeak_changestamp' : 'stlu 1/4/2021 10:14'
 }
 GLTexture >> immutableLevels [
 
@@ -258,7 +258,7 @@ GLTexture >> immutableLevels [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 12/14/2020 12:13'
+	#'squeak_changestamp' : 'stlu 12/14/2020 12:13'
 }
 GLTexture >> isAllocated [
 
@@ -267,7 +267,7 @@ GLTexture >> isAllocated [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 1/4/2021 14:14'
+	#'squeak_changestamp' : 'stlu 1/4/2021 14:14'
 }
 GLTexture >> isComplete [
 
@@ -279,7 +279,7 @@ GLTexture >> isComplete [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 10/29/2020 12:16'
+	#'squeak_changestamp' : 'stlu 10/29/2020 12:16'
 }
 GLTexture >> isTexture [
 
@@ -288,7 +288,7 @@ GLTexture >> isTexture [
 
 {
 	#category : #'sampling parameters',
-	#timestamp : 'stlu 1/4/2021 10:14'
+	#'squeak_changestamp' : 'stlu 1/4/2021 10:14'
 }
 GLTexture >> lodBias [
 
@@ -299,7 +299,7 @@ GLTexture >> lodBias [
 
 {
 	#category : #'sampling parameters',
-	#timestamp : 'stlu 1/4/2021 10:14'
+	#'squeak_changestamp' : 'stlu 1/4/2021 10:14'
 }
 GLTexture >> lodBias: aFloat [
 
@@ -311,7 +311,7 @@ GLTexture >> lodBias: aFloat [
 
 {
 	#category : #'sampling parameters',
-	#timestamp : 'stlu 1/4/2021 10:14'
+	#'squeak_changestamp' : 'stlu 1/4/2021 10:14'
 }
 GLTexture >> magnificationFilter [
 
@@ -322,7 +322,7 @@ GLTexture >> magnificationFilter [
 
 {
 	#category : #'sampling parameters',
-	#timestamp : 'stlu 1/4/2021 10:14'
+	#'squeak_changestamp' : 'stlu 1/4/2021 10:14'
 }
 GLTexture >> magnificationFilter: enum [
 
@@ -334,7 +334,7 @@ GLTexture >> magnificationFilter: enum [
 
 {
 	#category : #'sampling parameters',
-	#timestamp : 'stlu 1/4/2021 10:22'
+	#'squeak_changestamp' : 'stlu 1/4/2021 10:22'
 }
 GLTexture >> maxAnisotropy [
 
@@ -345,7 +345,7 @@ GLTexture >> maxAnisotropy [
 
 {
 	#category : #'sampling parameters',
-	#timestamp : 'stlu 1/4/2021 10:22'
+	#'squeak_changestamp' : 'stlu 1/4/2021 10:22'
 }
 GLTexture >> maxAnisotropy: aFloat [
 
@@ -357,7 +357,7 @@ GLTexture >> maxAnisotropy: aFloat [
 
 {
 	#category : #'texture parameters',
-	#timestamp : 'stlu 1/4/2021 10:22'
+	#'squeak_changestamp' : 'stlu 1/4/2021 10:22'
 }
 GLTexture >> maxLevel [
 
@@ -368,7 +368,7 @@ GLTexture >> maxLevel [
 
 {
 	#category : #'texture parameters',
-	#timestamp : 'stlu 1/4/2021 10:22'
+	#'squeak_changestamp' : 'stlu 1/4/2021 10:22'
 }
 GLTexture >> maxLevel: anInteger [
 
@@ -380,7 +380,7 @@ GLTexture >> maxLevel: anInteger [
 
 {
 	#category : #'sampling parameters',
-	#timestamp : 'stlu 1/4/2021 10:22'
+	#'squeak_changestamp' : 'stlu 1/4/2021 10:22'
 }
 GLTexture >> maxLod [
 
@@ -391,7 +391,7 @@ GLTexture >> maxLod [
 
 {
 	#category : #'sampling parameters',
-	#timestamp : 'stlu 1/4/2021 10:22'
+	#'squeak_changestamp' : 'stlu 1/4/2021 10:22'
 }
 GLTexture >> maxLod: aFloat [
 
@@ -403,7 +403,7 @@ GLTexture >> maxLod: aFloat [
 
 {
 	#category : #'sampling parameters',
-	#timestamp : 'stlu 1/4/2021 10:22'
+	#'squeak_changestamp' : 'stlu 1/4/2021 10:22'
 }
 GLTexture >> minLod [
 
@@ -414,7 +414,7 @@ GLTexture >> minLod [
 
 {
 	#category : #'sampling parameters',
-	#timestamp : 'stlu 1/4/2021 10:22'
+	#'squeak_changestamp' : 'stlu 1/4/2021 10:22'
 }
 GLTexture >> minLod: aFloat [
 
@@ -426,7 +426,7 @@ GLTexture >> minLod: aFloat [
 
 {
 	#category : #'sampling parameters',
-	#timestamp : 'stlu 1/4/2021 10:22'
+	#'squeak_changestamp' : 'stlu 1/4/2021 10:22'
 }
 GLTexture >> minificationFilter [
 
@@ -437,7 +437,7 @@ GLTexture >> minificationFilter [
 
 {
 	#category : #'sampling parameters',
-	#timestamp : 'stlu 1/4/2021 10:22'
+	#'squeak_changestamp' : 'stlu 1/4/2021 10:22'
 }
 GLTexture >> minificationFilter: enum [
 
@@ -449,7 +449,7 @@ GLTexture >> minificationFilter: enum [
 
 {
 	#category : #imps,
-	#timestamp : 'stlu 1/4/2021 10:12'
+	#'squeak_changestamp' : 'stlu 1/4/2021 10:12'
 }
 GLTexture >> stateAccessImp [
 
@@ -458,7 +458,7 @@ GLTexture >> stateAccessImp [
 
 {
 	#category : #'texture parameters',
-	#timestamp : 'stlu 1/4/2021 10:22'
+	#'squeak_changestamp' : 'stlu 1/4/2021 10:22'
 }
 GLTexture >> swizzleA [
 
@@ -469,7 +469,7 @@ GLTexture >> swizzleA [
 
 {
 	#category : #'texture parameters',
-	#timestamp : 'stlu 1/4/2021 10:22'
+	#'squeak_changestamp' : 'stlu 1/4/2021 10:22'
 }
 GLTexture >> swizzleA: enum [
 
@@ -481,7 +481,7 @@ GLTexture >> swizzleA: enum [
 
 {
 	#category : #'texture parameters',
-	#timestamp : 'stlu 1/4/2021 10:22'
+	#'squeak_changestamp' : 'stlu 1/4/2021 10:22'
 }
 GLTexture >> swizzleB [
 
@@ -492,7 +492,7 @@ GLTexture >> swizzleB [
 
 {
 	#category : #'texture parameters',
-	#timestamp : 'stlu 1/4/2021 10:22'
+	#'squeak_changestamp' : 'stlu 1/4/2021 10:22'
 }
 GLTexture >> swizzleB: enum [
 
@@ -504,7 +504,7 @@ GLTexture >> swizzleB: enum [
 
 {
 	#category : #'texture parameters',
-	#timestamp : 'stlu 1/4/2021 10:22'
+	#'squeak_changestamp' : 'stlu 1/4/2021 10:22'
 }
 GLTexture >> swizzleG [
 
@@ -515,7 +515,7 @@ GLTexture >> swizzleG [
 
 {
 	#category : #'texture parameters',
-	#timestamp : 'stlu 1/4/2021 10:22'
+	#'squeak_changestamp' : 'stlu 1/4/2021 10:22'
 }
 GLTexture >> swizzleG: enum [
 
@@ -527,7 +527,7 @@ GLTexture >> swizzleG: enum [
 
 {
 	#category : #'texture parameters',
-	#timestamp : 'stlu 1/4/2021 10:22'
+	#'squeak_changestamp' : 'stlu 1/4/2021 10:22'
 }
 GLTexture >> swizzleR [
 
@@ -538,7 +538,7 @@ GLTexture >> swizzleR [
 
 {
 	#category : #'texture parameters',
-	#timestamp : 'stlu 1/4/2021 10:22'
+	#'squeak_changestamp' : 'stlu 1/4/2021 10:22'
 }
 GLTexture >> swizzleR: enum [
 
@@ -550,7 +550,7 @@ GLTexture >> swizzleR: enum [
 
 {
 	#category : #'texture parameters',
-	#timestamp : 'stlu 1/4/2021 08:01'
+	#'squeak_changestamp' : 'stlu 1/4/2021 08:01'
 }
 GLTexture >> swizzleR: rEnum g: gEnum b: bEnum a: aEnum [
 
@@ -559,7 +559,7 @@ GLTexture >> swizzleR: rEnum g: gEnum b: bEnum a: aEnum [
 
 {
 	#category : #'texture parameters',
-	#timestamp : 'stlu 1/4/2021 10:22'
+	#'squeak_changestamp' : 'stlu 1/4/2021 10:22'
 }
 GLTexture >> swizzleRGBA [
 
@@ -571,7 +571,7 @@ GLTexture >> swizzleRGBA [
 
 {
 	#category : #'texture parameters',
-	#timestamp : 'stlu 1/4/2021 10:22'
+	#'squeak_changestamp' : 'stlu 1/4/2021 10:22'
 }
 GLTexture >> swizzleRGBA: aWordArray [
 
@@ -583,7 +583,7 @@ GLTexture >> swizzleRGBA: aWordArray [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 3/15/2021 13:16'
+	#'squeak_changestamp' : 'stlu 3/15/2021 13:16'
 }
 GLTexture >> target [
 
@@ -592,7 +592,7 @@ GLTexture >> target [
 
 {
 	#category : #'texture parameters',
-	#timestamp : 'stlu 1/4/2021 10:22'
+	#'squeak_changestamp' : 'stlu 1/4/2021 10:22'
 }
 GLTexture >> viewMinLayer [
 
@@ -603,7 +603,7 @@ GLTexture >> viewMinLayer [
 
 {
 	#category : #'texture parameters',
-	#timestamp : 'stlu 1/4/2021 10:22'
+	#'squeak_changestamp' : 'stlu 1/4/2021 10:22'
 }
 GLTexture >> viewMinLevel [
 
@@ -614,7 +614,7 @@ GLTexture >> viewMinLevel [
 
 {
 	#category : #'texture parameters',
-	#timestamp : 'stlu 1/4/2021 10:22'
+	#'squeak_changestamp' : 'stlu 1/4/2021 10:22'
 }
 GLTexture >> viewNumLayers [
 
@@ -625,7 +625,7 @@ GLTexture >> viewNumLayers [
 
 {
 	#category : #'texture parameters',
-	#timestamp : 'stlu 1/4/2021 10:22'
+	#'squeak_changestamp' : 'stlu 1/4/2021 10:22'
 }
 GLTexture >> viewNumLevels [
 
@@ -636,7 +636,7 @@ GLTexture >> viewNumLevels [
 
 {
 	#category : #'sampling parameters',
-	#timestamp : 'stlu 1/4/2021 10:22'
+	#'squeak_changestamp' : 'stlu 1/4/2021 10:22'
 }
 GLTexture >> wrapR [
 
@@ -647,7 +647,7 @@ GLTexture >> wrapR [
 
 {
 	#category : #'sampling parameters',
-	#timestamp : 'stlu 1/4/2021 10:22'
+	#'squeak_changestamp' : 'stlu 1/4/2021 10:22'
 }
 GLTexture >> wrapR: enum [
 
@@ -659,7 +659,7 @@ GLTexture >> wrapR: enum [
 
 {
 	#category : #'sampling parameters',
-	#timestamp : 'stlu 1/4/2021 10:22'
+	#'squeak_changestamp' : 'stlu 1/4/2021 10:22'
 }
 GLTexture >> wrapS [
 
@@ -670,7 +670,7 @@ GLTexture >> wrapS [
 
 {
 	#category : #'sampling parameters',
-	#timestamp : 'stlu 1/4/2021 10:22'
+	#'squeak_changestamp' : 'stlu 1/4/2021 10:22'
 }
 GLTexture >> wrapS: enum [
 
@@ -682,7 +682,7 @@ GLTexture >> wrapS: enum [
 
 {
 	#category : #'sampling parameters',
-	#timestamp : 'stlu 1/4/2021 10:22'
+	#'squeak_changestamp' : 'stlu 1/4/2021 10:22'
 }
 GLTexture >> wrapT [
 
@@ -693,7 +693,7 @@ GLTexture >> wrapT [
 
 {
 	#category : #'sampling parameters',
-	#timestamp : 'stlu 1/4/2021 10:22'
+	#'squeak_changestamp' : 'stlu 1/4/2021 10:22'
 }
 GLTexture >> wrapT: enum [
 

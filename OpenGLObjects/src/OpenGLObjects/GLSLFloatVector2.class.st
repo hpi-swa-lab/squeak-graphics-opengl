@@ -2,12 +2,12 @@ Class {
 	#name : #GLSLFloatVector2,
 	#superclass : #GLSLVector,
 	#category : #'OpenGLObjects-Types',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/15/2020 13:04'
+	#'squeak_changestamp' : 'stlu 12/15/2020 13:04'
 }
 GLSLFloatVector2 class >> componentType [
 
@@ -16,7 +16,7 @@ GLSLFloatVector2 class >> componentType [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/15/2020 13:04'
+	#'squeak_changestamp' : 'stlu 12/15/2020 13:04'
 }
 GLSLFloatVector2 class >> declarators [
 
@@ -25,7 +25,7 @@ GLSLFloatVector2 class >> declarators [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/15/2020 13:04'
+	#'squeak_changestamp' : 'stlu 12/15/2020 13:04'
 }
 GLSLFloatVector2 class >> enum [
 
@@ -34,7 +34,7 @@ GLSLFloatVector2 class >> enum [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/15/2020 13:04'
+	#'squeak_changestamp' : 'stlu 12/15/2020 13:04'
 }
 GLSLFloatVector2 class >> enumName [
 
@@ -43,7 +43,7 @@ GLSLFloatVector2 class >> enumName [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/15/2020 13:04'
+	#'squeak_changestamp' : 'stlu 12/15/2020 13:04'
 }
 GLSLFloatVector2 class >> numComponents [
 
@@ -52,7 +52,7 @@ GLSLFloatVector2 class >> numComponents [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/15/2020 13:04'
+	#'squeak_changestamp' : 'stlu 12/15/2020 13:04'
 }
 GLSLFloatVector2 class >> squeakName [
 
@@ -61,7 +61,7 @@ GLSLFloatVector2 class >> squeakName [
 
 {
 	#category : #'program resources',
-	#timestamp : 'stlu 1/6/2021 14:10'
+	#'squeak_changestamp' : 'stlu 1/6/2021 14:10'
 }
 GLSLFloatVector2 >> setUniform: aUniform toArray: aRawBitsArray count: numElements [
 

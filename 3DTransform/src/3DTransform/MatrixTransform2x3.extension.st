@@ -2,7 +2,7 @@ Extension { #name : #MatrixTransform2x3 }
 
 {
 	#category : #'*3DTransform',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 MatrixTransform2x3 >> asMatrix2x3 [
 
@@ -19,7 +19,7 @@ MatrixTransform2x3 >> asMatrix2x3 [
 
 {
 	#category : #'*3DTransform',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 MatrixTransform2x3 >> asMatrix4x4 [
 

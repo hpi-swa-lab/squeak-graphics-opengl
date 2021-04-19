@@ -7,12 +7,12 @@ Class {
 		'usage'
 	],
 	#category : #'OpenGLObjects-Buffers',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #allocation,
-	#timestamp : 'stlu 11/30/2020 19:47'
+	#'squeak_changestamp' : 'stlu 11/30/2020 19:47'
 }
 GLBuffer class >> allocate: n in: anIntegerArray [
 
@@ -21,7 +21,7 @@ GLBuffer class >> allocate: n in: anIntegerArray [
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 3/15/2021 13:06'
+	#'squeak_changestamp' : 'stlu 3/15/2021 13:06'
 }
 GLBuffer class >> boundTo: targetEnum [
 
@@ -30,7 +30,7 @@ GLBuffer class >> boundTo: targetEnum [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/30/2020 18:58'
+	#'squeak_changestamp' : 'stlu 11/30/2020 18:58'
 }
 GLBuffer class >> defaultTarget [
 
@@ -39,7 +39,7 @@ GLBuffer class >> defaultTarget [
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 3/15/2021 13:12'
+	#'squeak_changestamp' : 'stlu 3/15/2021 13:12'
 }
 GLBuffer class >> unbind: targetEnum [
 
@@ -49,7 +49,7 @@ GLBuffer class >> unbind: targetEnum [
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 3/15/2021 13:01'
+	#'squeak_changestamp' : 'stlu 3/15/2021 13:01'
 }
 GLBuffer >> bind [
 
@@ -58,7 +58,7 @@ GLBuffer >> bind [
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 3/15/2021 13:11'
+	#'squeak_changestamp' : 'stlu 3/15/2021 13:11'
 }
 GLBuffer >> bindTo: targetEnum [
 
@@ -71,7 +71,7 @@ GLBuffer >> bindTo: targetEnum [
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 3/15/2021 13:02'
+	#'squeak_changestamp' : 'stlu 3/15/2021 13:02'
 }
 GLBuffer >> boundDuring: aBlock [
 
@@ -80,7 +80,7 @@ GLBuffer >> boundDuring: aBlock [
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 3/15/2021 13:02'
+	#'squeak_changestamp' : 'stlu 3/15/2021 13:02'
 }
 GLBuffer >> boundTo: targetEnum during: aBlock [
 
@@ -96,7 +96,7 @@ GLBuffer >> boundTo: targetEnum during: aBlock [
 
 {
 	#category : #data,
-	#timestamp : 'stlu 11/6/2020 13:59'
+	#'squeak_changestamp' : 'stlu 11/6/2020 13:59'
 }
 GLBuffer >> data: aRawBitsArray [
 
@@ -105,7 +105,7 @@ GLBuffer >> data: aRawBitsArray [
 
 {
 	#category : #data,
-	#timestamp : 'stlu 11/6/2020 13:58'
+	#'squeak_changestamp' : 'stlu 11/6/2020 13:58'
 }
 GLBuffer >> data: aRawBitsArray offset: byteOffset [
 
@@ -114,7 +114,7 @@ GLBuffer >> data: aRawBitsArray offset: byteOffset [
 
 {
 	#category : #data,
-	#timestamp : 'stlu 11/6/2020 13:57'
+	#'squeak_changestamp' : 'stlu 11/6/2020 13:57'
 }
 GLBuffer >> data: aRawBitsArray size: byteSize [
 
@@ -123,7 +123,7 @@ GLBuffer >> data: aRawBitsArray size: byteSize [
 
 {
 	#category : #data,
-	#timestamp : 'stlu 12/1/2020 02:43'
+	#'squeak_changestamp' : 'stlu 12/1/2020 02:43'
 }
 GLBuffer >> data: aRawBitsArray size: byteSize offset: byteOffset [
 
@@ -141,7 +141,7 @@ GLBuffer >> data: aRawBitsArray size: byteSize offset: byteOffset [
 
 {
 	#category : #'initialize-release',
-	#timestamp : 'stlu 11/3/2020 15:32'
+	#'squeak_changestamp' : 'stlu 11/3/2020 15:32'
 }
 GLBuffer >> delete [
 
@@ -150,7 +150,7 @@ GLBuffer >> delete [
 
 {
 	#category : #'initialize-release',
-	#timestamp : 'stlu 12/1/2020 02:41'
+	#'squeak_changestamp' : 'stlu 12/1/2020 02:41'
 }
 GLBuffer >> initialize [
 
@@ -161,7 +161,7 @@ GLBuffer >> initialize [
 
 {
 	#category : #data,
-	#timestamp : 'stlu 12/28/2020 12:09'
+	#'squeak_changestamp' : 'stlu 12/28/2020 12:09'
 }
 GLBuffer >> invalidate [
 
@@ -170,7 +170,7 @@ GLBuffer >> invalidate [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 12/14/2020 12:11'
+	#'squeak_changestamp' : 'stlu 12/14/2020 12:11'
 }
 GLBuffer >> isAllocated [
 
@@ -179,7 +179,7 @@ GLBuffer >> isAllocated [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 10/29/2020 12:14'
+	#'squeak_changestamp' : 'stlu 10/29/2020 12:14'
 }
 GLBuffer >> isBuffer [
 
@@ -188,7 +188,7 @@ GLBuffer >> isBuffer [
 
 {
 	#category : #data,
-	#timestamp : 'stlu 12/28/2020 12:08'
+	#'squeak_changestamp' : 'stlu 12/28/2020 12:08'
 }
 GLBuffer >> orphan [
 
@@ -197,7 +197,7 @@ GLBuffer >> orphan [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/6/2020 14:33'
+	#'squeak_changestamp' : 'stlu 11/6/2020 14:33'
 }
 GLBuffer >> size [
 
@@ -206,7 +206,7 @@ GLBuffer >> size [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/28/2020 11:53'
+	#'squeak_changestamp' : 'stlu 12/28/2020 11:53'
 }
 GLBuffer >> stateAccess [
 
@@ -215,7 +215,7 @@ GLBuffer >> stateAccess [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/1/2020 02:41'
+	#'squeak_changestamp' : 'stlu 12/1/2020 02:41'
 }
 GLBuffer >> target [
 
@@ -224,7 +224,7 @@ GLBuffer >> target [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/1/2020 02:41'
+	#'squeak_changestamp' : 'stlu 12/1/2020 02:41'
 }
 GLBuffer >> target: anInteger [
 
@@ -233,7 +233,7 @@ GLBuffer >> target: anInteger [
 
 {
 	#category : #targets,
-	#timestamp : 'stlu 12/1/2020 02:47'
+	#'squeak_changestamp' : 'stlu 12/1/2020 02:47'
 }
 GLBuffer >> targetArrayBuffer [
 
@@ -242,7 +242,7 @@ GLBuffer >> targetArrayBuffer [
 
 {
 	#category : #targets,
-	#timestamp : 'stlu 12/1/2020 02:47'
+	#'squeak_changestamp' : 'stlu 12/1/2020 02:47'
 }
 GLBuffer >> targetAtomicCounterBuffer [
 
@@ -251,7 +251,7 @@ GLBuffer >> targetAtomicCounterBuffer [
 
 {
 	#category : #targets,
-	#timestamp : 'stlu 12/1/2020 02:48'
+	#'squeak_changestamp' : 'stlu 12/1/2020 02:48'
 }
 GLBuffer >> targetCopyReadBuffer [
 
@@ -260,7 +260,7 @@ GLBuffer >> targetCopyReadBuffer [
 
 {
 	#category : #targets,
-	#timestamp : 'stlu 12/1/2020 02:48'
+	#'squeak_changestamp' : 'stlu 12/1/2020 02:48'
 }
 GLBuffer >> targetCopyWriteBuffer [
 
@@ -269,7 +269,7 @@ GLBuffer >> targetCopyWriteBuffer [
 
 {
 	#category : #targets,
-	#timestamp : 'stlu 12/1/2020 02:48'
+	#'squeak_changestamp' : 'stlu 12/1/2020 02:48'
 }
 GLBuffer >> targetDispatchIndirectBuffer [
 
@@ -278,7 +278,7 @@ GLBuffer >> targetDispatchIndirectBuffer [
 
 {
 	#category : #targets,
-	#timestamp : 'stlu 12/1/2020 02:48'
+	#'squeak_changestamp' : 'stlu 12/1/2020 02:48'
 }
 GLBuffer >> targetDrawIndirectBuffer [
 
@@ -287,7 +287,7 @@ GLBuffer >> targetDrawIndirectBuffer [
 
 {
 	#category : #targets,
-	#timestamp : 'stlu 12/1/2020 02:49'
+	#'squeak_changestamp' : 'stlu 12/1/2020 02:49'
 }
 GLBuffer >> targetElementArrayBuffer [
 
@@ -296,7 +296,7 @@ GLBuffer >> targetElementArrayBuffer [
 
 {
 	#category : #targets,
-	#timestamp : 'stlu 12/1/2020 02:49'
+	#'squeak_changestamp' : 'stlu 12/1/2020 02:49'
 }
 GLBuffer >> targetParameterBuffer [
 
@@ -305,7 +305,7 @@ GLBuffer >> targetParameterBuffer [
 
 {
 	#category : #targets,
-	#timestamp : 'stlu 12/1/2020 02:49'
+	#'squeak_changestamp' : 'stlu 12/1/2020 02:49'
 }
 GLBuffer >> targetPixelPackBuffer [
 
@@ -314,7 +314,7 @@ GLBuffer >> targetPixelPackBuffer [
 
 {
 	#category : #targets,
-	#timestamp : 'stlu 12/1/2020 02:50'
+	#'squeak_changestamp' : 'stlu 12/1/2020 02:50'
 }
 GLBuffer >> targetPixelUnpackBuffer [
 
@@ -323,7 +323,7 @@ GLBuffer >> targetPixelUnpackBuffer [
 
 {
 	#category : #targets,
-	#timestamp : 'stlu 12/1/2020 02:50'
+	#'squeak_changestamp' : 'stlu 12/1/2020 02:50'
 }
 GLBuffer >> targetQueryBuffer [
 
@@ -332,7 +332,7 @@ GLBuffer >> targetQueryBuffer [
 
 {
 	#category : #targets,
-	#timestamp : 'stlu 12/1/2020 02:50'
+	#'squeak_changestamp' : 'stlu 12/1/2020 02:50'
 }
 GLBuffer >> targetShaderStorageBuffer [
 
@@ -341,7 +341,7 @@ GLBuffer >> targetShaderStorageBuffer [
 
 {
 	#category : #targets,
-	#timestamp : 'stlu 12/1/2020 02:50'
+	#'squeak_changestamp' : 'stlu 12/1/2020 02:50'
 }
 GLBuffer >> targetTextureBuffer [
 
@@ -350,7 +350,7 @@ GLBuffer >> targetTextureBuffer [
 
 {
 	#category : #targets,
-	#timestamp : 'stlu 12/1/2020 02:51'
+	#'squeak_changestamp' : 'stlu 12/1/2020 02:51'
 }
 GLBuffer >> targetTransformFeedbackBuffer [
 
@@ -359,7 +359,7 @@ GLBuffer >> targetTransformFeedbackBuffer [
 
 {
 	#category : #targets,
-	#timestamp : 'stlu 12/1/2020 02:51'
+	#'squeak_changestamp' : 'stlu 12/1/2020 02:51'
 }
 GLBuffer >> targetUniformBuffer [
 
@@ -368,7 +368,7 @@ GLBuffer >> targetUniformBuffer [
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 3/15/2021 13:02'
+	#'squeak_changestamp' : 'stlu 3/15/2021 13:02'
 }
 GLBuffer >> unbind [
 
@@ -377,7 +377,7 @@ GLBuffer >> unbind [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/6/2020 14:33'
+	#'squeak_changestamp' : 'stlu 11/6/2020 14:33'
 }
 GLBuffer >> usage [
 
@@ -386,7 +386,7 @@ GLBuffer >> usage [
 
 {
 	#category : #data,
-	#timestamp : 'stlu 11/6/2020 13:53'
+	#'squeak_changestamp' : 'stlu 11/6/2020 13:53'
 }
 GLBuffer >> usage: usageEnum data: aRawBitsArray [ 
 
@@ -395,7 +395,7 @@ GLBuffer >> usage: usageEnum data: aRawBitsArray [
 
 {
 	#category : #data,
-	#timestamp : 'stlu 11/6/2020 13:53'
+	#'squeak_changestamp' : 'stlu 11/6/2020 13:53'
 }
 GLBuffer >> usage: usageEnum size: byteSize [
 
@@ -404,7 +404,7 @@ GLBuffer >> usage: usageEnum size: byteSize [
 
 {
 	#category : #data,
-	#timestamp : 'stlu 12/1/2020 02:42'
+	#'squeak_changestamp' : 'stlu 12/1/2020 02:42'
 }
 GLBuffer >> usage: usageEnum size: byteSize data: aRawBitsArray [
 

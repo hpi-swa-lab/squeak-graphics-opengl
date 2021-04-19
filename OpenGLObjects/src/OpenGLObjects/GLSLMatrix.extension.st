@@ -2,7 +2,7 @@ Extension { #name : #GLSLMatrix }
 
 {
 	#category : #'*OpenGLObjects-Generation',
-	#timestamp : 'stlu 12/15/2020 12:49'
+	#'squeak_changestamp' : 'stlu 12/15/2020 12:49'
 }
 GLSLMatrix class >> generateClasses [
 

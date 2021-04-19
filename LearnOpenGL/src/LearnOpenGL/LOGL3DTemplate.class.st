@@ -6,12 +6,12 @@ Class {
 		'camera'
 	],
 	#category : #'LearnOpenGL-Core',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #'input handling',
-	#timestamp : 'stlu 3/13/2021 00:50'
+	#'squeak_changestamp' : 'stlu 3/13/2021 00:50'
 }
 LOGL3DTemplate >> cursorPositionChanged: newPosition [
 
@@ -26,7 +26,7 @@ LOGL3DTemplate >> cursorPositionChanged: newPosition [
 
 {
 	#category : #running,
-	#timestamp : 'stlu 3/13/2021 00:53'
+	#'squeak_changestamp' : 'stlu 3/13/2021 00:53'
 }
 LOGL3DTemplate >> initialCamera [
 
@@ -35,7 +35,7 @@ LOGL3DTemplate >> initialCamera [
 
 {
 	#category : #'input handling',
-	#timestamp : 'stlu 3/13/2021 00:50'
+	#'squeak_changestamp' : 'stlu 3/13/2021 00:50'
 }
 LOGL3DTemplate >> processInput: deltaTime [
 
@@ -59,7 +59,7 @@ LOGL3DTemplate >> processInput: deltaTime [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 3/13/2021 01:57'
+	#'squeak_changestamp' : 'stlu 3/13/2021 01:57'
 }
 LOGL3DTemplate >> projectionMatrix [
 
@@ -73,7 +73,7 @@ LOGL3DTemplate >> projectionMatrix [
 
 {
 	#category : #'input handling',
-	#timestamp : 'stlu 3/13/2021 00:52'
+	#'squeak_changestamp' : 'stlu 3/13/2021 00:52'
 }
 LOGL3DTemplate >> scrolledBy: aPoint [
 
@@ -82,7 +82,7 @@ LOGL3DTemplate >> scrolledBy: aPoint [
 
 {
 	#category : #running,
-	#timestamp : 'stlu 3/13/2021 00:53'
+	#'squeak_changestamp' : 'stlu 3/13/2021 00:53'
 }
 LOGL3DTemplate >> setUp [
 
@@ -91,7 +91,7 @@ LOGL3DTemplate >> setUp [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 3/13/2021 00:50'
+	#'squeak_changestamp' : 'stlu 3/13/2021 00:50'
 }
 LOGL3DTemplate >> viewMatrix [
 

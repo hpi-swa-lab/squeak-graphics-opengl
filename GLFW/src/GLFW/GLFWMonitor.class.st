@@ -5,12 +5,12 @@ Class {
 		'GLFWConstants'
 	],
 	#category : #'GLFW-Core',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 2/12/2021 19:51'
+	#'squeak_changestamp' : 'stlu 2/12/2021 19:51'
 }
 GLFWMonitor class >> all [
 
@@ -23,7 +23,7 @@ GLFWMonitor class >> all [
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 2/12/2021 18:58'
+	#'squeak_changestamp' : 'stlu 2/12/2021 18:58'
 }
 GLFWMonitor class >> primary [
 
@@ -32,7 +32,7 @@ GLFWMonitor class >> primary [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 2/12/2021 19:26'
+	#'squeak_changestamp' : 'stlu 2/12/2021 19:26'
 }
 GLFWMonitor >> contentScale [
 
@@ -45,7 +45,7 @@ GLFWMonitor >> contentScale [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 2/12/2021 19:44'
+	#'squeak_changestamp' : 'stlu 2/12/2021 19:44'
 }
 GLFWMonitor >> gamma: aFloat [
 
@@ -54,7 +54,7 @@ GLFWMonitor >> gamma: aFloat [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 2/12/2021 19:23'
+	#'squeak_changestamp' : 'stlu 2/12/2021 19:23'
 }
 GLFWMonitor >> gammaRamp [
 
@@ -63,7 +63,7 @@ GLFWMonitor >> gammaRamp [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 2/12/2021 19:45'
+	#'squeak_changestamp' : 'stlu 2/12/2021 19:45'
 }
 GLFWMonitor >> gammaRamp: aGammaRamp [
 
@@ -72,7 +72,7 @@ GLFWMonitor >> gammaRamp: aGammaRamp [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 2/12/2021 19:27'
+	#'squeak_changestamp' : 'stlu 2/12/2021 19:27'
 }
 GLFWMonitor >> name [
 
@@ -81,7 +81,7 @@ GLFWMonitor >> name [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 2/12/2021 19:29'
+	#'squeak_changestamp' : 'stlu 2/12/2021 19:29'
 }
 GLFWMonitor >> physicalExtent [
 
@@ -94,7 +94,7 @@ GLFWMonitor >> physicalExtent [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 2/12/2021 19:34'
+	#'squeak_changestamp' : 'stlu 2/12/2021 19:34'
 }
 GLFWMonitor >> position [
 
@@ -107,7 +107,7 @@ GLFWMonitor >> position [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 2/12/2021 19:43'
+	#'squeak_changestamp' : 'stlu 2/12/2021 19:43'
 }
 GLFWMonitor >> supportedVideoModes [
 
@@ -120,7 +120,7 @@ GLFWMonitor >> supportedVideoModes [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 2/12/2021 19:35'
+	#'squeak_changestamp' : 'stlu 2/12/2021 19:35'
 }
 GLFWMonitor >> userPointer [
 
@@ -129,7 +129,7 @@ GLFWMonitor >> userPointer [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 2/12/2021 19:48'
+	#'squeak_changestamp' : 'stlu 2/12/2021 19:48'
 }
 GLFWMonitor >> userPointer: pointer [
 
@@ -138,7 +138,7 @@ GLFWMonitor >> userPointer: pointer [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 2/12/2021 19:41'
+	#'squeak_changestamp' : 'stlu 2/12/2021 19:41'
 }
 GLFWMonitor >> videoMode [
 
@@ -147,7 +147,7 @@ GLFWMonitor >> videoMode [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 2/12/2021 19:40'
+	#'squeak_changestamp' : 'stlu 2/12/2021 19:40'
 }
 GLFWMonitor >> workBounds [
 

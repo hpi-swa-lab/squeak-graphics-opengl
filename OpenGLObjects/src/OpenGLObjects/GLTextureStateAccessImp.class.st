@@ -2,12 +2,12 @@ Class {
 	#name : #GLTextureStateAccessImp,
 	#superclass : #GLObjectImp,
 	#category : #'OpenGLObjects-Textures',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #mipmap,
-	#timestamp : 'stlu 1/4/2021 09:47'
+	#'squeak_changestamp' : 'stlu 1/4/2021 09:47'
 }
 GLTextureStateAccessImp >> generateMipmap: aTexture [
 
@@ -16,7 +16,7 @@ GLTextureStateAccessImp >> generateMipmap: aTexture [
 
 {
 	#category : #'getting parameters',
-	#timestamp : 'stlu 1/4/2021 09:11'
+	#'squeak_changestamp' : 'stlu 1/4/2021 09:11'
 }
 GLTextureStateAccessImp >> texture: aTexture getFloatParameter: parameterEnum [
 
@@ -25,7 +25,7 @@ GLTextureStateAccessImp >> texture: aTexture getFloatParameter: parameterEnum [
 
 {
 	#category : #'getting parameters',
-	#timestamp : 'stlu 1/4/2021 09:11'
+	#'squeak_changestamp' : 'stlu 1/4/2021 09:11'
 }
 GLTextureStateAccessImp >> texture: aTexture getFloatParameter: parameterEnum size: numElements [
 
@@ -34,7 +34,7 @@ GLTextureStateAccessImp >> texture: aTexture getFloatParameter: parameterEnum si
 
 {
 	#category : #'getting parameters',
-	#timestamp : 'stlu 1/4/2021 09:11'
+	#'squeak_changestamp' : 'stlu 1/4/2021 09:11'
 }
 GLTextureStateAccessImp >> texture: aTexture getIntegerParameter: parameterEnum [
 
@@ -43,7 +43,7 @@ GLTextureStateAccessImp >> texture: aTexture getIntegerParameter: parameterEnum 
 
 {
 	#category : #'getting parameters',
-	#timestamp : 'stlu 1/4/2021 09:11'
+	#'squeak_changestamp' : 'stlu 1/4/2021 09:11'
 }
 GLTextureStateAccessImp >> texture: aTexture getIntegerParameter: parameterEnum size: numElements [
 
@@ -52,7 +52,7 @@ GLTextureStateAccessImp >> texture: aTexture getIntegerParameter: parameterEnum 
 
 {
 	#category : #'setting parameters',
-	#timestamp : 'stlu 1/4/2021 07:47'
+	#'squeak_changestamp' : 'stlu 1/4/2021 07:47'
 }
 GLTextureStateAccessImp >> texture: aTexture setFloatParameter: parameterEnum toIntegerArray: anIntegerArray [
 
@@ -61,7 +61,7 @@ GLTextureStateAccessImp >> texture: aTexture setFloatParameter: parameterEnum to
 
 {
 	#category : #'setting parameters',
-	#timestamp : 'stlu 1/4/2021 07:20'
+	#'squeak_changestamp' : 'stlu 1/4/2021 07:20'
 }
 GLTextureStateAccessImp >> texture: aTexture setParameter: parameterEnum toFloat: aFloat [
 
@@ -70,7 +70,7 @@ GLTextureStateAccessImp >> texture: aTexture setParameter: parameterEnum toFloat
 
 {
 	#category : #'setting parameters',
-	#timestamp : 'stlu 1/4/2021 07:21'
+	#'squeak_changestamp' : 'stlu 1/4/2021 07:21'
 }
 GLTextureStateAccessImp >> texture: aTexture setParameter: parameterEnum toFloatArray: aFloatArray [
 
@@ -79,7 +79,7 @@ GLTextureStateAccessImp >> texture: aTexture setParameter: parameterEnum toFloat
 
 {
 	#category : #'setting parameters',
-	#timestamp : 'stlu 1/4/2021 07:37'
+	#'squeak_changestamp' : 'stlu 1/4/2021 07:37'
 }
 GLTextureStateAccessImp >> texture: aTexture setParameter: parameterEnum toInteger: anInteger [
 
@@ -88,7 +88,7 @@ GLTextureStateAccessImp >> texture: aTexture setParameter: parameterEnum toInteg
 
 {
 	#category : #'setting parameters',
-	#timestamp : 'stlu 1/4/2021 07:22'
+	#'squeak_changestamp' : 'stlu 1/4/2021 07:22'
 }
 GLTextureStateAccessImp >> texture: aTexture setParameter: parameterEnum toIntegerArray: anIntegerArray [
 
@@ -97,7 +97,7 @@ GLTextureStateAccessImp >> texture: aTexture setParameter: parameterEnum toInteg
 
 {
 	#category : #'setting parameters',
-	#timestamp : 'stlu 1/4/2021 07:30'
+	#'squeak_changestamp' : 'stlu 1/4/2021 07:30'
 }
 GLTextureStateAccessImp >> texture: aTexture setParameter: parameterEnum toUnsignedIntegerArray: anIntegerArray [
 

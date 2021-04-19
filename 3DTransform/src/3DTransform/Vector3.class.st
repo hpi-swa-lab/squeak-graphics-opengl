@@ -6,12 +6,12 @@ Class {
 	#superclass : #Vector,
 	#type : #words,
 	#category : #'3DTransform-Vectors',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Vector3 class >> from: anArray [
 
@@ -20,7 +20,7 @@ Vector3 class >> from: anArray [
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Vector3 class >> numElements [
 	^3
@@ -28,7 +28,7 @@ Vector3 class >> numElements [
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Vector3 class >> value: aFloat [
 	^self x: aFloat y: aFloat z: aFloat
@@ -36,7 +36,7 @@ Vector3 class >> value: aFloat [
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Vector3 class >> x: x y: y z: z [
 
@@ -45,7 +45,7 @@ Vector3 class >> x: x y: y z: z [
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Vector3 class >> zero [
 	^self new
@@ -53,7 +53,7 @@ Vector3 class >> zero [
 
 {
 	#category : #converting,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Vector3 >> @ aNumber [
 	^Vector4 x: self x y: self y z: self z w: aNumber
@@ -61,7 +61,7 @@ Vector3 >> @ aNumber [
 
 {
 	#category : #'vector functions',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Vector3 >> angleTo: aVector [ 
 	"calculate the rotation angle that rotates this vector into aVector. I return the value in terms of radians. In fact, I intend to switch everything to radians at some point. Sign is ignored - if you have a fast way to do this which retains the sign of the angle, please update this."
@@ -74,7 +74,7 @@ Vector3 >> angleTo: aVector [
 
 {
 	#category : #converting,
-	#timestamp : 'zagto 1/5/2021 15:54'
+	#'squeak_changestamp' : 'zagto 1/5/2021 15:54'
 }
 Vector3 >> asColor [
 
@@ -84,7 +84,7 @@ Vector3 >> asColor [
 
 {
 	#category : #converting,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Vector3 >> asMoveDirection [
 	^self
@@ -92,7 +92,7 @@ Vector3 >> asMoveDirection [
 
 {
 	#category : #converting,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Vector3 >> asPoint [
 	^self x @ self y
@@ -100,7 +100,7 @@ Vector3 >> asPoint [
 
 {
 	#category : #converting,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Vector3 >> asTurnDirection [
 	^self
@@ -108,7 +108,7 @@ Vector3 >> asTurnDirection [
 
 {
 	#category : #converting,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Vector3 >> asVector3 [
 
@@ -117,7 +117,7 @@ Vector3 >> asVector3 [
 
 {
 	#category : #converting,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Vector3 >> asVector4 [
 	^Vector4 x: self x y: self y z: self z w: 1.0
@@ -125,7 +125,7 @@ Vector3 >> asVector4 [
 
 {
 	#category : #converting,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Vector3 >> asVectorColor [
 
@@ -135,7 +135,7 @@ Vector3 >> asVectorColor [
 
 {
 	#category : #converting,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Vector3 >> corner: aPoint [
 
@@ -144,7 +144,7 @@ Vector3 >> corner: aPoint [
 
 {
 	#category : #'vector functions',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Vector3 >> cross: aVector [ 
 	"calculate the cross product from the receiver with aVector"
@@ -156,7 +156,7 @@ Vector3 >> cross: aVector [
 
 {
 	#category : #'vector functions',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Vector3 >> distanceTo: aVector [
 	^(self - aVector) length
@@ -164,7 +164,7 @@ Vector3 >> distanceTo: aVector [
 
 {
 	#category : #interpolating,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Vector3 >> interpolateTo: end at: amountDone [
 	"Interpolates a new vector based on the instance vector, the end state vector, and the amount already done (between 0 and 1)."
@@ -182,7 +182,7 @@ Vector3 >> interpolateTo: end at: amountDone [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Vector3 >> isVector3 [
 
@@ -191,7 +191,7 @@ Vector3 >> isVector3 [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Vector3 >> isZero [
 	^self = Vector3 zero
@@ -199,7 +199,7 @@ Vector3 >> isZero [
 
 {
 	#category : #'vector functions',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Vector3 >> length: newLength [
 	self safelyNormalize *= newLength
@@ -207,7 +207,7 @@ Vector3 >> length: newLength [
 
 {
 	#category : #'vector functions',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Vector3 >> max: aVector [
 	^Vector3 
@@ -218,7 +218,7 @@ Vector3 >> max: aVector [
 
 {
 	#category : #'vector functions',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Vector3 >> min: aVector [
 	^Vector3 
@@ -229,7 +229,7 @@ Vector3 >> min: aVector [
 
 {
 	#category : #'vector functions',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Vector3 >> normalize [
 	self /= self length
@@ -237,7 +237,7 @@ Vector3 >> normalize [
 
 {
 	#category : #'vector functions',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Vector3 >> normalized [
 
@@ -246,7 +246,7 @@ Vector3 >> normalized [
 
 {
 	#category : #printing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Vector3 >> printOn: aStream [ 
 
@@ -261,7 +261,7 @@ Vector3 >> printOn: aStream [
 
 {
 	#category : #private,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Vector3 >> privateLoadFrom: srcObject [
 	self x: srcObject x y: srcObject y z: srcObject z.
@@ -269,7 +269,7 @@ Vector3 >> privateLoadFrom: srcObject [
 
 {
 	#category : #'vector functions',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Vector3 >> rotationTo: aVector [ 
 	"calculate the rotation matrix that rotates this vector into aVector. From 'Real-Time Rendering' by Moller and Haines, pgs. 50-52."
@@ -296,7 +296,7 @@ Vector3 >> rotationTo: aVector [
 
 {
 	#category : #'vector functions',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Vector3 >> safelyNormalize [
 	"Safely normalize the receiver, e.g. check if the length is non-zero"
@@ -308,7 +308,7 @@ Vector3 >> safelyNormalize [
 
 {
 	#category : #'vector functions',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Vector3 >> safelyNormalized [
 	"Safely normalize the receiver, e.g. check if the length is non-zero"
@@ -317,7 +317,7 @@ Vector3 >> safelyNormalized [
 
 {
 	#category : #'vector functions',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Vector3 >> squaredLength: newLength [
 	self length: newLength sqrt
@@ -325,7 +325,7 @@ Vector3 >> squaredLength: newLength [
 
 {
 	#category : #enumerating,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Vector3 >> vertexPositionsDo: aBlock [
 	aBlock value: self
@@ -333,7 +333,7 @@ Vector3 >> vertexPositionsDo: aBlock [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Vector3 >> x [
 	^self at: 1
@@ -341,7 +341,7 @@ Vector3 >> x [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Vector3 >> x: aFloat [
 	self at: 1 put: aFloat
@@ -349,7 +349,7 @@ Vector3 >> x: aFloat [
 
 {
 	#category : #initialize,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Vector3 >> x: x y: y z: z [
 
@@ -360,7 +360,7 @@ Vector3 >> x: x y: y z: z [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Vector3 >> y [
 	^self at: 2
@@ -368,7 +368,7 @@ Vector3 >> y [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Vector3 >> y: aFloat [
 	self at: 2 put: aFloat
@@ -376,7 +376,7 @@ Vector3 >> y: aFloat [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Vector3 >> z [
 	^self at: 3
@@ -384,7 +384,7 @@ Vector3 >> z [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Vector3 >> z: aFloat [
 	self at: 3 put: aFloat

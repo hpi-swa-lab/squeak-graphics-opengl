@@ -16,12 +16,12 @@ Class {
 		'GLConstants'
 	],
 	#category : #'OpenGL-Core',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #'class initialization',
-	#timestamp : 'stlu 10/26/2020 10:19'
+	#'squeak_changestamp' : 'stlu 10/26/2020 10:19'
 }
 GLContext class >> initialize [
 
@@ -31,7 +31,7 @@ GLContext class >> initialize [
 
 {
 	#category : #'system startup',
-	#timestamp : 'stlu 11/13/2020 14:17'
+	#'squeak_changestamp' : 'stlu 11/13/2020 14:17'
 }
 GLContext class >> shutDown: quitting [
 
@@ -43,7 +43,7 @@ GLContext class >> shutDown: quitting [
 
 {
 	#category : #'system startup',
-	#timestamp : 'stlu 12/15/2020 13:59'
+	#'squeak_changestamp' : 'stlu 12/15/2020 13:59'
 }
 GLContext class >> startUp: resuming [
 
@@ -56,7 +56,7 @@ GLContext class >> startUp: resuming [
 
 {
 	#category : #activation,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 GLContext >> activate [
 
@@ -65,7 +65,7 @@ GLContext >> activate [
 
 {
 	#category : #activation,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 GLContext >> deactivate [
 
@@ -74,7 +74,7 @@ GLContext >> deactivate [
 
 {
 	#category : #'context actions',
-	#timestamp : 'stlu 4/15/2021 12:38'
+	#'squeak_changestamp' : 'stlu 4/15/2021 12:38'
 }
 GLContext >> destroy [
 
@@ -84,7 +84,7 @@ GLContext >> destroy [
 
 {
 	#category : #'context actions',
-	#timestamp : 'stlu 10/16/2020 12:25'
+	#'squeak_changestamp' : 'stlu 10/16/2020 12:25'
 }
 GLContext >> endFrame [
 
@@ -94,7 +94,7 @@ GLContext >> endFrame [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/9/2020 14:51'
+	#'squeak_changestamp' : 'stlu 11/9/2020 14:51'
 }
 GLContext >> extensions [
 
@@ -103,7 +103,7 @@ GLContext >> extensions [
 
 {
 	#category : #'initialize-release',
-	#timestamp : 'stlu 4/16/2021 14:02'
+	#'squeak_changestamp' : 'stlu 4/16/2021 14:02'
 }
 GLContext >> initialize [
 
@@ -122,7 +122,7 @@ GLContext >> initialize [
 
 {
 	#category : #'initialize-release',
-	#timestamp : 'stlu 4/16/2021 13:00'
+	#'squeak_changestamp' : 'stlu 4/16/2021 13:00'
 }
 GLContext >> initializeExtensions [
 
@@ -132,7 +132,7 @@ GLContext >> initializeExtensions [
 
 {
 	#category : #'initialize-release',
-	#timestamp : 'stlu 4/16/2021 13:01'
+	#'squeak_changestamp' : 'stlu 4/16/2021 13:01'
 }
 GLContext >> initializeLibrary [
 
@@ -141,7 +141,7 @@ GLContext >> initializeLibrary [
 
 {
 	#category : #'initialize-release',
-	#timestamp : 'stlu 4/15/2021 12:36'
+	#'squeak_changestamp' : 'stlu 4/15/2021 12:36'
 }
 GLContext >> initializeObjectBindings [
 
@@ -155,7 +155,7 @@ GLContext >> initializeObjectBindings [
 
 {
 	#category : #'initialize-release',
-	#timestamp : 'stlu 4/16/2021 14:44'
+	#'squeak_changestamp' : 'stlu 4/16/2021 14:44'
 }
 GLContext >> initializeObjectImps [
 
@@ -165,7 +165,7 @@ GLContext >> initializeObjectImps [
 
 {
 	#category : #'initialize-release',
-	#timestamp : 'stlu 4/16/2021 13:02'
+	#'squeak_changestamp' : 'stlu 4/16/2021 13:02'
 }
 GLContext >> initializeVersion [
 
@@ -174,7 +174,7 @@ GLContext >> initializeVersion [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 12/8/2020 16:15'
+	#'squeak_changestamp' : 'stlu 12/8/2020 16:15'
 }
 GLContext >> isDestroyed [
 
@@ -183,7 +183,7 @@ GLContext >> isDestroyed [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/3/2020 18:31'
+	#'squeak_changestamp' : 'stlu 12/3/2020 18:31'
 }
 GLContext >> library [
 
@@ -192,7 +192,7 @@ GLContext >> library [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 3/14/2021 18:25'
+	#'squeak_changestamp' : 'stlu 3/14/2021 18:25'
 }
 GLContext >> objectBindings [
 
@@ -201,7 +201,7 @@ GLContext >> objectBindings [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 4/15/2021 12:33'
+	#'squeak_changestamp' : 'stlu 4/15/2021 12:33'
 }
 GLContext >> objectImps [
 
@@ -210,7 +210,7 @@ GLContext >> objectImps [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/3/2020 18:43'
+	#'squeak_changestamp' : 'stlu 12/3/2020 18:43'
 }
 GLContext >> programs [
 
@@ -219,7 +219,7 @@ GLContext >> programs [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/3/2020 18:49'
+	#'squeak_changestamp' : 'stlu 12/3/2020 18:49'
 }
 GLContext >> registerObject: glObject [
 
@@ -228,7 +228,7 @@ GLContext >> registerObject: glObject [
 
 {
 	#category : #'context actions',
-	#timestamp : 'stlu 4/14/2021 17:04'
+	#'squeak_changestamp' : 'stlu 4/14/2021 17:04'
 }
 GLContext >> resolveFunctionAddress: functionName [
 
@@ -237,7 +237,7 @@ GLContext >> resolveFunctionAddress: functionName [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 10/16/2020 12:23'
+	#'squeak_changestamp' : 'stlu 10/16/2020 12:23'
 }
 GLContext >> shouldClose [
 
@@ -247,7 +247,7 @@ GLContext >> shouldClose [
 
 {
 	#category : #'context actions',
-	#timestamp : 'stlu 10/16/2020 12:24'
+	#'squeak_changestamp' : 'stlu 10/16/2020 12:24'
 }
 GLContext >> swapBuffers [
 
@@ -256,7 +256,7 @@ GLContext >> swapBuffers [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/3/2020 18:57'
+	#'squeak_changestamp' : 'stlu 12/3/2020 18:57'
 }
 GLContext >> userData [
 
@@ -265,7 +265,7 @@ GLContext >> userData [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/9/2020 14:51'
+	#'squeak_changestamp' : 'stlu 11/9/2020 14:51'
 }
 GLContext >> version [
 

@@ -2,12 +2,12 @@ Class {
 	#name : #GLSLInteger,
 	#superclass : #GLSLScalar,
 	#category : #'OpenGLObjects-Types',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/14/2020 16:49'
+	#'squeak_changestamp' : 'stlu 12/14/2020 16:49'
 }
 GLSLInteger class >> commandInitials [
 
@@ -16,7 +16,7 @@ GLSLInteger class >> commandInitials [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/14/2020 16:49'
+	#'squeak_changestamp' : 'stlu 12/14/2020 16:49'
 }
 GLSLInteger class >> declarators [
 
@@ -25,7 +25,7 @@ GLSLInteger class >> declarators [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/14/2020 16:49'
+	#'squeak_changestamp' : 'stlu 12/14/2020 16:49'
 }
 GLSLInteger class >> enum [
 
@@ -34,7 +34,7 @@ GLSLInteger class >> enum [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/14/2020 16:49'
+	#'squeak_changestamp' : 'stlu 12/14/2020 16:49'
 }
 GLSLInteger class >> enumName [
 
@@ -43,7 +43,7 @@ GLSLInteger class >> enumName [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/14/2020 16:49'
+	#'squeak_changestamp' : 'stlu 12/14/2020 16:49'
 }
 GLSLInteger class >> glslInitials [
 
@@ -52,7 +52,7 @@ GLSLInteger class >> glslInitials [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/14/2020 16:49'
+	#'squeak_changestamp' : 'stlu 12/14/2020 16:49'
 }
 GLSLInteger class >> squeakArrayClass [
 
@@ -61,7 +61,7 @@ GLSLInteger class >> squeakArrayClass [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/14/2020 16:49'
+	#'squeak_changestamp' : 'stlu 12/14/2020 16:49'
 }
 GLSLInteger class >> squeakName [
 
@@ -70,7 +70,7 @@ GLSLInteger class >> squeakName [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 12/14/2020 18:29'
+	#'squeak_changestamp' : 'stlu 12/14/2020 18:29'
 }
 GLSLInteger >> isInteger [
 
@@ -79,7 +79,7 @@ GLSLInteger >> isInteger [
 
 {
 	#category : #'program resources',
-	#timestamp : 'stlu 11/23/2020 17:11'
+	#'squeak_changestamp' : 'stlu 11/23/2020 17:11'
 }
 GLSLInteger >> setUniform: aUniform toArray: aRawBitsArray count: numElements [
 
@@ -88,7 +88,7 @@ GLSLInteger >> setUniform: aUniform toArray: aRawBitsArray count: numElements [
 
 {
 	#category : #'program resources',
-	#timestamp : 'stlu 1/8/2021 18:49'
+	#'squeak_changestamp' : 'stlu 1/8/2021 18:49'
 }
 GLSLInteger >> setUniform: aUniform toObject: anObject [
 

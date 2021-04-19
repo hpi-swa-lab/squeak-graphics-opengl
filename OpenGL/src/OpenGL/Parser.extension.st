@@ -2,7 +2,7 @@ Extension { #name : #Parser }
 
 {
 	#category : #'*OpenGL-FFI-Support',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Parser >> callback [
 	<pragmaParser>
@@ -36,7 +36,7 @@ Parser >> callback [
 
 {
 	#category : #'*OpenGL-FFI-Support',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Parser >> externalType: descriptorClass [
 	"Parse and return an external type"

@@ -6,12 +6,12 @@ Class {
 		'numElements'
 	],
 	#category : #'OpenGLObjects-Types',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 12/14/2020 16:16'
+	#'squeak_changestamp' : 'stlu 12/14/2020 16:16'
 }
 GLSLArray class >> instance [
 
@@ -20,7 +20,7 @@ GLSLArray class >> instance [
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 12/14/2020 16:17'
+	#'squeak_changestamp' : 'stlu 12/14/2020 16:17'
 }
 GLSLArray class >> numElements: length enum: anInteger [
 
@@ -29,7 +29,7 @@ GLSLArray class >> numElements: length enum: anInteger [
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 11/23/2020 16:18'
+	#'squeak_changestamp' : 'stlu 11/23/2020 16:18'
 }
 GLSLArray class >> numElements: length type: aGLType [
 
@@ -42,7 +42,7 @@ GLSLArray class >> numElements: length type: aGLType [
 
 {
 	#category : #comparing,
-	#timestamp : 'stlu 1/10/2021 19:32'
+	#'squeak_changestamp' : 'stlu 1/10/2021 19:32'
 }
 GLSLArray >> = anotherType [
 
@@ -53,7 +53,7 @@ GLSLArray >> = anotherType [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/8/2021 18:20'
+	#'squeak_changestamp' : 'stlu 1/8/2021 18:20'
 }
 GLSLArray >> declarator [
 
@@ -67,7 +67,7 @@ GLSLArray >> declarator [
 
 {
 	#category : #comparing,
-	#timestamp : 'stlu 1/10/2021 19:30'
+	#'squeak_changestamp' : 'stlu 1/10/2021 19:30'
 }
 GLSLArray >> hash [
 
@@ -76,7 +76,7 @@ GLSLArray >> hash [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 1/8/2021 18:30'
+	#'squeak_changestamp' : 'stlu 1/8/2021 18:30'
 }
 GLSLArray >> isArray [
 
@@ -85,7 +85,7 @@ GLSLArray >> isArray [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/23/2020 16:16'
+	#'squeak_changestamp' : 'stlu 11/23/2020 16:16'
 }
 GLSLArray >> numElements [
 
@@ -94,7 +94,7 @@ GLSLArray >> numElements [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/23/2020 16:15'
+	#'squeak_changestamp' : 'stlu 11/23/2020 16:15'
 }
 GLSLArray >> numElements: anObject [
 
@@ -103,7 +103,7 @@ GLSLArray >> numElements: anObject [
 
 {
 	#category : #printing,
-	#timestamp : 'stlu 1/10/2021 12:44'
+	#'squeak_changestamp' : 'stlu 1/10/2021 12:44'
 }
 GLSLArray >> printDeclarationNamed: aString on: aStream [
 
@@ -116,7 +116,7 @@ GLSLArray >> printDeclarationNamed: aString on: aStream [
 
 {
 	#category : #'program resources',
-	#timestamp : 'stlu 11/23/2020 16:10'
+	#'squeak_changestamp' : 'stlu 11/23/2020 16:10'
 }
 GLSLArray >> setUniform: aUniform toArray: aRawBitsArray count: numElements [
 
@@ -125,7 +125,7 @@ GLSLArray >> setUniform: aUniform toArray: aRawBitsArray count: numElements [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/19/2020 07:24'
+	#'squeak_changestamp' : 'stlu 11/19/2020 07:24'
 }
 GLSLArray >> type [
 
@@ -134,7 +134,7 @@ GLSLArray >> type [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/19/2020 07:24'
+	#'squeak_changestamp' : 'stlu 11/19/2020 07:24'
 }
 GLSLArray >> type: anObject [
 

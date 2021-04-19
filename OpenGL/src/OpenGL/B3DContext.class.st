@@ -5,12 +5,12 @@ Class {
 		'renderer'
 	],
 	#category : #'OpenGL-Core',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 11/9/2020 18:26'
+	#'squeak_changestamp' : 'stlu 11/9/2020 18:26'
 }
 B3DContext class >> bounds: aRectangle [
 
@@ -19,7 +19,7 @@ B3DContext class >> bounds: aRectangle [
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 11/9/2020 18:24'
+	#'squeak_changestamp' : 'stlu 11/9/2020 18:24'
 }
 B3DContext class >> renderer: aRenderer [
 
@@ -31,7 +31,7 @@ B3DContext class >> renderer: aRenderer [
 
 {
 	#category : #activation,
-	#timestamp : 'stlu 11/9/2020 15:43'
+	#'squeak_changestamp' : 'stlu 11/9/2020 15:43'
 }
 B3DContext >> activate [
 
@@ -40,7 +40,7 @@ B3DContext >> activate [
 
 {
 	#category : #activation,
-	#timestamp : 'stlu 11/9/2020 15:44'
+	#'squeak_changestamp' : 'stlu 11/9/2020 15:44'
 }
 B3DContext >> deactivate [
 
@@ -49,7 +49,7 @@ B3DContext >> deactivate [
 
 {
 	#category : #'context actions',
-	#timestamp : 'stlu 11/9/2020 15:43'
+	#'squeak_changestamp' : 'stlu 11/9/2020 15:43'
 }
 B3DContext >> destroy [
 
@@ -59,7 +59,7 @@ B3DContext >> destroy [
 
 {
 	#category : #'context actions',
-	#timestamp : 'stlu 11/9/2020 15:42'
+	#'squeak_changestamp' : 'stlu 11/9/2020 15:42'
 }
 B3DContext >> endFrame [
 	"do nothing"
@@ -67,7 +67,7 @@ B3DContext >> endFrame [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 4/16/2021 14:19'
+	#'squeak_changestamp' : 'stlu 4/16/2021 14:19'
 }
 B3DContext >> initializeVersion [
 
@@ -91,7 +91,7 @@ B3DContext >> initializeVersion [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/9/2020 15:41'
+	#'squeak_changestamp' : 'stlu 11/9/2020 15:41'
 }
 B3DContext >> renderer [
 
@@ -100,7 +100,7 @@ B3DContext >> renderer [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/9/2020 15:41'
+	#'squeak_changestamp' : 'stlu 11/9/2020 15:41'
 }
 B3DContext >> renderer: anObject [
 
@@ -109,7 +109,7 @@ B3DContext >> renderer: anObject [
 
 {
 	#category : #'context actions',
-	#timestamp : 'stlu 4/16/2021 14:18'
+	#'squeak_changestamp' : 'stlu 4/16/2021 14:18'
 }
 B3DContext >> resolveFunctionAddress: functionName [
 
@@ -120,7 +120,7 @@ B3DContext >> resolveFunctionAddress: functionName [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 11/9/2020 15:42'
+	#'squeak_changestamp' : 'stlu 11/9/2020 15:42'
 }
 B3DContext >> shouldClose [
 
@@ -129,7 +129,7 @@ B3DContext >> shouldClose [
 
 {
 	#category : #'context actions',
-	#timestamp : 'stlu 11/9/2020 15:41'
+	#'squeak_changestamp' : 'stlu 11/9/2020 15:41'
 }
 B3DContext >> swapBuffers [
 

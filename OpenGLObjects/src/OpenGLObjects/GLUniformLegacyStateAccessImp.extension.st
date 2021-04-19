@@ -2,7 +2,7 @@ Extension { #name : #GLUniformLegacyStateAccessImp }
 
 {
 	#category : #'*OpenGLObjects-Generation',
-	#timestamp : 'stlu 11/23/2020 15:47'
+	#'squeak_changestamp' : 'stlu 11/23/2020 15:47'
 }
 GLUniformLegacyStateAccessImp class >> arraySetterTemplate [
 
@@ -17,7 +17,7 @@ GLUniformLegacyStateAccessImp class >> arraySetterTemplate [
 
 {
 	#category : #'*OpenGLObjects-Generation',
-	#timestamp : 'stlu 11/23/2020 15:48'
+	#'squeak_changestamp' : 'stlu 11/23/2020 15:48'
 }
 GLUniformLegacyStateAccessImp class >> matrixSetterTemplate [
 
@@ -33,7 +33,7 @@ GLUniformLegacyStateAccessImp class >> matrixSetterTemplate [
 
 {
 	#category : #'*OpenGLObjects-Generation',
-	#timestamp : 'stlu 11/23/2020 15:49'
+	#'squeak_changestamp' : 'stlu 11/23/2020 15:49'
 }
 GLUniformLegacyStateAccessImp class >> scalarSetterTemplate [
 

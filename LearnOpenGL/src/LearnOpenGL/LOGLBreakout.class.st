@@ -19,12 +19,12 @@ Class {
 		'powerUps'
 	],
 	#category : #'LearnOpenGL-Breakout',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #'power ups',
-	#timestamp : 'stlu 1/9/2021 18:39'
+	#'squeak_changestamp' : 'stlu 1/9/2021 18:39'
 }
 LOGLBreakout >> activatePowerUp: typeSymbol [
 
@@ -48,7 +48,7 @@ LOGLBreakout >> activatePowerUp: typeSymbol [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/7/2021 18:38'
+	#'squeak_changestamp' : 'stlu 1/7/2021 18:38'
 }
 LOGLBreakout >> ballRadius [
 
@@ -57,7 +57,7 @@ LOGLBreakout >> ballRadius [
 
 {
 	#category : #collisions,
-	#timestamp : 'stlu 1/8/2021 11:12'
+	#'squeak_changestamp' : 'stlu 1/8/2021 11:12'
 }
 LOGLBreakout >> directionOf: aPoint [
 
@@ -84,7 +84,7 @@ LOGLBreakout >> directionOf: aPoint [
 
 {
 	#category : #collisions,
-	#timestamp : 'stlu 1/9/2021 18:37'
+	#'squeak_changestamp' : 'stlu 1/9/2021 18:37'
 }
 LOGLBreakout >> doBrickCollisions [
 
@@ -115,7 +115,7 @@ LOGLBreakout >> doBrickCollisions [
 
 {
 	#category : #collisions,
-	#timestamp : 'stlu 1/9/2021 18:22'
+	#'squeak_changestamp' : 'stlu 1/9/2021 18:22'
 }
 LOGLBreakout >> doCollisions [
 
@@ -126,7 +126,7 @@ LOGLBreakout >> doCollisions [
 
 {
 	#category : #collisions,
-	#timestamp : 'stlu 1/9/2021 18:31'
+	#'squeak_changestamp' : 'stlu 1/9/2021 18:31'
 }
 LOGLBreakout >> doPlayerCollision [
 
@@ -145,7 +145,7 @@ LOGLBreakout >> doPlayerCollision [
 
 {
 	#category : #collisions,
-	#timestamp : 'stlu 1/9/2021 18:25'
+	#'squeak_changestamp' : 'stlu 1/9/2021 18:25'
 }
 LOGLBreakout >> doPowerUpCollisions [
 
@@ -161,7 +161,7 @@ LOGLBreakout >> doPowerUpCollisions [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/7/2021 17:51'
+	#'squeak_changestamp' : 'stlu 1/7/2021 17:51'
 }
 LOGLBreakout >> extent [
 
@@ -170,7 +170,7 @@ LOGLBreakout >> extent [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/7/2021 17:51'
+	#'squeak_changestamp' : 'stlu 1/7/2021 17:51'
 }
 LOGLBreakout >> extent: aPoint [
 
@@ -179,7 +179,7 @@ LOGLBreakout >> extent: aPoint [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/7/2021 18:47'
+	#'squeak_changestamp' : 'stlu 1/7/2021 18:47'
 }
 LOGLBreakout >> height [
 
@@ -188,7 +188,7 @@ LOGLBreakout >> height [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/7/2021 18:39'
+	#'squeak_changestamp' : 'stlu 1/7/2021 18:39'
 }
 LOGLBreakout >> initialBallVelocity [
 
@@ -197,7 +197,7 @@ LOGLBreakout >> initialBallVelocity [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 1/7/2021 16:13'
+	#'squeak_changestamp' : 'stlu 1/7/2021 16:13'
 }
 LOGLBreakout >> isActive [
 
@@ -206,7 +206,7 @@ LOGLBreakout >> isActive [
 
 {
 	#category : #inputs,
-	#timestamp : 'stlu 1/7/2021 17:36'
+	#'squeak_changestamp' : 'stlu 1/7/2021 17:36'
 }
 LOGLBreakout >> isKeyPressed: key [
 
@@ -217,7 +217,7 @@ LOGLBreakout >> isKeyPressed: key [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 1/8/2021 15:16'
+	#'squeak_changestamp' : 'stlu 1/8/2021 15:16'
 }
 LOGLBreakout >> isModal [
 
@@ -226,7 +226,7 @@ LOGLBreakout >> isModal [
 
 {
 	#category : #'power ups',
-	#timestamp : 'stlu 1/9/2021 18:40'
+	#'squeak_changestamp' : 'stlu 1/9/2021 18:40'
 }
 LOGLBreakout >> isOtherPowerUpActive: typeSymbol [
 
@@ -236,7 +236,7 @@ LOGLBreakout >> isOtherPowerUpActive: typeSymbol [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/8/2021 10:32'
+	#'squeak_changestamp' : 'stlu 1/8/2021 10:32'
 }
 LOGLBreakout >> level [
 
@@ -245,7 +245,7 @@ LOGLBreakout >> level [
 
 {
 	#category : #'game state',
-	#timestamp : 'stlu 1/9/2021 18:47'
+	#'squeak_changestamp' : 'stlu 1/9/2021 18:47'
 }
 LOGLBreakout >> loseLife [
 
@@ -259,7 +259,7 @@ LOGLBreakout >> loseLife [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/7/2021 16:35'
+	#'squeak_changestamp' : 'stlu 1/7/2021 16:35'
 }
 LOGLBreakout >> playerExtent [
 
@@ -268,7 +268,7 @@ LOGLBreakout >> playerExtent [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/7/2021 16:47'
+	#'squeak_changestamp' : 'stlu 1/7/2021 16:47'
 }
 LOGLBreakout >> playerVelocity [
 
@@ -277,7 +277,7 @@ LOGLBreakout >> playerVelocity [
 
 {
 	#category : #inputs,
-	#timestamp : 'stlu 2/12/2021 00:46'
+	#'squeak_changestamp' : 'stlu 2/12/2021 00:46'
 }
 LOGLBreakout >> processInput: elapsedSecs [
 
@@ -300,7 +300,7 @@ LOGLBreakout >> processInput: elapsedSecs [
 
 {
 	#category : #rendering,
-	#timestamp : 'stlu 1/8/2021 11:52'
+	#'squeak_changestamp' : 'stlu 1/8/2021 11:52'
 }
 LOGLBreakout >> processPriority [
 
@@ -311,7 +311,7 @@ LOGLBreakout >> processPriority [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/8/2021 13:58'
+	#'squeak_changestamp' : 'stlu 1/8/2021 13:58'
 }
 LOGLBreakout >> projection [
 
@@ -321,7 +321,7 @@ LOGLBreakout >> projection [
 
 {
 	#category : #rendering,
-	#timestamp : 'stlu 4/15/2021 12:09'
+	#'squeak_changestamp' : 'stlu 4/15/2021 12:09'
 }
 LOGLBreakout >> render [
 
@@ -350,7 +350,7 @@ LOGLBreakout >> render [
 
 {
 	#category : #rendering,
-	#timestamp : 'stlu 1/7/2021 12:59'
+	#'squeak_changestamp' : 'stlu 1/7/2021 12:59'
 }
 LOGLBreakout >> render: deltaSecs [
 
@@ -360,7 +360,7 @@ LOGLBreakout >> render: deltaSecs [
 
 {
 	#category : #'game state',
-	#timestamp : 'stlu 1/9/2021 18:48'
+	#'squeak_changestamp' : 'stlu 1/9/2021 18:48'
 }
 LOGLBreakout >> resetBall [
 
@@ -374,7 +374,7 @@ LOGLBreakout >> resetBall [
 
 {
 	#category : #'game state',
-	#timestamp : 'stlu 1/8/2021 12:25'
+	#'squeak_changestamp' : 'stlu 1/8/2021 12:25'
 }
 LOGLBreakout >> resetLevel [
 
@@ -384,7 +384,7 @@ LOGLBreakout >> resetLevel [
 
 {
 	#category : #'game state',
-	#timestamp : 'stlu 1/9/2021 18:48'
+	#'squeak_changestamp' : 'stlu 1/9/2021 18:48'
 }
 LOGLBreakout >> resetPlayer [
 
@@ -399,7 +399,7 @@ LOGLBreakout >> resetPlayer [
 
 {
 	#category : #'game state',
-	#timestamp : 'stlu 1/9/2021 18:53'
+	#'squeak_changestamp' : 'stlu 1/9/2021 18:53'
 }
 LOGLBreakout >> resetPowerUps [
 
@@ -411,7 +411,7 @@ LOGLBreakout >> resetPowerUps [
 
 {
 	#category : #setup,
-	#timestamp : 'stlu 1/9/2021 18:11'
+	#'squeak_changestamp' : 'stlu 1/9/2021 18:11'
 }
 LOGLBreakout >> setUp [
 
@@ -431,7 +431,7 @@ LOGLBreakout >> setUp [
 
 {
 	#category : #setup,
-	#timestamp : 'stlu 2/12/2021 00:46'
+	#'squeak_changestamp' : 'stlu 2/12/2021 00:46'
 }
 LOGLBreakout >> setUpInputHandling [
 
@@ -447,7 +447,7 @@ LOGLBreakout >> setUpInputHandling [
 
 {
 	#category : #setup,
-	#timestamp : 'stlu 1/7/2021 16:22'
+	#'squeak_changestamp' : 'stlu 1/7/2021 16:22'
 }
 LOGLBreakout >> setUpLevels [
 
@@ -463,7 +463,7 @@ LOGLBreakout >> setUpLevels [
 
 {
 	#category : #setup,
-	#timestamp : 'stlu 1/7/2021 18:44'
+	#'squeak_changestamp' : 'stlu 1/7/2021 18:44'
 }
 LOGLBreakout >> setUpPlayer [
 
@@ -488,7 +488,7 @@ LOGLBreakout >> setUpPlayer [
 
 {
 	#category : #setup,
-	#timestamp : 'stlu 1/8/2021 18:06'
+	#'squeak_changestamp' : 'stlu 1/8/2021 18:06'
 }
 LOGLBreakout >> setUpRenderering [
 
@@ -505,7 +505,7 @@ LOGLBreakout >> setUpRenderering [
 
 {
 	#category : #setup,
-	#timestamp : 'stlu 1/9/2021 17:47'
+	#'squeak_changestamp' : 'stlu 1/9/2021 17:47'
 }
 LOGLBreakout >> setUpResources [
 
@@ -528,7 +528,7 @@ LOGLBreakout >> setUpResources [
 
 {
 	#category : #effects,
-	#timestamp : 'stlu 1/9/2021 14:54'
+	#'squeak_changestamp' : 'stlu 1/9/2021 14:54'
 }
 LOGLBreakout >> shake [
 
@@ -538,7 +538,7 @@ LOGLBreakout >> shake [
 
 {
 	#category : #'power ups',
-	#timestamp : 'stlu 1/9/2021 17:51'
+	#'squeak_changestamp' : 'stlu 1/9/2021 17:51'
 }
 LOGLBreakout >> spawnPowerUps: aBrick [
 
@@ -590,7 +590,7 @@ LOGLBreakout >> spawnPowerUps: aBrick [
 
 {
 	#category : #'game state',
-	#timestamp : 'stlu 1/9/2021 18:44'
+	#'squeak_changestamp' : 'stlu 1/9/2021 18:44'
 }
 LOGLBreakout >> updateGame: elapsedSecs [
 
@@ -607,7 +607,7 @@ LOGLBreakout >> updateGame: elapsedSecs [
 
 {
 	#category : #'power ups',
-	#timestamp : 'stlu 1/9/2021 18:38'
+	#'squeak_changestamp' : 'stlu 1/9/2021 18:38'
 }
 LOGLBreakout >> updatePowerUps: elapsedSecs [
 
@@ -638,7 +638,7 @@ LOGLBreakout >> updatePowerUps: elapsedSecs [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/7/2021 18:47'
+	#'squeak_changestamp' : 'stlu 1/7/2021 18:47'
 }
 LOGLBreakout >> width [
 

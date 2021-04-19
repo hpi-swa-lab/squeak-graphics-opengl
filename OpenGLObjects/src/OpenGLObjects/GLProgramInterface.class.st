@@ -11,12 +11,12 @@ Class {
 		'GLConstants'
 	],
 	#category : #'OpenGLObjects-Programs',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 1/10/2021 23:07'
+	#'squeak_changestamp' : 'stlu 1/10/2021 23:07'
 }
 GLProgramInterface class >> program: aProgram resourceClass: aProgramResourceClass [
 
@@ -27,7 +27,7 @@ GLProgramInterface class >> program: aProgram resourceClass: aProgramResourceCla
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/6/2021 11:03'
+	#'squeak_changestamp' : 'stlu 1/6/2021 11:03'
 }
 GLProgramInterface >> atIndex: index [
 
@@ -36,7 +36,7 @@ GLProgramInterface >> atIndex: index [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/10/2021 22:59'
+	#'squeak_changestamp' : 'stlu 1/10/2021 22:59'
 }
 GLProgramInterface >> atName: aString [
 
@@ -49,7 +49,7 @@ GLProgramInterface >> atName: aString [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/8/2021 18:27'
+	#'squeak_changestamp' : 'stlu 1/8/2021 18:27'
 }
 GLProgramInterface >> atName: aString ifAbsent: aBlock [
 
@@ -58,7 +58,7 @@ GLProgramInterface >> atName: aString ifAbsent: aBlock [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/8/2021 18:28'
+	#'squeak_changestamp' : 'stlu 1/8/2021 18:28'
 }
 GLProgramInterface >> atName: aString ifPresent: aBlock [
 
@@ -69,7 +69,7 @@ GLProgramInterface >> atName: aString ifPresent: aBlock [
 
 {
 	#category : #'error handling',
-	#timestamp : 'stlu 12/16/2020 21:16'
+	#'squeak_changestamp' : 'stlu 12/16/2020 21:16'
 }
 GLProgramInterface >> doesNotUnderstand: aMessage [
 
@@ -83,7 +83,7 @@ GLProgramInterface >> doesNotUnderstand: aMessage [
 
 {
 	#category : #'error handling',
-	#timestamp : 'stlu 1/10/2021 23:10'
+	#'squeak_changestamp' : 'stlu 1/10/2021 23:10'
 }
 GLProgramInterface >> errorUnknownResourceName: aString [
 
@@ -95,7 +95,7 @@ GLProgramInterface >> errorUnknownResourceName: aString [
 
 {
 	#category : #'error handling',
-	#timestamp : 'stlu 3/19/2021 14:02'
+	#'squeak_changestamp' : 'stlu 3/19/2021 14:02'
 }
 GLProgramInterface >> ignoreName: aString [
 
@@ -109,7 +109,7 @@ GLProgramInterface >> ignoreName: aString [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/11/2021 00:10'
+	#'squeak_changestamp' : 'stlu 1/11/2021 00:10'
 }
 GLProgramInterface >> ignoredVariables [
 
@@ -119,7 +119,7 @@ GLProgramInterface >> ignoredVariables [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 1/10/2021 23:07'
+	#'squeak_changestamp' : 'stlu 1/10/2021 23:07'
 }
 GLProgramInterface >> initializeWithProgram: aProgram resourceClass: aProgramResourceClass [
 
@@ -138,7 +138,7 @@ GLProgramInterface >> initializeWithProgram: aProgram resourceClass: aProgramRes
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 1/11/2021 00:10'
+	#'squeak_changestamp' : 'stlu 1/11/2021 00:10'
 }
 GLProgramInterface >> migrateResourcesFrom: another [
 
@@ -155,7 +155,7 @@ GLProgramInterface >> migrateResourcesFrom: another [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/10/2021 23:06'
+	#'squeak_changestamp' : 'stlu 1/10/2021 23:06'
 }
 GLProgramInterface >> program [
 
@@ -164,7 +164,7 @@ GLProgramInterface >> program [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/10/2021 23:05'
+	#'squeak_changestamp' : 'stlu 1/10/2021 23:05'
 }
 GLProgramInterface >> resourceClass [
 
@@ -173,7 +173,7 @@ GLProgramInterface >> resourceClass [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/10/2021 23:06'
+	#'squeak_changestamp' : 'stlu 1/10/2021 23:06'
 }
 GLProgramInterface >> variables [
 

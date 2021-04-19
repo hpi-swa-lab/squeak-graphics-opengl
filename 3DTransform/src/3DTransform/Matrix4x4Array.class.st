@@ -9,12 +9,12 @@ Class {
 		'Zero4x4Matrix'
 	],
 	#category : #'3DTransform-Arrays',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #'as yet unclassified',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Matrix4x4Array class >> contentsClass [
 	^Matrix4x4
@@ -22,7 +22,7 @@ Matrix4x4Array class >> contentsClass [
 
 {
 	#category : #'as yet unclassified',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Matrix4x4Array class >> initialize [
 	"Matrix4x4Array initialize"
@@ -31,7 +31,7 @@ Matrix4x4Array class >> initialize [
 
 {
 	#category : #'as yet unclassified',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Matrix4x4Array >> addMatrix: mat [
 	1 to: self size do:[:i | self at: i put: (self at: i)+mat.].
@@ -39,7 +39,7 @@ Matrix4x4Array >> addMatrix: mat [
 
 {
 	#category : #'as yet unclassified',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Matrix4x4Array >> contentsClass [
 	^Matrix4x4
@@ -47,7 +47,7 @@ Matrix4x4Array >> contentsClass [
 
 {
 	#category : #'as yet unclassified',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Matrix4x4Array >> contentsSize [
 	^16

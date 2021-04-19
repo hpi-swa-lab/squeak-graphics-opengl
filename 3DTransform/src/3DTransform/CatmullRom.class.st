@@ -11,12 +11,12 @@ Class {
 		'p4'
 	],
 	#category : #'3DTransform-Vectors',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 CatmullRom class >> test [
 	
@@ -38,7 +38,7 @@ CatmullRom class >> test [
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 CatmullRom class >> v1: v1 v2: v2 v3: v3 v4:v4 [
 
@@ -47,7 +47,7 @@ CatmullRom class >> v1: v1 v2: v2 v3: v3 v4:v4 [
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 CatmullRom class >> varray: varray [
 
@@ -56,7 +56,7 @@ CatmullRom class >> varray: varray [
 
 {
 	#category : #compute,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 CatmullRom >> at: t [
 
@@ -68,7 +68,7 @@ CatmullRom >> at: t [
 
 {
 	#category : #initialize,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 CatmullRom >> v1: v1 v2:v2 v3:v3 v4:v4 [
 

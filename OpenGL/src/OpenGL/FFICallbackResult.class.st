@@ -2,12 +2,12 @@ Class {
 	#name : #FFICallbackResult,
 	#superclass : #ExternalUnion,
 	#category : #'OpenGL-FFI-Support',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #'field definition',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 FFICallbackResult class >> fields [
 	"

@@ -7,12 +7,12 @@ Class {
 		'isColumnMajor'
 	],
 	#category : #'3DTransform-Views',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 1/19/2021 14:01'
+	#'squeak_changestamp' : 'stlu 1/19/2021 14:01'
 }
 MatrixView class >> columns: aVectorArray [
 
@@ -22,7 +22,7 @@ MatrixView class >> columns: aVectorArray [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/19/2021 14:02'
+	#'squeak_changestamp' : 'stlu 1/19/2021 14:02'
 }
 MatrixView class >> defaultColumnMajor [
 
@@ -31,7 +31,7 @@ MatrixView class >> defaultColumnMajor [
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 1/19/2021 14:03'
+	#'squeak_changestamp' : 'stlu 1/19/2021 14:03'
 }
 MatrixView class >> numColumns: numColumns numRows: numRows [
 
@@ -43,7 +43,7 @@ MatrixView class >> numColumns: numColumns numRows: numRows [
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 1/19/2021 14:48'
+	#'squeak_changestamp' : 'stlu 1/19/2021 14:48'
 }
 MatrixView class >> numColumns: numColumns numRows: numRows columnMajor: isColumnMajor [
 
@@ -57,7 +57,7 @@ MatrixView class >> numColumns: numColumns numRows: numRows columnMajor: isColum
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 1/19/2021 14:02'
+	#'squeak_changestamp' : 'stlu 1/19/2021 14:02'
 }
 MatrixView class >> rows: aVectorArray [
 
@@ -67,7 +67,7 @@ MatrixView class >> rows: aVectorArray [
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 1/19/2021 14:44'
+	#'squeak_changestamp' : 'stlu 1/19/2021 14:44'
 }
 MatrixView class >> store: aCollection start: startIndex numColumns: numColumns numRows: numRows [
 
@@ -81,7 +81,7 @@ MatrixView class >> store: aCollection start: startIndex numColumns: numColumns 
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 3/19/2021 15:34'
+	#'squeak_changestamp' : 'stlu 3/19/2021 15:34'
 }
 MatrixView class >> store: aCollection start: startIndex numColumns: numColumns numRows: numRows columnMajor: isColumnMajor [
 
@@ -102,7 +102,7 @@ MatrixView class >> store: aCollection start: startIndex numColumns: numColumns 
 
 {
 	#category : #arithmetic,
-	#timestamp : 'stlu 1/19/2021 12:35'
+	#'squeak_changestamp' : 'stlu 1/19/2021 12:35'
 }
 MatrixView >> * anObject [
 
@@ -114,7 +114,7 @@ MatrixView >> * anObject [
 
 {
 	#category : #'accessing - components',
-	#timestamp : 'stlu 1/19/2021 14:25'
+	#'squeak_changestamp' : 'stlu 1/19/2021 14:25'
 }
 MatrixView >> a11 [
 
@@ -123,7 +123,7 @@ MatrixView >> a11 [
 
 {
 	#category : #'accessing - components',
-	#timestamp : 'stlu 1/19/2021 14:26'
+	#'squeak_changestamp' : 'stlu 1/19/2021 14:26'
 }
 MatrixView >> a34 [
 
@@ -132,7 +132,7 @@ MatrixView >> a34 [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/19/2021 13:25'
+	#'squeak_changestamp' : 'stlu 1/19/2021 13:25'
 }
 MatrixView >> at: index [
 
@@ -150,7 +150,7 @@ MatrixView >> at: index [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/19/2021 13:24'
+	#'squeak_changestamp' : 'stlu 1/19/2021 13:24'
 }
 MatrixView >> at: firstIndex at: secondIndex [
 
@@ -161,7 +161,7 @@ MatrixView >> at: firstIndex at: secondIndex [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/19/2021 13:24'
+	#'squeak_changestamp' : 'stlu 1/19/2021 13:24'
 }
 MatrixView >> at: firstIndex at: secondIndex put: value [
 
@@ -172,7 +172,7 @@ MatrixView >> at: firstIndex at: secondIndex put: value [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/19/2021 13:22'
+	#'squeak_changestamp' : 'stlu 1/19/2021 13:22'
 }
 MatrixView >> at: index put: value [
 
@@ -192,7 +192,7 @@ MatrixView >> at: index put: value [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/19/2021 12:59'
+	#'squeak_changestamp' : 'stlu 1/19/2021 12:59'
 }
 MatrixView >> atColumn: column atRow: row [
 
@@ -201,7 +201,7 @@ MatrixView >> atColumn: column atRow: row [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/19/2021 12:59'
+	#'squeak_changestamp' : 'stlu 1/19/2021 12:59'
 }
 MatrixView >> atColumn: column atRow: row put: value [
 
@@ -210,7 +210,7 @@ MatrixView >> atColumn: column atRow: row put: value [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/19/2021 13:53'
+	#'squeak_changestamp' : 'stlu 1/19/2021 13:53'
 }
 MatrixView >> columns [
 
@@ -219,7 +219,7 @@ MatrixView >> columns [
 
 {
 	#category : #enumerating,
-	#timestamp : 'stlu 1/19/2021 10:38'
+	#'squeak_changestamp' : 'stlu 1/19/2021 10:38'
 }
 MatrixView >> columnsDo: aBlock [
 
@@ -228,7 +228,7 @@ MatrixView >> columnsDo: aBlock [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/19/2021 13:26'
+	#'squeak_changestamp' : 'stlu 1/19/2021 13:26'
 }
 MatrixView >> dimensions [
 
@@ -239,7 +239,7 @@ MatrixView >> dimensions [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 1/19/2021 13:52'
+	#'squeak_changestamp' : 'stlu 1/19/2021 13:52'
 }
 MatrixView >> initializeWithColumns: aVectorArray [
 
@@ -250,7 +250,7 @@ MatrixView >> initializeWithColumns: aVectorArray [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 1/19/2021 13:43'
+	#'squeak_changestamp' : 'stlu 1/19/2021 13:43'
 }
 MatrixView >> initializeWithRows: aVectorArray [
 
@@ -261,7 +261,7 @@ MatrixView >> initializeWithRows: aVectorArray [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 1/19/2021 13:53'
+	#'squeak_changestamp' : 'stlu 1/19/2021 13:53'
 }
 MatrixView >> isColumnMajor [
 
@@ -270,7 +270,7 @@ MatrixView >> isColumnMajor [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 1/19/2021 13:06'
+	#'squeak_changestamp' : 'stlu 1/19/2021 13:06'
 }
 MatrixView >> isMatrix [
 
@@ -279,7 +279,7 @@ MatrixView >> isMatrix [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/19/2021 13:35'
+	#'squeak_changestamp' : 'stlu 1/19/2021 13:35'
 }
 MatrixView >> numColumns [
 
@@ -288,7 +288,7 @@ MatrixView >> numColumns [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/19/2021 13:35'
+	#'squeak_changestamp' : 'stlu 1/19/2021 13:35'
 }
 MatrixView >> numRows [
 
@@ -297,7 +297,7 @@ MatrixView >> numRows [
 
 {
 	#category : #printing,
-	#timestamp : 'stlu 3/19/2021 15:26'
+	#'squeak_changestamp' : 'stlu 3/19/2021 15:26'
 }
 MatrixView >> printOn: aStream [
 
@@ -311,7 +311,7 @@ MatrixView >> printOn: aStream [
 
 {
 	#category : #arithmetic,
-	#timestamp : 'stlu 1/19/2021 14:07'
+	#'squeak_changestamp' : 'stlu 1/19/2021 14:07'
 }
 MatrixView >> privateMultiplyMatrix: aMatrix [
 
@@ -327,7 +327,7 @@ MatrixView >> privateMultiplyMatrix: aMatrix [
 
 {
 	#category : #arithmetic,
-	#timestamp : 'stlu 1/19/2021 12:34'
+	#'squeak_changestamp' : 'stlu 1/19/2021 12:34'
 }
 MatrixView >> privateMultiplyNumber: aNumber [
 
@@ -336,7 +336,7 @@ MatrixView >> privateMultiplyNumber: aNumber [
 
 {
 	#category : #arithmetic,
-	#timestamp : 'stlu 3/19/2021 14:54'
+	#'squeak_changestamp' : 'stlu 3/19/2021 14:54'
 }
 MatrixView >> privateMultiplyVector: aVector [
 
@@ -350,7 +350,7 @@ MatrixView >> privateMultiplyVector: aVector [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/19/2021 13:53'
+	#'squeak_changestamp' : 'stlu 1/19/2021 13:53'
 }
 MatrixView >> rows [
 
@@ -359,7 +359,7 @@ MatrixView >> rows [
 
 {
 	#category : #enumerating,
-	#timestamp : 'stlu 1/19/2021 10:37'
+	#'squeak_changestamp' : 'stlu 1/19/2021 10:37'
 }
 MatrixView >> rowsDo: aBlock [
 
@@ -368,7 +368,7 @@ MatrixView >> rowsDo: aBlock [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/19/2021 13:25'
+	#'squeak_changestamp' : 'stlu 1/19/2021 13:25'
 }
 MatrixView >> size [
 

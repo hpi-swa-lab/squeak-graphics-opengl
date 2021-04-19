@@ -2,12 +2,12 @@ Class {
 	#name : #UnsignedIntegerVectorView,
 	#superclass : #VectorView,
 	#category : #'3DTransform-Views',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/22/2021 13:46'
+	#'squeak_changestamp' : 'stlu 1/22/2021 13:46'
 }
 UnsignedIntegerVectorView class >> storeClass [
 
@@ -16,7 +16,7 @@ UnsignedIntegerVectorView class >> storeClass [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/22/2021 13:41'
+	#'squeak_changestamp' : 'stlu 1/22/2021 13:41'
 }
 UnsignedIntegerVectorView >> at: index [
 
@@ -25,7 +25,7 @@ UnsignedIntegerVectorView >> at: index [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/22/2021 13:41'
+	#'squeak_changestamp' : 'stlu 1/22/2021 13:41'
 }
 UnsignedIntegerVectorView >> at: index put: value [
 

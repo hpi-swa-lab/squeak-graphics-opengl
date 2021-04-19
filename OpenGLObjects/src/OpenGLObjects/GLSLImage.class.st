@@ -2,12 +2,12 @@ Class {
 	#name : #GLSLImage,
 	#superclass : #GLSLType,
 	#category : #'OpenGLObjects-Types',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #'*OpenGLObjects-Generation',
-	#timestamp : 'stlu 12/15/2020 13:03'
+	#'squeak_changestamp' : 'stlu 12/15/2020 13:03'
 }
 GLSLImage class >> generateClasses [
 
@@ -45,7 +45,7 @@ GLSLImage class >> generateClasses [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/15/2020 13:02'
+	#'squeak_changestamp' : 'stlu 12/15/2020 13:02'
 }
 GLSLImage class >> pixelType [
 
@@ -54,7 +54,7 @@ GLSLImage class >> pixelType [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 12/14/2020 18:21'
+	#'squeak_changestamp' : 'stlu 12/14/2020 18:21'
 }
 GLSLImage >> isImage [
 
@@ -63,7 +63,7 @@ GLSLImage >> isImage [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/15/2020 13:02'
+	#'squeak_changestamp' : 'stlu 12/15/2020 13:02'
 }
 GLSLImage >> pixelType [
 
@@ -72,7 +72,7 @@ GLSLImage >> pixelType [
 
 {
 	#category : #'program resources',
-	#timestamp : 'stlu 11/23/2020 16:47'
+	#'squeak_changestamp' : 'stlu 11/23/2020 16:47'
 }
 GLSLImage >> setUniform: aUniform toArray: aRawBitsArray count: numElements [
 

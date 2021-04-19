@@ -2,12 +2,12 @@ Class {
 	#name : #GLGenType,
 	#superclass : #GLGenRegistryObject,
 	#category : #'OpenGL-Generation',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 4/11/2021 13:29'
+	#'squeak_changestamp' : 'stlu 4/11/2021 13:29'
 }
 GLGenType class >> fromXMLTag: tag [
 
@@ -18,7 +18,7 @@ GLGenType class >> fromXMLTag: tag [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 4/11/2021 13:31'
+	#'squeak_changestamp' : 'stlu 4/11/2021 13:31'
 }
 GLGenType >> initializeWithXMLTag: tag [
 

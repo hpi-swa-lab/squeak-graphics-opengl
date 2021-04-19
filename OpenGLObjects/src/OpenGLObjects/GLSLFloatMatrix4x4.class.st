@@ -2,12 +2,12 @@ Class {
 	#name : #GLSLFloatMatrix4x4,
 	#superclass : #GLSLMatrix,
 	#category : #'OpenGLObjects-Types',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/15/2020 12:49'
+	#'squeak_changestamp' : 'stlu 12/15/2020 12:49'
 }
 GLSLFloatMatrix4x4 class >> componentType [
 
@@ -16,7 +16,7 @@ GLSLFloatMatrix4x4 class >> componentType [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/15/2020 12:49'
+	#'squeak_changestamp' : 'stlu 12/15/2020 12:49'
 }
 GLSLFloatMatrix4x4 class >> declarators [
 
@@ -25,7 +25,7 @@ GLSLFloatMatrix4x4 class >> declarators [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/15/2020 12:49'
+	#'squeak_changestamp' : 'stlu 12/15/2020 12:49'
 }
 GLSLFloatMatrix4x4 class >> enum [
 
@@ -34,7 +34,7 @@ GLSLFloatMatrix4x4 class >> enum [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/15/2020 12:49'
+	#'squeak_changestamp' : 'stlu 12/15/2020 12:49'
 }
 GLSLFloatMatrix4x4 class >> enumName [
 
@@ -43,7 +43,7 @@ GLSLFloatMatrix4x4 class >> enumName [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/15/2020 12:49'
+	#'squeak_changestamp' : 'stlu 12/15/2020 12:49'
 }
 GLSLFloatMatrix4x4 class >> numColumns [
 
@@ -52,7 +52,7 @@ GLSLFloatMatrix4x4 class >> numColumns [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/15/2020 12:49'
+	#'squeak_changestamp' : 'stlu 12/15/2020 12:49'
 }
 GLSLFloatMatrix4x4 class >> numRows [
 
@@ -61,7 +61,7 @@ GLSLFloatMatrix4x4 class >> numRows [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/15/2020 12:49'
+	#'squeak_changestamp' : 'stlu 12/15/2020 12:49'
 }
 GLSLFloatMatrix4x4 class >> squeakName [
 
@@ -70,7 +70,7 @@ GLSLFloatMatrix4x4 class >> squeakName [
 
 {
 	#category : #'program resources',
-	#timestamp : 'stlu 1/4/2021 03:58'
+	#'squeak_changestamp' : 'stlu 1/4/2021 03:58'
 }
 GLSLFloatMatrix4x4 >> setUniform: aUniform toArray: aRawBitsArray count: numElements [
 

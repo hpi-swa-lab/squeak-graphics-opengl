@@ -10,12 +10,12 @@ Class {
 		'vbo'
 	],
 	#category : #'LearnOpenGL-GettingStarted',
-	#commentStamp : 'stlu 12/14/2020 15:50'
+	#'squeak_changestamp' : 'stlu 12/14/2020 15:50'
 }
 
 {
 	#category : #running,
-	#timestamp : 'stlu 3/15/2021 16:22'
+	#'squeak_changestamp' : 'stlu 3/15/2021 16:22'
 }
 LOGLHelloTriangle >> draw [
 
@@ -24,7 +24,7 @@ LOGLHelloTriangle >> draw [
 
 {
 	#category : #shaders,
-	#timestamp : 'stlu 10/22/2020 16:53'
+	#'squeak_changestamp' : 'stlu 10/22/2020 16:53'
 }
 LOGLHelloTriangle >> fragmentShaderSource [
 
@@ -37,7 +37,7 @@ void main() {
 
 {
 	#category : #running,
-	#timestamp : 'stlu 4/15/2021 12:10'
+	#'squeak_changestamp' : 'stlu 4/15/2021 12:10'
 }
 LOGLHelloTriangle >> render [
 
@@ -51,7 +51,7 @@ LOGLHelloTriangle >> render [
 
 {
 	#category : #running,
-	#timestamp : 'stlu 4/16/2021 15:32'
+	#'squeak_changestamp' : 'stlu 4/16/2021 15:32'
 }
 LOGLHelloTriangle >> setUp [
 
@@ -73,7 +73,7 @@ LOGLHelloTriangle >> setUp [
 
 {
 	#category : #shaders,
-	#timestamp : 'stlu 1/4/2021 03:45'
+	#'squeak_changestamp' : 'stlu 1/4/2021 03:45'
 }
 LOGLHelloTriangle >> vertexShaderSource [
 
@@ -86,7 +86,7 @@ void main() {
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/22/2020 14:34'
+	#'squeak_changestamp' : 'stlu 12/22/2020 14:34'
 }
 LOGLHelloTriangle >> vertices [
 

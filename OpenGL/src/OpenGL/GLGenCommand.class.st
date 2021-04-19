@@ -7,12 +7,12 @@ Class {
 		'returnGroup'
 	],
 	#category : #'OpenGL-Generation',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 4/11/2021 13:54'
+	#'squeak_changestamp' : 'stlu 4/11/2021 13:54'
 }
 GLGenCommand class >> fromXMLTag: tag [
 
@@ -23,7 +23,7 @@ GLGenCommand class >> fromXMLTag: tag [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/1/2020 00:23'
+	#'squeak_changestamp' : 'stlu 11/1/2020 00:23'
 }
 GLGenCommand >> addParameter: param [
 
@@ -32,7 +32,7 @@ GLGenCommand >> addParameter: param [
 
 {
 	#category : #printing,
-	#timestamp : 'stlu 12/28/2020 16:36'
+	#'squeak_changestamp' : 'stlu 12/28/2020 16:36'
 }
 GLGenCommand >> ffiPragma [
 
@@ -42,7 +42,7 @@ GLGenCommand >> ffiPragma [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 4/12/2021 19:47'
+	#'squeak_changestamp' : 'stlu 4/12/2021 19:47'
 }
 GLGenCommand >> initializeWithXMLTag: commandTag [
 
@@ -66,7 +66,7 @@ GLGenCommand >> initializeWithXMLTag: commandTag [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 12/28/2020 13:52'
+	#'squeak_changestamp' : 'stlu 12/28/2020 13:52'
 }
 GLGenCommand >> isCommand [
 
@@ -75,7 +75,7 @@ GLGenCommand >> isCommand [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 4/12/2021 18:47'
+	#'squeak_changestamp' : 'stlu 4/12/2021 18:47'
 }
 GLGenCommand >> numParameters [
 
@@ -84,7 +84,7 @@ GLGenCommand >> numParameters [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 10/31/2020 22:20'
+	#'squeak_changestamp' : 'stlu 10/31/2020 22:20'
 }
 GLGenCommand >> parameters [
 
@@ -93,7 +93,7 @@ GLGenCommand >> parameters [
 
 {
 	#category : #printing,
-	#timestamp : 'stlu 11/2/2020 19:53'
+	#'squeak_changestamp' : 'stlu 11/2/2020 19:53'
 }
 GLGenCommand >> printFFIPragmaOn: aStream [
 
@@ -113,7 +113,7 @@ GLGenCommand >> printFFIPragmaOn: aStream [
 
 {
 	#category : #printing,
-	#timestamp : 'stlu 11/1/2020 20:56'
+	#'squeak_changestamp' : 'stlu 11/1/2020 20:56'
 }
 GLGenCommand >> printOn: aStream [
 
@@ -130,7 +130,7 @@ GLGenCommand >> printOn: aStream [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 3/3/2021 13:11'
+	#'squeak_changestamp' : 'stlu 3/3/2021 13:11'
 }
 GLGenCommand >> returnGroup [
 
@@ -139,7 +139,7 @@ GLGenCommand >> returnGroup [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 10/31/2020 22:20'
+	#'squeak_changestamp' : 'stlu 10/31/2020 22:20'
 }
 GLGenCommand >> returnType [
 

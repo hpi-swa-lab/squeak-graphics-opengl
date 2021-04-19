@@ -5,12 +5,12 @@ Class {
 		'vectors'
 	],
 	#category : #'3DTransform-Views',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/21/2021 16:28'
+	#'squeak_changestamp' : 'stlu 1/21/2021 16:28'
 }
 SmallVectorArrayView >> at: index [
 
@@ -19,7 +19,7 @@ SmallVectorArrayView >> at: index [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/21/2021 16:29'
+	#'squeak_changestamp' : 'stlu 1/21/2021 16:29'
 }
 SmallVectorArrayView >> at: index put: value [
 
@@ -28,7 +28,7 @@ SmallVectorArrayView >> at: index put: value [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 1/21/2021 16:28'
+	#'squeak_changestamp' : 'stlu 1/21/2021 16:28'
 }
 SmallVectorArrayView >> initialize [
 

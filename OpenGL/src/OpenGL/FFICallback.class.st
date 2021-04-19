@@ -12,12 +12,12 @@ Class {
 		'ThunkToCallbackMap'
 	],
 	#category : #'OpenGL-FFI-Support',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #examples,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 FFICallback class >> cdeclQsort: values with: number with: width with: callback [
 
@@ -27,7 +27,7 @@ FFICallback class >> cdeclQsort: values with: number with: width with: callback 
 
 {
 	#category : #'instance lookup',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 FFICallback class >> evaluateCallbackForContext: callbackContext [ "<FFIallbackContext> ^<Integer> typeCode"
 
@@ -42,7 +42,7 @@ FFICallback class >> evaluateCallbackForContext: callbackContext [ "<FFIallbackC
 
 {
 	#category : #examples,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 FFICallback class >> exampleCqsort [
 	"Call the libc qsort function (which requires a callback)."
@@ -98,7 +98,7 @@ FFICallback class >> exampleCqsort [
 
 {
 	#category : #examples,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 FFICallback class >> exampleCqsortThree [
 	"Call the libc qsort function (which requires a callback)."
@@ -147,7 +147,7 @@ FFICallback class >> exampleCqsortThree [
 
 {
 	#category : #examples,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 FFICallback class >> exampleCqsortTwo [
 	"Call the libc qsort function (which requires a callback)."
@@ -189,7 +189,7 @@ FFICallback class >> exampleCqsortTwo [
 
 {
 	#category : #examples,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 FFICallback class >> exampleTest [
 	"self exampleTest"
@@ -211,7 +211,7 @@ FFICallback class >> exampleTest [
 
 {
 	#category : #'examples - signatures',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 FFICallback class >> getIntWithData: anExternalData1 withData: anExternalData2 [
 	"
@@ -224,7 +224,7 @@ FFICallback class >> getIntWithData: anExternalData1 withData: anExternalData2 [
 
 {
 	#category : #'examples - signatures',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 FFICallback class >> getIntWithData: anExternalData1 withData: anExternalData2 withInt: anInteger1 withInt: anInteger2 [
 	"
@@ -242,7 +242,7 @@ FFICallback class >> getIntWithData: anExternalData1 withData: anExternalData2 w
 
 {
 	#category : #'examples - signatures',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 FFICallback class >> getIntWithInt: anInteger withString: aString [
 	"
@@ -255,7 +255,7 @@ FFICallback class >> getIntWithInt: anInteger withString: aString [
 
 {
 	#category : #'examples - signatures',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 FFICallback class >> getVoidWithData: anExternalData withDouble: aFloat withDouble: anotherFloat [
 	"
@@ -268,7 +268,7 @@ FFICallback class >> getVoidWithData: anExternalData withDouble: aFloat withDoub
 
 {
 	#category : #'class initialization',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 FFICallback class >> initialize [
 
@@ -277,7 +277,7 @@ FFICallback class >> initialize [
 
 {
 	#category : #constants,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 FFICallback class >> maxThunkSize [
 	"see FFICallbackThunk initialize & initializeStdcall:; must be big enough for the largest thunk created"
@@ -286,7 +286,7 @@ FFICallback class >> maxThunkSize [
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 FFICallback class >> message: message [ "<MessageSend> ^<FFICallback>"
 	^ self new
@@ -296,7 +296,7 @@ FFICallback class >> message: message [ "<MessageSend> ^<FFICallback>"
 
 {
 	#category : #examples,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 FFICallback class >> qsort: values with: number with: width with: block [
 	"Indirection to define the signature for the provided block."
@@ -312,7 +312,7 @@ FFICallback class >> qsort: values with: number with: width with: block [
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 FFICallback class >> signature: signature "<String>" block: aBlock [ "<BlockClosure> ^<FFICallback>"
 	^ self new
@@ -322,7 +322,7 @@ FFICallback class >> signature: signature "<String>" block: aBlock [ "<BlockClos
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 FFICallback class >> signature: signature "<String>" message: message [ "<MessageSend> ^<FFICallback>"
 	^ self new
@@ -332,7 +332,7 @@ FFICallback class >> signature: signature "<String>" message: message [ "<Messag
 
 {
 	#category : #'callback - evaluators',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 FFICallback >> evaluateDynamic: callbackContext [
 	"Read all arguments and make the call(back). Assume that 'handle' and 'type' are set correctly. Only watch out for the sign. See field definition in FFICallbackContext to explore alternative ways to read the arguments."
@@ -392,7 +392,7 @@ FFICallback >> evaluateDynamic: callbackContext [
 
 {
 	#category : #'callback - evaluators',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 FFICallback >> evaluateDynamic_ARM32: callbackContext [
 	"Set handle to access arguments as most appropriate for the ABI. For ''RISCs'' it is the pointer to the integer register."
@@ -404,7 +404,7 @@ FFICallback >> evaluateDynamic_ARM32: callbackContext [
 
 {
 	#category : #'callback - evaluators',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 FFICallback >> evaluateDynamic_IA32: callbackContext [
 	"Set handle to access arguments as most appropriate for the ABI. For x86 (i.e. IA32) it is the stack pointer."
@@ -416,7 +416,7 @@ FFICallback >> evaluateDynamic_IA32: callbackContext [
 
 {
 	#category : #'callback - evaluators',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 FFICallback >> evaluateDynamic_X64: callbackContext [
 	"Set handle to access arguments as most appropriate for the ABI. For ''RISCs'' it is the pointer to the integer register."
@@ -427,7 +427,7 @@ FFICallback >> evaluateDynamic_X64: callbackContext [
 
 {
 	#category : #'callback - evaluators',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 FFICallback >> evaluateDynamic_X64Win64: callbackContext [
 	"Set handle to access arguments as most appropriate for the ABI. For ''RISCs'' it is the pointer to the integer register."
@@ -439,7 +439,7 @@ FFICallback >> evaluateDynamic_X64Win64: callbackContext [
 
 {
 	#category : #'initialization - thunk prepare',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 FFICallback >> init__ccall [
 	"Initialize the receiver with a __ccall thunk."
@@ -456,7 +456,7 @@ FFICallback >> init__ccall [
 
 {
 	#category : #'initialization - thunk prepare',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 FFICallback >> init__ccall_ARM32 [
 	<abi: 'ARM32'> <init>
@@ -500,7 +500,7 @@ FFICallback >> init__ccall_ARM32 [
 
 {
 	#category : #'initialization - thunk prepare',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 FFICallback >> init__ccall_IA32 [
 	<abi: 'IA32'> <init>
@@ -539,7 +539,7 @@ FFICallback >> init__ccall_IA32 [
 
 {
 	#category : #'initialization - thunk prepare',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 FFICallback >> init__ccall_X64 [
 	<abi: 'X64'> <init>
@@ -579,7 +579,7 @@ FFICallback >> init__ccall_X64 [
 
 {
 	#category : #'initialization - thunk prepare',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 FFICallback >> init__ccall_X64Win64 [
 	<abi: 'X64Win64'> <init>
@@ -620,7 +620,7 @@ FFICallback >> init__ccall_X64Win64 [
 
 {
 	#category : #'initialization - thunk prepare',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 FFICallback >> init__stdcall: numBytes [
 	"Initialize the receiver with a __stdcall thunk with numBytes argument bytes."
@@ -637,7 +637,7 @@ FFICallback >> init__stdcall: numBytes [
 
 {
 	#category : #'initialization - thunk prepare',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 FFICallback >> init__stdcall_IA32: numBytes [
 	<abi: 'IA32'> <init>
@@ -666,7 +666,7 @@ FFICallback >> init__stdcall_IA32: numBytes [
 
 {
 	#category : #'initialization - thunk prepare',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 FFICallback >> primThunkEntryAddress [ "^<Integer>"
 	"Answer the address of the entry-point for thunk callbacks:
@@ -687,7 +687,7 @@ FFICallback >> primThunkEntryAddress [ "^<Integer>"
 
 {
 	#category : #callback,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 FFICallback >> setArgData: externalData [
 	
@@ -697,7 +697,7 @@ FFICallback >> setArgData: externalData [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 FFICallback >> setArgTypes: externalTypes evaluableObject: blockOrMessage [
 
@@ -728,7 +728,7 @@ FFICallback >> setArgTypes: externalTypes evaluableObject: blockOrMessage [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 FFICallback >> setBlock: aBlock [
 	"We cannot know the signature for an arbitrary block."
@@ -738,7 +738,7 @@ FFICallback >> setBlock: aBlock [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 FFICallback >> setBlock: aBlock "<BlockClosure>" signature: signature [ "<String>"
 
@@ -749,7 +749,7 @@ FFICallback >> setBlock: aBlock "<BlockClosure>" signature: signature [ "<String
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 FFICallback >> setMessage: aMessageSend [
 	"Fetch the argTypes from <callback: ...> pragma in method."
@@ -766,7 +766,7 @@ FFICallback >> setMessage: aMessageSend [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 FFICallback >> setMessage: aMessageSend signature: signature [
 	"Override the argTypes from <callback: ...> pragma in method."
@@ -780,7 +780,7 @@ FFICallback >> setMessage: aMessageSend signature: signature [
 
 {
 	#category : #callback,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 FFICallback >> setResult: anObject inContext: aCallbackContext [
 	"Set the result in the callback context. Add some fast checks to detect errors."
@@ -811,7 +811,7 @@ FFICallback >> setResult: anObject inContext: aCallbackContext [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 FFICallback >> thunk [
 
@@ -824,7 +824,7 @@ FFICallback >> thunk [
 
 {
 	#category : #'initialization - thunk prepare',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 FFICallback >> thunkEntryAddress [
 
@@ -833,7 +833,7 @@ FFICallback >> thunkEntryAddress [
 
 {
 	#category : #callback,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 FFICallback >> valueInContext: callbackContext [ "<FFICallbackContext> ^<Integer>"
 	

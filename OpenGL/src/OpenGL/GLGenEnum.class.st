@@ -12,12 +12,12 @@ Class {
 		'typeSuffix'
 	],
 	#category : #'OpenGL-Generation',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #helpers,
-	#timestamp : 'stlu 10/31/2020 23:06'
+	#'squeak_changestamp' : 'stlu 10/31/2020 23:06'
 }
 GLGenEnum class >> convertEnumValueString: aString [
 
@@ -30,7 +30,7 @@ GLGenEnum class >> convertEnumValueString: aString [
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 3/4/2021 11:36'
+	#'squeak_changestamp' : 'stlu 3/4/2021 11:36'
 }
 GLGenEnum class >> fromXMLTag: tag [
 
@@ -41,7 +41,7 @@ GLGenEnum class >> fromXMLTag: tag [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 3/5/2021 12:50'
+	#'squeak_changestamp' : 'stlu 3/5/2021 12:50'
 }
 GLGenEnum >> addGroup: aString [
 
@@ -50,7 +50,7 @@ GLGenEnum >> addGroup: aString [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 3/4/2021 12:05'
+	#'squeak_changestamp' : 'stlu 3/4/2021 12:05'
 }
 GLGenEnum >> api [
 
@@ -59,7 +59,7 @@ GLGenEnum >> api [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 10/31/2020 22:19'
+	#'squeak_changestamp' : 'stlu 10/31/2020 22:19'
 }
 GLGenEnum >> groups [
 
@@ -68,7 +68,7 @@ GLGenEnum >> groups [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 4/12/2021 18:49'
+	#'squeak_changestamp' : 'stlu 4/12/2021 18:49'
 }
 GLGenEnum >> initialize [
 
@@ -78,7 +78,7 @@ GLGenEnum >> initialize [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 3/5/2021 13:03'
+	#'squeak_changestamp' : 'stlu 3/5/2021 13:03'
 }
 GLGenEnum >> initializeWithXMLTag: tag [
 
@@ -101,7 +101,7 @@ GLGenEnum >> initializeWithXMLTag: tag [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 3/4/2021 12:13'
+	#'squeak_changestamp' : 'stlu 3/4/2021 12:13'
 }
 GLGenEnum >> isBitmask [
 
@@ -110,7 +110,7 @@ GLGenEnum >> isBitmask [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 12/28/2020 13:52'
+	#'squeak_changestamp' : 'stlu 12/28/2020 13:52'
 }
 GLGenEnum >> isEnum [
 
@@ -119,7 +119,7 @@ GLGenEnum >> isEnum [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 3/4/2021 12:24'
+	#'squeak_changestamp' : 'stlu 3/4/2021 12:24'
 }
 GLGenEnum >> namespace [
 
@@ -128,7 +128,7 @@ GLGenEnum >> namespace [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 3/4/2021 12:24'
+	#'squeak_changestamp' : 'stlu 3/4/2021 12:24'
 }
 GLGenEnum >> namespace: anObject [
 
@@ -137,7 +137,7 @@ GLGenEnum >> namespace: anObject [
 
 {
 	#category : #printing,
-	#timestamp : 'stlu 3/5/2021 13:31'
+	#'squeak_changestamp' : 'stlu 3/5/2021 13:31'
 }
 GLGenEnum >> printOn: aStream [
 
@@ -149,7 +149,7 @@ GLGenEnum >> printOn: aStream [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 3/4/2021 12:27'
+	#'squeak_changestamp' : 'stlu 3/4/2021 12:27'
 }
 GLGenEnum >> suffix [
 
@@ -158,7 +158,7 @@ GLGenEnum >> suffix [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 3/4/2021 12:14'
+	#'squeak_changestamp' : 'stlu 3/4/2021 12:14'
 }
 GLGenEnum >> type [
 
@@ -167,7 +167,7 @@ GLGenEnum >> type [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 3/4/2021 12:14'
+	#'squeak_changestamp' : 'stlu 3/4/2021 12:14'
 }
 GLGenEnum >> type: anObject [
 
@@ -176,7 +176,7 @@ GLGenEnum >> type: anObject [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 3/4/2021 12:19'
+	#'squeak_changestamp' : 'stlu 3/4/2021 12:19'
 }
 GLGenEnum >> typeSuffix [
 
@@ -185,7 +185,7 @@ GLGenEnum >> typeSuffix [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 10/31/2020 23:00'
+	#'squeak_changestamp' : 'stlu 10/31/2020 23:00'
 }
 GLGenEnum >> value [
 
@@ -194,7 +194,7 @@ GLGenEnum >> value [
 
 {
 	#category : #printing,
-	#timestamp : 'stlu 3/5/2021 13:30'
+	#'squeak_changestamp' : 'stlu 3/5/2021 13:30'
 }
 GLGenEnum >> valueString [
 
@@ -203,7 +203,7 @@ GLGenEnum >> valueString [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 3/4/2021 11:40'
+	#'squeak_changestamp' : 'stlu 3/4/2021 11:40'
 }
 GLGenEnum >> vendor [
 
@@ -212,7 +212,7 @@ GLGenEnum >> vendor [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 3/4/2021 11:40'
+	#'squeak_changestamp' : 'stlu 3/4/2021 11:40'
 }
 GLGenEnum >> vendor: anObject [
 

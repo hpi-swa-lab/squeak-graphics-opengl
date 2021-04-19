@@ -2,7 +2,7 @@ Extension { #name : #Point }
 
 {
 	#category : #'*3DTransform',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Point >> @ aNumber [
 
@@ -14,7 +14,7 @@ Point >> @ aNumber [
 
 {
 	#category : #'*3DTransform',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Point >> asVector3 [
 
@@ -23,7 +23,7 @@ Point >> asVector3 [
 
 {
 	#category : #'*3DTransform',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Point >> z [
 

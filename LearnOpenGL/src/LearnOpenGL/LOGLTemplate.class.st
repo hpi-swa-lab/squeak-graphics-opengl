@@ -12,12 +12,12 @@ Class {
 		'GLFWConstants'
 	],
 	#category : #'LearnOpenGL-Core',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 10/12/2020 14:02'
+	#'squeak_changestamp' : 'stlu 10/12/2020 14:02'
 }
 LOGLTemplate class >> run [
 
@@ -28,7 +28,7 @@ LOGLTemplate class >> run [
 
 {
 	#category : #callbacks,
-	#timestamp : 'stlu 2/1/2021 14:44'
+	#'squeak_changestamp' : 'stlu 2/1/2021 14:44'
 }
 LOGLTemplate >> cursorPositionChanged: aPoint [
 
@@ -37,7 +37,7 @@ LOGLTemplate >> cursorPositionChanged: aPoint [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/7/2021 17:50'
+	#'squeak_changestamp' : 'stlu 1/7/2021 17:50'
 }
 LOGLTemplate >> initialWindowExtent [
 
@@ -46,7 +46,7 @@ LOGLTemplate >> initialWindowExtent [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 1/5/2021 08:21'
+	#'squeak_changestamp' : 'stlu 1/5/2021 08:21'
 }
 LOGLTemplate >> initialize [
 
@@ -55,7 +55,7 @@ LOGLTemplate >> initialize [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 1/8/2021 11:48'
+	#'squeak_changestamp' : 'stlu 1/8/2021 11:48'
 }
 LOGLTemplate >> isModal [
 
@@ -64,7 +64,7 @@ LOGLTemplate >> isModal [
 
 {
 	#category : #rendering,
-	#timestamp : 'stlu 2/12/2021 00:46'
+	#'squeak_changestamp' : 'stlu 2/12/2021 00:46'
 }
 LOGLTemplate >> processInput [
 
@@ -74,7 +74,7 @@ LOGLTemplate >> processInput [
 
 {
 	#category : #rendering,
-	#timestamp : 'stlu 1/5/2021 08:24'
+	#'squeak_changestamp' : 'stlu 1/5/2021 08:24'
 }
 LOGLTemplate >> processInput: deltaSecs [
 
@@ -83,7 +83,7 @@ LOGLTemplate >> processInput: deltaSecs [
 
 {
 	#category : #rendering,
-	#timestamp : 'stlu 1/7/2021 12:24'
+	#'squeak_changestamp' : 'stlu 1/7/2021 12:24'
 }
 LOGLTemplate >> processPriority [
 
@@ -92,7 +92,7 @@ LOGLTemplate >> processPriority [
 
 {
 	#category : #callbacks,
-	#timestamp : 'stlu 2/12/2021 23:56'
+	#'squeak_changestamp' : 'stlu 2/12/2021 23:56'
 }
 LOGLTemplate >> registerCallbacks [
 
@@ -108,7 +108,7 @@ LOGLTemplate >> registerCallbacks [
 
 {
 	#category : #rendering,
-	#timestamp : 'stlu 10/26/2020 17:44'
+	#'squeak_changestamp' : 'stlu 10/26/2020 17:44'
 }
 LOGLTemplate >> render [
 
@@ -117,7 +117,7 @@ LOGLTemplate >> render [
 
 {
 	#category : #rendering,
-	#timestamp : 'stlu 1/5/2021 08:23'
+	#'squeak_changestamp' : 'stlu 1/5/2021 08:23'
 }
 LOGLTemplate >> render: deltaSecs [
 
@@ -126,7 +126,7 @@ LOGLTemplate >> render: deltaSecs [
 
 {
 	#category : #rendering,
-	#timestamp : 'stlu 1/8/2021 11:48'
+	#'squeak_changestamp' : 'stlu 1/8/2021 11:48'
 }
 LOGLTemplate >> renderLoop [
 
@@ -145,7 +145,7 @@ LOGLTemplate >> renderLoop [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 4/17/2021 10:56'
+	#'squeak_changestamp' : 'stlu 4/17/2021 10:56'
 }
 LOGLTemplate >> run [
 
@@ -170,7 +170,7 @@ LOGLTemplate >> run [
 
 {
 	#category : #callbacks,
-	#timestamp : 'stlu 2/1/2021 14:51'
+	#'squeak_changestamp' : 'stlu 2/1/2021 14:51'
 }
 LOGLTemplate >> scrolledBy: offset [
 
@@ -179,7 +179,7 @@ LOGLTemplate >> scrolledBy: offset [
 
 {
 	#category : #running,
-	#timestamp : 'stlu 10/22/2020 16:43'
+	#'squeak_changestamp' : 'stlu 10/22/2020 16:43'
 }
 LOGLTemplate >> setUp [
 
@@ -188,7 +188,7 @@ LOGLTemplate >> setUp [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 10/12/2020 14:06'
+	#'squeak_changestamp' : 'stlu 10/12/2020 14:06'
 }
 LOGLTemplate >> shouldClose [
 
@@ -197,7 +197,7 @@ LOGLTemplate >> shouldClose [
 
 {
 	#category : #rendering,
-	#timestamp : 'stlu 4/16/2021 10:42'
+	#'squeak_changestamp' : 'stlu 4/16/2021 10:42'
 }
 LOGLTemplate >> spawnNewRenderProcess [
 
@@ -212,7 +212,7 @@ LOGLTemplate >> spawnNewRenderProcess [
 
 {
 	#category : #running,
-	#timestamp : 'stlu 10/22/2020 16:45'
+	#'squeak_changestamp' : 'stlu 10/22/2020 16:45'
 }
 LOGLTemplate >> tearDown [
 
@@ -221,7 +221,7 @@ LOGLTemplate >> tearDown [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 10/19/2020 17:18'
+	#'squeak_changestamp' : 'stlu 10/19/2020 17:18'
 }
 LOGLTemplate >> title [
 
@@ -230,7 +230,7 @@ LOGLTemplate >> title [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 10/9/2020 13:27'
+	#'squeak_changestamp' : 'stlu 10/9/2020 13:27'
 }
 LOGLTemplate >> window [
 
@@ -239,7 +239,7 @@ LOGLTemplate >> window [
 
 {
 	#category : #callbacks,
-	#timestamp : 'stlu 4/15/2021 12:11'
+	#'squeak_changestamp' : 'stlu 4/15/2021 12:11'
 }
 LOGLTemplate >> windowExtentChanged: newExtent [
 	"glfw: whenever the window size changed (by OS or user resize) this callback function executes"

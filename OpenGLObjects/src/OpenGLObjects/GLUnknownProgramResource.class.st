@@ -7,12 +7,12 @@ Class {
 		'resourceName'
 	],
 	#category : #'OpenGLObjects-Programs',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 1/10/2021 23:09'
+	#'squeak_changestamp' : 'stlu 1/10/2021 23:09'
 }
 GLUnknownProgramResource class >> program: aProgram resourceClass: aProgramResourceClass resourceName: aString [
 
@@ -25,7 +25,7 @@ GLUnknownProgramResource class >> program: aProgram resourceClass: aProgramResou
 
 {
 	#category : #defaults,
-	#timestamp : 'stlu 1/10/2021 22:57'
+	#'squeak_changestamp' : 'stlu 1/10/2021 22:57'
 }
 GLUnknownProgramResource >> defaultResumeValue [
 
@@ -34,7 +34,7 @@ GLUnknownProgramResource >> defaultResumeValue [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/11/2021 00:45'
+	#'squeak_changestamp' : 'stlu 1/11/2021 00:45'
 }
 GLUnknownProgramResource >> messageText [
 
@@ -51,7 +51,7 @@ GLUnknownProgramResource >> messageText [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/10/2021 23:15'
+	#'squeak_changestamp' : 'stlu 1/10/2021 23:15'
 }
 GLUnknownProgramResource >> program [
 
@@ -60,7 +60,7 @@ GLUnknownProgramResource >> program [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/10/2021 23:15'
+	#'squeak_changestamp' : 'stlu 1/10/2021 23:15'
 }
 GLUnknownProgramResource >> program: anObject [
 
@@ -69,7 +69,7 @@ GLUnknownProgramResource >> program: anObject [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/10/2021 23:09'
+	#'squeak_changestamp' : 'stlu 1/10/2021 23:09'
 }
 GLUnknownProgramResource >> resourceClass [
 
@@ -78,7 +78,7 @@ GLUnknownProgramResource >> resourceClass [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/10/2021 23:09'
+	#'squeak_changestamp' : 'stlu 1/10/2021 23:09'
 }
 GLUnknownProgramResource >> resourceClass: anObject [
 
@@ -87,7 +87,7 @@ GLUnknownProgramResource >> resourceClass: anObject [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/10/2021 22:36'
+	#'squeak_changestamp' : 'stlu 1/10/2021 22:36'
 }
 GLUnknownProgramResource >> resourceName [
 
@@ -96,7 +96,7 @@ GLUnknownProgramResource >> resourceName [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/10/2021 22:36'
+	#'squeak_changestamp' : 'stlu 1/10/2021 22:36'
 }
 GLUnknownProgramResource >> resourceName: anObject [
 

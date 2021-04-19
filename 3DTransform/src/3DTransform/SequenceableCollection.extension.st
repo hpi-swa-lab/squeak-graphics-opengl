@@ -2,7 +2,7 @@ Extension { #name : #SequenceableCollection }
 
 {
 	#category : #'*3DTransform',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 SequenceableCollection >> asVectorColor [
 	
@@ -11,7 +11,7 @@ SequenceableCollection >> asVectorColor [
 
 {
 	#category : #'*3DTransform',
-	#timestamp : 'stlu 1/25/2021 17:50'
+	#'squeak_changestamp' : 'stlu 1/25/2021 17:50'
 }
 SequenceableCollection >> dot: aCollection [
 	"Return the dot product of the receiver and the argument."
@@ -25,7 +25,7 @@ SequenceableCollection >> dot: aCollection [
 
 {
 	#category : #'*3DTransform',
-	#timestamp : 'stlu 1/22/2021 12:51'
+	#'squeak_changestamp' : 'stlu 1/22/2021 12:51'
 }
 SequenceableCollection >> doubleAt: anIndex [
 
@@ -34,7 +34,7 @@ SequenceableCollection >> doubleAt: anIndex [
 
 {
 	#category : #'*3DTransform',
-	#timestamp : 'stlu 1/22/2021 12:51'
+	#'squeak_changestamp' : 'stlu 1/22/2021 12:51'
 }
 SequenceableCollection >> doubleAt: anIndex put: anObject [
 
@@ -43,7 +43,7 @@ SequenceableCollection >> doubleAt: anIndex put: anObject [
 
 {
 	#category : #'*3DTransform',
-	#timestamp : 'stlu 1/18/2021 22:07'
+	#'squeak_changestamp' : 'stlu 1/18/2021 22:07'
 }
 SequenceableCollection >> floatAt: anIndex [
 
@@ -52,7 +52,7 @@ SequenceableCollection >> floatAt: anIndex [
 
 {
 	#category : #'*3DTransform',
-	#timestamp : 'stlu 1/18/2021 22:08'
+	#'squeak_changestamp' : 'stlu 1/18/2021 22:08'
 }
 SequenceableCollection >> floatAt: anIndex put: anObject [
 
@@ -61,7 +61,7 @@ SequenceableCollection >> floatAt: anIndex put: anObject [
 
 {
 	#category : #'*3DTransform',
-	#timestamp : 'stlu 1/19/2021 14:42'
+	#'squeak_changestamp' : 'stlu 1/19/2021 14:42'
 }
 SequenceableCollection >> matrix4x4View [
 
@@ -70,7 +70,7 @@ SequenceableCollection >> matrix4x4View [
 
 {
 	#category : #'*3DTransform',
-	#timestamp : 'stlu 1/19/2021 14:42'
+	#'squeak_changestamp' : 'stlu 1/19/2021 14:42'
 }
 SequenceableCollection >> matrix4x4ViewAt: start [
 
@@ -79,7 +79,7 @@ SequenceableCollection >> matrix4x4ViewAt: start [
 
 {
 	#category : #'*3DTransform',
-	#timestamp : 'stlu 1/19/2021 14:44'
+	#'squeak_changestamp' : 'stlu 1/19/2021 14:44'
 }
 SequenceableCollection >> matrixViewAt: start columns: numColumns rows: numRows [
 
@@ -92,7 +92,7 @@ SequenceableCollection >> matrixViewAt: start columns: numColumns rows: numRows 
 
 {
 	#category : #'*3DTransform',
-	#timestamp : 'stlu 1/22/2021 13:42'
+	#'squeak_changestamp' : 'stlu 1/22/2021 13:42'
 }
 SequenceableCollection >> signedLongAt: anIndex [
 
@@ -101,7 +101,7 @@ SequenceableCollection >> signedLongAt: anIndex [
 
 {
 	#category : #'*3DTransform',
-	#timestamp : 'stlu 1/22/2021 13:43'
+	#'squeak_changestamp' : 'stlu 1/22/2021 13:43'
 }
 SequenceableCollection >> signedLongAt: anIndex put: anObject [
 
@@ -110,7 +110,7 @@ SequenceableCollection >> signedLongAt: anIndex put: anObject [
 
 {
 	#category : #'*3DTransform',
-	#timestamp : 'stlu 1/22/2021 13:42'
+	#'squeak_changestamp' : 'stlu 1/22/2021 13:42'
 }
 SequenceableCollection >> unsignedLongAt: anIndex [
 
@@ -119,7 +119,7 @@ SequenceableCollection >> unsignedLongAt: anIndex [
 
 {
 	#category : #'*3DTransform',
-	#timestamp : 'stlu 1/22/2021 13:43'
+	#'squeak_changestamp' : 'stlu 1/22/2021 13:43'
 }
 SequenceableCollection >> unsignedLongAt: anIndex put: anObject [
 
@@ -128,7 +128,7 @@ SequenceableCollection >> unsignedLongAt: anIndex put: anObject [
 
 {
 	#category : #'*3DTransform',
-	#timestamp : 'stlu 1/19/2021 14:35'
+	#'squeak_changestamp' : 'stlu 1/19/2021 14:35'
 }
 SequenceableCollection >> vectorViewAt: start size: vectorSize [
 

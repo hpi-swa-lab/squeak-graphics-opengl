@@ -6,12 +6,12 @@ Class {
 	#superclass : #Vector,
 	#type : #words,
 	#category : #'3DTransform-Vectors',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Vector4 class >> from: anArray [
 
@@ -20,7 +20,7 @@ Vector4 class >> from: anArray [
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Vector4 class >> numElements [
 	^4
@@ -28,7 +28,7 @@ Vector4 class >> numElements [
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Vector4 class >> x: x y: y z: z [
 
@@ -37,7 +37,7 @@ Vector4 class >> x: x y: y z: z [
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Vector4 class >> x: x y: y z: z w: w [
 	^self new x: x y: y z: z w: w
@@ -45,7 +45,7 @@ Vector4 class >> x: x y: y z: z w: w [
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Vector4 class >> zero [
 	^self new
@@ -53,7 +53,7 @@ Vector4 class >> zero [
 
 {
 	#category : #converting,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Vector4 >> asVector3 [
 
@@ -68,7 +68,7 @@ Vector4 >> asVector3 [
 
 {
 	#category : #converting,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Vector4 >> asVector4 [
 	^self
@@ -76,7 +76,7 @@ Vector4 >> asVector4 [
 
 {
 	#category : #converting,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Vector4 >> asVectorColor [
 
@@ -86,7 +86,7 @@ Vector4 >> asVectorColor [
 
 {
 	#category : #private,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Vector4 >> privateLoadFrom: srcObject [
 	self x: srcObject x y: srcObject y z: srcObject z w: srcObject w.
@@ -94,7 +94,7 @@ Vector4 >> privateLoadFrom: srcObject [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Vector4 >> w [
 	^self at: 4
@@ -102,7 +102,7 @@ Vector4 >> w [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Vector4 >> w: aFloat [
 	self at: 4 put: aFloat
@@ -110,7 +110,7 @@ Vector4 >> w: aFloat [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Vector4 >> x [
 	^self at: 1
@@ -118,7 +118,7 @@ Vector4 >> x [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Vector4 >> x: aFloat [
 	self at: 1 put: aFloat
@@ -126,7 +126,7 @@ Vector4 >> x: aFloat [
 
 {
 	#category : #initialize,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Vector4 >> x: x y: y z: z w: w [
 	self x: x.
@@ -137,7 +137,7 @@ Vector4 >> x: x y: y z: z w: w [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Vector4 >> y [
 	^self at: 2
@@ -145,7 +145,7 @@ Vector4 >> y [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Vector4 >> y: aFloat [
 	self at: 2 put: aFloat
@@ -153,7 +153,7 @@ Vector4 >> y: aFloat [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Vector4 >> z [
 	^self at: 3
@@ -161,7 +161,7 @@ Vector4 >> z [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Vector4 >> z: aFloat [
 	self at: 3 put: aFloat

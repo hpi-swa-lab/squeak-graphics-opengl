@@ -6,12 +6,12 @@ Class {
 		'associatedMethod'
 	],
 	#category : #'OpenGLObjects-Shaders',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #allocation,
-	#timestamp : 'stlu 11/3/2020 15:40'
+	#'squeak_changestamp' : 'stlu 11/3/2020 15:40'
 }
 GLShader class >> allocate [
 
@@ -20,7 +20,7 @@ GLShader class >> allocate [
 
 {
 	#category : #allocation,
-	#timestamp : 'stlu 11/30/2020 19:53'
+	#'squeak_changestamp' : 'stlu 11/30/2020 19:53'
 }
 GLShader class >> allocate: n in: anIntegerArray [
 
@@ -30,7 +30,7 @@ GLShader class >> allocate: n in: anIntegerArray [
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 2/8/2021 12:35'
+	#'squeak_changestamp' : 'stlu 2/8/2021 12:35'
 }
 GLShader class >> associatedMethod: aMethodReference [
 
@@ -41,7 +41,7 @@ GLShader class >> associatedMethod: aMethodReference [
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 12/21/2020 20:43'
+	#'squeak_changestamp' : 'stlu 12/21/2020 20:43'
 }
 GLShader class >> source: glslSourceString [
 
@@ -53,7 +53,7 @@ GLShader class >> source: glslSourceString [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 10/28/2020 17:51'
+	#'squeak_changestamp' : 'stlu 10/28/2020 17:51'
 }
 GLShader class >> type [
 
@@ -62,7 +62,7 @@ GLShader class >> type [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 2/7/2021 16:34'
+	#'squeak_changestamp' : 'stlu 2/7/2021 16:34'
 }
 GLShader >> associatedMethod [
 
@@ -71,7 +71,7 @@ GLShader >> associatedMethod [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 2/8/2021 12:35'
+	#'squeak_changestamp' : 'stlu 2/8/2021 12:35'
 }
 GLShader >> associatedMethod: aMethodReference [
 
@@ -82,7 +82,7 @@ GLShader >> associatedMethod: aMethodReference [
 
 {
 	#category : #'change notification',
-	#timestamp : 'stlu 2/8/2021 13:48'
+	#'squeak_changestamp' : 'stlu 2/8/2021 13:48'
 }
 GLShader >> associatedMethodChanged [
 
@@ -100,7 +100,7 @@ GLShader >> associatedMethodChanged [
 
 {
 	#category : #compilation,
-	#timestamp : 'stlu 12/14/2020 12:25'
+	#'squeak_changestamp' : 'stlu 12/14/2020 12:25'
 }
 GLShader >> compilationFailed [
 
@@ -109,7 +109,7 @@ GLShader >> compilationFailed [
 
 {
 	#category : #compilation,
-	#timestamp : 'stlu 2/7/2021 16:59'
+	#'squeak_changestamp' : 'stlu 2/7/2021 16:59'
 }
 GLShader >> compilationSucceeded [
 
@@ -118,7 +118,7 @@ GLShader >> compilationSucceeded [
 
 {
 	#category : #compilation,
-	#timestamp : 'stlu 12/14/2020 12:27'
+	#'squeak_changestamp' : 'stlu 12/14/2020 12:27'
 }
 GLShader >> compile [
 
@@ -130,7 +130,7 @@ GLShader >> compile [
 
 {
 	#category : #compilation,
-	#timestamp : 'stlu 2/8/2021 12:32'
+	#'squeak_changestamp' : 'stlu 2/8/2021 12:32'
 }
 GLShader >> compileSource: newSource [
 
@@ -140,7 +140,7 @@ GLShader >> compileSource: newSource [
 
 {
 	#category : #'initialize-release',
-	#timestamp : 'stlu 11/3/2020 15:39'
+	#'squeak_changestamp' : 'stlu 11/3/2020 15:39'
 }
 GLShader >> delete [
 
@@ -149,7 +149,7 @@ GLShader >> delete [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 2/7/2021 16:47'
+	#'squeak_changestamp' : 'stlu 2/7/2021 16:47'
 }
 GLShader >> disassociateMethod [
 
@@ -158,7 +158,7 @@ GLShader >> disassociateMethod [
 
 {
 	#category : #private,
-	#timestamp : 'stlu 11/3/2020 15:39'
+	#'squeak_changestamp' : 'stlu 11/3/2020 15:39'
 }
 GLShader >> getAttribute: attributeName [
 
@@ -169,7 +169,7 @@ GLShader >> getAttribute: attributeName [
 
 {
 	#category : #compilation,
-	#timestamp : 'zagto 12/15/2020 18:17'
+	#'squeak_changestamp' : 'zagto 12/15/2020 18:17'
 }
 GLShader >> getInfoLog [
 
@@ -183,7 +183,7 @@ GLShader >> getInfoLog [
 
 {
 	#category : #compilation,
-	#timestamp : 'stlu 10/28/2020 14:40'
+	#'squeak_changestamp' : 'stlu 10/28/2020 14:40'
 }
 GLShader >> getInfoLogLength [
 
@@ -192,7 +192,7 @@ GLShader >> getInfoLogLength [
 
 {
 	#category : #private,
-	#timestamp : 'stlu 11/16/2020 13:50'
+	#'squeak_changestamp' : 'stlu 11/16/2020 13:50'
 }
 GLShader >> getSource [
 
@@ -203,7 +203,7 @@ GLShader >> getSource [
 
 {
 	#category : #private,
-	#timestamp : 'stlu 10/28/2020 14:42'
+	#'squeak_changestamp' : 'stlu 10/28/2020 14:42'
 }
 GLShader >> getSourceLength [
 
@@ -212,7 +212,7 @@ GLShader >> getSourceLength [
 
 {
 	#category : #private,
-	#timestamp : 'stlu 10/26/2020 13:07'
+	#'squeak_changestamp' : 'stlu 10/26/2020 13:07'
 }
 GLShader >> getType [
 
@@ -221,7 +221,7 @@ GLShader >> getType [
 
 {
 	#category : #'initialize-release',
-	#timestamp : 'stlu 2/7/2021 15:53'
+	#'squeak_changestamp' : 'stlu 2/7/2021 15:53'
 }
 GLShader >> initialize [
 
@@ -231,7 +231,7 @@ GLShader >> initialize [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 12/14/2020 12:12'
+	#'squeak_changestamp' : 'stlu 12/14/2020 12:12'
 }
 GLShader >> isAllocated [
 
@@ -240,7 +240,7 @@ GLShader >> isAllocated [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 10/26/2020 13:53'
+	#'squeak_changestamp' : 'stlu 10/26/2020 13:53'
 }
 GLShader >> isFlaggedForDeletion [
 
@@ -249,7 +249,7 @@ GLShader >> isFlaggedForDeletion [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 10/29/2020 12:16'
+	#'squeak_changestamp' : 'stlu 10/29/2020 12:16'
 }
 GLShader >> isShader [
 
@@ -258,7 +258,7 @@ GLShader >> isShader [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 10/26/2020 13:55'
+	#'squeak_changestamp' : 'stlu 10/26/2020 13:55'
 }
 GLShader >> lastCompilationSucceeded [
 
@@ -267,7 +267,7 @@ GLShader >> lastCompilationSucceeded [
 
 {
 	#category : #'change notification',
-	#timestamp : 'stlu 2/7/2021 16:52'
+	#'squeak_changestamp' : 'stlu 2/7/2021 16:52'
 }
 GLShader >> methodChanged: anEvent [
 
@@ -282,7 +282,7 @@ GLShader >> methodChanged: anEvent [
 
 {
 	#category : #private,
-	#timestamp : 'stlu 2/7/2021 15:32'
+	#'squeak_changestamp' : 'stlu 2/7/2021 15:32'
 }
 GLShader >> setSource: aString [
 
@@ -305,7 +305,7 @@ GLShader >> setSource: aString [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 10/26/2020 13:00'
+	#'squeak_changestamp' : 'stlu 10/26/2020 13:00'
 }
 GLShader >> source [
 
@@ -314,7 +314,7 @@ GLShader >> source [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 2/7/2021 16:41'
+	#'squeak_changestamp' : 'stlu 2/7/2021 16:41'
 }
 GLShader >> source: aString [
 
@@ -324,7 +324,7 @@ GLShader >> source: aString [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 10/28/2020 17:51'
+	#'squeak_changestamp' : 'stlu 10/28/2020 17:51'
 }
 GLShader >> type [
 
@@ -333,7 +333,7 @@ GLShader >> type [
 
 {
 	#category : #'change notification',
-	#timestamp : 'stlu 2/7/2021 16:36'
+	#'squeak_changestamp' : 'stlu 2/7/2021 16:36'
 }
 GLShader >> updateChangeNotification [
 

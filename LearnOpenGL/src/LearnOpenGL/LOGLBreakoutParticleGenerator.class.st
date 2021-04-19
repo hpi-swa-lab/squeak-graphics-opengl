@@ -10,12 +10,12 @@ Class {
 		'lastUsedParticleIndex'
 	],
 	#category : #'LearnOpenGL-Breakout',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 1/8/2021 12:23'
+	#'squeak_changestamp' : 'stlu 1/8/2021 12:23'
 }
 LOGLBreakoutParticleGenerator class >> texture: aTexture amount: numParticles [
 
@@ -28,7 +28,7 @@ LOGLBreakoutParticleGenerator class >> texture: aTexture amount: numParticles [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/6/2021 10:58'
+	#'squeak_changestamp' : 'stlu 1/6/2021 10:58'
 }
 LOGLBreakoutParticleGenerator >> amount [
 
@@ -37,7 +37,7 @@ LOGLBreakoutParticleGenerator >> amount [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/6/2021 10:58'
+	#'squeak_changestamp' : 'stlu 1/6/2021 10:58'
 }
 LOGLBreakoutParticleGenerator >> amount: anObject [
 
@@ -46,7 +46,7 @@ LOGLBreakoutParticleGenerator >> amount: anObject [
 
 {
 	#category : #rendering,
-	#timestamp : 'stlu 3/14/2021 18:05'
+	#'squeak_changestamp' : 'stlu 3/14/2021 18:05'
 }
 LOGLBreakoutParticleGenerator >> draw [
 	"render all particles"
@@ -70,7 +70,7 @@ LOGLBreakoutParticleGenerator >> draw [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/6/2021 12:03'
+	#'squeak_changestamp' : 'stlu 1/6/2021 12:03'
 }
 LOGLBreakoutParticleGenerator >> firstUnusedParticle [
 
@@ -79,7 +79,7 @@ LOGLBreakoutParticleGenerator >> firstUnusedParticle [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/6/2021 12:04'
+	#'squeak_changestamp' : 'stlu 1/6/2021 12:04'
 }
 LOGLBreakoutParticleGenerator >> firstUnusedParticleIndex [
 
@@ -102,7 +102,7 @@ LOGLBreakoutParticleGenerator >> firstUnusedParticleIndex [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 1/8/2021 13:59'
+	#'squeak_changestamp' : 'stlu 1/8/2021 13:59'
 }
 LOGLBreakoutParticleGenerator >> initialize [
 
@@ -131,7 +131,7 @@ LOGLBreakoutParticleGenerator >> initialize [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/6/2021 11:01'
+	#'squeak_changestamp' : 'stlu 1/6/2021 11:01'
 }
 LOGLBreakoutParticleGenerator >> particleQuad [
 
@@ -148,7 +148,7 @@ LOGLBreakoutParticleGenerator >> particleQuad [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/6/2021 11:02'
+	#'squeak_changestamp' : 'stlu 1/6/2021 11:02'
 }
 LOGLBreakoutParticleGenerator >> program [
 
@@ -157,7 +157,7 @@ LOGLBreakoutParticleGenerator >> program [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/6/2021 11:02'
+	#'squeak_changestamp' : 'stlu 1/6/2021 11:02'
 }
 LOGLBreakoutParticleGenerator >> program: anObject [
 
@@ -166,7 +166,7 @@ LOGLBreakoutParticleGenerator >> program: anObject [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/8/2021 13:51'
+	#'squeak_changestamp' : 'stlu 1/8/2021 13:51'
 }
 LOGLBreakoutParticleGenerator >> projection: aMatrix4x4 [
 
@@ -175,7 +175,7 @@ LOGLBreakoutParticleGenerator >> projection: aMatrix4x4 [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/6/2021 10:58'
+	#'squeak_changestamp' : 'stlu 1/6/2021 10:58'
 }
 LOGLBreakoutParticleGenerator >> texture [
 
@@ -184,7 +184,7 @@ LOGLBreakoutParticleGenerator >> texture [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/6/2021 10:58'
+	#'squeak_changestamp' : 'stlu 1/6/2021 10:58'
 }
 LOGLBreakoutParticleGenerator >> texture: anObject [
 
@@ -193,7 +193,7 @@ LOGLBreakoutParticleGenerator >> texture: anObject [
 
 {
 	#category : #updating,
-	#timestamp : 'stlu 1/8/2021 13:38'
+	#'squeak_changestamp' : 'stlu 1/8/2021 13:38'
 }
 LOGLBreakoutParticleGenerator >> update: elapsedSecs object: aGameObject new: newParticles offset: offset [
 
@@ -208,7 +208,7 @@ LOGLBreakoutParticleGenerator >> update: elapsedSecs object: aGameObject new: ne
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/6/2021 10:58'
+	#'squeak_changestamp' : 'stlu 1/6/2021 10:58'
 }
 LOGLBreakoutParticleGenerator >> vao [
 
@@ -217,7 +217,7 @@ LOGLBreakoutParticleGenerator >> vao [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/6/2021 10:58'
+	#'squeak_changestamp' : 'stlu 1/6/2021 10:58'
 }
 LOGLBreakoutParticleGenerator >> vao: anObject [
 

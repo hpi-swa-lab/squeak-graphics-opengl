@@ -6,12 +6,12 @@ Class {
 		'type'
 	],
 	#category : #'OpenGL-FFI-Support',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #'as yet unclassified',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 ExternalArrayType >> asNonPointerType [
 
@@ -23,7 +23,7 @@ ExternalArrayType >> asNonPointerType [
 
 {
 	#category : #'as yet unclassified',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 ExternalArrayType >> byteAlignment [
 
@@ -33,7 +33,7 @@ ExternalArrayType >> byteAlignment [
 
 {
 	#category : #'as yet unclassified',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 ExternalArrayType >> byteSize [
 
@@ -42,7 +42,7 @@ ExternalArrayType >> byteSize [
 
 {
 	#category : #'as yet unclassified',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 ExternalArrayType >> embeddedSpecWithSize: aNumber [
 
@@ -51,7 +51,7 @@ ExternalArrayType >> embeddedSpecWithSize: aNumber [
 
 {
 	#category : #'as yet unclassified',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 ExternalArrayType >> handle: handle at: byteOffset [
 
@@ -60,7 +60,7 @@ ExternalArrayType >> handle: handle at: byteOffset [
 
 {
 	#category : #'as yet unclassified',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 ExternalArrayType >> handle: handle at: byteOffset put: value [
 
@@ -69,7 +69,7 @@ ExternalArrayType >> handle: handle at: byteOffset put: value [
 
 {
 	#category : #'as yet unclassified',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 ExternalArrayType >> isArrayType [
 
@@ -78,7 +78,7 @@ ExternalArrayType >> isArrayType [
 
 {
 	#category : #'as yet unclassified',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 ExternalArrayType >> isAtomic [
 
@@ -87,7 +87,7 @@ ExternalArrayType >> isAtomic [
 
 {
 	#category : #'as yet unclassified',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 ExternalArrayType >> isVoid [
 
@@ -96,7 +96,7 @@ ExternalArrayType >> isVoid [
 
 {
 	#category : #'as yet unclassified',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 ExternalArrayType >> numberOfItems [
 
@@ -105,7 +105,7 @@ ExternalArrayType >> numberOfItems [
 
 {
 	#category : #'as yet unclassified',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 ExternalArrayType >> numberOfItems: aNumber [
 
@@ -114,7 +114,7 @@ ExternalArrayType >> numberOfItems: aNumber [
 
 {
 	#category : #'as yet unclassified',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 ExternalArrayType >> printOn: aStream [
 
@@ -127,7 +127,7 @@ ExternalArrayType >> printOn: aStream [
 
 {
 	#category : #'as yet unclassified',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 ExternalArrayType >> readFieldAt: byteOffset [
 
@@ -149,7 +149,7 @@ ExternalArrayType >> readFieldAt: byteOffset [
 
 {
 	#category : #'as yet unclassified',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 ExternalArrayType >> type: aType [
 
@@ -158,7 +158,7 @@ ExternalArrayType >> type: aType [
 
 {
 	#category : #'as yet unclassified',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 ExternalArrayType >> writeFieldArgName [
 
@@ -167,7 +167,7 @@ ExternalArrayType >> writeFieldArgName [
 
 {
 	#category : #'as yet unclassified',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 ExternalArrayType >> writeFieldAt: byteOffset with: valueName [
 

@@ -13,12 +13,12 @@ Class {
 		'Instances'
 	],
 	#category : #'OpenGL-API',
-	#commentStamp : 'stlu 4/14/2021 14:43'
+	#'squeak_changestamp' : 'stlu 4/14/2021 14:43'
 }
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 4/15/2021 21:58'
+	#'squeak_changestamp' : 'stlu 4/15/2021 21:58'
 }
 GLExternalLibrary class >> context: aContext [
 
@@ -29,7 +29,7 @@ GLExternalLibrary class >> context: aContext [
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 4/16/2021 17:03'
+	#'squeak_changestamp' : 'stlu 4/16/2021 17:03'
 }
 GLExternalLibrary class >> context: aContext moduleName: aString [
 
@@ -41,7 +41,7 @@ GLExternalLibrary class >> context: aContext moduleName: aString [
 
 {
 	#category : #'class initialization',
-	#timestamp : 'stlu 4/15/2021 21:54'
+	#'squeak_changestamp' : 'stlu 4/15/2021 21:54'
 }
 GLExternalLibrary class >> initialize [
 
@@ -51,7 +51,7 @@ GLExternalLibrary class >> initialize [
 
 {
 	#category : #'class initialization',
-	#timestamp : 'stlu 4/16/2021 17:05'
+	#'squeak_changestamp' : 'stlu 4/16/2021 17:05'
 }
 GLExternalLibrary class >> invalidateInstances [
 	"Make sure everybody interacting with an OpenGL library will notice a no longer valid instance."
@@ -69,7 +69,7 @@ GLExternalLibrary class >> invalidateInstances [
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 4/16/2021 17:04'
+	#'squeak_changestamp' : 'stlu 4/16/2021 17:04'
 }
 GLExternalLibrary class >> new [
 
@@ -78,7 +78,7 @@ GLExternalLibrary class >> new [
 
 {
 	#category : #'class initialization',
-	#timestamp : 'stlu 4/15/2021 22:06'
+	#'squeak_changestamp' : 'stlu 4/15/2021 22:06'
 }
 GLExternalLibrary class >> shutDown: quitting [
 
@@ -89,7 +89,7 @@ GLExternalLibrary class >> shutDown: quitting [
 
 {
 	#category : #'dynamic lookup',
-	#timestamp : 'stlu 4/14/2021 17:35'
+	#'squeak_changestamp' : 'stlu 4/14/2021 17:35'
 }
 GLExternalLibrary >> doesNotUnderstand: aMessage [
 
@@ -102,7 +102,7 @@ GLExternalLibrary >> doesNotUnderstand: aMessage [
 
 {
 	#category : #'dynamic lookup',
-	#timestamp : 'stlu 4/15/2021 11:25'
+	#'squeak_changestamp' : 'stlu 4/15/2021 11:25'
 }
 GLExternalLibrary >> install: aSelector [
 
@@ -126,7 +126,7 @@ GLExternalLibrary >> install: aSelector [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 4/14/2021 12:41'
+	#'squeak_changestamp' : 'stlu 4/14/2021 12:41'
 }
 GLExternalLibrary >> moduleName [
 
@@ -135,7 +135,7 @@ GLExternalLibrary >> moduleName [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 4/14/2021 12:41'
+	#'squeak_changestamp' : 'stlu 4/14/2021 12:41'
 }
 GLExternalLibrary >> moduleName: anObject [
 

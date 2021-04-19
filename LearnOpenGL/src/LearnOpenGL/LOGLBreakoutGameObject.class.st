@@ -16,12 +16,12 @@ Class {
 		'sprite'
 	],
 	#category : #'LearnOpenGL-Breakout',
-	#commentStamp : 'stlu 1/6/2021 12:08'
+	#'squeak_changestamp' : 'stlu 1/6/2021 12:08'
 }
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 1/7/2021 15:14'
+	#'squeak_changestamp' : 'stlu 1/7/2021 15:14'
 }
 LOGLBreakoutGameObject class >> position: position extent: extent sprite: aTexture [
 
@@ -34,7 +34,7 @@ LOGLBreakoutGameObject class >> position: position extent: extent sprite: aTextu
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 1/7/2021 15:00'
+	#'squeak_changestamp' : 'stlu 1/7/2021 15:00'
 }
 LOGLBreakoutGameObject class >> position: position extent: extent sprite: aTexture color: aColor [
 
@@ -48,7 +48,7 @@ LOGLBreakoutGameObject class >> position: position extent: extent sprite: aTextu
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 1/6/2021 12:13'
+	#'squeak_changestamp' : 'stlu 1/6/2021 12:13'
 }
 LOGLBreakoutGameObject class >> position: position extent: extent sprite: aTexture color: aColor velocity: velocity [
 
@@ -63,7 +63,7 @@ LOGLBreakoutGameObject class >> position: position extent: extent sprite: aTextu
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/8/2021 09:54'
+	#'squeak_changestamp' : 'stlu 1/8/2021 09:54'
 }
 LOGLBreakoutGameObject >> bounds [
 
@@ -72,7 +72,7 @@ LOGLBreakoutGameObject >> bounds [
 
 {
 	#category : #collisions,
-	#timestamp : 'stlu 1/8/2021 10:01'
+	#'squeak_changestamp' : 'stlu 1/8/2021 10:01'
 }
 LOGLBreakoutGameObject >> collidesWithObject: otherObject [
 
@@ -81,7 +81,7 @@ LOGLBreakoutGameObject >> collidesWithObject: otherObject [
 
 {
 	#category : #collisions,
-	#timestamp : 'stlu 1/8/2021 11:47'
+	#'squeak_changestamp' : 'stlu 1/8/2021 11:47'
 }
 LOGLBreakoutGameObject >> collisionWithBall: ball [
 
@@ -101,7 +101,7 @@ LOGLBreakoutGameObject >> collisionWithBall: ball [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/6/2021 12:10'
+	#'squeak_changestamp' : 'stlu 1/6/2021 12:10'
 }
 LOGLBreakoutGameObject >> color [
 
@@ -110,7 +110,7 @@ LOGLBreakoutGameObject >> color [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/6/2021 12:10'
+	#'squeak_changestamp' : 'stlu 1/6/2021 12:10'
 }
 LOGLBreakoutGameObject >> color: anObject [
 
@@ -119,7 +119,7 @@ LOGLBreakoutGameObject >> color: anObject [
 
 {
 	#category : #rendering,
-	#timestamp : 'stlu 1/6/2021 12:11'
+	#'squeak_changestamp' : 'stlu 1/6/2021 12:11'
 }
 LOGLBreakoutGameObject >> draw: aRenderer [
 
@@ -133,7 +133,7 @@ LOGLBreakoutGameObject >> draw: aRenderer [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/6/2021 12:10'
+	#'squeak_changestamp' : 'stlu 1/6/2021 12:10'
 }
 LOGLBreakoutGameObject >> extent [
 
@@ -142,7 +142,7 @@ LOGLBreakoutGameObject >> extent [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/6/2021 12:10'
+	#'squeak_changestamp' : 'stlu 1/6/2021 12:10'
 }
 LOGLBreakoutGameObject >> extent: anObject [
 
@@ -151,7 +151,7 @@ LOGLBreakoutGameObject >> extent: anObject [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/7/2021 17:41'
+	#'squeak_changestamp' : 'stlu 1/7/2021 17:41'
 }
 LOGLBreakoutGameObject >> height [
 
@@ -160,7 +160,7 @@ LOGLBreakoutGameObject >> height [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 1/6/2021 12:10'
+	#'squeak_changestamp' : 'stlu 1/6/2021 12:10'
 }
 LOGLBreakoutGameObject >> initialize [
 
@@ -176,7 +176,7 @@ LOGLBreakoutGameObject >> initialize [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/6/2021 12:10'
+	#'squeak_changestamp' : 'stlu 1/6/2021 12:10'
 }
 LOGLBreakoutGameObject >> isDestroyed [
 
@@ -185,7 +185,7 @@ LOGLBreakoutGameObject >> isDestroyed [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/6/2021 12:10'
+	#'squeak_changestamp' : 'stlu 1/6/2021 12:10'
 }
 LOGLBreakoutGameObject >> isDestroyed: anObject [
 
@@ -194,7 +194,7 @@ LOGLBreakoutGameObject >> isDestroyed: anObject [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/6/2021 12:10'
+	#'squeak_changestamp' : 'stlu 1/6/2021 12:10'
 }
 LOGLBreakoutGameObject >> isSolid [
 
@@ -203,7 +203,7 @@ LOGLBreakoutGameObject >> isSolid [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/6/2021 12:10'
+	#'squeak_changestamp' : 'stlu 1/6/2021 12:10'
 }
 LOGLBreakoutGameObject >> isSolid: anObject [
 
@@ -212,7 +212,7 @@ LOGLBreakoutGameObject >> isSolid: anObject [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/6/2021 12:10'
+	#'squeak_changestamp' : 'stlu 1/6/2021 12:10'
 }
 LOGLBreakoutGameObject >> position [
 
@@ -221,7 +221,7 @@ LOGLBreakoutGameObject >> position [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/6/2021 12:10'
+	#'squeak_changestamp' : 'stlu 1/6/2021 12:10'
 }
 LOGLBreakoutGameObject >> position: anObject [
 
@@ -230,7 +230,7 @@ LOGLBreakoutGameObject >> position: anObject [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/6/2021 12:10'
+	#'squeak_changestamp' : 'stlu 1/6/2021 12:10'
 }
 LOGLBreakoutGameObject >> rotation [
 
@@ -239,7 +239,7 @@ LOGLBreakoutGameObject >> rotation [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/6/2021 12:10'
+	#'squeak_changestamp' : 'stlu 1/6/2021 12:10'
 }
 LOGLBreakoutGameObject >> rotation: anObject [
 
@@ -248,7 +248,7 @@ LOGLBreakoutGameObject >> rotation: anObject [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/6/2021 12:10'
+	#'squeak_changestamp' : 'stlu 1/6/2021 12:10'
 }
 LOGLBreakoutGameObject >> sprite [
 
@@ -257,7 +257,7 @@ LOGLBreakoutGameObject >> sprite [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/6/2021 12:10'
+	#'squeak_changestamp' : 'stlu 1/6/2021 12:10'
 }
 LOGLBreakoutGameObject >> sprite: anObject [
 
@@ -266,7 +266,7 @@ LOGLBreakoutGameObject >> sprite: anObject [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/6/2021 12:10'
+	#'squeak_changestamp' : 'stlu 1/6/2021 12:10'
 }
 LOGLBreakoutGameObject >> velocity [
 
@@ -275,7 +275,7 @@ LOGLBreakoutGameObject >> velocity [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/6/2021 12:10'
+	#'squeak_changestamp' : 'stlu 1/6/2021 12:10'
 }
 LOGLBreakoutGameObject >> velocity: anObject [
 
@@ -284,7 +284,7 @@ LOGLBreakoutGameObject >> velocity: anObject [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/7/2021 17:41'
+	#'squeak_changestamp' : 'stlu 1/7/2021 17:41'
 }
 LOGLBreakoutGameObject >> width [
 

@@ -5,5 +5,5 @@ Class {
 		'GLConstants'
 	],
 	#category : #'OpenGLObjects-Core',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }

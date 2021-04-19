@@ -11,12 +11,12 @@ Class {
 		'instanceVBO'
 	],
 	#category : #'LearnOpenGL-Advanced',
-	#commentStamp : 'stlu 3/12/2021 20:10'
+	#'squeak_changestamp' : 'stlu 3/12/2021 20:10'
 }
 
 {
 	#category : #shaders,
-	#timestamp : 'stlu 3/12/2021 19:44'
+	#'squeak_changestamp' : 'stlu 3/12/2021 19:44'
 }
 LOGLInstancing >> fragmentShaderSource [
 
@@ -33,7 +33,7 @@ void main()
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 3/12/2021 19:58'
+	#'squeak_changestamp' : 'stlu 3/12/2021 19:58'
 }
 LOGLInstancing >> quadVertices [
 
@@ -50,7 +50,7 @@ LOGLInstancing >> quadVertices [
 
 {
 	#category : #running,
-	#timestamp : 'stlu 4/15/2021 12:10'
+	#'squeak_changestamp' : 'stlu 4/15/2021 12:10'
 }
 LOGLInstancing >> render [
 
@@ -66,7 +66,7 @@ LOGLInstancing >> render [
 
 {
 	#category : #running,
-	#timestamp : 'stlu 4/16/2021 15:33'
+	#'squeak_changestamp' : 'stlu 4/16/2021 15:33'
 }
 LOGLInstancing >> setUp [
 
@@ -107,7 +107,7 @@ LOGLInstancing >> setUp [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 3/12/2021 20:05'
+	#'squeak_changestamp' : 'stlu 3/12/2021 20:05'
 }
 LOGLInstancing >> translations [
 
@@ -123,7 +123,7 @@ LOGLInstancing >> translations [
 
 {
 	#category : #shaders,
-	#timestamp : 'stlu 3/12/2021 19:45'
+	#'squeak_changestamp' : 'stlu 3/12/2021 19:45'
 }
 LOGLInstancing >> vertexShaderSource [
 

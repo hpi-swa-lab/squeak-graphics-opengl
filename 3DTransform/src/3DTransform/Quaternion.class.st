@@ -17,12 +17,12 @@ Class {
 		'QuaternionIdentity'
 	],
 	#category : #'3DTransform-Vectors',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Quaternion class >> a: aValue b: bValue c: cValue d: dValue [
 	^self new a: aValue b: bValue c: cValue d: dValue
@@ -30,7 +30,7 @@ Quaternion class >> a: aValue b: bValue c: cValue d: dValue [
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Quaternion class >> angle: anAngle axis: aVector3 [
 	^self new angle: anAngle axis: aVector3
@@ -38,7 +38,7 @@ Quaternion class >> angle: anAngle axis: aVector3 [
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Quaternion class >> axis: aVector3 angle: anAngle [
 	^self angle: anAngle axis: aVector3
@@ -46,7 +46,7 @@ Quaternion class >> axis: aVector3 angle: anAngle [
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Quaternion class >> from: startVector to: endVector [
 	^self new from: startVector to: endVector
@@ -54,7 +54,7 @@ Quaternion class >> from: startVector to: endVector [
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Quaternion class >> identity [
 	^self new setIdentity
@@ -62,7 +62,7 @@ Quaternion class >> identity [
 
 {
 	#category : #'class initialization',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Quaternion class >> initialize [
 	"Quaternion initialize"
@@ -72,7 +72,7 @@ Quaternion class >> initialize [
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Quaternion class >> numElements [
 	^4
@@ -80,7 +80,7 @@ Quaternion class >> numElements [
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Quaternion class >> radiansAngle: anAngle axis: aVector3 [
 	^self new radiansAngle: anAngle axis: aVector3
@@ -88,7 +88,7 @@ Quaternion class >> radiansAngle: anAngle axis: aVector3 [
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Quaternion class >> x: xValue y: yValue z: zValue a: anAngle [
 	^self new x: xValue y: yValue z: zValue a: anAngle
@@ -96,7 +96,7 @@ Quaternion class >> x: xValue y: yValue z: zValue a: anAngle [
 
 {
 	#category : #arithmetic,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Quaternion >> * aRotation [
 	"Multiplying two rotations is the same as concatenating the two rotations."
@@ -114,7 +114,7 @@ Quaternion >> * aRotation [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Quaternion >> a [
 	^self at: 1
@@ -122,7 +122,7 @@ Quaternion >> a [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Quaternion >> a: aFloat [
 	self at: 1 put: aFloat
@@ -130,7 +130,7 @@ Quaternion >> a: aFloat [
 
 {
 	#category : #initialize,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Quaternion >> a: aValue b: bValue c: cValue d: dValue [
 
@@ -144,7 +144,7 @@ Quaternion >> a: aValue b: bValue c: cValue d: dValue [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Quaternion >> angle [
 	^(self a arcCos * 2.0 radiansToDegrees)
@@ -152,7 +152,7 @@ Quaternion >> angle [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Quaternion >> angle: newAngle [
 	self angle: newAngle axis: self axis
@@ -160,7 +160,7 @@ Quaternion >> angle: newAngle [
 
 {
 	#category : #initialize,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Quaternion >> angle: anAngle axis: aVector3 [
 
@@ -170,7 +170,7 @@ Quaternion >> angle: anAngle axis: aVector3 [
 
 {
 	#category : #converting,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Quaternion >> asMatrix4x4 [
 	"Given a quaternion q = (a, [ b, c , d]) the rotation matrix can be calculated as
@@ -194,7 +194,7 @@ Quaternion >> asMatrix4x4 [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Quaternion >> axis [
 	| sinAngle |
@@ -208,7 +208,7 @@ Quaternion >> axis [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Quaternion >> axis: newAxis [
 	self angle: self angle axis: newAxis
@@ -216,7 +216,7 @@ Quaternion >> axis: newAxis [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Quaternion >> b [
 	^self at: 2
@@ -224,7 +224,7 @@ Quaternion >> b [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Quaternion >> b: aFloat [
 	self at: 2 put: aFloat
@@ -232,7 +232,7 @@ Quaternion >> b: aFloat [
 
 {
 	#category : #private,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Quaternion >> bcd [
 	^Vector3 x: self b y: self c z: self d
@@ -240,7 +240,7 @@ Quaternion >> bcd [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Quaternion >> c [
 	^self at: 3
@@ -248,7 +248,7 @@ Quaternion >> c [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Quaternion >> c: aFloat [
 	self at: 3 put: aFloat
@@ -256,7 +256,7 @@ Quaternion >> c: aFloat [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Quaternion >> d [
 	^self at: 4
@@ -264,7 +264,7 @@ Quaternion >> d [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Quaternion >> d: aFloat [
 	self at: 4 put: aFloat
@@ -272,7 +272,7 @@ Quaternion >> d: aFloat [
 
 {
 	#category : #initialize,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Quaternion >> from: startVector to: endVector [
 	"Create a rotation from startVector to endVector.  Vectors should be normalized first.  Note: doesn't work when vectors are 180 degrees to each other."
@@ -292,7 +292,7 @@ Quaternion >> from: startVector to: endVector [
 
 {
 	#category : #interpolating,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Quaternion >> interpolateTo: aRotation at: t [
 	"Spherical linear interpolation (slerp) from the receiver to aQuaternion"
@@ -301,7 +301,7 @@ Quaternion >> interpolateTo: aRotation at: t [
 
 {
 	#category : #private,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Quaternion >> matrixClass [
 	^Matrix4x4
@@ -309,7 +309,7 @@ Quaternion >> matrixClass [
 
 {
 	#category : #arithmetic,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Quaternion >> normalize [
 	"Normalize the receiver. Note that the actual angle (a) determining the amount of 
@@ -332,7 +332,7 @@ Quaternion >> normalize [
 
 {
 	#category : #converting,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Quaternion >> normalized [
 	^self copy normalize
@@ -340,7 +340,7 @@ Quaternion >> normalized [
 
 {
 	#category : #printing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Quaternion >> printOn: aStream [
 
@@ -355,7 +355,7 @@ Quaternion >> printOn: aStream [
 
 {
 	#category : #initialize,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Quaternion >> radiansAngle: anAngle axis: aVector3 [
 
@@ -368,7 +368,7 @@ Quaternion >> radiansAngle: anAngle axis: aVector3 [
 
 {
 	#category : #arithmetic,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Quaternion >> reversed [
 	"Negating a quaternion is the same as reversing the angle of rotation"
@@ -381,7 +381,7 @@ Quaternion >> reversed [
 
 {
 	#category : #initialize,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Quaternion >> setIdentity [
 	^self loadFrom: QuaternionIdentity
@@ -389,7 +389,7 @@ Quaternion >> setIdentity [
 
 {
 	#category : #interpolating,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Quaternion >> slerpTo: aRotation at: t [
 	"Spherical linear interpolation (slerp) from the receiver to aQuaternion"
@@ -398,7 +398,7 @@ Quaternion >> slerpTo: aRotation at: t [
 
 {
 	#category : #interpolating,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Quaternion >> slerpTo: aRotation at: t extraSpins: spin [
 	"Sperical Linear Interpolation (slerp).
@@ -437,7 +437,7 @@ Quaternion >> slerpTo: aRotation at: t extraSpins: spin [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Quaternion >> turns [
 	"Answer the number of turns"
@@ -446,7 +446,7 @@ Quaternion >> turns [
 
 {
 	#category : #initialize,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Quaternion >> x: xValue y: yValue z: zValue a: anAngle [
 

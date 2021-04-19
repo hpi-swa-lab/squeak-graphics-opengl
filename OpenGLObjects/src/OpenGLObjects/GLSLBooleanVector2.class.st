@@ -2,12 +2,12 @@ Class {
 	#name : #GLSLBooleanVector2,
 	#superclass : #GLSLVector,
 	#category : #'OpenGLObjects-Types',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/15/2020 13:04'
+	#'squeak_changestamp' : 'stlu 12/15/2020 13:04'
 }
 GLSLBooleanVector2 class >> componentType [
 
@@ -16,7 +16,7 @@ GLSLBooleanVector2 class >> componentType [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/15/2020 13:04'
+	#'squeak_changestamp' : 'stlu 12/15/2020 13:04'
 }
 GLSLBooleanVector2 class >> declarators [
 
@@ -25,7 +25,7 @@ GLSLBooleanVector2 class >> declarators [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/15/2020 13:04'
+	#'squeak_changestamp' : 'stlu 12/15/2020 13:04'
 }
 GLSLBooleanVector2 class >> enum [
 
@@ -34,7 +34,7 @@ GLSLBooleanVector2 class >> enum [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/15/2020 13:04'
+	#'squeak_changestamp' : 'stlu 12/15/2020 13:04'
 }
 GLSLBooleanVector2 class >> enumName [
 
@@ -43,7 +43,7 @@ GLSLBooleanVector2 class >> enumName [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/15/2020 13:04'
+	#'squeak_changestamp' : 'stlu 12/15/2020 13:04'
 }
 GLSLBooleanVector2 class >> numComponents [
 
@@ -52,7 +52,7 @@ GLSLBooleanVector2 class >> numComponents [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/15/2020 13:04'
+	#'squeak_changestamp' : 'stlu 12/15/2020 13:04'
 }
 GLSLBooleanVector2 class >> squeakName [
 
