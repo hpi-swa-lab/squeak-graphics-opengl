@@ -14,8 +14,7 @@ Class {
 	#pools : [
 		'GLFWConstants'
 	],
-	#category : #'GLFW-Core',
-	#'squeak_changestamp' : 'stlu 2/12/2021 21:09'
+	#category : #'GLFW-Core'
 }
 
 {
@@ -38,28 +37,8 @@ GLFWLibrary class >> compileConstantAccessors [
 ]
 
 {
-	#category : #'instance management',
-	#'squeak_changestamp' : 'stlu 4/16/2021 14:42'
-}
-GLFWLibrary class >> example [
-	" self example "
-	| window context |
-	window := GLFWWindow extent: 100 asPoint title: 'My pretty window'.
-	window ifNil: [^ self error: 'GLFW Error'].
-	context := window context.
-	
-	[context library makeCurrentDuring: [
-		[window shouldClose] whileFalse: [
-			GL clear: GL COLOR_BUFFER_BIT.
-			"your OpenGL code here"
-			context swapBuffers.
-			GLFW pollEvents]]
-	] ensure: [context destroy]
-]
-
-{
 	#category : #examples,
-	#'squeak_changestamp' : 'stlu 1/6/2021 14:00'
+	#'squeak_changestamp' : 'stlu 4/19/2021 12:19'
 }
 GLFWLibrary class >> example1 [ "self example1"
 	"A minimal GLFW example window. Dismiss by clicking anywhere inside Squeak.
@@ -67,10 +46,33 @@ GLFWLibrary class >> example1 [ "self example1"
 	| window |
 	window := GLFWWindow
 					extent: 400 @ 400
-					title: 'GLFW example1'.
+					title: self name , ' example1'.
 	window ifNil: [^ self error: 'GLFW Error'].
 	[[Sensor anyButtonPressed] whileFalse]
 		ensure: [window destroy]
+]
+
+{
+	#category : #examples,
+	#'squeak_changestamp' : 'stlu 4/19/2021 12:19'
+}
+GLFWLibrary class >> example2 [ "self example2"
+	"A minimal OpenGL example with GLFW."
+	| window context |
+	window := GLFWWindow
+					extent: 400 @ 400
+					title: self name , ' example2'.
+	window ifNil: [^ self error: 'GLFW Error'].
+	context := window context.
+	
+	[context library makeCurrentDuring: [
+		GL clearColor: Color red.
+		[window shouldClose] whileFalse: [
+			GL clear: GL COLOR_BUFFER_BIT.
+			"your OpenGL code here"
+			context swapBuffers.
+			GLFW pollEvents]]
+	] ensure: [context destroy]
 ]
 
 {

@@ -8,8 +8,7 @@ Class {
 		'length',
 		'command'
 	],
-	#category : #'OpenGL-Generation',
-	#'squeak_changestamp' : ''
+	#category : #'OpenGL-Generation'
 }
 
 {

@@ -11,8 +11,7 @@ Class {
 		'type',
 		'typeSuffix'
 	],
-	#category : #'OpenGL-Generation',
-	#'squeak_changestamp' : ''
+	#category : #'OpenGL-Generation'
 }
 
 {

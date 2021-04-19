@@ -1,8 +1,7 @@
 Class {
 	#name : #GLES10,
 	#superclass : #GLVersion,
-	#category : #'OpenGL-Versions',
-	#'squeak_changestamp' : ''
+	#category : #'OpenGL-Versions'
 }
 
 {

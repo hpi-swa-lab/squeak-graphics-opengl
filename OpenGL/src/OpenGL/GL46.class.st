@@ -1,8 +1,7 @@
 Class {
 	#name : #GL46,
 	#superclass : #GL45,
-	#category : #'OpenGL-Versions',
-	#'squeak_changestamp' : ''
+	#category : #'OpenGL-Versions'
 }
 
 {

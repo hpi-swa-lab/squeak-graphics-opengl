@@ -5,8 +5,7 @@ Class {
 		'numberOfItems',
 		'type'
 	],
-	#category : #'OpenGL-FFI-Support',
-	#'squeak_changestamp' : ''
+	#category : #'OpenGL-FFI-Support'
 }
 
 {

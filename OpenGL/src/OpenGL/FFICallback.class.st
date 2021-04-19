@@ -11,8 +11,7 @@ Class {
 	#classVars : [
 		'ThunkToCallbackMap'
 	],
-	#category : #'OpenGL-FFI-Support',
-	#'squeak_changestamp' : ''
+	#category : #'OpenGL-FFI-Support'
 }
 
 {

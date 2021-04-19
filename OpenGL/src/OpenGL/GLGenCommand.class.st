@@ -6,8 +6,7 @@ Class {
 		'returnType',
 		'returnGroup'
 	],
-	#category : #'OpenGL-Generation',
-	#'squeak_changestamp' : ''
+	#category : #'OpenGL-Generation'
 }
 
 {

@@ -7,8 +7,7 @@ Class {
 	#pools : [
 		'GLFWConstants'
 	],
-	#category : #'GLFW-OpenGL',
-	#'squeak_changestamp' : ''
+	#category : #'GLFW-OpenGL'
 }
 
 {

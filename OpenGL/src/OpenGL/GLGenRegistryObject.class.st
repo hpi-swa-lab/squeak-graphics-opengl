@@ -9,8 +9,7 @@ Class {
 	#classVars : [
 		'Suffixes'
 	],
-	#category : #'OpenGL-Generation',
-	#'squeak_changestamp' : ''
+	#category : #'OpenGL-Generation'
 }
 
 {

@@ -4,8 +4,7 @@ Class {
 	#instVars : [
 		'generatedMethods'
 	],
-	#category : #'OpenGL-Generation',
-	#'squeak_changestamp' : ''
+	#category : #'OpenGL-Generation'
 }
 
 {

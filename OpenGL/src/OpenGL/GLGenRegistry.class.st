@@ -19,8 +19,7 @@ Class {
 		'types',
 		'extensions'
 	],
-	#category : #'OpenGL-Generation',
-	#'squeak_changestamp' : 'stlu 11/6/2020 17:57'
+	#category : #'OpenGL-Generation'
 }
 
 {

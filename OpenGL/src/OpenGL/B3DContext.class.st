@@ -4,8 +4,7 @@ Class {
 	#instVars : [
 		'renderer'
 	],
-	#category : #'OpenGL-Core',
-	#'squeak_changestamp' : ''
+	#category : #'OpenGL-Core'
 }
 
 {

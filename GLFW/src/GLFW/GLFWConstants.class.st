@@ -313,8 +313,7 @@ Class {
 		'GLFW_X11_CLASS_NAME',
 		'GLFW_X11_INSTANCE_NAME'
 	],
-	#category : #'GLFW-Core',
-	#'squeak_changestamp' : ''
+	#category : #'GLFW-Core'
 }
 
 {

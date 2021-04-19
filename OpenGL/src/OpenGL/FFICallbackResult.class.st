@@ -1,8 +1,7 @@
 Class {
 	#name : #FFICallbackResult,
 	#superclass : #ExternalUnion,
-	#category : #'OpenGL-FFI-Support',
-	#'squeak_changestamp' : ''
+	#category : #'OpenGL-FFI-Support'
 }
 
 {

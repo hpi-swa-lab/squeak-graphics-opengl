@@ -4,8 +4,7 @@ Class {
 	#pools : [
 		'GLFWConstants'
 	],
-	#category : #'GLFW-Core',
-	#'squeak_changestamp' : ''
+	#category : #'GLFW-Core'
 }
 
 {

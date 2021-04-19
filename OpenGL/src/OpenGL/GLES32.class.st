@@ -1,8 +1,7 @@
 Class {
 	#name : #GLES32,
 	#superclass : #GLES31,
-	#category : #'OpenGL-Versions',
-	#'squeak_changestamp' : ''
+	#category : #'OpenGL-Versions'
 }
 
 {

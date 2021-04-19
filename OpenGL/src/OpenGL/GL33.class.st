@@ -1,8 +1,7 @@
 Class {
 	#name : #GL33,
 	#superclass : #GL32,
-	#category : #'OpenGL-Versions',
-	#'squeak_changestamp' : ''
+	#category : #'OpenGL-Versions'
 }
 
 {

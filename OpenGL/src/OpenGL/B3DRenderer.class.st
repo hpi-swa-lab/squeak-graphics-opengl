@@ -4,8 +4,7 @@ Class {
 	#instVars : [
 		'handle'
 	],
-	#category : #'OpenGL-Core',
-	#'squeak_changestamp' : ''
+	#category : #'OpenGL-Core'
 }
 
 {

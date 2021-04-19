@@ -15,8 +15,7 @@ Class {
 	#pools : [
 		'GLConstants'
 	],
-	#category : #'OpenGL-API',
-	#'squeak_changestamp' : 'stlu 4/14/2021 14:48'
+	#category : #'OpenGL-API'
 }
 
 {
