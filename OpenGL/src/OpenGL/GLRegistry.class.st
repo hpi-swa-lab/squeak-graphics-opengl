@@ -35,7 +35,7 @@ GLRegistry >> ABGR_EXT [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> ACCUM [
@@ -69,7 +69,7 @@ GLRegistry >> ACCUM_ADJACENT_PAIRS_NV [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> ACCUM_ALPHA_BITS [
@@ -85,7 +85,7 @@ GLRegistry >> ACCUM_ALPHA_BITS [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> ACCUM_BLUE_BITS [
@@ -101,7 +101,7 @@ GLRegistry >> ACCUM_BLUE_BITS [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:32'
 }
 GLRegistry >> ACCUM_BUFFER_BIT [
@@ -117,7 +117,7 @@ GLRegistry >> ACCUM_BUFFER_BIT [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> ACCUM_CLEAR_VALUE [
@@ -133,7 +133,7 @@ GLRegistry >> ACCUM_CLEAR_VALUE [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> ACCUM_GREEN_BITS [
@@ -149,7 +149,7 @@ GLRegistry >> ACCUM_GREEN_BITS [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> ACCUM_RED_BITS [
@@ -532,7 +532,7 @@ GLRegistry >> ACTIVE_VERTEX_UNITS_ARB [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> ADD [
@@ -580,7 +580,7 @@ GLRegistry >> ADD_BLEND_IMG [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> ADD_SIGNED [
@@ -701,7 +701,7 @@ GLRegistry >> ALIASED_LINE_WIDTH_RANGE [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> ALIASED_POINT_SIZE_RANGE [
@@ -784,7 +784,7 @@ GLRegistry >> ALLOW_DRAW_WIN_HINT_PGI [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:32'
 }
 GLRegistry >> ALL_ATTRIB_BITS [
@@ -935,7 +935,7 @@ GLRegistry >> ALPHA [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:32'
 }
 GLRegistry >> ALPHA12 [
@@ -967,7 +967,7 @@ GLRegistry >> ALPHA12_EXT [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> ALPHA16 [
@@ -1139,7 +1139,7 @@ GLRegistry >> ALPHA32UI_EXT [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> ALPHA4 [
@@ -1171,7 +1171,7 @@ GLRegistry >> ALPHA4_EXT [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> ALPHA8 [
@@ -1268,7 +1268,7 @@ GLRegistry >> ALPHA8_SNORM [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> ALPHA_BIAS [
@@ -1284,7 +1284,7 @@ GLRegistry >> ALPHA_BIAS [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> ALPHA_BITS [
@@ -1363,7 +1363,7 @@ GLRegistry >> ALPHA_FLOAT32_ATI [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> ALPHA_INTEGER [
@@ -1472,7 +1472,7 @@ GLRegistry >> ALPHA_REF_COMMAND_NV [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> ALPHA_SCALE [
@@ -1503,7 +1503,7 @@ GLRegistry >> ALPHA_SNORM [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> ALPHA_TEST [
@@ -1520,7 +1520,7 @@ GLRegistry >> ALPHA_TEST [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> ALPHA_TEST_FUNC [
@@ -1569,7 +1569,7 @@ GLRegistry >> ALPHA_TEST_QCOM [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:32'
 }
 GLRegistry >> ALPHA_TEST_REF [
@@ -1746,7 +1746,7 @@ GLRegistry >> ALWAYS_SOFT_HINT_PGI [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> AMBIENT [
@@ -1763,7 +1763,7 @@ GLRegistry >> AMBIENT [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:32'
 }
 GLRegistry >> AMBIENT_AND_DIFFUSE [
@@ -2657,7 +2657,7 @@ GLRegistry >> ATTRIB_ARRAY_TYPE_NV [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> ATTRIB_STACK_DEPTH [
@@ -2690,7 +2690,7 @@ GLRegistry >> AUTO_GENERATE_MIPMAP [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> AUTO_NORMAL [
@@ -2706,7 +2706,7 @@ GLRegistry >> AUTO_NORMAL [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> AUX0 [
@@ -2722,7 +2722,7 @@ GLRegistry >> AUX0 [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> AUX1 [
@@ -2738,7 +2738,7 @@ GLRegistry >> AUX1 [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> AUX2 [
@@ -2754,7 +2754,7 @@ GLRegistry >> AUX2 [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> AUX3 [
@@ -2770,7 +2770,7 @@ GLRegistry >> AUX3 [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> AUX_BUFFERS [
@@ -3216,7 +3216,7 @@ GLRegistry >> BINORMAL_ARRAY_TYPE_EXT [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:32'
 }
 GLRegistry >> BITMAP [
@@ -3232,7 +3232,7 @@ GLRegistry >> BITMAP [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:32'
 }
 GLRegistry >> BITMAP_TOKEN [
@@ -3815,7 +3815,7 @@ GLRegistry >> BLUE [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> BLUE_BIAS [
@@ -3831,7 +3831,7 @@ GLRegistry >> BLUE_BIAS [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> BLUE_BITS [
@@ -3943,7 +3943,7 @@ GLRegistry >> BLUE_NV [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> BLUE_SCALE [
@@ -4790,7 +4790,7 @@ GLRegistry >> BYTE [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> C3F_V3F [
@@ -4806,7 +4806,7 @@ GLRegistry >> C3F_V3F [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> C4F_N3F_V3F [
@@ -4822,7 +4822,7 @@ GLRegistry >> C4F_N3F_V3F [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:32'
 }
 GLRegistry >> C4UB_V2F [
@@ -4838,7 +4838,7 @@ GLRegistry >> C4UB_V2F [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> C4UB_V3F [
@@ -4963,7 +4963,7 @@ GLRegistry >> CIRCULAR_TANGENT_ARC_TO_NV [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:32'
 }
 GLRegistry >> CLAMP [
@@ -4979,7 +4979,7 @@ GLRegistry >> CLAMP [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> CLAMP_FRAGMENT_COLOR [
@@ -5170,7 +5170,7 @@ GLRegistry >> CLAMP_TO_EDGE_SGIS [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> CLAMP_VERTEX_COLOR [
@@ -5251,7 +5251,7 @@ GLRegistry >> CLEAR_TEXTURE [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> CLIENT_ACTIVE_TEXTURE [
@@ -5282,7 +5282,7 @@ GLRegistry >> CLIENT_ACTIVE_TEXTURE_ARB [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> CLIENT_ALL_ATTRIB_BITS [
@@ -5298,7 +5298,7 @@ GLRegistry >> CLIENT_ALL_ATTRIB_BITS [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> CLIENT_ATTRIB_STACK_DEPTH [
@@ -5347,7 +5347,7 @@ GLRegistry >> CLIENT_MAPPED_BUFFER_BARRIER_BIT_EXT [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> CLIENT_PIXEL_STORE_BIT [
@@ -5396,7 +5396,7 @@ GLRegistry >> CLIENT_STORAGE_BIT_EXT [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> CLIENT_VERTEX_ARRAY_BIT [
@@ -5965,7 +5965,7 @@ GLRegistry >> CLIP_ORIGIN_EXT [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> CLIP_PLANE0 [
@@ -5998,7 +5998,7 @@ GLRegistry >> CLIP_PLANE0_IMG [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:32'
 }
 GLRegistry >> CLIP_PLANE1 [
@@ -6031,7 +6031,7 @@ GLRegistry >> CLIP_PLANE1_IMG [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> CLIP_PLANE2 [
@@ -6064,7 +6064,7 @@ GLRegistry >> CLIP_PLANE2_IMG [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> CLIP_PLANE3 [
@@ -6097,7 +6097,7 @@ GLRegistry >> CLIP_PLANE3_IMG [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:32'
 }
 GLRegistry >> CLIP_PLANE4 [
@@ -6130,7 +6130,7 @@ GLRegistry >> CLIP_PLANE4_IMG [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> CLIP_PLANE5 [
@@ -6261,7 +6261,7 @@ GLRegistry >> CND_ATI [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> COEFF [
@@ -6436,7 +6436,7 @@ GLRegistry >> COLOR_ALPHA_PAIRING_ATI [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> COLOR_ARRAY [
@@ -6469,7 +6469,7 @@ GLRegistry >> COLOR_ARRAY_ADDRESS_NV [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> COLOR_ARRAY_BUFFER_BINDING [
@@ -6592,7 +6592,7 @@ GLRegistry >> COLOR_ARRAY_PARALLEL_POINTERS_INTEL [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> COLOR_ARRAY_POINTER [
@@ -6625,7 +6625,7 @@ GLRegistry >> COLOR_ARRAY_POINTER_EXT [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> COLOR_ARRAY_SIZE [
@@ -6657,7 +6657,7 @@ GLRegistry >> COLOR_ARRAY_SIZE_EXT [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> COLOR_ARRAY_STRIDE [
@@ -6689,7 +6689,7 @@ GLRegistry >> COLOR_ARRAY_STRIDE_EXT [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> COLOR_ARRAY_TYPE [
@@ -8094,7 +8094,7 @@ GLRegistry >> COLOR_FLOAT_APPLE [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> COLOR_INDEX [
@@ -8200,7 +8200,7 @@ GLRegistry >> COLOR_INDEX8_EXT [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> COLOR_INDEXES [
@@ -8232,7 +8232,7 @@ GLRegistry >> COLOR_LOGIC_OP [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> COLOR_MATERIAL [
@@ -8249,7 +8249,7 @@ GLRegistry >> COLOR_MATERIAL [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:32'
 }
 GLRegistry >> COLOR_MATERIAL_FACE [
@@ -8265,7 +8265,7 @@ GLRegistry >> COLOR_MATERIAL_FACE [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:32'
 }
 GLRegistry >> COLOR_MATERIAL_PARAMETER [
@@ -8376,7 +8376,7 @@ GLRegistry >> COLOR_SAMPLES_NV [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> COLOR_SUM [
@@ -8798,7 +8798,7 @@ GLRegistry >> COLOR_WRITEMASK [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:32'
 }
 GLRegistry >> COMBINE [
@@ -9126,7 +9126,7 @@ GLRegistry >> COMBINER_SUM_OUTPUT_NV [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> COMBINE_ALPHA [
@@ -9207,7 +9207,7 @@ GLRegistry >> COMBINE_EXT [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> COMBINE_RGB [
@@ -9337,7 +9337,7 @@ GLRegistry >> COMPARE_REF_TO_TEXTURE_EXT [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> COMPARE_R_TO_TEXTURE [
@@ -9388,7 +9388,7 @@ GLRegistry >> COMPATIBLE_SUBROUTINES [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> COMPILE [
@@ -9404,7 +9404,7 @@ GLRegistry >> COMPILE [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> COMPILE_AND_EXECUTE [
@@ -9471,7 +9471,7 @@ GLRegistry >> COMPLETION_STATUS_KHR [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> COMPRESSED_ALPHA [
@@ -9501,7 +9501,7 @@ GLRegistry >> COMPRESSED_ALPHA_ARB [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> COMPRESSED_INTENSITY [
@@ -9531,7 +9531,7 @@ GLRegistry >> COMPRESSED_INTENSITY_ARB [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:32'
 }
 GLRegistry >> COMPRESSED_LUMINANCE [
@@ -9546,7 +9546,7 @@ GLRegistry >> COMPRESSED_LUMINANCE [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> COMPRESSED_LUMINANCE_ALPHA [
@@ -11170,7 +11170,7 @@ GLRegistry >> COMPRESSED_SIGNED_RG_RGTC2 [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> COMPRESSED_SLUMINANCE [
@@ -11185,7 +11185,7 @@ GLRegistry >> COMPRESSED_SLUMINANCE [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> COMPRESSED_SLUMINANCE_ALPHA [
@@ -12803,7 +12803,7 @@ GLRegistry >> CONSERVE_MEMORY_HINT_PGI [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> CONSTANT [
@@ -12872,7 +12872,7 @@ GLRegistry >> CONSTANT_ARB [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> CONSTANT_ATTENUATION [
@@ -14208,7 +14208,7 @@ GLRegistry >> CON_9_ATI [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> COORD_REPLACE [
@@ -14300,7 +14300,7 @@ GLRegistry >> COPY_INVERTED [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> COPY_PIXEL_TOKEN [
@@ -14939,7 +14939,7 @@ GLRegistry >> CURRENT_BINORMAL_EXT [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:32'
 }
 GLRegistry >> CURRENT_BIT [
@@ -14955,7 +14955,7 @@ GLRegistry >> CURRENT_BIT [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> CURRENT_COLOR [
@@ -14972,7 +14972,7 @@ GLRegistry >> CURRENT_COLOR [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:32'
 }
 GLRegistry >> CURRENT_FOG_COORD [
@@ -14988,7 +14988,7 @@ GLRegistry >> CURRENT_FOG_COORD [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> CURRENT_FOG_COORDINATE [
@@ -15019,7 +15019,7 @@ GLRegistry >> CURRENT_FOG_COORDINATE_EXT [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> CURRENT_INDEX [
@@ -15112,7 +15112,7 @@ GLRegistry >> CURRENT_MATRIX_STACK_DEPTH_NV [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> CURRENT_NORMAL [
@@ -15238,7 +15238,7 @@ GLRegistry >> CURRENT_QUERY_EXT [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:32'
 }
 GLRegistry >> CURRENT_RASTER_COLOR [
@@ -15254,7 +15254,7 @@ GLRegistry >> CURRENT_RASTER_COLOR [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> CURRENT_RASTER_DISTANCE [
@@ -15270,7 +15270,7 @@ GLRegistry >> CURRENT_RASTER_DISTANCE [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> CURRENT_RASTER_INDEX [
@@ -15301,7 +15301,7 @@ GLRegistry >> CURRENT_RASTER_NORMAL_SGIX [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> CURRENT_RASTER_POSITION [
@@ -15317,7 +15317,7 @@ GLRegistry >> CURRENT_RASTER_POSITION [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> CURRENT_RASTER_POSITION_VALID [
@@ -15333,7 +15333,7 @@ GLRegistry >> CURRENT_RASTER_POSITION_VALID [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> CURRENT_RASTER_SECONDARY_COLOR [
@@ -15348,7 +15348,7 @@ GLRegistry >> CURRENT_RASTER_SECONDARY_COLOR [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> CURRENT_RASTER_TEXTURE_COORDS [
@@ -15364,7 +15364,7 @@ GLRegistry >> CURRENT_RASTER_TEXTURE_COORDS [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> CURRENT_SECONDARY_COLOR [
@@ -15409,7 +15409,7 @@ GLRegistry >> CURRENT_TANGENT_EXT [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> CURRENT_TEXTURE_COORDS [
@@ -17018,7 +17018,7 @@ GLRegistry >> DEBUG_TYPE_UNDEFINED_BEHAVIOR_KHR [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> DECAL [
@@ -17397,7 +17397,7 @@ GLRegistry >> DEPTH_ATTACHMENT_OES [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> DEPTH_BIAS [
@@ -17413,7 +17413,7 @@ GLRegistry >> DEPTH_BIAS [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> DEPTH_BITS [
@@ -18145,7 +18145,7 @@ GLRegistry >> DEPTH_SAMPLES_NV [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> DEPTH_SCALE [
@@ -18327,7 +18327,7 @@ GLRegistry >> DEPTH_TEST [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> DEPTH_TEXTURE_MODE [
@@ -18611,7 +18611,7 @@ GLRegistry >> DIFFERENCE_NV [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:32'
 }
 GLRegistry >> DIFFUSE [
@@ -18808,7 +18808,7 @@ GLRegistry >> DMP_PROGRAM_BINARY_DMP [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> DOMAIN [
@@ -18874,7 +18874,7 @@ GLRegistry >> DOT3_ATI [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> DOT3_RGB [
@@ -18890,7 +18890,7 @@ GLRegistry >> DOT3_RGB [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:32'
 }
 GLRegistry >> DOT3_RGBA [
@@ -21235,7 +21235,7 @@ GLRegistry >> DRAW_PIXELS_APPLE [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> DRAW_PIXEL_TOKEN [
@@ -22026,7 +22026,7 @@ GLRegistry >> EDGEFLAG_BIT_PGI [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:32'
 }
 GLRegistry >> EDGE_FLAG [
@@ -22042,7 +22042,7 @@ GLRegistry >> EDGE_FLAG [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:32'
 }
 GLRegistry >> EDGE_FLAG_ARRAY [
@@ -22074,7 +22074,7 @@ GLRegistry >> EDGE_FLAG_ARRAY_ADDRESS_NV [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> EDGE_FLAG_ARRAY_BUFFER_BINDING [
@@ -22181,7 +22181,7 @@ GLRegistry >> EDGE_FLAG_ARRAY_LIST_STRIDE_IBM [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> EDGE_FLAG_ARRAY_POINTER [
@@ -22213,7 +22213,7 @@ GLRegistry >> EDGE_FLAG_ARRAY_POINTER_EXT [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> EDGE_FLAG_ARRAY_STRIDE [
@@ -22580,7 +22580,7 @@ GLRegistry >> EMBOSS_MAP_NV [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:32'
 }
 GLRegistry >> EMISSION [
@@ -22597,7 +22597,7 @@ GLRegistry >> EMISSION [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> ENABLE_BIT [
@@ -22699,7 +22699,7 @@ GLRegistry >> EVAL_2D_NV [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:32'
 }
 GLRegistry >> EVAL_BIT [
@@ -23051,7 +23051,7 @@ GLRegistry >> EXCLUSIVE_EXT [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:32'
 }
 GLRegistry >> EXP [
@@ -23068,7 +23068,7 @@ GLRegistry >> EXP [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> EXP2 [
@@ -23198,7 +23198,7 @@ GLRegistry >> EYE_DISTANCE_TO_POINT_SGIS [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:32'
 }
 GLRegistry >> EYE_LINEAR [
@@ -23245,7 +23245,7 @@ GLRegistry >> EYE_LINE_SGIS [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> EYE_PLANE [
@@ -23425,7 +23425,7 @@ GLRegistry >> FASTEST [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> FEEDBACK [
@@ -23441,7 +23441,7 @@ GLRegistry >> FEEDBACK [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> FEEDBACK_BUFFER_POINTER [
@@ -23457,7 +23457,7 @@ GLRegistry >> FEEDBACK_BUFFER_POINTER [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> FEEDBACK_BUFFER_SIZE [
@@ -23473,7 +23473,7 @@ GLRegistry >> FEEDBACK_BUFFER_SIZE [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> FEEDBACK_BUFFER_TYPE [
@@ -23835,7 +23835,7 @@ GLRegistry >> FIXED_ONLY_ARB [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> FLAT [
@@ -24716,7 +24716,7 @@ GLRegistry >> FLOAT_VEC4_ARB [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> FOG [
@@ -24734,7 +24734,7 @@ GLRegistry >> FOG [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> FOG_BIT [
@@ -24750,7 +24750,7 @@ GLRegistry >> FOG_BIT [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> FOG_COLOR [
@@ -24767,7 +24767,7 @@ GLRegistry >> FOG_COLOR [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> FOG_COORD [
@@ -24783,7 +24783,7 @@ GLRegistry >> FOG_COORD [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> FOG_COORDINATE [
@@ -24799,7 +24799,7 @@ GLRegistry >> FOG_COORDINATE [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> FOG_COORDINATE_ARRAY [
@@ -24815,7 +24815,7 @@ GLRegistry >> FOG_COORDINATE_ARRAY [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> FOG_COORDINATE_ARRAY_BUFFER_BINDING [
@@ -24891,7 +24891,7 @@ GLRegistry >> FOG_COORDINATE_ARRAY_LIST_STRIDE_IBM [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:32'
 }
 GLRegistry >> FOG_COORDINATE_ARRAY_POINTER [
@@ -24922,7 +24922,7 @@ GLRegistry >> FOG_COORDINATE_ARRAY_POINTER_EXT [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:32'
 }
 GLRegistry >> FOG_COORDINATE_ARRAY_STRIDE [
@@ -24953,7 +24953,7 @@ GLRegistry >> FOG_COORDINATE_ARRAY_STRIDE_EXT [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> FOG_COORDINATE_ARRAY_TYPE [
@@ -24999,7 +24999,7 @@ GLRegistry >> FOG_COORDINATE_EXT [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:32'
 }
 GLRegistry >> FOG_COORDINATE_SOURCE [
@@ -25030,7 +25030,7 @@ GLRegistry >> FOG_COORDINATE_SOURCE_EXT [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> FOG_COORD_ARRAY [
@@ -25062,7 +25062,7 @@ GLRegistry >> FOG_COORD_ARRAY_ADDRESS_NV [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> FOG_COORD_ARRAY_BUFFER_BINDING [
@@ -25094,7 +25094,7 @@ GLRegistry >> FOG_COORD_ARRAY_LENGTH_NV [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> FOG_COORD_ARRAY_POINTER [
@@ -25110,7 +25110,7 @@ GLRegistry >> FOG_COORD_ARRAY_POINTER [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> FOG_COORD_ARRAY_STRIDE [
@@ -25126,7 +25126,7 @@ GLRegistry >> FOG_COORD_ARRAY_STRIDE [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> FOG_COORD_ARRAY_TYPE [
@@ -25142,7 +25142,7 @@ GLRegistry >> FOG_COORD_ARRAY_TYPE [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:32'
 }
 GLRegistry >> FOG_COORD_SRC [
@@ -25159,7 +25159,7 @@ GLRegistry >> FOG_COORD_SRC [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> FOG_DENSITY [
@@ -25191,7 +25191,7 @@ GLRegistry >> FOG_DISTANCE_MODE_NV [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:32'
 }
 GLRegistry >> FOG_END [
@@ -25240,7 +25240,7 @@ GLRegistry >> FOG_FUNC_SGIS [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> FOG_HINT [
@@ -25257,7 +25257,7 @@ GLRegistry >> FOG_HINT [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> FOG_INDEX [
@@ -25273,7 +25273,7 @@ GLRegistry >> FOG_INDEX [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:32'
 }
 GLRegistry >> FOG_MODE [
@@ -25337,7 +25337,7 @@ GLRegistry >> FOG_SPECULAR_TEXTURE_WIN [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> FOG_START [
@@ -26016,7 +26016,7 @@ GLRegistry >> FRAGMENT_COVERAGE_TO_COLOR_NV [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> FRAGMENT_DEPTH [
@@ -28844,7 +28844,7 @@ GLRegistry >> GCCSO_SHADER_BINARY_FJ [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> GENERATE_MIPMAP [
@@ -28861,7 +28861,7 @@ GLRegistry >> GENERATE_MIPMAP [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> GENERATE_MIPMAP_HINT [
@@ -29746,7 +29746,7 @@ GLRegistry >> GL_1PASS_SGIS [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> GL_2D [
@@ -29842,7 +29842,7 @@ GLRegistry >> GL_2X_BIT_ATI [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> GL_2_BYTES [
@@ -29873,7 +29873,7 @@ GLRegistry >> GL_2_BYTES_NV [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:32'
 }
 GLRegistry >> GL_3D [
@@ -29921,7 +29921,7 @@ GLRegistry >> GL_3DC_X_AMD [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> GL_3D_COLOR [
@@ -29937,7 +29937,7 @@ GLRegistry >> GL_3D_COLOR [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> GL_3D_COLOR_TEXTURE [
@@ -29953,7 +29953,7 @@ GLRegistry >> GL_3D_COLOR_TEXTURE [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> GL_3_BYTES [
@@ -30044,7 +30044,7 @@ GLRegistry >> GL_422_REV_EXT [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> GL_4D_COLOR_TEXTURE [
@@ -30204,7 +30204,7 @@ GLRegistry >> GL_4X_BIT_ATI [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> GL_4_BYTES [
@@ -30407,7 +30407,7 @@ GLRegistry >> GREEN [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> GREEN_BIAS [
@@ -30423,7 +30423,7 @@ GLRegistry >> GREEN_BIAS [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> GREEN_BITS [
@@ -30535,7 +30535,7 @@ GLRegistry >> GREEN_NV [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> GREEN_SCALE [
@@ -31058,7 +31058,7 @@ GLRegistry >> HILO_NV [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:32'
 }
 GLRegistry >> HINT_BIT [
@@ -32832,7 +32832,7 @@ GLRegistry >> INCR_WRAP_OES [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> INDEX [
@@ -32848,7 +32848,7 @@ GLRegistry >> INDEX [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> INDEX_ARRAY [
@@ -32880,7 +32880,7 @@ GLRegistry >> INDEX_ARRAY_ADDRESS_NV [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> INDEX_ARRAY_BUFFER_BINDING [
@@ -32987,7 +32987,7 @@ GLRegistry >> INDEX_ARRAY_LIST_STRIDE_IBM [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> INDEX_ARRAY_POINTER [
@@ -33019,7 +33019,7 @@ GLRegistry >> INDEX_ARRAY_POINTER_EXT [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> INDEX_ARRAY_STRIDE [
@@ -33050,7 +33050,7 @@ GLRegistry >> INDEX_ARRAY_STRIDE_EXT [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> INDEX_ARRAY_TYPE [
@@ -33081,7 +33081,7 @@ GLRegistry >> INDEX_ARRAY_TYPE_EXT [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> INDEX_BITS [
@@ -33113,7 +33113,7 @@ GLRegistry >> INDEX_BIT_PGI [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:32'
 }
 GLRegistry >> INDEX_CLEAR_VALUE [
@@ -33129,7 +33129,7 @@ GLRegistry >> INDEX_CLEAR_VALUE [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> INDEX_LOGIC_OP [
@@ -33190,7 +33190,7 @@ GLRegistry >> INDEX_MATERIAL_PARAMETER_EXT [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> INDEX_MODE [
@@ -33206,7 +33206,7 @@ GLRegistry >> INDEX_MODE [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> INDEX_OFFSET [
@@ -33222,7 +33222,7 @@ GLRegistry >> INDEX_OFFSET [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> INDEX_SHIFT [
@@ -33283,7 +33283,7 @@ GLRegistry >> INDEX_TEST_REF_EXT [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> INDEX_WRITEMASK [
@@ -33717,7 +33717,7 @@ GLRegistry >> INT8_VEC4_NV [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:32'
 }
 GLRegistry >> INTENSITY [
@@ -33733,7 +33733,7 @@ GLRegistry >> INTENSITY [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> INTENSITY12 [
@@ -33765,7 +33765,7 @@ GLRegistry >> INTENSITY12_EXT [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:32'
 }
 GLRegistry >> INTENSITY16 [
@@ -33905,7 +33905,7 @@ GLRegistry >> INTENSITY32UI_EXT [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> INTENSITY4 [
@@ -33937,7 +33937,7 @@ GLRegistry >> INTENSITY4_EXT [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> INTENSITY8 [
@@ -34466,7 +34466,7 @@ GLRegistry >> INTERNALFORMAT_SUPPORTED [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> INTERPOLATE [
@@ -36381,7 +36381,7 @@ GLRegistry >> LGPU_SEPARATE_STORAGE_BIT_NVX [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> LIGHT0 [
@@ -36398,7 +36398,7 @@ GLRegistry >> LIGHT0 [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> LIGHT1 [
@@ -36415,7 +36415,7 @@ GLRegistry >> LIGHT1 [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:32'
 }
 GLRegistry >> LIGHT2 [
@@ -36432,7 +36432,7 @@ GLRegistry >> LIGHT2 [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> LIGHT3 [
@@ -36449,7 +36449,7 @@ GLRegistry >> LIGHT3 [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> LIGHT4 [
@@ -36466,7 +36466,7 @@ GLRegistry >> LIGHT4 [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> LIGHT5 [
@@ -36483,7 +36483,7 @@ GLRegistry >> LIGHT5 [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> LIGHT6 [
@@ -36500,7 +36500,7 @@ GLRegistry >> LIGHT6 [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:32'
 }
 GLRegistry >> LIGHT7 [
@@ -36565,7 +36565,7 @@ GLRegistry >> LIGHTEN_NV [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> LIGHTING [
@@ -36582,7 +36582,7 @@ GLRegistry >> LIGHTING [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> LIGHTING_BIT [
@@ -36614,7 +36614,7 @@ GLRegistry >> LIGHT_ENV_MODE_SGIX [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> LIGHT_MODEL_AMBIENT [
@@ -36631,7 +36631,7 @@ GLRegistry >> LIGHT_MODEL_AMBIENT [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> LIGHT_MODEL_COLOR_CONTROL [
@@ -36663,7 +36663,7 @@ GLRegistry >> LIGHT_MODEL_COLOR_CONTROL_EXT [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:32'
 }
 GLRegistry >> LIGHT_MODEL_LOCAL_VIEWER [
@@ -36694,7 +36694,7 @@ GLRegistry >> LIGHT_MODEL_SPECULAR_VECTOR_APPLE [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> LIGHT_MODEL_TWO_SIDE [
@@ -36795,7 +36795,7 @@ GLRegistry >> LINEARLIGHT_NV [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> LINEAR_ATTENUATION [
@@ -37076,7 +37076,7 @@ GLRegistry >> LINES_ADJACENCY_OES [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> LINE_BIT [
@@ -37139,7 +37139,7 @@ GLRegistry >> LINE_QUALITY_HINT_SGIX [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> LINE_RESET_TOKEN [
@@ -37187,7 +37187,7 @@ GLRegistry >> LINE_SMOOTH_HINT [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> LINE_STIPPLE [
@@ -37203,7 +37203,7 @@ GLRegistry >> LINE_STIPPLE [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> LINE_STIPPLE_PATTERN [
@@ -37219,7 +37219,7 @@ GLRegistry >> LINE_STIPPLE_PATTERN [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> LINE_STIPPLE_REPEAT [
@@ -37319,7 +37319,7 @@ GLRegistry >> LINE_STRIP_ADJACENCY_OES [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> LINE_TOKEN [
@@ -37437,7 +37437,7 @@ GLRegistry >> LINK_STATUS [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> LIST_BASE [
@@ -37453,7 +37453,7 @@ GLRegistry >> LIST_BASE [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> LIST_BIT [
@@ -37469,7 +37469,7 @@ GLRegistry >> LIST_BIT [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:32'
 }
 GLRegistry >> LIST_INDEX [
@@ -37485,7 +37485,7 @@ GLRegistry >> LIST_INDEX [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> LIST_MODE [
@@ -37517,7 +37517,7 @@ GLRegistry >> LIST_PRIORITY_SGIX [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> LOAD [
@@ -37662,7 +37662,7 @@ GLRegistry >> LOCATION_INDEX_EXT [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> LOGIC_OP [
@@ -37881,7 +37881,7 @@ GLRegistry >> LUID_SIZE_EXT [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> LUMINANCE [
@@ -37899,7 +37899,7 @@ GLRegistry >> LUMINANCE [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> LUMINANCE12 [
@@ -37915,7 +37915,7 @@ GLRegistry >> LUMINANCE12 [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> LUMINANCE12_ALPHA12 [
@@ -37947,7 +37947,7 @@ GLRegistry >> LUMINANCE12_ALPHA12_EXT [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> LUMINANCE12_ALPHA4 [
@@ -37995,7 +37995,7 @@ GLRegistry >> LUMINANCE12_EXT [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> LUMINANCE16 [
@@ -38074,7 +38074,7 @@ GLRegistry >> LUMINANCE16UI_EXT [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> LUMINANCE16_ALPHA16 [
@@ -38213,7 +38213,7 @@ GLRegistry >> LUMINANCE32UI_EXT [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> LUMINANCE4 [
@@ -38229,7 +38229,7 @@ GLRegistry >> LUMINANCE4 [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> LUMINANCE4_ALPHA4 [
@@ -38294,7 +38294,7 @@ GLRegistry >> LUMINANCE4_EXT [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> LUMINANCE6_ALPHA2 [
@@ -38326,7 +38326,7 @@ GLRegistry >> LUMINANCE6_ALPHA2_EXT [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> LUMINANCE8 [
@@ -38374,7 +38374,7 @@ GLRegistry >> LUMINANCE8UI_EXT [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> LUMINANCE8_ALPHA8 [
@@ -38488,7 +38488,7 @@ GLRegistry >> LUMINANCE8_SNORM [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:32'
 }
 GLRegistry >> LUMINANCE_ALPHA [
@@ -38966,7 +38966,7 @@ GLRegistry >> MAP1_BINORMAL_EXT [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> MAP1_COLOR_4 [
@@ -38982,7 +38982,7 @@ GLRegistry >> MAP1_COLOR_4 [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> MAP1_GRID_DOMAIN [
@@ -38998,7 +38998,7 @@ GLRegistry >> MAP1_GRID_DOMAIN [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> MAP1_GRID_SEGMENTS [
@@ -39014,7 +39014,7 @@ GLRegistry >> MAP1_GRID_SEGMENTS [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> MAP1_INDEX [
@@ -39030,7 +39030,7 @@ GLRegistry >> MAP1_INDEX [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> MAP1_NORMAL [
@@ -39061,7 +39061,7 @@ GLRegistry >> MAP1_TANGENT_EXT [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> MAP1_TEXTURE_COORD_1 [
@@ -39077,7 +39077,7 @@ GLRegistry >> MAP1_TEXTURE_COORD_1 [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> MAP1_TEXTURE_COORD_2 [
@@ -39093,7 +39093,7 @@ GLRegistry >> MAP1_TEXTURE_COORD_2 [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> MAP1_TEXTURE_COORD_3 [
@@ -39109,7 +39109,7 @@ GLRegistry >> MAP1_TEXTURE_COORD_3 [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:32'
 }
 GLRegistry >> MAP1_TEXTURE_COORD_4 [
@@ -39125,7 +39125,7 @@ GLRegistry >> MAP1_TEXTURE_COORD_4 [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> MAP1_VERTEX_3 [
@@ -39141,7 +39141,7 @@ GLRegistry >> MAP1_VERTEX_3 [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> MAP1_VERTEX_4 [
@@ -39412,7 +39412,7 @@ GLRegistry >> MAP2_BINORMAL_EXT [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> MAP2_COLOR_4 [
@@ -39428,7 +39428,7 @@ GLRegistry >> MAP2_COLOR_4 [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> MAP2_GRID_DOMAIN [
@@ -39444,7 +39444,7 @@ GLRegistry >> MAP2_GRID_DOMAIN [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> MAP2_GRID_SEGMENTS [
@@ -39460,7 +39460,7 @@ GLRegistry >> MAP2_GRID_SEGMENTS [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> MAP2_INDEX [
@@ -39476,7 +39476,7 @@ GLRegistry >> MAP2_INDEX [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> MAP2_NORMAL [
@@ -39507,7 +39507,7 @@ GLRegistry >> MAP2_TANGENT_EXT [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> MAP2_TEXTURE_COORD_1 [
@@ -39523,7 +39523,7 @@ GLRegistry >> MAP2_TEXTURE_COORD_1 [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:32'
 }
 GLRegistry >> MAP2_TEXTURE_COORD_2 [
@@ -39539,7 +39539,7 @@ GLRegistry >> MAP2_TEXTURE_COORD_2 [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> MAP2_TEXTURE_COORD_3 [
@@ -39555,7 +39555,7 @@ GLRegistry >> MAP2_TEXTURE_COORD_3 [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> MAP2_TEXTURE_COORD_4 [
@@ -39571,7 +39571,7 @@ GLRegistry >> MAP2_TEXTURE_COORD_4 [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> MAP2_VERTEX_3 [
@@ -39587,7 +39587,7 @@ GLRegistry >> MAP2_VERTEX_3 [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> MAP2_VERTEX_4 [
@@ -39908,7 +39908,7 @@ GLRegistry >> MAP_COHERENT_BIT_EXT [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> MAP_COLOR [
@@ -40101,7 +40101,7 @@ GLRegistry >> MAP_READ_BIT_EXT [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> MAP_STENCIL [
@@ -41036,7 +41036,7 @@ GLRegistry >> MATRIX_INDEX_ARRAY_TYPE_OES [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:32'
 }
 GLRegistry >> MATRIX_MODE [
@@ -41441,7 +41441,7 @@ GLRegistry >> MAX_ATOMIC_COUNTER_BUFFER_SIZE [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> MAX_ATTRIB_STACK_DEPTH [
@@ -41472,7 +41472,7 @@ GLRegistry >> MAX_BINDABLE_UNIFORM_SIZE_EXT [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> MAX_CLIENT_ATTRIB_STACK_DEPTH [
@@ -41567,7 +41567,7 @@ GLRegistry >> MAX_CLIP_DISTANCES_EXT [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> MAX_CLIP_PLANES [
@@ -43116,7 +43116,7 @@ GLRegistry >> MAX_ELEMENT_INDEX [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> MAX_EVAL_ORDER [
@@ -44398,7 +44398,7 @@ GLRegistry >> MAX_LGPU_GPUS_NVX [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> MAX_LIGHTS [
@@ -44415,7 +44415,7 @@ GLRegistry >> MAX_LIGHTS [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> MAX_LIST_NESTING [
@@ -44682,7 +44682,7 @@ GLRegistry >> MAX_MESH_WORK_GROUP_SIZE_NV [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> MAX_MODELVIEW_STACK_DEPTH [
@@ -44748,7 +44748,7 @@ GLRegistry >> MAX_NAME_LENGTH [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> MAX_NAME_STACK_DEPTH [
@@ -44951,7 +44951,7 @@ GLRegistry >> MAX_PATCH_VERTICES_OES [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> MAX_PIXEL_MAP_TABLE [
@@ -45659,7 +45659,7 @@ GLRegistry >> MAX_PROGRAM_TOTAL_OUTPUT_COMPONENTS_NV [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> MAX_PROJECTION_STACK_DEPTH [
@@ -47587,7 +47587,7 @@ GLRegistry >> MAX_TEXTURE_BUFFER_SIZE_OES [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> MAX_TEXTURE_COORDS [
@@ -47766,7 +47766,7 @@ GLRegistry >> MAX_TEXTURE_SIZE [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:32'
 }
 GLRegistry >> MAX_TEXTURE_STACK_DEPTH [
@@ -47783,7 +47783,7 @@ GLRegistry >> MAX_TEXTURE_STACK_DEPTH [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> MAX_TEXTURE_UNITS [
@@ -49667,7 +49667,7 @@ GLRegistry >> MIXED_STENCIL_SAMPLES_SUPPORTED_NV [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> MODELVIEW [
@@ -50257,7 +50257,7 @@ GLRegistry >> MODELVIEW9_ARB [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:32'
 }
 GLRegistry >> MODELVIEW_MATRIX [
@@ -50304,7 +50304,7 @@ GLRegistry >> MODELVIEW_PROJECTION_NV [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> MODELVIEW_STACK_DEPTH [
@@ -50321,7 +50321,7 @@ GLRegistry >> MODELVIEW_STACK_DEPTH [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> MODULATE [
@@ -50498,7 +50498,7 @@ GLRegistry >> MOV_ATI [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> MULT [
@@ -50655,7 +50655,7 @@ GLRegistry >> MULTISAMPLE_ARB [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> MULTISAMPLE_BIT [
@@ -51046,7 +51046,7 @@ GLRegistry >> MVP_MATRIX_EXT [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> N3F_V3F [
@@ -51112,7 +51112,7 @@ GLRegistry >> NAME_LENGTH [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> NAME_STACK_DEPTH [
@@ -51562,7 +51562,7 @@ GLRegistry >> NOR [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:32'
 }
 GLRegistry >> NORMALIZE [
@@ -51595,7 +51595,7 @@ GLRegistry >> NORMALIZED_RANGE_EXT [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> NORMAL_ARRAY [
@@ -51628,7 +51628,7 @@ GLRegistry >> NORMAL_ARRAY_ADDRESS_NV [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> NORMAL_ARRAY_BUFFER_BINDING [
@@ -51751,7 +51751,7 @@ GLRegistry >> NORMAL_ARRAY_PARALLEL_POINTERS_INTEL [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> NORMAL_ARRAY_POINTER [
@@ -51784,7 +51784,7 @@ GLRegistry >> NORMAL_ARRAY_POINTER_EXT [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> NORMAL_ARRAY_STRIDE [
@@ -51816,7 +51816,7 @@ GLRegistry >> NORMAL_ARRAY_STRIDE_EXT [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> NORMAL_ARRAY_TYPE [
@@ -51864,7 +51864,7 @@ GLRegistry >> NORMAL_BIT_PGI [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:32'
 }
 GLRegistry >> NORMAL_MAP [
@@ -52716,7 +52716,7 @@ GLRegistry >> OBJECT_INFO_LOG_LENGTH_ARB [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> OBJECT_LINEAR [
@@ -52778,7 +52778,7 @@ GLRegistry >> OBJECT_LINK_STATUS_ARB [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:32'
 }
 GLRegistry >> OBJECT_PLANE [
@@ -53480,7 +53480,7 @@ GLRegistry >> ONE_MINUS_SRC_COLOR [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> OPERAND0_ALPHA [
@@ -53529,7 +53529,7 @@ GLRegistry >> OPERAND0_ALPHA_EXT [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> OPERAND0_RGB [
@@ -53578,7 +53578,7 @@ GLRegistry >> OPERAND0_RGB_EXT [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:32'
 }
 GLRegistry >> OPERAND1_ALPHA [
@@ -53627,7 +53627,7 @@ GLRegistry >> OPERAND1_ALPHA_EXT [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:32'
 }
 GLRegistry >> OPERAND1_RGB [
@@ -53676,7 +53676,7 @@ GLRegistry >> OPERAND1_RGB_EXT [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> OPERAND2_ALPHA [
@@ -53725,7 +53725,7 @@ GLRegistry >> OPERAND2_ALPHA_EXT [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> OPERAND2_RGB [
@@ -54222,7 +54222,7 @@ GLRegistry >> OR [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> ORDER [
@@ -55544,7 +55544,7 @@ GLRegistry >> PASS_THROUGH_NV [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> PASS_THROUGH_TOKEN [
@@ -56999,7 +56999,7 @@ GLRegistry >> PERFQUERY_WAIT_INTEL [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> PERSPECTIVE_CORRECTION_HINT [
@@ -57316,7 +57316,7 @@ GLRegistry >> PIXEL_MAG_FILTER_EXT [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:32'
 }
 GLRegistry >> PIXEL_MAP_A_TO_A [
@@ -57332,7 +57332,7 @@ GLRegistry >> PIXEL_MAP_A_TO_A [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> PIXEL_MAP_A_TO_A_SIZE [
@@ -57348,7 +57348,7 @@ GLRegistry >> PIXEL_MAP_A_TO_A_SIZE [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> PIXEL_MAP_B_TO_B [
@@ -57364,7 +57364,7 @@ GLRegistry >> PIXEL_MAP_B_TO_B [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:32'
 }
 GLRegistry >> PIXEL_MAP_B_TO_B_SIZE [
@@ -57380,7 +57380,7 @@ GLRegistry >> PIXEL_MAP_B_TO_B_SIZE [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:32'
 }
 GLRegistry >> PIXEL_MAP_G_TO_G [
@@ -57396,7 +57396,7 @@ GLRegistry >> PIXEL_MAP_G_TO_G [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:32'
 }
 GLRegistry >> PIXEL_MAP_G_TO_G_SIZE [
@@ -57412,7 +57412,7 @@ GLRegistry >> PIXEL_MAP_G_TO_G_SIZE [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> PIXEL_MAP_I_TO_A [
@@ -57428,7 +57428,7 @@ GLRegistry >> PIXEL_MAP_I_TO_A [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:32'
 }
 GLRegistry >> PIXEL_MAP_I_TO_A_SIZE [
@@ -57444,7 +57444,7 @@ GLRegistry >> PIXEL_MAP_I_TO_A_SIZE [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> PIXEL_MAP_I_TO_B [
@@ -57460,7 +57460,7 @@ GLRegistry >> PIXEL_MAP_I_TO_B [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:32'
 }
 GLRegistry >> PIXEL_MAP_I_TO_B_SIZE [
@@ -57476,7 +57476,7 @@ GLRegistry >> PIXEL_MAP_I_TO_B_SIZE [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:32'
 }
 GLRegistry >> PIXEL_MAP_I_TO_G [
@@ -57492,7 +57492,7 @@ GLRegistry >> PIXEL_MAP_I_TO_G [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:32'
 }
 GLRegistry >> PIXEL_MAP_I_TO_G_SIZE [
@@ -57508,7 +57508,7 @@ GLRegistry >> PIXEL_MAP_I_TO_G_SIZE [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> PIXEL_MAP_I_TO_I [
@@ -57524,7 +57524,7 @@ GLRegistry >> PIXEL_MAP_I_TO_I [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> PIXEL_MAP_I_TO_I_SIZE [
@@ -57540,7 +57540,7 @@ GLRegistry >> PIXEL_MAP_I_TO_I_SIZE [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:32'
 }
 GLRegistry >> PIXEL_MAP_I_TO_R [
@@ -57556,7 +57556,7 @@ GLRegistry >> PIXEL_MAP_I_TO_R [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> PIXEL_MAP_I_TO_R_SIZE [
@@ -57572,7 +57572,7 @@ GLRegistry >> PIXEL_MAP_I_TO_R_SIZE [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> PIXEL_MAP_R_TO_R [
@@ -57588,7 +57588,7 @@ GLRegistry >> PIXEL_MAP_R_TO_R [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> PIXEL_MAP_R_TO_R_SIZE [
@@ -57604,7 +57604,7 @@ GLRegistry >> PIXEL_MAP_R_TO_R_SIZE [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> PIXEL_MAP_S_TO_S [
@@ -57620,7 +57620,7 @@ GLRegistry >> PIXEL_MAP_S_TO_S [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:32'
 }
 GLRegistry >> PIXEL_MAP_S_TO_S_SIZE [
@@ -57652,7 +57652,7 @@ GLRegistry >> PIXEL_MIN_FILTER_EXT [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> PIXEL_MODE_BIT [
@@ -58508,7 +58508,7 @@ GLRegistry >> POINTS [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:32'
 }
 GLRegistry >> POINT_BIT [
@@ -58524,7 +58524,7 @@ GLRegistry >> POINT_BIT [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> POINT_DISTANCE_ATTENUATION [
@@ -58743,7 +58743,7 @@ GLRegistry >> POINT_SIZE_GRANULARITY [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> POINT_SIZE_MAX [
@@ -58808,7 +58808,7 @@ GLRegistry >> POINT_SIZE_MAX_SGIS [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> POINT_SIZE_MIN [
@@ -58889,7 +58889,7 @@ GLRegistry >> POINT_SIZE_RANGE [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> POINT_SMOOTH [
@@ -58906,7 +58906,7 @@ GLRegistry >> POINT_SMOOTH [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:32'
 }
 GLRegistry >> POINT_SMOOTH_HINT [
@@ -58923,7 +58923,7 @@ GLRegistry >> POINT_SMOOTH_HINT [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> POINT_SPRITE [
@@ -59012,7 +59012,7 @@ GLRegistry >> POINT_SPRITE_R_MODE_NV [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> POINT_TOKEN [
@@ -59028,7 +59028,7 @@ GLRegistry >> POINT_TOKEN [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:32'
 }
 GLRegistry >> POLYGON [
@@ -59044,7 +59044,7 @@ GLRegistry >> POLYGON [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> POLYGON_BIT [
@@ -59332,7 +59332,7 @@ GLRegistry >> POLYGON_SMOOTH_HINT [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> POLYGON_STIPPLE [
@@ -59348,7 +59348,7 @@ GLRegistry >> POLYGON_STIPPLE [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> POLYGON_STIPPLE_BIT [
@@ -59364,7 +59364,7 @@ GLRegistry >> POLYGON_STIPPLE_BIT [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> POLYGON_TOKEN [
@@ -59380,7 +59380,7 @@ GLRegistry >> POLYGON_TOKEN [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> POSITION [
@@ -60098,7 +60098,7 @@ GLRegistry >> PRESERVE_ATI [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:32'
 }
 GLRegistry >> PREVIOUS [
@@ -60162,7 +60162,7 @@ GLRegistry >> PREVIOUS_TEXTURE_INPUT_NV [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> PRIMARY_COLOR [
@@ -61503,7 +61503,7 @@ GLRegistry >> PROGRAM_UNDER_NATIVE_LIMITS_ARB [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> PROJECTION [
@@ -61520,7 +61520,7 @@ GLRegistry >> PROJECTION [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:32'
 }
 GLRegistry >> PROJECTION_MATRIX [
@@ -61552,7 +61552,7 @@ GLRegistry >> PROJECTION_MATRIX_FLOAT_AS_INT_BITS_OES [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> PROJECTION_STACK_DEPTH [
@@ -62170,7 +62170,7 @@ GLRegistry >> PURGED_CONTEXT_RESET_NV [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> Q [
@@ -62186,7 +62186,7 @@ GLRegistry >> Q [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> QUADRATIC_ATTENUATION [
@@ -62221,7 +62221,7 @@ GLRegistry >> QUADRATIC_CURVE_TO_NV [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:32'
 }
 GLRegistry >> QUADS [
@@ -62414,7 +62414,7 @@ GLRegistry >> QUAD_MESH_SUN [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> QUAD_STRIP [
@@ -63161,7 +63161,7 @@ GLRegistry >> QUERY_WAIT_NV [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> R [
@@ -64244,7 +64244,7 @@ GLRegistry >> REDUCE_EXT [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> RED_BIAS [
@@ -64260,7 +64260,7 @@ GLRegistry >> RED_BIAS [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> RED_BITS [
@@ -64389,7 +64389,7 @@ GLRegistry >> RED_NV [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:32'
 }
 GLRegistry >> RED_SCALE [
@@ -64683,7 +64683,7 @@ GLRegistry >> REFERENCE_PLANE_SGIX [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> REFLECTION_MAP [
@@ -65610,7 +65610,7 @@ GLRegistry >> RELEASED_APPLE [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> RENDER [
@@ -66417,7 +66417,7 @@ GLRegistry >> RENDER_GPU_MASK_NV [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> RENDER_MODE [
@@ -66778,7 +66778,7 @@ GLRegistry >> RESAMPLE_ZERO_FILL_SGIX [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> RESCALE_NORMAL [
@@ -66924,7 +66924,7 @@ GLRegistry >> RETAINED_APPLE [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> RETURN [
@@ -68799,7 +68799,7 @@ GLRegistry >> RGBA_INTEGER_MODE_EXT [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> RGBA_MODE [
@@ -69014,7 +69014,7 @@ GLRegistry >> RGB_S3TC [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> RGB_SCALE [
@@ -69241,7 +69241,7 @@ GLRegistry >> ROUND_NV [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:32'
 }
 GLRegistry >> S [
@@ -71025,7 +71025,7 @@ GLRegistry >> SCALE_BY_TWO_NV [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> SCISSOR_BIT [
@@ -71199,7 +71199,7 @@ GLRegistry >> SCREEN_NV [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:32'
 }
 GLRegistry >> SECONDARY_COLOR_ARRAY [
@@ -71230,7 +71230,7 @@ GLRegistry >> SECONDARY_COLOR_ARRAY_ADDRESS_NV [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:32'
 }
 GLRegistry >> SECONDARY_COLOR_ARRAY_BUFFER_BINDING [
@@ -71321,7 +71321,7 @@ GLRegistry >> SECONDARY_COLOR_ARRAY_LIST_STRIDE_IBM [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> SECONDARY_COLOR_ARRAY_POINTER [
@@ -71351,7 +71351,7 @@ GLRegistry >> SECONDARY_COLOR_ARRAY_POINTER_EXT [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> SECONDARY_COLOR_ARRAY_SIZE [
@@ -71381,7 +71381,7 @@ GLRegistry >> SECONDARY_COLOR_ARRAY_SIZE_EXT [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> SECONDARY_COLOR_ARRAY_STRIDE [
@@ -71411,7 +71411,7 @@ GLRegistry >> SECONDARY_COLOR_ARRAY_STRIDE_EXT [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> SECONDARY_COLOR_ARRAY_TYPE [
@@ -71473,7 +71473,7 @@ GLRegistry >> SECONDARY_INTERPOLATOR_ATI [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> SELECT [
@@ -71489,7 +71489,7 @@ GLRegistry >> SELECT [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> SELECTION_BUFFER_POINTER [
@@ -71505,7 +71505,7 @@ GLRegistry >> SELECTION_BUFFER_POINTER [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> SELECTION_BUFFER_SIZE [
@@ -71650,7 +71650,7 @@ GLRegistry >> SEPARATE_ATTRIBS_NV [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:32'
 }
 GLRegistry >> SEPARATE_SPECULAR_COLOR [
@@ -72230,7 +72230,7 @@ GLRegistry >> SHADER_TYPE [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> SHADE_MODEL [
@@ -72907,7 +72907,7 @@ GLRegistry >> SHARPEN_TEXTURE_FUNC_POINTS_SGIS [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> SHININESS [
@@ -73347,7 +73347,7 @@ GLRegistry >> SIMULTANEOUS_TEXTURE_AND_STENCIL_WRITE [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> SINGLE_COLOR [
@@ -73532,7 +73532,7 @@ GLRegistry >> SLIM8U_SGIX [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> SLUMINANCE [
@@ -73547,7 +73547,7 @@ GLRegistry >> SLUMINANCE [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> SLUMINANCE8 [
@@ -73562,7 +73562,7 @@ GLRegistry >> SLUMINANCE8 [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> SLUMINANCE8_ALPHA8 [
@@ -73637,7 +73637,7 @@ GLRegistry >> SLUMINANCE8_NV [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:32'
 }
 GLRegistry >> SLUMINANCE_ALPHA [
@@ -73778,7 +73778,7 @@ GLRegistry >> SMAPHS_PROGRAM_BINARY_DMP [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:32'
 }
 GLRegistry >> SMOOTH [
@@ -73961,7 +73961,7 @@ GLRegistry >> SOFTLIGHT_NV [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:32'
 }
 GLRegistry >> SOURCE0_ALPHA [
@@ -74010,7 +74010,7 @@ GLRegistry >> SOURCE0_ALPHA_EXT [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> SOURCE0_RGB [
@@ -74059,7 +74059,7 @@ GLRegistry >> SOURCE0_RGB_EXT [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> SOURCE1_ALPHA [
@@ -74108,7 +74108,7 @@ GLRegistry >> SOURCE1_ALPHA_EXT [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> SOURCE1_RGB [
@@ -74157,7 +74157,7 @@ GLRegistry >> SOURCE1_RGB_EXT [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> SOURCE2_ALPHA [
@@ -74206,7 +74206,7 @@ GLRegistry >> SOURCE2_ALPHA_EXT [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> SOURCE2_RGB [
@@ -74398,7 +74398,7 @@ GLRegistry >> SPARSE_TEXTURE_FULL_ARRAY_CUBE_MIPMAPS_EXT [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> SPECULAR [
@@ -74415,7 +74415,7 @@ GLRegistry >> SPECULAR [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> SPHERE_MAP [
@@ -74479,7 +74479,7 @@ GLRegistry >> SPIR_V_EXTENSIONS [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> SPOT_CUTOFF [
@@ -74496,7 +74496,7 @@ GLRegistry >> SPOT_CUTOFF [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> SPOT_DIRECTION [
@@ -74513,7 +74513,7 @@ GLRegistry >> SPOT_DIRECTION [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> SPOT_EXPONENT [
@@ -74674,7 +74674,7 @@ GLRegistry >> SR8_EXT [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> SRC0_ALPHA [
@@ -74692,7 +74692,7 @@ GLRegistry >> SRC0_ALPHA [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:32'
 }
 GLRegistry >> SRC0_RGB [
@@ -74777,7 +74777,7 @@ GLRegistry >> SRC1_COLOR_EXT [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> SRC1_RGB [
@@ -74795,7 +74795,7 @@ GLRegistry >> SRC1_RGB [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:32'
 }
 GLRegistry >> SRC2_ALPHA [
@@ -74813,7 +74813,7 @@ GLRegistry >> SRC2_ALPHA [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> SRC2_RGB [
@@ -75208,7 +75208,7 @@ GLRegistry >> SRGB_WRITE [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> STACK_OVERFLOW [
@@ -75244,7 +75244,7 @@ GLRegistry >> STACK_OVERFLOW_KHR [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> STACK_UNDERFLOW [
@@ -75717,7 +75717,7 @@ GLRegistry >> STENCIL_BACK_WRITEMASK [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> STENCIL_BITS [
@@ -76956,7 +76956,7 @@ GLRegistry >> SUBSAMPLE_DISTANCE_AMD [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> SUBTRACT [
@@ -77493,7 +77493,7 @@ GLRegistry >> SYSTEM_FONT_NAME_NV [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> T [
@@ -77509,7 +77509,7 @@ GLRegistry >> T [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:32'
 }
 GLRegistry >> T2F_C3F_V3F [
@@ -77525,7 +77525,7 @@ GLRegistry >> T2F_C3F_V3F [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> T2F_C4F_N3F_V3F [
@@ -77541,7 +77541,7 @@ GLRegistry >> T2F_C4F_N3F_V3F [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> T2F_C4UB_V3F [
@@ -77617,7 +77617,7 @@ GLRegistry >> T2F_IUI_V3F_EXT [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> T2F_N3F_V3F [
@@ -77633,7 +77633,7 @@ GLRegistry >> T2F_N3F_V3F [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> T2F_V3F [
@@ -77649,7 +77649,7 @@ GLRegistry >> T2F_V3F [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> T4F_C4F_N3F_V4F [
@@ -77665,7 +77665,7 @@ GLRegistry >> T4F_C4F_N3F_V4F [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> T4F_V4F [
@@ -80698,7 +80698,7 @@ GLRegistry >> TEXTURE_BINDING_RENDERBUFFER_NV [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> TEXTURE_BIT [
@@ -80775,7 +80775,7 @@ GLRegistry >> TEXTURE_BLUE_TYPE_ARB [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:32'
 }
 GLRegistry >> TEXTURE_BORDER [
@@ -81494,7 +81494,7 @@ GLRegistry >> TEXTURE_COMPARE_SGIX [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> TEXTURE_COMPONENTS [
@@ -81669,7 +81669,7 @@ GLRegistry >> TEXTURE_CONSTANT_DATA_SUNX [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:32'
 }
 GLRegistry >> TEXTURE_COORD_ARRAY [
@@ -81702,7 +81702,7 @@ GLRegistry >> TEXTURE_COORD_ARRAY_ADDRESS_NV [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> TEXTURE_COORD_ARRAY_BUFFER_BINDING [
@@ -81825,7 +81825,7 @@ GLRegistry >> TEXTURE_COORD_ARRAY_PARALLEL_POINTERS_INTEL [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> TEXTURE_COORD_ARRAY_POINTER [
@@ -81858,7 +81858,7 @@ GLRegistry >> TEXTURE_COORD_ARRAY_POINTER_EXT [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> TEXTURE_COORD_ARRAY_SIZE [
@@ -81890,7 +81890,7 @@ GLRegistry >> TEXTURE_COORD_ARRAY_SIZE_EXT [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:32'
 }
 GLRegistry >> TEXTURE_COORD_ARRAY_STRIDE [
@@ -81922,7 +81922,7 @@ GLRegistry >> TEXTURE_COORD_ARRAY_STRIDE_EXT [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> TEXTURE_COORD_ARRAY_TYPE [
@@ -82686,7 +82686,7 @@ GLRegistry >> TEXTURE_DT_SIZE_NV [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> TEXTURE_ENV [
@@ -82719,7 +82719,7 @@ GLRegistry >> TEXTURE_ENV_BIAS_SGIX [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:32'
 }
 GLRegistry >> TEXTURE_ENV_COLOR [
@@ -82736,7 +82736,7 @@ GLRegistry >> TEXTURE_ENV_COLOR [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> TEXTURE_ENV_MODE [
@@ -82820,7 +82820,7 @@ GLRegistry >> TEXTURE_FILTER4_SIZE_SGIS [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> TEXTURE_FILTER_CONTROL [
@@ -83039,7 +83039,7 @@ GLRegistry >> TEXTURE_GATHER_SHADOW [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> TEXTURE_GEN_MODE [
@@ -83070,7 +83070,7 @@ GLRegistry >> TEXTURE_GEN_MODE_OES [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> TEXTURE_GEN_Q [
@@ -83086,7 +83086,7 @@ GLRegistry >> TEXTURE_GEN_Q [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> TEXTURE_GEN_R [
@@ -83102,7 +83102,7 @@ GLRegistry >> TEXTURE_GEN_R [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> TEXTURE_GEN_S [
@@ -83133,7 +83133,7 @@ GLRegistry >> TEXTURE_GEN_STR_OES [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> TEXTURE_GEN_T [
@@ -83391,7 +83391,7 @@ GLRegistry >> TEXTURE_INDEX_SIZE_EXT [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> TEXTURE_INTENSITY_SIZE [
@@ -83422,7 +83422,7 @@ GLRegistry >> TEXTURE_INTENSITY_SIZE_EXT [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> TEXTURE_INTENSITY_TYPE [
@@ -83624,7 +83624,7 @@ GLRegistry >> TEXTURE_LO_SIZE_NV [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> TEXTURE_LUMINANCE_SIZE [
@@ -83655,7 +83655,7 @@ GLRegistry >> TEXTURE_LUMINANCE_SIZE_EXT [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> TEXTURE_LUMINANCE_TYPE [
@@ -83748,7 +83748,7 @@ GLRegistry >> TEXTURE_MATERIAL_PARAMETER_EXT [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> TEXTURE_MATRIX [
@@ -84102,7 +84102,7 @@ GLRegistry >> TEXTURE_PRE_SPECULAR_HP [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> TEXTURE_PRIORITY [
@@ -84352,7 +84352,7 @@ GLRegistry >> TEXTURE_RENDERBUFFER_NV [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> TEXTURE_RESIDENT [
@@ -84526,7 +84526,7 @@ GLRegistry >> TEXTURE_SRGB_DECODE_EXT [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> TEXTURE_STACK_DEPTH [
@@ -85682,7 +85682,7 @@ GLRegistry >> TRACK_MATRIX_TRANSFORM_NV [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> TRANSFORM_BIT [
@@ -86539,7 +86539,7 @@ GLRegistry >> TRANSPOSE_AFFINE_3D_NV [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> TRANSPOSE_COLOR_MATRIX [
@@ -86585,7 +86585,7 @@ GLRegistry >> TRANSPOSE_CURRENT_MATRIX_ARB [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> TRANSPOSE_MODELVIEW_MATRIX [
@@ -86646,7 +86646,7 @@ GLRegistry >> TRANSPOSE_PROGRAM_MATRIX_EXT [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:32'
 }
 GLRegistry >> TRANSPOSE_PROJECTION_MATRIX [
@@ -86676,7 +86676,7 @@ GLRegistry >> TRANSPOSE_PROJECTION_MATRIX_ARB [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:32'
 }
 GLRegistry >> TRANSPOSE_TEXTURE_MATRIX [
@@ -90442,7 +90442,7 @@ GLRegistry >> UUID_SIZE_EXT [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> V2F [
@@ -90458,7 +90458,7 @@ GLRegistry >> V2F [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> V3F [
@@ -90870,7 +90870,7 @@ GLRegistry >> VERTEX4_BIT_PGI [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> VERTEX_ARRAY [
@@ -90956,7 +90956,7 @@ GLRegistry >> VERTEX_ARRAY_BINDING_OES [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> VERTEX_ARRAY_BUFFER_BINDING [
@@ -91126,7 +91126,7 @@ GLRegistry >> VERTEX_ARRAY_PARALLEL_POINTERS_INTEL [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> VERTEX_ARRAY_POINTER [
@@ -91279,7 +91279,7 @@ GLRegistry >> VERTEX_ARRAY_RANGE_WITHOUT_FLUSH_NV [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:32'
 }
 GLRegistry >> VERTEX_ARRAY_SIZE [
@@ -91327,7 +91327,7 @@ GLRegistry >> VERTEX_ARRAY_STORAGE_HINT_APPLE [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> VERTEX_ARRAY_STRIDE [
@@ -91359,7 +91359,7 @@ GLRegistry >> VERTEX_ARRAY_STRIDE_EXT [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> VERTEX_ARRAY_TYPE [
@@ -92620,7 +92620,7 @@ GLRegistry >> VERTEX_PROGRAM_POSITION_MESA [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> VERTEX_PROGRAM_TWO_SIDE [
@@ -93497,7 +93497,7 @@ GLRegistry >> VIEWPORT [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> VIEWPORT_BIT [
@@ -94840,7 +94840,7 @@ GLRegistry >> WEIGHT_ARRAY_ARB [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> WEIGHT_ARRAY_BUFFER_BINDING [
@@ -95593,7 +95593,7 @@ GLRegistry >> ZERO_TO_ONE_EXT [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> ZOOM_X [
@@ -95609,7 +95609,7 @@ GLRegistry >> ZOOM_X [
 ]
 
 {
-	#category : #enums,
+	#category : #'enums - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
 GLRegistry >> ZOOM_Y [
@@ -95641,7 +95641,7 @@ GLRegistry >> Z_EXT [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> accum: op with: value [
@@ -95891,7 +95891,7 @@ GLRegistry >> alphaFragmentOp3ATI: op with: dst with: dstMod with: arg1 with: ar
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> alphaFunc: func with: ref [
@@ -96029,7 +96029,7 @@ GLRegistry >> areProgramsResidentNV: n with: programs with: residences [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> areTexturesResident: n with: textures with: residences [
@@ -96066,7 +96066,7 @@ GLRegistry >> areTexturesResidentEXT: n with: textures with: residences [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> arrayElement: i [
@@ -96203,7 +96203,7 @@ GLRegistry >> attachShader: program with: shader [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> begin: mode [
@@ -97753,7 +97753,7 @@ GLRegistry >> binormalPointerEXT: type with: stride with: pointer [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> bitmap: width with: height with: xorig with: yorig with: xmove with: ymove with: bitmap [
@@ -98957,7 +98957,7 @@ GLRegistry >> callCommandListNV: list [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> callList: list [
@@ -98974,7 +98974,7 @@ GLRegistry >> callList: list [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> callLists: n with: type with: lists [
@@ -99139,7 +99139,7 @@ GLRegistry >> clear: mask [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> clearAccum: red with: green with: blue with: alpha [
@@ -99506,7 +99506,7 @@ GLRegistry >> clearDepthxOES: depth [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> clearIndex: c [
@@ -99835,7 +99835,7 @@ GLRegistry >> clearTexSubImageEXT: texture with: level with: xoffset with: yoffs
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> clientActiveTexture: texture [
@@ -100002,7 +100002,7 @@ GLRegistry >> clipControlEXT: origin with: depth [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> clipPlane: plane with: equation [
@@ -100124,7 +100124,7 @@ GLRegistry >> clipPlanexOES: plane with: equation [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> color3b: red with: green with: blue [
@@ -100143,7 +100143,7 @@ GLRegistry >> color3b: red with: green with: blue [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> color3bv: v [
@@ -100160,7 +100160,7 @@ GLRegistry >> color3bv: v [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> color3d: red with: green with: blue [
@@ -100179,7 +100179,7 @@ GLRegistry >> color3d: red with: green with: blue [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> color3dv: v [
@@ -100196,7 +100196,7 @@ GLRegistry >> color3dv: v [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> color3f: red with: green with: blue [
@@ -100253,7 +100253,7 @@ GLRegistry >> color3fVertex3fvSUN: c with: v [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> color3fv: v [
@@ -100304,7 +100304,7 @@ GLRegistry >> color3hvNV: v [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> color3i: red with: green with: blue [
@@ -100323,7 +100323,7 @@ GLRegistry >> color3i: red with: green with: blue [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> color3iv: v [
@@ -100340,7 +100340,7 @@ GLRegistry >> color3iv: v [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> color3s: red with: green with: blue [
@@ -100359,7 +100359,7 @@ GLRegistry >> color3s: red with: green with: blue [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> color3sv: v [
@@ -100376,7 +100376,7 @@ GLRegistry >> color3sv: v [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> color3ub: red with: green with: blue [
@@ -100395,7 +100395,7 @@ GLRegistry >> color3ub: red with: green with: blue [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> color3ubv: v [
@@ -100412,7 +100412,7 @@ GLRegistry >> color3ubv: v [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> color3ui: red with: green with: blue [
@@ -100431,7 +100431,7 @@ GLRegistry >> color3ui: red with: green with: blue [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> color3uiv: v [
@@ -100448,7 +100448,7 @@ GLRegistry >> color3uiv: v [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> color3us: red with: green with: blue [
@@ -100467,7 +100467,7 @@ GLRegistry >> color3us: red with: green with: blue [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> color3usv: v [
@@ -100518,7 +100518,7 @@ GLRegistry >> color3xvOES: components [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> color4b: red with: green with: blue with: alpha [
@@ -100538,7 +100538,7 @@ GLRegistry >> color4b: red with: green with: blue with: alpha [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> color4bv: v [
@@ -100555,7 +100555,7 @@ GLRegistry >> color4bv: v [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> color4d: red with: green with: blue with: alpha [
@@ -100575,7 +100575,7 @@ GLRegistry >> color4d: red with: green with: blue with: alpha [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> color4dv: v [
@@ -100592,7 +100592,7 @@ GLRegistry >> color4dv: v [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> color4f: red with: green with: blue with: alpha [
@@ -100656,7 +100656,7 @@ GLRegistry >> color4fNormal3fVertex3fvSUN: c with: n with: v [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> color4fv: v [
@@ -100708,7 +100708,7 @@ GLRegistry >> color4hvNV: v [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> color4i: red with: green with: blue with: alpha [
@@ -100728,7 +100728,7 @@ GLRegistry >> color4i: red with: green with: blue with: alpha [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> color4iv: v [
@@ -100745,7 +100745,7 @@ GLRegistry >> color4iv: v [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> color4s: red with: green with: blue with: alpha [
@@ -100765,7 +100765,7 @@ GLRegistry >> color4s: red with: green with: blue with: alpha [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> color4sv: v [
@@ -100782,7 +100782,7 @@ GLRegistry >> color4sv: v [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> color4ub: red with: green with: blue with: alpha [
@@ -100880,7 +100880,7 @@ GLRegistry >> color4ubVertex3fvSUN: c with: v [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> color4ubv: v [
@@ -100897,7 +100897,7 @@ GLRegistry >> color4ubv: v [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> color4ui: red with: green with: blue with: alpha [
@@ -100917,7 +100917,7 @@ GLRegistry >> color4ui: red with: green with: blue with: alpha [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> color4uiv: v [
@@ -100934,7 +100934,7 @@ GLRegistry >> color4uiv: v [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> color4us: red with: green with: blue with: alpha [
@@ -100954,7 +100954,7 @@ GLRegistry >> color4us: red with: green with: blue with: alpha [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> color4usv: v [
@@ -101227,7 +101227,7 @@ GLRegistry >> colorMaskiOES: index with: r with: g with: b with: a [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> colorMaterial: face with: mode [
@@ -101317,7 +101317,7 @@ GLRegistry >> colorP4uiv: type with: color [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> colorPointer: size with: type with: stride with: pointer [
@@ -103359,7 +103359,7 @@ GLRegistry >> copyPathNV: resultPath with: srcPath [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> copyPixels: x with: y with: width with: height with: type [
@@ -105036,7 +105036,7 @@ GLRegistry >> deleteFramebuffersOES: n with: framebuffers [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> deleteLists: list with: range [
@@ -106085,7 +106085,7 @@ GLRegistry >> disable: cap [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> disableClientState: array [
@@ -107346,7 +107346,7 @@ GLRegistry >> drawMeshTasksNV: first with: count [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> drawPixels: width with: height with: format with: type with: pixels [
@@ -107859,7 +107859,7 @@ GLRegistry >> drawVkImageNV: vkImage with: sampler with: x0 with: y0 with: x1 wi
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> edgeFlag: flag [
@@ -107893,7 +107893,7 @@ GLRegistry >> edgeFlagFormatNV: stride [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> edgeFlagPointer: stride with: pointer [
@@ -107947,7 +107947,7 @@ GLRegistry >> edgeFlagPointerListIBM: stride with: pointer with: ptrstride [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> edgeFlagv: flag [
@@ -108093,7 +108093,7 @@ GLRegistry >> enable: cap [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> enableClientState: array [
@@ -108383,7 +108383,7 @@ GLRegistry >> enableiOES: target with: index [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> end [
@@ -108464,7 +108464,7 @@ GLRegistry >> endFragmentShaderATI [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> endList [
@@ -108699,7 +108699,7 @@ GLRegistry >> endVideoCaptureNV: video_capture_slot [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> evalCoord1d: u [
@@ -108716,7 +108716,7 @@ GLRegistry >> evalCoord1d: u [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> evalCoord1dv: u [
@@ -108733,7 +108733,7 @@ GLRegistry >> evalCoord1dv: u [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> evalCoord1f: u [
@@ -108750,7 +108750,7 @@ GLRegistry >> evalCoord1f: u [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> evalCoord1fv: u [
@@ -108799,7 +108799,7 @@ GLRegistry >> evalCoord1xvOES: coords [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> evalCoord2d: u with: v [
@@ -108817,7 +108817,7 @@ GLRegistry >> evalCoord2d: u with: v [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> evalCoord2dv: u [
@@ -108834,7 +108834,7 @@ GLRegistry >> evalCoord2dv: u [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> evalCoord2f: u with: v [
@@ -108852,7 +108852,7 @@ GLRegistry >> evalCoord2f: u with: v [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> evalCoord2fv: u [
@@ -108919,7 +108919,7 @@ GLRegistry >> evalMapsNV: target with: mode [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> evalMesh1: mode with: i1 with: i2 [
@@ -108938,7 +108938,7 @@ GLRegistry >> evalMesh1: mode with: i1 with: i2 [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> evalMesh2: mode with: i1 with: i2 with: j1 with: j2 [
@@ -108959,7 +108959,7 @@ GLRegistry >> evalMesh2: mode with: i1 with: i2 with: j1 with: j2 [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> evalPoint1: i [
@@ -108976,7 +108976,7 @@ GLRegistry >> evalPoint1: i [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> evalPoint2: i with: j [
@@ -109301,7 +109301,7 @@ GLRegistry >> extrapolateTex2DQCOM: src1 with: src2 with: output with: scaleFact
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> feedbackBuffer: size with: type with: buffer [
@@ -109712,7 +109712,7 @@ GLRegistry >> fogCoordFormatNV: type with: stride [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> fogCoordPointer: type with: stride with: pointer [
@@ -109770,7 +109770,7 @@ GLRegistry >> fogCoordPointerListIBM: type with: stride with: pointer with: ptrs
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> fogCoordd: coord [
@@ -109805,7 +109805,7 @@ GLRegistry >> fogCoorddEXT: coord [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> fogCoorddv: coord [
@@ -109840,7 +109840,7 @@ GLRegistry >> fogCoorddvEXT: coord [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> fogCoordf: coord [
@@ -109875,7 +109875,7 @@ GLRegistry >> fogCoordfEXT: coord [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> fogCoordfv: coord [
@@ -109959,7 +109959,7 @@ GLRegistry >> fogFuncSGIS: n with: points [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> fogf: pname with: param [
@@ -109978,7 +109978,7 @@ GLRegistry >> fogf: pname with: param [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> fogfv: pname with: params [
@@ -109997,7 +109997,7 @@ GLRegistry >> fogfv: pname with: params [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> fogi: pname with: param [
@@ -110015,7 +110015,7 @@ GLRegistry >> fogi: pname with: param [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> fogiv: pname with: params [
@@ -111231,7 +111231,7 @@ GLRegistry >> frontFace: mode [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> frustum: left with: right with: bottom with: top with: zNear with: zFar [
@@ -111503,7 +111503,7 @@ GLRegistry >> genFramebuffersOES: n with: framebuffers [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> genLists: range [
@@ -112757,7 +112757,7 @@ GLRegistry >> getBufferSubDataARB: target with: offset with: size with: data [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> getClipPlane: plane with: equation [
@@ -114850,7 +114850,7 @@ GLRegistry >> getInvariantIntegervEXT: id with: value with: data [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> getLightfv: light with: pname with: params [
@@ -114870,7 +114870,7 @@ GLRegistry >> getLightfv: light with: pname with: params [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> getLightiv: light with: pname with: params [
@@ -115129,7 +115129,7 @@ GLRegistry >> getMapParameterivNV: target with: pname with: params [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> getMapdv: target with: query with: v [
@@ -115148,7 +115148,7 @@ GLRegistry >> getMapdv: target with: query with: v [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> getMapfv: target with: query with: v [
@@ -115167,7 +115167,7 @@ GLRegistry >> getMapfv: target with: query with: v [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> getMapiv: target with: query with: v [
@@ -115204,7 +115204,7 @@ GLRegistry >> getMapxvOES: target with: query with: v [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> getMaterialfv: face with: pname with: params [
@@ -115224,7 +115224,7 @@ GLRegistry >> getMaterialfv: face with: pname with: params [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> getMaterialiv: face with: pname with: params [
@@ -116932,7 +116932,7 @@ GLRegistry >> getPerfQueryInfoINTEL: queryId with: queryNameLength with: queryNa
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> getPixelMapfv: map with: values [
@@ -116950,7 +116950,7 @@ GLRegistry >> getPixelMapfv: map with: values [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> getPixelMapuiv: map with: values [
@@ -116968,7 +116968,7 @@ GLRegistry >> getPixelMapuiv: map with: values [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> getPixelMapusv: map with: values [
@@ -117112,7 +117112,7 @@ GLRegistry >> getPointeri_vEXT: pname with: index with: params [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> getPointerv: pname with: params [
@@ -117172,7 +117172,7 @@ GLRegistry >> getPointervKHR: pname with: params [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> getPolygonStipple: mask [
@@ -118864,7 +118864,7 @@ GLRegistry >> getTexBumpParameterivATI: pname with: param [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> getTexEnvfv: target with: pname with: params [
@@ -118884,7 +118884,7 @@ GLRegistry >> getTexEnvfv: target with: pname with: params [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> getTexEnviv: target with: pname with: params [
@@ -118959,7 +118959,7 @@ GLRegistry >> getTexFilterFuncSGIS: target with: filter with: weights [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> getTexGendv: coord with: pname with: params [
@@ -118978,7 +118978,7 @@ GLRegistry >> getTexGendv: coord with: pname with: params [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> getTexGenfv: coord with: pname with: params [
@@ -119015,7 +119015,7 @@ GLRegistry >> getTexGenfvOES: coord with: pname with: params [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> getTexGeniv: coord with: pname with: params [
@@ -122551,7 +122551,7 @@ GLRegistry >> indexFuncEXT: func with: ref [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> indexMask: mask [
@@ -122585,7 +122585,7 @@ GLRegistry >> indexMaterialEXT: face with: mode [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> indexPointer: type with: stride with: pointer [
@@ -122642,7 +122642,7 @@ GLRegistry >> indexPointerListIBM: type with: stride with: pointer with: ptrstri
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> indexd: c [
@@ -122659,7 +122659,7 @@ GLRegistry >> indexd: c [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> indexdv: c [
@@ -122676,7 +122676,7 @@ GLRegistry >> indexdv: c [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> indexf: c [
@@ -122693,7 +122693,7 @@ GLRegistry >> indexf: c [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> indexfv: c [
@@ -122710,7 +122710,7 @@ GLRegistry >> indexfv: c [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> indexi: c [
@@ -122727,7 +122727,7 @@ GLRegistry >> indexi: c [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> indexiv: c [
@@ -122744,7 +122744,7 @@ GLRegistry >> indexiv: c [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> indexs: c [
@@ -122761,7 +122761,7 @@ GLRegistry >> indexs: c [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> indexsv: c [
@@ -122778,7 +122778,7 @@ GLRegistry >> indexsv: c [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> indexub: c [
@@ -122795,7 +122795,7 @@ GLRegistry >> indexub: c [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> indexubv: c [
@@ -122844,7 +122844,7 @@ GLRegistry >> indexxvOES: component [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> initNames [
@@ -122915,7 +122915,7 @@ GLRegistry >> instrumentsBufferSGIX: size with: buffer [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> interleavedArrays: format with: stride with: pointer [
@@ -123448,7 +123448,7 @@ GLRegistry >> isImageHandleResidentNV: handle [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> isList: list [
@@ -124193,7 +124193,7 @@ GLRegistry >> lightEnviSGIX: pname with: param [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> lightModelf: pname with: param [
@@ -124212,7 +124212,7 @@ GLRegistry >> lightModelf: pname with: param [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> lightModelfv: pname with: params [
@@ -124231,7 +124231,7 @@ GLRegistry >> lightModelfv: pname with: params [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> lightModeli: pname with: param [
@@ -124249,7 +124249,7 @@ GLRegistry >> lightModeli: pname with: param [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> lightModeliv: pname with: params [
@@ -124337,7 +124337,7 @@ GLRegistry >> lightModelxvOES: pname with: param [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> lightf: light with: pname with: param [
@@ -124357,7 +124357,7 @@ GLRegistry >> lightf: light with: pname with: param [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> lightfv: light with: pname with: params [
@@ -124377,7 +124377,7 @@ GLRegistry >> lightfv: light with: pname with: params [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> lighti: light with: pname with: param [
@@ -124396,7 +124396,7 @@ GLRegistry >> lighti: light with: pname with: param [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> lightiv: light with: pname with: params [
@@ -124489,7 +124489,7 @@ GLRegistry >> lightxvOES: light with: pname with: params [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> lineStipple: factor with: pattern [
@@ -124594,7 +124594,7 @@ GLRegistry >> linkProgramARB: programObj [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> listBase: base [
@@ -124706,7 +124706,7 @@ GLRegistry >> listParameterivSGIX: list with: pname with: params [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> loadIdentity [
@@ -124739,7 +124739,7 @@ GLRegistry >> loadIdentityDeformationMapSGIX: mask [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> loadMatrixd: m [
@@ -124756,7 +124756,7 @@ GLRegistry >> loadMatrixd: m [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> loadMatrixf: m [
@@ -124807,7 +124807,7 @@ GLRegistry >> loadMatrixxOES: m [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> loadName: name [
@@ -124858,7 +124858,7 @@ GLRegistry >> loadProgramNV: target with: id with: len with: program [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> loadTransposeMatrixd: m [
@@ -124893,7 +124893,7 @@ GLRegistry >> loadTransposeMatrixdARB: m [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> loadTransposeMatrixf: m [
@@ -125190,7 +125190,7 @@ GLRegistry >> makeTextureHandleResidentNV: handle [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> map1d: target with: u1 with: u2 with: stride with: order with: points [
@@ -125212,7 +125212,7 @@ GLRegistry >> map1d: target with: u1 with: u2 with: stride with: order with: poi
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> map1f: target with: u1 with: u2 with: stride with: order with: points [
@@ -125255,7 +125255,7 @@ GLRegistry >> map1xOES: target with: u1 with: u2 with: stride with: order with: 
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> map2d: target with: u1 with: u2 with: ustride with: uorder with: v1 with: v2 with: vstride with: vorder with: points [
@@ -125281,7 +125281,7 @@ GLRegistry >> map2d: target with: u1 with: u2 with: ustride with: uorder with: v
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> map2f: target with: u1 with: u2 with: ustride with: uorder with: v1 with: v2 with: vstride with: vorder with: points [
@@ -125455,7 +125455,7 @@ GLRegistry >> mapControlPointsNV: target with: index with: type with: ustride wi
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> mapGrid1d: un with: u1 with: u2 [
@@ -125474,7 +125474,7 @@ GLRegistry >> mapGrid1d: un with: u1 with: u2 [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> mapGrid1f: un with: u1 with: u2 [
@@ -125511,7 +125511,7 @@ GLRegistry >> mapGrid1xOES: n with: u1 with: u2 [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> mapGrid2d: un with: u1 with: u2 with: vn with: v1 with: v2 [
@@ -125533,7 +125533,7 @@ GLRegistry >> mapGrid2d: un with: u1 with: u2 with: vn with: v1 with: v2 [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> mapGrid2f: un with: u1 with: u2 with: vn with: v1 with: v2 [
@@ -125821,7 +125821,7 @@ GLRegistry >> mapVertexAttrib2fAPPLE: index with: size with: u1 with: u2 with: u
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> materialf: face with: pname with: param [
@@ -125841,7 +125841,7 @@ GLRegistry >> materialf: face with: pname with: param [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> materialfv: face with: pname with: params [
@@ -125861,7 +125861,7 @@ GLRegistry >> materialfv: face with: pname with: params [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> materiali: face with: pname with: param [
@@ -125880,7 +125880,7 @@ GLRegistry >> materiali: face with: pname with: param [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> materialiv: face with: pname with: params [
@@ -126249,7 +126249,7 @@ GLRegistry >> matrixLoadfEXT: mode with: m [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> matrixMode: mode [
@@ -126817,7 +126817,7 @@ GLRegistry >> minmaxEXT: target with: internalformat with: sink [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> multMatrixd: m [
@@ -126834,7 +126834,7 @@ GLRegistry >> multMatrixd: m [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> multMatrixf: m [
@@ -126885,7 +126885,7 @@ GLRegistry >> multMatrixxOES: m [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> multTransposeMatrixd: m [
@@ -126920,7 +126920,7 @@ GLRegistry >> multTransposeMatrixdARB: m [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> multTransposeMatrixf: m [
@@ -127583,7 +127583,7 @@ GLRegistry >> multiTexCoord1bvOES: texture with: coords [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> multiTexCoord1d: target with: s [
@@ -127620,7 +127620,7 @@ GLRegistry >> multiTexCoord1dARB: target with: s [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> multiTexCoord1dv: target with: v [
@@ -127657,7 +127657,7 @@ GLRegistry >> multiTexCoord1dvARB: target with: v [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> multiTexCoord1f: target with: s [
@@ -127694,7 +127694,7 @@ GLRegistry >> multiTexCoord1fARB: target with: s [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> multiTexCoord1fv: target with: v [
@@ -127765,7 +127765,7 @@ GLRegistry >> multiTexCoord1hvNV: target with: v [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> multiTexCoord1i: target with: s [
@@ -127802,7 +127802,7 @@ GLRegistry >> multiTexCoord1iARB: target with: s [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> multiTexCoord1iv: target with: v [
@@ -127839,7 +127839,7 @@ GLRegistry >> multiTexCoord1ivARB: target with: v [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> multiTexCoord1s: target with: s [
@@ -127876,7 +127876,7 @@ GLRegistry >> multiTexCoord1sARB: target with: s [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> multiTexCoord1sv: target with: v [
@@ -127982,7 +127982,7 @@ GLRegistry >> multiTexCoord2bvOES: texture with: coords [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> multiTexCoord2d: target with: s with: t [
@@ -128021,7 +128021,7 @@ GLRegistry >> multiTexCoord2dARB: target with: s with: t [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> multiTexCoord2dv: target with: v [
@@ -128058,7 +128058,7 @@ GLRegistry >> multiTexCoord2dvARB: target with: v [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> multiTexCoord2f: target with: s with: t [
@@ -128097,7 +128097,7 @@ GLRegistry >> multiTexCoord2fARB: target with: s with: t [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> multiTexCoord2fv: target with: v [
@@ -128169,7 +128169,7 @@ GLRegistry >> multiTexCoord2hvNV: target with: v [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> multiTexCoord2i: target with: s with: t [
@@ -128208,7 +128208,7 @@ GLRegistry >> multiTexCoord2iARB: target with: s with: t [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> multiTexCoord2iv: target with: v [
@@ -128245,7 +128245,7 @@ GLRegistry >> multiTexCoord2ivARB: target with: v [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> multiTexCoord2s: target with: s with: t [
@@ -128284,7 +128284,7 @@ GLRegistry >> multiTexCoord2sARB: target with: s with: t [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> multiTexCoord2sv: target with: v [
@@ -128392,7 +128392,7 @@ GLRegistry >> multiTexCoord3bvOES: texture with: coords [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> multiTexCoord3d: target with: s with: t with: r [
@@ -128433,7 +128433,7 @@ GLRegistry >> multiTexCoord3dARB: target with: s with: t with: r [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> multiTexCoord3dv: target with: v [
@@ -128470,7 +128470,7 @@ GLRegistry >> multiTexCoord3dvARB: target with: v [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> multiTexCoord3f: target with: s with: t with: r [
@@ -128511,7 +128511,7 @@ GLRegistry >> multiTexCoord3fARB: target with: s with: t with: r [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> multiTexCoord3fv: target with: v [
@@ -128584,7 +128584,7 @@ GLRegistry >> multiTexCoord3hvNV: target with: v [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> multiTexCoord3i: target with: s with: t with: r [
@@ -128625,7 +128625,7 @@ GLRegistry >> multiTexCoord3iARB: target with: s with: t with: r [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> multiTexCoord3iv: target with: v [
@@ -128662,7 +128662,7 @@ GLRegistry >> multiTexCoord3ivARB: target with: v [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> multiTexCoord3s: target with: s with: t with: r [
@@ -128703,7 +128703,7 @@ GLRegistry >> multiTexCoord3sARB: target with: s with: t with: r [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> multiTexCoord3sv: target with: v [
@@ -128813,7 +128813,7 @@ GLRegistry >> multiTexCoord4bvOES: texture with: coords [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> multiTexCoord4d: target with: s with: t with: r with: q [
@@ -128856,7 +128856,7 @@ GLRegistry >> multiTexCoord4dARB: target with: s with: t with: r with: q [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> multiTexCoord4dv: target with: v [
@@ -128893,7 +128893,7 @@ GLRegistry >> multiTexCoord4dvARB: target with: v [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> multiTexCoord4f: target with: s with: t with: r with: q [
@@ -128937,7 +128937,7 @@ GLRegistry >> multiTexCoord4fARB: target with: s with: t with: r with: q [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> multiTexCoord4fv: target with: v [
@@ -129011,7 +129011,7 @@ GLRegistry >> multiTexCoord4hvNV: target with: v [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> multiTexCoord4i: target with: s with: t with: r with: q [
@@ -129054,7 +129054,7 @@ GLRegistry >> multiTexCoord4iARB: target with: s with: t with: r with: q [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> multiTexCoord4iv: target with: v [
@@ -129091,7 +129091,7 @@ GLRegistry >> multiTexCoord4ivARB: target with: v [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> multiTexCoord4s: target with: s with: t with: r with: q [
@@ -129134,7 +129134,7 @@ GLRegistry >> multiTexCoord4sARB: target with: s with: t with: r with: q [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> multiTexCoord4sv: target with: v [
@@ -131196,7 +131196,7 @@ GLRegistry >> namedStringARB: type with: namelen with: name with: stringlen with
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> newList: list with: mode [
@@ -131232,7 +131232,7 @@ GLRegistry >> newObjectBufferATI: size with: pointer with: usage [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> normal3b: nx with: ny with: nz [
@@ -131251,7 +131251,7 @@ GLRegistry >> normal3b: nx with: ny with: nz [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> normal3bv: v [
@@ -131268,7 +131268,7 @@ GLRegistry >> normal3bv: v [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> normal3d: nx with: ny with: nz [
@@ -131287,7 +131287,7 @@ GLRegistry >> normal3d: nx with: ny with: nz [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> normal3dv: v [
@@ -131304,7 +131304,7 @@ GLRegistry >> normal3dv: v [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> normal3f: nx with: ny with: nz [
@@ -131362,7 +131362,7 @@ GLRegistry >> normal3fVertex3fvSUN: n with: v [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> normal3fv: v [
@@ -131413,7 +131413,7 @@ GLRegistry >> normal3hvNV: v [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> normal3i: nx with: ny with: nz [
@@ -131432,7 +131432,7 @@ GLRegistry >> normal3i: nx with: ny with: nz [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> normal3iv: v [
@@ -131449,7 +131449,7 @@ GLRegistry >> normal3iv: v [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> normal3s: nx with: ny with: nz [
@@ -131468,7 +131468,7 @@ GLRegistry >> normal3s: nx with: ny with: nz [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> normal3sv: v [
@@ -131592,7 +131592,7 @@ GLRegistry >> normalP3uiv: type with: coords [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> normalPointer: type with: stride with: pointer [
@@ -131967,7 +131967,7 @@ GLRegistry >> objectUnpurgeableAPPLE: objectType with: name with: option [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> ortho: left with: right with: bottom with: top with: zNear with: zFar [
@@ -132093,7 +132093,7 @@ GLRegistry >> passTexCoordATI: dst with: coord with: swizzle [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> passThrough: token [
@@ -132705,7 +132705,7 @@ GLRegistry >> pixelDataRangeNV: target with: length with: pointer [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> pixelMapfv: map with: mapsize with: values [
@@ -132724,7 +132724,7 @@ GLRegistry >> pixelMapfv: map with: mapsize with: values [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> pixelMapuiv: map with: mapsize with: values [
@@ -132743,7 +132743,7 @@ GLRegistry >> pixelMapuiv: map with: mapsize with: values [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> pixelMapusv: map with: mapsize with: values [
@@ -132918,7 +132918,7 @@ GLRegistry >> pixelTexGenSGIX: mode [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> pixelTransferf: pname with: param [
@@ -132936,7 +132936,7 @@ GLRegistry >> pixelTransferf: pname with: param [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> pixelTransferi: pname with: param [
@@ -133043,7 +133043,7 @@ GLRegistry >> pixelTransformParameterivEXT: target with: pname with: params [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> pixelZoom: xfactor with: yfactor [
@@ -133674,7 +133674,7 @@ GLRegistry >> polygonOffsetxOES: factor with: units [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> polygonStipple: mask [
@@ -133691,7 +133691,7 @@ GLRegistry >> polygonStipple: mask [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> popAttrib [
@@ -133707,7 +133707,7 @@ GLRegistry >> popAttrib [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> popClientAttrib [
@@ -133776,7 +133776,7 @@ GLRegistry >> popGroupMarkerEXT [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> popMatrix [
@@ -133793,7 +133793,7 @@ GLRegistry >> popMatrix [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> popName [
@@ -134007,7 +134007,7 @@ GLRegistry >> primitiveRestartNV [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> prioritizeTextures: n with: textures with: priorities [
@@ -138052,7 +138052,7 @@ GLRegistry >> provokingVertexEXT: mode [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> pushAttrib: mask [
@@ -138069,7 +138069,7 @@ GLRegistry >> pushAttrib: mask [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> pushClientAttrib: mask [
@@ -138166,7 +138166,7 @@ GLRegistry >> pushGroupMarkerEXT: length with: marker [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> pushMatrix [
@@ -138183,7 +138183,7 @@ GLRegistry >> pushMatrix [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> pushName: name [
@@ -138311,7 +138311,7 @@ GLRegistry >> queryResourceTagNV: tagId with: tagString [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> rasterPos2d: x with: y [
@@ -138329,7 +138329,7 @@ GLRegistry >> rasterPos2d: x with: y [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> rasterPos2dv: v [
@@ -138346,7 +138346,7 @@ GLRegistry >> rasterPos2dv: v [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> rasterPos2f: x with: y [
@@ -138364,7 +138364,7 @@ GLRegistry >> rasterPos2f: x with: y [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> rasterPos2fv: v [
@@ -138381,7 +138381,7 @@ GLRegistry >> rasterPos2fv: v [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> rasterPos2i: x with: y [
@@ -138399,7 +138399,7 @@ GLRegistry >> rasterPos2i: x with: y [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> rasterPos2iv: v [
@@ -138416,7 +138416,7 @@ GLRegistry >> rasterPos2iv: v [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> rasterPos2s: x with: y [
@@ -138434,7 +138434,7 @@ GLRegistry >> rasterPos2s: x with: y [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> rasterPos2sv: v [
@@ -138484,7 +138484,7 @@ GLRegistry >> rasterPos2xvOES: coords [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> rasterPos3d: x with: y with: z [
@@ -138503,7 +138503,7 @@ GLRegistry >> rasterPos3d: x with: y with: z [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> rasterPos3dv: v [
@@ -138520,7 +138520,7 @@ GLRegistry >> rasterPos3dv: v [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> rasterPos3f: x with: y with: z [
@@ -138539,7 +138539,7 @@ GLRegistry >> rasterPos3f: x with: y with: z [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> rasterPos3fv: v [
@@ -138556,7 +138556,7 @@ GLRegistry >> rasterPos3fv: v [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> rasterPos3i: x with: y with: z [
@@ -138575,7 +138575,7 @@ GLRegistry >> rasterPos3i: x with: y with: z [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> rasterPos3iv: v [
@@ -138592,7 +138592,7 @@ GLRegistry >> rasterPos3iv: v [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> rasterPos3s: x with: y with: z [
@@ -138611,7 +138611,7 @@ GLRegistry >> rasterPos3s: x with: y with: z [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> rasterPos3sv: v [
@@ -138662,7 +138662,7 @@ GLRegistry >> rasterPos3xvOES: coords [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> rasterPos4d: x with: y with: z with: w [
@@ -138682,7 +138682,7 @@ GLRegistry >> rasterPos4d: x with: y with: z with: w [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> rasterPos4dv: v [
@@ -138699,7 +138699,7 @@ GLRegistry >> rasterPos4dv: v [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> rasterPos4f: x with: y with: z with: w [
@@ -138719,7 +138719,7 @@ GLRegistry >> rasterPos4f: x with: y with: z with: w [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> rasterPos4fv: v [
@@ -138736,7 +138736,7 @@ GLRegistry >> rasterPos4fv: v [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> rasterPos4i: x with: y with: z with: w [
@@ -138756,7 +138756,7 @@ GLRegistry >> rasterPos4i: x with: y with: z with: w [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> rasterPos4iv: v [
@@ -138773,7 +138773,7 @@ GLRegistry >> rasterPos4iv: v [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> rasterPos4s: x with: y with: z with: w [
@@ -138793,7 +138793,7 @@ GLRegistry >> rasterPos4s: x with: y with: z with: w [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> rasterPos4sv: v [
@@ -139059,7 +139059,7 @@ GLRegistry >> readnPixelsKHR: x with: y with: width with: height with: format wi
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> rectd: x1 with: y1 with: x2 with: y2 [
@@ -139079,7 +139079,7 @@ GLRegistry >> rectd: x1 with: y1 with: x2 with: y2 [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> rectdv: v1 with: v2 [
@@ -139097,7 +139097,7 @@ GLRegistry >> rectdv: v1 with: v2 [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> rectf: x1 with: y1 with: x2 with: y2 [
@@ -139117,7 +139117,7 @@ GLRegistry >> rectf: x1 with: y1 with: x2 with: y2 [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> rectfv: v1 with: v2 [
@@ -139135,7 +139135,7 @@ GLRegistry >> rectfv: v1 with: v2 [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> recti: x1 with: y1 with: x2 with: y2 [
@@ -139155,7 +139155,7 @@ GLRegistry >> recti: x1 with: y1 with: x2 with: y2 [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> rectiv: v1 with: v2 [
@@ -139173,7 +139173,7 @@ GLRegistry >> rectiv: v1 with: v2 [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> rects: x1 with: y1 with: x2 with: y2 [
@@ -139193,7 +139193,7 @@ GLRegistry >> rects: x1 with: y1 with: x2 with: y2 [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> rectsv: v1 with: v2 [
@@ -139315,7 +139315,7 @@ GLRegistry >> renderGpuMaskNV: mask [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> renderMode: mode [
@@ -140203,7 +140203,7 @@ GLRegistry >> resumeTransformFeedbackNV [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> rotated: angle with: x with: y with: z [
@@ -140223,7 +140223,7 @@ GLRegistry >> rotated: angle with: x with: y with: z [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> rotatef: angle with: x with: y with: z [
@@ -140685,7 +140685,7 @@ GLRegistry >> samplerParameteriv: sampler with: pname with: param [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> scaled: x with: y with: z [
@@ -140704,7 +140704,7 @@ GLRegistry >> scaled: x with: y with: z [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> scalef: x with: y with: z [
@@ -141004,7 +141004,7 @@ GLRegistry >> scissorIndexedvOES: index with: v [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> secondaryColor3b: red with: green with: blue [
@@ -141043,7 +141043,7 @@ GLRegistry >> secondaryColor3bEXT: red with: green with: blue [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> secondaryColor3bv: v [
@@ -141078,7 +141078,7 @@ GLRegistry >> secondaryColor3bvEXT: v [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> secondaryColor3d: red with: green with: blue [
@@ -141117,7 +141117,7 @@ GLRegistry >> secondaryColor3dEXT: red with: green with: blue [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> secondaryColor3dv: v [
@@ -141152,7 +141152,7 @@ GLRegistry >> secondaryColor3dvEXT: v [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> secondaryColor3f: red with: green with: blue [
@@ -141191,7 +141191,7 @@ GLRegistry >> secondaryColor3fEXT: red with: green with: blue [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> secondaryColor3fv: v [
@@ -141260,7 +141260,7 @@ GLRegistry >> secondaryColor3hvNV: v [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> secondaryColor3i: red with: green with: blue [
@@ -141299,7 +141299,7 @@ GLRegistry >> secondaryColor3iEXT: red with: green with: blue [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> secondaryColor3iv: v [
@@ -141334,7 +141334,7 @@ GLRegistry >> secondaryColor3ivEXT: v [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> secondaryColor3s: red with: green with: blue [
@@ -141373,7 +141373,7 @@ GLRegistry >> secondaryColor3sEXT: red with: green with: blue [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> secondaryColor3sv: v [
@@ -141408,7 +141408,7 @@ GLRegistry >> secondaryColor3svEXT: v [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> secondaryColor3ub: red with: green with: blue [
@@ -141447,7 +141447,7 @@ GLRegistry >> secondaryColor3ubEXT: red with: green with: blue [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> secondaryColor3ubv: v [
@@ -141482,7 +141482,7 @@ GLRegistry >> secondaryColor3ubvEXT: v [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> secondaryColor3ui: red with: green with: blue [
@@ -141521,7 +141521,7 @@ GLRegistry >> secondaryColor3uiEXT: red with: green with: blue [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> secondaryColor3uiv: v [
@@ -141556,7 +141556,7 @@ GLRegistry >> secondaryColor3uivEXT: v [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> secondaryColor3us: red with: green with: blue [
@@ -141595,7 +141595,7 @@ GLRegistry >> secondaryColor3usEXT: red with: green with: blue [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> secondaryColor3usv: v [
@@ -141685,7 +141685,7 @@ GLRegistry >> secondaryColorP3uiv: type with: color [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> secondaryColorPointer: size with: type with: stride with: pointer [
@@ -141746,7 +141746,7 @@ GLRegistry >> secondaryColorPointerListIBM: size with: type with: stride with: p
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> selectBuffer: size with: buffer [
@@ -141978,7 +141978,7 @@ GLRegistry >> setMultisamplefvAMD: pname with: index with: val [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> shadeModel: mode [
@@ -143492,7 +143492,7 @@ GLRegistry >> texCoord1bvOES: coords [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> texCoord1d: s [
@@ -143509,7 +143509,7 @@ GLRegistry >> texCoord1d: s [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> texCoord1dv: v [
@@ -143526,7 +143526,7 @@ GLRegistry >> texCoord1dv: v [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> texCoord1f: s [
@@ -143543,7 +143543,7 @@ GLRegistry >> texCoord1f: s [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> texCoord1fv: v [
@@ -143592,7 +143592,7 @@ GLRegistry >> texCoord1hvNV: v [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> texCoord1i: s [
@@ -143609,7 +143609,7 @@ GLRegistry >> texCoord1i: s [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> texCoord1iv: v [
@@ -143626,7 +143626,7 @@ GLRegistry >> texCoord1iv: v [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> texCoord1s: s [
@@ -143643,7 +143643,7 @@ GLRegistry >> texCoord1s: s [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> texCoord1sv: v [
@@ -143725,7 +143725,7 @@ GLRegistry >> texCoord2bvOES: coords [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> texCoord2d: s with: t [
@@ -143743,7 +143743,7 @@ GLRegistry >> texCoord2d: s with: t [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> texCoord2dv: v [
@@ -143760,7 +143760,7 @@ GLRegistry >> texCoord2dv: v [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> texCoord2f: s with: t [
@@ -143985,7 +143985,7 @@ GLRegistry >> texCoord2fVertex3fvSUN: tc with: v [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> texCoord2fv: v [
@@ -144035,7 +144035,7 @@ GLRegistry >> texCoord2hvNV: v [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> texCoord2i: s with: t [
@@ -144053,7 +144053,7 @@ GLRegistry >> texCoord2i: s with: t [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> texCoord2iv: v [
@@ -144070,7 +144070,7 @@ GLRegistry >> texCoord2iv: v [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> texCoord2s: s with: t [
@@ -144088,7 +144088,7 @@ GLRegistry >> texCoord2s: s with: t [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> texCoord2sv: v [
@@ -144172,7 +144172,7 @@ GLRegistry >> texCoord3bvOES: coords [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> texCoord3d: s with: t with: r [
@@ -144191,7 +144191,7 @@ GLRegistry >> texCoord3d: s with: t with: r [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> texCoord3dv: v [
@@ -144208,7 +144208,7 @@ GLRegistry >> texCoord3dv: v [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> texCoord3f: s with: t with: r [
@@ -144227,7 +144227,7 @@ GLRegistry >> texCoord3f: s with: t with: r [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> texCoord3fv: v [
@@ -144278,7 +144278,7 @@ GLRegistry >> texCoord3hvNV: v [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> texCoord3i: s with: t with: r [
@@ -144297,7 +144297,7 @@ GLRegistry >> texCoord3i: s with: t with: r [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> texCoord3iv: v [
@@ -144314,7 +144314,7 @@ GLRegistry >> texCoord3iv: v [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> texCoord3s: s with: t with: r [
@@ -144333,7 +144333,7 @@ GLRegistry >> texCoord3s: s with: t with: r [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> texCoord3sv: v [
@@ -144419,7 +144419,7 @@ GLRegistry >> texCoord4bvOES: coords [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> texCoord4d: s with: t with: r with: q [
@@ -144439,7 +144439,7 @@ GLRegistry >> texCoord4d: s with: t with: r with: q [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> texCoord4dv: v [
@@ -144456,7 +144456,7 @@ GLRegistry >> texCoord4dv: v [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> texCoord4f: s with: t with: r with: q [
@@ -144565,7 +144565,7 @@ GLRegistry >> texCoord4fVertex4fvSUN: tc with: v [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> texCoord4fv: v [
@@ -144617,7 +144617,7 @@ GLRegistry >> texCoord4hvNV: v [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> texCoord4i: s with: t with: r with: q [
@@ -144637,7 +144637,7 @@ GLRegistry >> texCoord4i: s with: t with: r with: q [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> texCoord4iv: v [
@@ -144654,7 +144654,7 @@ GLRegistry >> texCoord4iv: v [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> texCoord4s: s with: t with: r with: q [
@@ -144674,7 +144674,7 @@ GLRegistry >> texCoord4s: s with: t with: r with: q [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> texCoord4sv: v [
@@ -144889,7 +144889,7 @@ GLRegistry >> texCoordP4uiv: type with: coords [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> texCoordPointer: size with: type with: stride with: pointer [
@@ -144968,7 +144968,7 @@ GLRegistry >> texCoordPointervINTEL: size with: type with: pointer [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> texEnvf: target with: pname with: param [
@@ -144988,7 +144988,7 @@ GLRegistry >> texEnvf: target with: pname with: param [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> texEnvfv: target with: pname with: params [
@@ -145008,7 +145008,7 @@ GLRegistry >> texEnvfv: target with: pname with: params [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> texEnvi: target with: pname with: param [
@@ -145028,7 +145028,7 @@ GLRegistry >> texEnvi: target with: pname with: param [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> texEnviv: target with: pname with: params [
@@ -145178,7 +145178,7 @@ GLRegistry >> texFilterFuncSGIS: target with: filter with: n with: weights [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> texGend: coord with: pname with: param [
@@ -145197,7 +145197,7 @@ GLRegistry >> texGend: coord with: pname with: param [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> texGendv: coord with: pname with: params [
@@ -145216,7 +145216,7 @@ GLRegistry >> texGendv: coord with: pname with: params [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> texGenf: coord with: pname with: param [
@@ -145253,7 +145253,7 @@ GLRegistry >> texGenfOES: coord with: pname with: param [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> texGenfv: coord with: pname with: params [
@@ -145290,7 +145290,7 @@ GLRegistry >> texGenfvOES: coord with: pname with: params [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> texGeni: coord with: pname with: param [
@@ -145327,7 +145327,7 @@ GLRegistry >> texGeniOES: coord with: pname with: param [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> texGeniv: coord with: pname with: params [
@@ -148089,7 +148089,7 @@ GLRegistry >> transformPathNV: resultPath with: srcPath with: transformType with
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> translated: x with: y with: z [
@@ -148108,7 +148108,7 @@ GLRegistry >> translated: x with: y with: z [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> translatef: x with: y with: z [
@@ -151447,7 +151447,7 @@ GLRegistry >> vertex2bvOES: coords [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> vertex2d: x with: y [
@@ -151465,7 +151465,7 @@ GLRegistry >> vertex2d: x with: y [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> vertex2dv: v [
@@ -151482,7 +151482,7 @@ GLRegistry >> vertex2dv: v [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> vertex2f: x with: y [
@@ -151500,7 +151500,7 @@ GLRegistry >> vertex2f: x with: y [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> vertex2fv: v [
@@ -151550,7 +151550,7 @@ GLRegistry >> vertex2hvNV: v [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> vertex2i: x with: y [
@@ -151568,7 +151568,7 @@ GLRegistry >> vertex2i: x with: y [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> vertex2iv: v [
@@ -151585,7 +151585,7 @@ GLRegistry >> vertex2iv: v [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> vertex2s: x with: y [
@@ -151603,7 +151603,7 @@ GLRegistry >> vertex2s: x with: y [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> vertex2sv: v [
@@ -151686,7 +151686,7 @@ GLRegistry >> vertex3bvOES: coords [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> vertex3d: x with: y with: z [
@@ -151705,7 +151705,7 @@ GLRegistry >> vertex3d: x with: y with: z [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> vertex3dv: v [
@@ -151722,7 +151722,7 @@ GLRegistry >> vertex3dv: v [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> vertex3f: x with: y with: z [
@@ -151741,7 +151741,7 @@ GLRegistry >> vertex3f: x with: y with: z [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> vertex3fv: v [
@@ -151792,7 +151792,7 @@ GLRegistry >> vertex3hvNV: v [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> vertex3i: x with: y with: z [
@@ -151811,7 +151811,7 @@ GLRegistry >> vertex3i: x with: y with: z [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> vertex3iv: v [
@@ -151828,7 +151828,7 @@ GLRegistry >> vertex3iv: v [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> vertex3s: x with: y with: z [
@@ -151847,7 +151847,7 @@ GLRegistry >> vertex3s: x with: y with: z [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> vertex3sv: v [
@@ -151932,7 +151932,7 @@ GLRegistry >> vertex4bvOES: coords [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> vertex4d: x with: y with: z with: w [
@@ -151952,7 +151952,7 @@ GLRegistry >> vertex4d: x with: y with: z with: w [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> vertex4dv: v [
@@ -151969,7 +151969,7 @@ GLRegistry >> vertex4dv: v [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> vertex4f: x with: y with: z with: w [
@@ -151989,7 +151989,7 @@ GLRegistry >> vertex4f: x with: y with: z with: w [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> vertex4fv: v [
@@ -152041,7 +152041,7 @@ GLRegistry >> vertex4hvNV: v [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> vertex4i: x with: y with: z with: w [
@@ -152061,7 +152061,7 @@ GLRegistry >> vertex4i: x with: y with: z with: w [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> vertex4iv: v [
@@ -152078,7 +152078,7 @@ GLRegistry >> vertex4iv: v [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> vertex4s: x with: y with: z with: w [
@@ -152098,7 +152098,7 @@ GLRegistry >> vertex4s: x with: y with: z with: w [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> vertex4sv: v [
@@ -157302,7 +157302,7 @@ GLRegistry >> vertexP4uiv: type with: value [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> vertexPointer: size with: type with: stride with: pointer [
@@ -158647,7 +158647,7 @@ GLRegistry >> weightusvARB: size with: weights [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> windowPos2d: x with: y [
@@ -158702,7 +158702,7 @@ GLRegistry >> windowPos2dMESA: x with: y [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> windowPos2dv: v [
@@ -158754,7 +158754,7 @@ GLRegistry >> windowPos2dvMESA: v [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> windowPos2f: x with: y [
@@ -158809,7 +158809,7 @@ GLRegistry >> windowPos2fMESA: x with: y [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> windowPos2fv: v [
@@ -158861,7 +158861,7 @@ GLRegistry >> windowPos2fvMESA: v [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> windowPos2i: x with: y [
@@ -158916,7 +158916,7 @@ GLRegistry >> windowPos2iMESA: x with: y [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> windowPos2iv: v [
@@ -158968,7 +158968,7 @@ GLRegistry >> windowPos2ivMESA: v [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> windowPos2s: x with: y [
@@ -159023,7 +159023,7 @@ GLRegistry >> windowPos2sMESA: x with: y [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> windowPos2sv: v [
@@ -159075,7 +159075,7 @@ GLRegistry >> windowPos2svMESA: v [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> windowPos3d: x with: y with: z [
@@ -159133,7 +159133,7 @@ GLRegistry >> windowPos3dMESA: x with: y with: z [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> windowPos3dv: v [
@@ -159185,7 +159185,7 @@ GLRegistry >> windowPos3dvMESA: v [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> windowPos3f: x with: y with: z [
@@ -159243,7 +159243,7 @@ GLRegistry >> windowPos3fMESA: x with: y with: z [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> windowPos3fv: v [
@@ -159295,7 +159295,7 @@ GLRegistry >> windowPos3fvMESA: v [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> windowPos3i: x with: y with: z [
@@ -159353,7 +159353,7 @@ GLRegistry >> windowPos3iMESA: x with: y with: z [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> windowPos3iv: v [
@@ -159405,7 +159405,7 @@ GLRegistry >> windowPos3ivMESA: v [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> windowPos3s: x with: y with: z [
@@ -159463,7 +159463,7 @@ GLRegistry >> windowPos3sMESA: x with: y with: z [
 ]
 
 {
-	#category : #commands,
+	#category : #'commands - removed',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
 }
 GLRegistry >> windowPos3sv: v [

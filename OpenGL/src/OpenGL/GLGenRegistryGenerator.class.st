@@ -9,11 +9,12 @@ Class {
 
 {
 	#category : #'method sources',
-	#'squeak_changestamp' : 'stlu 4/13/2021 12:14'
+	#'squeak_changestamp' : 'stlu 4/19/2021 19:43'
 }
 GLGenRegistryGenerator >> commandCategory: aCommand [
 
 	aCommand definitions ifEmpty: [^ #'commands - unused'].
+	aCommand isEverRemoved ifTrue: [^ #'commands - removed'].
 	^ aCommand isOnlyDefinedInExtensions
 		ifTrue: [#'commands - extensions']
 		ifFalse: [#'commands']
@@ -38,11 +39,12 @@ GLGenRegistryGenerator >> commandSource: aCommand [
 
 {
 	#category : #'method sources',
-	#'squeak_changestamp' : 'stlu 4/13/2021 12:14'
+	#'squeak_changestamp' : 'stlu 4/19/2021 19:43'
 }
 GLGenRegistryGenerator >> enumCategory: anEnum [
 
 	anEnum definitions ifEmpty: [^ #'enums - unused'].
+	anEnum isEverRemoved ifTrue: [^ #'enums - removed'].
 	^ anEnum isOnlyDefinedInExtensions
 		ifTrue: [#'enums - extensions']
 		ifFalse: [#'enums']

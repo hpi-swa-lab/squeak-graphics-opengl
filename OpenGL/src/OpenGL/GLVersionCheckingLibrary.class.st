@@ -53,7 +53,7 @@ GLVersionCheckingLibrary class >> around: aLibrary targetVersion: aVersion targe
 
 {
 	#category : #examples,
-	#'squeak_changestamp' : 'stlu 4/19/2021 12:18'
+	#'squeak_changestamp' : 'stlu 4/19/2021 19:12'
 }
 GLVersionCheckingLibrary class >> example1 [ "self example1"
 	"An OpenGL example which uses deprecated fixed-function pipeline api calls.
@@ -78,9 +78,9 @@ GLVersionCheckingLibrary class >> example1 [ "self example1"
 			
 			GL begin: GL_POLYGON. "removed in OpenGL 3.2 Core Profile"
 				GL vertex2f: -0.7 with: -0.7. "removed in OpenGL 3.2 Core Profile"
-				GL vertex2f:  0.7 with: -0.7. "removed in OpenGL 3.2 Core Profile"
-				GL vertex2f:  0.7 with:  0.7. "removed in OpenGL 3.2 Core Profile"
-				GL vertex2f: -0.7 with:  0.7. "removed in OpenGL 3.2 Core Profile"
+				GL vertex2f:  0.7 with: -0.7.
+				GL vertex2f:  0.7 with:  0.7.
+				GL vertex2f: -0.7 with:  0.7.
 			GL end. "removed in OpenGL 3.2 Core Profile"
 			
 			context swapBuffers.

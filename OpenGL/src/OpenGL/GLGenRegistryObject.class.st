@@ -70,6 +70,16 @@ GLGenRegistryObject >> initialize [
 
 {
 	#category : #testing,
+	#'squeak_changestamp' : 'stlu 4/19/2021 19:44'
+}
+GLGenRegistryObject >> isEverRemoved [
+
+	^ definitions anySatisfy: [:each |
+		each second = #remove]
+]
+
+{
+	#category : #testing,
 	#'squeak_changestamp' : 'stlu 4/12/2021 18:30'
 }
 GLGenRegistryObject >> isOnlyDefinedInExtensions [
