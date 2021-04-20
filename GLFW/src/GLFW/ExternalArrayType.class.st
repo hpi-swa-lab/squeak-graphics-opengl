@@ -5,7 +5,7 @@ Class {
 		'numberOfItems',
 		'type'
 	],
-	#category : #'OpenGL-FFI-Support'
+	#category : #'GLFW-FFI-Support'
 }
 
 {

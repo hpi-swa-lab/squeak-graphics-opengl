@@ -1,7 +1,7 @@
 Class {
 	#name : #FFICallbackResult,
 	#superclass : #ExternalUnion,
-	#category : #'OpenGL-FFI-Support'
+	#category : #'GLFW-FFI-Support'
 }
 
 {

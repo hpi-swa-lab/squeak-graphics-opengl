@@ -22,7 +22,7 @@ Class {
 		'ExecutablePages',
 		'LifoCallbackSemaphore'
 	],
-	#category : #'OpenGL-FFI-Support'
+	#category : #'GLFW-FFI-Support'
 }
 
 {

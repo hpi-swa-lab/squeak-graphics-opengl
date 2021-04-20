@@ -1,7 +1,7 @@
 Class {
 	#name : #FFICallbackContext,
 	#superclass : #ExternalStructure,
-	#category : #'OpenGL-FFI-Support'
+	#category : #'GLFW-FFI-Support'
 }
 
 {
