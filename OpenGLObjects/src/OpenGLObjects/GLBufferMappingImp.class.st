@@ -1,8 +1,7 @@
 Class {
 	#name : #GLBufferMappingImp,
 	#superclass : #GLObjectImp,
-	#category : #'OpenGLObjects-Buffers',
-	#'squeak_changestamp' : ''
+	#category : #'OpenGLObjects-Buffers'
 }
 
 {

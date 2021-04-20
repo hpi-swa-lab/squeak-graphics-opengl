@@ -6,8 +6,7 @@ Class {
 		'elementArrayBuffer',
 		'vertexAttributes'
 	],
-	#category : #'OpenGLObjects-VertexArrays',
-	#'squeak_changestamp' : ''
+	#category : #'OpenGLObjects-VertexArrays'
 }
 
 {

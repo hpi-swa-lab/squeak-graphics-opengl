@@ -4,8 +4,7 @@ Class {
 	#instVars : [
 		'resourceClass'
 	],
-	#category : #'OpenGLObjects-Programs',
-	#'squeak_changestamp' : ''
+	#category : #'OpenGLObjects-Programs'
 }
 
 {

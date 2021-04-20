@@ -6,7 +6,7 @@ Class {
 		'uniformSetter',
 		'vertexArrayImp'
 	],
-	#category : #'OpenGL-Core'
+	#category : #'OpenGLObjects-Core'
 }
 
 {

@@ -10,8 +10,7 @@ Class {
 	#classInstVars : [
 		'instance'
 	],
-	#category : #'OpenGLObjects-Types',
-	#'squeak_changestamp' : ''
+	#category : #'OpenGLObjects-Types'
 }
 
 {

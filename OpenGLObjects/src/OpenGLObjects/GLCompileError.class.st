@@ -5,8 +5,7 @@ Class {
 		'shader',
 		'infoLog'
 	],
-	#category : #'OpenGLObjects-Errors',
-	#'squeak_changestamp' : ''
+	#category : #'OpenGLObjects-Errors'
 }
 
 {

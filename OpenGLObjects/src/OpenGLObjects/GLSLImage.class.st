@@ -1,8 +1,7 @@
 Class {
 	#name : #GLSLImage,
 	#superclass : #GLSLType,
-	#category : #'OpenGLObjects-Types',
-	#'squeak_changestamp' : ''
+	#category : #'OpenGLObjects-Types'
 }
 
 {

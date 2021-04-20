@@ -7,8 +7,7 @@ Class {
 		'value',
 		'stateAccessImp'
 	],
-	#category : #'OpenGLObjects-Programs',
-	#'squeak_changestamp' : ''
+	#category : #'OpenGLObjects-Programs'
 }
 
 {

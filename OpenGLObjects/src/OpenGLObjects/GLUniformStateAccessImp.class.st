@@ -1,8 +1,7 @@
 Class {
 	#name : #GLUniformStateAccessImp,
 	#superclass : #GLObjectImp,
-	#category : #'OpenGLObjects-Programs',
-	#'squeak_changestamp' : ''
+	#category : #'OpenGLObjects-Programs'
 }
 
 {

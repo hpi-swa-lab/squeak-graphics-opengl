@@ -1,8 +1,7 @@
 Class {
 	#name : #GLSLInteger1DArraySampler,
 	#superclass : #GLSLSampler,
-	#category : #'OpenGLObjects-Types',
-	#'squeak_changestamp' : ''
+	#category : #'OpenGLObjects-Types'
 }
 
 {

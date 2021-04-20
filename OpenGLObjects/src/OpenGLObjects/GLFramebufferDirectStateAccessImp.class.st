@@ -1,8 +1,7 @@
 Class {
 	#name : #GLFramebufferDirectStateAccessImp,
 	#superclass : #GLFramebufferStateAccessImp,
-	#category : #'OpenGLObjects-FrameBuffers',
-	#'squeak_changestamp' : ''
+	#category : #'OpenGLObjects-FrameBuffers'
 }
 
 {

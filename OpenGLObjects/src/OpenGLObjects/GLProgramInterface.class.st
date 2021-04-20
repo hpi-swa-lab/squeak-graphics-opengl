@@ -10,8 +10,7 @@ Class {
 	#pools : [
 		'GLConstants'
 	],
-	#category : #'OpenGLObjects-Programs',
-	#'squeak_changestamp' : ''
+	#category : #'OpenGLObjects-Programs'
 }
 
 {

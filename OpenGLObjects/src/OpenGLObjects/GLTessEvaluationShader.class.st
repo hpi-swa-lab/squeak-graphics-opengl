@@ -1,8 +1,7 @@
 Class {
 	#name : #GLTessEvaluationShader,
 	#superclass : #GLShader,
-	#category : #'OpenGLObjects-Shaders',
-	#'squeak_changestamp' : ''
+	#category : #'OpenGLObjects-Shaders'
 }
 
 {

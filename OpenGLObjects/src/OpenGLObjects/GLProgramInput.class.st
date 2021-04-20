@@ -5,8 +5,7 @@ Class {
 		'location',
 		'type'
 	],
-	#category : #'OpenGLObjects-Programs',
-	#'squeak_changestamp' : ''
+	#category : #'OpenGLObjects-Programs'
 }
 
 {

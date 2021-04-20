@@ -1,8 +1,7 @@
 Class {
 	#name : #GLTexture,
 	#superclass : #GLObject,
-	#category : #'OpenGLObjects-Textures',
-	#'squeak_changestamp' : ''
+	#category : #'OpenGLObjects-Textures'
 }
 
 {

@@ -1,8 +1,7 @@
 Class {
 	#name : #GLSLUnsignedInteger3DSampler,
 	#superclass : #GLSLSampler,
-	#category : #'OpenGLObjects-Types',
-	#'squeak_changestamp' : ''
+	#category : #'OpenGLObjects-Types'
 }
 
 {

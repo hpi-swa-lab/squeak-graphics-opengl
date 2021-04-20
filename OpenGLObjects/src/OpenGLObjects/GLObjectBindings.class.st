@@ -24,7 +24,7 @@ Class {
 	#pools : [
 		'GLConstants'
 	],
-	#category : #'OpenGL-Core'
+	#category : #'OpenGLObjects-Core'
 }
 
 {

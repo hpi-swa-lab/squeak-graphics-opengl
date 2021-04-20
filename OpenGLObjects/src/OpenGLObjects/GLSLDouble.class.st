@@ -1,8 +1,7 @@
 Class {
 	#name : #GLSLDouble,
 	#superclass : #GLSLScalar,
-	#category : #'OpenGLObjects-Types',
-	#'squeak_changestamp' : ''
+	#category : #'OpenGLObjects-Types'
 }
 
 {

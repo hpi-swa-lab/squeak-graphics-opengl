@@ -4,6 +4,5 @@ Class {
 	#pools : [
 		'GLConstants'
 	],
-	#category : #'OpenGLObjects-Core',
-	#'squeak_changestamp' : ''
+	#category : #'OpenGLObjects-Core'
 }

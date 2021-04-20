@@ -1,8 +1,7 @@
 Class {
 	#name : #GLSLUnsignedIntegerCubeSampler,
 	#superclass : #GLSLSampler,
-	#category : #'OpenGLObjects-Types',
-	#'squeak_changestamp' : ''
+	#category : #'OpenGLObjects-Types'
 }
 
 {

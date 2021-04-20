@@ -1,8 +1,7 @@
 Class {
 	#name : #GLRenderBuffer,
 	#superclass : #GLObject,
-	#category : #'OpenGLObjects-FrameBuffers',
-	#'squeak_changestamp' : ''
+	#category : #'OpenGLObjects-FrameBuffers'
 }
 
 {

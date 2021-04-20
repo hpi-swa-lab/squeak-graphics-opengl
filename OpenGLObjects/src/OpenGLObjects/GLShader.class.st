@@ -5,8 +5,7 @@ Class {
 		'source',
 		'associatedMethod'
 	],
-	#category : #'OpenGLObjects-Shaders',
-	#'squeak_changestamp' : ''
+	#category : #'OpenGLObjects-Shaders'
 }
 
 {

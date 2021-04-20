@@ -15,8 +15,7 @@ Class {
 	#pools : [
 		'GLConstants'
 	],
-	#category : #'OpenGLObjects-VertexArrays',
-	#'squeak_changestamp' : ''
+	#category : #'OpenGLObjects-VertexArrays'
 }
 
 {

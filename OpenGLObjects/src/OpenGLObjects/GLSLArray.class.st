@@ -5,8 +5,7 @@ Class {
 		'type',
 		'numElements'
 	],
-	#category : #'OpenGLObjects-Types',
-	#'squeak_changestamp' : ''
+	#category : #'OpenGLObjects-Types'
 }
 
 {

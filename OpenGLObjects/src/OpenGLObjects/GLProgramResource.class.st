@@ -12,8 +12,7 @@ Class {
 		'queryProperties',
 		'propertiesToQuery'
 	],
-	#category : #'OpenGLObjects-Programs',
-	#'squeak_changestamp' : ''
+	#category : #'OpenGLObjects-Programs'
 }
 
 {

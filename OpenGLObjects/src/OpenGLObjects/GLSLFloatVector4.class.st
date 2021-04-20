@@ -1,8 +1,7 @@
 Class {
 	#name : #GLSLFloatVector4,
 	#superclass : #GLSLVector,
-	#category : #'OpenGLObjects-Types',
-	#'squeak_changestamp' : ''
+	#category : #'OpenGLObjects-Types'
 }
 
 {

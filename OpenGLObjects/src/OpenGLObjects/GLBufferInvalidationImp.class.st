@@ -1,8 +1,7 @@
 Class {
 	#name : #GLBufferInvalidationImp,
 	#superclass : #GLObjectImp,
-	#category : #'OpenGLObjects-Buffers',
-	#'squeak_changestamp' : ''
+	#category : #'OpenGLObjects-Buffers'
 }
 
 {

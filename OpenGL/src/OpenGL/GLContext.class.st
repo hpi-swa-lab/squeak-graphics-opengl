@@ -5,12 +5,12 @@ Class {
 		'library',
 		'version',
 		'extensions',
+		'userData',
+		'isDestroyed',
 		'objectBindings',
 		'objectImps',
 		'objectStore',
-		'programs',
-		'userData',
-		'isDestroyed'
+		'programs'
 	],
 	#pools : [
 		'GLConstants'
@@ -102,7 +102,7 @@ GLContext >> extensions [
 
 {
 	#category : #'initialize-release',
-	#'squeak_changestamp' : 'stlu 4/16/2021 14:02'
+	#'squeak_changestamp' : 'stlu 4/20/2021 12:30'
 }
 GLContext >> initialize [
 
@@ -112,11 +112,11 @@ GLContext >> initialize [
 	self initializeLibrary.
 	self initializeExtensions.
 	
-	self flag: #todo. "GLObject dependency"
-	objectStore := OrderedCollection new.
-	programs := IdentityDictionary new.
-	self initializeObjectBindings.
-	self initializeObjectImps
+	self supportsGLObjects ifTrue: [
+		objectStore := OrderedCollection new.
+		programs := IdentityDictionary new.
+		self initializeObjectBindings.
+		self initializeObjectImps]
 ]
 
 {
@@ -242,6 +242,16 @@ GLContext >> shouldClose [
 
 	self flag: #todo. "This does not belong here"
 	self subclassResponsibility
+]
+
+{
+	#category : #testing,
+	#'squeak_changestamp' : 'stlu 4/20/2021 12:32'
+}
+GLContext >> supportsGLObjects [
+
+	self flag: #todo. "Is there a more robust way to determine this?"
+	^ self environment hasClassNamed: #GLObject
 ]
 
 {

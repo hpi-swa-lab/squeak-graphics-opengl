@@ -6,8 +6,7 @@ Class {
 		'uniforms',
 		'inputs'
 	],
-	#category : #'OpenGLObjects-Programs',
-	#'squeak_changestamp' : ''
+	#category : #'OpenGLObjects-Programs'
 }
 
 {

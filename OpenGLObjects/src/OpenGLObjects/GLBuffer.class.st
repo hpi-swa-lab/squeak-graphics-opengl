@@ -6,8 +6,7 @@ Class {
 		'size',
 		'usage'
 	],
-	#category : #'OpenGLObjects-Buffers',
-	#'squeak_changestamp' : ''
+	#category : #'OpenGLObjects-Buffers'
 }
 
 {

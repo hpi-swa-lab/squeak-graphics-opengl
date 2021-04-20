@@ -1,8 +1,7 @@
 Class {
 	#name : #GLSLDoubleMatrix2x4,
 	#superclass : #GLSLMatrix,
-	#category : #'OpenGLObjects-Types',
-	#'squeak_changestamp' : ''
+	#category : #'OpenGLObjects-Types'
 }
 
 {

@@ -1,8 +1,7 @@
 Class {
 	#name : #GLSLFloatCubeMapArraySampler,
 	#superclass : #GLSLSampler,
-	#category : #'OpenGLObjects-Types',
-	#'squeak_changestamp' : ''
+	#category : #'OpenGLObjects-Types'
 }
 
 {

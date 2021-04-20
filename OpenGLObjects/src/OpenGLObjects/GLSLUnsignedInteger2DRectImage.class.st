@@ -1,8 +1,7 @@
 Class {
 	#name : #GLSLUnsignedInteger2DRectImage,
 	#superclass : #GLSLImage,
-	#category : #'OpenGLObjects-Types',
-	#'squeak_changestamp' : ''
+	#category : #'OpenGLObjects-Types'
 }
 
 {

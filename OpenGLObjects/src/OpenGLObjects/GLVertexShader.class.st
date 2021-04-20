@@ -1,8 +1,7 @@
 Class {
 	#name : #GLVertexShader,
 	#superclass : #GLShader,
-	#category : #'OpenGLObjects-Shaders',
-	#'squeak_changestamp' : ''
+	#category : #'OpenGLObjects-Shaders'
 }
 
 {

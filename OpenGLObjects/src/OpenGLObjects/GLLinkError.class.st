@@ -5,8 +5,7 @@ Class {
 		'program',
 		'infoLog'
 	],
-	#category : #'OpenGLObjects-Errors',
-	#'squeak_changestamp' : ''
+	#category : #'OpenGLObjects-Errors'
 }
 
 {

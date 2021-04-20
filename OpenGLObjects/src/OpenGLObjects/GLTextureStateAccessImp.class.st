@@ -1,8 +1,7 @@
 Class {
 	#name : #GLTextureStateAccessImp,
 	#superclass : #GLObjectImp,
-	#category : #'OpenGLObjects-Textures',
-	#'squeak_changestamp' : ''
+	#category : #'OpenGLObjects-Textures'
 }
 
 {
