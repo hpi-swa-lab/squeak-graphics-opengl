@@ -1,7 +1,12 @@
 OrderedDictionary {
+	'3DTransform/src/BaselineOf3DTransform' : #SquotTonelSerializer,
 	'3DTransform/src/3DTransform' : #SquotTonelSerializer,
+	'OpenGL/src/BaselineOfOpenGL' : #SquotTonelSerializer,
 	'OpenGL/src/OpenGL' : #SquotTonelSerializer,
+	'GLFW/src/BaselineOfGLFW' : #SquotTonelSerializer,
 	'GLFW/src/GLFW' : #SquotTonelSerializer,
+	'OpenGLObjects/src/BaselineOfOpenGLObjects' : #SquotTonelSerializer,
 	'OpenGLObjects/src/OpenGLObjects' : #SquotTonelSerializer,
+	'LearnOpenGL/src/BaselineOfLearnOpenGL' : #SquotTonelSerializer,
 	'LearnOpenGL/src/LearnOpenGL' : #SquotTonelSerializer
 }
