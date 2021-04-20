@@ -14,5 +14,8 @@ OrderedDictionary {
 	'OpenGLObjects/src/BaselineOfOpenGLObjects' : #SquotTonelSerializer,
 	'OpenGLObjects/src/OpenGLObjects' : #SquotTonelSerializer,
 	'LearnOpenGL/src/BaselineOfLearnOpenGL' : #SquotTonelSerializer,
-	'LearnOpenGL/src/LearnOpenGL' : #SquotTonelSerializer
+	'LearnOpenGL/src/LearnOpenGL-Core' : #SquotTonelSerializer,
+	'LearnOpenGL/src/LearnOpenGL-GettingStarted' : #SquotTonelSerializer,
+	'LearnOpenGL/src/LearnOpenGL-Advanced' : #SquotTonelSerializer,
+	'LearnOpenGL/src/LearnOpenGL-Breakout' : #SquotTonelSerializer
 }
