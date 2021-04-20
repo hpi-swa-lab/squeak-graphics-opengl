@@ -4,7 +4,7 @@ Class {
 	#instVars : [
 		'renderer'
 	],
-	#category : #'OpenGL-Core'
+	#category : #'OpenGL-Balloon3D'
 }
 
 {

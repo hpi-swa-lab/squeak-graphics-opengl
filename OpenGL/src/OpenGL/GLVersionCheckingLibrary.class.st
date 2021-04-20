@@ -10,7 +10,8 @@ Class {
 		'targetVersion',
 		'targetExtensions'
 	],
-	#category : #'OpenGL-API'
+	#category : #'OpenGL-Core',
+	#'squeak_changestamp' : 'stlu 4/14/2021 15:19'
 }
 
 {

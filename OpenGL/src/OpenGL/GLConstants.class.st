@@ -5939,7 +5939,8 @@ Class {
 		'GL_ZOOM_Y',
 		'GL_Z_EXT'
 	],
-	#category : #'OpenGL-API'
+	#category : #'OpenGL-Core',
+	#'squeak_changestamp' : 'stlu 4/14/2021 14:48'
 }
 
 {

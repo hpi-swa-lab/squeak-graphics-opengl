@@ -12,7 +12,8 @@ Class {
 	#classVars : [
 		'Instances'
 	],
-	#category : #'OpenGL-API'
+	#category : #'OpenGL-Core',
+	#'squeak_changestamp' : 'stlu 4/14/2021 14:43'
 }
 
 {
