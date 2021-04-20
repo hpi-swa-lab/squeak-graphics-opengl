@@ -1,7 +1,7 @@
 Extension { #name : #ExternalAddress }
 
 {
-	#category : #'*OpenGL-FFI-Support',
+	#category : #'*GLFW-FFI-Support',
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 ExternalAddress class >> allocateExecutablePage [
@@ -15,7 +15,7 @@ ExternalAddress class >> allocateExecutablePage [
 ]
 
 {
-	#category : #'*OpenGL-FFI-Support',
+	#category : #'*GLFW-FFI-Support',
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 ExternalAddress class >> fromInteger: anInteger [
@@ -29,7 +29,7 @@ ExternalAddress class >> fromInteger: anInteger [
 ]
 
 {
-	#category : #'*OpenGL-FFI-Support',
+	#category : #'*GLFW-FFI-Support',
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 ExternalAddress class >> primAllocateExecutablePage [ "^<Alien>"

@@ -388,29 +388,6 @@ ExternalType class >> GLvoid [
 ]
 
 {
-	#category : #'*OpenGL-FFI-Support',
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
-}
-ExternalType >> asArrayType: aNumber [
-
-	self isPointerType ifFalse: [^ self asPointerType asArrayType: aNumber].
-	
-	^ ExternalArrayType basicNew
-		type: self;
-		numberOfItems: aNumber;
-		yourself
-]
-
-{
-	#category : #'*OpenGL-FFI-Support',
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
-}
-ExternalType >> isTypeAlias [
-
-	^ false
-]
-
-{
 	#category : #'*OpenGL-FFI-Support-override',
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
