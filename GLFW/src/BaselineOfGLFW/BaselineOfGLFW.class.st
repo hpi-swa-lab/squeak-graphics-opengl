@@ -26,9 +26,10 @@ BaselineOfGLFW >> baseline: spec [
 			package: 'GLFW-OpenGL' with: [spec requires: #('GLFW-Core' 'OpenGL')].
 		
 		spec
-			group: 'default' with: #('openGL');
+			group: 'default' with: #('all');
 			group: 'core' with: #('GLFW-Core');
-			group: 'openGL' with: #('GLFW-OpenGL')]
+			group: 'openGL' with: #('GLFW-OpenGL');
+			group: 'all' with: #('core' 'openGL')]
 ]
 
 {

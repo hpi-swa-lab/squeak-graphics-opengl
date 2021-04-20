@@ -81,7 +81,8 @@ GLFWLibrary class >> example2 [ "self example2"
 }
 GLFWLibrary class >> initialize [
 
-	Smalltalk addToShutDownList: self after: GLContext. "hard dependency on OpenGL"
+	GLFWConstants initialize.
+	Smalltalk addToShutDownList: self "after: GLContext". "hard dependency on OpenGL"
 	Smalltalk addToStartUpList: self.
 	self initializeErrorMessages.
 	self registerNewInstance.
