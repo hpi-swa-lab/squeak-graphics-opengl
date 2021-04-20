@@ -1,7 +1,7 @@
 Extension { #name : #ExternalType }
 
 {
-	#category : #'*OpenGL',
+	#category : #'*OpenGL-Core',
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 ExternalType class >> GLDEBUGPROC [
@@ -10,7 +10,7 @@ ExternalType class >> GLDEBUGPROC [
 ]
 
 {
-	#category : #'*OpenGL',
+	#category : #'*OpenGL-Core',
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 ExternalType class >> GLDEBUGPROCAMD [
@@ -19,7 +19,7 @@ ExternalType class >> GLDEBUGPROCAMD [
 ]
 
 {
-	#category : #'*OpenGL',
+	#category : #'*OpenGL-Core',
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 ExternalType class >> GLDEBUGPROCARB [
@@ -28,7 +28,7 @@ ExternalType class >> GLDEBUGPROCARB [
 ]
 
 {
-	#category : #'*OpenGL',
+	#category : #'*OpenGL-Core',
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 ExternalType class >> GLDEBUGPROCKHR [
@@ -37,7 +37,7 @@ ExternalType class >> GLDEBUGPROCKHR [
 ]
 
 {
-	#category : #'*OpenGL',
+	#category : #'*OpenGL-Core',
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 ExternalType class >> GLLeglClientBufferEXT [
@@ -46,7 +46,7 @@ ExternalType class >> GLLeglClientBufferEXT [
 ]
 
 {
-	#category : #'*OpenGL',
+	#category : #'*OpenGL-Core',
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 ExternalType class >> GLLeglImageOES [
@@ -55,7 +55,7 @@ ExternalType class >> GLLeglImageOES [
 ]
 
 {
-	#category : #'*OpenGL',
+	#category : #'*OpenGL-Core',
 	#'squeak_changestamp' : 'stlu 3/3/2021 14:30'
 }
 ExternalType class >> GLVULKANPROCNV [
@@ -64,7 +64,7 @@ ExternalType class >> GLVULKANPROCNV [
 ]
 
 {
-	#category : #'*OpenGL',
+	#category : #'*OpenGL-Core',
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 ExternalType class >> GLbitfield [
@@ -73,7 +73,7 @@ ExternalType class >> GLbitfield [
 ]
 
 {
-	#category : #'*OpenGL',
+	#category : #'*OpenGL-Core',
 	#'squeak_changestamp' : 'stlu 10/26/2020 14:23'
 }
 ExternalType class >> GLboolean [
@@ -82,7 +82,7 @@ ExternalType class >> GLboolean [
 ]
 
 {
-	#category : #'*OpenGL',
+	#category : #'*OpenGL-Core',
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 ExternalType class >> GLbyte [
@@ -91,7 +91,7 @@ ExternalType class >> GLbyte [
 ]
 
 {
-	#category : #'*OpenGL',
+	#category : #'*OpenGL-Core',
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 ExternalType class >> GLchar [
@@ -100,7 +100,7 @@ ExternalType class >> GLchar [
 ]
 
 {
-	#category : #'*OpenGL',
+	#category : #'*OpenGL-Core',
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 ExternalType class >> GLcharARB [
@@ -109,7 +109,7 @@ ExternalType class >> GLcharARB [
 ]
 
 {
-	#category : #'*OpenGL',
+	#category : #'*OpenGL-Core',
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 ExternalType class >> GLclampd [
@@ -118,7 +118,7 @@ ExternalType class >> GLclampd [
 ]
 
 {
-	#category : #'*OpenGL',
+	#category : #'*OpenGL-Core',
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 ExternalType class >> GLclampf [
@@ -127,7 +127,7 @@ ExternalType class >> GLclampf [
 ]
 
 {
-	#category : #'*OpenGL',
+	#category : #'*OpenGL-Core',
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 ExternalType class >> GLclampx [
@@ -136,7 +136,7 @@ ExternalType class >> GLclampx [
 ]
 
 {
-	#category : #'*OpenGL',
+	#category : #'*OpenGL-Core',
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 ExternalType class >> GLdouble [
@@ -145,7 +145,7 @@ ExternalType class >> GLdouble [
 ]
 
 {
-	#category : #'*OpenGL',
+	#category : #'*OpenGL-Core',
 	#'squeak_changestamp' : 'stlu 3/3/2021 14:32'
 }
 ExternalType class >> GLeglClientBufferEXT [
@@ -154,7 +154,7 @@ ExternalType class >> GLeglClientBufferEXT [
 ]
 
 {
-	#category : #'*OpenGL',
+	#category : #'*OpenGL-Core',
 	#'squeak_changestamp' : 'stlu 3/3/2021 14:32'
 }
 ExternalType class >> GLeglImageOES [
@@ -163,7 +163,7 @@ ExternalType class >> GLeglImageOES [
 ]
 
 {
-	#category : #'*OpenGL',
+	#category : #'*OpenGL-Core',
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 ExternalType class >> GLenum [
@@ -172,7 +172,7 @@ ExternalType class >> GLenum [
 ]
 
 {
-	#category : #'*OpenGL',
+	#category : #'*OpenGL-Core',
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 ExternalType class >> GLfixed [
@@ -181,7 +181,7 @@ ExternalType class >> GLfixed [
 ]
 
 {
-	#category : #'*OpenGL',
+	#category : #'*OpenGL-Core',
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 ExternalType class >> GLfixedARG [
@@ -190,7 +190,7 @@ ExternalType class >> GLfixedARG [
 ]
 
 {
-	#category : #'*OpenGL',
+	#category : #'*OpenGL-Core',
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 ExternalType class >> GLfloat [
@@ -199,7 +199,7 @@ ExternalType class >> GLfloat [
 ]
 
 {
-	#category : #'*OpenGL',
+	#category : #'*OpenGL-Core',
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 ExternalType class >> GLhalf [
@@ -208,7 +208,7 @@ ExternalType class >> GLhalf [
 ]
 
 {
-	#category : #'*OpenGL',
+	#category : #'*OpenGL-Core',
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 ExternalType class >> GLhalfARB [
@@ -217,7 +217,7 @@ ExternalType class >> GLhalfARB [
 ]
 
 {
-	#category : #'*OpenGL',
+	#category : #'*OpenGL-Core',
 	#'squeak_changestamp' : 'stlu 3/3/2021 14:28'
 }
 ExternalType class >> GLhalfNV [
@@ -226,7 +226,7 @@ ExternalType class >> GLhalfNV [
 ]
 
 {
-	#category : #'*OpenGL',
+	#category : #'*OpenGL-Core',
 	#'squeak_changestamp' : 'stlu 3/3/2021 14:33'
 }
 ExternalType class >> GLhandleARB [
@@ -235,7 +235,7 @@ ExternalType class >> GLhandleARB [
 ]
 
 {
-	#category : #'*OpenGL',
+	#category : #'*OpenGL-Core',
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 ExternalType class >> GLint [
@@ -244,7 +244,7 @@ ExternalType class >> GLint [
 ]
 
 {
-	#category : #'*OpenGL',
+	#category : #'*OpenGL-Core',
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 ExternalType class >> GLint64 [
@@ -253,7 +253,7 @@ ExternalType class >> GLint64 [
 ]
 
 {
-	#category : #'*OpenGL',
+	#category : #'*OpenGL-Core',
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 ExternalType class >> GLint64EXT [
@@ -262,7 +262,7 @@ ExternalType class >> GLint64EXT [
 ]
 
 {
-	#category : #'*OpenGL',
+	#category : #'*OpenGL-Core',
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 ExternalType class >> GLintptr [
@@ -271,7 +271,7 @@ ExternalType class >> GLintptr [
 ]
 
 {
-	#category : #'*OpenGL',
+	#category : #'*OpenGL-Core',
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 ExternalType class >> GLintptrARB [
@@ -280,7 +280,7 @@ ExternalType class >> GLintptrARB [
 ]
 
 {
-	#category : #'*OpenGL',
+	#category : #'*OpenGL-Core',
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 ExternalType class >> GLshort [
@@ -289,7 +289,7 @@ ExternalType class >> GLshort [
 ]
 
 {
-	#category : #'*OpenGL',
+	#category : #'*OpenGL-Core',
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 ExternalType class >> GLsizei [
@@ -298,7 +298,7 @@ ExternalType class >> GLsizei [
 ]
 
 {
-	#category : #'*OpenGL',
+	#category : #'*OpenGL-Core',
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 ExternalType class >> GLsizeiptr [
@@ -307,7 +307,7 @@ ExternalType class >> GLsizeiptr [
 ]
 
 {
-	#category : #'*OpenGL',
+	#category : #'*OpenGL-Core',
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 ExternalType class >> GLsizeiptrARB [
@@ -316,7 +316,7 @@ ExternalType class >> GLsizeiptrARB [
 ]
 
 {
-	#category : #'*OpenGL',
+	#category : #'*OpenGL-Core',
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 ExternalType class >> GLsync [
@@ -325,7 +325,7 @@ ExternalType class >> GLsync [
 ]
 
 {
-	#category : #'*OpenGL',
+	#category : #'*OpenGL-Core',
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 ExternalType class >> GLubyte [
@@ -334,7 +334,7 @@ ExternalType class >> GLubyte [
 ]
 
 {
-	#category : #'*OpenGL',
+	#category : #'*OpenGL-Core',
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 ExternalType class >> GLuint [
@@ -343,7 +343,7 @@ ExternalType class >> GLuint [
 ]
 
 {
-	#category : #'*OpenGL',
+	#category : #'*OpenGL-Core',
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 ExternalType class >> GLuint64 [
@@ -352,7 +352,7 @@ ExternalType class >> GLuint64 [
 ]
 
 {
-	#category : #'*OpenGL',
+	#category : #'*OpenGL-Core',
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 ExternalType class >> GLuint64EXT [
@@ -361,7 +361,7 @@ ExternalType class >> GLuint64EXT [
 ]
 
 {
-	#category : #'*OpenGL',
+	#category : #'*OpenGL-Core',
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 ExternalType class >> GLushort [
@@ -370,7 +370,7 @@ ExternalType class >> GLushort [
 ]
 
 {
-	#category : #'*OpenGL',
+	#category : #'*OpenGL-Core',
 	#'squeak_changestamp' : 'stlu 3/3/2021 14:30'
 }
 ExternalType class >> GLvdpauSurfaceNV [
@@ -379,64 +379,10 @@ ExternalType class >> GLvdpauSurfaceNV [
 ]
 
 {
-	#category : #'*OpenGL',
+	#category : #'*OpenGL-Core',
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 ExternalType class >> GLvoid [
 
 	^ self void
-]
-
-{
-	#category : #'*OpenGL-FFI-Support-override',
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
-}
-ExternalType class >> lookupTypes: signature [
-	"
-	Supported arguments:
-		'<callback: int (*) (double* double*)>' ... pragma as string
-		#(int 'double*' 'double*') ... array with type names
-		{ ExternalType int. ExternalType double asPointerType. ExternalType double asPointerType } ... array with external types
-	"
-	
-	(signature isString and: [signature first == $<]) ifTrue: [
-		^ (Parser new parse: 'foo', String cr, signature class: Object)
-			properties pragmas first argumentAt: 1].
-	
-	signature first isString ifTrue: [
-		^ signature collect: [:typeName | self typeNamed: typeName]].
-	
-	signature first class == ExternalType ifTrue: [
-		^ signature].
-	
-	self error: 'Could not lookup external types from signature'.
-]
-
-{
-	#category : #'*OpenGL-FFI-Support-override',
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
-}
-ExternalType class >> typeNamed: typeName [
-	"Supports pointer-type lookup for both atomic and structure types.
-	Examples: 'long', 'long*', 'long *' or 'MyStruct', 'MyStruct*', 'MyStruct *'"
-	
-	| isPointerType actualTypeName type isArrayType |
-	(isPointerType := typeName last == $*)
-		ifTrue: [actualTypeName := typeName allButLast withoutTrailingBlanks]
-		ifFalse: [actualTypeName := typeName].
-	
-	(isArrayType := typeName matchesRegex: '.+\[\d+\]')
-		ifTrue: [
-			actualTypeName := typeName copyFrom: 1 to: (typeName indexOf: $[) - 1].
-	
-	(Symbol lookup: actualTypeName)
-		ifNotNil: [:sym | actualTypeName := sym].
-
-	type := (self atomicTypeNamed: actualTypeName)
-		ifNil: [self structTypeNamed: actualTypeName].
-
-	^ type ifNotNil: [
-		isArrayType
-			ifTrue: [type asArrayType: (typeName copyFrom: (typeName indexOf: $[) + 1 to: typeName size - 1) asNumber]
-			ifFalse: [isPointerType ifTrue: [type asPointerType] ifFalse: [type]]]
 ]
