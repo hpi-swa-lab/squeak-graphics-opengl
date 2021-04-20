@@ -2,6 +2,7 @@ OrderedDictionary {
 	'3DTransform/src/BaselineOf3DTransform' : #SquotTonelSerializer,
 	'3DTransform/src/3DTransform' : #SquotTonelSerializer,
 	'OpenGL/src/BaselineOfOpenGL' : #SquotTonelSerializer,
+	'OpenGL/src/OpenGL-Types' : #SquotTonelSerializer,
 	'OpenGL/src/OpenGL-Core' : #SquotTonelSerializer,
 	'OpenGL/src/OpenGL-Versions' : #SquotTonelSerializer,
 	'OpenGL/src/OpenGL-Generation' : #SquotTonelSerializer,
