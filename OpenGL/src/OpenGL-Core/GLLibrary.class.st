@@ -78,10 +78,11 @@ GLLibrary class >> example2 [ "self example2"
 
 {
 	#category : #'class initialization',
-	#'squeak_changestamp' : 'stlu 4/15/2021 11:18'
+	#'squeak_changestamp' : 'stlu 4/20/2021 19:40'
 }
 GLLibrary class >> initialize [
 
+	GLConstants initialize.
 	self initializeGL.
 	self initializeErrorMessages
 ]
