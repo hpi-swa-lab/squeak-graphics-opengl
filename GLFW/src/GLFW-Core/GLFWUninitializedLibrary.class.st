@@ -1,10 +1,11 @@
 "
-3.3.3
+3.3.x
 "
 Class {
-	#name : #GLFWLibrary,
+	#name : #GLFWUninitializedLibrary,
 	#superclass : #ExternalLibrary,
 	#instVars : [
+		'errorCallback',
 		'callbacks',
 		'contexts'
 	],
@@ -14,14 +15,15 @@ Class {
 	#pools : [
 		'GLFWConstants'
 	],
-	#category : #'GLFW-Core'
+	#category : #'GLFW-Core',
+	#'squeak_changestamp' : 'stlu 4/21/2021 09:05'
 }
 
 {
 	#category : #'class initialization',
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary class >> compileConstantAccessors [
+GLFWUninitializedLibrary class >> compileConstantAccessors [
 
 	GLFWConstants classVarNames do: [:aSymbol |
 		| selector source |
@@ -38,15 +40,15 @@ GLFWLibrary class >> compileConstantAccessors [
 
 {
 	#category : #examples,
-	#'squeak_changestamp' : 'stlu 4/19/2021 12:19'
+	#'squeak_changestamp' : 'stlu 4/21/2021 11:02'
 }
-GLFWLibrary class >> example1 [ "self example1"
+GLFWUninitializedLibrary class >> example1 [ "self example1"
 	"A minimal GLFW example window. Dismiss by clicking anywhere inside Squeak.
 	Do NOT force quit the window (unless you want your Squeak to force quit too)."
 	| window |
 	window := GLFWWindow
 					extent: 400 @ 400
-					title: self name , ' example1'.
+					title: 'GLFW example1'.
 	window ifNil: [^ self error: 'GLFW Error'].
 	[[Sensor anyButtonPressed] whileFalse]
 		ensure: [window destroy]
@@ -54,14 +56,14 @@ GLFWLibrary class >> example1 [ "self example1"
 
 {
 	#category : #examples,
-	#'squeak_changestamp' : 'stlu 4/19/2021 12:19'
+	#'squeak_changestamp' : 'stlu 4/21/2021 11:02'
 }
-GLFWLibrary class >> example2 [ "self example2"
+GLFWUninitializedLibrary class >> example2 [ "self example2"
 	"A minimal OpenGL example with GLFW."
 	| window context |
 	window := GLFWWindow
 					extent: 400 @ 400
-					title: self name , ' example2'.
+					title: 'GLFW example2'.
 	window ifNil: [^ self error: 'GLFW Error'].
 	context := window context.
 	
@@ -77,23 +79,22 @@ GLFWLibrary class >> example2 [ "self example2"
 
 {
 	#category : #'class initialization',
-	#'squeak_changestamp' : 'stlu 4/16/2021 11:10'
+	#'squeak_changestamp' : 'stlu 4/21/2021 10:32'
 }
-GLFWLibrary class >> initialize [
+GLFWUninitializedLibrary class >> initialize [
 
 	GLFWConstants initialize.
 	Smalltalk addToShutDownList: self "after: GLContext". "hard dependency on OpenGL"
 	Smalltalk addToStartUpList: self.
 	self initializeErrorMessages.
 	self registerNewInstance.
-	self startUp
 ]
 
 {
 	#category : #'class initialization',
 	#'squeak_changestamp' : 'stlu 4/16/2021 11:09'
 }
-GLFWLibrary class >> initializeErrorMessages [
+GLFWUninitializedLibrary class >> initializeErrorMessages [
 
 	ErrorMessages := {
 		GLFW_NO_ERROR -> 'No error. No error has occurred. Yay.'.
@@ -114,28 +115,21 @@ GLFWLibrary class >> initializeErrorMessages [
 ]
 
 {
-	#category : #'instance management',
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 4/21/2021 10:52'
 }
-GLFWLibrary class >> initializeInstance [
+GLFWUninitializedLibrary class >> instance [
 
-	Environment current
+	^ Environment current
 		at: #GLFW
-		ifPresent: [:lib |
-			[
-				lib
-					reset;
-					init;
-					hintGLAPI;
-					hintAnyProfile
-			] ifError: [self notify: 'Initialization of GLFW failed']]
+		ifAbsent: [self registerNewInstance]
 ]
 
 {
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-GLFWLibrary class >> moduleName [
+GLFWUninitializedLibrary class >> moduleName [
 
 	Smalltalk platformName = 'Win32' ifTrue: [
 		^ 'glfw3.dll'].
@@ -152,60 +146,43 @@ GLFWLibrary class >> moduleName [
 ]
 
 {
-	#category : #'instance management',
-	#'squeak_changestamp' : 'stlu 10/16/2020 12:06'
+	#category : #private,
+	#'squeak_changestamp' : 'stlu 4/21/2021 10:54'
 }
-GLFWLibrary class >> registerNewInstance [
-
-	Environment current at: #GLFW put: self new
-]
-
-{
-	#category : #'system startup',
-	#'squeak_changestamp' : 'stlu 11/12/2020 16:07'
-}
-GLFWLibrary class >> shutDown: quitting [
-
-	quitting ifTrue: [self terminateInstance]
-]
-
-{
-	#category : #'system startup',
-	#'squeak_changestamp' : 'stlu 10/26/2020 19:51'
-}
-GLFWLibrary class >> startUp: resuming [
-
-	resuming ifTrue: [self initializeInstance]
-]
-
-{
-	#category : #'instance management',
-	#'squeak_changestamp' : 'stlu 10/26/2020 19:51'
-}
-GLFWLibrary class >> terminateInstance [
+GLFWUninitializedLibrary class >> registerNewInstance [
 
 	Environment current
 		at: #GLFW
-		ifPresent: [:lib |
-			[lib terminate] ifError: [self notify: 'Termination of GLFW failed']]
+		put: GLFWUninitializedLibrary basicNew initialize; yourself
 ]
 
 {
-	#category : #'instance management',
-	#'squeak_changestamp' : 'stlu 10/26/2020 19:52'
+	#category : #'system startup',
+	#'squeak_changestamp' : 'stlu 4/21/2021 10:50'
 }
-GLFWLibrary class >> updateInstance [
+GLFWUninitializedLibrary class >> shutDown: quitting [
 
-	self terminateInstance.
-	self registerNewInstance.
-	self initializeInstance
+	quitting ifTrue: [
+		self instance terminate]
+]
+
+{
+	#category : #'system startup',
+	#'squeak_changestamp' : 'stlu 4/21/2021 10:59'
+}
+GLFWUninitializedLibrary class >> startUp: resuming [
+
+	resuming ifTrue: [
+		"instance may be initialized while saving.
+		ensure it is set back to uninitialized."
+		self instance beUninitializedLibrary]
 ]
 
 {
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> ACCUM_ALPHA_BITS [
+GLFWUninitializedLibrary >> ACCUM_ALPHA_BITS [
 
 	<generated>
 	^ GLFW_ACCUM_ALPHA_BITS
@@ -215,7 +192,7 @@ GLFWLibrary >> ACCUM_ALPHA_BITS [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> ACCUM_BLUE_BITS [
+GLFWUninitializedLibrary >> ACCUM_BLUE_BITS [
 
 	<generated>
 	^ GLFW_ACCUM_BLUE_BITS
@@ -225,7 +202,7 @@ GLFWLibrary >> ACCUM_BLUE_BITS [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> ACCUM_GREEN_BITS [
+GLFWUninitializedLibrary >> ACCUM_GREEN_BITS [
 
 	<generated>
 	^ GLFW_ACCUM_GREEN_BITS
@@ -235,7 +212,7 @@ GLFWLibrary >> ACCUM_GREEN_BITS [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> ACCUM_RED_BITS [
+GLFWUninitializedLibrary >> ACCUM_RED_BITS [
 
 	<generated>
 	^ GLFW_ACCUM_RED_BITS
@@ -245,7 +222,7 @@ GLFWLibrary >> ACCUM_RED_BITS [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> ALPHA_BITS [
+GLFWUninitializedLibrary >> ALPHA_BITS [
 
 	<generated>
 	^ GLFW_ALPHA_BITS
@@ -255,7 +232,7 @@ GLFWLibrary >> ALPHA_BITS [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> ANGLE_PLATFORM_TYPE [
+GLFWUninitializedLibrary >> ANGLE_PLATFORM_TYPE [
 
 	<generated>
 	^ GLFW_ANGLE_PLATFORM_TYPE
@@ -265,7 +242,7 @@ GLFWLibrary >> ANGLE_PLATFORM_TYPE [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> ANGLE_PLATFORM_TYPE_D3D11 [
+GLFWUninitializedLibrary >> ANGLE_PLATFORM_TYPE_D3D11 [
 
 	<generated>
 	^ GLFW_ANGLE_PLATFORM_TYPE_D3D11
@@ -275,7 +252,7 @@ GLFWLibrary >> ANGLE_PLATFORM_TYPE_D3D11 [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> ANGLE_PLATFORM_TYPE_D3D9 [
+GLFWUninitializedLibrary >> ANGLE_PLATFORM_TYPE_D3D9 [
 
 	<generated>
 	^ GLFW_ANGLE_PLATFORM_TYPE_D3D9
@@ -285,7 +262,7 @@ GLFWLibrary >> ANGLE_PLATFORM_TYPE_D3D9 [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> ANGLE_PLATFORM_TYPE_METAL [
+GLFWUninitializedLibrary >> ANGLE_PLATFORM_TYPE_METAL [
 
 	<generated>
 	^ GLFW_ANGLE_PLATFORM_TYPE_METAL
@@ -295,7 +272,7 @@ GLFWLibrary >> ANGLE_PLATFORM_TYPE_METAL [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> ANGLE_PLATFORM_TYPE_NONE [
+GLFWUninitializedLibrary >> ANGLE_PLATFORM_TYPE_NONE [
 
 	<generated>
 	^ GLFW_ANGLE_PLATFORM_TYPE_NONE
@@ -305,7 +282,7 @@ GLFWLibrary >> ANGLE_PLATFORM_TYPE_NONE [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> ANGLE_PLATFORM_TYPE_OPENGL [
+GLFWUninitializedLibrary >> ANGLE_PLATFORM_TYPE_OPENGL [
 
 	<generated>
 	^ GLFW_ANGLE_PLATFORM_TYPE_OPENGL
@@ -315,7 +292,7 @@ GLFWLibrary >> ANGLE_PLATFORM_TYPE_OPENGL [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> ANGLE_PLATFORM_TYPE_OPENGLES [
+GLFWUninitializedLibrary >> ANGLE_PLATFORM_TYPE_OPENGLES [
 
 	<generated>
 	^ GLFW_ANGLE_PLATFORM_TYPE_OPENGLES
@@ -325,7 +302,7 @@ GLFWLibrary >> ANGLE_PLATFORM_TYPE_OPENGLES [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> ANGLE_PLATFORM_TYPE_VULKAN [
+GLFWUninitializedLibrary >> ANGLE_PLATFORM_TYPE_VULKAN [
 
 	<generated>
 	^ GLFW_ANGLE_PLATFORM_TYPE_VULKAN
@@ -335,7 +312,7 @@ GLFWLibrary >> ANGLE_PLATFORM_TYPE_VULKAN [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> ANY_RELEASE_BEHAVIOR [
+GLFWUninitializedLibrary >> ANY_RELEASE_BEHAVIOR [
 
 	<generated>
 	^ GLFW_ANY_RELEASE_BEHAVIOR
@@ -345,7 +322,7 @@ GLFWLibrary >> ANY_RELEASE_BEHAVIOR [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> API_UNAVAILABLE [
+GLFWUninitializedLibrary >> API_UNAVAILABLE [
 
 	<generated>
 	^ GLFW_API_UNAVAILABLE
@@ -355,7 +332,7 @@ GLFWLibrary >> API_UNAVAILABLE [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> ARROW_CURSOR [
+GLFWUninitializedLibrary >> ARROW_CURSOR [
 
 	<generated>
 	^ GLFW_ARROW_CURSOR
@@ -365,7 +342,7 @@ GLFWLibrary >> ARROW_CURSOR [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> AUTO_ICONIFY [
+GLFWUninitializedLibrary >> AUTO_ICONIFY [
 
 	<generated>
 	^ GLFW_AUTO_ICONIFY
@@ -375,7 +352,7 @@ GLFWLibrary >> AUTO_ICONIFY [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> AUX_BUFFERS [
+GLFWUninitializedLibrary >> AUX_BUFFERS [
 
 	<generated>
 	^ GLFW_AUX_BUFFERS
@@ -385,7 +362,7 @@ GLFWLibrary >> AUX_BUFFERS [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> BLUE_BITS [
+GLFWUninitializedLibrary >> BLUE_BITS [
 
 	<generated>
 	^ GLFW_BLUE_BITS
@@ -395,7 +372,7 @@ GLFWLibrary >> BLUE_BITS [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> CENTER_CURSOR [
+GLFWUninitializedLibrary >> CENTER_CURSOR [
 
 	<generated>
 	^ GLFW_CENTER_CURSOR
@@ -405,7 +382,7 @@ GLFWLibrary >> CENTER_CURSOR [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> CLIENT_API [
+GLFWUninitializedLibrary >> CLIENT_API [
 
 	<generated>
 	^ GLFW_CLIENT_API
@@ -415,7 +392,7 @@ GLFWLibrary >> CLIENT_API [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> COCOA_CHDIR_RESOURCES [
+GLFWUninitializedLibrary >> COCOA_CHDIR_RESOURCES [
 
 	<generated>
 	^ GLFW_COCOA_CHDIR_RESOURCES
@@ -425,7 +402,7 @@ GLFWLibrary >> COCOA_CHDIR_RESOURCES [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> COCOA_FRAME_NAME [
+GLFWUninitializedLibrary >> COCOA_FRAME_NAME [
 
 	<generated>
 	^ GLFW_COCOA_FRAME_NAME
@@ -435,7 +412,7 @@ GLFWLibrary >> COCOA_FRAME_NAME [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> COCOA_GRAPHICS_SWITCHING [
+GLFWUninitializedLibrary >> COCOA_GRAPHICS_SWITCHING [
 
 	<generated>
 	^ GLFW_COCOA_GRAPHICS_SWITCHING
@@ -445,7 +422,7 @@ GLFWLibrary >> COCOA_GRAPHICS_SWITCHING [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> COCOA_MENUBAR [
+GLFWUninitializedLibrary >> COCOA_MENUBAR [
 
 	<generated>
 	^ GLFW_COCOA_MENUBAR
@@ -455,7 +432,7 @@ GLFWLibrary >> COCOA_MENUBAR [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> COCOA_RETINA_FRAMEBUFFER [
+GLFWUninitializedLibrary >> COCOA_RETINA_FRAMEBUFFER [
 
 	<generated>
 	^ GLFW_COCOA_RETINA_FRAMEBUFFER
@@ -465,7 +442,7 @@ GLFWLibrary >> COCOA_RETINA_FRAMEBUFFER [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> CONNECTED [
+GLFWUninitializedLibrary >> CONNECTED [
 
 	<generated>
 	^ GLFW_CONNECTED
@@ -475,7 +452,7 @@ GLFWLibrary >> CONNECTED [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> CONTEXT_CREATION_API [
+GLFWUninitializedLibrary >> CONTEXT_CREATION_API [
 
 	<generated>
 	^ GLFW_CONTEXT_CREATION_API
@@ -485,7 +462,7 @@ GLFWLibrary >> CONTEXT_CREATION_API [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> CONTEXT_DEBUG [
+GLFWUninitializedLibrary >> CONTEXT_DEBUG [
 
 	<generated>
 	^ GLFW_CONTEXT_DEBUG
@@ -495,7 +472,7 @@ GLFWLibrary >> CONTEXT_DEBUG [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> CONTEXT_NO_ERROR [
+GLFWUninitializedLibrary >> CONTEXT_NO_ERROR [
 
 	<generated>
 	^ GLFW_CONTEXT_NO_ERROR
@@ -505,7 +482,7 @@ GLFWLibrary >> CONTEXT_NO_ERROR [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> CONTEXT_RELEASE_BEHAVIOR [
+GLFWUninitializedLibrary >> CONTEXT_RELEASE_BEHAVIOR [
 
 	<generated>
 	^ GLFW_CONTEXT_RELEASE_BEHAVIOR
@@ -515,7 +492,7 @@ GLFWLibrary >> CONTEXT_RELEASE_BEHAVIOR [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> CONTEXT_REVISION [
+GLFWUninitializedLibrary >> CONTEXT_REVISION [
 
 	<generated>
 	^ GLFW_CONTEXT_REVISION
@@ -525,7 +502,7 @@ GLFWLibrary >> CONTEXT_REVISION [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> CONTEXT_ROBUSTNESS [
+GLFWUninitializedLibrary >> CONTEXT_ROBUSTNESS [
 
 	<generated>
 	^ GLFW_CONTEXT_ROBUSTNESS
@@ -535,7 +512,7 @@ GLFWLibrary >> CONTEXT_ROBUSTNESS [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> CONTEXT_VERSION_MAJOR [
+GLFWUninitializedLibrary >> CONTEXT_VERSION_MAJOR [
 
 	<generated>
 	^ GLFW_CONTEXT_VERSION_MAJOR
@@ -545,7 +522,7 @@ GLFWLibrary >> CONTEXT_VERSION_MAJOR [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> CONTEXT_VERSION_MINOR [
+GLFWUninitializedLibrary >> CONTEXT_VERSION_MINOR [
 
 	<generated>
 	^ GLFW_CONTEXT_VERSION_MINOR
@@ -555,7 +532,7 @@ GLFWLibrary >> CONTEXT_VERSION_MINOR [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> CROSSHAIR_CURSOR [
+GLFWUninitializedLibrary >> CROSSHAIR_CURSOR [
 
 	<generated>
 	^ GLFW_CROSSHAIR_CURSOR
@@ -565,7 +542,7 @@ GLFWLibrary >> CROSSHAIR_CURSOR [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> CURSOR [
+GLFWUninitializedLibrary >> CURSOR [
 
 	<generated>
 	^ GLFW_CURSOR
@@ -575,7 +552,7 @@ GLFWLibrary >> CURSOR [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> CURSOR_DISABLED [
+GLFWUninitializedLibrary >> CURSOR_DISABLED [
 
 	<generated>
 	^ GLFW_CURSOR_DISABLED
@@ -585,7 +562,7 @@ GLFWLibrary >> CURSOR_DISABLED [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> CURSOR_HIDDEN [
+GLFWUninitializedLibrary >> CURSOR_HIDDEN [
 
 	<generated>
 	^ GLFW_CURSOR_HIDDEN
@@ -595,7 +572,7 @@ GLFWLibrary >> CURSOR_HIDDEN [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> CURSOR_NORMAL [
+GLFWUninitializedLibrary >> CURSOR_NORMAL [
 
 	<generated>
 	^ GLFW_CURSOR_NORMAL
@@ -605,7 +582,7 @@ GLFWLibrary >> CURSOR_NORMAL [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> CURSOR_UNAVAILABLE [
+GLFWUninitializedLibrary >> CURSOR_UNAVAILABLE [
 
 	<generated>
 	^ GLFW_CURSOR_UNAVAILABLE
@@ -615,7 +592,7 @@ GLFWLibrary >> CURSOR_UNAVAILABLE [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> DECORATED [
+GLFWUninitializedLibrary >> DECORATED [
 
 	<generated>
 	^ GLFW_DECORATED
@@ -625,7 +602,7 @@ GLFWLibrary >> DECORATED [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> DEPTH_BITS [
+GLFWUninitializedLibrary >> DEPTH_BITS [
 
 	<generated>
 	^ GLFW_DEPTH_BITS
@@ -635,7 +612,7 @@ GLFWLibrary >> DEPTH_BITS [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> DISCONNECTED [
+GLFWUninitializedLibrary >> DISCONNECTED [
 
 	<generated>
 	^ GLFW_DISCONNECTED
@@ -645,7 +622,7 @@ GLFWLibrary >> DISCONNECTED [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> DONT_CARE [
+GLFWUninitializedLibrary >> DONT_CARE [
 
 	<generated>
 	^ GLFW_DONT_CARE
@@ -655,7 +632,7 @@ GLFWLibrary >> DONT_CARE [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> DOUBLEBUFFER [
+GLFWUninitializedLibrary >> DOUBLEBUFFER [
 
 	<generated>
 	^ GLFW_DOUBLEBUFFER
@@ -665,7 +642,7 @@ GLFWLibrary >> DOUBLEBUFFER [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> EGL_CONTEXT_API [
+GLFWUninitializedLibrary >> EGL_CONTEXT_API [
 
 	<generated>
 	^ GLFW_EGL_CONTEXT_API
@@ -675,7 +652,7 @@ GLFWLibrary >> EGL_CONTEXT_API [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> FEATURE_UNAVAILABLE [
+GLFWUninitializedLibrary >> FEATURE_UNAVAILABLE [
 
 	<generated>
 	^ GLFW_FEATURE_UNAVAILABLE
@@ -685,7 +662,7 @@ GLFWLibrary >> FEATURE_UNAVAILABLE [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> FEATURE_UNIMPLEMENTED [
+GLFWUninitializedLibrary >> FEATURE_UNIMPLEMENTED [
 
 	<generated>
 	^ GLFW_FEATURE_UNIMPLEMENTED
@@ -695,7 +672,7 @@ GLFWLibrary >> FEATURE_UNIMPLEMENTED [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> FLOATING [
+GLFWUninitializedLibrary >> FLOATING [
 
 	<generated>
 	^ GLFW_FLOATING
@@ -705,7 +682,7 @@ GLFWLibrary >> FLOATING [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> FOCUSED [
+GLFWUninitializedLibrary >> FOCUSED [
 
 	<generated>
 	^ GLFW_FOCUSED
@@ -715,7 +692,7 @@ GLFWLibrary >> FOCUSED [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> FOCUS_ON_SHOW [
+GLFWUninitializedLibrary >> FOCUS_ON_SHOW [
 
 	<generated>
 	^ GLFW_FOCUS_ON_SHOW
@@ -725,7 +702,7 @@ GLFWLibrary >> FOCUS_ON_SHOW [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> FORMAT_UNAVAILABLE [
+GLFWUninitializedLibrary >> FORMAT_UNAVAILABLE [
 
 	<generated>
 	^ GLFW_FORMAT_UNAVAILABLE
@@ -735,7 +712,7 @@ GLFWLibrary >> FORMAT_UNAVAILABLE [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> GAMEPAD_AXIS_LAST [
+GLFWUninitializedLibrary >> GAMEPAD_AXIS_LAST [
 
 	<generated>
 	^ GLFW_GAMEPAD_AXIS_LAST
@@ -745,7 +722,7 @@ GLFWLibrary >> GAMEPAD_AXIS_LAST [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> GAMEPAD_AXIS_LEFT_TRIGGER [
+GLFWUninitializedLibrary >> GAMEPAD_AXIS_LEFT_TRIGGER [
 
 	<generated>
 	^ GLFW_GAMEPAD_AXIS_LEFT_TRIGGER
@@ -755,7 +732,7 @@ GLFWLibrary >> GAMEPAD_AXIS_LEFT_TRIGGER [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> GAMEPAD_AXIS_LEFT_X [
+GLFWUninitializedLibrary >> GAMEPAD_AXIS_LEFT_X [
 
 	<generated>
 	^ GLFW_GAMEPAD_AXIS_LEFT_X
@@ -765,7 +742,7 @@ GLFWLibrary >> GAMEPAD_AXIS_LEFT_X [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> GAMEPAD_AXIS_LEFT_Y [
+GLFWUninitializedLibrary >> GAMEPAD_AXIS_LEFT_Y [
 
 	<generated>
 	^ GLFW_GAMEPAD_AXIS_LEFT_Y
@@ -775,7 +752,7 @@ GLFWLibrary >> GAMEPAD_AXIS_LEFT_Y [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> GAMEPAD_AXIS_RIGHT_TRIGGER [
+GLFWUninitializedLibrary >> GAMEPAD_AXIS_RIGHT_TRIGGER [
 
 	<generated>
 	^ GLFW_GAMEPAD_AXIS_RIGHT_TRIGGER
@@ -785,7 +762,7 @@ GLFWLibrary >> GAMEPAD_AXIS_RIGHT_TRIGGER [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> GAMEPAD_AXIS_RIGHT_X [
+GLFWUninitializedLibrary >> GAMEPAD_AXIS_RIGHT_X [
 
 	<generated>
 	^ GLFW_GAMEPAD_AXIS_RIGHT_X
@@ -795,7 +772,7 @@ GLFWLibrary >> GAMEPAD_AXIS_RIGHT_X [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> GAMEPAD_AXIS_RIGHT_Y [
+GLFWUninitializedLibrary >> GAMEPAD_AXIS_RIGHT_Y [
 
 	<generated>
 	^ GLFW_GAMEPAD_AXIS_RIGHT_Y
@@ -805,7 +782,7 @@ GLFWLibrary >> GAMEPAD_AXIS_RIGHT_Y [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> GAMEPAD_BUTTON_A [
+GLFWUninitializedLibrary >> GAMEPAD_BUTTON_A [
 
 	<generated>
 	^ GLFW_GAMEPAD_BUTTON_A
@@ -815,7 +792,7 @@ GLFWLibrary >> GAMEPAD_BUTTON_A [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> GAMEPAD_BUTTON_B [
+GLFWUninitializedLibrary >> GAMEPAD_BUTTON_B [
 
 	<generated>
 	^ GLFW_GAMEPAD_BUTTON_B
@@ -825,7 +802,7 @@ GLFWLibrary >> GAMEPAD_BUTTON_B [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> GAMEPAD_BUTTON_BACK [
+GLFWUninitializedLibrary >> GAMEPAD_BUTTON_BACK [
 
 	<generated>
 	^ GLFW_GAMEPAD_BUTTON_BACK
@@ -835,7 +812,7 @@ GLFWLibrary >> GAMEPAD_BUTTON_BACK [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> GAMEPAD_BUTTON_CIRCLE [
+GLFWUninitializedLibrary >> GAMEPAD_BUTTON_CIRCLE [
 
 	<generated>
 	^ GLFW_GAMEPAD_BUTTON_CIRCLE
@@ -845,7 +822,7 @@ GLFWLibrary >> GAMEPAD_BUTTON_CIRCLE [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> GAMEPAD_BUTTON_CROSS [
+GLFWUninitializedLibrary >> GAMEPAD_BUTTON_CROSS [
 
 	<generated>
 	^ GLFW_GAMEPAD_BUTTON_CROSS
@@ -855,7 +832,7 @@ GLFWLibrary >> GAMEPAD_BUTTON_CROSS [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> GAMEPAD_BUTTON_DPAD_DOWN [
+GLFWUninitializedLibrary >> GAMEPAD_BUTTON_DPAD_DOWN [
 
 	<generated>
 	^ GLFW_GAMEPAD_BUTTON_DPAD_DOWN
@@ -865,7 +842,7 @@ GLFWLibrary >> GAMEPAD_BUTTON_DPAD_DOWN [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> GAMEPAD_BUTTON_DPAD_LEFT [
+GLFWUninitializedLibrary >> GAMEPAD_BUTTON_DPAD_LEFT [
 
 	<generated>
 	^ GLFW_GAMEPAD_BUTTON_DPAD_LEFT
@@ -875,7 +852,7 @@ GLFWLibrary >> GAMEPAD_BUTTON_DPAD_LEFT [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> GAMEPAD_BUTTON_DPAD_RIGHT [
+GLFWUninitializedLibrary >> GAMEPAD_BUTTON_DPAD_RIGHT [
 
 	<generated>
 	^ GLFW_GAMEPAD_BUTTON_DPAD_RIGHT
@@ -885,7 +862,7 @@ GLFWLibrary >> GAMEPAD_BUTTON_DPAD_RIGHT [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> GAMEPAD_BUTTON_DPAD_UP [
+GLFWUninitializedLibrary >> GAMEPAD_BUTTON_DPAD_UP [
 
 	<generated>
 	^ GLFW_GAMEPAD_BUTTON_DPAD_UP
@@ -895,7 +872,7 @@ GLFWLibrary >> GAMEPAD_BUTTON_DPAD_UP [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> GAMEPAD_BUTTON_GUIDE [
+GLFWUninitializedLibrary >> GAMEPAD_BUTTON_GUIDE [
 
 	<generated>
 	^ GLFW_GAMEPAD_BUTTON_GUIDE
@@ -905,7 +882,7 @@ GLFWLibrary >> GAMEPAD_BUTTON_GUIDE [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> GAMEPAD_BUTTON_LAST [
+GLFWUninitializedLibrary >> GAMEPAD_BUTTON_LAST [
 
 	<generated>
 	^ GLFW_GAMEPAD_BUTTON_LAST
@@ -915,7 +892,7 @@ GLFWLibrary >> GAMEPAD_BUTTON_LAST [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> GAMEPAD_BUTTON_LEFT_BUMPER [
+GLFWUninitializedLibrary >> GAMEPAD_BUTTON_LEFT_BUMPER [
 
 	<generated>
 	^ GLFW_GAMEPAD_BUTTON_LEFT_BUMPER
@@ -925,7 +902,7 @@ GLFWLibrary >> GAMEPAD_BUTTON_LEFT_BUMPER [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> GAMEPAD_BUTTON_LEFT_THUMB [
+GLFWUninitializedLibrary >> GAMEPAD_BUTTON_LEFT_THUMB [
 
 	<generated>
 	^ GLFW_GAMEPAD_BUTTON_LEFT_THUMB
@@ -935,7 +912,7 @@ GLFWLibrary >> GAMEPAD_BUTTON_LEFT_THUMB [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> GAMEPAD_BUTTON_RIGHT_BUMPER [
+GLFWUninitializedLibrary >> GAMEPAD_BUTTON_RIGHT_BUMPER [
 
 	<generated>
 	^ GLFW_GAMEPAD_BUTTON_RIGHT_BUMPER
@@ -945,7 +922,7 @@ GLFWLibrary >> GAMEPAD_BUTTON_RIGHT_BUMPER [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> GAMEPAD_BUTTON_RIGHT_THUMB [
+GLFWUninitializedLibrary >> GAMEPAD_BUTTON_RIGHT_THUMB [
 
 	<generated>
 	^ GLFW_GAMEPAD_BUTTON_RIGHT_THUMB
@@ -955,7 +932,7 @@ GLFWLibrary >> GAMEPAD_BUTTON_RIGHT_THUMB [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> GAMEPAD_BUTTON_SQUARE [
+GLFWUninitializedLibrary >> GAMEPAD_BUTTON_SQUARE [
 
 	<generated>
 	^ GLFW_GAMEPAD_BUTTON_SQUARE
@@ -965,7 +942,7 @@ GLFWLibrary >> GAMEPAD_BUTTON_SQUARE [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> GAMEPAD_BUTTON_START [
+GLFWUninitializedLibrary >> GAMEPAD_BUTTON_START [
 
 	<generated>
 	^ GLFW_GAMEPAD_BUTTON_START
@@ -975,7 +952,7 @@ GLFWLibrary >> GAMEPAD_BUTTON_START [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> GAMEPAD_BUTTON_TRIANGLE [
+GLFWUninitializedLibrary >> GAMEPAD_BUTTON_TRIANGLE [
 
 	<generated>
 	^ GLFW_GAMEPAD_BUTTON_TRIANGLE
@@ -985,7 +962,7 @@ GLFWLibrary >> GAMEPAD_BUTTON_TRIANGLE [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> GAMEPAD_BUTTON_X [
+GLFWUninitializedLibrary >> GAMEPAD_BUTTON_X [
 
 	<generated>
 	^ GLFW_GAMEPAD_BUTTON_X
@@ -995,7 +972,7 @@ GLFWLibrary >> GAMEPAD_BUTTON_X [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> GAMEPAD_BUTTON_Y [
+GLFWUninitializedLibrary >> GAMEPAD_BUTTON_Y [
 
 	<generated>
 	^ GLFW_GAMEPAD_BUTTON_Y
@@ -1005,7 +982,7 @@ GLFWLibrary >> GAMEPAD_BUTTON_Y [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> GREEN_BITS [
+GLFWUninitializedLibrary >> GREEN_BITS [
 
 	<generated>
 	^ GLFW_GREEN_BITS
@@ -1015,7 +992,7 @@ GLFWLibrary >> GREEN_BITS [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> HAND_CURSOR [
+GLFWUninitializedLibrary >> HAND_CURSOR [
 
 	<generated>
 	^ GLFW_HAND_CURSOR
@@ -1025,7 +1002,7 @@ GLFWLibrary >> HAND_CURSOR [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> HAT_CENTERED [
+GLFWUninitializedLibrary >> HAT_CENTERED [
 
 	<generated>
 	^ GLFW_HAT_CENTERED
@@ -1035,7 +1012,7 @@ GLFWLibrary >> HAT_CENTERED [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> HAT_DOWN [
+GLFWUninitializedLibrary >> HAT_DOWN [
 
 	<generated>
 	^ GLFW_HAT_DOWN
@@ -1045,7 +1022,7 @@ GLFWLibrary >> HAT_DOWN [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> HAT_LEFT [
+GLFWUninitializedLibrary >> HAT_LEFT [
 
 	<generated>
 	^ GLFW_HAT_LEFT
@@ -1055,7 +1032,7 @@ GLFWLibrary >> HAT_LEFT [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> HAT_LEFT_DOWN [
+GLFWUninitializedLibrary >> HAT_LEFT_DOWN [
 
 	<generated>
 	^ GLFW_HAT_LEFT_DOWN
@@ -1065,7 +1042,7 @@ GLFWLibrary >> HAT_LEFT_DOWN [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> HAT_LEFT_UP [
+GLFWUninitializedLibrary >> HAT_LEFT_UP [
 
 	<generated>
 	^ GLFW_HAT_LEFT_UP
@@ -1075,7 +1052,7 @@ GLFWLibrary >> HAT_LEFT_UP [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> HAT_RIGHT [
+GLFWUninitializedLibrary >> HAT_RIGHT [
 
 	<generated>
 	^ GLFW_HAT_RIGHT
@@ -1085,7 +1062,7 @@ GLFWLibrary >> HAT_RIGHT [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> HAT_RIGHT_DOWN [
+GLFWUninitializedLibrary >> HAT_RIGHT_DOWN [
 
 	<generated>
 	^ GLFW_HAT_RIGHT_DOWN
@@ -1095,7 +1072,7 @@ GLFWLibrary >> HAT_RIGHT_DOWN [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> HAT_RIGHT_UP [
+GLFWUninitializedLibrary >> HAT_RIGHT_UP [
 
 	<generated>
 	^ GLFW_HAT_RIGHT_UP
@@ -1105,7 +1082,7 @@ GLFWLibrary >> HAT_RIGHT_UP [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> HAT_UP [
+GLFWUninitializedLibrary >> HAT_UP [
 
 	<generated>
 	^ GLFW_HAT_UP
@@ -1115,7 +1092,7 @@ GLFWLibrary >> HAT_UP [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> HOVERED [
+GLFWUninitializedLibrary >> HOVERED [
 
 	<generated>
 	^ GLFW_HOVERED
@@ -1125,7 +1102,7 @@ GLFWLibrary >> HOVERED [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> HRESIZE_CURSOR [
+GLFWUninitializedLibrary >> HRESIZE_CURSOR [
 
 	<generated>
 	^ GLFW_HRESIZE_CURSOR
@@ -1135,7 +1112,7 @@ GLFWLibrary >> HRESIZE_CURSOR [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> IBEAM_CURSOR [
+GLFWUninitializedLibrary >> IBEAM_CURSOR [
 
 	<generated>
 	^ GLFW_IBEAM_CURSOR
@@ -1145,7 +1122,7 @@ GLFWLibrary >> IBEAM_CURSOR [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> ICONIFIED [
+GLFWUninitializedLibrary >> ICONIFIED [
 
 	<generated>
 	^ GLFW_ICONIFIED
@@ -1155,7 +1132,7 @@ GLFWLibrary >> ICONIFIED [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> INVALID_ENUM [
+GLFWUninitializedLibrary >> INVALID_ENUM [
 
 	<generated>
 	^ GLFW_INVALID_ENUM
@@ -1165,7 +1142,7 @@ GLFWLibrary >> INVALID_ENUM [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> INVALID_VALUE [
+GLFWUninitializedLibrary >> INVALID_VALUE [
 
 	<generated>
 	^ GLFW_INVALID_VALUE
@@ -1175,7 +1152,7 @@ GLFWLibrary >> INVALID_VALUE [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> JOYSTICK_1 [
+GLFWUninitializedLibrary >> JOYSTICK_1 [
 
 	<generated>
 	^ GLFW_JOYSTICK_1
@@ -1185,7 +1162,7 @@ GLFWLibrary >> JOYSTICK_1 [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> JOYSTICK_10 [
+GLFWUninitializedLibrary >> JOYSTICK_10 [
 
 	<generated>
 	^ GLFW_JOYSTICK_10
@@ -1195,7 +1172,7 @@ GLFWLibrary >> JOYSTICK_10 [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> JOYSTICK_11 [
+GLFWUninitializedLibrary >> JOYSTICK_11 [
 
 	<generated>
 	^ GLFW_JOYSTICK_11
@@ -1205,7 +1182,7 @@ GLFWLibrary >> JOYSTICK_11 [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> JOYSTICK_12 [
+GLFWUninitializedLibrary >> JOYSTICK_12 [
 
 	<generated>
 	^ GLFW_JOYSTICK_12
@@ -1215,7 +1192,7 @@ GLFWLibrary >> JOYSTICK_12 [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> JOYSTICK_13 [
+GLFWUninitializedLibrary >> JOYSTICK_13 [
 
 	<generated>
 	^ GLFW_JOYSTICK_13
@@ -1225,7 +1202,7 @@ GLFWLibrary >> JOYSTICK_13 [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> JOYSTICK_14 [
+GLFWUninitializedLibrary >> JOYSTICK_14 [
 
 	<generated>
 	^ GLFW_JOYSTICK_14
@@ -1235,7 +1212,7 @@ GLFWLibrary >> JOYSTICK_14 [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> JOYSTICK_15 [
+GLFWUninitializedLibrary >> JOYSTICK_15 [
 
 	<generated>
 	^ GLFW_JOYSTICK_15
@@ -1245,7 +1222,7 @@ GLFWLibrary >> JOYSTICK_15 [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> JOYSTICK_16 [
+GLFWUninitializedLibrary >> JOYSTICK_16 [
 
 	<generated>
 	^ GLFW_JOYSTICK_16
@@ -1255,7 +1232,7 @@ GLFWLibrary >> JOYSTICK_16 [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> JOYSTICK_2 [
+GLFWUninitializedLibrary >> JOYSTICK_2 [
 
 	<generated>
 	^ GLFW_JOYSTICK_2
@@ -1265,7 +1242,7 @@ GLFWLibrary >> JOYSTICK_2 [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> JOYSTICK_3 [
+GLFWUninitializedLibrary >> JOYSTICK_3 [
 
 	<generated>
 	^ GLFW_JOYSTICK_3
@@ -1275,7 +1252,7 @@ GLFWLibrary >> JOYSTICK_3 [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> JOYSTICK_4 [
+GLFWUninitializedLibrary >> JOYSTICK_4 [
 
 	<generated>
 	^ GLFW_JOYSTICK_4
@@ -1285,7 +1262,7 @@ GLFWLibrary >> JOYSTICK_4 [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> JOYSTICK_5 [
+GLFWUninitializedLibrary >> JOYSTICK_5 [
 
 	<generated>
 	^ GLFW_JOYSTICK_5
@@ -1295,7 +1272,7 @@ GLFWLibrary >> JOYSTICK_5 [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> JOYSTICK_6 [
+GLFWUninitializedLibrary >> JOYSTICK_6 [
 
 	<generated>
 	^ GLFW_JOYSTICK_6
@@ -1305,7 +1282,7 @@ GLFWLibrary >> JOYSTICK_6 [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> JOYSTICK_7 [
+GLFWUninitializedLibrary >> JOYSTICK_7 [
 
 	<generated>
 	^ GLFW_JOYSTICK_7
@@ -1315,7 +1292,7 @@ GLFWLibrary >> JOYSTICK_7 [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> JOYSTICK_8 [
+GLFWUninitializedLibrary >> JOYSTICK_8 [
 
 	<generated>
 	^ GLFW_JOYSTICK_8
@@ -1325,7 +1302,7 @@ GLFWLibrary >> JOYSTICK_8 [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> JOYSTICK_9 [
+GLFWUninitializedLibrary >> JOYSTICK_9 [
 
 	<generated>
 	^ GLFW_JOYSTICK_9
@@ -1335,7 +1312,7 @@ GLFWLibrary >> JOYSTICK_9 [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> JOYSTICK_HAT_BUTTONS [
+GLFWUninitializedLibrary >> JOYSTICK_HAT_BUTTONS [
 
 	<generated>
 	^ GLFW_JOYSTICK_HAT_BUTTONS
@@ -1345,7 +1322,7 @@ GLFWLibrary >> JOYSTICK_HAT_BUTTONS [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> JOYSTICK_LAST [
+GLFWUninitializedLibrary >> JOYSTICK_LAST [
 
 	<generated>
 	^ GLFW_JOYSTICK_LAST
@@ -1355,7 +1332,7 @@ GLFWLibrary >> JOYSTICK_LAST [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> KEY_0 [
+GLFWUninitializedLibrary >> KEY_0 [
 
 	<generated>
 	^ GLFW_KEY_0
@@ -1365,7 +1342,7 @@ GLFWLibrary >> KEY_0 [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> KEY_1 [
+GLFWUninitializedLibrary >> KEY_1 [
 
 	<generated>
 	^ GLFW_KEY_1
@@ -1375,7 +1352,7 @@ GLFWLibrary >> KEY_1 [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> KEY_2 [
+GLFWUninitializedLibrary >> KEY_2 [
 
 	<generated>
 	^ GLFW_KEY_2
@@ -1385,7 +1362,7 @@ GLFWLibrary >> KEY_2 [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> KEY_3 [
+GLFWUninitializedLibrary >> KEY_3 [
 
 	<generated>
 	^ GLFW_KEY_3
@@ -1395,7 +1372,7 @@ GLFWLibrary >> KEY_3 [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> KEY_4 [
+GLFWUninitializedLibrary >> KEY_4 [
 
 	<generated>
 	^ GLFW_KEY_4
@@ -1405,7 +1382,7 @@ GLFWLibrary >> KEY_4 [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> KEY_5 [
+GLFWUninitializedLibrary >> KEY_5 [
 
 	<generated>
 	^ GLFW_KEY_5
@@ -1415,7 +1392,7 @@ GLFWLibrary >> KEY_5 [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> KEY_6 [
+GLFWUninitializedLibrary >> KEY_6 [
 
 	<generated>
 	^ GLFW_KEY_6
@@ -1425,7 +1402,7 @@ GLFWLibrary >> KEY_6 [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> KEY_7 [
+GLFWUninitializedLibrary >> KEY_7 [
 
 	<generated>
 	^ GLFW_KEY_7
@@ -1435,7 +1412,7 @@ GLFWLibrary >> KEY_7 [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> KEY_8 [
+GLFWUninitializedLibrary >> KEY_8 [
 
 	<generated>
 	^ GLFW_KEY_8
@@ -1445,7 +1422,7 @@ GLFWLibrary >> KEY_8 [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> KEY_9 [
+GLFWUninitializedLibrary >> KEY_9 [
 
 	<generated>
 	^ GLFW_KEY_9
@@ -1455,7 +1432,7 @@ GLFWLibrary >> KEY_9 [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> KEY_A [
+GLFWUninitializedLibrary >> KEY_A [
 
 	<generated>
 	^ GLFW_KEY_A
@@ -1465,7 +1442,7 @@ GLFWLibrary >> KEY_A [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> KEY_APOSTROPHE [
+GLFWUninitializedLibrary >> KEY_APOSTROPHE [
 
 	<generated>
 	^ GLFW_KEY_APOSTROPHE
@@ -1475,7 +1452,7 @@ GLFWLibrary >> KEY_APOSTROPHE [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> KEY_B [
+GLFWUninitializedLibrary >> KEY_B [
 
 	<generated>
 	^ GLFW_KEY_B
@@ -1485,7 +1462,7 @@ GLFWLibrary >> KEY_B [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> KEY_BACKSLASH [
+GLFWUninitializedLibrary >> KEY_BACKSLASH [
 
 	<generated>
 	^ GLFW_KEY_BACKSLASH
@@ -1495,7 +1472,7 @@ GLFWLibrary >> KEY_BACKSLASH [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> KEY_BACKSPACE [
+GLFWUninitializedLibrary >> KEY_BACKSPACE [
 
 	<generated>
 	^ GLFW_KEY_BACKSPACE
@@ -1505,7 +1482,7 @@ GLFWLibrary >> KEY_BACKSPACE [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> KEY_C [
+GLFWUninitializedLibrary >> KEY_C [
 
 	<generated>
 	^ GLFW_KEY_C
@@ -1515,7 +1492,7 @@ GLFWLibrary >> KEY_C [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> KEY_CAPS_LOCK [
+GLFWUninitializedLibrary >> KEY_CAPS_LOCK [
 
 	<generated>
 	^ GLFW_KEY_CAPS_LOCK
@@ -1525,7 +1502,7 @@ GLFWLibrary >> KEY_CAPS_LOCK [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> KEY_COMMA [
+GLFWUninitializedLibrary >> KEY_COMMA [
 
 	<generated>
 	^ GLFW_KEY_COMMA
@@ -1535,7 +1512,7 @@ GLFWLibrary >> KEY_COMMA [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> KEY_D [
+GLFWUninitializedLibrary >> KEY_D [
 
 	<generated>
 	^ GLFW_KEY_D
@@ -1545,7 +1522,7 @@ GLFWLibrary >> KEY_D [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> KEY_DELETE [
+GLFWUninitializedLibrary >> KEY_DELETE [
 
 	<generated>
 	^ GLFW_KEY_DELETE
@@ -1555,7 +1532,7 @@ GLFWLibrary >> KEY_DELETE [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> KEY_DOWN [
+GLFWUninitializedLibrary >> KEY_DOWN [
 
 	<generated>
 	^ GLFW_KEY_DOWN
@@ -1565,7 +1542,7 @@ GLFWLibrary >> KEY_DOWN [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> KEY_E [
+GLFWUninitializedLibrary >> KEY_E [
 
 	<generated>
 	^ GLFW_KEY_E
@@ -1575,7 +1552,7 @@ GLFWLibrary >> KEY_E [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> KEY_END [
+GLFWUninitializedLibrary >> KEY_END [
 
 	<generated>
 	^ GLFW_KEY_END
@@ -1585,7 +1562,7 @@ GLFWLibrary >> KEY_END [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> KEY_ENTER [
+GLFWUninitializedLibrary >> KEY_ENTER [
 
 	<generated>
 	^ GLFW_KEY_ENTER
@@ -1595,7 +1572,7 @@ GLFWLibrary >> KEY_ENTER [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> KEY_EQUAL [
+GLFWUninitializedLibrary >> KEY_EQUAL [
 
 	<generated>
 	^ GLFW_KEY_EQUAL
@@ -1605,7 +1582,7 @@ GLFWLibrary >> KEY_EQUAL [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> KEY_ESCAPE [
+GLFWUninitializedLibrary >> KEY_ESCAPE [
 
 	<generated>
 	^ GLFW_KEY_ESCAPE
@@ -1615,7 +1592,7 @@ GLFWLibrary >> KEY_ESCAPE [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> KEY_F [
+GLFWUninitializedLibrary >> KEY_F [
 
 	<generated>
 	^ GLFW_KEY_F
@@ -1625,7 +1602,7 @@ GLFWLibrary >> KEY_F [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> KEY_F1 [
+GLFWUninitializedLibrary >> KEY_F1 [
 
 	<generated>
 	^ GLFW_KEY_F1
@@ -1635,7 +1612,7 @@ GLFWLibrary >> KEY_F1 [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> KEY_F10 [
+GLFWUninitializedLibrary >> KEY_F10 [
 
 	<generated>
 	^ GLFW_KEY_F10
@@ -1645,7 +1622,7 @@ GLFWLibrary >> KEY_F10 [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> KEY_F11 [
+GLFWUninitializedLibrary >> KEY_F11 [
 
 	<generated>
 	^ GLFW_KEY_F11
@@ -1655,7 +1632,7 @@ GLFWLibrary >> KEY_F11 [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> KEY_F12 [
+GLFWUninitializedLibrary >> KEY_F12 [
 
 	<generated>
 	^ GLFW_KEY_F12
@@ -1665,7 +1642,7 @@ GLFWLibrary >> KEY_F12 [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> KEY_F13 [
+GLFWUninitializedLibrary >> KEY_F13 [
 
 	<generated>
 	^ GLFW_KEY_F13
@@ -1675,7 +1652,7 @@ GLFWLibrary >> KEY_F13 [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> KEY_F14 [
+GLFWUninitializedLibrary >> KEY_F14 [
 
 	<generated>
 	^ GLFW_KEY_F14
@@ -1685,7 +1662,7 @@ GLFWLibrary >> KEY_F14 [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> KEY_F15 [
+GLFWUninitializedLibrary >> KEY_F15 [
 
 	<generated>
 	^ GLFW_KEY_F15
@@ -1695,7 +1672,7 @@ GLFWLibrary >> KEY_F15 [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> KEY_F16 [
+GLFWUninitializedLibrary >> KEY_F16 [
 
 	<generated>
 	^ GLFW_KEY_F16
@@ -1705,7 +1682,7 @@ GLFWLibrary >> KEY_F16 [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> KEY_F17 [
+GLFWUninitializedLibrary >> KEY_F17 [
 
 	<generated>
 	^ GLFW_KEY_F17
@@ -1715,7 +1692,7 @@ GLFWLibrary >> KEY_F17 [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> KEY_F18 [
+GLFWUninitializedLibrary >> KEY_F18 [
 
 	<generated>
 	^ GLFW_KEY_F18
@@ -1725,7 +1702,7 @@ GLFWLibrary >> KEY_F18 [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> KEY_F19 [
+GLFWUninitializedLibrary >> KEY_F19 [
 
 	<generated>
 	^ GLFW_KEY_F19
@@ -1735,7 +1712,7 @@ GLFWLibrary >> KEY_F19 [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> KEY_F2 [
+GLFWUninitializedLibrary >> KEY_F2 [
 
 	<generated>
 	^ GLFW_KEY_F2
@@ -1745,7 +1722,7 @@ GLFWLibrary >> KEY_F2 [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> KEY_F20 [
+GLFWUninitializedLibrary >> KEY_F20 [
 
 	<generated>
 	^ GLFW_KEY_F20
@@ -1755,7 +1732,7 @@ GLFWLibrary >> KEY_F20 [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> KEY_F21 [
+GLFWUninitializedLibrary >> KEY_F21 [
 
 	<generated>
 	^ GLFW_KEY_F21
@@ -1765,7 +1742,7 @@ GLFWLibrary >> KEY_F21 [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> KEY_F22 [
+GLFWUninitializedLibrary >> KEY_F22 [
 
 	<generated>
 	^ GLFW_KEY_F22
@@ -1775,7 +1752,7 @@ GLFWLibrary >> KEY_F22 [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> KEY_F23 [
+GLFWUninitializedLibrary >> KEY_F23 [
 
 	<generated>
 	^ GLFW_KEY_F23
@@ -1785,7 +1762,7 @@ GLFWLibrary >> KEY_F23 [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> KEY_F24 [
+GLFWUninitializedLibrary >> KEY_F24 [
 
 	<generated>
 	^ GLFW_KEY_F24
@@ -1795,7 +1772,7 @@ GLFWLibrary >> KEY_F24 [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> KEY_F25 [
+GLFWUninitializedLibrary >> KEY_F25 [
 
 	<generated>
 	^ GLFW_KEY_F25
@@ -1805,7 +1782,7 @@ GLFWLibrary >> KEY_F25 [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> KEY_F3 [
+GLFWUninitializedLibrary >> KEY_F3 [
 
 	<generated>
 	^ GLFW_KEY_F3
@@ -1815,7 +1792,7 @@ GLFWLibrary >> KEY_F3 [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> KEY_F4 [
+GLFWUninitializedLibrary >> KEY_F4 [
 
 	<generated>
 	^ GLFW_KEY_F4
@@ -1825,7 +1802,7 @@ GLFWLibrary >> KEY_F4 [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> KEY_F5 [
+GLFWUninitializedLibrary >> KEY_F5 [
 
 	<generated>
 	^ GLFW_KEY_F5
@@ -1835,7 +1812,7 @@ GLFWLibrary >> KEY_F5 [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> KEY_F6 [
+GLFWUninitializedLibrary >> KEY_F6 [
 
 	<generated>
 	^ GLFW_KEY_F6
@@ -1845,7 +1822,7 @@ GLFWLibrary >> KEY_F6 [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> KEY_F7 [
+GLFWUninitializedLibrary >> KEY_F7 [
 
 	<generated>
 	^ GLFW_KEY_F7
@@ -1855,7 +1832,7 @@ GLFWLibrary >> KEY_F7 [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> KEY_F8 [
+GLFWUninitializedLibrary >> KEY_F8 [
 
 	<generated>
 	^ GLFW_KEY_F8
@@ -1865,7 +1842,7 @@ GLFWLibrary >> KEY_F8 [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> KEY_F9 [
+GLFWUninitializedLibrary >> KEY_F9 [
 
 	<generated>
 	^ GLFW_KEY_F9
@@ -1875,7 +1852,7 @@ GLFWLibrary >> KEY_F9 [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> KEY_G [
+GLFWUninitializedLibrary >> KEY_G [
 
 	<generated>
 	^ GLFW_KEY_G
@@ -1885,7 +1862,7 @@ GLFWLibrary >> KEY_G [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> KEY_GRAVE_ACCENT [
+GLFWUninitializedLibrary >> KEY_GRAVE_ACCENT [
 
 	<generated>
 	^ GLFW_KEY_GRAVE_ACCENT
@@ -1895,7 +1872,7 @@ GLFWLibrary >> KEY_GRAVE_ACCENT [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> KEY_H [
+GLFWUninitializedLibrary >> KEY_H [
 
 	<generated>
 	^ GLFW_KEY_H
@@ -1905,7 +1882,7 @@ GLFWLibrary >> KEY_H [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> KEY_HOME [
+GLFWUninitializedLibrary >> KEY_HOME [
 
 	<generated>
 	^ GLFW_KEY_HOME
@@ -1915,7 +1892,7 @@ GLFWLibrary >> KEY_HOME [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> KEY_I [
+GLFWUninitializedLibrary >> KEY_I [
 
 	<generated>
 	^ GLFW_KEY_I
@@ -1925,7 +1902,7 @@ GLFWLibrary >> KEY_I [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> KEY_INSERT [
+GLFWUninitializedLibrary >> KEY_INSERT [
 
 	<generated>
 	^ GLFW_KEY_INSERT
@@ -1935,7 +1912,7 @@ GLFWLibrary >> KEY_INSERT [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> KEY_J [
+GLFWUninitializedLibrary >> KEY_J [
 
 	<generated>
 	^ GLFW_KEY_J
@@ -1945,7 +1922,7 @@ GLFWLibrary >> KEY_J [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> KEY_K [
+GLFWUninitializedLibrary >> KEY_K [
 
 	<generated>
 	^ GLFW_KEY_K
@@ -1955,7 +1932,7 @@ GLFWLibrary >> KEY_K [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> KEY_KP_0 [
+GLFWUninitializedLibrary >> KEY_KP_0 [
 
 	<generated>
 	^ GLFW_KEY_KP_0
@@ -1965,7 +1942,7 @@ GLFWLibrary >> KEY_KP_0 [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> KEY_KP_1 [
+GLFWUninitializedLibrary >> KEY_KP_1 [
 
 	<generated>
 	^ GLFW_KEY_KP_1
@@ -1975,7 +1952,7 @@ GLFWLibrary >> KEY_KP_1 [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> KEY_KP_2 [
+GLFWUninitializedLibrary >> KEY_KP_2 [
 
 	<generated>
 	^ GLFW_KEY_KP_2
@@ -1985,7 +1962,7 @@ GLFWLibrary >> KEY_KP_2 [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> KEY_KP_3 [
+GLFWUninitializedLibrary >> KEY_KP_3 [
 
 	<generated>
 	^ GLFW_KEY_KP_3
@@ -1995,7 +1972,7 @@ GLFWLibrary >> KEY_KP_3 [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> KEY_KP_4 [
+GLFWUninitializedLibrary >> KEY_KP_4 [
 
 	<generated>
 	^ GLFW_KEY_KP_4
@@ -2005,7 +1982,7 @@ GLFWLibrary >> KEY_KP_4 [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> KEY_KP_5 [
+GLFWUninitializedLibrary >> KEY_KP_5 [
 
 	<generated>
 	^ GLFW_KEY_KP_5
@@ -2015,7 +1992,7 @@ GLFWLibrary >> KEY_KP_5 [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> KEY_KP_6 [
+GLFWUninitializedLibrary >> KEY_KP_6 [
 
 	<generated>
 	^ GLFW_KEY_KP_6
@@ -2025,7 +2002,7 @@ GLFWLibrary >> KEY_KP_6 [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> KEY_KP_7 [
+GLFWUninitializedLibrary >> KEY_KP_7 [
 
 	<generated>
 	^ GLFW_KEY_KP_7
@@ -2035,7 +2012,7 @@ GLFWLibrary >> KEY_KP_7 [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> KEY_KP_8 [
+GLFWUninitializedLibrary >> KEY_KP_8 [
 
 	<generated>
 	^ GLFW_KEY_KP_8
@@ -2045,7 +2022,7 @@ GLFWLibrary >> KEY_KP_8 [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> KEY_KP_9 [
+GLFWUninitializedLibrary >> KEY_KP_9 [
 
 	<generated>
 	^ GLFW_KEY_KP_9
@@ -2055,7 +2032,7 @@ GLFWLibrary >> KEY_KP_9 [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> KEY_KP_ADD [
+GLFWUninitializedLibrary >> KEY_KP_ADD [
 
 	<generated>
 	^ GLFW_KEY_KP_ADD
@@ -2065,7 +2042,7 @@ GLFWLibrary >> KEY_KP_ADD [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> KEY_KP_DECIMAL [
+GLFWUninitializedLibrary >> KEY_KP_DECIMAL [
 
 	<generated>
 	^ GLFW_KEY_KP_DECIMAL
@@ -2075,7 +2052,7 @@ GLFWLibrary >> KEY_KP_DECIMAL [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> KEY_KP_DIVIDE [
+GLFWUninitializedLibrary >> KEY_KP_DIVIDE [
 
 	<generated>
 	^ GLFW_KEY_KP_DIVIDE
@@ -2085,7 +2062,7 @@ GLFWLibrary >> KEY_KP_DIVIDE [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> KEY_KP_ENTER [
+GLFWUninitializedLibrary >> KEY_KP_ENTER [
 
 	<generated>
 	^ GLFW_KEY_KP_ENTER
@@ -2095,7 +2072,7 @@ GLFWLibrary >> KEY_KP_ENTER [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> KEY_KP_EQUAL [
+GLFWUninitializedLibrary >> KEY_KP_EQUAL [
 
 	<generated>
 	^ GLFW_KEY_KP_EQUAL
@@ -2105,7 +2082,7 @@ GLFWLibrary >> KEY_KP_EQUAL [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> KEY_KP_MULTIPLY [
+GLFWUninitializedLibrary >> KEY_KP_MULTIPLY [
 
 	<generated>
 	^ GLFW_KEY_KP_MULTIPLY
@@ -2115,7 +2092,7 @@ GLFWLibrary >> KEY_KP_MULTIPLY [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> KEY_KP_SUBTRACT [
+GLFWUninitializedLibrary >> KEY_KP_SUBTRACT [
 
 	<generated>
 	^ GLFW_KEY_KP_SUBTRACT
@@ -2125,7 +2102,7 @@ GLFWLibrary >> KEY_KP_SUBTRACT [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> KEY_L [
+GLFWUninitializedLibrary >> KEY_L [
 
 	<generated>
 	^ GLFW_KEY_L
@@ -2135,7 +2112,7 @@ GLFWLibrary >> KEY_L [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> KEY_LAST [
+GLFWUninitializedLibrary >> KEY_LAST [
 
 	<generated>
 	^ GLFW_KEY_LAST
@@ -2145,7 +2122,7 @@ GLFWLibrary >> KEY_LAST [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> KEY_LEFT [
+GLFWUninitializedLibrary >> KEY_LEFT [
 
 	<generated>
 	^ GLFW_KEY_LEFT
@@ -2155,7 +2132,7 @@ GLFWLibrary >> KEY_LEFT [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> KEY_LEFT_ALT [
+GLFWUninitializedLibrary >> KEY_LEFT_ALT [
 
 	<generated>
 	^ GLFW_KEY_LEFT_ALT
@@ -2165,7 +2142,7 @@ GLFWLibrary >> KEY_LEFT_ALT [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> KEY_LEFT_BRACKET [
+GLFWUninitializedLibrary >> KEY_LEFT_BRACKET [
 
 	<generated>
 	^ GLFW_KEY_LEFT_BRACKET
@@ -2175,7 +2152,7 @@ GLFWLibrary >> KEY_LEFT_BRACKET [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> KEY_LEFT_CONTROL [
+GLFWUninitializedLibrary >> KEY_LEFT_CONTROL [
 
 	<generated>
 	^ GLFW_KEY_LEFT_CONTROL
@@ -2185,7 +2162,7 @@ GLFWLibrary >> KEY_LEFT_CONTROL [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> KEY_LEFT_SHIFT [
+GLFWUninitializedLibrary >> KEY_LEFT_SHIFT [
 
 	<generated>
 	^ GLFW_KEY_LEFT_SHIFT
@@ -2195,7 +2172,7 @@ GLFWLibrary >> KEY_LEFT_SHIFT [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> KEY_LEFT_SUPER [
+GLFWUninitializedLibrary >> KEY_LEFT_SUPER [
 
 	<generated>
 	^ GLFW_KEY_LEFT_SUPER
@@ -2205,7 +2182,7 @@ GLFWLibrary >> KEY_LEFT_SUPER [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> KEY_M [
+GLFWUninitializedLibrary >> KEY_M [
 
 	<generated>
 	^ GLFW_KEY_M
@@ -2215,7 +2192,7 @@ GLFWLibrary >> KEY_M [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> KEY_MENU [
+GLFWUninitializedLibrary >> KEY_MENU [
 
 	<generated>
 	^ GLFW_KEY_MENU
@@ -2225,7 +2202,7 @@ GLFWLibrary >> KEY_MENU [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> KEY_MINUS [
+GLFWUninitializedLibrary >> KEY_MINUS [
 
 	<generated>
 	^ GLFW_KEY_MINUS
@@ -2235,7 +2212,7 @@ GLFWLibrary >> KEY_MINUS [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> KEY_N [
+GLFWUninitializedLibrary >> KEY_N [
 
 	<generated>
 	^ GLFW_KEY_N
@@ -2245,7 +2222,7 @@ GLFWLibrary >> KEY_N [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> KEY_NUM_LOCK [
+GLFWUninitializedLibrary >> KEY_NUM_LOCK [
 
 	<generated>
 	^ GLFW_KEY_NUM_LOCK
@@ -2255,7 +2232,7 @@ GLFWLibrary >> KEY_NUM_LOCK [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> KEY_O [
+GLFWUninitializedLibrary >> KEY_O [
 
 	<generated>
 	^ GLFW_KEY_O
@@ -2265,7 +2242,7 @@ GLFWLibrary >> KEY_O [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> KEY_P [
+GLFWUninitializedLibrary >> KEY_P [
 
 	<generated>
 	^ GLFW_KEY_P
@@ -2275,7 +2252,7 @@ GLFWLibrary >> KEY_P [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> KEY_PAGE_DOWN [
+GLFWUninitializedLibrary >> KEY_PAGE_DOWN [
 
 	<generated>
 	^ GLFW_KEY_PAGE_DOWN
@@ -2285,7 +2262,7 @@ GLFWLibrary >> KEY_PAGE_DOWN [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> KEY_PAGE_UP [
+GLFWUninitializedLibrary >> KEY_PAGE_UP [
 
 	<generated>
 	^ GLFW_KEY_PAGE_UP
@@ -2295,7 +2272,7 @@ GLFWLibrary >> KEY_PAGE_UP [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> KEY_PAUSE [
+GLFWUninitializedLibrary >> KEY_PAUSE [
 
 	<generated>
 	^ GLFW_KEY_PAUSE
@@ -2305,7 +2282,7 @@ GLFWLibrary >> KEY_PAUSE [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> KEY_PERIOD [
+GLFWUninitializedLibrary >> KEY_PERIOD [
 
 	<generated>
 	^ GLFW_KEY_PERIOD
@@ -2315,7 +2292,7 @@ GLFWLibrary >> KEY_PERIOD [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> KEY_PRINT_SCREEN [
+GLFWUninitializedLibrary >> KEY_PRINT_SCREEN [
 
 	<generated>
 	^ GLFW_KEY_PRINT_SCREEN
@@ -2325,7 +2302,7 @@ GLFWLibrary >> KEY_PRINT_SCREEN [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> KEY_Q [
+GLFWUninitializedLibrary >> KEY_Q [
 
 	<generated>
 	^ GLFW_KEY_Q
@@ -2335,7 +2312,7 @@ GLFWLibrary >> KEY_Q [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> KEY_R [
+GLFWUninitializedLibrary >> KEY_R [
 
 	<generated>
 	^ GLFW_KEY_R
@@ -2345,7 +2322,7 @@ GLFWLibrary >> KEY_R [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> KEY_RIGHT [
+GLFWUninitializedLibrary >> KEY_RIGHT [
 
 	<generated>
 	^ GLFW_KEY_RIGHT
@@ -2355,7 +2332,7 @@ GLFWLibrary >> KEY_RIGHT [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> KEY_RIGHT_ALT [
+GLFWUninitializedLibrary >> KEY_RIGHT_ALT [
 
 	<generated>
 	^ GLFW_KEY_RIGHT_ALT
@@ -2365,7 +2342,7 @@ GLFWLibrary >> KEY_RIGHT_ALT [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> KEY_RIGHT_BRACKET [
+GLFWUninitializedLibrary >> KEY_RIGHT_BRACKET [
 
 	<generated>
 	^ GLFW_KEY_RIGHT_BRACKET
@@ -2375,7 +2352,7 @@ GLFWLibrary >> KEY_RIGHT_BRACKET [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> KEY_RIGHT_CONTROL [
+GLFWUninitializedLibrary >> KEY_RIGHT_CONTROL [
 
 	<generated>
 	^ GLFW_KEY_RIGHT_CONTROL
@@ -2385,7 +2362,7 @@ GLFWLibrary >> KEY_RIGHT_CONTROL [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> KEY_RIGHT_SHIFT [
+GLFWUninitializedLibrary >> KEY_RIGHT_SHIFT [
 
 	<generated>
 	^ GLFW_KEY_RIGHT_SHIFT
@@ -2395,7 +2372,7 @@ GLFWLibrary >> KEY_RIGHT_SHIFT [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> KEY_RIGHT_SUPER [
+GLFWUninitializedLibrary >> KEY_RIGHT_SUPER [
 
 	<generated>
 	^ GLFW_KEY_RIGHT_SUPER
@@ -2405,7 +2382,7 @@ GLFWLibrary >> KEY_RIGHT_SUPER [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> KEY_S [
+GLFWUninitializedLibrary >> KEY_S [
 
 	<generated>
 	^ GLFW_KEY_S
@@ -2415,7 +2392,7 @@ GLFWLibrary >> KEY_S [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> KEY_SCROLL_LOCK [
+GLFWUninitializedLibrary >> KEY_SCROLL_LOCK [
 
 	<generated>
 	^ GLFW_KEY_SCROLL_LOCK
@@ -2425,7 +2402,7 @@ GLFWLibrary >> KEY_SCROLL_LOCK [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> KEY_SEMICOLON [
+GLFWUninitializedLibrary >> KEY_SEMICOLON [
 
 	<generated>
 	^ GLFW_KEY_SEMICOLON
@@ -2435,7 +2412,7 @@ GLFWLibrary >> KEY_SEMICOLON [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> KEY_SLASH [
+GLFWUninitializedLibrary >> KEY_SLASH [
 
 	<generated>
 	^ GLFW_KEY_SLASH
@@ -2445,7 +2422,7 @@ GLFWLibrary >> KEY_SLASH [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> KEY_SPACE [
+GLFWUninitializedLibrary >> KEY_SPACE [
 
 	<generated>
 	^ GLFW_KEY_SPACE
@@ -2455,7 +2432,7 @@ GLFWLibrary >> KEY_SPACE [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> KEY_T [
+GLFWUninitializedLibrary >> KEY_T [
 
 	<generated>
 	^ GLFW_KEY_T
@@ -2465,7 +2442,7 @@ GLFWLibrary >> KEY_T [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> KEY_TAB [
+GLFWUninitializedLibrary >> KEY_TAB [
 
 	<generated>
 	^ GLFW_KEY_TAB
@@ -2475,7 +2452,7 @@ GLFWLibrary >> KEY_TAB [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> KEY_U [
+GLFWUninitializedLibrary >> KEY_U [
 
 	<generated>
 	^ GLFW_KEY_U
@@ -2485,7 +2462,7 @@ GLFWLibrary >> KEY_U [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> KEY_UNKNOWN [
+GLFWUninitializedLibrary >> KEY_UNKNOWN [
 
 	<generated>
 	^ GLFW_KEY_UNKNOWN
@@ -2495,7 +2472,7 @@ GLFWLibrary >> KEY_UNKNOWN [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> KEY_UP [
+GLFWUninitializedLibrary >> KEY_UP [
 
 	<generated>
 	^ GLFW_KEY_UP
@@ -2505,7 +2482,7 @@ GLFWLibrary >> KEY_UP [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> KEY_V [
+GLFWUninitializedLibrary >> KEY_V [
 
 	<generated>
 	^ GLFW_KEY_V
@@ -2515,7 +2492,7 @@ GLFWLibrary >> KEY_V [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> KEY_W [
+GLFWUninitializedLibrary >> KEY_W [
 
 	<generated>
 	^ GLFW_KEY_W
@@ -2525,7 +2502,7 @@ GLFWLibrary >> KEY_W [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> KEY_WORLD_1 [
+GLFWUninitializedLibrary >> KEY_WORLD_1 [
 
 	<generated>
 	^ GLFW_KEY_WORLD_1
@@ -2535,7 +2512,7 @@ GLFWLibrary >> KEY_WORLD_1 [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> KEY_WORLD_2 [
+GLFWUninitializedLibrary >> KEY_WORLD_2 [
 
 	<generated>
 	^ GLFW_KEY_WORLD_2
@@ -2545,7 +2522,7 @@ GLFWLibrary >> KEY_WORLD_2 [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> KEY_X [
+GLFWUninitializedLibrary >> KEY_X [
 
 	<generated>
 	^ GLFW_KEY_X
@@ -2555,7 +2532,7 @@ GLFWLibrary >> KEY_X [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> KEY_Y [
+GLFWUninitializedLibrary >> KEY_Y [
 
 	<generated>
 	^ GLFW_KEY_Y
@@ -2565,7 +2542,7 @@ GLFWLibrary >> KEY_Y [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> KEY_Z [
+GLFWUninitializedLibrary >> KEY_Z [
 
 	<generated>
 	^ GLFW_KEY_Z
@@ -2575,7 +2552,7 @@ GLFWLibrary >> KEY_Z [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> LOCK_KEY_MODS [
+GLFWUninitializedLibrary >> LOCK_KEY_MODS [
 
 	<generated>
 	^ GLFW_LOCK_KEY_MODS
@@ -2585,7 +2562,7 @@ GLFWLibrary >> LOCK_KEY_MODS [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> LOSE_CONTEXT_ON_RESET [
+GLFWUninitializedLibrary >> LOSE_CONTEXT_ON_RESET [
 
 	<generated>
 	^ GLFW_LOSE_CONTEXT_ON_RESET
@@ -2595,7 +2572,7 @@ GLFWLibrary >> LOSE_CONTEXT_ON_RESET [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> MAXIMIZED [
+GLFWUninitializedLibrary >> MAXIMIZED [
 
 	<generated>
 	^ GLFW_MAXIMIZED
@@ -2605,7 +2582,7 @@ GLFWLibrary >> MAXIMIZED [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> MOD_ALT [
+GLFWUninitializedLibrary >> MOD_ALT [
 
 	<generated>
 	^ GLFW_MOD_ALT
@@ -2615,7 +2592,7 @@ GLFWLibrary >> MOD_ALT [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> MOD_CAPS_LOCK [
+GLFWUninitializedLibrary >> MOD_CAPS_LOCK [
 
 	<generated>
 	^ GLFW_MOD_CAPS_LOCK
@@ -2625,7 +2602,7 @@ GLFWLibrary >> MOD_CAPS_LOCK [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> MOD_CONTROL [
+GLFWUninitializedLibrary >> MOD_CONTROL [
 
 	<generated>
 	^ GLFW_MOD_CONTROL
@@ -2635,7 +2612,7 @@ GLFWLibrary >> MOD_CONTROL [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> MOD_NUM_LOCK [
+GLFWUninitializedLibrary >> MOD_NUM_LOCK [
 
 	<generated>
 	^ GLFW_MOD_NUM_LOCK
@@ -2645,7 +2622,7 @@ GLFWLibrary >> MOD_NUM_LOCK [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> MOD_SHIFT [
+GLFWUninitializedLibrary >> MOD_SHIFT [
 
 	<generated>
 	^ GLFW_MOD_SHIFT
@@ -2655,7 +2632,7 @@ GLFWLibrary >> MOD_SHIFT [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> MOD_SUPER [
+GLFWUninitializedLibrary >> MOD_SUPER [
 
 	<generated>
 	^ GLFW_MOD_SUPER
@@ -2665,7 +2642,7 @@ GLFWLibrary >> MOD_SUPER [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> MOUSE_BUTTON_1 [
+GLFWUninitializedLibrary >> MOUSE_BUTTON_1 [
 
 	<generated>
 	^ GLFW_MOUSE_BUTTON_1
@@ -2675,7 +2652,7 @@ GLFWLibrary >> MOUSE_BUTTON_1 [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> MOUSE_BUTTON_2 [
+GLFWUninitializedLibrary >> MOUSE_BUTTON_2 [
 
 	<generated>
 	^ GLFW_MOUSE_BUTTON_2
@@ -2685,7 +2662,7 @@ GLFWLibrary >> MOUSE_BUTTON_2 [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> MOUSE_BUTTON_3 [
+GLFWUninitializedLibrary >> MOUSE_BUTTON_3 [
 
 	<generated>
 	^ GLFW_MOUSE_BUTTON_3
@@ -2695,7 +2672,7 @@ GLFWLibrary >> MOUSE_BUTTON_3 [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> MOUSE_BUTTON_4 [
+GLFWUninitializedLibrary >> MOUSE_BUTTON_4 [
 
 	<generated>
 	^ GLFW_MOUSE_BUTTON_4
@@ -2705,7 +2682,7 @@ GLFWLibrary >> MOUSE_BUTTON_4 [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> MOUSE_BUTTON_5 [
+GLFWUninitializedLibrary >> MOUSE_BUTTON_5 [
 
 	<generated>
 	^ GLFW_MOUSE_BUTTON_5
@@ -2715,7 +2692,7 @@ GLFWLibrary >> MOUSE_BUTTON_5 [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> MOUSE_BUTTON_6 [
+GLFWUninitializedLibrary >> MOUSE_BUTTON_6 [
 
 	<generated>
 	^ GLFW_MOUSE_BUTTON_6
@@ -2725,7 +2702,7 @@ GLFWLibrary >> MOUSE_BUTTON_6 [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> MOUSE_BUTTON_7 [
+GLFWUninitializedLibrary >> MOUSE_BUTTON_7 [
 
 	<generated>
 	^ GLFW_MOUSE_BUTTON_7
@@ -2735,7 +2712,7 @@ GLFWLibrary >> MOUSE_BUTTON_7 [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> MOUSE_BUTTON_8 [
+GLFWUninitializedLibrary >> MOUSE_BUTTON_8 [
 
 	<generated>
 	^ GLFW_MOUSE_BUTTON_8
@@ -2745,7 +2722,7 @@ GLFWLibrary >> MOUSE_BUTTON_8 [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> MOUSE_BUTTON_LAST [
+GLFWUninitializedLibrary >> MOUSE_BUTTON_LAST [
 
 	<generated>
 	^ GLFW_MOUSE_BUTTON_LAST
@@ -2755,7 +2732,7 @@ GLFWLibrary >> MOUSE_BUTTON_LAST [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> MOUSE_BUTTON_LEFT [
+GLFWUninitializedLibrary >> MOUSE_BUTTON_LEFT [
 
 	<generated>
 	^ GLFW_MOUSE_BUTTON_LEFT
@@ -2765,7 +2742,7 @@ GLFWLibrary >> MOUSE_BUTTON_LEFT [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> MOUSE_BUTTON_MIDDLE [
+GLFWUninitializedLibrary >> MOUSE_BUTTON_MIDDLE [
 
 	<generated>
 	^ GLFW_MOUSE_BUTTON_MIDDLE
@@ -2775,7 +2752,7 @@ GLFWLibrary >> MOUSE_BUTTON_MIDDLE [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> MOUSE_BUTTON_RIGHT [
+GLFWUninitializedLibrary >> MOUSE_BUTTON_RIGHT [
 
 	<generated>
 	^ GLFW_MOUSE_BUTTON_RIGHT
@@ -2785,7 +2762,7 @@ GLFWLibrary >> MOUSE_BUTTON_RIGHT [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> MOUSE_PASSTHROUGH [
+GLFWUninitializedLibrary >> MOUSE_PASSTHROUGH [
 
 	<generated>
 	^ GLFW_MOUSE_PASSTHROUGH
@@ -2795,7 +2772,7 @@ GLFWLibrary >> MOUSE_PASSTHROUGH [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> NATIVE_CONTEXT_API [
+GLFWUninitializedLibrary >> NATIVE_CONTEXT_API [
 
 	<generated>
 	^ GLFW_NATIVE_CONTEXT_API
@@ -2805,7 +2782,7 @@ GLFWLibrary >> NATIVE_CONTEXT_API [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> NOT_ALLOWED_CURSOR [
+GLFWUninitializedLibrary >> NOT_ALLOWED_CURSOR [
 
 	<generated>
 	^ GLFW_NOT_ALLOWED_CURSOR
@@ -2815,7 +2792,7 @@ GLFWLibrary >> NOT_ALLOWED_CURSOR [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> NOT_INITIALIZED [
+GLFWUninitializedLibrary >> NOT_INITIALIZED [
 
 	<generated>
 	^ GLFW_NOT_INITIALIZED
@@ -2825,7 +2802,7 @@ GLFWLibrary >> NOT_INITIALIZED [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> NO_API [
+GLFWUninitializedLibrary >> NO_API [
 
 	<generated>
 	^ GLFW_NO_API
@@ -2835,7 +2812,7 @@ GLFWLibrary >> NO_API [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> NO_CURRENT_CONTEXT [
+GLFWUninitializedLibrary >> NO_CURRENT_CONTEXT [
 
 	<generated>
 	^ GLFW_NO_CURRENT_CONTEXT
@@ -2845,7 +2822,7 @@ GLFWLibrary >> NO_CURRENT_CONTEXT [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> NO_ERROR [
+GLFWUninitializedLibrary >> NO_ERROR [
 
 	<generated>
 	^ GLFW_NO_ERROR
@@ -2855,7 +2832,7 @@ GLFWLibrary >> NO_ERROR [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> NO_RESET_NOTIFICATION [
+GLFWUninitializedLibrary >> NO_RESET_NOTIFICATION [
 
 	<generated>
 	^ GLFW_NO_RESET_NOTIFICATION
@@ -2865,7 +2842,7 @@ GLFWLibrary >> NO_RESET_NOTIFICATION [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> NO_ROBUSTNESS [
+GLFWUninitializedLibrary >> NO_ROBUSTNESS [
 
 	<generated>
 	^ GLFW_NO_ROBUSTNESS
@@ -2875,7 +2852,7 @@ GLFWLibrary >> NO_ROBUSTNESS [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> NO_WINDOW_CONTEXT [
+GLFWUninitializedLibrary >> NO_WINDOW_CONTEXT [
 
 	<generated>
 	^ GLFW_NO_WINDOW_CONTEXT
@@ -2885,7 +2862,7 @@ GLFWLibrary >> NO_WINDOW_CONTEXT [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> OPENGL_ANY_PROFILE [
+GLFWUninitializedLibrary >> OPENGL_ANY_PROFILE [
 
 	<generated>
 	^ GLFW_OPENGL_ANY_PROFILE
@@ -2895,7 +2872,7 @@ GLFWLibrary >> OPENGL_ANY_PROFILE [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> OPENGL_API [
+GLFWUninitializedLibrary >> OPENGL_API [
 
 	<generated>
 	^ GLFW_OPENGL_API
@@ -2905,7 +2882,7 @@ GLFWLibrary >> OPENGL_API [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> OPENGL_COMPAT_PROFILE [
+GLFWUninitializedLibrary >> OPENGL_COMPAT_PROFILE [
 
 	<generated>
 	^ GLFW_OPENGL_COMPAT_PROFILE
@@ -2915,7 +2892,7 @@ GLFWLibrary >> OPENGL_COMPAT_PROFILE [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> OPENGL_CORE_PROFILE [
+GLFWUninitializedLibrary >> OPENGL_CORE_PROFILE [
 
 	<generated>
 	^ GLFW_OPENGL_CORE_PROFILE
@@ -2925,7 +2902,7 @@ GLFWLibrary >> OPENGL_CORE_PROFILE [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> OPENGL_DEBUG_CONTEXT [
+GLFWUninitializedLibrary >> OPENGL_DEBUG_CONTEXT [
 
 	<generated>
 	^ GLFW_OPENGL_DEBUG_CONTEXT
@@ -2935,7 +2912,7 @@ GLFWLibrary >> OPENGL_DEBUG_CONTEXT [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> OPENGL_ES_API [
+GLFWUninitializedLibrary >> OPENGL_ES_API [
 
 	<generated>
 	^ GLFW_OPENGL_ES_API
@@ -2945,7 +2922,7 @@ GLFWLibrary >> OPENGL_ES_API [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> OPENGL_FORWARD_COMPAT [
+GLFWUninitializedLibrary >> OPENGL_FORWARD_COMPAT [
 
 	<generated>
 	^ GLFW_OPENGL_FORWARD_COMPAT
@@ -2955,7 +2932,7 @@ GLFWLibrary >> OPENGL_FORWARD_COMPAT [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> OPENGL_PROFILE [
+GLFWUninitializedLibrary >> OPENGL_PROFILE [
 
 	<generated>
 	^ GLFW_OPENGL_PROFILE
@@ -2965,7 +2942,7 @@ GLFWLibrary >> OPENGL_PROFILE [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> OSMESA_CONTEXT_API [
+GLFWUninitializedLibrary >> OSMESA_CONTEXT_API [
 
 	<generated>
 	^ GLFW_OSMESA_CONTEXT_API
@@ -2975,7 +2952,7 @@ GLFWLibrary >> OSMESA_CONTEXT_API [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> OUT_OF_MEMORY [
+GLFWUninitializedLibrary >> OUT_OF_MEMORY [
 
 	<generated>
 	^ GLFW_OUT_OF_MEMORY
@@ -2985,7 +2962,7 @@ GLFWLibrary >> OUT_OF_MEMORY [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> PLATFORM_ERROR [
+GLFWUninitializedLibrary >> PLATFORM_ERROR [
 
 	<generated>
 	^ GLFW_PLATFORM_ERROR
@@ -2995,7 +2972,7 @@ GLFWLibrary >> PLATFORM_ERROR [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> POINTING_HAND_CURSOR [
+GLFWUninitializedLibrary >> POINTING_HAND_CURSOR [
 
 	<generated>
 	^ GLFW_POINTING_HAND_CURSOR
@@ -3005,7 +2982,7 @@ GLFWLibrary >> POINTING_HAND_CURSOR [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> PRESS [
+GLFWUninitializedLibrary >> PRESS [
 
 	<generated>
 	^ GLFW_PRESS
@@ -3015,7 +2992,7 @@ GLFWLibrary >> PRESS [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> RAW_MOUSE_MOTION [
+GLFWUninitializedLibrary >> RAW_MOUSE_MOTION [
 
 	<generated>
 	^ GLFW_RAW_MOUSE_MOTION
@@ -3025,7 +3002,7 @@ GLFWLibrary >> RAW_MOUSE_MOTION [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> RED_BITS [
+GLFWUninitializedLibrary >> RED_BITS [
 
 	<generated>
 	^ GLFW_RED_BITS
@@ -3035,7 +3012,7 @@ GLFWLibrary >> RED_BITS [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> REFRESH_RATE [
+GLFWUninitializedLibrary >> REFRESH_RATE [
 
 	<generated>
 	^ GLFW_REFRESH_RATE
@@ -3045,7 +3022,7 @@ GLFWLibrary >> REFRESH_RATE [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> RELEASE [
+GLFWUninitializedLibrary >> RELEASE [
 
 	<generated>
 	^ GLFW_RELEASE
@@ -3055,7 +3032,7 @@ GLFWLibrary >> RELEASE [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> RELEASE_BEHAVIOR_FLUSH [
+GLFWUninitializedLibrary >> RELEASE_BEHAVIOR_FLUSH [
 
 	<generated>
 	^ GLFW_RELEASE_BEHAVIOR_FLUSH
@@ -3065,7 +3042,7 @@ GLFWLibrary >> RELEASE_BEHAVIOR_FLUSH [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> RELEASE_BEHAVIOR_NONE [
+GLFWUninitializedLibrary >> RELEASE_BEHAVIOR_NONE [
 
 	<generated>
 	^ GLFW_RELEASE_BEHAVIOR_NONE
@@ -3075,7 +3052,7 @@ GLFWLibrary >> RELEASE_BEHAVIOR_NONE [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> REPEAT [
+GLFWUninitializedLibrary >> REPEAT [
 
 	<generated>
 	^ GLFW_REPEAT
@@ -3085,7 +3062,7 @@ GLFWLibrary >> REPEAT [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> RESIZABLE [
+GLFWUninitializedLibrary >> RESIZABLE [
 
 	<generated>
 	^ GLFW_RESIZABLE
@@ -3095,7 +3072,7 @@ GLFWLibrary >> RESIZABLE [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> RESIZE_ALL_CURSOR [
+GLFWUninitializedLibrary >> RESIZE_ALL_CURSOR [
 
 	<generated>
 	^ GLFW_RESIZE_ALL_CURSOR
@@ -3105,7 +3082,7 @@ GLFWLibrary >> RESIZE_ALL_CURSOR [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> RESIZE_EW_CURSOR [
+GLFWUninitializedLibrary >> RESIZE_EW_CURSOR [
 
 	<generated>
 	^ GLFW_RESIZE_EW_CURSOR
@@ -3115,7 +3092,7 @@ GLFWLibrary >> RESIZE_EW_CURSOR [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> RESIZE_NESW_CURSOR [
+GLFWUninitializedLibrary >> RESIZE_NESW_CURSOR [
 
 	<generated>
 	^ GLFW_RESIZE_NESW_CURSOR
@@ -3125,7 +3102,7 @@ GLFWLibrary >> RESIZE_NESW_CURSOR [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> RESIZE_NS_CURSOR [
+GLFWUninitializedLibrary >> RESIZE_NS_CURSOR [
 
 	<generated>
 	^ GLFW_RESIZE_NS_CURSOR
@@ -3135,7 +3112,7 @@ GLFWLibrary >> RESIZE_NS_CURSOR [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> RESIZE_NWSE_CURSOR [
+GLFWUninitializedLibrary >> RESIZE_NWSE_CURSOR [
 
 	<generated>
 	^ GLFW_RESIZE_NWSE_CURSOR
@@ -3145,7 +3122,7 @@ GLFWLibrary >> RESIZE_NWSE_CURSOR [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> SAMPLES [
+GLFWUninitializedLibrary >> SAMPLES [
 
 	<generated>
 	^ GLFW_SAMPLES
@@ -3155,7 +3132,7 @@ GLFWLibrary >> SAMPLES [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> SCALE_TO_MONITOR [
+GLFWUninitializedLibrary >> SCALE_TO_MONITOR [
 
 	<generated>
 	^ GLFW_SCALE_TO_MONITOR
@@ -3165,7 +3142,7 @@ GLFWLibrary >> SCALE_TO_MONITOR [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> SRGB_CAPABLE [
+GLFWUninitializedLibrary >> SRGB_CAPABLE [
 
 	<generated>
 	^ GLFW_SRGB_CAPABLE
@@ -3175,7 +3152,7 @@ GLFWLibrary >> SRGB_CAPABLE [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> STENCIL_BITS [
+GLFWUninitializedLibrary >> STENCIL_BITS [
 
 	<generated>
 	^ GLFW_STENCIL_BITS
@@ -3185,7 +3162,7 @@ GLFWLibrary >> STENCIL_BITS [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> STEREO [
+GLFWUninitializedLibrary >> STEREO [
 
 	<generated>
 	^ GLFW_STEREO
@@ -3195,7 +3172,7 @@ GLFWLibrary >> STEREO [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> STICKY_KEYS [
+GLFWUninitializedLibrary >> STICKY_KEYS [
 
 	<generated>
 	^ GLFW_STICKY_KEYS
@@ -3205,7 +3182,7 @@ GLFWLibrary >> STICKY_KEYS [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> STICKY_MOUSE_BUTTONS [
+GLFWUninitializedLibrary >> STICKY_MOUSE_BUTTONS [
 
 	<generated>
 	^ GLFW_STICKY_MOUSE_BUTTONS
@@ -3215,7 +3192,7 @@ GLFWLibrary >> STICKY_MOUSE_BUTTONS [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> TRANSPARENT_FRAMEBUFFER [
+GLFWUninitializedLibrary >> TRANSPARENT_FRAMEBUFFER [
 
 	<generated>
 	^ GLFW_TRANSPARENT_FRAMEBUFFER
@@ -3225,7 +3202,7 @@ GLFWLibrary >> TRANSPARENT_FRAMEBUFFER [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> VERSION_UNAVAILABLE [
+GLFWUninitializedLibrary >> VERSION_UNAVAILABLE [
 
 	<generated>
 	^ GLFW_VERSION_UNAVAILABLE
@@ -3235,7 +3212,7 @@ GLFWLibrary >> VERSION_UNAVAILABLE [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> VISIBLE [
+GLFWUninitializedLibrary >> VISIBLE [
 
 	<generated>
 	^ GLFW_VISIBLE
@@ -3245,7 +3222,7 @@ GLFWLibrary >> VISIBLE [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> VRESIZE_CURSOR [
+GLFWUninitializedLibrary >> VRESIZE_CURSOR [
 
 	<generated>
 	^ GLFW_VRESIZE_CURSOR
@@ -3255,7 +3232,7 @@ GLFWLibrary >> VRESIZE_CURSOR [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> WIN32_KEYBOARD_MENU [
+GLFWUninitializedLibrary >> WIN32_KEYBOARD_MENU [
 
 	<generated>
 	^ GLFW_WIN32_KEYBOARD_MENU
@@ -3265,7 +3242,7 @@ GLFWLibrary >> WIN32_KEYBOARD_MENU [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> X11_CLASS_NAME [
+GLFWUninitializedLibrary >> X11_CLASS_NAME [
 
 	<generated>
 	^ GLFW_X11_CLASS_NAME
@@ -3275,28 +3252,37 @@ GLFWLibrary >> X11_CLASS_NAME [
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }
-GLFWLibrary >> X11_INSTANCE_NAME [
+GLFWUninitializedLibrary >> X11_INSTANCE_NAME [
 
 	<generated>
 	^ GLFW_X11_INSTANCE_NAME
 ]
 
 {
-	#category : #callbacks,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#category : #converting,
+	#'squeak_changestamp' : 'stlu 4/21/2021 10:58'
 }
-GLFWLibrary >> callbacksForWindow: aWindow [
+GLFWUninitializedLibrary >> beInitializedLibrary [
 
-	^ callbacks
-		at: aWindow
-		ifAbsentPut: [Dictionary new]
+	self changeClassTo: GLFWInitializedLibrary.
+	callbacks := WeakKeyDictionary new.
+	contexts := Dictionary new.
+]
+
+{
+	#category : #converting,
+	#'squeak_changestamp' : 'stlu 4/21/2021 10:58'
+}
+GLFWUninitializedLibrary >> beUninitializedLibrary [
+
+	"do nothing"
 ]
 
 {
 	#category : #helpers,
 	#'squeak_changestamp' : 'stlu 4/14/2021 18:07'
 }
-GLFWLibrary >> checkForError [
+GLFWUninitializedLibrary >> checkForError [
 	"Check for any GLFW errors, and raise an Error if any exist."
 	| errorCode |
 	errorCode := self getError.
@@ -3305,184 +3291,139 @@ GLFWLibrary >> checkForError [
 ]
 
 {
-	#category : #contexts,
-	#'squeak_changestamp' : 'stlu 11/11/2020 14:15'
+	#category : #'api - mouse input',
+	#'squeak_changestamp' : 'stlu 4/21/2021 10:20'
 }
-GLFWLibrary >> contextForWindow: aWindow [
+GLFWUninitializedLibrary >> createCursor: window with: xpos with: ypos [
 
-	^ GLFWContext window: aWindow
-]
-
-{
-	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 11/11/2020 13:58'
-}
-GLFWLibrary >> contexts [
-
-	^ contexts
-]
-
-{
-	#category : #callbacks,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
-}
-GLFWLibrary >> createCallback: aBlock signature: aString named: aSymbol [
-
-	^ self
-		createCallback: aBlock
-		signature: aString
-		named: aSymbol
-		forWindow: self
-]
-
-{
-	#category : #callbacks,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
-}
-GLFWLibrary >> createCallback: aBlock signature: aString named: aSymbol forWindow: aWindow [
-
-	^ (self callbacksForWindow: aWindow)
-		at: aSymbol
-		put: (FFICallback
-				signature: aString
-				block: aBlock)
+	self init ifTrue: [
+		^ self createCursor: window with: xpos with: ypos]
 ]
 
 {
 	#category : #'api - mouse input',
-	#'squeak_changestamp' : 'stlu 2/12/2021 02:43'
+	#'squeak_changestamp' : 'stlu 4/21/2021 10:20'
 }
-GLFWLibrary >> createCursor: window with: xpos with: ypos [
+GLFWUninitializedLibrary >> createStandardCursor: shape [
 
-	<apicall: GLFWCursor* 'glfwCreateCursor' (GLFWImage* int int)>
-	^ self externalCallFailed
-]
-
-{
-	#category : #'api - mouse input',
-	#'squeak_changestamp' : 'stlu 2/12/2021 02:44'
-}
-GLFWLibrary >> createStandardCursor: shape [
-
-	<apicall: GLFWCursor* 'glfwCreateStandardCursor' (int)>
-	^ self externalCallFailed
+	self init ifTrue: [
+		^ self createStandardCursor: shape]
 ]
 
 {
 	#category : #'api - window creation',
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 4/21/2021 10:20'
 }
-GLFWLibrary >> createWindow: width with: height with: title with: monitor with: share [
+GLFWUninitializedLibrary >> createWindow: width with: height with: title with: monitor with: share [
 
-	<apicall: GLFWWindow* 'glfwCreateWindow' (int int string GLFWMonitor* GLFWWindow*)>
-	^ self externalCallFailed
+	self init ifTrue: [
+		^ self createWindow: width with: height with: title with: monitor with: share]
 ]
 
 {
 	#category : #'api - vulkan',
-	#'squeak_changestamp' : 'stlu 2/12/2021 18:24'
+	#'squeak_changestamp' : 'stlu 4/21/2021 10:20'
 }
-GLFWLibrary >> createWindowSurface: instance with: window with: allocator with: surface [
+GLFWUninitializedLibrary >> createWindowSurface: instance with: window with: allocator with: surface [
 
-	"<apicall: VkResult 'glfwCreateWindowSurface' (VkInstance GLFWWindow* VkAllocationCallbacks* VkSurfaceKHR*)>
-	^ self externalCallFailed"
-	self notYetImplemented
+	self init ifTrue: [
+		^ self createWindowSurface: instance with: window with: allocator with: surface]
 ]
 
 {
 	#category : #'api - window creation',
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 4/21/2021 10:20'
 }
-GLFWLibrary >> defaultWindowHints [
+GLFWUninitializedLibrary >> defaultWindowHints [
 
-	<apicall: void 'glfwDefaultWindowHints' ()>
-	^ self externalCallFailed
+	self init ifTrue: [
+		^ self defaultWindowHints]
 ]
 
 {
 	#category : #'api - mouse input',
-	#'squeak_changestamp' : 'stlu 2/12/2021 02:44'
+	#'squeak_changestamp' : 'stlu 4/21/2021 10:20'
 }
-GLFWLibrary >> destroyCursor: cursor [
+GLFWUninitializedLibrary >> destroyCursor: cursor [
 
-	<apicall: void 'glfwDestroyCursor' (GLFWCursor*)>
-	^ self externalCallFailed
+	self init ifTrue: [
+		^ self destroyCursor: cursor]
 ]
 
 {
 	#category : #'api - window creation',
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 4/21/2021 10:20'
 }
-GLFWLibrary >> destroyWindow: handle [
+GLFWUninitializedLibrary >> destroyWindow: handle [
 
-	<apicall: void 'glfwDestroyWindow' (GLFWWindow*)>
-	^ self externalCallFailed
+	self init ifTrue: [
+		^ self destroyWindow: handle]
 ]
 
 {
 	#category : #'api - contexts',
-	#'squeak_changestamp' : 'stlu 2/12/2021 18:28'
+	#'squeak_changestamp' : 'stlu 4/21/2021 10:20'
 }
-GLFWLibrary >> extensionSupported: extension [
+GLFWUninitializedLibrary >> extensionSupported: extension [
 
-	<apicall: bool 'glfwExtensionSupported' (string)>
-	^ self externalCallFailed
+	self init ifTrue: [
+		^ self extensionSupported: extension]
 ]
 
 {
 	#category : #'api - window properties',
-	#'squeak_changestamp' : 'stlu 10/21/2020 21:05'
+	#'squeak_changestamp' : 'stlu 4/21/2021 10:20'
 }
-GLFWLibrary >> focusWindow: window [
+GLFWUninitializedLibrary >> focusWindow: window [
 
-	<apicall: void 'glfwFocusWindow' (GLFWWindow*)>
-	^ self externalCallFailed
+	self init ifTrue: [
+		^ self focusWindow: window]
 ]
 
 {
-	#category : #'api - clipboard',
-	#'squeak_changestamp' : 'stlu 2/12/2021 18:13'
+	#category : #helpers,
+	#'squeak_changestamp' : 'stlu 4/21/2021 10:13'
 }
-GLFWLibrary >> getClipboardString [
+GLFWUninitializedLibrary >> getClipboardString [
 
 	^ self getClipboardString: nil
 ]
 
 {
 	#category : #'api - clipboard',
-	#'squeak_changestamp' : 'stlu 2/12/2021 18:12'
+	#'squeak_changestamp' : 'stlu 4/21/2021 10:20'
 }
-GLFWLibrary >> getClipboardString: window [
+GLFWUninitializedLibrary >> getClipboardString: window [
 
-	<apicall: string 'glfwGetClipboardString' (GLFWWindow*)>
-	^ self externalCallFailed
+	self init ifTrue: [
+		^ self getClipboardString: window]
 ]
 
 {
 	#category : #'api - contexts',
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 4/21/2021 10:20'
 }
-GLFWLibrary >> getCurrentContext [
+GLFWUninitializedLibrary >> getCurrentContext [
 
-	<apicall: GLFWWindow* 'glfwGetCurrentContext' ()>
-	^ self externalCallFailed
+	self init ifTrue: [
+		^ self getCurrentContext]
 ]
 
 {
 	#category : #'api - mouse input',
-	#'squeak_changestamp' : 'stlu 2/12/2021 02:42'
+	#'squeak_changestamp' : 'stlu 4/21/2021 10:20'
 }
-GLFWLibrary >> getCursorPos: window with: xpos with: ypos [
+GLFWUninitializedLibrary >> getCursorPos: window with: xpos with: ypos [
 
-	<apicall: void 'glfwGetCursorPos' (GLFWWindow* double* double*)>
-	^ self externalCallFailed
+	self init ifTrue: [
+		^ self getCursorPos: window with: xpos with: ypos]
 ]
 
 {
 	#category : #helpers,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-GLFWLibrary >> getError [
+GLFWUninitializedLibrary >> getError [
 
 	^ self getError: nil
 ]
@@ -3491,7 +3432,7 @@ GLFWLibrary >> getError [
 	#category : #'api - init',
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-GLFWLibrary >> getError: stringOrNil [
+GLFWUninitializedLibrary >> getError: stringOrNil [
 
 	<apicall: int 'glfwGetError' (string)>
 	^ self externalCallFailed
@@ -3499,311 +3440,309 @@ GLFWLibrary >> getError: stringOrNil [
 
 {
 	#category : #'api - window properties',
-	#'squeak_changestamp' : 'stlu 10/21/2020 20:34'
+	#'squeak_changestamp' : 'stlu 4/21/2021 10:20'
 }
-GLFWLibrary >> getFramebufferSize: window with: width with: height [
+GLFWUninitializedLibrary >> getFramebufferSize: window with: width with: height [
 
-	<apicall: void 'glfwGetFramebufferSize' (GLFWWindow* int* int*)>
-	^ self externalCallFailed
+	self init ifTrue: [
+		^ self getFramebufferSize: window with: width with: height]
 ]
 
 {
 	#category : #'api - joystick input',
-	#'squeak_changestamp' : 'stlu 2/12/2021 18:07'
+	#'squeak_changestamp' : 'stlu 4/21/2021 10:20'
 }
-GLFWLibrary >> getGamepadName: jid [
+GLFWUninitializedLibrary >> getGamepadName: jid [
 
-	<apicall: string 'glfwGetGamepadName' (int)>
-	^ self externalCallFailed
+	self init ifTrue: [
+		^ self getGamepadName: jid]
 ]
 
 {
 	#category : #'api - joystick input',
-	#'squeak_changestamp' : 'stlu 2/12/2021 18:08'
+	#'squeak_changestamp' : 'stlu 4/21/2021 10:20'
 }
-GLFWLibrary >> getGamepadState: jid with: state [
+GLFWUninitializedLibrary >> getGamepadState: jid with: state [
 
-	<apicall: int 'glfwGetGamepadState' (int GLFWGamepadState*)>
-	^ self externalCallFailed
+	self init ifTrue: [
+		^ self getGamepadState: jid with: state]
 ]
 
 {
 	#category : #'api - monitors',
-	#'squeak_changestamp' : 'stlu 2/12/2021 01:42'
+	#'squeak_changestamp' : 'stlu 4/21/2021 10:20'
 }
-GLFWLibrary >> getGammaRamp: monitor [
+GLFWUninitializedLibrary >> getGammaRamp: monitor [
 
-	<apicall: GLFWGammaRamp* 'glfwGetGammaRamp' (GLFWMonitor*)>
-	^ self externalCallFailed
+	self init ifTrue: [
+		^ self getGammaRamp: monitor]
 ]
 
 {
 	#category : #'api - keyboard input',
-	#'squeak_changestamp' : 'stlu 2/7/2021 15:10'
+	#'squeak_changestamp' : 'stlu 4/21/2021 10:20'
 }
-GLFWLibrary >> getInputMode: window with: mode [
+GLFWUninitializedLibrary >> getInputMode: window with: mode [
 
-	<apicall: int 'glfwGetInputMode' (GLFWWindow* int)>
-	^ self externalCallFailed
+	self init ifTrue: [
+		^ self getInputMode: window with: mode]
 ]
 
 {
 	#category : #'api - vulkan',
-	#'squeak_changestamp' : 'stlu 2/12/2021 18:23'
+	#'squeak_changestamp' : 'stlu 4/21/2021 10:20'
 }
-GLFWLibrary >> getInstanceProcAddress: instance with: procname [
+GLFWUninitializedLibrary >> getInstanceProcAddress: instance with: procname [
 
-	"<apicall: GLFWVkProc* 'glfwGetInstanceProcAddress' (VkInstance string)>
-	^ self externalCallFailed"
-	self notYetImplemented
+	self init ifTrue: [
+		^ self getInstanceProcAddress: instance with: procname]
 ]
 
 {
 	#category : #'api - joystick input',
-	#'squeak_changestamp' : 'stlu 2/12/2021 17:56'
+	#'squeak_changestamp' : 'stlu 4/21/2021 10:20'
 }
-GLFWLibrary >> getJoystickAxes: jid with: count [
+GLFWUninitializedLibrary >> getJoystickAxes: jid with: count [
 
-	<apicall: float* 'glfwGetJoystickAxes' (int int*)>
-	^ self externalCallFailed
+	self init ifTrue: [
+		^ self getJoystickAxes: jid with: count]
 ]
 
 {
 	#category : #'api - joystick input',
-	#'squeak_changestamp' : 'stlu 2/12/2021 17:58'
+	#'squeak_changestamp' : 'stlu 4/21/2021 10:20'
 }
-GLFWLibrary >> getJoystickButtons: jid with: count [
+GLFWUninitializedLibrary >> getJoystickButtons: jid with: count [
 
-	<apicall: unsignedChar* 'glfwGetJoystickButtons' (int int*)>
-	^ self externalCallFailed
+	self init ifTrue: [
+		^ self getJoystickButtons: jid with: count]
 ]
 
 {
 	#category : #'api - joystick input',
-	#'squeak_changestamp' : 'stlu 2/12/2021 18:00'
+	#'squeak_changestamp' : 'stlu 4/21/2021 10:20'
 }
-GLFWLibrary >> getJoystickGUID: jid [
+GLFWUninitializedLibrary >> getJoystickGUID: jid [
 
-	<apicall: string 'glfwGetJoystickGUID' (int)>
-	^ self externalCallFailed
+	self init ifTrue: [
+		^ self getJoystickGUID: jid]
 ]
 
 {
 	#category : #'api - joystick input',
-	#'squeak_changestamp' : 'stlu 2/12/2021 17:58'
+	#'squeak_changestamp' : 'stlu 4/21/2021 10:20'
 }
-GLFWLibrary >> getJoystickHats: jid with: count [
+GLFWUninitializedLibrary >> getJoystickHats: jid with: count [
 
-	<apicall: unsignedChar* 'glfwGetJoystickHats' (int int*)>
-	^ self externalCallFailed
+	self init ifTrue: [
+		^ self getJoystickHats: jid with: count]
 ]
 
 {
 	#category : #'api - joystick input',
-	#'squeak_changestamp' : 'stlu 2/12/2021 17:59'
+	#'squeak_changestamp' : 'stlu 4/21/2021 10:20'
 }
-GLFWLibrary >> getJoystickName: jid [
+GLFWUninitializedLibrary >> getJoystickName: jid [
 
-	<apicall: string 'glfwGetJoystickName' (int)>
-	^ self externalCallFailed
+	self init ifTrue: [
+		^ self getJoystickName: jid]
 ]
 
 {
 	#category : #'api - joystick input',
-	#'squeak_changestamp' : 'stlu 2/12/2021 18:01'
+	#'squeak_changestamp' : 'stlu 4/21/2021 10:20'
 }
-GLFWLibrary >> getJoystickUserPointer: jid [
+GLFWUninitializedLibrary >> getJoystickUserPointer: jid [
 
-	<apicall: void* 'glfwGetJoystickUserPointer' (int)>
-	^ self externalCallFailed
+	self init ifTrue: [
+		^ self getJoystickUserPointer: jid]
 ]
 
 {
 	#category : #'api - keyboard input',
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 4/21/2021 10:20'
 }
-GLFWLibrary >> getKey: window with: key [
+GLFWUninitializedLibrary >> getKey: window with: key [
 
-	<apicall: int 'glfwGetKey' (GLFWWindow* int)>
-	^ self externalCallFailed
+	self init ifTrue: [
+		^ self getKey: window with: key]
 ]
 
 {
 	#category : #'api - keyboard input',
-	#'squeak_changestamp' : 'stlu 2/12/2021 02:36'
+	#'squeak_changestamp' : 'stlu 4/21/2021 10:20'
 }
-GLFWLibrary >> getKeyName: key with: scancode [
+GLFWUninitializedLibrary >> getKeyName: key with: scancode [
 
-	<apicall: string 'glfwGetKeyName' (int int)>
-	^ self externalCallFailed
+	self init ifTrue: [
+		^ self getKeyName: key with: scancode]
 ]
 
 {
 	#category : #'api - keyboard input',
-	#'squeak_changestamp' : 'stlu 2/12/2021 02:36'
+	#'squeak_changestamp' : 'stlu 4/21/2021 10:20'
 }
-GLFWLibrary >> getKeyScancode: key [
+GLFWUninitializedLibrary >> getKeyScancode: key [
 
-	<apicall: string 'glfwGetKeyScancode' (int)>
-	^ self externalCallFailed
+	self init ifTrue: [
+		^ self getKeyScancode: key]
 ]
 
 {
 	#category : #'api - monitors',
-	#'squeak_changestamp' : 'stlu 2/12/2021 01:28'
+	#'squeak_changestamp' : 'stlu 4/21/2021 10:20'
 }
-GLFWLibrary >> getMonitorContentScale: monitor with: xscale with: yscale [
+GLFWUninitializedLibrary >> getMonitorContentScale: monitor with: xscale with: yscale [
 
-	<apicall: void 'glfwGetMonitorContentScale' (GLFWMonitor* float* float*)>
-	^ self externalCallFailed
+	self init ifTrue: [
+		^ self getMonitorContentScale: monitor with: xscale with: yscale]
 ]
 
 {
 	#category : #'api - monitors',
-	#'squeak_changestamp' : 'stlu 2/12/2021 01:29'
+	#'squeak_changestamp' : 'stlu 4/21/2021 10:20'
 }
-GLFWLibrary >> getMonitorName: monitor [
+GLFWUninitializedLibrary >> getMonitorName: monitor [
 
-	<apicall: string 'glfwGetMonitorName' (GLFWMonitor*)>
-	^ self externalCallFailed
+	self init ifTrue: [
+		^ self getMonitorName: monitor]
 ]
 
 {
 	#category : #'api - monitors',
-	#'squeak_changestamp' : 'stlu 2/12/2021 01:28'
+	#'squeak_changestamp' : 'stlu 4/21/2021 10:20'
 }
-GLFWLibrary >> getMonitorPhysicalSize: monitor with: widthMM with: heightMM [
+GLFWUninitializedLibrary >> getMonitorPhysicalSize: monitor with: widthMM with: heightMM [
 
-	<apicall: void 'glfwGetMonitorPhysicalSize' (GLFWMonitor* int* int*)>
-	^ self externalCallFailed
+	self init ifTrue: [
+		^ self getMonitorPhysicalSize: monitor with: widthMM with: heightMM]
 ]
 
 {
 	#category : #'api - monitors',
-	#'squeak_changestamp' : 'stlu 2/12/2021 01:25'
+	#'squeak_changestamp' : 'stlu 4/21/2021 10:20'
 }
-GLFWLibrary >> getMonitorPos: monitor with: xpos with: ypos [
+GLFWUninitializedLibrary >> getMonitorPos: monitor with: xpos with: ypos [
 
-	<apicall: void 'glfwGetMonitorPos' (GLFWMonitor* int* int*)>
-	^ self externalCallFailed
+	self init ifTrue: [
+		^ self getMonitorPos: monitor with: xpos with: ypos]
 ]
 
 {
 	#category : #'api - monitors',
-	#'squeak_changestamp' : 'stlu 2/12/2021 01:31'
+	#'squeak_changestamp' : 'stlu 4/21/2021 10:20'
 }
-GLFWLibrary >> getMonitorUserPointer: monitor [
+GLFWUninitializedLibrary >> getMonitorUserPointer: monitor [
 
-	<apicall: void* 'glfwGetMonitorUserPointer' (GLFWMonitor*)>
-	^ self externalCallFailed
+	self init ifTrue: [
+		^ self getMonitorUserPointer: monitor]
 ]
 
 {
 	#category : #'api - monitors',
-	#'squeak_changestamp' : 'stlu 2/12/2021 01:27'
+	#'squeak_changestamp' : 'stlu 4/21/2021 10:20'
 }
-GLFWLibrary >> getMonitorWorkarea: monitor with: xpos with: ypos with: width with: height [
+GLFWUninitializedLibrary >> getMonitorWorkarea: monitor with: xpos with: ypos with: width with: height [
 
-	<apicall: void 'glfwGetMonitorWorkarea' (GLFWMonitor* int* int* int* int*)>
-	^ self externalCallFailed
+	self init ifTrue: [
+		^ self getMonitorWorkarea: monitor with: xpos with: ypos with: width with: height]
 ]
 
 {
 	#category : #'api - monitors',
-	#'squeak_changestamp' : 'stlu 2/12/2021 01:22'
+	#'squeak_changestamp' : 'stlu 4/21/2021 10:20'
 }
-GLFWLibrary >> getMonitors: count [
+GLFWUninitializedLibrary >> getMonitors: count [
 
-	<apicall: GLFWMonitor* 'glfwGetMonitors' (int*)>
-	^ self externalCallFailed
+	self init ifTrue: [
+		^ self getMonitors: count]
 ]
 
 {
 	#category : #'api - mouse input',
-	#'squeak_changestamp' : 'stlu 2/12/2021 02:39'
+	#'squeak_changestamp' : 'stlu 4/21/2021 10:20'
 }
-GLFWLibrary >> getMouseButton: window with: button [
+GLFWUninitializedLibrary >> getMouseButton: window with: button [
 
-	<apicall: int 'glfwGetMouseButton' (GLFWWindow* int)>
-	^ self externalCallFailed
+	self init ifTrue: [
+		^ self getMouseButton: window with: button]
 ]
 
 {
 	#category : #'api - vulkan',
-	#'squeak_changestamp' : 'stlu 2/12/2021 18:23'
+	#'squeak_changestamp' : 'stlu 4/21/2021 10:20'
 }
-GLFWLibrary >> getPhysicalDevicePresentationSupport: instance with: device with: queuefamily [
+GLFWUninitializedLibrary >> getPhysicalDevicePresentationSupport: instance with: device with: queuefamily [
 
-	"<apicall: int 'glfwGetPhysicalDevicePresentationSupport' (VkInstance VkPhysicalDevice unit32_t)>
-	^ self externalCallFailed"
-	self notYetImplemented
+	self init ifTrue: [
+		^ self getPhysicalDevicePresentationSupport: instance with: device with: queuefamily]
 ]
 
 {
 	#category : #'api - monitors',
-	#'squeak_changestamp' : 'stlu 2/12/2021 18:58'
+	#'squeak_changestamp' : 'stlu 4/21/2021 10:20'
 }
-GLFWLibrary >> getPrimaryMonitor [
+GLFWUninitializedLibrary >> getPrimaryMonitor [
 
-	<apicall: GLFWMonitor* 'glfwGetPrimaryMonitor' ()>
-	^ self externalCallFailed
+	self init ifTrue: [
+		^ self getPrimaryMonitor]
 ]
 
 {
 	#category : #'api - contexts',
-	#'squeak_changestamp' : 'stlu 2/12/2021 18:30'
+	#'squeak_changestamp' : 'stlu 4/21/2021 10:20'
 }
-GLFWLibrary >> getProcAddress: procname [
+GLFWUninitializedLibrary >> getProcAddress: procname [
 
-	<apicall: void* 'glfwGetProcAddress' (string)>
-	^ self externalCallFailed
+	self init ifTrue: [
+		^ self getProcAddress: procname]
 ]
 
 {
 	#category : #'api - vulkan',
-	#'squeak_changestamp' : 'stlu 2/12/2021 16:17'
+	#'squeak_changestamp' : 'stlu 4/21/2021 10:20'
 }
-GLFWLibrary >> getRequiredInstanceExtensions: count [
+GLFWUninitializedLibrary >> getRequiredInstanceExtensions: count [
 
-	<apicall: string* 'glfwGetRequiredInstanceExtensions' (uint32_t)>
-	^ self externalCallFailed
+	self init ifTrue: [
+		^ self getRequiredInstanceExtensions: count]
 ]
 
 {
 	#category : #'api - time',
-	#'squeak_changestamp' : 'stlu 1/7/2021 11:55'
+	#'squeak_changestamp' : 'stlu 4/21/2021 10:20'
 }
-GLFWLibrary >> getTime [
+GLFWUninitializedLibrary >> getTime [
 
-	<apicall: double 'glfwGetTime' ()>
-	^ self externalCallFailed
+	self init ifTrue: [
+		^ self getTime]
 ]
 
 {
 	#category : #'api - time',
-	#'squeak_changestamp' : 'stlu 2/12/2021 18:26'
+	#'squeak_changestamp' : 'stlu 4/21/2021 10:20'
 }
-GLFWLibrary >> getTimerFrequency [
+GLFWUninitializedLibrary >> getTimerFrequency [
 
-	<apicall: uint64_t 'glfwGetTimerFrequency' ()>
-	^ self externalCallFailed
+	self init ifTrue: [
+		^ self getTimerFrequency]
 ]
 
 {
 	#category : #'api - time',
-	#'squeak_changestamp' : 'stlu 2/12/2021 18:25'
+	#'squeak_changestamp' : 'stlu 4/21/2021 10:20'
 }
-GLFWLibrary >> getTimerValue [
+GLFWUninitializedLibrary >> getTimerValue [
 
-	<apicall: uint64_t 'glfwGetTimerValue' ()>
-	^ self externalCallFailed
+	self init ifTrue: [
+		^ self getTimerValue]
 ]
 
 {
 	#category : #'api - init',
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-GLFWLibrary >> getVersion: major with: minor with: rev [
+GLFWUninitializedLibrary >> getVersion: major with: minor with: rev [
 
 	<apicall: void 'glfwGetVersion' (int* int* int*)>
 	^ self externalCallFailed
@@ -3813,7 +3752,7 @@ GLFWLibrary >> getVersion: major with: minor with: rev [
 	#category : #'api - init',
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-GLFWLibrary >> getVersionString [
+GLFWUninitializedLibrary >> getVersionString [
 
 	<apicall: char* 'glfwGetVersionString' ()>
 	^ self externalCallFailed
@@ -3821,119 +3760,119 @@ GLFWLibrary >> getVersionString [
 
 {
 	#category : #'api - monitors',
-	#'squeak_changestamp' : 'stlu 2/12/2021 01:39'
+	#'squeak_changestamp' : 'stlu 4/21/2021 10:20'
 }
-GLFWLibrary >> getVideoMode: monitor [
+GLFWUninitializedLibrary >> getVideoMode: monitor [
 
-	<apicall: GLFWVidMode* 'glfwGetVideoMode' (GLFWMonitor*)>
-	^ self externalCallFailed
+	self init ifTrue: [
+		^ self getVideoMode: monitor]
 ]
 
 {
 	#category : #'api - monitors',
-	#'squeak_changestamp' : 'stlu 2/12/2021 01:38'
+	#'squeak_changestamp' : 'stlu 4/21/2021 10:20'
 }
-GLFWLibrary >> getVideoModes: monitor with: count [
+GLFWUninitializedLibrary >> getVideoModes: monitor with: count [
 
-	<apicall: GLFWVidMode* 'glfwGetVideoModes' (GLFWMonitor* int*)>
-	^ self externalCallFailed
+	self init ifTrue: [
+		^ self getVideoModes: monitor with: count]
 ]
 
 {
 	#category : #'api - window properties',
-	#'squeak_changestamp' : 'stlu 2/12/2021 01:53'
+	#'squeak_changestamp' : 'stlu 4/21/2021 10:20'
 }
-GLFWLibrary >> getWindowAttrib: window with: attrib [
+GLFWUninitializedLibrary >> getWindowAttrib: window with: attrib [
 
-	<apicall: int 'glfwGetWindowAttrib' (GLFWWindow* int)>
-	^ self externalCallFailed
+	self init ifTrue: [
+		^ self getWindowAttrib: window with: attrib]
 ]
 
 {
 	#category : #'api - window properties',
-	#'squeak_changestamp' : 'stlu 10/21/2020 20:50'
+	#'squeak_changestamp' : 'stlu 4/21/2021 10:20'
 }
-GLFWLibrary >> getWindowContentScale: window with: xscale with: yscale [
+GLFWUninitializedLibrary >> getWindowContentScale: window with: xscale with: yscale [
 
-	<apicall: void 'glfwGetWindowContentScale' (GLFWWindow* float* float*)>
-	^ self externalCallFailed
+	self init ifTrue: [
+		^ self getWindowContentScale: window with: xscale with: yscale]
 ]
 
 {
 	#category : #'api - window properties',
-	#'squeak_changestamp' : 'stlu 10/21/2020 20:39'
+	#'squeak_changestamp' : 'stlu 4/21/2021 10:20'
 }
-GLFWLibrary >> getWindowFrameSize: window with: left with: top with: right with: bottom [
+GLFWUninitializedLibrary >> getWindowFrameSize: window with: left with: top with: right with: bottom [
 
-	<apicall: void 'glfwGetWindowFrameSize' (GLFWWindow* int* int* int* int*)>
-	^ self externalCallFailed
+	self init ifTrue: [
+		^ self getWindowFrameSize: window with: left with: top with: right with: bottom]
 ]
 
 {
 	#category : #'api - window properties',
-	#'squeak_changestamp' : 'stlu 10/21/2020 21:32'
+	#'squeak_changestamp' : 'stlu 4/21/2021 10:20'
 }
-GLFWLibrary >> getWindowMonitor: window [
+GLFWUninitializedLibrary >> getWindowMonitor: window [
 
-	<apicall: GLFWMonitor* 'glfwGetWindowMonitor' (GLFWWindow*)>
-	^ self externalCallFailed
+	self init ifTrue: [
+		^ self getWindowMonitor: window]
 ]
 
 {
 	#category : #'api - window properties',
-	#'squeak_changestamp' : 'stlu 10/21/2020 20:54'
+	#'squeak_changestamp' : 'stlu 4/21/2021 10:20'
 }
-GLFWLibrary >> getWindowOpacity: window [
+GLFWUninitializedLibrary >> getWindowOpacity: window [
 
-	<apicall: float 'glfwGetWindowOpacity' (GLFWWindow*)>
-	^ self externalCallFailed
+	self init ifTrue: [
+		^ self getWindowOpacity: window]
 ]
 
 {
 	#category : #'api - window properties',
-	#'squeak_changestamp' : 'stlu 10/21/2020 14:12'
+	#'squeak_changestamp' : 'stlu 4/21/2021 10:20'
 }
-GLFWLibrary >> getWindowPos: window with: xpos with: ypos [
+GLFWUninitializedLibrary >> getWindowPos: window with: xpos with: ypos [
 
-	<apicall: void 'glfwGetWindowPos' (GLFWWindow* int* int*)>
-	^ self externalCallFailed
+	self init ifTrue: [
+		^ self getWindowPos: window with: xpos with: ypos]
 ]
 
 {
 	#category : #'api - window properties',
-	#'squeak_changestamp' : 'stlu 10/21/2020 14:17'
+	#'squeak_changestamp' : 'stlu 4/21/2021 10:20'
 }
-GLFWLibrary >> getWindowSize: window with: width with: height [
+GLFWUninitializedLibrary >> getWindowSize: window with: width with: height [
 
-	<apicall: void 'glfwGetWindowSize' (GLFWWindow* int* int*)>
-	^ self externalCallFailed
+	self init ifTrue: [
+		^ self getWindowSize: window with: width with: height]
 ]
 
 {
 	#category : #'api - window properties',
-	#'squeak_changestamp' : 'stlu 2/12/2021 02:00'
+	#'squeak_changestamp' : 'stlu 4/21/2021 10:20'
 }
-GLFWLibrary >> getWindowUserPointer: window [
+GLFWUninitializedLibrary >> getWindowUserPointer: window [
 
-	<apicall: void* 'glfwGetWindowUserPointer' (GLFWWindow*)>
-	^ self externalCallFailed
+	self init ifTrue: [
+		^ self getWindowUserPointer: window]
 ]
 
 {
 	#category : #'api - window properties',
-	#'squeak_changestamp' : 'stlu 10/21/2020 21:04'
+	#'squeak_changestamp' : 'stlu 4/21/2021 10:20'
 }
-GLFWLibrary >> hideWindow: window [
+GLFWUninitializedLibrary >> hideWindow: window [
 
-	<apicall: void 'glfwHideWindow' (GLFWWindow*)>
-	^ self externalCallFailed
+	self init ifTrue: [
+		^ self hideWindow: window]
 ]
 
 {
 	#category : #helpers,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:46'
 }
-GLFWLibrary >> hintAnyProfile [
+GLFWUninitializedLibrary >> hintAnyProfile [
 
 	self windowHint: GLFW_OPENGL_PROFILE with: GLFW_OPENGL_ANY_PROFILE
 ]
@@ -3942,7 +3881,7 @@ GLFWLibrary >> hintAnyProfile [
 	#category : #helpers,
 	#'squeak_changestamp' : 'stlu 2/12/2021 21:53'
 }
-GLFWLibrary >> hintClientAPI: apiEnum [
+GLFWUninitializedLibrary >> hintClientAPI: apiEnum [
 
 	self windowHint: GLFW_CLIENT_API with: apiEnum
 ]
@@ -3951,7 +3890,7 @@ GLFWLibrary >> hintClientAPI: apiEnum [
 	#category : #helpers,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:47'
 }
-GLFWLibrary >> hintCompatibilityProfile [
+GLFWUninitializedLibrary >> hintCompatibilityProfile [
 
 	self windowHint: GLFW_OPENGL_PROFILE with: GLFW_OPENGL_COMPAT_PROFILE
 ]
@@ -3960,7 +3899,7 @@ GLFWLibrary >> hintCompatibilityProfile [
 	#category : #helpers,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:47'
 }
-GLFWLibrary >> hintCoreProfile [
+GLFWUninitializedLibrary >> hintCoreProfile [
 
 	self windowHint: GLFW_OPENGL_PROFILE with: GLFW_OPENGL_CORE_PROFILE
 ]
@@ -3969,7 +3908,7 @@ GLFWLibrary >> hintCoreProfile [
 	#category : #helpers,
 	#'squeak_changestamp' : 'stlu 2/12/2021 21:57'
 }
-GLFWLibrary >> hintGLAPI [
+GLFWUninitializedLibrary >> hintGLAPI [
 
 	self hintClientAPI: GLFW_OPENGL_API
 ]
@@ -3978,7 +3917,7 @@ GLFWLibrary >> hintGLAPI [
 	#category : #helpers,
 	#'squeak_changestamp' : 'stlu 2/12/2021 21:57'
 }
-GLFWLibrary >> hintGLES1API [
+GLFWUninitializedLibrary >> hintGLES1API [
 
 	self hintClientAPI: GLFW_OPENGL_ES_API
 ]
@@ -3987,7 +3926,7 @@ GLFWLibrary >> hintGLES1API [
 	#category : #helpers,
 	#'squeak_changestamp' : 'stlu 2/12/2021 21:57'
 }
-GLFWLibrary >> hintGLES2API [
+GLFWUninitializedLibrary >> hintGLES2API [
 
 	self hintClientAPI: GLFW_OPENGL_ES_API
 ]
@@ -3996,7 +3935,7 @@ GLFWLibrary >> hintGLES2API [
 	#category : #helpers,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:45'
 }
-GLFWLibrary >> hintMajorVersion: anInteger [
+GLFWUninitializedLibrary >> hintMajorVersion: anInteger [
 
 	self windowHint: GLFW_CONTEXT_VERSION_MAJOR with: anInteger
 ]
@@ -4005,7 +3944,7 @@ GLFWLibrary >> hintMajorVersion: anInteger [
 	#category : #helpers,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:47'
 }
-GLFWLibrary >> hintMinorVersion: anInteger [
+GLFWUninitializedLibrary >> hintMinorVersion: anInteger [
 
 	self windowHint: GLFW_CONTEXT_VERSION_MINOR with: anInteger
 ]
@@ -4014,96 +3953,90 @@ GLFWLibrary >> hintMinorVersion: anInteger [
 	#category : #helpers,
 	#'squeak_changestamp' : 'stlu 2/12/2021 21:57'
 }
-GLFWLibrary >> hintNoAPI [
+GLFWUninitializedLibrary >> hintNoAPI [
 
 	self hintClientAPI: GLFW_NO_API
 ]
 
 {
 	#category : #'api - window properties',
-	#'squeak_changestamp' : 'stlu 10/21/2020 21:04'
+	#'squeak_changestamp' : 'stlu 4/21/2021 10:20'
 }
-GLFWLibrary >> iconifyWindow: window [
+GLFWUninitializedLibrary >> iconifyWindow: window [
 
-	<apicall: void 'glfwIconifyWindow' (GLFWWindow*)>
-	^ self externalCallFailed
+	self init ifTrue: [
+		^ self iconifyWindow: window]
 ]
 
 {
 	#category : #'api - init',
-	#'squeak_changestamp' : 'stlu 10/19/2020 16:34'
+	#'squeak_changestamp' : 'stlu 4/21/2021 10:58'
 }
-GLFWLibrary >> init [
+GLFWUninitializedLibrary >> init [
 
-	<apicall: bool 'glfwInit' ()>
-	^ self externalCallFailed
+	self privateInit ifFalse: [
+		self checkForError.
+		^ false].
+	
+	self beInitializedLibrary.
+	^ true
 ]
 
 {
 	#category : #'api - init',
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-GLFWLibrary >> initHint: hint with: value [
+GLFWUninitializedLibrary >> initHint: hint with: value [
 
 	<apicall: void 'glfwInitHint' (int int)>
 	^ self externalCallFailed
 ]
 
 {
-	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 10/19/2020 16:32'
+	#category : #'api - joystick input',
+	#'squeak_changestamp' : 'stlu 4/21/2021 10:20'
 }
-GLFWLibrary >> initialize [
+GLFWUninitializedLibrary >> joystickIsGamepad: jid [
 
-	super initialize.
-	self reset
+	self init ifTrue: [
+		^ self joystickIsGamepad: jid]
 ]
 
 {
 	#category : #'api - joystick input',
-	#'squeak_changestamp' : 'stlu 2/12/2021 18:02'
+	#'squeak_changestamp' : 'stlu 4/21/2021 10:20'
 }
-GLFWLibrary >> joystickIsGamepad: jid [
+GLFWUninitializedLibrary >> joystickPresent: jid [
 
-	<apicall: int 'glfwJoystickIsGamepad' (int)>
-	^ self externalCallFailed
-]
-
-{
-	#category : #'api - joystick input',
-	#'squeak_changestamp' : 'stlu 2/12/2021 17:56'
-}
-GLFWLibrary >> joystickPresent: jid [
-
-	<apicall: int 'glfwJoystickPresent' (int)>
-	^ self externalCallFailed
+	self init ifTrue: [
+		^ self joystickPresent: jid]
 ]
 
 {
 	#category : #'api - contexts',
-	#'squeak_changestamp' : 'stlu 10/26/2020 18:03'
+	#'squeak_changestamp' : 'stlu 4/21/2021 10:20'
 }
-GLFWLibrary >> makeContextCurrent: window [
+GLFWUninitializedLibrary >> makeContextCurrent: window [
 
-	<apicall: void 'glfwMakeContextCurrent' (GLFWWindow*)>
-	^ self externalCallFailed
+	self init ifTrue: [
+		^ self makeContextCurrent: window]
 ]
 
 {
 	#category : #'api - window properties',
-	#'squeak_changestamp' : 'stlu 10/21/2020 21:04'
+	#'squeak_changestamp' : 'stlu 4/21/2021 10:20'
 }
-GLFWLibrary >> maximizeWindow: window [
+GLFWUninitializedLibrary >> maximizeWindow: window [
 
-	<apicall: void 'glfwMaximizeWindow' (GLFWWindow*)>
-	^ self externalCallFailed
+	self init ifTrue: [
+		^ self maximizeWindow: window]
 ]
 
 {
 	#category : #helpers,
 	#'squeak_changestamp' : 'stlu 4/14/2021 18:09'
 }
-GLFWLibrary >> messageForErrorCode: anInteger [
+GLFWUninitializedLibrary >> messageForErrorCode: anInteger [
 
 	^ ErrorMessages
 		at: anInteger
@@ -4112,51 +4045,31 @@ GLFWLibrary >> messageForErrorCode: anInteger [
 
 {
 	#category : #'api - events',
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 4/21/2021 10:20'
 }
-GLFWLibrary >> pollEvents [
+GLFWUninitializedLibrary >> pollEvents [
 
-	<apicall: int 'glfwPollEvents' ()>
-	^ self externalCallFailed
+	self init ifTrue: [
+		^ self pollEvents]
 ]
 
 {
 	#category : #'api - events',
-	#'squeak_changestamp' : 'stlu 2/12/2021 02:23'
+	#'squeak_changestamp' : 'stlu 4/21/2021 10:20'
 }
-GLFWLibrary >> postEmptyEvent [
+GLFWUninitializedLibrary >> postEmptyEvent [
 
-	<apicall: void 'glfwPostEmptyEvent' ()>
-	^ self externalCallFailed
+	self init ifTrue: [
+		^ self postEmptyEvent]
 ]
 
 {
 	#category : #private,
-	#'squeak_changestamp' : 'stlu 2/12/2021 02:55'
+	#'squeak_changestamp' : 'stlu 4/21/2021 09:33'
 }
-GLFWLibrary >> privateSetCharCallback: aWindow with: anFFICallback [
+GLFWUninitializedLibrary >> privateInit [
 
-	<apicall: void* 'glfwSetCharCallback' (GLFWWindow* void*)>
-	^ self externalCallFailed
-]
-
-{
-	#category : #private,
-	#'squeak_changestamp' : 'stlu 2/12/2021 02:55'
-}
-GLFWLibrary >> privateSetCharModsCallback: aWindow with: anFFICallback [
-
-	<apicall: void* 'glfwSetCharModsCallback' (GLFWWindow* void*)>
-	^ self externalCallFailed
-]
-
-{
-	#category : #private,
-	#'squeak_changestamp' : 'stlu 2/12/2021 02:56'
-}
-GLFWLibrary >> privateSetCursorEnterCallback: aWindow with: anFFICallback [
-
-	<apicall: void* 'glfwSetCursorEnterCallback' (GLFWWindow* void*)>
+	<apicall: bool 'glfwInit' ()>
 	^ self externalCallFailed
 ]
 
@@ -4164,806 +4077,488 @@ GLFWLibrary >> privateSetCursorEnterCallback: aWindow with: anFFICallback [
 	#category : #private,
 	#'squeak_changestamp' : 'stlu 2/12/2021 01:36'
 }
-GLFWLibrary >> privateSetCursorPosCallback: aWindow with: anFFICallback [
-
-	<apicall: void* 'glfwSetCursorPosCallback' (GLFWWindow* void*)>
-	^ self externalCallFailed
-]
-
-{
-	#category : #private,
-	#'squeak_changestamp' : 'stlu 2/12/2021 02:56'
-}
-GLFWLibrary >> privateSetDropCallback: aWindow with: anFFICallback [
-
-	<apicall: void* 'glfwSetDropCallback' (GLFWWindow* void*)>
-	^ self externalCallFailed
-]
-
-{
-	#category : #private,
-	#'squeak_changestamp' : 'stlu 2/12/2021 01:36'
-}
-GLFWLibrary >> privateSetErrorCallback: anFFICallback [
+GLFWUninitializedLibrary >> privateSetErrorCallback: anFFICallback [
 
 	<apicall: void* 'glfwSetErrorCallback' (void*)>
 	^ self externalCallFailed
 ]
 
 {
-	#category : #private,
-	#'squeak_changestamp' : 'stlu 2/12/2021 01:36'
-}
-GLFWLibrary >> privateSetFramebufferSizeCallback: aWindow with: anFFICallback [
-
-	<apicall: void* 'glfwSetFramebufferSizeCallback' (GLFWWindow* void*)>
-	^ self externalCallFailed
-]
-
-{
-	#category : #private,
-	#'squeak_changestamp' : 'stlu 2/12/2021 18:03'
-}
-GLFWLibrary >> privateSetJoystickCallback: anFFICallback [
-
-	<apicall: void* 'glfwSetJoystickCallback' (void*)>
-	^ self externalCallFailed
-]
-
-{
-	#category : #private,
-	#'squeak_changestamp' : 'stlu 2/12/2021 01:37'
-}
-GLFWLibrary >> privateSetKeyCallback: aWindow with: anFFICallback [
-
-	<apicall: void* 'glfwSetKeyCallback' (GLFWWindow* void*)>
-	^ self externalCallFailed
-]
-
-{
-	#category : #private,
-	#'squeak_changestamp' : 'stlu 2/12/2021 01:37'
-}
-GLFWLibrary >> privateSetMonitorCallback: anFFICallback [
-
-	<apicall: void* 'glfwSetMonitorCallback' (void*)>
-	^ self externalCallFailed
-]
-
-{
-	#category : #private,
-	#'squeak_changestamp' : 'stlu 2/12/2021 02:56'
-}
-GLFWLibrary >> privateSetMouseButtonCallback: aWindow with: anFFICallback [
-
-	<apicall: void* 'glfwSetMouseButtonCallback' (GLFWWindow* void*)>
-	^ self externalCallFailed
-]
-
-{
-	#category : #private,
-	#'squeak_changestamp' : 'stlu 2/12/2021 01:37'
-}
-GLFWLibrary >> privateSetScrollCallback: aWindow with: anFFICallback [
-
-	<apicall: void* 'glfwSetScrollCallback' (GLFWWindow* void*)>
-	^ self externalCallFailed
-]
-
-{
-	#category : #private,
-	#'squeak_changestamp' : 'stlu 2/12/2021 02:11'
-}
-GLFWLibrary >> privateSetWindowCloseCallback: aWindow with: anFFICallback [
-
-	<apicall: void* 'glfwSetWindowCloseCallback' (GLFWWindow* void*)>
-	^ self externalCallFailed
-]
-
-{
-	#category : #private,
-	#'squeak_changestamp' : 'stlu 2/12/2021 02:17'
-}
-GLFWLibrary >> privateSetWindowContentScaleCallback: aWindow with: anFFICallback [
-
-	<apicall: void* 'glfwSetWindowContentScaleCallback' (GLFWWindow* void*)>
-	^ self externalCallFailed
-]
-
-{
-	#category : #private,
-	#'squeak_changestamp' : 'stlu 2/12/2021 02:14'
-}
-GLFWLibrary >> privateSetWindowFocusCallback: aWindow with: anFFICallback [
-
-	<apicall: void* 'glfwSetWindowFocusCallback' (GLFWWindow* void*)>
-	^ self externalCallFailed
-]
-
-{
-	#category : #private,
-	#'squeak_changestamp' : 'stlu 2/12/2021 02:16'
-}
-GLFWLibrary >> privateSetWindowIconifyCallback: aWindow with: anFFICallback [
-
-	<apicall: void* 'glfwSetWindowIconifyCallback' (GLFWWindow* void*)>
-	^ self externalCallFailed
-]
-
-{
-	#category : #private,
-	#'squeak_changestamp' : 'stlu 2/12/2021 02:16'
-}
-GLFWLibrary >> privateSetWindowMaximizeCallback: aWindow with: anFFICallback [
-
-	<apicall: void* 'glfwSetWindowMaximizeCallback' (GLFWWindow* void*)>
-	^ self externalCallFailed
-]
-
-{
-	#category : #private,
-	#'squeak_changestamp' : 'stlu 2/12/2021 02:04'
-}
-GLFWLibrary >> privateSetWindowPosCallback: aWindow with: anFFICallback [
-
-	<apicall: void* 'glfwSetWindowPosCallback' (GLFWWindow* void*)>
-	^ self externalCallFailed
-]
-
-{
-	#category : #private,
-	#'squeak_changestamp' : 'stlu 2/12/2021 02:12'
-}
-GLFWLibrary >> privateSetWindowRefreshCallback: aWindow with: anFFICallback [
-
-	<apicall: void* 'glfwSetWindowRefreshCallback' (GLFWWindow* void*)>
-	^ self externalCallFailed
-]
-
-{
-	#category : #private,
-	#'squeak_changestamp' : 'stlu 2/12/2021 02:07'
-}
-GLFWLibrary >> privateSetWindowSizeCallback: aWindow with: anFFICallback [
-
-	<apicall: void* 'glfwSetWindowSizeCallback' (GLFWWindow* void*)>
-	^ self externalCallFailed
-]
-
-{
 	#category : #'api - mouse input',
-	#'squeak_changestamp' : 'stlu 2/13/2021 00:12'
+	#'squeak_changestamp' : 'stlu 4/21/2021 10:20'
 }
-GLFWLibrary >> rawMouseMotionSupported [
+GLFWUninitializedLibrary >> rawMouseMotionSupported [
 
-	<apicall: bool 'glfwRawMouseMotionSupported' ()>
-	^ self externalCallFailed
+	self init ifTrue: [
+		^ self rawMouseMotionSupported]
 ]
 
 {
 	#category : #'api - window properties',
-	#'squeak_changestamp' : 'stlu 10/21/2020 21:05'
+	#'squeak_changestamp' : 'stlu 4/21/2021 10:20'
 }
-GLFWLibrary >> requestWindowAttention: window [
+GLFWUninitializedLibrary >> requestWindowAttention: window [
 
-	<apicall: void 'glfwRequestWindowAttention' (GLFWWindow*)>
-	^ self externalCallFailed
-]
-
-{
-	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 4/16/2021 17:24'
-}
-GLFWLibrary >> reset [
-
-	callbacks := WeakKeyDictionary new.
-	contexts := Dictionary new
+	self init ifTrue: [
+		^ self requestWindowAttention: window]
 ]
 
 {
 	#category : #'api - window properties',
-	#'squeak_changestamp' : 'stlu 10/21/2020 21:04'
+	#'squeak_changestamp' : 'stlu 4/21/2021 10:20'
 }
-GLFWLibrary >> restoreWindow: window [
+GLFWUninitializedLibrary >> restoreWindow: window [
 
-	<apicall: void 'glfwRestoreWindow' (GLFWWindow*)>
-	^ self externalCallFailed
+	self init ifTrue: [
+		^ self restoreWindow: window]
 ]
 
 {
 	#category : #'api - keyboard input',
-	#'squeak_changestamp' : 'stlu 2/12/2021 02:59'
+	#'squeak_changestamp' : 'stlu 4/21/2021 10:20'
 }
-GLFWLibrary >> setCharCallback: aWindow with: aBlock [
+GLFWUninitializedLibrary >> setCharCallback: aWindow with: aBlock [
 
-	| callback |
-	callback := self
-					createCallback: aBlock
-					signature: '<callback: void (*)(GLFWWindow* uint)>'
-						"GLFWwindow* window, unsigned int codepoint"
-					named: #char
-					forWindow: aWindow.
-	self
-		privateSetCharCallback: aWindow
-		with: callback thunk
+	self init ifTrue: [
+		^ self setCharCallback: aWindow with: aBlock]
 ]
 
 {
 	#category : #'api - keyboard input',
-	#'squeak_changestamp' : 'stlu 2/12/2021 03:00'
+	#'squeak_changestamp' : 'stlu 4/21/2021 10:20'
 }
-GLFWLibrary >> setCharModsCallback: aWindow with: aBlock [
+GLFWUninitializedLibrary >> setCharModsCallback: aWindow with: aBlock [
 
-	| callback |
-	callback := self
-					createCallback: aBlock
-					signature: '<callback: void (*)(GLFWWindow* uint int)>'
-						"GLFWwindow* window, unsigned int codepoint, int mods"
-					named: #charMods
-					forWindow: aWindow.
-	self
-		privateSetCharModsCallback: aWindow
-		with: callback thunk
+	self init ifTrue: [
+		^ self setCharModsCallback: aWindow with: aBlock]
 ]
 
 {
-	#category : #'api - clipboard',
-	#'squeak_changestamp' : 'stlu 2/12/2021 18:14'
+	#category : #helpers,
+	#'squeak_changestamp' : 'stlu 4/21/2021 10:13'
 }
-GLFWLibrary >> setClipboardString: string [
+GLFWUninitializedLibrary >> setClipboardString: string [
 
 	self setClipboardString: nil with: string
 ]
 
 {
 	#category : #'api - clipboard',
-	#'squeak_changestamp' : 'stlu 2/12/2021 18:11'
+	#'squeak_changestamp' : 'stlu 4/21/2021 10:20'
 }
-GLFWLibrary >> setClipboardString: window with: string [
+GLFWUninitializedLibrary >> setClipboardString: window with: string [
 
-	<apicall: void 'glfwSetClipboardString' (GLFWWindow* string)>
-	^ self externalCallFailed
+	self init ifTrue: [
+		^ self setClipboardString: window with: string]
 ]
 
 {
 	#category : #'api - mouse input',
-	#'squeak_changestamp' : 'stlu 2/12/2021 02:46'
+	#'squeak_changestamp' : 'stlu 4/21/2021 10:20'
 }
-GLFWLibrary >> setCursor: window with: cursor [
+GLFWUninitializedLibrary >> setCursor: window with: cursor [
 
-	<apicall: void 'glfwSetCursor' (GLFWWindow* GLFWCursor*)>
-	^ self externalCallFailed
+	self init ifTrue: [
+		^ self setCursor: window with: cursor]
 ]
 
 {
 	#category : #'api - mouse input',
-	#'squeak_changestamp' : 'stlu 2/12/2021 03:05'
+	#'squeak_changestamp' : 'stlu 4/21/2021 10:20'
 }
-GLFWLibrary >> setCursorEnterCallback: aWindow with: aBlock [
+GLFWUninitializedLibrary >> setCursorEnterCallback: aWindow with: aBlock [
 
-	| callback |
-	callback := self
-					createCallback: aBlock
-					signature: '<callback: void (*)(GLFWWindow* int)>'
-						"GLFWwindow* window, int entered"
-					named: #cursorEnter
-					forWindow: aWindow.
-	self
-		privateSetCursorEnterCallback: aWindow
-		with: callback thunk
+	self init ifTrue: [
+		^ self setCursorEnterCallback: aWindow with: aBlock]
 ]
 
 {
 	#category : #'api - mouse input',
-	#'squeak_changestamp' : 'stlu 2/12/2021 02:42'
+	#'squeak_changestamp' : 'stlu 4/21/2021 10:20'
 }
-GLFWLibrary >> setCursorPos: window with: xpos with: ypos [
+GLFWUninitializedLibrary >> setCursorPos: window with: xpos with: ypos [
 
-	<apicall: void 'glfwSetCursorPos' (GLFWWindow* double double)>
-	^ self externalCallFailed
+	self init ifTrue: [
+		^ self setCursorPos: window with: xpos with: ypos]
 ]
 
 {
 	#category : #'api - mouse input',
-	#'squeak_changestamp' : 'stlu 2/12/2021 03:03'
+	#'squeak_changestamp' : 'stlu 4/21/2021 10:20'
 }
-GLFWLibrary >> setCursorPosCallback: aWindow with: aBlock [
+GLFWUninitializedLibrary >> setCursorPosCallback: aWindow with: aBlock [
 
-	| callback |
-	callback := self
-					createCallback: aBlock
-					signature: '<callback: void (*)(GLFWWindow* double double)>'
-						"GLFWwindow* window, double xpos, double ypos"
-					named: #cursorPos
-					forWindow: aWindow.
-	self
-		privateSetCursorPosCallback: aWindow
-		with: callback thunk
+	self init ifTrue: [
+		^ self setCursorPosCallback: aWindow with: aBlock]
 ]
 
 {
 	#category : #'api - mouse input',
-	#'squeak_changestamp' : 'stlu 2/12/2021 03:07'
+	#'squeak_changestamp' : 'stlu 4/21/2021 10:20'
 }
-GLFWLibrary >> setDropCallback: aWindow with: aBlock [
+GLFWUninitializedLibrary >> setDropCallback: aWindow with: aBlock [
 
-	| callback |
-	callback := self
-					createCallback: aBlock
-					signature: '<callback: void (*)(GLFWWindow* int string*)>'
-						"GLFWwindow* window, int path_count, const char* paths[]"
-					named: #drop
-					forWindow: aWindow.
-	self
-		privateSetDropCallback: aWindow
-		with: callback thunk
+	self init ifTrue: [
+		^ self setDropCallback: aWindow with: aBlock]
 ]
 
 {
 	#category : #'api - init',
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 4/21/2021 09:20'
 }
-GLFWLibrary >> setErrorCallback: aBlock [
+GLFWUninitializedLibrary >> setErrorCallback: aBlock [
 
-	| callback |
-	callback := self
-					createCallback: aBlock
-					signature: '<callback: void (*)(int string)>'
-					named: #error.
-	self privateSetErrorCallback: callback thunk
+	errorCallback := FFICallback
+						signature: '<callback: void (*)(int string)>'
+						block: aBlock self.
+	self privateSetErrorCallback: errorCallback thunk
 ]
 
 {
 	#category : #'api - window callbacks',
-	#'squeak_changestamp' : 'stlu 2/12/2021 15:34'
+	#'squeak_changestamp' : 'stlu 4/21/2021 10:20'
 }
-GLFWLibrary >> setFramebufferSizeCallback: aWindow with: aBlock [
+GLFWUninitializedLibrary >> setFramebufferSizeCallback: aWindow with: aBlock [
 
-	| callback |
-	callback := self
-					createCallback: aBlock
-					signature: '<callback: void (*)(GLFWWindow* int int)>'
-						"GLFWwindow* window, int width, int height"
-					named: #framebufferSize
-					forWindow: aWindow.
-	self
-		privateSetFramebufferSizeCallback: aWindow
-		with: callback thunk
+	self init ifTrue: [
+		^ self setFramebufferSizeCallback: aWindow with: aBlock]
 ]
 
 {
 	#category : #'api - monitors',
-	#'squeak_changestamp' : 'stlu 2/12/2021 01:40'
+	#'squeak_changestamp' : 'stlu 4/21/2021 10:20'
 }
-GLFWLibrary >> setGamma: monitor with: gamma [
+GLFWUninitializedLibrary >> setGamma: monitor with: gamma [
 
-	<apicall: void 'glfwSetGamma' (GLFWMonitor* float)>
-	^ self externalCallFailed
+	self init ifTrue: [
+		^ self setGamma: monitor with: gamma]
 ]
 
 {
 	#category : #'api - monitors',
-	#'squeak_changestamp' : 'stlu 2/12/2021 01:42'
+	#'squeak_changestamp' : 'stlu 4/21/2021 10:20'
 }
-GLFWLibrary >> setGammaRamp: monitor with: ramp [
+GLFWUninitializedLibrary >> setGammaRamp: monitor with: ramp [
 
-	<apicall: void 'glfwSetGammaRamp' (GLFWMonitor* GLFWGammaRamp*)>
-	^ self externalCallFailed
+	self init ifTrue: [
+		^ self setGammaRamp: monitor with: ramp]
 ]
 
 {
 	#category : #'api - keyboard input',
-	#'squeak_changestamp' : 'stlu 2/1/2021 15:55'
+	#'squeak_changestamp' : 'stlu 4/21/2021 10:20'
 }
-GLFWLibrary >> setInputMode: window with: mode with: value [
+GLFWUninitializedLibrary >> setInputMode: window with: mode with: value [
 
-	<apicall: void 'glfwSetInputMode' (GLFWWindow* int int)>
-	^ self externalCallFailed
+	self init ifTrue: [
+		^ self setInputMode: window with: mode with: value]
 ]
 
 {
 	#category : #'api - joystick input',
-	#'squeak_changestamp' : 'stlu 2/12/2021 18:04'
+	#'squeak_changestamp' : 'stlu 4/21/2021 10:20'
 }
-GLFWLibrary >> setJoystickCallback: aBlock [
+GLFWUninitializedLibrary >> setJoystickCallback: aBlock [
 
-	| callback |
-	callback := self
-					createCallback: aBlock
-					signature: '<callback: void (*)(int int)>'
-						"int jid, int event"
-					named: #joystick.
-	self privateSetJoystickCallback: callback thunk
+	self init ifTrue: [
+		^ self setJoystickCallback: aBlock]
 ]
 
 {
 	#category : #'api - joystick input',
-	#'squeak_changestamp' : 'stlu 2/12/2021 18:01'
+	#'squeak_changestamp' : 'stlu 4/21/2021 10:20'
 }
-GLFWLibrary >> setJoystickUserPointer: jid with: pointer [
+GLFWUninitializedLibrary >> setJoystickUserPointer: jid with: pointer [
 
-	<apicall: void 'glfwSetJoystickUserPointer' (int void*)>
-	^ self externalCallFailed
+	self init ifTrue: [
+		^ self setJoystickUserPointer: jid with: pointer]
 ]
 
 {
 	#category : #'api - keyboard input',
-	#'squeak_changestamp' : 'stlu 1/7/2021 17:15'
+	#'squeak_changestamp' : 'stlu 4/21/2021 10:20'
 }
-GLFWLibrary >> setKeyCallback: aWindow with: aBlock [
-	
-	| callback |
-	callback := self
-					createCallback: aBlock
-					signature: '<callback: void (*)(GLFWWindow* int int int int)>'
-						"GLFWwindow* window, int key, int scancode, int action, int mods"
-					named: #key
-					forWindow: aWindow.
-	self
-		privateSetKeyCallback: aWindow
-		with: callback thunk
+GLFWUninitializedLibrary >> setKeyCallback: aWindow with: aBlock [
+
+	self init ifTrue: [
+		^ self setKeyCallback: aWindow with: aBlock]
 ]
 
 {
 	#category : #'api - monitors',
-	#'squeak_changestamp' : 'stlu 2/12/2021 19:47'
+	#'squeak_changestamp' : 'stlu 4/21/2021 10:20'
 }
-GLFWLibrary >> setMonitorCallback: aBlock [
+GLFWUninitializedLibrary >> setMonitorCallback: aBlock [
 
-	| callback |
-	callback := self
-					createCallback: aBlock
-					signature: '<callback: void (*)(GLFWMonitor* int)>'
-						"GLFWmonitor* monitor, int event"
-					named: #monitor.
-	self privateSetMonitorCallback: callback thunk
+	self init ifTrue: [
+		^ self setMonitorCallback: aBlock]
 ]
 
 {
 	#category : #'api - monitors',
-	#'squeak_changestamp' : 'stlu 2/12/2021 01:30'
+	#'squeak_changestamp' : 'stlu 4/21/2021 10:20'
 }
-GLFWLibrary >> setMonitorUserPointer: monitor with: pointer [
+GLFWUninitializedLibrary >> setMonitorUserPointer: monitor with: pointer [
 
-	<apicall: void 'glfwSetMonitorUserPointer' (GLFWMonitor* void*)>
-	^ self externalCallFailed
+	self init ifTrue: [
+		^ self setMonitorUserPointer: monitor with: pointer]
 ]
 
 {
 	#category : #'api - mouse input',
-	#'squeak_changestamp' : 'stlu 2/12/2021 03:03'
+	#'squeak_changestamp' : 'stlu 4/21/2021 10:20'
 }
-GLFWLibrary >> setMouseButtonCallback: aWindow with: aBlock [
+GLFWUninitializedLibrary >> setMouseButtonCallback: aWindow with: aBlock [
 
-	| callback |
-	callback := self
-					createCallback: aBlock
-					signature: '<callback: void (*)(GLFWWindow* int int int)>'
-						"GLFWwindow* window, int button, int action, int mods"
-					named: #mouseButton
-					forWindow: aWindow.
-	self
-		privateSetMouseButtonCallback: aWindow
-		with: callback thunk
+	self init ifTrue: [
+		^ self setMouseButtonCallback: aWindow with: aBlock]
 ]
 
 {
 	#category : #'api - mouse input',
-	#'squeak_changestamp' : 'stlu 2/12/2021 03:05'
+	#'squeak_changestamp' : 'stlu 4/21/2021 10:20'
 }
-GLFWLibrary >> setScrollCallback: aWindow with: aBlock [
+GLFWUninitializedLibrary >> setScrollCallback: aWindow with: aBlock [
 
-	| callback |
-	callback := self
-					createCallback: aBlock
-					signature: '<callback: void (*)(GLFWWindow* double double)>'
-						"GLFWwindow* window, double xoffset, double yoffset"
-					named: #scroll
-					forWindow: aWindow.
-	self
-		privateSetScrollCallback: aWindow
-		with: callback thunk
+	self init ifTrue: [
+		^ self setScrollCallback: aWindow with: aBlock]
 ]
 
 {
 	#category : #'api - time',
-	#'squeak_changestamp' : 'stlu 1/7/2021 11:55'
+	#'squeak_changestamp' : 'stlu 4/21/2021 10:20'
 }
-GLFWLibrary >> setTime: time [
+GLFWUninitializedLibrary >> setTime: time [
 
-	<apicall: void 'glfwSetTime' (double)>
-	^ self externalCallFailed
+	self init ifTrue: [
+		^ self setTime: time]
 ]
 
 {
 	#category : #'api - window properties',
-	#'squeak_changestamp' : 'stlu 10/21/2020 14:24'
+	#'squeak_changestamp' : 'stlu 4/21/2021 10:20'
 }
-GLFWLibrary >> setWindowAspectRatio: window with: numer with: denom [
+GLFWUninitializedLibrary >> setWindowAspectRatio: window with: numer with: denom [
 
-	<apicall: void 'glfwSetWindowAspectRatio' (GLFWWindow* int int)>
-	^ self externalCallFailed
+	self init ifTrue: [
+		^ self setWindowAspectRatio: window with: numer with: denom]
 ]
 
 {
 	#category : #'api - window properties',
-	#'squeak_changestamp' : 'stlu 2/12/2021 01:58'
+	#'squeak_changestamp' : 'stlu 4/21/2021 10:20'
 }
-GLFWLibrary >> setWindowAttrib: window with: attrib with: value [
+GLFWUninitializedLibrary >> setWindowAttrib: window with: attrib with: value [
 
-	<apicall: void 'glfwSetWindowAttrib' (GLFWWindow* int int)>
-	^ self externalCallFailed
+	self init ifTrue: [
+		^ self setWindowAttrib: window with: attrib with: value]
 ]
 
 {
 	#category : #'api - window callbacks',
-	#'squeak_changestamp' : 'stlu 2/12/2021 15:35'
+	#'squeak_changestamp' : 'stlu 4/21/2021 10:20'
 }
-GLFWLibrary >> setWindowCloseCallback: aWindow with: aBlock [
+GLFWUninitializedLibrary >> setWindowCloseCallback: aWindow with: aBlock [
 
-	| callback |
-	callback := self
-					createCallback: aBlock
-					signature: '<callback: void (*)(GLFWWindow*)>'
-						"GLFWwindow* window"
-					named: #windowClose
-					forWindow: aWindow.
-	self
-		privateSetWindowCloseCallback: aWindow
-		with: callback thunk
+	self init ifTrue: [
+		^ self setWindowCloseCallback: aWindow with: aBlock]
 ]
 
 {
 	#category : #'api - window callbacks',
-	#'squeak_changestamp' : 'stlu 2/12/2021 15:35'
+	#'squeak_changestamp' : 'stlu 4/21/2021 10:20'
 }
-GLFWLibrary >> setWindowContentScaleCallback: aWindow with: aBlock [
+GLFWUninitializedLibrary >> setWindowContentScaleCallback: aWindow with: aBlock [
 
-	| callback |
-	callback := self
-					createCallback: aBlock
-					signature: '<callback: void (*)(GLFWWindow* float float)>'
-						"GLFWwindow* window, float xscale, float yscale"
-					named: #windowContentScale
-					forWindow: aWindow.
-	self
-		privateSetWindowContentScaleCallback: aWindow
-		with: callback thunk
+	self init ifTrue: [
+		^ self setWindowContentScaleCallback: aWindow with: aBlock]
 ]
 
 {
 	#category : #'api - window callbacks',
-	#'squeak_changestamp' : 'stlu 2/12/2021 15:37'
+	#'squeak_changestamp' : 'stlu 4/21/2021 10:20'
 }
-GLFWLibrary >> setWindowFocusCallback: aWindow with: aBlock [
+GLFWUninitializedLibrary >> setWindowFocusCallback: aWindow with: aBlock [
 
-	| callback |
-	callback := self
-					createCallback: aBlock
-					signature: '<callback: void (*)(GLFWWindow* int)>'
-						"GLFWwindow* window, int focused"
-					named: #windowFocus
-					forWindow: aWindow.
-	self
-		privateSetWindowFocusCallback: aWindow
-		with: callback thunk
+	self init ifTrue: [
+		^ self setWindowFocusCallback: aWindow with: aBlock]
 ]
 
 {
 	#category : #'api - window properties',
-	#'squeak_changestamp' : 'stlu 2/12/2021 20:24'
+	#'squeak_changestamp' : 'stlu 4/21/2021 10:20'
 }
-GLFWLibrary >> setWindowIcon: window with: count with: images [
+GLFWUninitializedLibrary >> setWindowIcon: window with: count with: images [
 
-	<apicall: void 'glfwSetWindowIcon' (GLFWWindow* int GLFWImage*)>
-	^ self externalCallFailed
+	self init ifTrue: [
+		^ self setWindowIcon: window with: count with: images]
 ]
 
 {
 	#category : #'api - window callbacks',
-	#'squeak_changestamp' : 'stlu 2/12/2021 15:37'
+	#'squeak_changestamp' : 'stlu 4/21/2021 10:20'
 }
-GLFWLibrary >> setWindowIconifyCallback: aWindow with: aBlock [
+GLFWUninitializedLibrary >> setWindowIconifyCallback: aWindow with: aBlock [
 
-	| callback |
-	callback := self
-					createCallback: aBlock
-					signature: '<callback: void (*)(GLFWWindow* int)>'
-						"GLFWwindow* window, int iconified"
-					named: #windowIconify
-					forWindow: aWindow.
-	self
-		privateSetWindowIconifyCallback: aWindow
-		with: callback thunk
+	self init ifTrue: [
+		^ self setWindowIconifyCallback: aWindow with: aBlock]
 ]
 
 {
 	#category : #'api - window callbacks',
-	#'squeak_changestamp' : 'stlu 2/12/2021 15:37'
+	#'squeak_changestamp' : 'stlu 4/21/2021 10:20'
 }
-GLFWLibrary >> setWindowMaximizeCallback: aWindow with: aBlock [
+GLFWUninitializedLibrary >> setWindowMaximizeCallback: aWindow with: aBlock [
 
-	| callback |
-	callback := self
-					createCallback: aBlock
-					signature: '<callback: void (*)(GLFWWindow* int)>'
-						"GLFWwindow* window, int maximized"
-					named: #windowMaximize
-					forWindow: aWindow.
-	self
-		privateSetWindowMaximizeCallback: aWindow
-		with: callback thunk
+	self init ifTrue: [
+		^ self setWindowMaximizeCallback: aWindow with: aBlock]
 ]
 
 {
 	#category : #'api - window properties',
-	#'squeak_changestamp' : 'stlu 10/21/2020 21:38'
+	#'squeak_changestamp' : 'stlu 4/21/2021 10:20'
 }
-GLFWLibrary >> setWindowMonitor: window with: monitor with: xpos with: ypos with: width with: height with: refreshRate [
+GLFWUninitializedLibrary >> setWindowMonitor: window with: monitor with: xpos with: ypos with: width with: height with: refreshRate [
 
-	<apicall: void 'glfwSetWindowMonitor' (GLFWWindow* GLFWMonitor* int int int int int)>
-	^ self externalCallFailed
+	self init ifTrue: [
+		^ self setWindowMonitor: window with: monitor with: xpos with: ypos with: width with: height with: refreshRate]
 ]
 
 {
 	#category : #'api - window properties',
-	#'squeak_changestamp' : 'stlu 10/21/2020 20:55'
+	#'squeak_changestamp' : 'stlu 4/21/2021 10:20'
 }
-GLFWLibrary >> setWindowOpacity: window with: opacity [
+GLFWUninitializedLibrary >> setWindowOpacity: window with: opacity [
 
-	<apicall: void 'glfwSetWindowOpacity' (GLFWWindow* float)>
-	^ self externalCallFailed
+	self init ifTrue: [
+		^ self setWindowOpacity: window with: opacity]
 ]
 
 {
 	#category : #'api - window properties',
-	#'squeak_changestamp' : 'stlu 10/21/2020 14:15'
+	#'squeak_changestamp' : 'stlu 4/21/2021 10:20'
 }
-GLFWLibrary >> setWindowPos: window with: xpos with: ypos [
+GLFWUninitializedLibrary >> setWindowPos: window with: xpos with: ypos [
 
-	<apicall: void 'glfwSetWindowPos' (GLFWWindow* int int)>
-	^ self externalCallFailed
+	self init ifTrue: [
+		^ self setWindowPos: window with: xpos with: ypos]
 ]
 
 {
 	#category : #'api - window callbacks',
-	#'squeak_changestamp' : 'stlu 2/12/2021 15:31'
+	#'squeak_changestamp' : 'stlu 4/21/2021 10:20'
 }
-GLFWLibrary >> setWindowPosCallback: aWindow with: aBlock [
+GLFWUninitializedLibrary >> setWindowPosCallback: aWindow with: aBlock [
 
-	| callback |
-	callback := self
-					createCallback: aBlock
-					signature: '<callback: void (*)(GLFWWindow* int int)>'
-						"GLFWwindow* window, int xpos, int ypos"
-					named: #windowPos
-					forWindow: aWindow.
-	self
-		privateSetWindowPosCallback: aWindow
-		with: callback thunk
+	self init ifTrue: [
+		^ self setWindowPosCallback: aWindow with: aBlock]
 ]
 
 {
 	#category : #'api - window callbacks',
-	#'squeak_changestamp' : 'stlu 2/12/2021 15:32'
+	#'squeak_changestamp' : 'stlu 4/21/2021 10:20'
 }
-GLFWLibrary >> setWindowRefreshCallback: aWindow with: aBlock [
+GLFWUninitializedLibrary >> setWindowRefreshCallback: aWindow with: aBlock [
 
-	| callback |
-	callback := self
-					createCallback: aBlock
-					signature: '<callback: void (*)(GLFWWindow*)>'
-						"GLFWwindow* window"
-					named: #windowRefresh
-					forWindow: aWindow.
-	self
-		privateSetWindowRefreshCallback: aWindow
-		with: callback thunk
+	self init ifTrue: [
+		^ self setWindowRefreshCallback: aWindow with: aBlock]
 ]
 
 {
 	#category : #'api - window properties',
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 4/21/2021 10:20'
 }
-GLFWLibrary >> setWindowShouldClose: window with: value [
+GLFWUninitializedLibrary >> setWindowShouldClose: window with: value [
 
-	<apicall: void 'glfwSetWindowShouldClose' (GLFWWindow* int)>
-	^ self externalCallFailed
+	self init ifTrue: [
+		^ self setWindowShouldClose: window with: value]
 ]
 
 {
 	#category : #'api - window properties',
-	#'squeak_changestamp' : 'stlu 10/21/2020 14:18'
+	#'squeak_changestamp' : 'stlu 4/21/2021 10:20'
 }
-GLFWLibrary >> setWindowSize: window with: width with: height [
+GLFWUninitializedLibrary >> setWindowSize: window with: width with: height [
 
-	<apicall: void 'glfwSetWindowSize' (GLFWWindow* int int)>
-	^ self externalCallFailed
+	self init ifTrue: [
+		^ self setWindowSize: window with: width with: height]
 ]
 
 {
 	#category : #'api - window callbacks',
-	#'squeak_changestamp' : 'stlu 2/12/2021 15:31'
+	#'squeak_changestamp' : 'stlu 4/21/2021 10:20'
 }
-GLFWLibrary >> setWindowSizeCallback: aWindow with: aBlock [
+GLFWUninitializedLibrary >> setWindowSizeCallback: aWindow with: aBlock [
 
-	| callback |
-	callback := self
-					createCallback: aBlock
-					signature: '<callback: void (*)(GLFWWindow* int int)>'
-						"GLFWwindow* window, int width, int height"
-					named: #windowSize
-					forWindow: aWindow.
-	self
-		privateSetWindowSizeCallback: aWindow
-		with: callback thunk
+	self init ifTrue: [
+		^ self setWindowSizeCallback: aWindow with: aBlock]
 ]
 
 {
 	#category : #'api - window properties',
-	#'squeak_changestamp' : 'stlu 10/21/2020 14:21'
+	#'squeak_changestamp' : 'stlu 4/21/2021 10:20'
 }
-GLFWLibrary >> setWindowSizeLimits: window with: minWidth with: minHeight with: maxWidth with: maxHeight [
+GLFWUninitializedLibrary >> setWindowSizeLimits: window with: minWidth with: minHeight with: maxWidth with: maxHeight [
 
-	<apicall: void 'glfwSetWindowSizeLimits' (GLFWWindow* int int int int)>
-	^ self externalCallFailed
+	self init ifTrue: [
+		^ self setWindowSizeLimits: window with: minWidth with: minHeight with: maxWidth with: maxHeight]
 ]
 
 {
 	#category : #'api - window properties',
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 4/21/2021 10:20'
 }
-GLFWLibrary >> setWindowTitle: window with: title [
+GLFWUninitializedLibrary >> setWindowTitle: window with: title [
 
-	<apicall: void 'glfwSetWindowTitle' (GLFWWindow* string)>
-	^ self externalCallFailed
+	self init ifTrue: [
+		^ self setWindowTitle: window with: title]
 ]
 
 {
 	#category : #'api - window properties',
-	#'squeak_changestamp' : 'stlu 2/12/2021 01:57'
+	#'squeak_changestamp' : 'stlu 4/21/2021 10:20'
 }
-GLFWLibrary >> setWindowUserPointer: window with: pointer [
+GLFWUninitializedLibrary >> setWindowUserPointer: window with: pointer [
 
-	<apicall: void 'glfwSetWindowUserPointer' (GLFWWindow* void*)>
-	^ self externalCallFailed
+	self init ifTrue: [
+		^ self setWindowUserPointer: window with: pointer]
 ]
 
 {
 	#category : #'api - window properties',
-	#'squeak_changestamp' : 'stlu 10/21/2020 21:04'
+	#'squeak_changestamp' : 'stlu 4/21/2021 10:20'
 }
-GLFWLibrary >> showWindow: window [
+GLFWUninitializedLibrary >> showWindow: window [
 
-	<apicall: void 'glfwShowWindow' (GLFWWindow*)>
-	^ self externalCallFailed
+	self init ifTrue: [
+		^ self showWindow: window]
 ]
 
 {
 	#category : #'api - contexts',
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 4/21/2021 10:20'
 }
-GLFWLibrary >> swapBuffers: window [
+GLFWUninitializedLibrary >> swapBuffers: window [
 
-	<apicall: void 'glfwSwapBuffers' (GLFWWindow*)>
-	^ self externalCallFailed
+	self init ifTrue: [
+		^ self swapBuffers: window]
 ]
 
 {
 	#category : #'api - contexts',
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 4/21/2021 10:20'
 }
-GLFWLibrary >> swapInterval: aNumber [
+GLFWUninitializedLibrary >> swapInterval: aNumber [
 
-	<apicall: void 'glfwSwapInterval' (int)>
-	^ self externalCallFailed
+	self init ifTrue: [
+		^ self swapInterval: aNumber]
 ]
 
 {
 	#category : #helpers,
 	#'squeak_changestamp' : 'stlu 4/16/2021 10:31'
 }
-GLFWLibrary >> targetVersion: aGLVersion [
+GLFWUninitializedLibrary >> targetVersion: aGLVersion [
 
 	aGLVersion api caseOf: {
 		[#gl] -> [self hintGLAPI].
@@ -4986,29 +4581,28 @@ GLFWLibrary >> targetVersion: aGLVersion [
 
 {
 	#category : #'api - init',
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 4/21/2021 10:14'
 }
-GLFWLibrary >> terminate [
+GLFWUninitializedLibrary >> terminate [
 
-	<apicall: void 'glfwTerminate' ()>
-	^ self externalCallFailed
+	"do nothing"
 ]
 
 {
 	#category : #'api - joystick input',
-	#'squeak_changestamp' : 'stlu 2/12/2021 18:06'
+	#'squeak_changestamp' : 'stlu 4/21/2021 10:20'
 }
-GLFWLibrary >> updateGamepadMappings: string [
+GLFWUninitializedLibrary >> updateGamepadMappings: string [
 
-	<apicall: int 'glfwUpdateGamepadMappings' (string*)>
-	^ self externalCallFailed
+	self init ifTrue: [
+		^ self updateGamepadMappings: string]
 ]
 
 {
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-GLFWLibrary >> version [
+GLFWUninitializedLibrary >> version [
 
 	| major minor revision |
 	major := IntegerArray new: 1.
@@ -5022,67 +4616,67 @@ GLFWLibrary >> version [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-GLFWLibrary >> versionString [
+GLFWUninitializedLibrary >> versionString [
 
 	^ self getVersionString
 ]
 
 {
 	#category : #'api - vulkan',
-	#'squeak_changestamp' : 'stlu 2/12/2021 16:15'
+	#'squeak_changestamp' : 'stlu 4/21/2021 10:20'
 }
-GLFWLibrary >> vulkanSupported [
+GLFWUninitializedLibrary >> vulkanSupported [
 
-	<apicall: bool 'glfwVulkanSupported' ()>
-	^ self externalCallFailed
+	self init ifTrue: [
+		^ self vulkanSupported]
 ]
 
 {
 	#category : #'api - events',
-	#'squeak_changestamp' : 'stlu 2/12/2021 02:22'
+	#'squeak_changestamp' : 'stlu 4/21/2021 10:20'
 }
-GLFWLibrary >> waitEvents [
+GLFWUninitializedLibrary >> waitEvents [
 
-	<apicall: void 'glfwWaitEvents' ()>
-	^ self externalCallFailed
+	self init ifTrue: [
+		^ self waitEvents]
 ]
 
 {
 	#category : #'api - events',
-	#'squeak_changestamp' : 'stlu 2/12/2021 02:23'
+	#'squeak_changestamp' : 'stlu 4/21/2021 10:20'
 }
-GLFWLibrary >> waitEventsTimeout: timeout [
+GLFWUninitializedLibrary >> waitEventsTimeout: timeout [
 
-	<apicall: void 'glfwWaitEventsTimeout' (double)>
-	^ self externalCallFailed
+	self init ifTrue: [
+		^ self waitEventsTimeout: timeout]
 ]
 
 {
 	#category : #'api - window creation',
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 4/21/2021 10:20'
 }
-GLFWLibrary >> windowHint: hint with: value [
+GLFWUninitializedLibrary >> windowHint: hint with: value [
 
-	<apicall: void 'glfwWindowHint' (int int)>
-	^ self externalCallFailed
+	self init ifTrue: [
+		^ self windowHint: hint with: value]
 ]
 
 {
 	#category : #'api - window creation',
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 4/21/2021 10:20'
 }
-GLFWLibrary >> windowHintString: hint with: value [
+GLFWUninitializedLibrary >> windowHintString: hint with: value [
 
-	<apicall: void 'glfwWindowHintString' (int string)>
-	^ self externalCallFailed
+	self init ifTrue: [
+		^ self windowHintString: hint with: value]
 ]
 
 {
 	#category : #'api - window properties',
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 4/21/2021 10:20'
 }
-GLFWLibrary >> windowShouldClose: window [
+GLFWUninitializedLibrary >> windowShouldClose: window [
 
-	<apicall: bool 'glfwWindowShouldClose' (GLFWWindow*)>
-	^ self externalCallFailed
+	self init ifTrue: [
+		^ self windowShouldClose: window]
 ]
