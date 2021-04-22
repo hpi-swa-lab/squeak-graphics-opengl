@@ -109,12 +109,20 @@ GLLibrary class >> initializeErrorMessages [
 
 {
 	#category : #'class initialization',
-	#'squeak_changestamp' : 'stlu 4/15/2021 10:56'
+	#'squeak_changestamp' : 'stlu 4/22/2021 11:59'
 }
 GLLibrary class >> initializeGL [
 
-	self flag: #todo. "dummy object as default value"
-	Environment current at: #GL put: nil.
+	Environment current at: #GL put: GLInvalidLibrary new.
+]
+
+{
+	#category : #activation,
+	#'squeak_changestamp' : 'stlu 4/22/2021 11:54'
+}
+GLLibrary >> activateContext [
+
+	self context activate
 ]
 
 {
@@ -294,30 +302,28 @@ GLLibrary >> integerStateNamed: enum ofSize: numElements [
 
 {
 	#category : #activation,
-	#'squeak_changestamp' : 'stlu 4/16/2021 09:50'
+	#'squeak_changestamp' : 'stlu 4/22/2021 11:57'
+}
+GLLibrary >> makeCurrent [
+
+	GL == self ifTrue: [^ self].
+	GL context ~~ self context ifTrue: [self activateContext].
+	GL := self
+]
+
+{
+	#category : #activation,
+	#'squeak_changestamp' : 'stlu 4/22/2021 11:41'
 }
 GLLibrary >> makeCurrentDuring: aBlock [
 
-	GL
-		ifNotNil: [:previousLib |
-			| previousContext |
-			self == previousLib ifTrue: [^ aBlock value].
-			(previousContext := previousLib context) == self context
-				ifTrue: [[GL := self. ^ aBlock value] ensure: [GL := previousLib]]
-				ifFalse: [
-					[previousContext deactivate.
-					self context activate.
-					GL := self.
-					^ aBlock value] ensure: [
-						self context deactivate.
-						previousContext activate.
-						GL := previousLib]]]
-		ifNil: [
-			[self context activate.
-			GL := self.
-			^ aBlock value] ensure: [
-				GL := nil.
-				self context deactivate]]
+	| previousLib |
+	previousLib := GL.
+	[
+		self makeCurrent.
+		^ aBlock value.
+	] ensure: [
+		previousLib makeCurrent]
 ]
 
 {
