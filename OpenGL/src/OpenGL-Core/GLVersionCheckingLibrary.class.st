@@ -28,27 +28,39 @@ GLVersionCheckingLibrary class >> around: aLibrary [
 
 {
 	#category : #'instance creation',
-	#'squeak_changestamp' : 'stlu 4/16/2021 17:55'
+	#'squeak_changestamp' : 'stlu 4/22/2021 14:27'
+}
+GLVersionCheckingLibrary class >> around: aLibrary targetExtensions: collectionOfSymbols [
+
+	^ self
+		around: aLibrary
+		targetVersion: nil "allow all versions by default"
+		targetExtensions: collectionOfSymbols
+]
+
+{
+	#category : #'instance creation',
+	#'squeak_changestamp' : 'stlu 4/22/2021 14:26'
 }
 GLVersionCheckingLibrary class >> around: aLibrary targetVersion: aVersion [
 
 	^ self
 		around: aLibrary
 		targetVersion: aVersion
-		targetExtensions: #()
+		targetExtensions: nil "allow all extensions by default"
 ]
 
 {
 	#category : #'instance creation',
-	#'squeak_changestamp' : 'stlu 4/17/2021 10:32'
+	#'squeak_changestamp' : 'stlu 4/22/2021 14:20'
 }
-GLVersionCheckingLibrary class >> around: aLibrary targetVersion: aVersion targetExtensions: collectionOfSymbols [
+GLVersionCheckingLibrary class >> around: aLibrary targetVersion: aVersionOrNil targetExtensions: collectionOfSymbolsOrNil [
 
 	^ self new
 		library: aLibrary;
 		context: aLibrary context;
-		targetVersion: aVersion;
-		targetExtensions: collectionOfSymbols;
+		targetVersion: aVersionOrNil;
+		targetExtensions: collectionOfSymbolsOrNil;
 		yourself
 ]
 
@@ -121,10 +133,11 @@ GLVersionCheckingLibrary >> glAPI: apiSymbol extension: extensionSymbol [
 
 {
 	#category : #'version testing',
-	#'squeak_changestamp' : 'stlu 4/17/2021 10:39'
+	#'squeak_changestamp' : 'stlu 4/22/2021 14:22'
 }
 GLVersionCheckingLibrary >> glAPI: apiSymbol profile: profileSymbol extension: extensionSymbol [
 
+	self targetExtensions ifNil: [^ true].
 	(self targetVersion isAPI: apiSymbol) ifFalse: [^ nil].
 	(self targetVersion matchesProfile: profileSymbol) ifFalse: [^ nil].
 	(self targetExtensions includes: extensionSymbol) ifFalse: [^ nil].
@@ -133,10 +146,11 @@ GLVersionCheckingLibrary >> glAPI: apiSymbol profile: profileSymbol extension: e
 
 {
 	#category : #'version testing',
-	#'squeak_changestamp' : 'stlu 4/17/2021 10:24'
+	#'squeak_changestamp' : 'stlu 4/22/2021 14:24'
 }
 GLVersionCheckingLibrary >> glAPI: apiSymbol profile: profileSymbol since: versionString [
 
+	self targetVersion ifNil: [^ true].
 	(self targetVersion isAPI: apiSymbol) ifFalse: [^ nil].
 	(self targetVersion matchesProfile: profileSymbol) ifFalse: [^ nil].
 	(self targetVersion isBelowVersionString: versionString) ifTrue: [^ nil].
@@ -145,10 +159,11 @@ GLVersionCheckingLibrary >> glAPI: apiSymbol profile: profileSymbol since: versi
 
 {
 	#category : #'version testing',
-	#'squeak_changestamp' : 'stlu 4/17/2021 10:24'
+	#'squeak_changestamp' : 'stlu 4/22/2021 14:22'
 }
 GLVersionCheckingLibrary >> glAPI: apiSymbol profile: profileSymbol until: versionString [
 
+	self targetVersion ifNil: [^ nil].
 	(self targetVersion isAPI: apiSymbol) ifFalse: [^ nil].
 	(self targetVersion matchesProfile: profileSymbol) ifFalse: [^ nil].
 	(self targetVersion isBelowVersionString: versionString) ifTrue: [^ nil].
@@ -245,11 +260,11 @@ GLVersionCheckingLibrary >> targetExtensions [
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 4/16/2021 17:58'
+	#'squeak_changestamp' : 'stlu 4/22/2021 14:21'
 }
-GLVersionCheckingLibrary >> targetExtensions: collectionOfSymbols [
+GLVersionCheckingLibrary >> targetExtensions: collectionOfSymbolsOrNil [
 
-	targetExtensions := collectionOfSymbols asSet
+	targetExtensions := collectionOfSymbolsOrNil ifNotNil: [:c | c asSet]
 ]
 
 {
