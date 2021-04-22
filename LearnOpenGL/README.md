@@ -6,6 +6,9 @@ Original source code and resources can be found here: https://github.com/JoeyDeV
 This is very much work in progress.
 
 ## Installation
+> Requires Squeak trunk
+
+> Requires VM newer than the one bundled with trunk images by default (202003021730) for FloatArrays to work correctly
 
 ```smalltalk
 Metacello new
