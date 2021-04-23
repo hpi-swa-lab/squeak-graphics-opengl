@@ -1,5 +1,5 @@
 # Squeak OpenGL Objects
-Wrappers over OpenGL API objects for [Squeak/Smalltalk].
+Object-oriented interface for [OpenGL] in [Squeak/Smalltalk].
 
 Still very much work in progress.
 
@@ -24,3 +24,4 @@ See [LearnOpenGL] for numerous examples.
 <!-- references -->
 [Squeak/Smalltalk]: https://squeak.org
 [LearnOpenGL]: ../LearnOpenGL
+[OpenGL]: ../OpenGL

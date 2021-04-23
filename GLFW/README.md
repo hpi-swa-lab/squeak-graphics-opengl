@@ -11,7 +11,7 @@ GLFW source repository: https://github.com/glfw/glfw
 
 > Installs very experimental FFICallback implementation. Callbacks currently only work on Linux.
 
-> By default also installs [OpenGL].
+> By default also installs [OpenGL]. Alternatively, you can specify `load: #core` instead of `load` to only install GLFW
 
 ```smalltalk
 Metacello new

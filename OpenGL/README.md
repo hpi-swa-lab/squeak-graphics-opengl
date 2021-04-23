@@ -15,6 +15,8 @@ Metacello new
 	load.
 ```
 
+> **On Windows**: To create contexts via the Squeak3D plugin, make sure your VM is set to support OpenGL instead of D3D by default. To do this, press F2 or go to the system menu, into the "Display and Sound" section and ensure the preference "Use OpenGL (instead of D3D)" is ENABLED.
+
 ## Usage
 The OpenGL graphics library requires a context object for API calls. The following example creates a context through [GLFW].
 
