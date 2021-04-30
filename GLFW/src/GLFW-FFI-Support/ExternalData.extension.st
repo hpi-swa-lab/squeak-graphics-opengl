@@ -22,27 +22,6 @@ ExternalData >> at: index [
 	#category : #'*GLFW-FFI-Support',
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-ExternalData >> blockAt: byteIndex byteSize: numBytes [
-	"Given that the receiver manages a page of memory, answer a block of that memory to use."
-	^ ExternalData
-		fromHandle: handle + (byteIndex - 1)
-		byteSize: numBytes
-]
-
-{
-	#category : #'*GLFW-FFI-Support',
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
-}
-ExternalData class >> fromHandle: aHandle byteSize: byteSize [
-	^ (self fromHandle: aHandle type: ExternalType unsignedByte asPointerType)
-		size: byteSize;
-		yourself
-]
-
-{
-	#category : #'*GLFW-FFI-Support',
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
-}
 ExternalData >> pointerAt: byteOffset [
 
 	^ self pointerAt: byteOffset length: ExternalAddress wordSize
