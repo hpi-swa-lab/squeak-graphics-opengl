@@ -589,16 +589,6 @@ GLLibrary >> profile [
 ]
 
 {
-	#category : #'context state',
-	#'squeak_changestamp' : 'stlu 4/16/2021 09:50'
-}
-GLLibrary >> programs [
-
-	self flag: #todo. "consolidate either into userData or GLObject specific storage"
-	^ self context programs
-]
-
-{
 	#category : #'convencience api',
 	#'squeak_changestamp' : 'stlu 4/15/2021 18:32'
 }

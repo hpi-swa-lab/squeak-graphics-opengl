@@ -15,24 +15,13 @@ GLStaticProgram class >> fragmentShader [
 
 {
 	#category : #'instance creation',
-	#'squeak_changestamp' : 'stlu 12/3/2020 18:58'
+	#'squeak_changestamp' : 'stlu 5/15/2021 16:49'
 }
 GLStaticProgram class >> instance [
 
-	^ GL programs
+	^ self manager staticPrograms
 		at: self
 		ifAbsentPut: [self create]
-]
-
-{
-	#category : #'instance creation',
-	#'squeak_changestamp' : 'stlu 12/8/2020 15:29'
-}
-GLStaticProgram class >> instanceOrNil [
-
-	^ GL programs
-		at: self
-		ifAbsent: [nil]
 ]
 
 {

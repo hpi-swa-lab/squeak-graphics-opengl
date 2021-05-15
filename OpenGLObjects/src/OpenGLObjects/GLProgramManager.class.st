@@ -3,6 +3,7 @@ Class {
 	#superclass : #GLObjectManager,
 	#instVars : [
 		'currentProgram',
+		'staticPrograms',
 		'creationImp',
 		'uniformSetterImp',
 		'interfaceQueryImp'
@@ -48,11 +49,13 @@ GLProgramManager >> currentProgram: anObject [
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 5/15/2021 13:57'
+	#'squeak_changestamp' : 'stlu 5/15/2021 16:47'
 }
 GLProgramManager >> initialize [
 
 	super initialize.
+	staticPrograms := IdentityDictionary new.
+	
 	creationImp := GLProgramCreationImp new.
 	interfaceQueryImp := GLDirectProgramInterfaceQueryImp new.
 	uniformSetterImp := GLUniformDirectStateAccessImp new.
@@ -83,6 +86,24 @@ GLProgramManager >> interfaceQueryImp: anObject [
 GLProgramManager >> isValidID: anInteger [
 
 	^ GL isProgram: anInteger
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 5/15/2021 16:47'
+}
+GLProgramManager >> staticPrograms [
+
+	^ staticPrograms
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 5/15/2021 16:47'
+}
+GLProgramManager >> staticPrograms: anObject [
+
+	staticPrograms := anObject
 ]
 
 {
