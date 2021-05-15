@@ -10,7 +10,6 @@ Class {
 		'objectState',
 		'objectBindings',
 		'objectImps',
-		'objectStore',
 		'programs'
 	],
 	#pools : [
@@ -103,7 +102,7 @@ GLContext >> extensions [
 
 {
 	#category : #'initialize-release',
-	#'squeak_changestamp' : 'stlu 5/11/2021 13:22'
+	#'squeak_changestamp' : 'stlu 5/15/2021 13:13'
 }
 GLContext >> initialize [
 
@@ -114,7 +113,6 @@ GLContext >> initialize [
 	self initializeExtensions.
 	
 	self supportsGLObjects ifTrue: [
-		objectStore := OrderedCollection new.
 		programs := IdentityDictionary new.
 		library makeCurrentDuring: [
 			objectState := GLObjectState context: self.
@@ -226,15 +224,6 @@ GLContext >> objectState [
 GLContext >> programs [
 
 	^ programs
-]
-
-{
-	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 12/3/2020 18:49'
-}
-GLContext >> registerObject: glObject [
-
-	objectStore add: glObject
 ]
 
 {

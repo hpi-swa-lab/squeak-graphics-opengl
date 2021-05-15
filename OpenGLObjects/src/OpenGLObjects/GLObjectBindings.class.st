@@ -8,18 +8,7 @@ Class {
 		'arrayBuffer',
 		'readFrameBuffer',
 		'drawFrameBuffer',
-		'renderBuffer',
-		'arrayTexture1D',
-		'texture1D',
-		'arrayTexture2D',
-		'multisampleArrayTexture2D',
-		'multisampleTexture2D',
-		'texture2D',
-		'texture3D',
-		'bufferTexture',
-		'cubeMapArrayTexture',
-		'cubeMapTexture',
-		'rectangleTexture'
+		'renderBuffer'
 	],
 	#pools : [
 		'GLConstants'
@@ -38,7 +27,7 @@ GLObjectBindings class >> current [
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 3/14/2021 18:18'
+	#'squeak_changestamp' : 'stlu 5/15/2021 13:12'
 }
 GLObjectBindings >> arrayBuffer [
 
@@ -47,7 +36,7 @@ GLObjectBindings >> arrayBuffer [
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 3/14/2021 18:18'
+	#'squeak_changestamp' : 'stlu 5/15/2021 13:12'
 }
 GLObjectBindings >> arrayBuffer: anObject [
 
@@ -56,97 +45,7 @@ GLObjectBindings >> arrayBuffer: anObject [
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 3/14/2021 22:29'
-}
-GLObjectBindings >> arrayTexture1D [
-
-	^ arrayTexture1D
-]
-
-{
-	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 3/14/2021 22:29'
-}
-GLObjectBindings >> arrayTexture1D: anObject [
-
-	arrayTexture1D := anObject
-]
-
-{
-	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 3/14/2021 22:29'
-}
-GLObjectBindings >> arrayTexture2D [
-
-	^ arrayTexture2D
-]
-
-{
-	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 3/14/2021 22:29'
-}
-GLObjectBindings >> arrayTexture2D: anObject [
-
-	arrayTexture2D := anObject
-]
-
-{
-	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 3/14/2021 22:29'
-}
-GLObjectBindings >> bufferTexture [
-
-	^ bufferTexture
-]
-
-{
-	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 3/14/2021 22:29'
-}
-GLObjectBindings >> bufferTexture: anObject [
-
-	bufferTexture := anObject
-]
-
-{
-	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 3/14/2021 22:29'
-}
-GLObjectBindings >> cubeMapArrayTexture [
-
-	^ cubeMapArrayTexture
-]
-
-{
-	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 3/14/2021 22:29'
-}
-GLObjectBindings >> cubeMapArrayTexture: anObject [
-
-	cubeMapArrayTexture := anObject
-]
-
-{
-	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 3/14/2021 22:29'
-}
-GLObjectBindings >> cubeMapTexture [
-
-	^ cubeMapTexture
-]
-
-{
-	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 3/14/2021 22:29'
-}
-GLObjectBindings >> cubeMapTexture: anObject [
-
-	cubeMapTexture := anObject
-]
-
-{
-	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 3/14/2021 18:18'
+	#'squeak_changestamp' : 'stlu 5/15/2021 13:12'
 }
 GLObjectBindings >> dictionary [
 
@@ -155,7 +54,7 @@ GLObjectBindings >> dictionary [
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 3/14/2021 18:18'
+	#'squeak_changestamp' : 'stlu 5/15/2021 13:12'
 }
 GLObjectBindings >> dictionary: anObject [
 
@@ -164,7 +63,7 @@ GLObjectBindings >> dictionary: anObject [
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 3/14/2021 18:28'
+	#'squeak_changestamp' : 'stlu 5/15/2021 13:12'
 }
 GLObjectBindings >> drawFrameBuffer [
 
@@ -173,7 +72,7 @@ GLObjectBindings >> drawFrameBuffer [
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 3/14/2021 18:28'
+	#'squeak_changestamp' : 'stlu 5/15/2021 13:12'
 }
 GLObjectBindings >> drawFrameBuffer: anObject [
 
@@ -191,43 +90,7 @@ GLObjectBindings >> initialize [
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 3/14/2021 22:29'
-}
-GLObjectBindings >> multisampleArrayTexture2D [
-
-	^ multisampleArrayTexture2D
-]
-
-{
-	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 3/14/2021 22:29'
-}
-GLObjectBindings >> multisampleArrayTexture2D: anObject [
-
-	multisampleArrayTexture2D := anObject
-]
-
-{
-	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 3/14/2021 22:29'
-}
-GLObjectBindings >> multisampleTexture2D [
-
-	^ multisampleTexture2D
-]
-
-{
-	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 3/14/2021 22:29'
-}
-GLObjectBindings >> multisampleTexture2D: anObject [
-
-	multisampleTexture2D := anObject
-]
-
-{
-	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 3/14/2021 18:18'
+	#'squeak_changestamp' : 'stlu 5/15/2021 13:12'
 }
 GLObjectBindings >> program [
 
@@ -236,7 +99,7 @@ GLObjectBindings >> program [
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 3/14/2021 18:18'
+	#'squeak_changestamp' : 'stlu 5/15/2021 13:12'
 }
 GLObjectBindings >> program: anObject [
 
@@ -245,7 +108,7 @@ GLObjectBindings >> program: anObject [
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 3/14/2021 18:28'
+	#'squeak_changestamp' : 'stlu 5/15/2021 13:12'
 }
 GLObjectBindings >> readFrameBuffer [
 
@@ -254,7 +117,7 @@ GLObjectBindings >> readFrameBuffer [
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 3/14/2021 18:28'
+	#'squeak_changestamp' : 'stlu 5/15/2021 13:12'
 }
 GLObjectBindings >> readFrameBuffer: anObject [
 
@@ -263,25 +126,7 @@ GLObjectBindings >> readFrameBuffer: anObject [
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 3/14/2021 22:29'
-}
-GLObjectBindings >> rectangleTexture [
-
-	^ rectangleTexture
-]
-
-{
-	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 3/14/2021 22:29'
-}
-GLObjectBindings >> rectangleTexture: anObject [
-
-	rectangleTexture := anObject
-]
-
-{
-	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 3/14/2021 22:21'
+	#'squeak_changestamp' : 'stlu 5/15/2021 13:12'
 }
 GLObjectBindings >> renderBuffer [
 
@@ -290,7 +135,7 @@ GLObjectBindings >> renderBuffer [
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 3/14/2021 22:21'
+	#'squeak_changestamp' : 'stlu 5/15/2021 13:12'
 }
 GLObjectBindings >> renderBuffer: anObject [
 
@@ -299,61 +144,7 @@ GLObjectBindings >> renderBuffer: anObject [
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 3/14/2021 22:29'
-}
-GLObjectBindings >> texture1D [
-
-	^ texture1D
-]
-
-{
-	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 3/14/2021 22:29'
-}
-GLObjectBindings >> texture1D: anObject [
-
-	texture1D := anObject
-]
-
-{
-	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 3/14/2021 22:29'
-}
-GLObjectBindings >> texture2D [
-
-	^ texture2D
-]
-
-{
-	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 3/14/2021 22:29'
-}
-GLObjectBindings >> texture2D: anObject [
-
-	texture2D := anObject
-]
-
-{
-	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 3/14/2021 22:29'
-}
-GLObjectBindings >> texture3D [
-
-	^ texture3D
-]
-
-{
-	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 3/14/2021 22:29'
-}
-GLObjectBindings >> texture3D: anObject [
-
-	texture3D := anObject
-]
-
-{
-	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 3/14/2021 18:18'
+	#'squeak_changestamp' : 'stlu 5/15/2021 13:12'
 }
 GLObjectBindings >> vertexArray [
 
@@ -362,7 +153,7 @@ GLObjectBindings >> vertexArray [
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 3/14/2021 18:18'
+	#'squeak_changestamp' : 'stlu 5/15/2021 13:12'
 }
 GLObjectBindings >> vertexArray: anObject [
 
