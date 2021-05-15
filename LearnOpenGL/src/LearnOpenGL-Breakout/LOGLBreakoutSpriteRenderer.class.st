@@ -5,8 +5,7 @@ Class {
 		'program',
 		'vao'
 	],
-	#category : #'LearnOpenGL-Breakout',
-	#'squeak_changestamp' : ''
+	#category : #'LearnOpenGL-Breakout'
 }
 
 {
@@ -50,7 +49,7 @@ LOGLBreakoutSpriteRenderer >> drawSprite: aTexture position: position extent: ex
 
 {
 	#category : #rendering,
-	#'squeak_changestamp' : 'stlu 3/15/2021 16:19'
+	#'squeak_changestamp' : 'stlu 5/15/2021 02:55'
 }
 LOGLBreakoutSpriteRenderer >> drawSprite: aTexture position: position extent: extent rotation: degrees color: color [
 
@@ -68,7 +67,6 @@ LOGLBreakoutSpriteRenderer >> drawSprite: aTexture position: position extent: ex
 			spriteColor: color;
 			sprite: 0.
 		
-		GL activeTexture: GL TEXTURE0.
 		aTexture bind.
 		vao drawArrays: GL TRIANGLES count: 6]
 ]

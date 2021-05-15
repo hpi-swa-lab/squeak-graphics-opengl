@@ -13,8 +13,7 @@ Class {
 		'rbo',
 		'vao'
 	],
-	#category : #'LearnOpenGL-Breakout',
-	#'squeak_changestamp' : ''
+	#category : #'LearnOpenGL-Breakout'
 }
 
 {
@@ -234,7 +233,7 @@ LOGLBreakoutPostProcessor >> offsets [
 
 {
 	#category : #rendering,
-	#'squeak_changestamp' : 'stlu 3/15/2021 16:19'
+	#'squeak_changestamp' : 'stlu 5/15/2021 02:55'
 }
 LOGLBreakoutPostProcessor >> render: secs [
 
@@ -244,7 +243,6 @@ LOGLBreakoutPostProcessor >> render: secs [
 			confuse: confusion;
 			chaos: chaos;
 			shake: shake.
-		GL activeTexture: GL TEXTURE0.
 		texture boundDuring: [
 			vao drawArrays: GL TRIANGLES count: 6]]
 ]

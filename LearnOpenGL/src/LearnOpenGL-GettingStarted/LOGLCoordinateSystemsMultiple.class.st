@@ -4,8 +4,7 @@
 Class {
 	#name : #LOGLCoordinateSystemsMultiple,
 	#superclass : #LOGLCoordinateSystemsDepth,
-	#category : #'LearnOpenGL-GettingStarted',
-	#'squeak_changestamp' : 'stlu 2/1/2021 13:50'
+	#category : #'LearnOpenGL-GettingStarted'
 }
 
 {

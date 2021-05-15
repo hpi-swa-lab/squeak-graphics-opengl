@@ -8,8 +8,7 @@ Class {
 		'lastCursorPosition',
 		'camera'
 	],
-	#category : #'LearnOpenGL-GettingStarted',
-	#'squeak_changestamp' : 'stlu 2/1/2021 14:24'
+	#category : #'LearnOpenGL-GettingStarted'
 }
 
 {

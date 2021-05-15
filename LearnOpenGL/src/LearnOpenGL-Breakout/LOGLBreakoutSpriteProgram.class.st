@@ -1,8 +1,7 @@
 Class {
 	#name : #LOGLBreakoutSpriteProgram,
 	#superclass : #GLStaticProgram,
-	#category : #'LearnOpenGL-Breakout',
-	#'squeak_changestamp' : ''
+	#category : #'LearnOpenGL-Breakout'
 }
 
 {

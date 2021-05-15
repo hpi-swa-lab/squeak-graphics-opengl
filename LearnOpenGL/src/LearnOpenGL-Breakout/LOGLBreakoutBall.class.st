@@ -7,8 +7,7 @@ Class {
 		'isSticky',
 		'isPassthrough'
 	],
-	#category : #'LearnOpenGL-Breakout',
-	#'squeak_changestamp' : ''
+	#category : #'LearnOpenGL-Breakout'
 }
 
 {

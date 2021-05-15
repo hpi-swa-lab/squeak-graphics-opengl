@@ -15,8 +15,7 @@ Class {
 		'isDestroyed',
 		'sprite'
 	],
-	#category : #'LearnOpenGL-Breakout',
-	#'squeak_changestamp' : 'stlu 1/6/2021 12:08'
+	#category : #'LearnOpenGL-Breakout'
 }
 
 {

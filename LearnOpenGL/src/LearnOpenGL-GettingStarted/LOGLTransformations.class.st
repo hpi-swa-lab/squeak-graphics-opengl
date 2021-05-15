@@ -7,8 +7,7 @@ Class {
 	#instVars : [
 		'texture2'
 	],
-	#category : #'LearnOpenGL-GettingStarted',
-	#'squeak_changestamp' : 'stlu 1/7/2021 11:22'
+	#category : #'LearnOpenGL-GettingStarted'
 }
 
 {
@@ -49,33 +48,22 @@ void main()
 
 {
 	#category : #running,
-	#'squeak_changestamp' : 'stlu 1/29/2021 15:12'
-}
-LOGLTransformations >> render [
-
-	GL activeTexture: GL_TEXTURE1.
-	texture2 bind.
-	
-	super render
-]
-
-{
-	#category : #running,
-	#'squeak_changestamp' : 'stlu 4/16/2021 15:32'
+	#'squeak_changestamp' : 'stlu 5/14/2021 22:34'
 }
 LOGLTransformations >> setUp [
 
 	super setUp.
 	
 	texture2 := GL2DTexture create.
-	texture2 boundDuring: [
-		texture2
-			wrapS: GL_REPEAT;
-			wrapT: GL_REPEAT;
-			minificationFilter: GL_LINEAR;
-			magnificationFilter: GL_LINEAR;
-			imageForm: LOGLImages awesomeface flipVertically;
-			generateMipmap].
+	GLTexture activateTextureImageUnitAt: 1.
+	texture2
+		bindAt: 1;
+		wrapS: GL_REPEAT;
+		wrapT: GL_REPEAT;
+		minificationFilter: GL_LINEAR;
+		magnificationFilter: GL_LINEAR;
+		imageForm: LOGLImages awesomeface flipVertically;
+		generateMipmap.
 	
 	program uniforms
 		texture1: 0;

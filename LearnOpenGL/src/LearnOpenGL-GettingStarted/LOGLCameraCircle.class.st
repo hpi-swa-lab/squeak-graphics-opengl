@@ -4,8 +4,7 @@
 Class {
 	#name : #LOGLCameraCircle,
 	#superclass : #LOGLCoordinateSystemsMultiple,
-	#category : #'LearnOpenGL-GettingStarted',
-	#'squeak_changestamp' : 'stlu 2/1/2021 13:43'
+	#category : #'LearnOpenGL-GettingStarted'
 }
 
 {

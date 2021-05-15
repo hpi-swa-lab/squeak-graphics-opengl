@@ -6,8 +6,7 @@ Class {
 		'duration',
 		'isActivated'
 	],
-	#category : #'LearnOpenGL-Breakout',
-	#'squeak_changestamp' : ''
+	#category : #'LearnOpenGL-Breakout'
 }
 
 {

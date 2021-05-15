@@ -7,8 +7,7 @@ Class {
 	#instVars : [
 		'ebo'
 	],
-	#category : #'LearnOpenGL-GettingStarted',
-	#'squeak_changestamp' : 'stlu 1/4/2021 04:08'
+	#category : #'LearnOpenGL-GettingStarted'
 }
 
 {

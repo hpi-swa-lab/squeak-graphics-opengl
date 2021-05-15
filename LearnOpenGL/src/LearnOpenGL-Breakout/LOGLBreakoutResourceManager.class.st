@@ -4,8 +4,7 @@ Class {
 	#instVars : [
 		'textures'
 	],
-	#category : #'LearnOpenGL-Breakout',
-	#'squeak_changestamp' : ''
+	#category : #'LearnOpenGL-Breakout'
 }
 
 {

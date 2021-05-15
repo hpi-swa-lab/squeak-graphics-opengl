@@ -9,8 +9,7 @@ Class {
 		'vao',
 		'lastUsedParticleIndex'
 	],
-	#category : #'LearnOpenGL-Breakout',
-	#'squeak_changestamp' : ''
+	#category : #'LearnOpenGL-Breakout'
 }
 
 {
@@ -46,7 +45,7 @@ LOGLBreakoutParticleGenerator >> amount: anObject [
 
 {
 	#category : #rendering,
-	#'squeak_changestamp' : 'stlu 3/14/2021 18:05'
+	#'squeak_changestamp' : 'stlu 5/15/2021 02:55'
 }
 LOGLBreakoutParticleGenerator >> draw [
 	"render all particles"
@@ -54,7 +53,6 @@ LOGLBreakoutParticleGenerator >> draw [
 	GL blendFunc: GL SRC_ALPHA with: GL ONE.
 	
 	program useDuring: [
-		GL activeTexture: GL TEXTURE0.
 		texture boundDuring: [
 			vao boundDuring: [
 				particles do: [:particle |

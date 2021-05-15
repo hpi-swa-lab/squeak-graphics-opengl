@@ -10,8 +10,7 @@ Class {
 		'quadVBO',
 		'instanceVBO'
 	],
-	#category : #'LearnOpenGL-Advanced',
-	#'squeak_changestamp' : 'stlu 3/12/2021 20:10'
+	#category : #'LearnOpenGL-Advanced'
 }
 
 {

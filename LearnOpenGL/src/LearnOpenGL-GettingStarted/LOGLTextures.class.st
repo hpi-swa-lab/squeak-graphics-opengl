@@ -7,8 +7,7 @@ Class {
 	#instVars : [
 		'texture'
 	],
-	#category : #'LearnOpenGL-GettingStarted',
-	#'squeak_changestamp' : 'stlu 1/4/2021 04:37'
+	#category : #'LearnOpenGL-GettingStarted'
 }
 
 {
@@ -39,33 +38,22 @@ LOGLTextures >> isWireframe [
 ]
 
 {
-	#category : #rendering,
-	#'squeak_changestamp' : 'stlu 1/7/2021 11:29'
-}
-LOGLTextures >> render [
-
-	GL activeTexture: GL_TEXTURE0.
-	texture boundDuring: [
-		super render]
-]
-
-{
 	#category : #running,
-	#'squeak_changestamp' : 'stlu 4/16/2021 15:30'
+	#'squeak_changestamp' : 'stlu 5/14/2021 21:55'
 }
 LOGLTextures >> setUp [
 
 	super setUp.
 	
 	texture := GL2DTexture create.
-	texture boundDuring: [
-		texture
-			wrapS: GL_REPEAT;
-			wrapT: GL_REPEAT;
-			minificationFilter: GL_LINEAR;
-			magnificationFilter: GL_LINEAR;
-			imageForm: LOGLImages container flipVertically;
-			generateMipmap].
+	texture
+		bindAt: 0;
+		wrapS: GL_REPEAT;
+		wrapT: GL_REPEAT;
+		minificationFilter: GL_LINEAR;
+		magnificationFilter: GL_LINEAR;
+		imageForm: LOGLImages container flipVertically;
+		generateMipmap.
 	
 	vao boundDuring: [
 		(vao vertexBufferBindingAt: 0) buffer: vbo stride: 5 * 4.

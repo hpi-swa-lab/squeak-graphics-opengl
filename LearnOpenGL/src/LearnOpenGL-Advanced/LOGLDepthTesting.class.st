@@ -14,8 +14,7 @@ Class {
 		'cubeTexture',
 		'planeTexture'
 	],
-	#category : #'LearnOpenGL-Advanced',
-	#'squeak_changestamp' : 'stlu 3/13/2021 00:47'
+	#category : #'LearnOpenGL-Advanced'
 }
 
 {
@@ -107,7 +106,7 @@ LOGLDepthTesting >> planeVertices [
 
 {
 	#category : #running,
-	#'squeak_changestamp' : 'stlu 4/15/2021 12:10'
+	#'squeak_changestamp' : 'stlu 5/15/2021 02:52'
 }
 LOGLDepthTesting >> render [
 
@@ -118,8 +117,6 @@ LOGLDepthTesting >> render [
 		program uniforms
 			projection: self projectionMatrix;
 			view: camera viewMatrix.
-		self flag: #todo. "texture binding points"
-		GL activeTexture: GL_TEXTURE0.
 		vao boundDuring: [
 			(vao vertexBufferBindingAt: 0) buffer: cubeVBO.
 			cubeTexture bind.

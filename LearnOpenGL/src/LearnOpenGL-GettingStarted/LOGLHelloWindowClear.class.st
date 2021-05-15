@@ -4,8 +4,7 @@
 Class {
 	#name : #LOGLHelloWindowClear,
 	#superclass : #LOGLHelloWindow,
-	#category : #'LearnOpenGL-GettingStarted',
-	#'squeak_changestamp' : 'stlu 12/14/2020 15:50'
+	#category : #'LearnOpenGL-GettingStarted'
 }
 
 {
