@@ -10,15 +10,6 @@ Class {
 }
 
 {
-	#category : #allocation,
-	#'squeak_changestamp' : 'stlu 11/30/2020 19:47'
-}
-GLBuffer class >> allocate: n in: anIntegerArray [
-
-	GL genBuffers: n with: anIntegerArray
-]
-
-{
 	#category : #binding,
 	#'squeak_changestamp' : 'stlu 3/15/2021 13:06'
 }
@@ -28,12 +19,56 @@ GLBuffer class >> boundTo: targetEnum [
 ]
 
 {
+	#category : #'instance creation',
+	#'squeak_changestamp' : 'stlu 4/26/2021 12:25'
+}
+GLBuffer class >> create: count [
+
+	| manager |
+	manager := self manager.
+	^ self
+		manager: manager
+		ids: (manager creationImp createBufferIDs: count)
+]
+
+{
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/30/2020 18:58'
 }
 GLBuffer class >> defaultTarget [
 
 	^ GL_ARRAY_BUFFER
+]
+
+{
+	#category : #'instance creation',
+	#'squeak_changestamp' : 'stlu 4/26/2021 12:28'
+}
+GLBuffer class >> generate [
+
+	^ (self generate: 1) first
+]
+
+{
+	#category : #'instance creation',
+	#'squeak_changestamp' : 'stlu 4/26/2021 12:18'
+}
+GLBuffer class >> generate: count [
+
+	| manager |
+	manager := self manager.
+	^ self
+		manager: manager
+		ids: (manager creationImp generateBufferIDs: count)
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 4/26/2021 12:02'
+}
+GLBuffer class >> manager [
+
+	^ GL objectState bufferManager
 ]
 
 {
@@ -165,15 +200,6 @@ GLBuffer >> initialize [
 GLBuffer >> invalidate [
 
 	self stateAccess invalidateData: self
-]
-
-{
-	#category : #testing,
-	#'squeak_changestamp' : 'stlu 12/14/2020 12:11'
-}
-GLBuffer >> isAllocated [
-
-	^ GL isBuffer: id
 ]
 
 {

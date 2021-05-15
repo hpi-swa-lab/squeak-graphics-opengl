@@ -7,6 +7,7 @@ Class {
 		'extensions',
 		'userData',
 		'isDestroyed',
+		'objectState',
 		'objectBindings',
 		'objectImps',
 		'objectStore',
@@ -102,7 +103,7 @@ GLContext >> extensions [
 
 {
 	#category : #'initialize-release',
-	#'squeak_changestamp' : 'stlu 4/20/2021 12:30'
+	#'squeak_changestamp' : 'stlu 5/11/2021 13:22'
 }
 GLContext >> initialize [
 
@@ -115,7 +116,9 @@ GLContext >> initialize [
 	self supportsGLObjects ifTrue: [
 		objectStore := OrderedCollection new.
 		programs := IdentityDictionary new.
-		self initializeObjectBindings.
+		library makeCurrentDuring: [
+			objectState := GLObjectState context: self.
+			self initializeObjectBindings].
 		self initializeObjectImps]
 ]
 
@@ -205,6 +208,15 @@ GLContext >> objectBindings [
 GLContext >> objectImps [
 
 	^ objectImps
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 4/25/2021 14:21'
+}
+GLContext >> objectState [
+
+	^ objectState
 ]
 
 {

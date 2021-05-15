@@ -5,12 +5,47 @@ Class {
 }
 
 {
-	#category : #allocation,
-	#'squeak_changestamp' : 'stlu 11/30/2020 19:54'
+	#category : #'instance creation',
+	#'squeak_changestamp' : 'stlu 4/26/2021 13:15'
 }
-GLTexture class >> allocate: n in: anIntegerArray [
+GLTexture class >> create: count [
 
-	GL genTextures: n with: anIntegerArray
+	| manager |
+	manager := self manager.
+	^ self
+		manager: manager
+		ids: (manager creationImp createTextureIDs: count target: self target)
+]
+
+{
+	#category : #'instance creation',
+	#'squeak_changestamp' : 'stlu 4/26/2021 13:11'
+}
+GLTexture class >> generate [
+
+	^ (self generate: 1) first
+]
+
+{
+	#category : #'instance creation',
+	#'squeak_changestamp' : 'stlu 4/26/2021 13:11'
+}
+GLTexture class >> generate: count [
+
+	| manager |
+	manager := self manager.
+	^ self
+		manager: manager
+		ids: (manager creationImp generateTextureIDs: count)
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 4/26/2021 13:16'
+}
+GLTexture class >> manager [
+
+	^ GL objectState textureManager
 ]
 
 {
@@ -18,6 +53,15 @@ GLTexture class >> allocate: n in: anIntegerArray [
 	#'squeak_changestamp' : 'stlu 3/15/2021 11:46'
 }
 GLTexture class >> privateSetBinding: aTexture [
+
+	self subclassResponsibility
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 4/26/2021 13:12'
+}
+GLTexture class >> target [
 
 	self subclassResponsibility
 ]
@@ -448,11 +492,11 @@ GLTexture >> minificationFilter: enum [
 
 {
 	#category : #imps,
-	#'squeak_changestamp' : 'stlu 1/4/2021 10:12'
+	#'squeak_changestamp' : 'stlu 5/11/2021 13:00'
 }
 GLTexture >> stateAccessImp [
 
-	^ GLTextureDirectStateAccessImp new
+	^ self manager stateAccessImp
 ]
 
 {

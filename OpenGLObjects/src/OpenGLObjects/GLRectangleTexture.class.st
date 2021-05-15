@@ -5,21 +5,21 @@ Class {
 }
 
 {
-	#category : #binding,
-	#'squeak_changestamp' : 'stlu 3/14/2021 22:39'
+	#category : #private,
+	#'squeak_changestamp' : 'stlu 5/14/2021 14:04'
 }
-GLRectangleTexture class >> bound [
+GLRectangleTexture class >> privateGetBindingIn: aTextureImageUnit [
 
-	^ GLObjectBindings current rectangleTexture
+	^ aTextureImageUnit rectangleTexture
 ]
 
 {
 	#category : #private,
-	#'squeak_changestamp' : 'stlu 3/15/2021 11:51'
+	#'squeak_changestamp' : 'stlu 5/14/2021 13:58'
 }
-GLRectangleTexture class >> privateSetBinding: aTexture [
+GLRectangleTexture class >> privateSetBindingIn: aTextureImageUnit to: aTexture [
 
-	GLObjectBindings current rectangleTexture: aTexture.
+	aTextureImageUnit rectangleTexture: aTexture.
 ]
 
 {

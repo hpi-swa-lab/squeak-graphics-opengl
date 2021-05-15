@@ -571,6 +571,15 @@ GLLibrary >> numExtensions [
 ]
 
 {
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 4/25/2021 14:22'
+}
+GLLibrary >> objectState [
+
+	^ self context objectState
+]
+
+{
 	#category : #'convencience api',
 	#'squeak_changestamp' : 'stlu 4/16/2021 14:12'
 }
@@ -766,12 +775,12 @@ GLLibrary >> withVersionChecking: targetVersion [
 
 {
 	#category : #converting,
-	#'squeak_changestamp' : 'stlu 4/17/2021 10:42'
+	#'squeak_changestamp' : 'stlu 4/23/2021 14:28'
 }
-GLLibrary >> withVersionChecking: targetVersion extensions: collectionOfSymbols [
+GLLibrary >> withVersionChecking: targetVersionOrNil extensions: collectionOfSymbolsOrNil [
 
 	^ GLVersionCheckingLibrary
 		around: self
-		targetVersion: targetVersion
-		targetExtensions: collectionOfSymbols
+		targetVersion: targetVersionOrNil
+		targetExtensions: collectionOfSymbolsOrNil
 ]

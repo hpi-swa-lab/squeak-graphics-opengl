@@ -9,25 +9,6 @@ Class {
 }
 
 {
-	#category : #allocation,
-	#'squeak_changestamp' : 'stlu 11/3/2020 15:40'
-}
-GLShader class >> allocate [
-
-	^ GL createShader: self type
-]
-
-{
-	#category : #allocation,
-	#'squeak_changestamp' : 'stlu 11/30/2020 19:53'
-}
-GLShader class >> allocate: n in: anIntegerArray [
-
-	1 to: n do: [:i |
-		anIntegerArray at: i put: self allocate]
-]
-
-{
 	#category : #'instance creation',
 	#'squeak_changestamp' : 'stlu 2/8/2021 12:35'
 }
@@ -36,6 +17,28 @@ GLShader class >> associatedMethod: aMethodReference [
 	^ self create
 		associatedMethod: aMethodReference;
 		yourself
+]
+
+{
+	#category : #'instance creation',
+	#'squeak_changestamp' : 'stlu 4/26/2021 12:58'
+}
+GLShader class >> create [
+
+	| manager |
+	manager := self manager.
+	^ self
+		manager: manager
+		id: (manager creationImp createShaderID: self type)
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 4/26/2021 12:57'
+}
+GLShader class >> manager [
+
+	^ GL objectState shaderManager
 ]
 
 {
@@ -226,15 +229,6 @@ GLShader >> initialize [
 
 	super initialize.
 	source := ''
-]
-
-{
-	#category : #testing,
-	#'squeak_changestamp' : 'stlu 12/14/2020 12:12'
-}
-GLShader >> isAllocated [
-
-	^ GL isShader: id
 ]
 
 {

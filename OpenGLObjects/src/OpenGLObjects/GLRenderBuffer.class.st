@@ -5,21 +5,56 @@ Class {
 }
 
 {
-	#category : #allocation,
-	#'squeak_changestamp' : 'stlu 1/8/2021 18:10'
-}
-GLRenderBuffer class >> allocate: n in: anIntegerArray [
-
-	GL genRenderbuffers: n with: anIntegerArray
-]
-
-{
 	#category : #binding,
 	#'squeak_changestamp' : 'stlu 3/14/2021 22:22'
 }
 GLRenderBuffer class >> bound [
 
 	^ GLObjectBindings current renderBuffer
+]
+
+{
+	#category : #'instance creation',
+	#'squeak_changestamp' : 'stlu 4/26/2021 12:48'
+}
+GLRenderBuffer class >> create: count [
+
+	| manager |
+	manager := self manager.
+	^ self
+		manager: manager
+		ids: (manager creationImp createRenderBufferIDs: count)
+]
+
+{
+	#category : #'instance creation',
+	#'squeak_changestamp' : 'stlu 4/26/2021 12:48'
+}
+GLRenderBuffer class >> generate [
+
+	^ (self generate: 1) first
+]
+
+{
+	#category : #'instance creation',
+	#'squeak_changestamp' : 'stlu 4/26/2021 12:48'
+}
+GLRenderBuffer class >> generate: count [
+
+	| manager |
+	manager := self manager.
+	^ self
+		manager: manager
+		ids: (manager creationImp generateRenderBufferIDs: count)
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 4/26/2021 12:49'
+}
+GLRenderBuffer class >> manager [
+
+	^ GL objectState renderBufferManager
 ]
 
 {

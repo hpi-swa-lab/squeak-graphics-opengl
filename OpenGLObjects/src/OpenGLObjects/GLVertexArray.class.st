@@ -28,6 +28,50 @@ GLVertexArray class >> bound [
 ]
 
 {
+	#category : #'instance creation',
+	#'squeak_changestamp' : 'stlu 4/26/2021 12:53'
+}
+GLVertexArray class >> create: count [
+
+	| manager |
+	manager := self manager.
+	^ self
+		manager: manager
+		ids: (manager creationImp createVertexArrayIDs: count)
+]
+
+{
+	#category : #'instance creation',
+	#'squeak_changestamp' : 'stlu 4/26/2021 12:54'
+}
+GLVertexArray class >> generate [
+
+	^ (self generate: 1) first
+]
+
+{
+	#category : #'instance creation',
+	#'squeak_changestamp' : 'stlu 4/26/2021 12:53'
+}
+GLVertexArray class >> generate: count [
+
+	| manager |
+	manager := self manager.
+	^ self
+		manager: manager
+		ids: (manager creationImp generateVertexArrayIDs: count)
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 4/26/2021 12:50'
+}
+GLVertexArray class >> manager [
+
+	^ GL objectState vertexArrayManager
+]
+
+{
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 3/17/2021 11:30'
 }
@@ -234,15 +278,6 @@ GLVertexArray >> initialize [
 	vertexBufferBindings := Array new: self class maxNumVertexBufferBindings.
 	1 to: vertexBufferBindings size do: [:i |
 		vertexBufferBindings at: i put: (GLVertexBufferBinding vertexArray: self location: i - 1)]
-]
-
-{
-	#category : #testing,
-	#'squeak_changestamp' : 'stlu 12/14/2020 12:13'
-}
-GLVertexArray >> isAllocated [
-
-	^ GL isVertexArray: id
 ]
 
 {

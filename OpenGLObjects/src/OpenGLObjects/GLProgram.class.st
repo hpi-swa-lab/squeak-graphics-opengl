@@ -9,31 +9,34 @@ Class {
 }
 
 {
-	#category : #allocation,
-	#'squeak_changestamp' : 'stlu 11/3/2020 15:38'
-}
-GLProgram class >> allocate [
-
-	^ GL createProgram
-]
-
-{
-	#category : #allocation,
-	#'squeak_changestamp' : 'stlu 11/30/2020 19:52'
-}
-GLProgram class >> allocate: n in: anIntegerArray [
-
-	1 to: n do: [:i |
-		anIntegerArray at: i put: self allocate]
-]
-
-{
 	#category : #binding,
 	#'squeak_changestamp' : 'stlu 3/14/2021 19:50'
 }
 GLProgram class >> bound [
 
 	^ GLObjectBindings current program
+]
+
+{
+	#category : #'instance creation',
+	#'squeak_changestamp' : 'stlu 4/26/2021 12:32'
+}
+GLProgram class >> create [
+
+	| manager |
+	manager := self manager.
+	^ self
+		manager: manager
+		id: (manager creationImp createProgramID)
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 4/25/2021 23:01'
+}
+GLProgram class >> manager [
+
+	^ GL objectState programManager
 ]
 
 {
@@ -274,15 +277,6 @@ GLProgram >> inputs [
 
 {
 	#category : #testing,
-	#'squeak_changestamp' : 'stlu 12/14/2020 12:12'
-}
-GLProgram >> isAllocated [
-
-	^ GL isProgram: id
-]
-
-{
-	#category : #testing,
 	#'squeak_changestamp' : 'stlu 10/27/2020 12:17'
 }
 GLProgram >> isFlaggedForDeletion [
@@ -391,11 +385,13 @@ GLProgram >> useDuring: aBlock [
 
 {
 	#category : #actions,
-	#'squeak_changestamp' : 'stlu 12/14/2020 12:17'
+	#'squeak_changestamp' : 'stlu 5/11/2021 12:56'
 }
 GLProgram >> validate [
 
-	self isAllocated ifFalse: [^ false].
+	self hasValidID ifFalse: [
+		self notify: 'ID does not correspond to a program object'.
+		^ false].
 	self isValid ifFalse: [
 		self notify: self getInfoLog.
 		^ false].

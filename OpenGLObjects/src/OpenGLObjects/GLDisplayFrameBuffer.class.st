@@ -45,9 +45,9 @@ GLDisplayFrameBuffer class >> initializeBindings [
 
 {
 	#category : #testing,
-	#'squeak_changestamp' : 'stlu 12/14/2020 12:15'
+	#'squeak_changestamp' : 'stlu 5/11/2021 12:57'
 }
-GLDisplayFrameBuffer >> isAllocated [
+GLDisplayFrameBuffer >> hasValidID [
 
 	^ false
 ]

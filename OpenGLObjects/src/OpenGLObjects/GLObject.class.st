@@ -16,7 +16,7 @@ Class {
 	#name : #GLObject,
 	#superclass : #Object,
 	#instVars : [
-		'context',
+		'manager',
 		'id'
 	],
 	#pools : [
@@ -26,53 +26,63 @@ Class {
 }
 
 {
-	#category : #allocation,
-	#'squeak_changestamp' : 'stlu 12/1/2020 02:57'
+	#category : #'instance creation',
+	#'squeak_changestamp' : 'stlu 5/11/2021 12:39'
 }
-GLObject class >> allocate [
-	"Allocates an object with OpenGL. Returns the allocated object's id."
-	^ (self allocate: 1) first
+GLObject class >> create [
+	"Subclasses need to override either #create or #create:"
+	^ (self create: 1) first
 ]
 
 {
-	#category : #allocation,
-	#'squeak_changestamp' : 'stlu 11/30/2020 19:45'
+	#category : #'instance creation',
+	#'squeak_changestamp' : 'stlu 5/11/2021 12:43'
 }
-GLObject class >> allocate: n [
-	"Allocates n objects with OpenGL. Returns an array of the ids of the allocated objects."
-	| array |
-	array := IntegerArray new: n.
-	self allocate: n in: array.
-	^ array
+GLObject class >> create: count [
+	"Subclasses need to override either #create or #create:"
+	| objects |
+	objects := Array new: count.
+	1 to: count do: [:index |
+		objects at: index put: self create].
+	^ objects
 ]
 
 {
-	#category : #allocation,
-	#'squeak_changestamp' : 'stlu 11/30/2020 19:44'
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 4/26/2021 12:13'
 }
-GLObject class >> allocate: n in: anIntegerArray [
-	"Allocates n objects with OpenGL. Stores the allocated objects' ids in anIntegerArray."
+GLObject class >> manager [
+
 	self subclassResponsibility
 ]
 
 {
 	#category : #'instance creation',
-	#'squeak_changestamp' : 'stlu 10/29/2020 01:25'
+	#'squeak_changestamp' : 'stlu 5/14/2021 16:45'
 }
-GLObject class >> create [
+GLObject class >> manager: aManager id: anInteger [
 
-	^ (self id: self allocate) register
+	^ self basicNew
+		manager: aManager;
+		id: anInteger;
+		initialize;
+		register;
+		yourself
 ]
 
 {
 	#category : #'instance creation',
-	#'squeak_changestamp' : 'stlu 10/29/2020 01:25'
+	#'squeak_changestamp' : 'stlu 4/26/2021 12:16'
 }
-GLObject class >> id: anInteger [
+GLObject class >> manager: aManager ids: integerArray [
 
-	^ self basicNew
-		id: anInteger;
-		initialize
+	| instances |
+	instances := Array new: integerArray size.
+	1 to: instances size do: [:index |
+		instances
+			at: index
+			put: (self manager: aManager id: (integerArray at: index))].
+	^ instances
 ]
 
 {
@@ -85,43 +95,25 @@ GLObject class >> new [
 ]
 
 {
-	#category : #converting,
-	#'squeak_changestamp' : 'stlu 10/29/2020 12:10'
-}
-GLObject class >> newFrom: glObject [
-
-	^ self id: glObject id
-]
-
-{
 	#category : #comparing,
-	#'squeak_changestamp' : 'stlu 12/3/2020 16:01'
+	#'squeak_changestamp' : 'stlu 5/15/2021 03:06'
 }
 GLObject >> = otherObject [
 
 	self == otherObject ifTrue: [^ true].
 	id = otherObject id ifFalse: [^ false].
 	self class = otherObject class ifFalse: [^ false].
-	context = otherObject context ifFalse: [^ false].
+	self context = otherObject context ifFalse: [^ false].
 	^ true
 ]
 
 {
-	#category : #'initialize-release',
-	#'squeak_changestamp' : 'stlu 10/26/2020 12:11'
-}
-GLObject >> cleanUp [
-
-	id := -1 "Obviously invalid"
-]
-
-{
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 10/29/2020 01:33'
+	#'squeak_changestamp' : 'stlu 5/11/2021 12:00'
 }
 GLObject >> context [
 
-	^ context
+	^ self manager context
 ]
 
 {
@@ -134,12 +126,21 @@ GLObject >> delete [
 ]
 
 {
+	#category : #testing,
+	#'squeak_changestamp' : 'stlu 5/15/2021 03:07'
+}
+GLObject >> hasValidID [
+
+	^ self manager isValidID: id
+]
+
+{
 	#category : #comparing,
-	#'squeak_changestamp' : 'stlu 12/3/2020 16:06'
+	#'squeak_changestamp' : 'stlu 5/15/2021 03:07'
 }
 GLObject >> hash [
 
-	^ (id hash bitXor: context hash) bitXor: self class hash
+	^ (id hash bitXor: self context hash) bitXor: self class hash
 ]
 
 {
@@ -158,42 +159,6 @@ GLObject >> id [
 GLObject >> id: anInteger [
 
 	id := anInteger
-]
-
-{
-	#category : #'initialize-release',
-	#'squeak_changestamp' : 'stlu 10/26/2020 12:08'
-}
-GLObject >> initialize [
-
-	context := GL context
-]
-
-{
-	#category : #testing,
-	#'squeak_changestamp' : 'stlu 12/14/2020 12:10'
-}
-GLObject >> isAllocated [
-
-	self subclassResponsibility
-]
-
-{
-	#category : #testing,
-	#'squeak_changestamp' : 'stlu 1/9/2021 14:40'
-}
-GLObject >> isBound [
-
-	^ self isBoundTo: self target
-]
-
-{
-	#category : #testing,
-	#'squeak_changestamp' : 'stlu 1/9/2021 14:41'
-}
-GLObject >> isBoundTo: targetEnum [
-
-	^ self = (self class boundTo: targetEnum)
 ]
 
 {
@@ -252,11 +217,29 @@ GLObject >> isVertexArray [
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 10/26/2020 12:08'
+	#'squeak_changestamp' : 'stlu 5/11/2021 11:54'
 }
 GLObject >> library [
 
-	^ context library
+	^ self context library
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 4/25/2021 22:36'
+}
+GLObject >> manager [
+
+	^ manager
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 4/25/2021 22:36'
+}
+GLObject >> manager: anObject [
+
+	manager := anObject
 ]
 
 {
@@ -273,10 +256,9 @@ GLObject >> printOn: aStream [
 
 {
 	#category : #'initialize-release',
-	#'squeak_changestamp' : 'stlu 4/15/2021 11:58'
+	#'squeak_changestamp' : 'stlu 5/14/2021 16:46'
 }
 GLObject >> register [
 
-	self flag: #todo. "GLObjectStore current"
-	GL context registerObject: self
+	manager register: self
 ]

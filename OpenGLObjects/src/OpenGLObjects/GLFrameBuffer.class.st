@@ -24,15 +24,6 @@ Class {
 }
 
 {
-	#category : #allocation,
-	#'squeak_changestamp' : 'stlu 11/30/2020 19:49'
-}
-GLFrameBuffer class >> allocate: n in: anIntegerArray [
-
-	GL genFramebuffers: n with: anIntegerArray
-]
-
-{
 	#category : #binding,
 	#'squeak_changestamp' : 'stlu 3/14/2021 18:37'
 }
@@ -48,6 +39,19 @@ GLFrameBuffer class >> boundToDraw [
 GLFrameBuffer class >> boundToRead [
 
 	^ GLObjectBindings current readFrameBuffer
+]
+
+{
+	#category : #'instance creation',
+	#'squeak_changestamp' : 'stlu 4/26/2021 12:42'
+}
+GLFrameBuffer class >> create: count [
+
+	| manager |
+	manager := self manager.
+	^ self
+		manager: manager
+		ids: (manager creationImp createFrameBufferIDs: count)
 ]
 
 {
@@ -69,6 +73,28 @@ GLFrameBuffer class >> display [
 ]
 
 {
+	#category : #'instance creation',
+	#'squeak_changestamp' : 'stlu 4/26/2021 12:40'
+}
+GLFrameBuffer class >> generate [
+
+	^ (self generate: 1) first
+]
+
+{
+	#category : #'instance creation',
+	#'squeak_changestamp' : 'stlu 4/26/2021 12:40'
+}
+GLFrameBuffer class >> generate: count [
+
+	| manager |
+	manager := self manager.
+	^ self
+		manager: manager
+		ids: (manager creationImp generateFrameBufferIDs: count)
+]
+
+{
 	#category : #'class initialization',
 	#'squeak_changestamp' : 'stlu 1/9/2021 13:46'
 }
@@ -84,6 +110,15 @@ GLFrameBuffer class >> initialize [
 		GL_FRAMEBUFFER_INCOMPLETE_MULTISAMPLE -> 'Incomplete multisample. Either the value of GL_RENDERBUFFER_SAMPLES is not the same for all attached renderbuffers; or the value of GL_TEXTURE_SAMPLES is the not same for all attached textures; or, if the attached images are a mix of renderbuffers and textures, the value of GL_RENDERBUFFER_SAMPLES does not match the value of GL_TEXTURE_SAMPLES; or if the value of GL_TEXTURE_FIXED_SAMPLE_LOCATIONS is not the same for all attached textures; or, if the attached images are a mix of renderbuffers and textures, the value of GL_TEXTURE_FIXED_SAMPLE_LOCATIONS is not GL_TRUE for all attached textures.'.
 		GL_FRAMEBUFFER_INCOMPLETE_LAYER_TARGETS -> 'Incomplete layer targets. One of the framebuffer attachment is layered, and one of the populated attachments is not layered, or all populated color attachments are not from textures of the same target.'.
 	} as: Dictionary
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 4/26/2021 12:43'
+}
+GLFrameBuffer class >> manager [
+
+	^ GL objectState frameBufferManager
 ]
 
 {
@@ -459,15 +494,6 @@ GLFrameBuffer >> completionStatusFor: targetEnum [
 GLFrameBuffer >> delete [
 	
 	GL deleteFramebuffers: 1 with: (IntegerArray with: id).
-]
-
-{
-	#category : #testing,
-	#'squeak_changestamp' : 'stlu 12/14/2020 12:12'
-}
-GLFrameBuffer >> isAllocated [
-
-	^ GL isFramebuffer: id
 ]
 
 {

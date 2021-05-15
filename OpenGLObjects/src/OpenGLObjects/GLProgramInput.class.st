@@ -56,7 +56,7 @@ GLProgramInput >> buffer: aBuffer offset: byteOffset stride: byteStride componen
 
 {
 	#category : #configuration,
-	#'squeak_changestamp' : 'stlu 12/22/2020 14:42'
+	#'squeak_changestamp' : 'stlu 5/15/2021 02:57'
 }
 GLProgramInput >> components: numComponents stride: byteStride offset: byteOffset [
 
@@ -68,7 +68,7 @@ GLProgramInput >> components: numComponents stride: byteStride offset: byteOffse
 		with: type componentType enum
 		with: false "normalized? -> how to make this configurable?"
 		with: byteStride
-		with: (ExternalAddress new fromInteger: byteOffset)
+		with: (ExternalAddress fromInteger: byteOffset)
 ]
 
 {
