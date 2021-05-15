@@ -649,14 +649,14 @@ GLLibrary >> stringStateNamed: enum [
 
 {
 	#category : #'state access',
-	#'squeak_changestamp' : 'stlu 4/15/2021 11:51'
+	#'squeak_changestamp' : 'stlu 5/14/2021 22:04'
 }
 GLLibrary >> stringStateNamed: enum at: index [
 
 	| data |
 	data := self getStringi: enum with: index.
 	data isNull ifTrue: [^ self checkForError].
-	^ (data asType: ExternalType string) fromCString
+	^ (data asType: ExternalType char) fromCString
 ]
 
 {
