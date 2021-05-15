@@ -5,42 +5,46 @@ Class {
 }
 
 {
-	#category : #allocation,
-	#'squeak_changestamp' : 'stlu 11/30/2020 19:50'
-}
-GLDisplayFrameBuffer class >> allocate [
-
-	^ 0
-]
-
-{
-	#category : #allocation,
-	#'squeak_changestamp' : 'stlu 11/30/2020 19:51'
-}
-GLDisplayFrameBuffer class >> allocate: n in: anIntegerArray [
-
-	anIntegerArray atAllPut: 0
-]
-
-{
 	#category : #'instance creation',
-	#'squeak_changestamp' : 'stlu 12/3/2020 19:28'
+	#'squeak_changestamp' : 'stlu 5/15/2021 14:29'
 }
 GLDisplayFrameBuffer class >> create [
 
-	^ GL userData at: self ifAbsentPut: [super create]
+	self shouldNotImplement
 ]
 
 {
 	#category : #binding,
-	#'squeak_changestamp' : 'stlu 4/15/2021 11:37'
+	#'squeak_changestamp' : 'stlu 5/15/2021 14:29'
 }
 GLDisplayFrameBuffer class >> initializeBindings [
 
 	| display |
-	display := self create.
+	display := self instance.
 	GLObjectBindings current drawFrameBuffer: display.
 	GLObjectBindings current readFrameBuffer: display.
+]
+
+{
+	#category : #'instance creation',
+	#'squeak_changestamp' : 'stlu 5/15/2021 14:27'
+}
+GLDisplayFrameBuffer class >> instance [
+
+	^ GL userData
+		at: self
+		ifAbsentPut: [self newInstance]
+]
+
+{
+	#category : #'instance creation',
+	#'squeak_changestamp' : 'stlu 5/15/2021 14:27'
+}
+GLDisplayFrameBuffer class >> newInstance [
+
+	^ self
+		manager: self manager
+		id: 0
 ]
 
 {
@@ -50,4 +54,13 @@ GLDisplayFrameBuffer class >> initializeBindings [
 GLDisplayFrameBuffer >> hasValidID [
 
 	^ false
+]
+
+{
+	#category : #initialization,
+	#'squeak_changestamp' : 'stlu 5/15/2021 14:28'
+}
+GLDisplayFrameBuffer >> register [
+
+	"do nothing"
 ]

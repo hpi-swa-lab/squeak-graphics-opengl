@@ -6,6 +6,15 @@ Class {
 
 {
 	#category : #'shader code',
+	#'squeak_changestamp' : 'stlu 5/15/2021 14:20'
+}
+LOGLBreakoutPostProcessingProgram class >> fragmentShader [
+
+	^ self glslFragmentShader
+]
+
+{
+	#category : #'shader code',
 	#'squeak_changestamp' : 'stlu 3/6/2021 15:03'
 }
 LOGLBreakoutPostProcessingProgram class >> fragmentShader: out inputs: in uniforms: u [
@@ -35,7 +44,7 @@ LOGLBreakoutPostProcessingProgram class >> fragmentShader: out inputs: in unifor
 
 {
 	#category : #'shader code',
-	#'squeak_changestamp' : 'stlu 1/10/2021 00:38'
+	#'squeak_changestamp' : 'stlu 5/15/2021 14:23'
 }
 LOGLBreakoutPostProcessingProgram class >> glslFragmentShader [
 
@@ -44,9 +53,9 @@ in vec2 TexCoords;
 out vec4 color;
 
 uniform sampler2D scene;
-uniform vec2  offsets[9];
-uniform int     edge_kernel[9];
-uniform float  blur_kernel[9];
+uniform vec2 offsets[9];
+uniform int edgeKernel[9];
+uniform float blurKernel[9];
 
 uniform bool chaos;
 uniform bool confuse;
@@ -67,7 +76,7 @@ void main()
     if(chaos)
     {           
         for(int i = 0; i < 9; i++)
-            color += vec4(sample[i] * edge_kernel[i], 0.0f);
+            color += vec4(sample[i] * edgeKernel[i], 0.0f);
         color.a = 1.0f;
     }
     else if(confuse)
@@ -77,7 +86,7 @@ void main()
     else if(shake)
     {
         for(int i = 0; i < 9; i++)
-            color += vec4(sample[i] * blur_kernel[i], 0.0f);
+            color += vec4(sample[i] * blurKernel[i], 0.0f);
         color.a = 1.0f;
     }
     else
@@ -121,6 +130,15 @@ void main() {
         gl_Position.y += cos(time * 15) * strength;        
     }
 }'
+]
+
+{
+	#category : #'shader code',
+	#'squeak_changestamp' : 'stlu 5/15/2021 14:20'
+}
+LOGLBreakoutPostProcessingProgram class >> vertexShader [
+
+	^ self glslVertexShader
 ]
 
 {

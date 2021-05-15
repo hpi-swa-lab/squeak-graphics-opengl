@@ -52,13 +52,14 @@ GLFWWindow class >> window: aWindow [
 
 {
 	#category : #comparing,
-	#'squeak_changestamp' : 'stlu 10/26/2020 19:58'
+	#'squeak_changestamp' : 'stlu 5/15/2021 14:35'
 }
 GLFWWindow >> = otherWindow [
 
 	otherWindow == self ifTrue: [^ true].
-	otherWindow getHandle = handle ifTrue: [^ true].
-	^ false
+	otherWindow class = self class ifFalse: [^ false].
+	otherWindow getHandle = handle ifFalse: [^ false].
+	^ true
 ]
 
 {
