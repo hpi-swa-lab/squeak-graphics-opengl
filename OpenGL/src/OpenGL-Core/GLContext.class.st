@@ -9,7 +9,6 @@ Class {
 		'isDestroyed',
 		'objectState',
 		'objectBindings',
-		'objectImps',
 		'programs'
 	],
 	#pools : [
@@ -102,7 +101,7 @@ GLContext >> extensions [
 
 {
 	#category : #'initialize-release',
-	#'squeak_changestamp' : 'stlu 5/15/2021 13:13'
+	#'squeak_changestamp' : 'stlu 5/15/2021 14:13'
 }
 GLContext >> initialize [
 
@@ -116,8 +115,7 @@ GLContext >> initialize [
 		programs := IdentityDictionary new.
 		library makeCurrentDuring: [
 			objectState := GLObjectState context: self.
-			self initializeObjectBindings].
-		self initializeObjectImps]
+			self initializeObjectBindings]]
 ]
 
 {
@@ -151,16 +149,6 @@ GLContext >> initializeObjectBindings [
 		GLObject allSubclassesDo: [:cls |
 			(cls theMetaClass includesSelector: #initializeBindings) ifTrue: [
 				cls initializeBindings]]]
-]
-
-{
-	#category : #'initialize-release',
-	#'squeak_changestamp' : 'stlu 4/16/2021 14:44'
-}
-GLContext >> initializeObjectImps [
-
-	self flag: #todo. "always adheres to the context's version by default"
-	objectImps := GLObjectImps forVersion: self version
 ]
 
 {

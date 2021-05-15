@@ -1,7 +1,7 @@
 Class {
 	#name : #GLShaderCreationImp,
 	#superclass : #GLObjectImp,
-	#category : #'OpenGLObjects-ObjectManagers'
+	#category : #'OpenGLObjects-Shaders'
 }
 
 {

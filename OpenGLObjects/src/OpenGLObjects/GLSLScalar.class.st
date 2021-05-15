@@ -84,11 +84,29 @@ GLSLScalar class >> glslInitials [
 
 {
 	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 5/15/2021 14:02'
+}
+GLSLScalar >> commandInitials [
+
+	^ self class commandInitials
+]
+
+{
+	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 12/15/2020 13:15'
 }
 GLSLScalar >> componentType [
 
 	^ self class componentType
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 5/15/2021 14:02'
+}
+GLSLScalar >> glslInitials [
+
+	^ self class glslInitials
 ]
 
 {

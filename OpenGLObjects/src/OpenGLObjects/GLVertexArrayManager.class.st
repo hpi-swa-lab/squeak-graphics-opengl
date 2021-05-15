@@ -2,9 +2,10 @@ Class {
 	#name : #GLVertexArrayManager,
 	#superclass : #GLObjectManager,
 	#instVars : [
-		'creationImp'
+		'creationImp',
+		'stateAccessImp'
 	],
-	#category : #'OpenGLObjects-ObjectManagers'
+	#category : #'OpenGLObjects-VertexArrays'
 }
 
 {
@@ -27,12 +28,13 @@ GLVertexArrayManager >> creationImp: anObject [
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 4/26/2021 12:54'
+	#'squeak_changestamp' : 'stlu 5/15/2021 14:10'
 }
 GLVertexArrayManager >> initialize [
 
 	super initialize.
-	creationImp := GLVertexArrayCreationImp new
+	creationImp := GLVertexArrayCreationImp new.
+	stateAccessImp := GLVertexArrayDirectStateAccessImp new.
 ]
 
 {
@@ -42,4 +44,22 @@ GLVertexArrayManager >> initialize [
 GLVertexArrayManager >> isValidID: anInteger [
 
 	^ GL isVertexArray: anInteger
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 5/15/2021 14:10'
+}
+GLVertexArrayManager >> stateAccessImp [
+
+	^ stateAccessImp
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 5/15/2021 14:10'
+}
+GLVertexArrayManager >> stateAccessImp: anObject [
+
+	stateAccessImp := anObject
 ]

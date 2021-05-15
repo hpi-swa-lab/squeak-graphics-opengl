@@ -1,7 +1,7 @@
 Class {
 	#name : #GLFrameBufferCreationImp,
 	#superclass : #GLObjectImp,
-	#category : #'OpenGLObjects-ObjectManagers'
+	#category : #'OpenGLObjects-FrameBuffers'
 }
 
 {

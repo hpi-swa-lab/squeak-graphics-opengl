@@ -2,13 +2,14 @@ Class {
 	#name : #GLRenderBufferManager,
 	#superclass : #GLObjectManager,
 	#instVars : [
-		'creationImp'
+		'creationImp',
+		'stateAccessImp'
 	],
-	#category : #'OpenGLObjects-ObjectManagers'
+	#category : #'OpenGLObjects-FrameBuffers'
 }
 
 {
-	#category : #accessing,
+	#category : #imps,
 	#'squeak_changestamp' : 'stlu 4/26/2021 12:46'
 }
 GLRenderBufferManager >> creationImp [
@@ -17,7 +18,7 @@ GLRenderBufferManager >> creationImp [
 ]
 
 {
-	#category : #accessing,
+	#category : #imps,
 	#'squeak_changestamp' : 'stlu 4/26/2021 12:46'
 }
 GLRenderBufferManager >> creationImp: anObject [
@@ -27,12 +28,13 @@ GLRenderBufferManager >> creationImp: anObject [
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 4/26/2021 12:46'
+	#'squeak_changestamp' : 'stlu 5/15/2021 14:32'
 }
 GLRenderBufferManager >> initialize [
 
 	super initialize.
 	creationImp := GLRenderBufferCreationImp new.
+	stateAccessImp := GLRenderbufferDirectStateAccessImp new.
 ]
 
 {
@@ -42,4 +44,22 @@ GLRenderBufferManager >> initialize [
 GLRenderBufferManager >> isValidID: anInteger [
 
 	^ GL isRenderbuffer: anInteger
+]
+
+{
+	#category : #imps,
+	#'squeak_changestamp' : 'stlu 5/15/2021 14:32'
+}
+GLRenderBufferManager >> stateAccessImp [
+
+	^ stateAccessImp
+]
+
+{
+	#category : #imps,
+	#'squeak_changestamp' : 'stlu 5/15/2021 14:32'
+}
+GLRenderBufferManager >> stateAccessImp: anObject [
+
+	stateAccessImp := anObject
 ]

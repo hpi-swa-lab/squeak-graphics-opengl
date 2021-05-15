@@ -4,7 +4,7 @@ Class {
 	#instVars : [
 		'creationImp'
 	],
-	#category : #'OpenGLObjects-ObjectManagers'
+	#category : #'OpenGLObjects-Shaders'
 }
 
 {

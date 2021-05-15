@@ -61,11 +61,11 @@ GLVertexBufferBinding >> buffer: aBuffer stride: byteStride [
 
 {
 	#category : #binding,
-	#'squeak_changestamp' : 'stlu 3/17/2021 23:04'
+	#'squeak_changestamp' : 'stlu 5/15/2021 14:12'
 }
 GLVertexBufferBinding >> buffer: aBuffer stride: byteStride offset: byteOffset [
 
-	GLObjectImps current vertexArrayImp
+	vertexArray manager stateAccessImp
 		vertexBufferBinding: self
 		buffer: aBuffer
 		stride: byteStride
@@ -101,11 +101,11 @@ GLVertexBufferBinding >> instanceDivisor [
 
 {
 	#category : #binding,
-	#'squeak_changestamp' : 'stlu 3/17/2021 23:04'
+	#'squeak_changestamp' : 'stlu 5/15/2021 14:12'
 }
 GLVertexBufferBinding >> instanceDivisor: advancePerInstance [
 
-	GLObjectImps current vertexArrayImp
+	vertexArray manager stateAccessImp
 		vertexBufferBinding: self
 		instanceDivisor: advancePerInstance.
 	instanceDivisor := advancePerInstance.

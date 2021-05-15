@@ -107,9 +107,9 @@ GLRenderBuffer >> initializeStorage: extent format: internalFormatEnum samples: 
 
 {
 	#category : #imps,
-	#'squeak_changestamp' : 'stlu 1/9/2021 14:14'
+	#'squeak_changestamp' : 'stlu 5/15/2021 14:33'
 }
 GLRenderBuffer >> stateAccessImp [
 
-	^ GLRenderbufferDirectStateAccessImp new
+	^ manager stateAccessImp
 ]

@@ -74,15 +74,6 @@ GLProgramResource class >> propertiesToQuery [
 ]
 
 {
-	#category : #querying,
-	#'squeak_changestamp' : 'stlu 4/15/2021 12:17'
-}
-GLProgramResource class >> queryImp [
-
-	^ GLObjectImps current programInterfaceQuery
-]
-
-{
 	#category : #initialization,
 	#'squeak_changestamp' : 'stlu 12/13/2020 14:31'
 }

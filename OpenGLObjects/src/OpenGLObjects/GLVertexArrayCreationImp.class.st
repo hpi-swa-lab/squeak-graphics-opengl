@@ -1,7 +1,7 @@
 Class {
 	#name : #GLVertexArrayCreationImp,
 	#superclass : #GLObjectImp,
-	#category : #'OpenGLObjects-ObjectManagers'
+	#category : #'OpenGLObjects-VertexArrays'
 }
 
 {

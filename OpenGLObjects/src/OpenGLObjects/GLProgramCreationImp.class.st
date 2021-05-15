@@ -1,7 +1,7 @@
 Class {
 	#name : #GLProgramCreationImp,
 	#superclass : #GLObjectImp,
-	#category : #'OpenGLObjects-ObjectManagers'
+	#category : #'OpenGLObjects-Programs'
 }
 
 {

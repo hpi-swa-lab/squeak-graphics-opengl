@@ -65,11 +65,11 @@ GLFrameBuffer class >> defaultTarget [
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 12/3/2020 19:28'
+	#'squeak_changestamp' : 'stlu 5/15/2021 14:30'
 }
 GLFrameBuffer class >> display [
 
-	^ GLDisplayFrameBuffer create
+	^ GLDisplayFrameBuffer instance
 ]
 
 {
@@ -507,11 +507,11 @@ GLFrameBuffer >> isFrameBuffer [
 
 {
 	#category : #imps,
-	#'squeak_changestamp' : 'stlu 1/9/2021 13:56'
+	#'squeak_changestamp' : 'stlu 5/15/2021 14:19'
 }
 GLFrameBuffer >> stateAccessImp [
 
-	^ GLFramebufferDirectStateAccessImp new
+	^ manager stateAccessImp
 ]
 
 {

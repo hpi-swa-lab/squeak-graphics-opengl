@@ -292,3 +292,21 @@ GLSLType >> setUniform: aUniform toObject: anObject [
 
 	self subclassResponsibility
 ]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 5/15/2021 14:01'
+}
+GLSLType >> squeakArrayClass [
+
+	^ self class squeakArrayClass
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 5/15/2021 14:00'
+}
+GLSLType >> squeakName [
+
+	^ self class squeakName
+]

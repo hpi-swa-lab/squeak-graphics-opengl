@@ -2,13 +2,15 @@ Class {
 	#name : #GLProgramManager,
 	#superclass : #GLObjectManager,
 	#instVars : [
-		'creationImp'
+		'creationImp',
+		'uniformSetterImp',
+		'interfaceQueryImp'
 	],
-	#category : #'OpenGLObjects-ObjectManagers'
+	#category : #'OpenGLObjects-Programs'
 }
 
 {
-	#category : #accessing,
+	#category : #imps,
 	#'squeak_changestamp' : 'stlu 4/25/2021 22:48'
 }
 GLProgramManager >> creationImp [
@@ -17,7 +19,7 @@ GLProgramManager >> creationImp [
 ]
 
 {
-	#category : #accessing,
+	#category : #imps,
 	#'squeak_changestamp' : 'stlu 4/25/2021 22:48'
 }
 GLProgramManager >> creationImp: anObject [
@@ -27,12 +29,32 @@ GLProgramManager >> creationImp: anObject [
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 4/25/2021 23:00'
+	#'squeak_changestamp' : 'stlu 5/15/2021 13:57'
 }
 GLProgramManager >> initialize [
 
 	super initialize.
 	creationImp := GLProgramCreationImp new.
+	interfaceQueryImp := GLDirectProgramInterfaceQueryImp new.
+	uniformSetterImp := GLUniformDirectStateAccessImp new.
+]
+
+{
+	#category : #imps,
+	#'squeak_changestamp' : 'stlu 5/15/2021 13:48'
+}
+GLProgramManager >> interfaceQueryImp [
+
+	^ interfaceQueryImp
+]
+
+{
+	#category : #imps,
+	#'squeak_changestamp' : 'stlu 5/15/2021 13:48'
+}
+GLProgramManager >> interfaceQueryImp: anObject [
+
+	interfaceQueryImp := anObject
 ]
 
 {
@@ -42,4 +64,22 @@ GLProgramManager >> initialize [
 GLProgramManager >> isValidID: anInteger [
 
 	^ GL isProgram: anInteger
+]
+
+{
+	#category : #imps,
+	#'squeak_changestamp' : 'stlu 5/15/2021 13:58'
+}
+GLProgramManager >> uniformSetterImp [
+
+	^ uniformSetterImp
+]
+
+{
+	#category : #imps,
+	#'squeak_changestamp' : 'stlu 5/15/2021 13:58'
+}
+GLProgramManager >> uniformSetterImp: anObject [
+
+	uniformSetterImp := anObject
 ]

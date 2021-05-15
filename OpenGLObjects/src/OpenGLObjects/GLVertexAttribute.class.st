@@ -40,11 +40,11 @@ GLVertexAttribute >> actualType [
 
 {
 	#category : #'vertex buffer binding',
-	#'squeak_changestamp' : 'stlu 3/17/2021 23:03'
+	#'squeak_changestamp' : 'stlu 5/15/2021 14:11'
 }
 GLVertexAttribute >> associateVertexBufferBinding: aVertexBufferBinding [
 
-	GLObjectImps current vertexArrayImp
+	vertexArray manager stateAccessImp
 		vertexAttribute: self
 		associateVertexBufferBinding: aVertexBufferBinding.
 	vertexBufferBinding := aVertexBufferBinding
@@ -61,21 +61,21 @@ GLVertexAttribute >> associateVertexBufferBindingAt: anInteger [
 
 {
 	#category : #activation,
-	#'squeak_changestamp' : 'stlu 3/17/2021 23:03'
+	#'squeak_changestamp' : 'stlu 5/15/2021 14:11'
 }
 GLVertexAttribute >> disable [
 
-	GLObjectImps current vertexArrayImp disableVertexAttribute: self.
+	vertexArray manager stateAccessImp disableVertexAttribute: self.
 	isEnabled := false
 ]
 
 {
 	#category : #activation,
-	#'squeak_changestamp' : 'stlu 3/17/2021 23:03'
+	#'squeak_changestamp' : 'stlu 5/15/2021 14:11'
 }
 GLVertexAttribute >> enable [
 
-	GLObjectImps current vertexArrayImp enableVertexAttribute: self.
+	vertexArray manager stateAccessImp enableVertexAttribute: self.
 	isEnabled := true
 ]
 
@@ -90,11 +90,11 @@ GLVertexAttribute >> format [
 
 {
 	#category : #format,
-	#'squeak_changestamp' : 'stlu 3/17/2021 23:03'
+	#'squeak_changestamp' : 'stlu 5/15/2021 14:11'
 }
 GLVertexAttribute >> formatAsDouble: formatEnum numComponents: vectorSize offset: relativeByteOffset [
 
-	GLObjectImps current vertexArrayImp
+	vertexArray manager stateAccessImp
 		vertexAttribute: self
 		doubleFormat: formatEnum
 		numComponents: vectorSize
@@ -120,12 +120,12 @@ GLVertexAttribute >> formatAsFloat: formatEnum numComponents: vectorSize offset:
 
 {
 	#category : #format,
-	#'squeak_changestamp' : 'stlu 3/17/2021 23:03'
+	#'squeak_changestamp' : 'stlu 5/15/2021 14:11'
 }
 GLVertexAttribute >> formatAsFloat: formatEnum numComponents: vectorSize offset: relativeByteOffset normalize: shouldNormalize [
 
 	self flag: #todo. "This set of functions definitiely needs good comments."
-	GLObjectImps current vertexArrayImp
+	vertexArray manager stateAccessImp
 		vertexAttribute: self
 		floatFormat: formatEnum
 		numComponents: vectorSize
@@ -140,11 +140,11 @@ GLVertexAttribute >> formatAsFloat: formatEnum numComponents: vectorSize offset:
 
 {
 	#category : #format,
-	#'squeak_changestamp' : 'stlu 3/17/2021 23:04'
+	#'squeak_changestamp' : 'stlu 5/15/2021 14:11'
 }
 GLVertexAttribute >> formatAsInteger: formatEnum numComponents: vectorSize offset: relativeByteOffset [
 
-	GLObjectImps current vertexArrayImp
+	vertexArray manager stateAccessImp
 		vertexAttribute: self
 		integerFormat: formatEnum
 		numComponents: vectorSize

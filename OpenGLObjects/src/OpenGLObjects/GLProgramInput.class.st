@@ -10,11 +10,11 @@ Class {
 
 {
 	#category : #'instance creation',
-	#'squeak_changestamp' : 'stlu 12/16/2020 20:45'
+	#'squeak_changestamp' : 'stlu 5/15/2021 13:52'
 }
 GLProgramInput class >> allInProgram: aProgram [
 
-	^ self queryImp getInputs: aProgram
+	^ aProgram manager interfaceQueryImp getInputs: aProgram
 ]
 
 {

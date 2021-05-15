@@ -11,7 +11,7 @@ Class {
 	#pools : [
 		'GLConstants'
 	],
-	#category : #'OpenGLObjects-ObjectManagers',
+	#category : #'OpenGLObjects-Core',
 	#'squeak_changestamp' : 'stlu 4/25/2021 13:33'
 }
 
