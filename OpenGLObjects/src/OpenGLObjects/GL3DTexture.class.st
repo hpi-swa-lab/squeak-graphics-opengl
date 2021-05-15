@@ -5,21 +5,21 @@ Class {
 }
 
 {
-	#category : #binding,
-	#'squeak_changestamp' : 'stlu 3/14/2021 22:39'
+	#category : #private,
+	#'squeak_changestamp' : 'stlu 5/14/2021 14:04'
 }
-GL3DTexture class >> bound [
+GL3DTexture class >> privateGetBindingIn: aTextureImageUnit [
 
-	^ GLObjectBindings current texture3D
+	^ aTextureImageUnit texture3D
 ]
 
 {
 	#category : #private,
-	#'squeak_changestamp' : 'stlu 3/15/2021 11:51'
+	#'squeak_changestamp' : 'stlu 5/14/2021 13:58'
 }
-GL3DTexture class >> privateSetBinding: aTexture [
+GL3DTexture class >> privateSetBindingIn: aTextureImageUnit to: aTexture [
 
-	GLObjectBindings current texture3D: aTexture.
+	aTextureImageUnit texture3D: aTexture.
 ]
 
 {

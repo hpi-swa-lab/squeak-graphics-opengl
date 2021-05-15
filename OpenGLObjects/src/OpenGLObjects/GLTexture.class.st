@@ -5,6 +5,42 @@ Class {
 }
 
 {
+	#category : #binding,
+	#'squeak_changestamp' : 'stlu 5/14/2021 21:04'
+}
+GLTexture class >> activateTextureImageUnitAt: index [
+
+	self manager activateTextureImageUnitAt: index
+]
+
+{
+	#category : #binding,
+	#'squeak_changestamp' : 'stlu 5/14/2021 21:04'
+}
+GLTexture class >> activateTextureImageUnitAt: index during: aBlock [
+
+	self manager activateTextureImageUnitAt: index during: aBlock
+]
+
+{
+	#category : #binding,
+	#'squeak_changestamp' : 'stlu 5/14/2021 14:03'
+}
+GLTexture class >> bound [
+
+	^ self privateGetBindingIn: self manager activeTextureImageUnit
+]
+
+{
+	#category : #binding,
+	#'squeak_changestamp' : 'stlu 5/14/2021 14:03'
+}
+GLTexture class >> boundAt: textureImageUnitIndex [
+
+	^ self privateGetBindingIn: (self manager textureImageUnitAt: textureImageUnitIndex)
+]
+
+{
 	#category : #'instance creation',
 	#'squeak_changestamp' : 'stlu 4/26/2021 13:15'
 }
@@ -50,9 +86,18 @@ GLTexture class >> manager [
 
 {
 	#category : #private,
-	#'squeak_changestamp' : 'stlu 3/15/2021 11:46'
+	#'squeak_changestamp' : 'stlu 5/14/2021 14:02'
 }
-GLTexture class >> privateSetBinding: aTexture [
+GLTexture class >> privateGetBindingIn: aTextureImageUnit [
+
+	^ self subclassResponsibility
+]
+
+{
+	#category : #private,
+	#'squeak_changestamp' : 'stlu 5/14/2021 13:57'
+}
+GLTexture class >> privateSetBindingIn: aTextureImageUnit to: aTexture [
 
 	self subclassResponsibility
 ]
@@ -68,12 +113,25 @@ GLTexture class >> target [
 
 {
 	#category : #binding,
-	#'squeak_changestamp' : 'stlu 3/15/2021 11:40'
+	#'squeak_changestamp' : 'stlu 5/14/2021 21:19'
 }
 GLTexture class >> unbind [
 
-	GL bindTexture: self target with: GL_NONE.
-	self privateSetBinding: nil
+	self manager
+		bindTexture: nil
+		ofClass: self
+]
+
+{
+	#category : #binding,
+	#'squeak_changestamp' : 'stlu 5/14/2021 21:18'
+}
+GLTexture class >> unbindAt: textureImageUnitIndex [
+
+	self manager
+		bindTexture: nil
+		ofClass: self
+		at: textureImageUnitIndex
 ]
 
 {
@@ -101,12 +159,25 @@ GLTexture >> baseLevel: anInteger [
 
 {
 	#category : #binding,
-	#'squeak_changestamp' : 'stlu 3/15/2021 11:54'
+	#'squeak_changestamp' : 'stlu 5/14/2021 21:20'
 }
 GLTexture >> bind [
 
-	GL bindTexture: self class target with: id.
-	self class privateSetBinding: self
+	manager
+		bindTexture: self
+		ofClass: self class
+]
+
+{
+	#category : #binding,
+	#'squeak_changestamp' : 'stlu 5/14/2021 21:20'
+}
+GLTexture >> bindAt: textureImageUnitIndex [
+
+	manager
+		bindTexture: self
+		ofClass: self class
+		at: textureImageUnitIndex
 ]
 
 {
@@ -137,7 +208,23 @@ GLTexture >> borderColor: aColor [
 
 {
 	#category : #binding,
-	#'squeak_changestamp' : 'stlu 3/15/2021 11:53'
+	#'squeak_changestamp' : 'stlu 5/14/2021 21:22'
+}
+GLTexture >> boundAt: textureImageUnitIndex during: aBlock [
+
+	| previous |
+	(previous := self class boundAt: textureImageUnitIndex) = self ifTrue: [^ aBlock value].
+	self bindAt: textureImageUnitIndex.
+	^ aBlock ensure: [
+		manager
+			bindTexture: previous "could be nil"
+			ofClass: self class
+			at: textureImageUnitIndex]
+]
+
+{
+	#category : #binding,
+	#'squeak_changestamp' : 'stlu 5/14/2021 21:22'
 }
 GLTexture >> boundDuring: aBlock [
 
@@ -145,9 +232,9 @@ GLTexture >> boundDuring: aBlock [
 	(previous := self class bound) = self ifTrue: [^ aBlock value].
 	self bind.
 	^ aBlock ensure: [
-		previous
-			ifNil: [self class unbind]
-			ifNotNil: [previous bind]]
+		manager
+			bindTexture: previous "could be nil"
+			ofClass: self class]
 ]
 
 {
@@ -297,15 +384,6 @@ GLTexture >> immutableLevels [
 	^ self stateAccessImp
 		texture: self
 		getIntegerParameter: GL_TEXTURE_IMMUTABLE_LEVELS
-]
-
-{
-	#category : #testing,
-	#'squeak_changestamp' : 'stlu 12/14/2020 12:13'
-}
-GLTexture >> isAllocated [
-
-	^ GL isTexture: id
 ]
 
 {

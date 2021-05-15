@@ -5,21 +5,21 @@ Class {
 }
 
 {
-	#category : #binding,
-	#'squeak_changestamp' : 'stlu 3/14/2021 22:39'
+	#category : #private,
+	#'squeak_changestamp' : 'stlu 5/14/2021 14:04'
 }
-GLBufferTexture class >> bound [
+GLBufferTexture class >> privateGetBindingIn: aTextureImageUnit [
 
-	^ GLObjectBindings current bufferTexture
+	^ aTextureImageUnit bufferTexture
 ]
 
 {
 	#category : #private,
-	#'squeak_changestamp' : 'stlu 3/15/2021 11:51'
+	#'squeak_changestamp' : 'stlu 5/14/2021 13:58'
 }
-GLBufferTexture class >> privateSetBinding: aTexture [
+GLBufferTexture class >> privateSetBindingIn: aTextureImageUnit to: aTexture [
 
-	GLObjectBindings current bufferTexture: aTexture.
+	aTextureImageUnit bufferTexture: aTexture.
 ]
 
 {

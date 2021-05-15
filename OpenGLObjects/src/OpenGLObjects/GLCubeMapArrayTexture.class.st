@@ -5,21 +5,21 @@ Class {
 }
 
 {
-	#category : #binding,
-	#'squeak_changestamp' : 'stlu 3/14/2021 22:39'
+	#category : #private,
+	#'squeak_changestamp' : 'stlu 5/14/2021 14:04'
 }
-GLCubeMapArrayTexture class >> bound [
+GLCubeMapArrayTexture class >> privateGetBindingIn: aTextureImageUnit [
 
-	^ GLObjectBindings current cubeMapArrayTexture
+	^ aTextureImageUnit cubeMapArrayTexture
 ]
 
 {
 	#category : #private,
-	#'squeak_changestamp' : 'stlu 3/15/2021 11:51'
+	#'squeak_changestamp' : 'stlu 5/14/2021 13:58'
 }
-GLCubeMapArrayTexture class >> privateSetBinding: aTexture [
+GLCubeMapArrayTexture class >> privateSetBindingIn: aTextureImageUnit to: aTexture [
 
-	GLObjectBindings current cubeMapArrayTexture: aTexture.
+	aTextureImageUnit cubeMapArrayTexture: aTexture.
 ]
 
 {

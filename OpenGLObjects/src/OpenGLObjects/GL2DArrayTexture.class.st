@@ -5,21 +5,21 @@ Class {
 }
 
 {
-	#category : #binding,
-	#'squeak_changestamp' : 'stlu 3/14/2021 22:33'
+	#category : #private,
+	#'squeak_changestamp' : 'stlu 5/14/2021 14:04'
 }
-GL2DArrayTexture class >> bound [
+GL2DArrayTexture class >> privateGetBindingIn: aTextureImageUnit [
 
-	^ GLObjectBindings current arrayTexture2D
+	^ aTextureImageUnit arrayTexture2D
 ]
 
 {
 	#category : #private,
-	#'squeak_changestamp' : 'stlu 3/15/2021 11:50'
+	#'squeak_changestamp' : 'stlu 5/14/2021 13:58'
 }
-GL2DArrayTexture class >> privateSetBinding: aTexture [
+GL2DArrayTexture class >> privateSetBindingIn: aTextureImageUnit to: aTexture [
 
-	GLObjectBindings current arrayTexture2D: aTexture.
+	aTextureImageUnit arrayTexture2D: aTexture.
 ]
 
 {
