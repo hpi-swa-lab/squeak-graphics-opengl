@@ -6,11 +6,11 @@ Class {
 
 {
 	#category : #binding,
-	#'squeak_changestamp' : 'stlu 3/14/2021 22:22'
+	#'squeak_changestamp' : 'stlu 5/15/2021 15:14'
 }
 GLRenderBuffer class >> bound [
 
-	^ GLObjectBindings current renderBuffer
+	^ self manager boundRenderBuffer
 ]
 
 {
@@ -59,37 +59,29 @@ GLRenderBuffer class >> manager [
 
 {
 	#category : #binding,
-	#'squeak_changestamp' : 'stlu 3/14/2021 22:23'
+	#'squeak_changestamp' : 'stlu 5/15/2021 15:14'
 }
 GLRenderBuffer class >> unbind [
 
-	GL bindRenderbuffer: GL_RENDERBUFFER with: GL_NONE.
-	GLObjectBindings current renderBuffer: nil
+	self manager bindRenderBuffer: nil
 ]
 
 {
 	#category : #binding,
-	#'squeak_changestamp' : 'stlu 3/14/2021 22:20'
+	#'squeak_changestamp' : 'stlu 5/15/2021 15:11'
 }
 GLRenderBuffer >> bind [
 
-	GL bindRenderbuffer: GL_RENDERBUFFER with: id.
-	GLObjectBindings current renderBuffer: self
+	manager bindRenderBuffer: self
 ]
 
 {
 	#category : #binding,
-	#'squeak_changestamp' : 'stlu 3/14/2021 22:17'
+	#'squeak_changestamp' : 'stlu 5/15/2021 15:13'
 }
 GLRenderBuffer >> boundDuring: aBlock [
 
-	| previous |
-	(previous := self class bound) = self ifTrue: [^ aBlock value].
-	self bind.
-	^ aBlock ensure: [
-		previous
-			ifNil: [self class unbind]
-			ifNotNil: [previous bind]]
+	^ manager bindRenderBuffer: self during: aBlock
 ]
 
 {

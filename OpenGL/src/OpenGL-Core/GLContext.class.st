@@ -101,7 +101,7 @@ GLContext >> extensions [
 
 {
 	#category : #'initialize-release',
-	#'squeak_changestamp' : 'stlu 5/15/2021 14:13'
+	#'squeak_changestamp' : 'stlu 5/15/2021 16:44'
 }
 GLContext >> initialize [
 
@@ -114,8 +114,7 @@ GLContext >> initialize [
 	self supportsGLObjects ifTrue: [
 		programs := IdentityDictionary new.
 		library makeCurrentDuring: [
-			objectState := GLObjectState context: self.
-			self initializeObjectBindings]]
+			objectState := GLObjectState context: self]]
 ]
 
 {
@@ -135,20 +134,6 @@ GLContext >> initializeExtensions [
 GLContext >> initializeLibrary [
 
 	library := GLExternalLibrary context: self.
-]
-
-{
-	#category : #'initialize-release',
-	#'squeak_changestamp' : 'stlu 4/15/2021 12:36'
-}
-GLContext >> initializeObjectBindings [
-
-	objectBindings := GLObjectBindings new.
-	self flag: #todo. "do not depend on GLObject class hierarchy"
-	library makeCurrentDuring: [
-		GLObject allSubclassesDo: [:cls |
-			(cls theMetaClass includesSelector: #initializeBindings) ifTrue: [
-				cls initializeBindings]]]
 ]
 
 {

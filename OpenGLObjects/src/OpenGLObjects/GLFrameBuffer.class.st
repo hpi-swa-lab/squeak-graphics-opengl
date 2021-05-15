@@ -25,20 +25,20 @@ Class {
 
 {
 	#category : #binding,
-	#'squeak_changestamp' : 'stlu 3/14/2021 18:37'
+	#'squeak_changestamp' : 'stlu 5/15/2021 16:08'
 }
 GLFrameBuffer class >> boundToDraw [
 
-	^ GLObjectBindings current drawFrameBuffer
+	^ self manager drawFrameBuffer
 ]
 
 {
 	#category : #binding,
-	#'squeak_changestamp' : 'stlu 3/14/2021 18:36'
+	#'squeak_changestamp' : 'stlu 5/15/2021 16:09'
 }
 GLFrameBuffer class >> boundToRead [
 
-	^ GLObjectBindings current readFrameBuffer
+	^ self manager readFrameBuffer
 ]
 
 {
@@ -56,20 +56,20 @@ GLFrameBuffer class >> create: count [
 
 {
 	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 5/15/2021 16:01'
+}
+GLFrameBuffer class >> default [
+
+	^ GLDisplayFrameBuffer instance
+]
+
+{
+	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 12/3/2020 14:54'
 }
 GLFrameBuffer class >> defaultTarget [
 
 	^ GL_FRAMEBUFFER
-]
-
-{
-	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 5/15/2021 14:30'
-}
-GLFrameBuffer class >> display [
-
-	^ GLDisplayFrameBuffer instance
 ]
 
 {
@@ -123,38 +123,29 @@ GLFrameBuffer class >> manager [
 
 {
 	#category : #binding,
-	#'squeak_changestamp' : 'stlu 3/15/2021 12:43'
+	#'squeak_changestamp' : 'stlu 5/15/2021 16:08'
 }
 GLFrameBuffer class >> unbind [
 
-	self unbindFromReadAndDraw
+	self manager unbindFrameBuffer
 ]
 
 {
 	#category : #binding,
-	#'squeak_changestamp' : 'stlu 3/15/2021 12:42'
+	#'squeak_changestamp' : 'stlu 5/15/2021 16:08'
 }
-GLFrameBuffer class >> unbindFromDraw [
+GLFrameBuffer class >> unbindDraw [
 
-	self display bindToDraw
+	self manager unbindDrawFrameBuffer
 ]
 
 {
 	#category : #binding,
-	#'squeak_changestamp' : 'stlu 3/15/2021 12:42'
+	#'squeak_changestamp' : 'stlu 5/15/2021 16:08'
 }
-GLFrameBuffer class >> unbindFromRead [
+GLFrameBuffer class >> unbindRead [
 
-	self display bindToRead
-]
-
-{
-	#category : #binding,
-	#'squeak_changestamp' : 'stlu 3/15/2021 12:42'
-}
-GLFrameBuffer class >> unbindFromReadAndDraw [
-
-	self display bindToReadAndDraw
+	self manager unbindReadFrameBuffer
 ]
 
 {
@@ -224,43 +215,29 @@ GLFrameBuffer >> attachRenderbuffer: aRenderbuffer to: attachmentEnum [
 
 {
 	#category : #binding,
-	#'squeak_changestamp' : 'stlu 3/15/2021 12:13'
+	#'squeak_changestamp' : 'stlu 5/15/2021 15:47'
 }
 GLFrameBuffer >> bind [
-
-	self bindToReadAndDraw
+	"Bind to both read and draw."
+	manager bindFrameBuffer: self
 ]
 
 {
 	#category : #binding,
-	#'squeak_changestamp' : 'stlu 3/15/2021 12:13'
+	#'squeak_changestamp' : 'stlu 5/15/2021 15:29'
 }
 GLFrameBuffer >> bindToDraw [
 
-	GL bindFramebuffer: GL_DRAW_FRAMEBUFFER with: id.
-	GLObjectBindings current drawFrameBuffer: self
+	manager bindDrawFrameBuffer: self
 ]
 
 {
 	#category : #binding,
-	#'squeak_changestamp' : 'stlu 3/15/2021 12:12'
+	#'squeak_changestamp' : 'stlu 5/15/2021 15:29'
 }
 GLFrameBuffer >> bindToRead [
 
-	GL bindFramebuffer: GL_READ_FRAMEBUFFER with: id.
-	GLObjectBindings current readFrameBuffer: self
-]
-
-{
-	#category : #binding,
-	#'squeak_changestamp' : 'stlu 3/15/2021 13:14'
-}
-GLFrameBuffer >> bindToReadAndDraw [
-
-	GL bindFramebuffer: GL_DRAW_FRAMEBUFFER with: id.
-	GLObjectBindings current
-		drawFrameBuffer: self;
-		readFrameBuffer: self
+	manager bindReadFrameBuffer: self
 ]
 
 {
@@ -294,62 +271,29 @@ GLFrameBuffer >> blit: bufferMask into: otherFramebuffer from: readBounds to: dr
 
 {
 	#category : #binding,
-	#'squeak_changestamp' : 'stlu 3/15/2021 12:14'
+	#'squeak_changestamp' : 'stlu 5/15/2021 15:48'
 }
 GLFrameBuffer >> boundDuring: aBlock [
 
-	self boundToReadAndDrawDuring: aBlock
+	^ manager bindFrameBuffer: self during: aBlock
 ]
 
 {
 	#category : #binding,
-	#'squeak_changestamp' : 'stlu 3/15/2021 12:08'
+	#'squeak_changestamp' : 'stlu 5/15/2021 15:48'
 }
 GLFrameBuffer >> boundToDrawDuring: aBlock [
 
-	| previous |
-	self flag: #todo. "fast path does not restore binding on block exit"
-	(previous := self class boundToDraw) = self ifTrue: [^ aBlock value].
-	self bindToDraw.
-	^ aBlock ensure: [
-		previous
-			ifNil: [self class unbindDraw]
-			ifNotNil: [previous bindToDraw]]
+	^ manager bindDrawFrameBuffer: self during: aBlock
 ]
 
 {
 	#category : #binding,
-	#'squeak_changestamp' : 'stlu 3/15/2021 12:10'
-}
-GLFrameBuffer >> boundToReadAndDrawDuring: aBlock [
-
-	| previousRead previousDraw |
-	previousRead := self class boundToRead.
-	previousDraw := self class boundToDraw.
-	(self = previousRead and: [self = previousDraw]) ifTrue: [^ aBlock value].
-	self bindToReadAndDraw.
-	^ aBlock ensure: [
-		previousRead = previousDraw
-			ifTrue: [
-				previousRead bindToReadAndDraw]
-			ifFalse: [
-				previousRead bindToRead.
-				previousDraw bindToDraw]]
-]
-
-{
-	#category : #binding,
-	#'squeak_changestamp' : 'stlu 3/15/2021 12:02'
+	#'squeak_changestamp' : 'stlu 5/15/2021 15:48'
 }
 GLFrameBuffer >> boundToReadDuring: aBlock [
 
-	| previous |
-	(previous := self class boundToRead) = self ifTrue: [^ aBlock value].
-	self bindToRead.
-	^ aBlock ensure: [
-		previous
-			ifNil: [self class unbindRead]
-			ifNotNil: [previous bindToRead]]
+	^ manager bindReadFrameBuffer: self during: aBlock
 ]
 
 {
@@ -542,37 +486,30 @@ GLFrameBuffer >> texture2D: aTexture attachment: anAttachment [
 
 {
 	#category : #binding,
-	#'squeak_changestamp' : 'stlu 3/15/2021 12:35'
+	#'squeak_changestamp' : 'stlu 5/15/2021 16:03'
 }
 GLFrameBuffer >> unbind [
 
-	self unbindFromReadAndDraw
+	self unbindFromDraw.
+	self unbindFromRead.
 ]
 
 {
 	#category : #binding,
-	#'squeak_changestamp' : 'stlu 3/15/2021 12:44'
+	#'squeak_changestamp' : 'stlu 5/15/2021 16:06'
 }
 GLFrameBuffer >> unbindFromDraw [
 
-	self flag: #todo. "should the instance-side methods only unbind when the bound object = self?"
-	self class unbindFromDraw
+	manager drawFrameBuffer == self ifTrue: [
+		manager unbindDrawFrameBuffer]
 ]
 
 {
 	#category : #binding,
-	#'squeak_changestamp' : 'stlu 3/15/2021 12:34'
+	#'squeak_changestamp' : 'stlu 5/15/2021 16:07'
 }
 GLFrameBuffer >> unbindFromRead [
 
-	self class unbindFromRead
-]
-
-{
-	#category : #binding,
-	#'squeak_changestamp' : 'stlu 3/15/2021 12:35'
-}
-GLFrameBuffer >> unbindFromReadAndDraw [
-
-	self class unbindFromReadAndDraw
+	manager readFrameBuffer == self ifTrue: [
+		manager unbindReadFrameBuffer]
 ]

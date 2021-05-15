@@ -2,11 +2,56 @@ Class {
 	#name : #GLRenderBufferManager,
 	#superclass : #GLObjectManager,
 	#instVars : [
+		'boundRenderBuffer',
 		'creationImp',
 		'stateAccessImp'
 	],
 	#category : #'OpenGLObjects-FrameBuffers'
 }
+
+{
+	#category : #binding,
+	#'squeak_changestamp' : 'stlu 5/15/2021 15:10'
+}
+GLRenderBufferManager >> bindRenderBuffer: renderBufferOrNil [
+
+	GL
+		bindRenderbuffer: GL_RENDERBUFFER
+		with: (renderBufferOrNil ifNil: [0] ifNotNil: [renderBufferOrNil id]).
+	boundRenderBuffer := renderBufferOrNil
+]
+
+{
+	#category : #binding,
+	#'squeak_changestamp' : 'stlu 5/15/2021 15:14'
+}
+GLRenderBufferManager >> bindRenderBuffer: renderBufferOrNil during: aBlock [
+
+	| previous |
+	boundRenderBuffer == renderBufferOrNil ifTrue: [^ aBlock value].
+	previous := boundRenderBuffer.
+	self bindRenderBuffer: renderBufferOrNil.
+	^ aBlock ensure: [
+		self bindRenderBuffer: previous]
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 5/15/2021 15:08'
+}
+GLRenderBufferManager >> boundRenderBuffer [
+
+	^ boundRenderBuffer
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 5/15/2021 15:08'
+}
+GLRenderBufferManager >> boundRenderBuffer: anObject [
+
+	boundRenderBuffer := anObject
+]
 
 {
 	#category : #imps,

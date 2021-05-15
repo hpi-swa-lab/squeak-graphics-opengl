@@ -224,12 +224,12 @@ GLTexture >> boundAt: textureImageUnitIndex during: aBlock [
 
 {
 	#category : #binding,
-	#'squeak_changestamp' : 'stlu 5/14/2021 21:22'
+	#'squeak_changestamp' : 'stlu 5/15/2021 15:20'
 }
 GLTexture >> boundDuring: aBlock [
 
 	| previous |
-	(previous := self class bound) = self ifTrue: [^ aBlock value].
+	(previous := self class bound) == self ifTrue: [^ aBlock value].
 	self bind.
 	^ aBlock ensure: [
 		manager

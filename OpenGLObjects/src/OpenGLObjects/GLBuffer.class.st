@@ -11,11 +11,11 @@ Class {
 
 {
 	#category : #binding,
-	#'squeak_changestamp' : 'stlu 3/15/2021 13:06'
+	#'squeak_changestamp' : 'stlu 5/15/2021 16:34'
 }
 GLBuffer class >> boundTo: targetEnum [
 
-	^ GLObjectBindings current dictionary at: targetEnum ifAbsentPut: [nil]
+	^ self manager bindings at: targetEnum
 ]
 
 {
@@ -72,13 +72,37 @@ GLBuffer class >> manager [
 ]
 
 {
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 5/15/2021 16:39'
+}
+GLBuffer class >> targets [
+
+	^ {
+		GL_ARRAY_BUFFER.
+		GL_ATOMIC_COUNTER_BUFFER.
+		GL_COPY_READ_BUFFER.
+		GL_COPY_WRITE_BUFFER.
+		GL_DISPATCH_INDIRECT_BUFFER.
+		GL_DRAW_INDIRECT_BUFFER.
+		GL_ELEMENT_ARRAY_BUFFER.
+		GL_PARAMETER_BUFFER.
+		GL_PIXEL_PACK_BUFFER.
+		GL_PIXEL_UNPACK_BUFFER.
+		GL_QUERY_BUFFER.
+		GL_SHADER_STORAGE_BUFFER.
+		GL_TEXTURE_BUFFER.
+		GL_TRANSFORM_FEEDBACK_BUFFER.
+		GL_UNIFORM_BUFFER.
+	}
+]
+
+{
 	#category : #binding,
-	#'squeak_changestamp' : 'stlu 3/15/2021 13:12'
+	#'squeak_changestamp' : 'stlu 5/15/2021 16:34'
 }
 GLBuffer class >> unbind: targetEnum [
 
-	GL bindBuffer: targetEnum with: GL_NONE.
-	GLObjectBindings current dictionary at: targetEnum put: nil
+	self manager bindBuffer: nil to: targetEnum
 ]
 
 {
@@ -92,15 +116,12 @@ GLBuffer >> bind [
 
 {
 	#category : #binding,
-	#'squeak_changestamp' : 'stlu 3/15/2021 13:11'
+	#'squeak_changestamp' : 'stlu 5/15/2021 16:32'
 }
 GLBuffer >> bindTo: targetEnum [
 
 	self flag: #todo. "dictionary -> inst var"
-	self flag: #todo. "bindTo* vs. bindAs*"
-	self flag: #todo. "bind* vs. bind*Buffer"
-	GL bindBuffer: targetEnum with: id.
-	GLObjectBindings current dictionary at: targetEnum put: self
+	manager bindBuffer: self to: targetEnum
 ]
 
 {
@@ -114,18 +135,11 @@ GLBuffer >> boundDuring: aBlock [
 
 {
 	#category : #binding,
-	#'squeak_changestamp' : 'stlu 3/15/2021 13:02'
+	#'squeak_changestamp' : 'stlu 5/15/2021 16:33'
 }
 GLBuffer >> boundTo: targetEnum during: aBlock [
 
-	| previous |
-	previous := self class boundTo: targetEnum.
-	previous = self ifTrue: [^ aBlock value].
-	self bindTo: targetEnum.
-	^ aBlock ensure: [
-		previous
-			ifNil: [self class unbind: targetEnum]
-			ifNotNil: [previous bindTo: targetEnum]]
+	^ manager bindBuffer: self to: targetEnum during: aBlock
 ]
 
 {
@@ -389,15 +403,6 @@ GLBuffer >> targetTransformFeedbackBuffer [
 GLBuffer >> targetUniformBuffer [
 
 	target := GL_UNIFORM_BUFFER
-]
-
-{
-	#category : #binding,
-	#'squeak_changestamp' : 'stlu 3/15/2021 13:02'
-}
-GLBuffer >> unbind [
-
-	self class unbind: target
 ]
 
 {

@@ -14,37 +14,12 @@ GLDisplayFrameBuffer class >> create [
 ]
 
 {
-	#category : #binding,
-	#'squeak_changestamp' : 'stlu 5/15/2021 14:29'
-}
-GLDisplayFrameBuffer class >> initializeBindings [
-
-	| display |
-	display := self instance.
-	GLObjectBindings current drawFrameBuffer: display.
-	GLObjectBindings current readFrameBuffer: display.
-]
-
-{
 	#category : #'instance creation',
-	#'squeak_changestamp' : 'stlu 5/15/2021 14:27'
+	#'squeak_changestamp' : 'stlu 5/15/2021 15:24'
 }
 GLDisplayFrameBuffer class >> instance [
 
-	^ GL userData
-		at: self
-		ifAbsentPut: [self newInstance]
-]
-
-{
-	#category : #'instance creation',
-	#'squeak_changestamp' : 'stlu 5/15/2021 14:27'
-}
-GLDisplayFrameBuffer class >> newInstance [
-
-	^ self
-		manager: self manager
-		id: 0
+	^ self manager defaultFrameBuffer
 ]
 
 {

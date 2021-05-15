@@ -10,11 +10,11 @@ Class {
 
 {
 	#category : #binding,
-	#'squeak_changestamp' : 'stlu 3/14/2021 19:50'
+	#'squeak_changestamp' : 'stlu 5/15/2021 15:03'
 }
 GLProgram class >> bound [
 
-	^ GLObjectBindings current program
+	^ self manager currentProgram
 ]
 
 {
@@ -28,6 +28,15 @@ GLProgram class >> create [
 	^ self
 		manager: manager
 		id: (manager creationImp createProgramID)
+]
+
+{
+	#category : #binding,
+	#'squeak_changestamp' : 'stlu 5/15/2021 15:05'
+}
+GLProgram class >> current [
+
+	^ self bound
 ]
 
 {
@@ -62,12 +71,11 @@ GLProgram class >> target [
 
 {
 	#category : #binding,
-	#'squeak_changestamp' : 'stlu 3/14/2021 22:02'
+	#'squeak_changestamp' : 'stlu 5/15/2021 15:01'
 }
 GLProgram class >> unbind [
 
-	GL useProgram: GL_NONE.
-	GLObjectBindings current program: nil
+	self manager useProgram: nil
 ]
 
 {
@@ -146,27 +154,20 @@ GLProgram >> attachShaders: aCollection [
 
 {
 	#category : #binding,
-	#'squeak_changestamp' : 'stlu 3/14/2021 19:59'
+	#'squeak_changestamp' : 'stlu 5/15/2021 15:04'
 }
 GLProgram >> bind [
 
-	GL useProgram: id.
-	GLObjectBindings current program: self
+	manager useProgram: self.
 ]
 
 {
 	#category : #binding,
-	#'squeak_changestamp' : 'stlu 3/14/2021 22:07'
+	#'squeak_changestamp' : 'stlu 5/15/2021 15:04'
 }
 GLProgram >> boundDuring: aBlock [
 
-	| previous |
-	(previous := self class bound) = self ifTrue: [^ aBlock value].
-	self bind.
-	^ aBlock ensure: [
-		previous
-			ifNil: [self class unbind]
-			ifNotNil: [previous bind]]
+	^ manager useProgram: self during: aBlock
 ]
 
 {
@@ -375,12 +376,20 @@ GLProgram >> update: anAspect with: anObject [
 
 {
 	#category : #binding,
-	#'squeak_changestamp' : 'stlu 3/14/2021 19:33'
+	#'squeak_changestamp' : 'stlu 5/15/2021 15:04'
+}
+GLProgram >> use [
+
+	self bind.
+]
+
+{
+	#category : #binding,
+	#'squeak_changestamp' : 'stlu 5/15/2021 15:04'
 }
 GLProgram >> useDuring: aBlock [
 
-	self flag: #todo. "deprecate"
-	self boundDuring: aBlock
+	^ self boundDuring: aBlock
 ]
 
 {

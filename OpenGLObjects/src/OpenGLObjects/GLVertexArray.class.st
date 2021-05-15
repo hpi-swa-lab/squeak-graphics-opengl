@@ -10,21 +10,12 @@ Class {
 }
 
 {
-	#category : #allocation,
-	#'squeak_changestamp' : 'stlu 11/30/2020 19:49'
-}
-GLVertexArray class >> allocate: n in: anIntegerArray [
-
-	GL genVertexArrays: n with: anIntegerArray
-]
-
-{
 	#category : #binding,
-	#'squeak_changestamp' : 'stlu 3/14/2021 22:12'
+	#'squeak_changestamp' : 'stlu 5/15/2021 16:19'
 }
 GLVertexArray class >> bound [
 
-	^ GLObjectBindings current vertexArray
+	^ self manager boundVertexArray
 ]
 
 {
@@ -113,38 +104,30 @@ GLVertexArray class >> maxVertexAttributeStride [
 
 {
 	#category : #binding,
-	#'squeak_changestamp' : 'stlu 3/16/2021 16:17'
+	#'squeak_changestamp' : 'stlu 5/15/2021 16:19'
 }
 GLVertexArray class >> unbind [
 
 	self flag: #todo. "compat profile makes 0 the default VAO"
-	GL bindVertexArray: GL_NONE.
-	GLObjectBindings current vertexArray: nil
+	self manager bindVertexArray: nil
 ]
 
 {
 	#category : #binding,
-	#'squeak_changestamp' : 'stlu 3/14/2021 22:11'
+	#'squeak_changestamp' : 'stlu 5/15/2021 16:15'
 }
 GLVertexArray >> bind [
 
-	GL bindVertexArray: id.
-	GLObjectBindings current vertexArray: self
+	manager bindVertexArray: self
 ]
 
 {
 	#category : #binding,
-	#'squeak_changestamp' : 'stlu 3/14/2021 22:10'
+	#'squeak_changestamp' : 'stlu 5/15/2021 16:18'
 }
 GLVertexArray >> boundDuring: aBlock [
 
-	| previous |
-	(previous := self class bound) = self ifTrue: [^ aBlock value].
-	self bind.
-	^ aBlock ensure: [
-		previous
-			ifNil: [self class unbind]
-			ifNotNil: [previous bind]]
+	^ manager bindVertexArray: self during: aBlock
 ]
 
 {

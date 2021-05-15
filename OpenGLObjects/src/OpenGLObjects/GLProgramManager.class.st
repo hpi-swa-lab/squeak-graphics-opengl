@@ -2,6 +2,7 @@ Class {
 	#name : #GLProgramManager,
 	#superclass : #GLObjectManager,
 	#instVars : [
+		'currentProgram',
 		'creationImp',
 		'uniformSetterImp',
 		'interfaceQueryImp'
@@ -25,6 +26,24 @@ GLProgramManager >> creationImp [
 GLProgramManager >> creationImp: anObject [
 
 	creationImp := anObject
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 5/15/2021 14:49'
+}
+GLProgramManager >> currentProgram [
+
+	^ currentProgram
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 5/15/2021 14:49'
+}
+GLProgramManager >> currentProgram: anObject [
+
+	currentProgram := anObject
 ]
 
 {
@@ -82,4 +101,28 @@ GLProgramManager >> uniformSetterImp [
 GLProgramManager >> uniformSetterImp: anObject [
 
 	uniformSetterImp := anObject
+]
+
+{
+	#category : #binding,
+	#'squeak_changestamp' : 'stlu 5/15/2021 14:53'
+}
+GLProgramManager >> useProgram: programOrNil [
+
+	GL useProgram: (programOrNil ifNil: [0] ifNotNil: [programOrNil id]).
+	currentProgram := programOrNil.
+]
+
+{
+	#category : #binding,
+	#'squeak_changestamp' : 'stlu 5/15/2021 15:15'
+}
+GLProgramManager >> useProgram: programOrNil during: aBlock [
+
+	| previous |
+	currentProgram == programOrNil ifTrue: [^ aBlock value].
+	previous := currentProgram.
+	self useProgram: programOrNil.
+	^ aBlock ensure: [
+		self useProgram: previous]
 ]

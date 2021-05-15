@@ -2,11 +2,55 @@ Class {
 	#name : #GLVertexArrayManager,
 	#superclass : #GLObjectManager,
 	#instVars : [
+		'boundVertexArray',
 		'creationImp',
 		'stateAccessImp'
 	],
 	#category : #'OpenGLObjects-VertexArrays'
 }
+
+{
+	#category : #binding,
+	#'squeak_changestamp' : 'stlu 5/15/2021 16:14'
+}
+GLVertexArrayManager >> bindVertexArray: vertexArrayOrNil [
+
+	boundVertexArray == vertexArrayOrNil ifTrue: [^ self].
+	
+	GL bindVertexArray: (vertexArrayOrNil ifNil: [0] ifNotNil: [vertexArrayOrNil id]).
+	boundVertexArray := vertexArrayOrNil
+]
+
+{
+	#category : #binding,
+	#'squeak_changestamp' : 'stlu 5/15/2021 16:42'
+}
+GLVertexArrayManager >> bindVertexArray: vertexArrayOrNil during: aBlock [
+
+	| previous |
+	previous := boundVertexArray.
+	self bindVertexArray: vertexArrayOrNil.
+	^ aBlock ensure: [
+		self bindVertexArray: previous]
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 5/15/2021 16:11'
+}
+GLVertexArrayManager >> boundVertexArray [
+
+	^ boundVertexArray
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 5/15/2021 16:11'
+}
+GLVertexArrayManager >> boundVertexArray: anObject [
+
+	boundVertexArray := anObject
+]
 
 {
 	#category : #accessing,
