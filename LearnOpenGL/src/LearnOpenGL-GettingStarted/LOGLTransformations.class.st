@@ -48,13 +48,13 @@ void main()
 
 {
 	#category : #running,
-	#'squeak_changestamp' : 'stlu 5/14/2021 22:34'
+	#'squeak_changestamp' : 'stlu 5/15/2021 13:08'
 }
 LOGLTransformations >> setUp [
 
 	super setUp.
 	
-	texture2 := GL2DTexture create.
+	texture2 := GLTexture2D create.
 	GLTexture activateTextureImageUnitAt: 1.
 	texture2
 		bindAt: 1;

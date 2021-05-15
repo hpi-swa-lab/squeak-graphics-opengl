@@ -39,13 +39,13 @@ LOGLTextures >> isWireframe [
 
 {
 	#category : #running,
-	#'squeak_changestamp' : 'stlu 5/14/2021 21:55'
+	#'squeak_changestamp' : 'stlu 5/15/2021 13:08'
 }
 LOGLTextures >> setUp [
 
 	super setUp.
 	
-	texture := GL2DTexture create.
+	texture := GLTexture2D create.
 	texture
 		bindAt: 0;
 		wrapS: GL_REPEAT;

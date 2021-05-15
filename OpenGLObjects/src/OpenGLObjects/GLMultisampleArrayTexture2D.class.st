@@ -1,5 +1,5 @@
 Class {
-	#name : #GL2DMultisampleArrayTexture,
+	#name : #GLMultisampleArrayTexture2D,
 	#superclass : #GLTexture,
 	#category : #'OpenGLObjects-Textures'
 }
@@ -8,7 +8,7 @@ Class {
 	#category : #private,
 	#'squeak_changestamp' : 'stlu 5/14/2021 14:04'
 }
-GL2DMultisampleArrayTexture class >> privateGetBindingIn: aTextureImageUnit [
+GLMultisampleArrayTexture2D class >> privateGetBindingIn: aTextureImageUnit [
 
 	^ aTextureImageUnit multisampleArrayTexture2D
 ]
@@ -17,7 +17,7 @@ GL2DMultisampleArrayTexture class >> privateGetBindingIn: aTextureImageUnit [
 	#category : #private,
 	#'squeak_changestamp' : 'stlu 5/14/2021 13:58'
 }
-GL2DMultisampleArrayTexture class >> privateSetBindingIn: aTextureImageUnit to: aTexture [
+GLMultisampleArrayTexture2D class >> privateSetBindingIn: aTextureImageUnit to: aTexture [
 
 	aTextureImageUnit multisampleArrayTexture2D: aTexture.
 ]
@@ -26,7 +26,7 @@ GL2DMultisampleArrayTexture class >> privateSetBindingIn: aTextureImageUnit to: 
 	#category : #binding,
 	#'squeak_changestamp' : 'stlu 10/29/2020 00:42'
 }
-GL2DMultisampleArrayTexture class >> target [
+GLMultisampleArrayTexture2D class >> target [
 
 	^ GL_TEXTURE_2D_MULTISAMPLE_ARRAY
 ]

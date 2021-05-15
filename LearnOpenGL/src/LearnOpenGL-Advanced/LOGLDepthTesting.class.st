@@ -133,7 +133,7 @@ LOGLDepthTesting >> render [
 
 {
 	#category : #running,
-	#'squeak_changestamp' : 'stlu 4/16/2021 15:32'
+	#'squeak_changestamp' : 'stlu 5/15/2021 13:08'
 }
 LOGLDepthTesting >> setUp [
 
@@ -166,8 +166,8 @@ LOGLDepthTesting >> setUp [
 			formatAsFloat: GL_FLOAT numComponents: 2 offset: 3 * 4;
 			associateVertexBufferBindingAt: 0].
 	
-	cubeTexture := GL2DTexture create.
-	planeTexture := GL2DTexture create.
+	cubeTexture := GLTexture2D create.
+	planeTexture := GLTexture2D create.
 	
 	self flag: #todo. "avoid long texture initializations?"
 	cubeTexture boundDuring: [

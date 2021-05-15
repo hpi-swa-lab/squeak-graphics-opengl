@@ -637,14 +637,14 @@ GLLibrary >> shouldClose [
 
 {
 	#category : #'state access',
-	#'squeak_changestamp' : 'stlu 4/15/2021 11:51'
+	#'squeak_changestamp' : 'stlu 5/15/2021 12:59'
 }
 GLLibrary >> stringStateNamed: enum [
 
 	| data |
 	data := self getString: enum.
 	data isNull ifTrue: [^ self checkForError].
-	^ (data asType: ExternalType string) fromCString
+	^ (data asType: ExternalType char) fromCString
 ]
 
 {

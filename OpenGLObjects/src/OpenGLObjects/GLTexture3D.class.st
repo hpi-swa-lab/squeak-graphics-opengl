@@ -1,5 +1,5 @@
 Class {
-	#name : #GL3DTexture,
+	#name : #GLTexture3D,
 	#superclass : #GLTexture,
 	#category : #'OpenGLObjects-Textures'
 }
@@ -8,7 +8,7 @@ Class {
 	#category : #private,
 	#'squeak_changestamp' : 'stlu 5/14/2021 14:04'
 }
-GL3DTexture class >> privateGetBindingIn: aTextureImageUnit [
+GLTexture3D class >> privateGetBindingIn: aTextureImageUnit [
 
 	^ aTextureImageUnit texture3D
 ]
@@ -17,7 +17,7 @@ GL3DTexture class >> privateGetBindingIn: aTextureImageUnit [
 	#category : #private,
 	#'squeak_changestamp' : 'stlu 5/14/2021 13:58'
 }
-GL3DTexture class >> privateSetBindingIn: aTextureImageUnit to: aTexture [
+GLTexture3D class >> privateSetBindingIn: aTextureImageUnit to: aTexture [
 
 	aTextureImageUnit texture3D: aTexture.
 ]
@@ -26,7 +26,7 @@ GL3DTexture class >> privateSetBindingIn: aTextureImageUnit to: aTexture [
 	#category : #binding,
 	#'squeak_changestamp' : 'stlu 10/29/2020 00:43'
 }
-GL3DTexture class >> target [
+GLTexture3D class >> target [
 
 	^ GL_TEXTURE_3D
 ]

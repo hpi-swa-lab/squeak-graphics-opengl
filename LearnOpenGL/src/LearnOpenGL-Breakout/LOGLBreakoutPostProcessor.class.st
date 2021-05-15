@@ -136,7 +136,7 @@ LOGLBreakoutPostProcessor >> extent: anObject [
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 3/15/2021 13:16'
+	#'squeak_changestamp' : 'stlu 5/15/2021 13:08'
 }
 LOGLBreakoutPostProcessor >> initialize [
 
@@ -145,7 +145,7 @@ LOGLBreakoutPostProcessor >> initialize [
 	shake := false.
 	chaos := false.
 	
-	texture := GL2DTexture create.
+	texture := GLTexture2D create.
 	msfbo := GLFrameBuffer create.
 	fbo := GLFrameBuffer create.
 	rbo := GLRenderBuffer create.

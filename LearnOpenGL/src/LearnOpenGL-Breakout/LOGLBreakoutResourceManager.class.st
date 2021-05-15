@@ -55,12 +55,12 @@ LOGLBreakoutResourceManager >> initialize [
 
 {
 	#category : #loading,
-	#'squeak_changestamp' : 'stlu 1/7/2021 15:29'
+	#'squeak_changestamp' : 'stlu 5/15/2021 13:08'
 }
 LOGLBreakoutResourceManager >> loadTexture: aForm as: name [
 
 	| texture |
-	texture := GL2DTexture create.
+	texture := GLTexture2D create.
 	texture boundDuring: [
 		texture
 			imageForm: aForm;

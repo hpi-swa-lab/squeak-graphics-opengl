@@ -1,5 +1,5 @@
 Class {
-	#name : #GL1DArrayTexture,
+	#name : #GLArrayTexture1D,
 	#superclass : #GLTexture,
 	#category : #'OpenGLObjects-Textures'
 }
@@ -8,7 +8,7 @@ Class {
 	#category : #private,
 	#'squeak_changestamp' : 'stlu 5/14/2021 14:03'
 }
-GL1DArrayTexture class >> privateGetBindingIn: aTextureImageUnit [
+GLArrayTexture1D class >> privateGetBindingIn: aTextureImageUnit [
 
 	^ aTextureImageUnit arrayTexture1D
 ]
@@ -17,7 +17,7 @@ GL1DArrayTexture class >> privateGetBindingIn: aTextureImageUnit [
 	#category : #private,
 	#'squeak_changestamp' : 'stlu 5/14/2021 13:57'
 }
-GL1DArrayTexture class >> privateSetBindingIn: aTextureImageUnit to: aTexture [
+GLArrayTexture1D class >> privateSetBindingIn: aTextureImageUnit to: aTexture [
 
 	aTextureImageUnit arrayTexture1D: aTexture.
 ]
@@ -26,7 +26,7 @@ GL1DArrayTexture class >> privateSetBindingIn: aTextureImageUnit to: aTexture [
 	#category : #binding,
 	#'squeak_changestamp' : 'stlu 10/29/2020 00:42'
 }
-GL1DArrayTexture class >> target [
+GLArrayTexture1D class >> target [
 
 	^ GL_TEXTURE_1D_ARRAY
 ]

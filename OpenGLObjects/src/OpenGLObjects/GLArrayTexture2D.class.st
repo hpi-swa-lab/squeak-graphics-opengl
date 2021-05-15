@@ -1,5 +1,5 @@
 Class {
-	#name : #GL1DTexture,
+	#name : #GLArrayTexture2D,
 	#superclass : #GLTexture,
 	#category : #'OpenGLObjects-Textures'
 }
@@ -8,25 +8,25 @@ Class {
 	#category : #private,
 	#'squeak_changestamp' : 'stlu 5/14/2021 14:04'
 }
-GL1DTexture class >> privateGetBindingIn: aTextureImageUnit [
+GLArrayTexture2D class >> privateGetBindingIn: aTextureImageUnit [
 
-	^ aTextureImageUnit texture1D
+	^ aTextureImageUnit arrayTexture2D
 ]
 
 {
 	#category : #private,
 	#'squeak_changestamp' : 'stlu 5/14/2021 13:58'
 }
-GL1DTexture class >> privateSetBindingIn: aTextureImageUnit to: aTexture [
+GLArrayTexture2D class >> privateSetBindingIn: aTextureImageUnit to: aTexture [
 
-	aTextureImageUnit texture1D: aTexture.
+	aTextureImageUnit arrayTexture2D: aTexture.
 ]
 
 {
 	#category : #binding,
 	#'squeak_changestamp' : 'stlu 10/29/2020 00:42'
 }
-GL1DTexture class >> target [
+GLArrayTexture2D class >> target [
 
-	^ GL_TEXTURE_1D
+	^ GL_TEXTURE_2D_ARRAY
 ]

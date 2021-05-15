@@ -1,5 +1,5 @@
 Class {
-	#name : #GL2DTexture,
+	#name : #GLTexture2D,
 	#superclass : #GLTexture,
 	#category : #'OpenGLObjects-Textures'
 }
@@ -8,7 +8,7 @@ Class {
 	#category : #private,
 	#'squeak_changestamp' : 'stlu 5/14/2021 14:04'
 }
-GL2DTexture class >> privateGetBindingIn: aTextureImageUnit [
+GLTexture2D class >> privateGetBindingIn: aTextureImageUnit [
 
 	^ aTextureImageUnit texture2D
 ]
@@ -17,7 +17,7 @@ GL2DTexture class >> privateGetBindingIn: aTextureImageUnit [
 	#category : #private,
 	#'squeak_changestamp' : 'stlu 5/14/2021 13:58'
 }
-GL2DTexture class >> privateSetBindingIn: aTextureImageUnit to: aTexture [
+GLTexture2D class >> privateSetBindingIn: aTextureImageUnit to: aTexture [
 
 	aTextureImageUnit texture2D: aTexture.
 ]
@@ -26,7 +26,7 @@ GL2DTexture class >> privateSetBindingIn: aTextureImageUnit to: aTexture [
 	#category : #binding,
 	#'squeak_changestamp' : 'stlu 10/29/2020 00:43'
 }
-GL2DTexture class >> target [
+GLTexture2D class >> target [
 
 	^ GL_TEXTURE_2D
 ]
@@ -35,7 +35,7 @@ GL2DTexture class >> target [
 	#category : #binding,
 	#'squeak_changestamp' : 'stlu 11/3/2020 15:31'
 }
-GL2DTexture >> asForm [
+GLTexture2D >> asForm [
 
 	| bufSize data |
 	bufSize := self extent area * 4.
@@ -59,7 +59,7 @@ GL2DTexture >> asForm [
 	#category : #'initialize-release',
 	#'squeak_changestamp' : 'stlu 11/3/2020 15:31'
 }
-GL2DTexture >> delete [
+GLTexture2D >> delete [
 
 	GL deleteTextures: 1 with: (IntegerArray with: id)
 ]
@@ -68,7 +68,7 @@ GL2DTexture >> delete [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 10/26/2020 12:43'
 }
-GL2DTexture >> extent [
+GLTexture2D >> extent [
 
 	^ self width @ self height
 ]
@@ -77,7 +77,7 @@ GL2DTexture >> extent [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/3/2020 15:32'
 }
-GL2DTexture >> extent: aPoint [
+GLTexture2D >> extent: aPoint [
 
 	self boundDuring: [
 		GL
@@ -105,7 +105,7 @@ GL2DTexture >> extent: aPoint [
 	#category : #private,
 	#'squeak_changestamp' : 'stlu 11/3/2020 15:32'
 }
-GL2DTexture >> getTextureParameterI: parameter [
+GLTexture2D >> getTextureParameterI: parameter [
 
 	self boundDuring: [
 		IntegerArray new: 1 during: [:result |
@@ -117,7 +117,7 @@ GL2DTexture >> getTextureParameterI: parameter [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 10/26/2020 12:43'
 }
-GL2DTexture >> height [
+GLTexture2D >> height [
 
 	^ self getTextureParameterI: GL_TEXTURE_HEIGHT
 ]
@@ -126,7 +126,7 @@ GL2DTexture >> height [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-GL2DTexture >> image: aForm [
+GLTexture2D >> image: aForm [
 
 	self image: aForm minFilter: GL_LINEAR magFilter: GL_LINEAR
 ]
@@ -135,7 +135,7 @@ GL2DTexture >> image: aForm [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 16:30'
 }
-GL2DTexture >> image: aForm minFilter: anEnum magFilter: anEnum2 [
+GLTexture2D >> image: aForm minFilter: anEnum magFilter: anEnum2 [
 
 	self boundDuring: [
 			GL checkForError.
@@ -164,7 +164,7 @@ GL2DTexture >> image: aForm minFilter: anEnum magFilter: anEnum2 [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/3/2020 15:32'
 }
-GL2DTexture >> subImage: aForm at: aPoint [
+GLTexture2D >> subImage: aForm at: aPoint [
 
 	self boundDuring: [
 		GL checkForError.
@@ -185,7 +185,7 @@ GL2DTexture >> subImage: aForm at: aPoint [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 10/26/2020 12:44'
 }
-GL2DTexture >> width [
+GLTexture2D >> width [
 
 	^ self getTextureParameterI: GL_TEXTURE_WIDTH
 ]
