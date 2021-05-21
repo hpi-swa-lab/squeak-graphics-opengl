@@ -144,34 +144,43 @@ GLBuffer >> boundTo: targetEnum during: aBlock [
 
 {
 	#category : #data,
-	#'squeak_changestamp' : 'stlu 11/6/2020 13:59'
+	#'squeak_changestamp' : 'stlu 5/20/2021 14:57'
 }
 GLBuffer >> data: aRawBitsArray [
 
-	self data: aRawBitsArray size: aRawBitsArray byteSize offset: 0
+	self
+		data: aRawBitsArray
+		size: aRawBitsArray byteSize
+		offset: 0
 ]
 
 {
 	#category : #data,
-	#'squeak_changestamp' : 'stlu 11/6/2020 13:58'
+	#'squeak_changestamp' : 'stlu 5/20/2021 14:57'
 }
 GLBuffer >> data: aRawBitsArray offset: byteOffset [
 
-	self data: aRawBitsArray size: aRawBitsArray byteSize offset: byteOffset
+	self
+		data: aRawBitsArray
+		size: aRawBitsArray byteSize
+		offset: byteOffset
 ]
 
 {
 	#category : #data,
-	#'squeak_changestamp' : 'stlu 11/6/2020 13:57'
+	#'squeak_changestamp' : 'stlu 5/20/2021 14:57'
 }
 GLBuffer >> data: aRawBitsArray size: byteSize [
 
-	self data: aRawBitsArray size: byteSize offset: 0
+	self
+		data: aRawBitsArray
+		size: byteSize
+		offset: 0
 ]
 
 {
 	#category : #data,
-	#'squeak_changestamp' : 'stlu 12/1/2020 02:43'
+	#'squeak_changestamp' : 'stlu 5/20/2021 14:54'
 }
 GLBuffer >> data: aRawBitsArray size: byteSize offset: byteOffset [
 
@@ -184,7 +193,7 @@ GLBuffer >> data: aRawBitsArray size: byteSize offset: byteOffset [
 			bufferSubData: target
 			with: byteOffset
 			with: byteSize
-			with: aRawBitsArray]
+			with: aRawBitsArray getHandle]
 ]
 
 {
@@ -434,15 +443,15 @@ GLBuffer >> usage: usageEnum size: byteSize [
 
 {
 	#category : #data,
-	#'squeak_changestamp' : 'stlu 12/1/2020 02:42'
+	#'squeak_changestamp' : 'stlu 5/20/2021 14:56'
 }
-GLBuffer >> usage: usageEnum size: byteSize data: aRawBitsArray [
+GLBuffer >> usage: usageEnum size: byteSize data: rawBitsArrayOrNil [
 
 	self boundDuring: [
 		GL
 			bufferData: target
 			with: byteSize
-			with: aRawBitsArray
+			with: (rawBitsArrayOrNil ifNotNil: [rawBitsArrayOrNil getHandle])
 			with: usageEnum].
 	size := byteSize.
 	usage := usageEnum.
