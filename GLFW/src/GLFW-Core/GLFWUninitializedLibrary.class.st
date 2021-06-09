@@ -4075,11 +4075,11 @@ GLFWUninitializedLibrary >> privateInit [
 
 {
 	#category : #private,
-	#'squeak_changestamp' : 'stlu 2/12/2021 01:36'
+	#'squeak_changestamp' : 'stlu 6/6/2021 15:36'
 }
 GLFWUninitializedLibrary >> privateSetErrorCallback: anFFICallback [
 
-	<apicall: void* 'glfwSetErrorCallback' (void*)>
+	<apicall: void* 'glfwSetErrorCallback' (FFICallback*)>
 	^ self externalCallFailed
 ]
 
@@ -4204,14 +4204,14 @@ GLFWUninitializedLibrary >> setDropCallback: aWindow with: aBlock [
 
 {
 	#category : #'api - init',
-	#'squeak_changestamp' : 'stlu 4/21/2021 09:20'
+	#'squeak_changestamp' : 'stlu 6/6/2021 15:33'
 }
 GLFWUninitializedLibrary >> setErrorCallback: aBlock [
 
 	errorCallback := FFICallback
 						signature: '<callback: void (*)(int string)>'
 						block: aBlock self.
-	self privateSetErrorCallback: errorCallback thunk
+	self privateSetErrorCallback: errorCallback
 ]
 
 {
