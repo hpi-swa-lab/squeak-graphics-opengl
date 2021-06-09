@@ -1,8 +1,7 @@
 Class {
 	#name : #LOGLImages,
 	#superclass : #Object,
-	#category : #'LearnOpenGL-Core',
-	#'squeak_changestamp' : ''
+	#category : #'LearnOpenGL-Core'
 }
 
 {

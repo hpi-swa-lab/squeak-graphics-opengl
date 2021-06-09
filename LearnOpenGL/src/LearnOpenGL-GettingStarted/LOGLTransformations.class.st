@@ -12,13 +12,13 @@ Class {
 
 {
 	#category : #running,
-	#'squeak_changestamp' : 'stlu 1/29/2021 15:11'
+	#'squeak_changestamp' : 'stlu 5/24/2021 22:46'
 }
 LOGLTransformations >> draw [
 
 	| transform |
 	transform := Matrix4x4 identity.
-	transform := transform rotatedBy: lastFrameTime radiansToDegrees around: 0.0 @ 0.0 @ 1.0.
+	transform := transform rotatedBy: timeOfLastFrame radiansToDegrees around: 0.0 @ 0.0 @ 1.0.
 	transform := transform translatedBy: 0.5 @ -0.5 @ 0.0.
 	program uniforms transform: transform.
 	super draw

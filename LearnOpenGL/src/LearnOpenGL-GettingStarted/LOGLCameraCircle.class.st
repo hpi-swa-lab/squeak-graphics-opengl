@@ -9,14 +9,14 @@ Class {
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 2/1/2021 13:36'
+	#'squeak_changestamp' : 'stlu 5/24/2021 22:47'
 }
 LOGLCameraCircle >> viewMatrix [
 
 	| radius camX camZ |
 	radius := 10.0.
-	camX := lastFrameTime sin * radius.
-	camZ := lastFrameTime cos * radius.
+	camX := timeOfLastFrame sin * radius.
+	camZ := timeOfLastFrame cos * radius.
 	^ Matrix4x4
 		lookAt: 0.0 @ 0.0 @ 0.0
 		from: camX @ 0.0 @ camZ

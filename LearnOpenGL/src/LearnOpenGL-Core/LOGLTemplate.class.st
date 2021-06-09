@@ -5,14 +5,14 @@ Class {
 		'library',
 		'renderProcess',
 		'window',
-		'lastFrameTime'
+		'timeOfLastFrame',
+		'frameTime'
 	],
 	#pools : [
 		'GLConstants',
 		'GLFWConstants'
 	],
-	#category : #'LearnOpenGL-Core',
-	#'squeak_changestamp' : ''
+	#category : #'LearnOpenGL-Core'
 }
 
 {
@@ -24,6 +24,17 @@ LOGLTemplate class >> run [
 	^ self new
 		run;
 		yourself
+]
+
+{
+	#category : #rendering,
+	#'squeak_changestamp' : 'stlu 6/4/2021 17:22'
+}
+LOGLTemplate >> calculateFrameTime: currentFrameTime [
+
+	| smoothing |
+	smoothing := 0.995.
+	frameTime := (frameTime * smoothing) + (1.0 - smoothing * currentFrameTime).
 ]
 
 {
@@ -46,11 +57,12 @@ LOGLTemplate >> initialWindowExtent [
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 1/5/2021 08:21'
+	#'squeak_changestamp' : 'stlu 5/24/2021 22:48'
 }
 LOGLTemplate >> initialize [
 
-	lastFrameTime := 0.0
+	timeOfLastFrame := 0.0.
+	frameTime := 1000.0 / 30.0. "30 FPS"
 ]
 
 {
@@ -60,6 +72,15 @@ LOGLTemplate >> initialize [
 LOGLTemplate >> isModal [
 
 	^ false
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 5/18/2021 22:09'
+}
+LOGLTemplate >> library [
+
+	^ library
 ]
 
 {
@@ -126,32 +147,33 @@ LOGLTemplate >> render: deltaSecs [
 
 {
 	#category : #rendering,
-	#'squeak_changestamp' : 'stlu 1/8/2021 11:48'
+	#'squeak_changestamp' : 'stlu 6/4/2021 17:16'
 }
 LOGLTemplate >> renderLoop [
 
 	[self shouldClose] whileFalse: [
 		| currentFrameTime delta |
 		currentFrameTime := Time utcMicrosecondClock / 1e6.
-		delta := currentFrameTime - lastFrameTime.
+		delta := currentFrameTime - timeOfLastFrame.
 		library makeCurrentDuring: [
 			self processInput: delta.
-			self render: delta.
+			self calculateFrameTime: (Time microsecondsToRun: [self render: delta]) / 1e3.
 			window swapBuffers.
 			GLFW pollEvents].
-		lastFrameTime := currentFrameTime.
+		timeOfLastFrame := currentFrameTime.
 		self isModal ifFalse: [Processor yield]]
 ]
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 4/17/2021 10:56'
+	#'squeak_changestamp' : 'stlu 6/5/2021 22:33'
 }
 LOGLTemplate >> run [
 
 	"GLFW init."
 	GLFW targetVersion: (GL33 profile: #core).
 	GLFW windowHint: GLFW_FLOATING with: true.
+	GLFW windowHint: GLFW_OPENGL_DEBUG_CONTEXT with: true.
 
 	window := GLFWWindow
 				extent: self initialWindowExtent

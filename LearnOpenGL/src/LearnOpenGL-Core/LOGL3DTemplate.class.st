@@ -5,8 +5,7 @@ Class {
 		'lastCursorPosition',
 		'camera'
 	],
-	#category : #'LearnOpenGL-Core',
-	#'squeak_changestamp' : ''
+	#category : #'LearnOpenGL-Core'
 }
 
 {

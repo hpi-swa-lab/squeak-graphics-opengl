@@ -320,7 +320,7 @@ LOGLBreakout >> projection [
 
 {
 	#category : #rendering,
-	#'squeak_changestamp' : 'stlu 4/15/2021 12:09'
+	#'squeak_changestamp' : 'stlu 5/24/2021 22:47'
 }
 LOGLBreakout >> render [
 
@@ -344,7 +344,7 @@ LOGLBreakout >> render [
 			particles draw.
 			ball draw: renderer.
 		effects endRender.
-		effects render: lastFrameTime]
+		effects render: timeOfLastFrame]
 ]
 
 {

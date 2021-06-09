@@ -13,8 +13,7 @@ Class {
 		'mouseSensitivity',
 		'zoom'
 	],
-	#category : #'LearnOpenGL-Core',
-	#'squeak_changestamp' : ''
+	#category : #'LearnOpenGL-Core'
 }
 
 {
