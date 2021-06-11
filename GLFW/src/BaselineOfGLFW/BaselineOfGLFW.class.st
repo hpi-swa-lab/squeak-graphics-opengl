@@ -20,8 +20,7 @@ BaselineOfGLFW >> baseline: spec [
 			baseline: 'OpenGL' with: [
 				spec repository: 'github://hpi-swa-lab/squeak-graphics-opengl:main/OpenGL/src/'];
 			
-			package: 'GLFW-FFI-Support' with: [spec requires: #('FFI')];
-			package: 'GLFW-Core' with: [spec requires: #('GLFW-FFI-Support')];
+			package: 'GLFW-Core' with: [spec requires: #('FFI')];
 			package: 'GLFW-OpenGL' with: [spec requires: #('GLFW-Core' 'OpenGL')].
 		
 		spec
