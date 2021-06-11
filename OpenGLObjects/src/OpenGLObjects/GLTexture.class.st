@@ -388,10 +388,11 @@ GLTexture >> immutableLevels [
 
 {
 	#category : #testing,
-	#'squeak_changestamp' : 'stlu 1/4/2021 14:14'
+	#'squeak_changestamp' : 'stlu 6/6/2021 20:16'
 }
 GLTexture >> isComplete [
 
+	self flag: #todo. "none of the below are implemented"
 	self isMipmapComplete ifFalse: [^ false].
 	self isCubemapComplete ifFalse: [^ false].
 	self isImageFormatComplete ifFalse: [^ false].

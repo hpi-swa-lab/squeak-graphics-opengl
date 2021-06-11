@@ -102,6 +102,25 @@ GLTexture2D >> extent: aPoint [
 ]
 
 {
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 6/4/2021 22:18'
+}
+GLTexture2D >> extent: anExtent internalFormat: internalFormatEnum data: aRawBitsArray format: pixelFormatEnum type: pixelDataType [
+
+	self boundDuring: [
+		GL
+			texImage2D: GL_TEXTURE_2D
+			with: 0 "level of detail (0=base image level)"
+			with: internalFormatEnum
+			with: anExtent x
+			with: anExtent y
+			with: 0 "must be 0"
+			with: pixelFormatEnum
+			with: pixelDataType
+			with: aRawBitsArray]
+]
+
+{
 	#category : #private,
 	#'squeak_changestamp' : 'stlu 11/3/2020 15:32'
 }
@@ -124,40 +143,18 @@ GLTexture2D >> height [
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 6/11/2021 14:41'
 }
 GLTexture2D >> image: aForm [
 
-	self image: aForm minFilter: GL_LINEAR magFilter: GL_LINEAR
-]
-
-{
-	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 11/13/2020 16:30'
-}
-GLTexture2D >> image: aForm minFilter: anEnum magFilter: anEnum2 [
-
 	self boundDuring: [
-			GL checkForError.
-			GL
-				texImage2D: GL_TEXTURE_2D
-				with: 0
-				with: GL_RGBA
-				with: aForm width
-				with: aForm height
-				with: 0
-				with: GL_BGRA
-				with: GL_UNSIGNED_BYTE
-				with: (aForm asFormOfDepth: 32) bits.
-			GL checkForError.
-			GL
-				texParameteri: GL_TEXTURE_2D
-				with: GL_TEXTURE_MIN_FILTER
-				with: anEnum.
-			GL
-				texParameteri: GL_TEXTURE_2D
-				with: GL_TEXTURE_MAG_FILTER
-				with: anEnum]
+		aForm unhibernate.
+		self
+			extent: aForm extent
+			internalFormat: GL_RGBA
+			data: (aForm asFormOfDepth: 32) bits
+			format: GL_BGRA
+			type: GL_UNSIGNED_BYTE]
 ]
 
 {
