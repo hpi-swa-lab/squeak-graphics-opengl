@@ -10,8 +10,7 @@ Class {
 		'p3',
 		'p4'
 	],
-	#category : #'3DTransform-Vectors',
-	#'squeak_changestamp' : ''
+	#category : #'3DTransform-Vectors'
 }
 
 {

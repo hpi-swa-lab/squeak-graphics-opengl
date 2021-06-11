@@ -8,8 +8,7 @@ Class {
 	#classVars : [
 		'Zero4x4Matrix'
 	],
-	#category : #'3DTransform-Arrays',
-	#'squeak_changestamp' : ''
+	#category : #'3DTransform-Arrays'
 }
 
 {

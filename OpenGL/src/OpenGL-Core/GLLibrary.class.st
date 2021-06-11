@@ -445,6 +445,15 @@ GLLibrary >> maxTesselationEvaluationTextureImageUnits [
 
 {
 	#category : #limits,
+	#'squeak_changestamp' : 'stlu 6/3/2021 20:05'
+}
+GLLibrary >> maxTextureBufferSize [
+	"Maximum number of texels allowed in the texel array of a texture buffer object. At least 65536."
+	^ self integerStateNamed: GL_MAX_TEXTURE_BUFFER_SIZE
+]
+
+{
+	#category : #limits,
 	#'squeak_changestamp' : 'stlu 4/15/2021 18:37'
 }
 GLLibrary >> maxTextureSize [

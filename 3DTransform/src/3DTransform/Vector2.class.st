@@ -5,8 +5,7 @@ Class {
 	#name : #Vector2,
 	#superclass : #Vector,
 	#type : #words,
-	#category : #'3DTransform-Vectors',
-	#'squeak_changestamp' : ''
+	#category : #'3DTransform-Vectors'
 }
 
 {

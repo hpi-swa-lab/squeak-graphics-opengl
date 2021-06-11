@@ -8,8 +8,7 @@ Class {
 	#classVars : [
 		'ZeroVertex'
 	],
-	#category : #'3DTransform-Arrays',
-	#'squeak_changestamp' : ''
+	#category : #'3DTransform-Arrays'
 }
 
 {

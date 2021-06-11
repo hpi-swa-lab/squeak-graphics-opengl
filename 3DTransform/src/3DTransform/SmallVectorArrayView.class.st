@@ -4,8 +4,7 @@ Class {
 	#instVars : [
 		'vectors'
 	],
-	#category : #'3DTransform-Views',
-	#'squeak_changestamp' : ''
+	#category : #'3DTransform-Views'
 }
 
 {

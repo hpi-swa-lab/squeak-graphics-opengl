@@ -5,8 +5,7 @@ Class {
 	#name : #Vector2Array,
 	#superclass : #VectorArray,
 	#type : #words,
-	#category : #'3DTransform-Arrays',
-	#'squeak_changestamp' : ''
+	#category : #'3DTransform-Arrays'
 }
 
 {

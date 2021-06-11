@@ -9,8 +9,7 @@ Class {
 		'IdentityMatrix',
 		'ZeroMatrix'
 	],
-	#category : #'3DTransform-Vectors',
-	#'squeak_changestamp' : ''
+	#category : #'3DTransform-Vectors'
 }
 
 {
@@ -40,6 +39,22 @@ Matrix4x4 class >> initialize [
 	ZeroMatrix := self new.
 	IdentityMatrix := self new.
 	IdentityMatrix a11: 1.0; a22: 1.0; a33: 1.0; a44: 1.0.
+]
+
+{
+	#category : #'instance creation',
+	#'squeak_changestamp' : 'stlu 5/16/2021 01:40'
+}
+Matrix4x4 class >> left: left top: top right: right bottom: bottom near: zNear far: zFar [
+
+	^ self identity
+		a11: 2.0 / (right - left);
+		a22: 2.0 / (top - bottom);
+    		a33: -2.0 / (zFar - zNear);
+		a14: (right + left) negated / (right - left);
+		a24: (top + bottom) negated / (top - bottom);
+		a34: (zFar + zNear) negated / (zFar - zNear);
+		yourself
 ]
 
 {
@@ -78,7 +93,7 @@ Matrix4x4 class >> numElements [
 
 {
 	#category : #'instance creation',
-	#'squeak_changestamp' : 'stlu 1/7/2021 13:34'
+	#'squeak_changestamp' : 'stlu 5/16/2021 01:24'
 }
 Matrix4x4 class >> ortho: aRectangle near: zNear far: zFar [
 

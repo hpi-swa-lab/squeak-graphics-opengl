@@ -30,8 +30,7 @@ Class {
 		'Identity',
 		'Zero'
 	],
-	#category : #'3DTransform',
-	#'squeak_changestamp' : 'stlu 9/1/2020 17:53'
+	#category : #'3DTransform'
 }
 
 {
@@ -261,20 +260,18 @@ Matrix2x3 >> asMatrix2x3 [
 
 {
 	#category : #converting,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 5/20/2021 14:28'
 }
 Matrix2x3 >> asMatrix4x4 [
 
 	| m |
-	m := Matrix4x4 new.
+	m := Matrix4x4 identity.
 	m a11: a11.
 	m a12: a12.
 	m a21: a21.
 	m a22: a22.
 	m a14: a13.
 	m a24: a23.
-	m a33: 1.0.
-	m a44: 1.0.
 	^ m
 ]
 

@@ -16,8 +16,7 @@ Class {
 	#classVars : [
 		'QuaternionIdentity'
 	],
-	#category : #'3DTransform-Vectors',
-	#'squeak_changestamp' : ''
+	#category : #'3DTransform-Vectors'
 }
 
 {
