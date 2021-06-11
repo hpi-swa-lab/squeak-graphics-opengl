@@ -6,7 +6,7 @@ Class {
 
 {
 	#category : #baseline,
-	#'squeak_changestamp' : 'stlu 04/20/2021 22:20'
+	#'squeak_changestamp' : 'stlu 6/11/2021 10:20'
 }
 BaselineOfOpenGLObjects >> baseline: spec [
 	<baseline>
@@ -16,8 +16,7 @@ BaselineOfOpenGLObjects >> baseline: spec [
 				spec
 					className: 'ConfigurationOfFFI';
 					repository: 'http://www.squeaksource.com/MetacelloRepository';
-					versionString: #development;
-					loads: #('Core')];
+					version: '2.0'];
 			baseline: 'OpenGL' with: [
 				spec repository: 'github://hpi-swa-lab/squeak-graphics-opengl:main/OpenGL/src/'];
 			baseline: '3DTransform' with: [
