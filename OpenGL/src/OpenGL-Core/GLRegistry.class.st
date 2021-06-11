@@ -104528,7 +104528,7 @@ GLRegistry >> currentPaletteMatrixOES: matrixpaletteindex [
 
 {
 	#category : #commands,
-	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
+	#'squeak_changestamp' : 'stlu 6/6/2021 15:58'
 }
 GLRegistry >> debugMessageCallback: callback with: userParam [
 
@@ -104543,7 +104543,7 @@ GLRegistry >> debugMessageCallback: callback with: userParam [
 	<glArg: 'callback' type: 'GLDEBUGPROC'>
 	<glArg: 'userParam' type: 'void*'>
 	
-	<apicall: void 'glDebugMessageCallback' (GLDEBUGPROC void*)>
+	<apicall: void 'glDebugMessageCallback' (FFICallback* void*)>
 	^ self externalCallFailed
 ]
 
