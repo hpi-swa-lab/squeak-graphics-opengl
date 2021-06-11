@@ -8,7 +8,6 @@ OrderedDictionary {
 	'OpenGL/src/OpenGL-Generation' : #SquotTonelSerializer,
 	'OpenGL/src/OpenGL-Balloon3D' : #SquotTonelSerializer,
 	'GLFW/src/BaselineOfGLFW' : #SquotTonelSerializer,
-	'GLFW/src/GLFW-FFI-Support' : #SquotTonelSerializer,
 	'GLFW/src/GLFW-Core' : #SquotTonelSerializer,
 	'GLFW/src/GLFW-OpenGL' : #SquotTonelSerializer,
 	'OpenGLObjects/src/BaselineOfOpenGLObjects' : #SquotTonelSerializer,
