@@ -6,7 +6,11 @@ Class {
 		'renderProcess',
 		'window',
 		'timeOfLastFrame',
-		'frameTime'
+		'gpuTimeQuery',
+		'frameTimes',
+		'renderTimes',
+		'gpuTimes',
+		'timeOfLastWindowTitle'
 	],
 	#pools : [
 		'GLConstants',
@@ -27,14 +31,12 @@ LOGLTemplate class >> run [
 ]
 
 {
-	#category : #rendering,
-	#'squeak_changestamp' : 'stlu 6/4/2021 17:22'
+	#category : #'window title',
+	#'squeak_changestamp' : 'stlu 6/17/2021 13:12'
 }
-LOGLTemplate >> calculateFrameTime: currentFrameTime [
+LOGLTemplate >> baseWindowTitle [
 
-	| smoothing |
-	smoothing := 0.995.
-	frameTime := (frameTime * smoothing) + (1.0 - smoothing * currentFrameTime).
+	^ self class name asString
 ]
 
 {
@@ -48,6 +50,16 @@ LOGLTemplate >> cursorPositionChanged: aPoint [
 
 {
 	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 6/17/2021 12:29'
+}
+LOGLTemplate >> gpuTimeQuery [
+
+	^ gpuTimeQuery ifNil: [
+		gpuTimeQuery := GLTimeElapsed create]
+]
+
+{
+	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 1/7/2021 17:50'
 }
 LOGLTemplate >> initialWindowExtent [
@@ -57,12 +69,14 @@ LOGLTemplate >> initialWindowExtent [
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 5/24/2021 22:48'
+	#'squeak_changestamp' : 'stlu 6/17/2021 13:11'
 }
 LOGLTemplate >> initialize [
 
-	timeOfLastFrame := 0.0.
-	frameTime := 1000.0 / 30.0. "30 FPS"
+	"remember last 120 frames"
+	frameTimes := LOGLFrameHistory new: 120.
+	renderTimes := LOGLFrameHistory new: 120.
+	gpuTimes := LOGLFrameHistory new: 120.
 ]
 
 {
@@ -84,7 +98,34 @@ LOGLTemplate >> library [
 ]
 
 {
-	#category : #rendering,
+	#category : #logging,
+	#'squeak_changestamp' : 'stlu 6/17/2021 11:17'
+}
+LOGLTemplate >> logFrameTime: microseconds [
+
+	frameTimes add: microseconds asFloat
+]
+
+{
+	#category : #logging,
+	#'squeak_changestamp' : 'stlu 6/17/2021 12:41'
+}
+LOGLTemplate >> logGPUTime: nanoseconds [
+
+	gpuTimes add: nanoseconds asFloat
+]
+
+{
+	#category : #logging,
+	#'squeak_changestamp' : 'stlu 6/17/2021 11:17'
+}
+LOGLTemplate >> logRenderTime: microseconds [
+
+	renderTimes add: microseconds asFloat
+]
+
+{
+	#category : #input,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:46'
 }
 LOGLTemplate >> processInput [
@@ -94,7 +135,7 @@ LOGLTemplate >> processInput [
 ]
 
 {
-	#category : #rendering,
+	#category : #input,
 	#'squeak_changestamp' : 'stlu 1/5/2021 08:24'
 }
 LOGLTemplate >> processInput: deltaSecs [
@@ -103,7 +144,7 @@ LOGLTemplate >> processInput: deltaSecs [
 ]
 
 {
-	#category : #rendering,
+	#category : #running,
 	#'squeak_changestamp' : 'stlu 1/7/2021 12:24'
 }
 LOGLTemplate >> processPriority [
@@ -146,27 +187,35 @@ LOGLTemplate >> render: deltaSecs [
 ]
 
 {
-	#category : #rendering,
-	#'squeak_changestamp' : 'stlu 6/4/2021 17:16'
+	#category : #running,
+	#'squeak_changestamp' : 'stlu 6/17/2021 13:14'
 }
 LOGLTemplate >> renderLoop [
 
 	[self shouldClose] whileFalse: [
-		| currentFrameTime delta |
+		| time currentFrameTime delta |
+		time := Time utcMicrosecondClock.
 		currentFrameTime := Time utcMicrosecondClock / 1e6.
 		delta := currentFrameTime - timeOfLastFrame.
 		library makeCurrentDuring: [
+			| frameStartTime |
 			self processInput: delta.
-			self calculateFrameTime: (Time microsecondsToRun: [self render: delta]) / 1e3.
+			self gpuTimeQuery during: [
+				frameStartTime := Time utcMicrosecondClock.
+				self render: delta.
+				self logRenderTime: Time utcMicrosecondClock - frameStartTime].
 			window swapBuffers.
+			self logGPUTime: gpuTimeQuery result. "returns only when GPU is done"
+			self logFrameTime: Time utcMicrosecondClock - frameStartTime.
 			GLFW pollEvents].
+		self shouldUpdateWindowTitle ifTrue: [self updateWindowTitle].
 		timeOfLastFrame := currentFrameTime.
 		self isModal ifFalse: [Processor yield]]
 ]
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 6/5/2021 22:33'
+	#'squeak_changestamp' : 'stlu 6/17/2021 13:13'
 }
 LOGLTemplate >> run [
 
@@ -177,13 +226,15 @@ LOGLTemplate >> run [
 
 	window := GLFWWindow
 				extent: self initialWindowExtent
-				title: self title.
+				title: self windowTitle.
 	
 	window ifNil: [^ self error: 'Failed to create GLFW window'].
+	timeOfLastFrame := Time utcMicrosecondClock / 1e6.
+	timeOfLastWindowTitle := Time utcMicrosecondClock.
 	
 	library := window context library withErrorChecking withVersionChecking.
-	
 	library makeCurrentDuring: [
+		GLFW swapInterval: (self vSync ifTrue: [1] ifFalse: [0]).
 		self registerCallbacks.
 		self setUp.].
 	
@@ -218,7 +269,43 @@ LOGLTemplate >> shouldClose [
 ]
 
 {
-	#category : #rendering,
+	#category : #'window title',
+	#'squeak_changestamp' : 'stlu 6/17/2021 13:18'
+}
+LOGLTemplate >> shouldUpdateWindowTitle [
+
+	^ (Time utcMicrosecondClock - timeOfLastWindowTitle) > self windowTitleUpdateInterval
+]
+
+{
+	#category : #testing,
+	#'squeak_changestamp' : 'stlu 6/17/2021 12:33'
+}
+LOGLTemplate >> showFrameTimeInWindowTitle [
+
+	^ true
+]
+
+{
+	#category : #testing,
+	#'squeak_changestamp' : 'stlu 6/17/2021 12:33'
+}
+LOGLTemplate >> showGPUTimeInWindowTitle [
+
+	^ true
+]
+
+{
+	#category : #testing,
+	#'squeak_changestamp' : 'stlu 6/17/2021 12:33'
+}
+LOGLTemplate >> showRenderTimeInWindowTitle [
+
+	^ true
+]
+
+{
+	#category : #running,
 	#'squeak_changestamp' : 'stlu 4/16/2021 10:42'
 }
 LOGLTemplate >> spawnNewRenderProcess [
@@ -242,12 +329,22 @@ LOGLTemplate >> tearDown [
 ]
 
 {
-	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 10/19/2020 17:18'
+	#category : #'window title',
+	#'squeak_changestamp' : 'stlu 6/17/2021 13:19'
 }
-LOGLTemplate >> title [
+LOGLTemplate >> updateWindowTitle [
 
-	^ self class name asString
+	window title: self windowTitle.
+	timeOfLastWindowTitle := Time utcMicrosecondClock.
+]
+
+{
+	#category : #testing,
+	#'squeak_changestamp' : 'stlu 6/17/2021 12:46'
+}
+LOGLTemplate >> vSync [
+
+	^ false
 ]
 
 {
@@ -261,10 +358,43 @@ LOGLTemplate >> window [
 
 {
 	#category : #callbacks,
-	#'squeak_changestamp' : 'stlu 4/15/2021 12:11'
+	#'squeak_changestamp' : 'stlu 6/17/2021 14:46'
 }
 LOGLTemplate >> windowExtentChanged: newExtent [
 	"glfw: whenever the window size changed (by OS or user resize) this callback function executes"
-	window context library makeCurrentDuring: [
-		GL viewport: (0@0 extent: newExtent)]
+	GL viewport: (0@0 extent: newExtent)
+]
+
+{
+	#category : #'window title',
+	#'squeak_changestamp' : 'stlu 6/17/2021 13:12'
+}
+LOGLTemplate >> windowTitle [
+
+	^ String streamContents: [:stream |
+		stream nextPutAll: self baseWindowTitle.
+		(self showFrameTimeInWindowTitle and: [frameTimes notEmpty]) ifTrue: [
+			stream
+				nextPutAll: ' | FT: ';
+				nextPutAll: (frameTimes average / 1e3 printShowingMaxDecimalPlaces: 3);
+				nextPutAll: 'ms'].
+		(self showRenderTimeInWindowTitle and: [renderTimes notEmpty]) ifTrue: [
+			stream
+				nextPutAll: ' | RT: ';
+				nextPutAll: (frameTimes average / 1e3 printShowingMaxDecimalPlaces: 3);
+				nextPutAll: 'ms'].
+		(self showGPUTimeInWindowTitle and: [gpuTimes notEmpty]) ifTrue: [
+			stream
+				nextPutAll: ' | GPU: ';
+				nextPutAll: (gpuTimes average / 1e3 printShowingMaxDecimalPlaces: 3);
+				nextPutAll: 'us']]
+]
+
+{
+	#category : #'window title',
+	#'squeak_changestamp' : 'stlu 6/17/2021 13:19'
+}
+LOGLTemplate >> windowTitleUpdateInterval [
+	"Time in microseconds that needs to pass minimum, until the window title is changed."
+	^ 100000 "10 per second"
 ]
