@@ -75,7 +75,7 @@ GLTexture2D >> extent [
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 11/3/2020 15:32'
+	#'squeak_changestamp' : 'stlu 6/17/2021 13:30'
 }
 GLTexture2D >> extent: aPoint [
 
@@ -90,7 +90,6 @@ GLTexture2D >> extent: aPoint [
 			with: GL_BGRA
 			with: GL_UNSIGNED_BYTE
 			with: nil.
-		GL checkForError.
 		GL
 			texParameteri: GL_TEXTURE_2D
 			with: GL_TEXTURE_MIN_FILTER
@@ -159,12 +158,11 @@ GLTexture2D >> image: aForm [
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 11/3/2020 15:32'
+	#'squeak_changestamp' : 'stlu 6/17/2021 13:30'
 }
 GLTexture2D >> subImage: aForm at: aPoint [
 
 	self boundDuring: [
-		GL checkForError.
 		GL
 			texSubImage2D: GL_TEXTURE_2D
 			with: 0
@@ -174,8 +172,7 @@ GLTexture2D >> subImage: aForm at: aPoint [
 			with: aForm height
 			with: GL_BGRA
 			with: GL_UNSIGNED_BYTE
-			with: (aForm asFormOfDepth: 32) bits.
-		GL checkForError]
+			with: (aForm asFormOfDepth: 32) bits]
 ]
 
 {
