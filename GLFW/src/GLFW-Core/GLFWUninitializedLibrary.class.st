@@ -116,13 +116,13 @@ GLFWUninitializedLibrary class >> initializeErrorMessages [
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 4/21/2021 10:52'
+	#'squeak_changestamp' : 'stlu 6/24/2021 16:16'
 }
 GLFWUninitializedLibrary class >> instance [
 
 	^ Environment current
 		at: #GLFW
-		ifAbsent: [self registerNewInstance]
+		ifAbsentPut: [self newInstance]
 ]
 
 {
@@ -147,13 +147,22 @@ GLFWUninitializedLibrary class >> moduleName [
 
 {
 	#category : #private,
-	#'squeak_changestamp' : 'stlu 4/21/2021 10:54'
+	#'squeak_changestamp' : 'stlu 6/24/2021 16:19'
+}
+GLFWUninitializedLibrary class >> newInstance [
+
+	^ GLFWUninitializedLibrary new
+]
+
+{
+	#category : #private,
+	#'squeak_changestamp' : 'stlu 6/24/2021 16:17'
 }
 GLFWUninitializedLibrary class >> registerNewInstance [
 
-	Environment current
+	^ Environment current
 		at: #GLFW
-		put: GLFWUninitializedLibrary basicNew initialize; yourself
+		put: self newInstance
 ]
 
 {
@@ -168,14 +177,15 @@ GLFWUninitializedLibrary class >> shutDown: quitting [
 
 {
 	#category : #'system startup',
-	#'squeak_changestamp' : 'stlu 4/21/2021 10:59'
+	#'squeak_changestamp' : 'stlu 6/24/2021 16:21'
 }
 GLFWUninitializedLibrary class >> startUp: resuming [
 
 	resuming ifTrue: [
-		"instance may be initialized while saving.
-		ensure it is set back to uninitialized."
-		self instance beUninitializedLibrary]
+		"we might have changed platform.
+		create a new external library to properly init moduleName.
+		also ensures the instance is uninitialized in case no proper shutdown occurred."
+		self instance becomeForward: self newInstance]
 ]
 
 {
