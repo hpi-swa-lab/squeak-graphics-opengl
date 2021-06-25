@@ -21,13 +21,13 @@ Class {
 
 {
 	#category : #'class initialization',
-	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
+	#'squeak_changestamp' : 'stlu 6/25/2021 08:56'
 }
 GLFWUninitializedLibrary class >> compileConstantAccessors [
 
 	GLFWConstants classVarNames do: [:aSymbol |
 		| selector source |
-		selector := aSymbol allButFirst: 5.
+		selector := aSymbol allButFirst: 5. "GLFW_"
 		source := '{1}
 
 	<generated>
@@ -177,15 +177,19 @@ GLFWUninitializedLibrary class >> shutDown: quitting [
 
 {
 	#category : #'system startup',
-	#'squeak_changestamp' : 'stlu 6/24/2021 16:21'
+	#'squeak_changestamp' : 'stlu 6/25/2021 09:03'
 }
 GLFWUninitializedLibrary class >> startUp: resuming [
 
 	resuming ifTrue: [
+		"in case no proper shutdown occurred:
+		ensure all code still referencing and using the previous instance fails.
+		avoids accidentally calling the FFI library with bogus memory references."
+		self instance becomeForward: nil. "is nil good enough?"
+		
 		"we might have changed platform.
-		create a new external library to properly init moduleName.
-		also ensures the instance is uninitialized in case no proper shutdown occurred."
-		self instance becomeForward: self newInstance]
+		create a new external library to properly init moduleName."
+		self registerNewInstance.]
 ]
 
 {
