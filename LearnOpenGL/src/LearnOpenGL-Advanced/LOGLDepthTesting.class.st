@@ -7,8 +7,6 @@ Class {
 	#instVars : [
 		'program',
 		'vao',
-		'cubeVAO',
-		'planeVAO',
 		'cubeVBO',
 		'planeVBO',
 		'cubeTexture',
@@ -69,6 +67,25 @@ LOGLDepthTesting >> cubeVertices [
 ]
 
 {
+	#category : #rendering,
+	#'squeak_changestamp' : 'stlu 6/27/2021 18:50'
+}
+LOGLDepthTesting >> draw [
+
+	(vao vertexBufferBindingAt: 0) buffer: cubeVBO.
+	program uniforms texture1: 1.
+	program uniforms model: (Matrix4x4 withOffset: -1.0 @ 0.0 @ -1.0).
+	vao drawArrays: GL_TRIANGLES count: 36.
+	program uniforms model: (Matrix4x4 withOffset: 2.0 @ 0.0 @ 0.0).
+	vao drawArrays: GL_TRIANGLES count: 36.
+
+	(vao vertexBufferBindingAt: 0) buffer: planeVBO.
+	program uniforms texture1: 2.
+	program uniforms model: Matrix4x4 identity.
+	vao drawArrays: GL_TRIANGLES count: 6
+]
+
+{
 	#category : #shaders,
 	#'squeak_changestamp' : 'stlu 3/13/2021 00:57'
 }
@@ -105,8 +122,8 @@ LOGLDepthTesting >> planeVertices [
 ]
 
 {
-	#category : #running,
-	#'squeak_changestamp' : 'stlu 5/15/2021 02:52'
+	#category : #rendering,
+	#'squeak_changestamp' : 'stlu 6/27/2021 18:47'
 }
 LOGLDepthTesting >> render [
 
@@ -118,22 +135,12 @@ LOGLDepthTesting >> render [
 			projection: self projectionMatrix;
 			view: camera viewMatrix.
 		vao boundDuring: [
-			(vao vertexBufferBindingAt: 0) buffer: cubeVBO.
-			cubeTexture bind.
-			program uniforms model: (Matrix4x4 withOffset: -1.0 @ 0.0 @ -1.0).
-			vao drawArrays: GL_TRIANGLES count: 36.
-			program uniforms model: (Matrix4x4 withOffset: 2.0 @ 0.0 @ 0.0).
-			vao drawArrays: GL_TRIANGLES count: 36.
-		
-			(vao vertexBufferBindingAt: 0) buffer: planeVBO.
-			planeTexture bind.
-			program uniforms model: Matrix4x4 identity.
-			vao drawArrays: GL_TRIANGLES count: 6]]
+			self draw]]
 ]
 
 {
-	#category : #running,
-	#'squeak_changestamp' : 'stlu 5/15/2021 13:08'
+	#category : #initialization,
+	#'squeak_changestamp' : 'stlu 6/27/2021 18:49'
 }
 LOGLDepthTesting >> setUp [
 
@@ -172,6 +179,7 @@ LOGLDepthTesting >> setUp [
 	self flag: #todo. "avoid long texture initializations?"
 	cubeTexture boundDuring: [
 		cubeTexture
+			bindAt: 1;
 			wrapS: GL_REPEAT;
 			wrapT: GL_REPEAT;
 			minificationFilter: GL_LINEAR;
@@ -181,14 +189,13 @@ LOGLDepthTesting >> setUp [
 	
 	planeTexture boundDuring: [
 		planeTexture
+			bindAt: 2;
 			wrapS: GL_REPEAT;
 			wrapT: GL_REPEAT;
 			minificationFilter: GL_LINEAR;
 			magnificationFilter: GL_LINEAR;
 			imageForm: LOGLImages metal flipVertically;
 			generateMipmap].
-	
-	program uniforms texture1: 0.
 ]
 
 {
