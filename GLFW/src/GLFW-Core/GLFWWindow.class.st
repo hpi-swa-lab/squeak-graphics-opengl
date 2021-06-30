@@ -157,15 +157,17 @@ GLFWWindow >> cursorPosCallback: aBlock [
 
 {
 	#category : #'mouse input',
-	#'squeak_changestamp' : 'stlu 2/13/2021 00:21'
+	#'squeak_changestamp' : 'stlu 6/29/2021 16:58'
 }
 GLFWWindow >> cursorPosition [
 
-	| x y |
-	x := Float64Array new: 1.
-	y := Float64Array new: 1.
-	GLFW getCursorPos: self with: x with: y.
-	^ x first @ y first
+	| handle data result |
+	data := ExternalType double allocateExternal: 2.
+	handle := data getHandle.
+	GLFW getCursorPos: self with: handle with: handle + 8.
+	result := data first @ data second.
+	data free.
+	^ result
 ]
 
 {

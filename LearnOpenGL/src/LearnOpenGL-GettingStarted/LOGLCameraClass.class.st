@@ -13,9 +13,9 @@ Class {
 
 {
 	#category : #'input handling',
-	#'squeak_changestamp' : 'stlu 2/1/2021 15:02'
+	#'squeak_changestamp' : 'stlu 6/30/2021 09:22'
 }
-LOGLCameraClass >> cursorPositionChanged: newPosition [
+LOGLCameraClass >> mousePositionChangedTo: newPosition [
 
 	"avoid camera jerking when first moving the mouse over the window"
 	lastCursorPosition ifNil: [

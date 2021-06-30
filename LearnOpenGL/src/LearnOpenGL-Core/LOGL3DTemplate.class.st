@@ -9,10 +9,19 @@ Class {
 }
 
 {
-	#category : #'input handling',
-	#'squeak_changestamp' : 'stlu 3/13/2021 00:50'
+	#category : #running,
+	#'squeak_changestamp' : 'stlu 3/13/2021 00:53'
 }
-LOGL3DTemplate >> cursorPositionChanged: newPosition [
+LOGL3DTemplate >> initialCamera [
+
+	^ LOGLCamera position: 0.0 @ 0.0 @ 3.0
+]
+
+{
+	#category : #'input handling',
+	#'squeak_changestamp' : 'stlu 6/30/2021 09:22'
+}
+LOGL3DTemplate >> mousePositionChangedTo: newPosition [
 
 	"avoid camera jerking when first moving the mouse over the window"
 	lastCursorPosition ifNil: [
@@ -21,15 +30,6 @@ LOGL3DTemplate >> cursorPositionChanged: newPosition [
 	camera processMouseMove: newPosition - lastCursorPosition.
 	
 	lastCursorPosition := newPosition
-]
-
-{
-	#category : #running,
-	#'squeak_changestamp' : 'stlu 3/13/2021 00:53'
-}
-LOGL3DTemplate >> initialCamera [
-
-	^ LOGLCamera position: 0.0 @ 0.0 @ 3.0
 ]
 
 {

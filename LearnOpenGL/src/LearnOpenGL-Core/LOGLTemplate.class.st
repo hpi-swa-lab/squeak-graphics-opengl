@@ -40,15 +40,6 @@ LOGLTemplate >> baseWindowTitle [
 ]
 
 {
-	#category : #callbacks,
-	#'squeak_changestamp' : 'stlu 2/1/2021 14:44'
-}
-LOGLTemplate >> cursorPositionChanged: aPoint [
-
-	"do nothing by default"
-]
-
-{
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 6/17/2021 12:29'
 }
@@ -89,6 +80,15 @@ LOGLTemplate >> isModal [
 ]
 
 {
+	#category : #input,
+	#'squeak_changestamp' : 'stlu 6/30/2021 10:17'
+}
+LOGLTemplate >> key: key scanCode: scanCode changedTo: state with: mods [
+
+	"do nothing by default"
+]
+
+{
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 5/18/2021 22:09'
 }
@@ -126,6 +126,24 @@ LOGLTemplate >> logRenderTime: microseconds [
 
 {
 	#category : #input,
+	#'squeak_changestamp' : 'stlu 6/30/2021 09:26'
+}
+LOGLTemplate >> mouseButton: button changedTo: state with: modifierKeys [
+
+	"do nothing by default"
+]
+
+{
+	#category : #input,
+	#'squeak_changestamp' : 'stlu 6/30/2021 09:22'
+}
+LOGLTemplate >> mousePositionChangedTo: aPoint [
+
+	"do nothing by default"
+]
+
+{
+	#category : #input,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:46'
 }
 LOGLTemplate >> processInput [
@@ -153,19 +171,25 @@ LOGLTemplate >> processPriority [
 ]
 
 {
-	#category : #callbacks,
-	#'squeak_changestamp' : 'stlu 2/12/2021 23:56'
+	#category : #initialization,
+	#'squeak_changestamp' : 'stlu 6/30/2021 10:11'
 }
 LOGLTemplate >> registerCallbacks [
 
 	window framebufferExtentCallback: [:w :width :height |
 		self windowExtentChanged: width @ height].
 	
-	window cursorPosCallback: [:w :x :y |
-		self cursorPositionChanged: x @ y].
-	
 	window scrollCallback: [:w :xOffset :yOffset |
-		self scrolledBy: xOffset @ yOffset]
+		self scrolledBy: xOffset @ yOffset].
+	
+	window mouseButtonCallback: [:win :button :state :mods |
+		self mouseButton: button changedTo: state with: mods].
+	
+	window cursorPosCallback: [:w :x :y |
+		self mousePositionChangedTo: x @ y].
+	
+	window keyCallback: [:w :key :scancode :state :mods |
+		self key: key scanCode: scancode changedTo: state with: mods].
 ]
 
 {
@@ -242,7 +266,7 @@ LOGLTemplate >> run [
 ]
 
 {
-	#category : #callbacks,
+	#category : #input,
 	#'squeak_changestamp' : 'stlu 2/1/2021 14:51'
 }
 LOGLTemplate >> scrolledBy: offset [
