@@ -126,11 +126,11 @@ GLContext >> initializeExtensions [
 
 {
 	#category : #'initialize-release',
-	#'squeak_changestamp' : 'stlu 4/16/2021 13:01'
+	#'squeak_changestamp' : 'stlu 7/22/2021 17:36'
 }
 GLContext >> initializeLibrary [
 
-	library := GLExternalLibrary context: self.
+	library := GLUnpackLibrary around: (GLExternalLibrary context: self).
 ]
 
 {

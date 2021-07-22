@@ -9,10 +9,11 @@ Class {
 
 {
 	#category : #'constants pool',
-	#'squeak_changestamp' : 'stlu 4/12/2021 18:09'
+	#'squeak_changestamp' : 'stlu 7/22/2021 15:28'
 }
 GLGenConstantsPoolGenerator >> generate: aRegistry [
 
+	self targetClass ifNil: [^ self error: 'Please specify a target class'].
 	self generate: aRegistry into: self targetClass
 ]
 
@@ -30,7 +31,7 @@ GLGenConstantsPoolGenerator >> generate: aRegistry into: aClass [
 
 {
 	#category : #'constants pool',
-	#'squeak_changestamp' : 'stlu 4/12/2021 18:07'
+	#'squeak_changestamp' : 'stlu 7/22/2021 15:46'
 }
 GLGenConstantsPoolGenerator >> generateInitializers: aRegistry into: aClass [
 
@@ -64,8 +65,10 @@ GLGenConstantsPoolGenerator >> generateInitializers: aRegistry into: aClass [
 							stream
 								cr; tab;
 								nextPutAll: enum name;
-								nextPutAll: ' := ';
-								print: enum value;
+								nextPutAll: ' := GLEnum value: ';
+								nextPutAll: enum valueString;
+								nextPutAll: ' name: ';
+								nextPutAll: enum name storeString;
 								nextPut: $.]].
 					self compile: source classified: #'class initialization' into: aClass]].
 			self compile: mainSource classified: #'class initialization' into: aClass]
