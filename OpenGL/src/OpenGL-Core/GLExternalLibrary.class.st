@@ -1,5 +1,5 @@
 "
-I dispatch calls to the actual graphics interface via FFI.
+I dispatch calls to the actual graphics API via FFI.
 
 Users will not (and should not) interact with an instance of this class directly, but rather a unique subclass. Instances of such subclasses will dynamically lookup selectors in the GLRegistry and install a copy of the respective method. This ensures a unique ExternalLibraryFunction object, since some windowing system interfaces (*cough* WGL *cough*) do not guarantee the addresses of OpenGL functions to be the same for 2 different contexts of the same API. Consequently, every OpenGL context should reference an instance of a different unique subclass of this class.
 "
@@ -13,7 +13,7 @@ Class {
 		'Instances'
 	],
 	#category : #'OpenGL-Core',
-	#'squeak_changestamp' : 'stlu 4/14/2021 14:43'
+	#'squeak_changestamp' : 'stlu 7/23/2021 09:58'
 }
 
 {

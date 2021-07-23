@@ -65,12 +65,14 @@ GLProgramResource class >> program: aProgram name: aString properties: aWordArra
 
 {
 	#category : #querying,
-	#'squeak_changestamp' : 'stlu 12/13/2020 14:24'
+	#'squeak_changestamp' : 'stlu 7/23/2021 09:46'
 }
 GLProgramResource class >> propertiesToQuery [
 
 	^ propertiesToQuery ifNil: [
-		propertiesToQuery := self getPropertiesToQuery asWordArray]
+		propertiesToQuery := self getPropertiesToQuery
+								collect: [:enum | enum value]
+								as: WordArray]
 ]
 
 {

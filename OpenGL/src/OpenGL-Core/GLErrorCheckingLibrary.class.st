@@ -12,10 +12,7 @@ Note: Since I essentially double the amount of FFI calls being made, performance
 "
 Class {
 	#name : #GLErrorCheckingLibrary,
-	#superclass : #GLLibrary,
-	#instVars : [
-		'library'
-	],
+	#superclass : #GLLazyDecoratorLibrary,
 	#category : #'OpenGL-Core',
 	#'squeak_changestamp' : 'stlu 4/14/2021 15:16'
 }
@@ -57,19 +54,7 @@ GLErrorCheckingLibrary class >> example1 [ "self example1"
 ]
 
 {
-	#category : #'error handling',
-	#'squeak_changestamp' : 'stlu 4/16/2021 14:56'
-}
-GLErrorCheckingLibrary >> doesNotUnderstand: aMessage [
-
-	(self install: aMessage selector) ifNotNil: [
-		^ aMessage sendTo: self].
-	
-	^ super doesNotUnderstand: aMessage
-]
-
-{
-	#category : #'error handling',
+	#category : #compiling,
 	#'squeak_changestamp' : 'stlu 4/16/2021 15:25'
 }
 GLErrorCheckingLibrary >> errorCheckingTemplate [
@@ -83,7 +68,7 @@ GLErrorCheckingLibrary >> errorCheckingTemplate [
 ]
 
 {
-	#category : #'error handling',
+	#category : #api,
 	#'squeak_changestamp' : 'stlu 4/16/2021 15:32'
 }
 GLErrorCheckingLibrary >> getError [
@@ -92,7 +77,7 @@ GLErrorCheckingLibrary >> getError [
 ]
 
 {
-	#category : #'error handling',
+	#category : #compiling,
 	#'squeak_changestamp' : 'stlu 6/17/2021 21:02'
 }
 GLErrorCheckingLibrary >> install: aSelector [
@@ -124,15 +109,4 @@ GLErrorCheckingLibrary >> library [
 GLErrorCheckingLibrary >> library: aLibrary [
 
 	library := aLibrary
-]
-
-{
-	#category : #'error handling',
-	#'squeak_changestamp' : 'stlu 4/16/2021 15:20'
-}
-GLErrorCheckingLibrary >> passthroughTemplate [
-
-	^ '{1}
-
-	^ library {1}'
 ]
