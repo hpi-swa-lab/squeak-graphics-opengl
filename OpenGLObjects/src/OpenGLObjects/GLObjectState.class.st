@@ -10,9 +10,9 @@ Class {
 		'shaderManager',
 		'programManager',
 		'vertexArrayManager',
-		'renderBufferManager',
 		'queryManager',
-		'framebufferManager'
+		'framebufferManager',
+		'renderbufferManager'
 	],
 	#category : #'OpenGLObjects-Core',
 	#'squeak_changestamp' : 'stlu 4/25/2021 14:07'
@@ -49,14 +49,14 @@ GLObjectState >> framebufferManager [
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 7/26/2021 13:37'
+	#'squeak_changestamp' : 'stlu 7/26/2021 13:46'
 }
 GLObjectState >> initializeForContext: aContext [
 
 	bufferManager := GLBufferManager context: aContext.
 	framebufferManager := GLFramebufferManager context: aContext.
 	programManager := GLProgramManager context: aContext.
-	renderBufferManager := GLRenderBufferManager context: aContext.
+	renderbufferManager := GLRenderbufferManager context: aContext.
 	shaderManager := GLShaderManager context: aContext.
 	textureManager := GLTextureManager context: aContext.
 	vertexArrayManager := GLVertexArrayManager context: aContext.
@@ -83,11 +83,11 @@ GLObjectState >> queryManager [
 
 {
 	#category : #managers,
-	#'squeak_changestamp' : 'stlu 4/25/2021 22:54'
+	#'squeak_changestamp' : 'stlu 7/26/2021 13:46'
 }
-GLObjectState >> renderBufferManager [
+GLObjectState >> renderbufferManager [
 
-	^ renderBufferManager
+	^ renderbufferManager
 ]
 
 {
