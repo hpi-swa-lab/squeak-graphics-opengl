@@ -3,7 +3,7 @@ I am, for most intents and purposes, a named integer.
 "
 Class {
 	#name : #GLEnum,
-	#superclass : #Object,
+	#superclass : #Magnitude,
 	#instVars : [
 		'value',
 		'name'
