@@ -2,11 +2,11 @@ Extension { #name : #ExternalType }
 
 {
 	#category : #'*OpenGL-Types',
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 7/23/2021 12:10'
 }
 ExternalType class >> GLDEBUGPROC [
 
-	^ self void asPointerType
+	^ FFICallback externalType asPointerType
 ]
 
 {
