@@ -172,9 +172,9 @@ GLObject >> isBuffer [
 
 {
 	#category : #testing,
-	#'squeak_changestamp' : 'stlu 10/29/2020 12:14'
+	#'squeak_changestamp' : 'stlu 7/26/2021 13:36'
 }
-GLObject >> isFrameBuffer [
+GLObject >> isFramebuffer [
 
 	^ false
 ]

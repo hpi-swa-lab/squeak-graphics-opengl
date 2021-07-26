@@ -1,5 +1,5 @@
 "
-A GLFrameBuffer is a Squeak representation of OpenGL Framebuffer Objects.
+A GLFramebuffer is a Squeak representation of OpenGL Framebuffer Objects.
 
 Framebuffer Objects are OpenGL Objects, which allow for the creation of user-defined Framebuffers. With them, one can render to non-Default Framebuffer locations, and thus render without disturbing the main screen. 
 
@@ -12,7 +12,7 @@ Instance Variables
 
 "
 Class {
-	#name : #GLFrameBuffer,
+	#name : #GLFramebuffer,
 	#superclass : #GLObject,
 	#instVars : [
 		'colorAttachment0'
@@ -20,54 +20,55 @@ Class {
 	#classVars : [
 		'CompletionStatusDescriptions'
 	],
-	#category : #'OpenGLObjects-FrameBuffers'
+	#category : #'OpenGLObjects-FrameBuffers',
+	#'squeak_changestamp' : 'stlu 7/26/2021 13:33'
 }
 
 {
 	#category : #binding,
-	#'squeak_changestamp' : 'stlu 5/15/2021 16:08'
+	#'squeak_changestamp' : 'stlu 7/26/2021 13:38'
 }
-GLFrameBuffer class >> boundToDraw [
+GLFramebuffer class >> boundToDraw [
 
-	^ self manager drawFrameBuffer
+	^ self manager drawFramebuffer
 ]
 
 {
 	#category : #binding,
-	#'squeak_changestamp' : 'stlu 5/15/2021 16:09'
+	#'squeak_changestamp' : 'stlu 7/26/2021 13:38'
 }
-GLFrameBuffer class >> boundToRead [
+GLFramebuffer class >> boundToRead [
 
-	^ self manager readFrameBuffer
+	^ self manager readFramebuffer
 ]
 
 {
 	#category : #'instance creation',
-	#'squeak_changestamp' : 'stlu 4/26/2021 12:42'
+	#'squeak_changestamp' : 'stlu 7/26/2021 13:18'
 }
-GLFrameBuffer class >> create: count [
+GLFramebuffer class >> create: count [
 
 	| manager |
 	manager := self manager.
 	^ self
 		manager: manager
-		ids: (manager creationImp createFrameBufferIDs: count)
+		ids: (manager creationImp createFramebufferIDs: count)
 ]
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 5/15/2021 16:01'
+	#'squeak_changestamp' : 'stlu 7/26/2021 13:30'
 }
-GLFrameBuffer class >> default [
+GLFramebuffer class >> default [
 
-	^ GLDisplayFrameBuffer instance
+	^ GLDefaultFramebuffer instance
 ]
 
 {
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 12/3/2020 14:54'
 }
-GLFrameBuffer class >> defaultTarget [
+GLFramebuffer class >> defaultTarget [
 
 	^ GL_FRAMEBUFFER
 ]
@@ -76,29 +77,29 @@ GLFrameBuffer class >> defaultTarget [
 	#category : #'instance creation',
 	#'squeak_changestamp' : 'stlu 4/26/2021 12:40'
 }
-GLFrameBuffer class >> generate [
+GLFramebuffer class >> generate [
 
 	^ (self generate: 1) first
 ]
 
 {
 	#category : #'instance creation',
-	#'squeak_changestamp' : 'stlu 4/26/2021 12:40'
+	#'squeak_changestamp' : 'stlu 7/26/2021 13:18'
 }
-GLFrameBuffer class >> generate: count [
+GLFramebuffer class >> generate: count [
 
 	| manager |
 	manager := self manager.
 	^ self
 		manager: manager
-		ids: (manager creationImp generateFrameBufferIDs: count)
+		ids: (manager creationImp generateFramebufferIDs: count)
 ]
 
 {
 	#category : #'class initialization',
 	#'squeak_changestamp' : 'stlu 1/9/2021 13:46'
 }
-GLFrameBuffer class >> initialize [
+GLFramebuffer class >> initialize [
 
 	CompletionStatusDescriptions := {
 		GL_FRAMEBUFFER_UNDEFINED -> 'Undefined framebuffer. The specified framebuffer is the default read or draw framebuffer, but the default framebuffer does not exist.'.
@@ -114,45 +115,45 @@ GLFrameBuffer class >> initialize [
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 4/26/2021 12:43'
+	#'squeak_changestamp' : 'stlu 7/26/2021 13:37'
 }
-GLFrameBuffer class >> manager [
+GLFramebuffer class >> manager [
 
-	^ GL objectState frameBufferManager
+	^ GL objectState framebufferManager
 ]
 
 {
 	#category : #binding,
-	#'squeak_changestamp' : 'stlu 5/15/2021 16:08'
+	#'squeak_changestamp' : 'stlu 7/26/2021 13:26'
 }
-GLFrameBuffer class >> unbind [
+GLFramebuffer class >> unbind [
 
-	self manager unbindFrameBuffer
+	self manager unbindFramebuffer
 ]
 
 {
 	#category : #binding,
-	#'squeak_changestamp' : 'stlu 5/15/2021 16:08'
+	#'squeak_changestamp' : 'stlu 7/26/2021 13:27'
 }
-GLFrameBuffer class >> unbindDraw [
+GLFramebuffer class >> unbindDraw [
 
-	self manager unbindDrawFrameBuffer
+	self manager unbindDrawFramebuffer
 ]
 
 {
 	#category : #binding,
-	#'squeak_changestamp' : 'stlu 5/15/2021 16:08'
+	#'squeak_changestamp' : 'stlu 7/26/2021 13:26'
 }
-GLFrameBuffer class >> unbindRead [
+GLFramebuffer class >> unbindRead [
 
-	self manager unbindReadFrameBuffer
+	self manager unbindReadFramebuffer
 ]
 
 {
 	#category : #converting,
 	#'squeak_changestamp' : 'stlu 11/3/2020 15:35'
 }
-GLFrameBuffer >> asFormOfExtent: aPoint [
+GLFramebuffer >> asFormOfExtent: aPoint [
 
 	| data |
 	data := ByteArray new: aPoint area * 4.
@@ -179,7 +180,7 @@ GLFrameBuffer >> asFormOfExtent: aPoint [
 	#category : #attachments,
 	#'squeak_changestamp' : 'stlu 1/9/2021 14:05'
 }
-GLFrameBuffer >> attach2DTexture: a2DTexture level: mipMapLevel to: attachmentEnum [
+GLFramebuffer >> attach2DTexture: a2DTexture level: mipMapLevel to: attachmentEnum [
 
 	self stateAccessImp
 		framebuffer: self
@@ -192,7 +193,7 @@ GLFrameBuffer >> attach2DTexture: a2DTexture level: mipMapLevel to: attachmentEn
 	#category : #attachments,
 	#'squeak_changestamp' : 'stlu 1/9/2021 14:05'
 }
-GLFrameBuffer >> attach2DTexture: a2DTexture to: attachmentEnum [
+GLFramebuffer >> attach2DTexture: a2DTexture to: attachmentEnum [
 
 	self stateAccessImp
 		framebuffer: self
@@ -205,7 +206,7 @@ GLFrameBuffer >> attach2DTexture: a2DTexture to: attachmentEnum [
 	#category : #attachments,
 	#'squeak_changestamp' : 'stlu 1/9/2021 13:58'
 }
-GLFrameBuffer >> attachRenderbuffer: aRenderbuffer to: attachmentEnum [
+GLFramebuffer >> attachRenderbuffer: aRenderbuffer to: attachmentEnum [
 
 	self stateAccessImp
 		framebuffer: self
@@ -215,36 +216,36 @@ GLFrameBuffer >> attachRenderbuffer: aRenderbuffer to: attachmentEnum [
 
 {
 	#category : #binding,
-	#'squeak_changestamp' : 'stlu 5/15/2021 15:47'
+	#'squeak_changestamp' : 'stlu 7/26/2021 13:28'
 }
-GLFrameBuffer >> bind [
+GLFramebuffer >> bind [
 	"Bind to both read and draw."
-	manager bindFrameBuffer: self
+	manager bindFramebuffer: self
 ]
 
 {
 	#category : #binding,
-	#'squeak_changestamp' : 'stlu 5/15/2021 15:29'
+	#'squeak_changestamp' : 'stlu 7/26/2021 13:22'
 }
-GLFrameBuffer >> bindToDraw [
+GLFramebuffer >> bindToDraw [
 
-	manager bindDrawFrameBuffer: self
+	manager bindDrawFramebuffer: self
 ]
 
 {
 	#category : #binding,
-	#'squeak_changestamp' : 'stlu 5/15/2021 15:29'
+	#'squeak_changestamp' : 'stlu 7/26/2021 13:29'
 }
-GLFrameBuffer >> bindToRead [
+GLFramebuffer >> bindToRead [
 
-	manager bindReadFrameBuffer: self
+	manager bindReadFramebuffer: self
 ]
 
 {
 	#category : #blitting,
 	#'squeak_changestamp' : 'stlu 1/9/2021 14:31'
 }
-GLFrameBuffer >> blit: bufferMask into: otherFramebuffer from: readBounds to: drawBounds [
+GLFramebuffer >> blit: bufferMask into: otherFramebuffer from: readBounds to: drawBounds [
 
 	self
 		blit: bufferMask
@@ -258,7 +259,7 @@ GLFrameBuffer >> blit: bufferMask into: otherFramebuffer from: readBounds to: dr
 	#category : #blitting,
 	#'squeak_changestamp' : 'stlu 1/9/2021 14:31'
 }
-GLFrameBuffer >> blit: bufferMask into: otherFramebuffer from: readBounds to: drawBounds filter: filterEnum [
+GLFramebuffer >> blit: bufferMask into: otherFramebuffer from: readBounds to: drawBounds filter: filterEnum [
 
 	self stateAccessImp
 		blit: bufferMask
@@ -271,36 +272,36 @@ GLFrameBuffer >> blit: bufferMask into: otherFramebuffer from: readBounds to: dr
 
 {
 	#category : #binding,
-	#'squeak_changestamp' : 'stlu 5/15/2021 15:48'
+	#'squeak_changestamp' : 'stlu 7/26/2021 13:27'
 }
-GLFrameBuffer >> boundDuring: aBlock [
+GLFramebuffer >> boundDuring: aBlock [
 
-	^ manager bindFrameBuffer: self during: aBlock
+	^ manager bindFramebuffer: self during: aBlock
 ]
 
 {
 	#category : #binding,
-	#'squeak_changestamp' : 'stlu 5/15/2021 15:48'
+	#'squeak_changestamp' : 'stlu 7/26/2021 13:29'
 }
-GLFrameBuffer >> boundToDrawDuring: aBlock [
+GLFramebuffer >> boundToDrawDuring: aBlock [
 
-	^ manager bindDrawFrameBuffer: self during: aBlock
+	^ manager bindDrawFramebuffer: self during: aBlock
 ]
 
 {
 	#category : #binding,
-	#'squeak_changestamp' : 'stlu 5/15/2021 15:48'
+	#'squeak_changestamp' : 'stlu 7/26/2021 13:27'
 }
-GLFrameBuffer >> boundToReadDuring: aBlock [
+GLFramebuffer >> boundToReadDuring: aBlock [
 
-	^ manager bindReadFrameBuffer: self during: aBlock
+	^ manager bindReadFramebuffer: self during: aBlock
 ]
 
 {
 	#category : #completion,
 	#'squeak_changestamp' : 'stlu 3/15/2021 12:30'
 }
-GLFrameBuffer >> checkCompletionStatus [
+GLFramebuffer >> checkCompletionStatus [
 
 	self checkCompletionStatusForRead.
 	self checkCompletionStatusForDraw.
@@ -310,7 +311,7 @@ GLFrameBuffer >> checkCompletionStatus [
 	#category : #completion,
 	#'squeak_changestamp' : 'stlu 3/15/2021 12:31'
 }
-GLFrameBuffer >> checkCompletionStatusFor: targetEnum [
+GLFramebuffer >> checkCompletionStatusFor: targetEnum [
 
 	| status |
 	status := self completionStatusFor: targetEnum.
@@ -322,7 +323,7 @@ GLFrameBuffer >> checkCompletionStatusFor: targetEnum [
 	#category : #completion,
 	#'squeak_changestamp' : 'stlu 3/15/2021 12:31'
 }
-GLFrameBuffer >> checkCompletionStatusForDraw [
+GLFramebuffer >> checkCompletionStatusForDraw [
 
 	self checkCompletionStatusFor: GL_DRAW_FRAMEBUFFER
 ]
@@ -331,7 +332,7 @@ GLFrameBuffer >> checkCompletionStatusForDraw [
 	#category : #completion,
 	#'squeak_changestamp' : 'stlu 3/15/2021 12:31'
 }
-GLFrameBuffer >> checkCompletionStatusForRead [
+GLFramebuffer >> checkCompletionStatusForRead [
 
 	self checkCompletionStatusFor: GL_READ_FRAMEBUFFER
 ]
@@ -340,7 +341,7 @@ GLFrameBuffer >> checkCompletionStatusForRead [
 	#category : #clearing,
 	#'squeak_changestamp' : 'stlu 3/11/2021 14:23'
 }
-GLFrameBuffer >> clearBuffers: bufferBitMask [
+GLFramebuffer >> clearBuffers: bufferBitMask [
 
 	self stateAccessImp framebuffer: self clearBuffers: bufferBitMask
 ]
@@ -349,7 +350,7 @@ GLFrameBuffer >> clearBuffers: bufferBitMask [
 	#category : #clearing,
 	#'squeak_changestamp' : 'stlu 3/11/2021 14:07'
 }
-GLFrameBuffer >> clearColorBuffer: i to: aColor [
+GLFramebuffer >> clearColorBuffer: i to: aColor [
 
 	self flag: #todo. "respect actual type of color buffer"
 	self clearColorBuffer: i toFloat32Vector4: aColor asVectorColor
@@ -359,7 +360,7 @@ GLFrameBuffer >> clearColorBuffer: i to: aColor [
 	#category : #clearing,
 	#'squeak_changestamp' : 'stlu 3/11/2021 14:25'
 }
-GLFrameBuffer >> clearColorBuffer: i toFloat32Vector4: aFloat32Array [
+GLFramebuffer >> clearColorBuffer: i toFloat32Vector4: aFloat32Array [
 
 	self stateAccessImp
 		framebuffer: self
@@ -371,7 +372,7 @@ GLFrameBuffer >> clearColorBuffer: i toFloat32Vector4: aFloat32Array [
 	#category : #clearing,
 	#'squeak_changestamp' : 'stlu 3/11/2021 14:25'
 }
-GLFrameBuffer >> clearColorBuffer: i toIntegerVector4: anIntegerArray [
+GLFramebuffer >> clearColorBuffer: i toIntegerVector4: anIntegerArray [
 
 	self stateAccessImp
 		framebuffer: self
@@ -383,7 +384,7 @@ GLFrameBuffer >> clearColorBuffer: i toIntegerVector4: anIntegerArray [
 	#category : #clearing,
 	#'squeak_changestamp' : 'stlu 3/11/2021 14:25'
 }
-GLFrameBuffer >> clearColorBuffer: i toUnsignedIntegerVector4: aWordArray [
+GLFramebuffer >> clearColorBuffer: i toUnsignedIntegerVector4: aWordArray [
 
 	self stateAccessImp
 		framebuffer: self
@@ -395,7 +396,7 @@ GLFrameBuffer >> clearColorBuffer: i toUnsignedIntegerVector4: aWordArray [
 	#category : #clearing,
 	#'squeak_changestamp' : 'stlu 3/11/2021 14:25'
 }
-GLFrameBuffer >> clearDepthBufferTo: aFloat [
+GLFramebuffer >> clearDepthBufferTo: aFloat [
 
 	self flag: #todo. "does FFI treat aFloat like a 1 element array?"
 	self stateAccessImp framebuffer: self clearDepthBufferTo: aFloat
@@ -405,7 +406,7 @@ GLFrameBuffer >> clearDepthBufferTo: aFloat [
 	#category : #clearing,
 	#'squeak_changestamp' : 'stlu 3/11/2021 14:26'
 }
-GLFrameBuffer >> clearStencilBufferTo: anInteger [
+GLFramebuffer >> clearStencilBufferTo: anInteger [
 
 	self flag: #todo. "does FFI treat anInteger like a 1 element array?"
 	self stateAccessImp framebuffer: self clearStencilBufferTo: anInteger
@@ -415,19 +416,19 @@ GLFrameBuffer >> clearStencilBufferTo: anInteger [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 10/26/2020 12:27'
 }
-GLFrameBuffer >> colorAttachment0 [
+GLFramebuffer >> colorAttachment0 [
 
 	^ colorAttachment0
 ]
 
 {
 	#category : #completion,
-	#'squeak_changestamp' : 'stlu 3/15/2021 13:15'
+	#'squeak_changestamp' : 'stlu 7/26/2021 13:34'
 }
-GLFrameBuffer >> completionStatusFor: targetEnum [
+GLFramebuffer >> completionStatusFor: targetEnum [
 
 	^ self stateAccessImp
-		frameBuffer: self
+		framebuffer: self
 		completionStatusFor: targetEnum
 ]
 
@@ -435,16 +436,16 @@ GLFrameBuffer >> completionStatusFor: targetEnum [
 	#category : #'initialize-release',
 	#'squeak_changestamp' : 'stlu 11/3/2020 15:35'
 }
-GLFrameBuffer >> delete [
+GLFramebuffer >> delete [
 	
 	GL deleteFramebuffers: 1 with: (IntegerArray with: id).
 ]
 
 {
 	#category : #testing,
-	#'squeak_changestamp' : 'stlu 10/29/2020 12:16'
+	#'squeak_changestamp' : 'stlu 7/26/2021 13:36'
 }
-GLFrameBuffer >> isFrameBuffer [
+GLFramebuffer >> isFramebuffer [
 
 	^ true
 ]
@@ -453,7 +454,7 @@ GLFrameBuffer >> isFrameBuffer [
 	#category : #imps,
 	#'squeak_changestamp' : 'stlu 5/15/2021 14:19'
 }
-GLFrameBuffer >> stateAccessImp [
+GLFramebuffer >> stateAccessImp [
 
 	^ manager stateAccessImp
 ]
@@ -462,7 +463,7 @@ GLFrameBuffer >> stateAccessImp [
 	#category : #attachments,
 	#'squeak_changestamp' : 'stlu 10/26/2020 12:26'
 }
-GLFrameBuffer >> texture2D: aTexture [
+GLFramebuffer >> texture2D: aTexture [
 
 	self texture2D: aTexture attachment: GL_COLOR_ATTACHMENT0
 ]
@@ -471,7 +472,7 @@ GLFrameBuffer >> texture2D: aTexture [
 	#category : #attachments,
 	#'squeak_changestamp' : 'stlu 11/3/2020 15:36'
 }
-GLFrameBuffer >> texture2D: aTexture attachment: anAttachment [
+GLFramebuffer >> texture2D: aTexture attachment: anAttachment [
 	
 	self boundDuring: [
 		anAttachment = GL_COLOR_ATTACHMENT0 ifTrue: [
@@ -488,7 +489,7 @@ GLFrameBuffer >> texture2D: aTexture attachment: anAttachment [
 	#category : #binding,
 	#'squeak_changestamp' : 'stlu 5/15/2021 16:03'
 }
-GLFrameBuffer >> unbind [
+GLFramebuffer >> unbind [
 
 	self unbindFromDraw.
 	self unbindFromRead.
@@ -496,20 +497,20 @@ GLFrameBuffer >> unbind [
 
 {
 	#category : #binding,
-	#'squeak_changestamp' : 'stlu 5/15/2021 16:06'
+	#'squeak_changestamp' : 'stlu 7/26/2021 13:27'
 }
-GLFrameBuffer >> unbindFromDraw [
+GLFramebuffer >> unbindFromDraw [
 
-	manager drawFrameBuffer == self ifTrue: [
-		manager unbindDrawFrameBuffer]
+	manager drawFramebuffer == self ifTrue: [
+		manager unbindDrawFramebuffer]
 ]
 
 {
 	#category : #binding,
-	#'squeak_changestamp' : 'stlu 5/15/2021 16:07'
+	#'squeak_changestamp' : 'stlu 7/26/2021 13:26'
 }
-GLFrameBuffer >> unbindFromRead [
+GLFramebuffer >> unbindFromRead [
 
-	manager readFrameBuffer == self ifTrue: [
-		manager unbindReadFrameBuffer]
+	manager readFramebuffer == self ifTrue: [
+		manager unbindReadFramebuffer]
 ]

@@ -14,15 +14,6 @@ GLFramebufferStateAccessImp >> blit: mask from: readFramebuffer bounds: readBoun
 ]
 
 {
-	#category : #completion,
-	#'squeak_changestamp' : 'stlu 3/15/2021 12:26'
-}
-GLFramebufferStateAccessImp >> frameBuffer: aFrameBuffer completionStatusFor: targetEnum [
-
-	self subclassResponsibility
-]
-
-{
 	#category : #attachments,
 	#'squeak_changestamp' : 'stlu 1/9/2021 14:03'
 }
@@ -33,7 +24,7 @@ GLFramebufferStateAccessImp >> framebuffer: aFramebuffer attach2DTexture: a2DTex
 
 {
 	#category : #attachments,
-	#'squeak_changestamp' : 'stlu 1/9/2021 13:56'
+	#'squeak_changestamp' : 'stlu 7/26/2021 13:36'
 }
 GLFramebufferStateAccessImp >> framebuffer: aFramebuffer attachRenderbuffer: aRenderbuffer to: attachmentEnum [
 
@@ -42,45 +33,54 @@ GLFramebufferStateAccessImp >> framebuffer: aFramebuffer attachRenderbuffer: aRe
 
 {
 	#category : #clearing,
-	#'squeak_changestamp' : 'stlu 3/11/2021 14:24'
+	#'squeak_changestamp' : 'stlu 7/26/2021 13:36'
 }
-GLFramebufferStateAccessImp >> framebuffer: aFrameBuffer clearColorBuffer: drawBufferEnum toFloat32Vector4: aFloat32Array [
+GLFramebufferStateAccessImp >> framebuffer: aFramebuffer clearColorBuffer: drawBufferEnum toFloat32Vector4: aFloat32Array [
 
 	self subclassResponsibility
 ]
 
 {
 	#category : #clearing,
-	#'squeak_changestamp' : 'stlu 3/11/2021 14:24'
+	#'squeak_changestamp' : 'stlu 7/26/2021 13:36'
 }
-GLFramebufferStateAccessImp >> framebuffer: aFrameBuffer clearColorBuffer: drawBufferEnum toIntegerVector4: anIntegerArray [
+GLFramebufferStateAccessImp >> framebuffer: aFramebuffer clearColorBuffer: drawBufferEnum toIntegerVector4: anIntegerArray [
 
 	self subclassResponsibility
 ]
 
 {
 	#category : #clearing,
-	#'squeak_changestamp' : 'stlu 3/11/2021 14:24'
+	#'squeak_changestamp' : 'stlu 7/26/2021 13:36'
 }
-GLFramebufferStateAccessImp >> framebuffer: aFrameBuffer clearColorBuffer: drawBufferEnum toUnsignedIntegerVector4: aWordArray [
+GLFramebufferStateAccessImp >> framebuffer: aFramebuffer clearColorBuffer: drawBufferEnum toUnsignedIntegerVector4: aWordArray [
 
 	self subclassResponsibility
 ]
 
 {
 	#category : #clearing,
-	#'squeak_changestamp' : 'stlu 3/11/2021 14:24'
+	#'squeak_changestamp' : 'stlu 7/26/2021 13:36'
 }
-GLFramebufferStateAccessImp >> framebuffer: aFrameBuffer clearDepthBufferTo: aFloat [
+GLFramebufferStateAccessImp >> framebuffer: aFramebuffer clearDepthBufferTo: aFloat [
 
 	self subclassResponsibility
 ]
 
 {
 	#category : #clearing,
-	#'squeak_changestamp' : 'stlu 3/11/2021 14:24'
+	#'squeak_changestamp' : 'stlu 7/26/2021 13:36'
 }
-GLFramebufferStateAccessImp >> framebuffer: aFrameBuffer clearStencilBufferTo: anInteger [
+GLFramebufferStateAccessImp >> framebuffer: aFramebuffer clearStencilBufferTo: anInteger [
+
+	self subclassResponsibility
+]
+
+{
+	#category : #completion,
+	#'squeak_changestamp' : 'stlu 7/26/2021 13:34'
+}
+GLFramebufferStateAccessImp >> framebuffer: aFramebuffer completionStatusFor: targetEnum [
 
 	self subclassResponsibility
 ]

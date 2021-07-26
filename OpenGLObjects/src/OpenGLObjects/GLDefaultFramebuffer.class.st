@@ -1,6 +1,6 @@
 Class {
-	#name : #GLDisplayFrameBuffer,
-	#superclass : #GLFrameBuffer,
+	#name : #GLDefaultFramebuffer,
+	#superclass : #GLFramebuffer,
 	#category : #'OpenGLObjects-FrameBuffers'
 }
 
@@ -8,25 +8,25 @@ Class {
 	#category : #'instance creation',
 	#'squeak_changestamp' : 'stlu 5/15/2021 14:29'
 }
-GLDisplayFrameBuffer class >> create [
+GLDefaultFramebuffer class >> create [
 
 	self shouldNotImplement
 ]
 
 {
 	#category : #'instance creation',
-	#'squeak_changestamp' : 'stlu 5/15/2021 15:24'
+	#'squeak_changestamp' : 'stlu 7/26/2021 13:33'
 }
-GLDisplayFrameBuffer class >> instance [
+GLDefaultFramebuffer class >> instance [
 
-	^ self manager defaultFrameBuffer
+	^ self manager defaultFramebuffer
 ]
 
 {
 	#category : #testing,
 	#'squeak_changestamp' : 'stlu 5/11/2021 12:57'
 }
-GLDisplayFrameBuffer >> hasValidID [
+GLDefaultFramebuffer >> hasValidID [
 
 	^ false
 ]
@@ -35,7 +35,7 @@ GLDisplayFrameBuffer >> hasValidID [
 	#category : #initialization,
 	#'squeak_changestamp' : 'stlu 5/15/2021 14:28'
 }
-GLDisplayFrameBuffer >> register [
+GLDefaultFramebuffer >> register [
 
 	"do nothing"
 ]
