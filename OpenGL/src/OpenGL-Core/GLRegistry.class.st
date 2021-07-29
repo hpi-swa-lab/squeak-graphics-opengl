@@ -2998,7 +2998,7 @@ GLRegistry >> BGRA8_EXT [
 
 {
 	#category : #'enums - extensions',
-	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
+	#'squeak_changestamp' : 'stlu 7/29/2021 14:10'
 }
 GLRegistry >> BGRA_EXT [
 
@@ -3009,6 +3009,7 @@ GLRegistry >> BGRA_EXT [
 	<glAPI: #gles2 extension: #'GL_EXT_read_format_bgra'>
 	<glAPI: #gles1 extension: #'GL_EXT_texture_format_BGRA8888'>
 	<glAPI: #gles2 extension: #'GL_EXT_texture_format_BGRA8888'>
+	<glAPI: #gles2 extension: #'GL_MESA_bgra'>
 	
 	<glEnum: #'GL_BGRA_EXT'>
 	<glValue: 16r80E1>
@@ -3065,11 +3066,12 @@ GLRegistry >> BGRA_INTEGER_EXT [
 
 {
 	#category : #'enums - extensions',
-	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
+	#'squeak_changestamp' : 'stlu 7/29/2021 14:10'
 }
 GLRegistry >> BGR_EXT [
 
 	<glAPI: #gl profile: #compatibility extension: #'GL_EXT_bgra'>
+	<glAPI: #gles2 extension: #'GL_MESA_bgra'>
 	
 	<glEnum: #'GL_BGR_EXT'>
 	<glValue: 16r80E0>
@@ -109086,7 +109088,7 @@ GLRegistry >> extGetFramebuffersQCOM: framebuffers with: maxFramebuffers with: n
 
 {
 	#category : #'commands - extensions',
-	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
+	#'squeak_changestamp' : 'stlu 7/29/2021 14:10'
 }
 GLRegistry >> extGetProgramBinarySourceQCOM: program with: shadertype with: source with: length [
 
@@ -109097,7 +109099,7 @@ GLRegistry >> extGetProgramBinarySourceQCOM: program with: shadertype with: sour
 	<glReturn: 'void'>
 	<glArg: 'program' type: 'GLuint'>
 	<glArg: 'shadertype' type: 'GLenum' group: #ShaderType>
-	<glArg: 'source' type: 'GLchar*'>
+	<glArg: 'source' type: 'GLchar*' size: 'length'>
 	<glArg: 'length' type: 'GLint*'>
 	
 	<apicall: void 'glExtGetProgramBinarySourceQCOM' (GLuint GLenum GLchar* GLint*)>
@@ -112385,7 +112387,7 @@ GLRegistry >> getActiveUniformsiv: program with: uniformCount with: uniformIndic
 
 {
 	#category : #'commands - extensions',
-	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
+	#'squeak_changestamp' : 'stlu 7/29/2021 14:10'
 }
 GLRegistry >> getActiveVaryingNV: program with: index with: bufSize with: length with: size with: type with: name [
 
@@ -112399,7 +112401,7 @@ GLRegistry >> getActiveVaryingNV: program with: index with: bufSize with: length
 	<glArg: 'length' type: 'GLsizei*' size: '1'>
 	<glArg: 'size' type: 'GLsizei*' size: '1'>
 	<glArg: 'type' type: 'GLenum*' size: '1'>
-	<glArg: 'name' type: 'GLchar*' size: 'COMPSIZE(program,index,bufSize)'>
+	<glArg: 'name' type: 'GLchar*' size: 'bufSize'>
 	
 	<apicall: void 'glGetActiveVaryingNV' (GLuint GLuint GLsizei GLsizei* GLsizei* GLenum* GLchar*)>
 	^ self externalCallFailed
@@ -116713,7 +116715,7 @@ GLRegistry >> getPathTexGenivNV: texCoordSet with: pname with: value [
 
 {
 	#category : #'commands - extensions',
-	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
+	#'squeak_changestamp' : 'stlu 7/29/2021 14:10'
 }
 GLRegistry >> getPerfCounterInfoINTEL: queryId with: counterId with: counterNameLength with: counterName with: counterDescLength with: counterDesc with: counterOffset with: counterDataSize with: counterTypeEnum with: counterDataTypeEnum with: rawCounterMaxValue [
 
@@ -116726,9 +116728,9 @@ GLRegistry >> getPerfCounterInfoINTEL: queryId with: counterId with: counterName
 	<glArg: 'queryId' type: 'GLuint'>
 	<glArg: 'counterId' type: 'GLuint'>
 	<glArg: 'counterNameLength' type: 'GLuint'>
-	<glArg: 'counterName' type: 'GLchar*'>
+	<glArg: 'counterName' type: 'GLchar*' size: 'counterNameLength'>
 	<glArg: 'counterDescLength' type: 'GLuint'>
-	<glArg: 'counterDesc' type: 'GLchar*'>
+	<glArg: 'counterDesc' type: 'GLchar*' size: 'counterDescLength'>
 	<glArg: 'counterOffset' type: 'GLuint*'>
 	<glArg: 'counterDataSize' type: 'GLuint*'>
 	<glArg: 'counterTypeEnum' type: 'GLuint*'>
@@ -116910,7 +116912,7 @@ GLRegistry >> getPerfQueryIdByNameINTEL: queryName with: queryId [
 
 {
 	#category : #'commands - extensions',
-	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
+	#'squeak_changestamp' : 'stlu 7/29/2021 14:10'
 }
 GLRegistry >> getPerfQueryInfoINTEL: queryId with: queryNameLength with: queryName with: dataSize with: noCounters with: noInstances with: capsMask [
 
@@ -116922,7 +116924,7 @@ GLRegistry >> getPerfQueryInfoINTEL: queryId with: queryNameLength with: queryNa
 	<glReturn: 'void'>
 	<glArg: 'queryId' type: 'GLuint'>
 	<glArg: 'queryNameLength' type: 'GLuint'>
-	<glArg: 'queryName' type: 'GLchar*'>
+	<glArg: 'queryName' type: 'GLchar*' size: 'queryNameLength'>
 	<glArg: 'dataSize' type: 'GLuint*'>
 	<glArg: 'noCounters' type: 'GLuint*'>
 	<glArg: 'noInstances' type: 'GLuint*'>
@@ -119940,7 +119942,7 @@ GLRegistry >> getTransformFeedbackiv: xfb with: pname with: param [
 
 {
 	#category : #'commands - extensions',
-	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
+	#'squeak_changestamp' : 'stlu 7/29/2021 14:10'
 }
 GLRegistry >> getTranslatedShaderSourceANGLE: shader with: bufSize with: length with: source [
 
@@ -119951,7 +119953,7 @@ GLRegistry >> getTranslatedShaderSourceANGLE: shader with: bufSize with: length 
 	<glArg: 'shader' type: 'GLuint'>
 	<glArg: 'bufSize' type: 'GLsizei'>
 	<glArg: 'length' type: 'GLsizei*' size: '1'>
-	<glArg: 'source' type: 'GLchar*'>
+	<glArg: 'source' type: 'GLchar*' size: 'bufSize'>
 	
 	<apicall: void 'glGetTranslatedShaderSourceANGLE' (GLuint GLsizei GLsizei* GLchar*)>
 	^ self externalCallFailed
@@ -120671,10 +120673,11 @@ GLRegistry >> getVertexAttribIiv: index with: pname with: params [
 
 {
 	#category : #'commands - extensions',
-	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
+	#'squeak_changestamp' : 'stlu 7/29/2021 14:10'
 }
 GLRegistry >> getVertexAttribIivEXT: index with: pname with: params [
 
+	<glAPI: #gl profile: #compatibility extension: #'GL_EXT_gpu_shader4'>
 	<glAPI: #gl profile: #compatibility extension: #'GL_NV_vertex_program4'>
 	
 	<glCommand: #glGetVertexAttribIivEXT>
@@ -120710,10 +120713,11 @@ GLRegistry >> getVertexAttribIuiv: index with: pname with: params [
 
 {
 	#category : #'commands - extensions',
-	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
+	#'squeak_changestamp' : 'stlu 7/29/2021 14:10'
 }
 GLRegistry >> getVertexAttribIuivEXT: index with: pname with: params [
 
+	<glAPI: #gl profile: #compatibility extension: #'GL_EXT_gpu_shader4'>
 	<glAPI: #gl profile: #compatibility extension: #'GL_NV_vertex_program4'>
 	
 	<glCommand: #glGetVertexAttribIuivEXT>
@@ -154996,10 +155000,11 @@ GLRegistry >> vertexAttribI1i: index with: x [
 
 {
 	#category : #'commands - extensions',
-	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
+	#'squeak_changestamp' : 'stlu 7/29/2021 14:10'
 }
 GLRegistry >> vertexAttribI1iEXT: index with: x [
 
+	<glAPI: #gl profile: #compatibility extension: #'GL_EXT_gpu_shader4'>
 	<glAPI: #gl profile: #compatibility extension: #'GL_NV_vertex_program4'>
 	
 	<glCommand: #glVertexAttribI1iEXT>
@@ -155032,10 +155037,11 @@ GLRegistry >> vertexAttribI1iv: index with: v [
 
 {
 	#category : #'commands - extensions',
-	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
+	#'squeak_changestamp' : 'stlu 7/29/2021 14:10'
 }
 GLRegistry >> vertexAttribI1ivEXT: index with: v [
 
+	<glAPI: #gl profile: #compatibility extension: #'GL_EXT_gpu_shader4'>
 	<glAPI: #gl profile: #compatibility extension: #'GL_NV_vertex_program4'>
 	
 	<glCommand: #glVertexAttribI1ivEXT>
@@ -155068,10 +155074,11 @@ GLRegistry >> vertexAttribI1ui: index with: x [
 
 {
 	#category : #'commands - extensions',
-	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
+	#'squeak_changestamp' : 'stlu 7/29/2021 14:10'
 }
 GLRegistry >> vertexAttribI1uiEXT: index with: x [
 
+	<glAPI: #gl profile: #compatibility extension: #'GL_EXT_gpu_shader4'>
 	<glAPI: #gl profile: #compatibility extension: #'GL_NV_vertex_program4'>
 	
 	<glCommand: #glVertexAttribI1uiEXT>
@@ -155104,10 +155111,11 @@ GLRegistry >> vertexAttribI1uiv: index with: v [
 
 {
 	#category : #'commands - extensions',
-	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
+	#'squeak_changestamp' : 'stlu 7/29/2021 14:10'
 }
 GLRegistry >> vertexAttribI1uivEXT: index with: v [
 
+	<glAPI: #gl profile: #compatibility extension: #'GL_EXT_gpu_shader4'>
 	<glAPI: #gl profile: #compatibility extension: #'GL_NV_vertex_program4'>
 	
 	<glCommand: #glVertexAttribI1uivEXT>
@@ -155141,10 +155149,11 @@ GLRegistry >> vertexAttribI2i: index with: x with: y [
 
 {
 	#category : #'commands - extensions',
-	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
+	#'squeak_changestamp' : 'stlu 7/29/2021 14:10'
 }
 GLRegistry >> vertexAttribI2iEXT: index with: x with: y [
 
+	<glAPI: #gl profile: #compatibility extension: #'GL_EXT_gpu_shader4'>
 	<glAPI: #gl profile: #compatibility extension: #'GL_NV_vertex_program4'>
 	
 	<glCommand: #glVertexAttribI2iEXT>
@@ -155178,10 +155187,11 @@ GLRegistry >> vertexAttribI2iv: index with: v [
 
 {
 	#category : #'commands - extensions',
-	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
+	#'squeak_changestamp' : 'stlu 7/29/2021 14:10'
 }
 GLRegistry >> vertexAttribI2ivEXT: index with: v [
 
+	<glAPI: #gl profile: #compatibility extension: #'GL_EXT_gpu_shader4'>
 	<glAPI: #gl profile: #compatibility extension: #'GL_NV_vertex_program4'>
 	
 	<glCommand: #glVertexAttribI2ivEXT>
@@ -155215,10 +155225,11 @@ GLRegistry >> vertexAttribI2ui: index with: x with: y [
 
 {
 	#category : #'commands - extensions',
-	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
+	#'squeak_changestamp' : 'stlu 7/29/2021 14:10'
 }
 GLRegistry >> vertexAttribI2uiEXT: index with: x with: y [
 
+	<glAPI: #gl profile: #compatibility extension: #'GL_EXT_gpu_shader4'>
 	<glAPI: #gl profile: #compatibility extension: #'GL_NV_vertex_program4'>
 	
 	<glCommand: #glVertexAttribI2uiEXT>
@@ -155252,10 +155263,11 @@ GLRegistry >> vertexAttribI2uiv: index with: v [
 
 {
 	#category : #'commands - extensions',
-	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
+	#'squeak_changestamp' : 'stlu 7/29/2021 14:10'
 }
 GLRegistry >> vertexAttribI2uivEXT: index with: v [
 
+	<glAPI: #gl profile: #compatibility extension: #'GL_EXT_gpu_shader4'>
 	<glAPI: #gl profile: #compatibility extension: #'GL_NV_vertex_program4'>
 	
 	<glCommand: #glVertexAttribI2uivEXT>
@@ -155290,10 +155302,11 @@ GLRegistry >> vertexAttribI3i: index with: x with: y with: z [
 
 {
 	#category : #'commands - extensions',
-	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
+	#'squeak_changestamp' : 'stlu 7/29/2021 14:10'
 }
 GLRegistry >> vertexAttribI3iEXT: index with: x with: y with: z [
 
+	<glAPI: #gl profile: #compatibility extension: #'GL_EXT_gpu_shader4'>
 	<glAPI: #gl profile: #compatibility extension: #'GL_NV_vertex_program4'>
 	
 	<glCommand: #glVertexAttribI3iEXT>
@@ -155328,10 +155341,11 @@ GLRegistry >> vertexAttribI3iv: index with: v [
 
 {
 	#category : #'commands - extensions',
-	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
+	#'squeak_changestamp' : 'stlu 7/29/2021 14:10'
 }
 GLRegistry >> vertexAttribI3ivEXT: index with: v [
 
+	<glAPI: #gl profile: #compatibility extension: #'GL_EXT_gpu_shader4'>
 	<glAPI: #gl profile: #compatibility extension: #'GL_NV_vertex_program4'>
 	
 	<glCommand: #glVertexAttribI3ivEXT>
@@ -155366,10 +155380,11 @@ GLRegistry >> vertexAttribI3ui: index with: x with: y with: z [
 
 {
 	#category : #'commands - extensions',
-	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
+	#'squeak_changestamp' : 'stlu 7/29/2021 14:10'
 }
 GLRegistry >> vertexAttribI3uiEXT: index with: x with: y with: z [
 
+	<glAPI: #gl profile: #compatibility extension: #'GL_EXT_gpu_shader4'>
 	<glAPI: #gl profile: #compatibility extension: #'GL_NV_vertex_program4'>
 	
 	<glCommand: #glVertexAttribI3uiEXT>
@@ -155404,10 +155419,11 @@ GLRegistry >> vertexAttribI3uiv: index with: v [
 
 {
 	#category : #'commands - extensions',
-	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
+	#'squeak_changestamp' : 'stlu 7/29/2021 14:10'
 }
 GLRegistry >> vertexAttribI3uivEXT: index with: v [
 
+	<glAPI: #gl profile: #compatibility extension: #'GL_EXT_gpu_shader4'>
 	<glAPI: #gl profile: #compatibility extension: #'GL_NV_vertex_program4'>
 	
 	<glCommand: #glVertexAttribI3uivEXT>
@@ -155440,10 +155456,11 @@ GLRegistry >> vertexAttribI4bv: index with: v [
 
 {
 	#category : #'commands - extensions',
-	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
+	#'squeak_changestamp' : 'stlu 7/29/2021 14:10'
 }
 GLRegistry >> vertexAttribI4bvEXT: index with: v [
 
+	<glAPI: #gl profile: #compatibility extension: #'GL_EXT_gpu_shader4'>
 	<glAPI: #gl profile: #compatibility extension: #'GL_NV_vertex_program4'>
 	
 	<glCommand: #glVertexAttribI4bvEXT>
@@ -155480,10 +155497,11 @@ GLRegistry >> vertexAttribI4i: index with: x with: y with: z with: w [
 
 {
 	#category : #'commands - extensions',
-	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
+	#'squeak_changestamp' : 'stlu 7/29/2021 14:10'
 }
 GLRegistry >> vertexAttribI4iEXT: index with: x with: y with: z with: w [
 
+	<glAPI: #gl profile: #compatibility extension: #'GL_EXT_gpu_shader4'>
 	<glAPI: #gl profile: #compatibility extension: #'GL_NV_vertex_program4'>
 	
 	<glCommand: #glVertexAttribI4iEXT>
@@ -155520,10 +155538,11 @@ GLRegistry >> vertexAttribI4iv: index with: v [
 
 {
 	#category : #'commands - extensions',
-	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
+	#'squeak_changestamp' : 'stlu 7/29/2021 14:10'
 }
 GLRegistry >> vertexAttribI4ivEXT: index with: v [
 
+	<glAPI: #gl profile: #compatibility extension: #'GL_EXT_gpu_shader4'>
 	<glAPI: #gl profile: #compatibility extension: #'GL_NV_vertex_program4'>
 	
 	<glCommand: #glVertexAttribI4ivEXT>
@@ -155556,10 +155575,11 @@ GLRegistry >> vertexAttribI4sv: index with: v [
 
 {
 	#category : #'commands - extensions',
-	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
+	#'squeak_changestamp' : 'stlu 7/29/2021 14:10'
 }
 GLRegistry >> vertexAttribI4svEXT: index with: v [
 
+	<glAPI: #gl profile: #compatibility extension: #'GL_EXT_gpu_shader4'>
 	<glAPI: #gl profile: #compatibility extension: #'GL_NV_vertex_program4'>
 	
 	<glCommand: #glVertexAttribI4svEXT>
@@ -155592,10 +155612,11 @@ GLRegistry >> vertexAttribI4ubv: index with: v [
 
 {
 	#category : #'commands - extensions',
-	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
+	#'squeak_changestamp' : 'stlu 7/29/2021 14:10'
 }
 GLRegistry >> vertexAttribI4ubvEXT: index with: v [
 
+	<glAPI: #gl profile: #compatibility extension: #'GL_EXT_gpu_shader4'>
 	<glAPI: #gl profile: #compatibility extension: #'GL_NV_vertex_program4'>
 	
 	<glCommand: #glVertexAttribI4ubvEXT>
@@ -155632,10 +155653,11 @@ GLRegistry >> vertexAttribI4ui: index with: x with: y with: z with: w [
 
 {
 	#category : #'commands - extensions',
-	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
+	#'squeak_changestamp' : 'stlu 7/29/2021 14:10'
 }
 GLRegistry >> vertexAttribI4uiEXT: index with: x with: y with: z with: w [
 
+	<glAPI: #gl profile: #compatibility extension: #'GL_EXT_gpu_shader4'>
 	<glAPI: #gl profile: #compatibility extension: #'GL_NV_vertex_program4'>
 	
 	<glCommand: #glVertexAttribI4uiEXT>
@@ -155672,10 +155694,11 @@ GLRegistry >> vertexAttribI4uiv: index with: v [
 
 {
 	#category : #'commands - extensions',
-	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
+	#'squeak_changestamp' : 'stlu 7/29/2021 14:10'
 }
 GLRegistry >> vertexAttribI4uivEXT: index with: v [
 
+	<glAPI: #gl profile: #compatibility extension: #'GL_EXT_gpu_shader4'>
 	<glAPI: #gl profile: #compatibility extension: #'GL_NV_vertex_program4'>
 	
 	<glCommand: #glVertexAttribI4uivEXT>
@@ -155708,10 +155731,11 @@ GLRegistry >> vertexAttribI4usv: index with: v [
 
 {
 	#category : #'commands - extensions',
-	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
+	#'squeak_changestamp' : 'stlu 7/29/2021 14:10'
 }
 GLRegistry >> vertexAttribI4usvEXT: index with: v [
 
+	<glAPI: #gl profile: #compatibility extension: #'GL_EXT_gpu_shader4'>
 	<glAPI: #gl profile: #compatibility extension: #'GL_NV_vertex_program4'>
 	
 	<glCommand: #glVertexAttribI4usvEXT>
@@ -155790,10 +155814,11 @@ GLRegistry >> vertexAttribIPointer: index with: size with: type with: stride wit
 
 {
 	#category : #'commands - extensions',
-	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
+	#'squeak_changestamp' : 'stlu 7/29/2021 14:10'
 }
 GLRegistry >> vertexAttribIPointerEXT: index with: size with: type with: stride with: pointer [
 
+	<glAPI: #gl profile: #compatibility extension: #'GL_EXT_gpu_shader4'>
 	<glAPI: #gl profile: #compatibility extension: #'GL_NV_vertex_program4'>
 	
 	<glCommand: #glVertexAttribIPointerEXT>
