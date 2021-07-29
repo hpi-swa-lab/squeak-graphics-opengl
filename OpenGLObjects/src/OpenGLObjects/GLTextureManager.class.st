@@ -120,7 +120,7 @@ GLTextureManager >> creationImp: anObject [
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 5/14/2021 20:49'
+	#'squeak_changestamp' : 'stlu 7/29/2021 20:15'
 }
 GLTextureManager >> initialize [
 
@@ -129,9 +129,9 @@ GLTextureManager >> initialize [
 	activeTextureImageUnitIndex := 0. "zero-indexed"
 	self initializeTextureImageUnits.
 	
-	creationImp := GLTextureCreationImp new.
-	stateAccessImp := GLTextureDirectStateAccessImp new.
-	bindingImp := GLTextureBindingImp new.
+	creationImp := GLTextureImp new.
+	stateAccessImp := GLDirectStateAccessImp new.
+	bindingImp := GLTextureImp new.
 ]
 
 {

@@ -218,11 +218,11 @@ GLBuffer >> initialize [
 
 {
 	#category : #data,
-	#'squeak_changestamp' : 'stlu 12/28/2020 12:09'
+	#'squeak_changestamp' : 'stlu 7/28/2021 17:58'
 }
-GLBuffer >> invalidate [
+GLBuffer >> invalidateData [
 
-	self stateAccess invalidateData: self
+	self stateAccess invalidateData: self.
 ]
 
 {
@@ -236,11 +236,11 @@ GLBuffer >> isBuffer [
 
 {
 	#category : #data,
-	#'squeak_changestamp' : 'stlu 12/28/2020 12:08'
+	#'squeak_changestamp' : 'stlu 7/28/2021 17:57'
 }
 GLBuffer >> orphan [
 
-	self invalidateData
+	self invalidateData.
 ]
 
 {

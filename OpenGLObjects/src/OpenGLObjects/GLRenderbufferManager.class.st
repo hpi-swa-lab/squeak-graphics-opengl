@@ -64,13 +64,13 @@ GLRenderbufferManager >> creationImp: anObject [
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 7/26/2021 13:47'
+	#'squeak_changestamp' : 'stlu 7/29/2021 20:10'
 }
 GLRenderbufferManager >> initialize [
 
 	super initialize.
-	creationImp := GLRenderbufferCreationImp new.
-	stateAccessImp := GLRenderbufferDirectStateAccessImp new.
+	creationImp := GLRenderbufferImp new.
+	stateAccessImp := GLDirectStateAccessImp new.
 ]
 
 {

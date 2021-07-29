@@ -1,14 +1,14 @@
 Class {
-	#name : #GLFramebufferCreationImp,
+	#name : #GLFramebufferImp,
 	#superclass : #GLObjectImplementor,
 	#category : #'OpenGLObjects-Implementors'
 }
 
 {
-	#category : #'as yet unclassified',
+	#category : #creation,
 	#'squeak_changestamp' : 'stlu 7/26/2021 13:17'
 }
-GLFramebufferCreationImp >> createFramebufferIDs: count [
+GLFramebufferImp >> createFramebufferIDs: count [
 
 	| ids |
 	ids := IntegerArray new: count.
@@ -17,19 +17,19 @@ GLFramebufferCreationImp >> createFramebufferIDs: count [
 ]
 
 {
-	#category : #'as yet unclassified',
+	#category : #creation,
 	#'squeak_changestamp' : 'stlu 7/26/2021 13:17'
 }
-GLFramebufferCreationImp >> createFramebufferIDs: count into: anIntegerArray [
+GLFramebufferImp >> createFramebufferIDs: count into: anIntegerArray [
 
 	GL createFramebuffers: count with: anIntegerArray
 ]
 
 {
-	#category : #'as yet unclassified',
+	#category : #creation,
 	#'squeak_changestamp' : 'stlu 7/26/2021 13:17'
 }
-GLFramebufferCreationImp >> generateFramebufferIDs: count [
+GLFramebufferImp >> generateFramebufferIDs: count [
 
 	| ids |
 	ids := IntegerArray new: count.
@@ -38,10 +38,10 @@ GLFramebufferCreationImp >> generateFramebufferIDs: count [
 ]
 
 {
-	#category : #'as yet unclassified',
+	#category : #creation,
 	#'squeak_changestamp' : 'stlu 7/26/2021 13:17'
 }
-GLFramebufferCreationImp >> generateFramebufferIDs: count into: anIntegerArray [
+GLFramebufferImp >> generateFramebufferIDs: count into: anIntegerArray [
 
 	GL genFramebuffers: count with: anIntegerArray
 ]

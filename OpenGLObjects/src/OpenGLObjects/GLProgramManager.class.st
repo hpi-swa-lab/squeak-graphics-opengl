@@ -49,16 +49,16 @@ GLProgramManager >> currentProgram: anObject [
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 5/15/2021 16:47'
+	#'squeak_changestamp' : 'stlu 7/29/2021 21:53'
 }
 GLProgramManager >> initialize [
 
 	super initialize.
 	staticPrograms := IdentityDictionary new.
 	
-	creationImp := GLProgramCreationImp new.
-	interfaceQueryImp := GLDirectProgramInterfaceQueryImp new.
-	uniformSetterImp := GLUniformDirectStateAccessImp new.
+	creationImp := GLProgramImp new.
+	interfaceQueryImp := GLSeparateShaderObjectsImp new.
+	uniformSetterImp := GLSeparateShaderObjectsImp new.
 ]
 
 {

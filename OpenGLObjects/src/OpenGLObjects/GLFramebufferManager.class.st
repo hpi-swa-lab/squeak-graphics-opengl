@@ -156,7 +156,7 @@ GLFramebufferManager >> drawFramebuffer: anObject [
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 7/26/2021 13:21'
+	#'squeak_changestamp' : 'stlu 7/29/2021 20:09'
 }
 GLFramebufferManager >> initialize [
 
@@ -164,8 +164,8 @@ GLFramebufferManager >> initialize [
 	defaultFramebuffer := GLDefaultFramebuffer manager: self id: 0.
 	readFramebuffer := drawFramebuffer := defaultFramebuffer.
 	
-	creationImp := GLFramebufferCreationImp new.
-	stateAccessImp := GLFramebufferDirectStateAccessImp new.
+	creationImp := GLFramebufferImp new.
+	stateAccessImp := GLDirectStateAccessImp new.
 ]
 
 {

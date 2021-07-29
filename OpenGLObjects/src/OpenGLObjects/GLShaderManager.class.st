@@ -27,12 +27,12 @@ GLShaderManager >> creationImp: anObject [
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 4/25/2021 14:35'
+	#'squeak_changestamp' : 'stlu 7/29/2021 20:11'
 }
 GLShaderManager >> initialize [
 
 	super initialize.
-	creationImp := GLShaderCreationImp new
+	creationImp := GLShaderImp new
 ]
 
 {

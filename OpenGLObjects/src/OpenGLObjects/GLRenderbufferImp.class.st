@@ -1,14 +1,14 @@
 Class {
-	#name : #GLRenderbufferCreationImp,
+	#name : #GLRenderbufferImp,
 	#superclass : #GLObjectImplementor,
 	#category : #'OpenGLObjects-Implementors'
 }
 
 {
-	#category : #'as yet unclassified',
+	#category : #creation,
 	#'squeak_changestamp' : 'stlu 7/26/2021 13:51'
 }
-GLRenderbufferCreationImp >> createRenderbufferIDs: count [
+GLRenderbufferImp >> createRenderbufferIDs: count [
 
 	| ids |
 	ids := IntegerArray new: count.
@@ -17,19 +17,19 @@ GLRenderbufferCreationImp >> createRenderbufferIDs: count [
 ]
 
 {
-	#category : #'as yet unclassified',
+	#category : #creation,
 	#'squeak_changestamp' : 'stlu 7/26/2021 13:50'
 }
-GLRenderbufferCreationImp >> createRenderbufferIDs: count into: anIntegerArray [
+GLRenderbufferImp >> createRenderbufferIDs: count into: anIntegerArray [
 
 	GL createRenderbuffers: count with: anIntegerArray
 ]
 
 {
-	#category : #'as yet unclassified',
+	#category : #creation,
 	#'squeak_changestamp' : 'stlu 7/26/2021 13:51'
 }
-GLRenderbufferCreationImp >> generateRenderbufferIDs: count [
+GLRenderbufferImp >> generateRenderbufferIDs: count [
 
 	| ids |
 	ids := IntegerArray new: count.
@@ -38,10 +38,10 @@ GLRenderbufferCreationImp >> generateRenderbufferIDs: count [
 ]
 
 {
-	#category : #'as yet unclassified',
+	#category : #creation,
 	#'squeak_changestamp' : 'stlu 7/26/2021 13:51'
 }
-GLRenderbufferCreationImp >> generateRenderbufferIDs: count into: anIntegerArray [
+GLRenderbufferImp >> generateRenderbufferIDs: count into: anIntegerArray [
 
 	GL genRenderbuffers: count with: anIntegerArray
 ]

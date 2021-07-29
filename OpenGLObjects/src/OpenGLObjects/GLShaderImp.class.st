@@ -1,23 +1,23 @@
 Class {
-	#name : #GLShaderCreationImp,
+	#name : #GLShaderImp,
 	#superclass : #GLObjectImplementor,
 	#category : #'OpenGLObjects-Implementors'
 }
 
 {
-	#category : #'as yet unclassified',
+	#category : #creation,
 	#'squeak_changestamp' : 'stlu 4/25/2021 23:10'
 }
-GLShaderCreationImp >> createShaderID: shaderTypeEnum [
+GLShaderImp >> createShaderID: shaderTypeEnum [
 
 	^ GL createShader: shaderTypeEnum
 ]
 
 {
-	#category : #'as yet unclassified',
+	#category : #deletion,
 	#'squeak_changestamp' : 'stlu 7/28/2021 18:24'
 }
-GLShaderCreationImp >> deleteShader: aShader [
+GLShaderImp >> deleteShader: aShader [
 
 	GL deleteShader: aShader id.
 ]

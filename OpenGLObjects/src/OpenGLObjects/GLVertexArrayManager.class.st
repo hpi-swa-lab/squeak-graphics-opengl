@@ -72,13 +72,13 @@ GLVertexArrayManager >> creationImp: anObject [
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 5/15/2021 14:10'
+	#'squeak_changestamp' : 'stlu 7/29/2021 20:19'
 }
 GLVertexArrayManager >> initialize [
 
 	super initialize.
-	creationImp := GLVertexArrayCreationImp new.
-	stateAccessImp := GLVertexArrayDirectStateAccessImp new.
+	creationImp := GLVertexArrayImp new.
+	stateAccessImp := GLDirectStateAccessImp new.
 ]
 
 {

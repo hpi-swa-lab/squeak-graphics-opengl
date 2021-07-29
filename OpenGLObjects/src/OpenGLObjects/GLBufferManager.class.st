@@ -75,7 +75,7 @@ GLBufferManager >> creationImp: anObject [
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 5/15/2021 16:39'
+	#'squeak_changestamp' : 'stlu 7/29/2021 19:59'
 }
 GLBufferManager >> initialize [
 
@@ -84,7 +84,7 @@ GLBufferManager >> initialize [
 	GLBuffer targets do: [:targetEnum |
 		bindings at: targetEnum put: nil].
 	
-	creationImp := GLBufferCreationImp new.
+	creationImp := GLBufferImp new.
 ]
 
 {
