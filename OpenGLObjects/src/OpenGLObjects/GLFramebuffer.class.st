@@ -20,7 +20,7 @@ Class {
 	#classVars : [
 		'CompletionStatusDescriptions'
 	],
-	#category : #'OpenGLObjects-FrameBuffers',
+	#category : #'OpenGLObjects-Framebuffers',
 	#'squeak_changestamp' : 'stlu 7/26/2021 13:33'
 }
 

@@ -6,7 +6,7 @@ Class {
 		'stateAccessImp',
 		'boundRenderbuffer'
 	],
-	#category : #'OpenGLObjects-FrameBuffers'
+	#category : #'OpenGLObjects-Renderbuffers'
 }
 
 {

@@ -8,7 +8,7 @@ Class {
 		'creationImp',
 		'stateAccessImp'
 	],
-	#category : #'OpenGLObjects-FrameBuffers'
+	#category : #'OpenGLObjects-Framebuffers'
 }
 
 {

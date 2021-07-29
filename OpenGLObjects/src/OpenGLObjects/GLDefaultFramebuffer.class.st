@@ -1,7 +1,7 @@
 Class {
 	#name : #GLDefaultFramebuffer,
 	#superclass : #GLFramebuffer,
-	#category : #'OpenGLObjects-FrameBuffers'
+	#category : #'OpenGLObjects-Framebuffers'
 }
 
 {

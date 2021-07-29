@@ -1,7 +1,7 @@
 Class {
 	#name : #GLRenderbuffer,
 	#superclass : #GLObject,
-	#category : #'OpenGLObjects-FrameBuffers'
+	#category : #'OpenGLObjects-Renderbuffers'
 }
 
 {
