@@ -1,7 +1,7 @@
 Class {
 	#name : #GLDirectProgramInterfaceQueryImp,
 	#superclass : #GLProgramInterfaceQueryImp,
-	#category : #'OpenGLObjects-Programs'
+	#category : #'OpenGLObjects-Implementors'
 }
 
 {

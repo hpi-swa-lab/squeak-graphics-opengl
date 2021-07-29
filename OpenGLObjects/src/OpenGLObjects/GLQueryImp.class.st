@@ -1,7 +1,7 @@
 Class {
 	#name : #GLQueryImp,
-	#superclass : #GLObjectImp,
-	#category : #'OpenGLObjects-Queries'
+	#superclass : #GLObjectImplementor,
+	#category : #'OpenGLObjects-Implementors'
 }
 
 {

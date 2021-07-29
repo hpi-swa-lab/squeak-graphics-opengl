@@ -1,5 +1,5 @@
 Class {
-	#name : #GLObjectImp,
+	#name : #GLObjectImplementor,
 	#superclass : #Object,
 	#pools : [
 		'GLConstants'

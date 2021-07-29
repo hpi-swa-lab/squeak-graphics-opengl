@@ -1,5 +1,5 @@
 Class {
 	#name : #GLVertexArrayImp,
 	#superclass : #Object,
-	#category : #'OpenGLObjects-VertexArrays'
+	#category : #'OpenGLObjects-Implementors'
 }

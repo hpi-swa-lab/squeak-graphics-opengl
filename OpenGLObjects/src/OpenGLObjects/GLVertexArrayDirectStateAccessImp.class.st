@@ -1,7 +1,7 @@
 Class {
 	#name : #GLVertexArrayDirectStateAccessImp,
 	#superclass : #GLVertexArrayImp,
-	#category : #'OpenGLObjects-VertexArrays'
+	#category : #'OpenGLObjects-Implementors'
 }
 
 {

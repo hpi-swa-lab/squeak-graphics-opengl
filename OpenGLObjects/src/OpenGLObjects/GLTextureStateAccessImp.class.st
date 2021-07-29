@@ -1,7 +1,7 @@
 Class {
 	#name : #GLTextureStateAccessImp,
-	#superclass : #GLObjectImp,
-	#category : #'OpenGLObjects-Textures'
+	#superclass : #GLObjectImplementor,
+	#category : #'OpenGLObjects-Implementors'
 }
 
 {

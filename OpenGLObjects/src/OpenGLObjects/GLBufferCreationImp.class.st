@@ -1,7 +1,7 @@
 Class {
 	#name : #GLBufferCreationImp,
-	#superclass : #GLObjectImp,
-	#category : #'OpenGLObjects-Buffers'
+	#superclass : #GLObjectImplementor,
+	#category : #'OpenGLObjects-Implementors'
 }
 
 {

@@ -1,7 +1,7 @@
 Class {
 	#name : #GLUniformLegacyStateAccessImp,
 	#superclass : #GLUniformStateAccessImp,
-	#category : #'OpenGLObjects-Programs'
+	#category : #'OpenGLObjects-Implementors'
 }
 
 {

@@ -1,5 +1,5 @@
 Class {
 	#name : #GLRenderbufferStateAccessImp,
-	#superclass : #GLObjectImp,
-	#category : #'OpenGLObjects-FrameBuffers'
+	#superclass : #GLObjectImplementor,
+	#category : #'OpenGLObjects-Implementors'
 }
