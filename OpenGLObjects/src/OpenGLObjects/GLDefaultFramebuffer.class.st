@@ -14,15 +14,6 @@ GLDefaultFramebuffer class >> create [
 ]
 
 {
-	#category : #'instance creation',
-	#'squeak_changestamp' : 'stlu 7/26/2021 13:33'
-}
-GLDefaultFramebuffer class >> instance [
-
-	^ self manager defaultFramebuffer
-]
-
-{
 	#category : #testing,
 	#'squeak_changestamp' : 'stlu 5/11/2021 12:57'
 }

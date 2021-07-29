@@ -87,11 +87,11 @@ GLObject class >> manager: aManager ids: integerArray [
 
 {
 	#category : #'instance creation',
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 7/28/2021 14:49'
 }
 GLObject class >> new [
-
-	self shouldNotImplement
+	"Use #create or #create: instead."
+	self shouldNotImplement.
 ]
 
 {

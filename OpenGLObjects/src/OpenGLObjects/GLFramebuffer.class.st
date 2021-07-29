@@ -57,11 +57,11 @@ GLFramebuffer class >> create: count [
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 7/26/2021 13:30'
+	#'squeak_changestamp' : 'stlu 7/28/2021 14:55'
 }
 GLFramebuffer class >> default [
 
-	^ GLDefaultFramebuffer instance
+	^ self manager defaultFramebuffer
 ]
 
 {
@@ -97,11 +97,12 @@ GLFramebuffer class >> generate: count [
 
 {
 	#category : #'class initialization',
-	#'squeak_changestamp' : 'stlu 1/9/2021 13:46'
+	#'squeak_changestamp' : 'stlu 7/26/2021 14:57'
 }
 GLFramebuffer class >> initialize [
 
 	CompletionStatusDescriptions := {
+		GL_FRAMEBUFFER_COMPLETE -> 'Complete framebuffer. The specified framebuffer is complete.'.
 		GL_FRAMEBUFFER_UNDEFINED -> 'Undefined framebuffer. The specified framebuffer is the default read or draw framebuffer, but the default framebuffer does not exist.'.
 		GL_FRAMEBUFFER_INCOMPLETE_ATTACHMENT -> 'Incomplete attachment. One of the framebuffer attachment points are framebuffer incomplete.'.
 		GL_FRAMEBUFFER_INCOMPLETE_MISSING_ATTACHMENT -> 'Incomplete missing attachment. The framebuffer does not have at least one image attached to it.'.
