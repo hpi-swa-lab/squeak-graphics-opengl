@@ -167,15 +167,6 @@ GLFramebufferManager >> initialize [
 ]
 
 {
-	#category : #testing,
-	#'squeak_changestamp' : 'stlu 5/11/2021 12:51'
-}
-GLFramebufferManager >> isValidID: anInteger [
-
-	^ GL isFramebuffer: anInteger
-]
-
-{
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 7/26/2021 13:21'
 }

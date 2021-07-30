@@ -77,15 +77,6 @@ GLRenderbufferManager >> initialize [
 ]
 
 {
-	#category : #testing,
-	#'squeak_changestamp' : 'stlu 5/11/2021 12:52'
-}
-GLRenderbufferManager >> isValidID: anInteger [
-
-	^ GL isRenderbuffer: anInteger
-]
-
-{
 	#category : #implementors,
 	#'squeak_changestamp' : 'stlu 5/15/2021 14:32'
 }

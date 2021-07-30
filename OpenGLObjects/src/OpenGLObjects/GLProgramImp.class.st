@@ -68,6 +68,109 @@ GLProgramImp >> deleteProgram: aProgram [
 ]
 
 {
+	#category : #'state access',
+	#'squeak_changestamp' : 'stlu 7/30/2021 03:06'
+}
+GLProgramImp >> getProgramBinary: aProgram [
+
+	| binaryLength binaryFormat binary |
+	binaryLength := self program: aProgram getParameter: GL_PROGRAM_BINARY_LENGTH.
+	binaryLength <= 0 ifTrue: [^ #[]].
+	binaryFormat := WordArray new: 1.
+	binary := ByteArray new: binaryLength.
+	GL
+		getProgramBinary: aProgram id
+		with: binaryLength
+		with: nil
+		with: binaryFormat
+		with: binary.
+	^  binaryFormat first -> binary
+]
+
+{
+	#category : #'state access',
+	#'squeak_changestamp' : 'stlu 7/30/2021 03:10'
+}
+GLProgramImp >> getProgramInfoLog: aProgram [
+
+	| length infoLog |
+	length := self program: aProgram getParameter: GL_INFO_LOG_LENGTH.
+	length <= 0 ifTrue: [^ ''].
+	infoLog := ByteArray new: length.
+	GL
+		getProgramInfoLog: aProgram id
+		with: length
+		with: nil
+		with: infoLog.
+	^ infoLog allButLast "remove null-terminator" utf8Decoded withSqueakLineEndings
+]
+
+{
+	#category : #shaders,
+	#'squeak_changestamp' : 'stlu 7/30/2021 03:36'
+}
+GLProgramImp >> linkProgram: aProgram [
+
+	GL linkProgram: aProgram id.
+]
+
+{
+	#category : #shaders,
+	#'squeak_changestamp' : 'stlu 7/30/2021 02:32'
+}
+GLProgramImp >> program: aProgram attachShader: aShader [
+
+	GL
+		attachShader: aProgram id
+		with: aShader id.
+]
+
+{
+	#category : #shaders,
+	#'squeak_changestamp' : 'stlu 7/30/2021 02:34'
+}
+GLProgramImp >> program: aProgram detachShader: aShader [
+
+	GL
+		detachShader: aProgram id
+		with: aShader id.
+]
+
+{
+	#category : #'state access',
+	#'squeak_changestamp' : 'stlu 7/30/2021 02:43'
+}
+GLProgramImp >> program: aProgram getParameter: parameterEnum [
+
+	^ (self program: aProgram getParameter: parameterEnum size: 1) first
+]
+
+{
+	#category : #'state access',
+	#'squeak_changestamp' : 'stlu 7/30/2021 02:42'
+}
+GLProgramImp >> program: aProgram getParameter: parameterEnum size: numElements [
+
+	| result |
+	result := IntegerArray new: numElements.
+	GL
+		getProgramiv: aProgram id
+		with: parameterEnum
+		with: result.
+	^ result
+]
+
+{
+	#category : #'state access',
+	#'squeak_changestamp' : 'stlu 7/30/2021 03:19'
+}
+GLProgramImp >> programCanExecute: aProgram [
+
+	GL validateProgram: aProgram id.
+	^ (self program: aProgram getParameter: GL_VALIDATE_STATUS) = GL_TRUE
+]
+
+{
 	#category : #'uniform setters',
 	#'squeak_changestamp' : 'stlu 7/29/2021 21:48'
 }

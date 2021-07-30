@@ -63,15 +63,6 @@ GLProgramManager >> interfaceQueryImp: anObject [
 ]
 
 {
-	#category : #testing,
-	#'squeak_changestamp' : 'stlu 5/11/2021 12:52'
-}
-GLProgramManager >> isValidID: anInteger [
-
-	^ GL isProgram: anInteger
-]
-
-{
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 5/15/2021 16:47'
 }

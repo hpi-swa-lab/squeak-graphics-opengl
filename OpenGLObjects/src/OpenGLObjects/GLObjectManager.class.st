@@ -56,15 +56,6 @@ GLObjectManager >> initialize [
 ]
 
 {
-	#category : #testing,
-	#'squeak_changestamp' : 'stlu 5/11/2021 12:50'
-}
-GLObjectManager >> isValidID: anInteger [
-
-	^ self subclassResponsibility
-]
-
-{
 	#category : #implementors,
 	#'squeak_changestamp' : 'stlu 7/29/2021 23:26'
 }

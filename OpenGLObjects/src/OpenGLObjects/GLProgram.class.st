@@ -133,13 +133,23 @@ GLProgram class >> vertexSource: vertexGLSLString fragmentSource: fragmentGLSLSt
 ]
 
 {
-	#category : #actions,
-	#'squeak_changestamp' : 'stlu 11/3/2020 15:36'
+	#category : #testing,
+	#'squeak_changestamp' : 'stlu 7/30/2021 03:32'
 }
-GLProgram >> attachShader: glShader [
+GLProgram >> assertCanExecute [
 
-	GL attachShader: id with: glShader id.
-	shaders add: glShader
+	self canExecute ifFalse: [
+		AssertionFailure signal: self getInfoLog].
+]
+
+{
+	#category : #actions,
+	#'squeak_changestamp' : 'stlu 7/30/2021 02:32'
+}
+GLProgram >> attachShader: aShader [
+
+	manager mainImp program: self attachShader: aShader.
+	shaders add: aShader.
 ]
 
 {
@@ -171,6 +181,15 @@ GLProgram >> boundDuring: aBlock [
 ]
 
 {
+	#category : #testing,
+	#'squeak_changestamp' : 'stlu 7/30/2021 03:20'
+}
+GLProgram >> canExecute [
+
+	^ manager mainImp programCanExecute: self
+]
+
+{
 	#category : #initialization,
 	#'squeak_changestamp' : 'stlu 7/30/2021 01:39'
 }
@@ -182,12 +201,12 @@ GLProgram >> delete [
 
 {
 	#category : #actions,
-	#'squeak_changestamp' : 'stlu 12/8/2020 16:30'
+	#'squeak_changestamp' : 'stlu 7/30/2021 02:35'
 }
 GLProgram >> detachShader: aShader [
 
 	shaders remove: aShader.
-	GL detachShader: id with: aShader id.
+	manager mainImp program: self detachShader: aShader.
 ]
 
 {
@@ -202,51 +221,31 @@ GLProgram >> detachShaders [
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 11/3/2020 16:55'
+	#'squeak_changestamp' : 'stlu 7/30/2021 02:45'
 }
-GLProgram >> getAttribute: attributeName [
+GLProgram >> getAttribute: parameterEnum [
 
-	IntegerArray new: 1 during: [:result |
-		GL getProgramiv: id with: attributeName with: result.
-		^ result first]
+	^ manager mainImp
+		program: self
+		getParameter: parameterEnum
 ]
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 11/3/2020 15:36'
+	#'squeak_changestamp' : 'stlu 7/30/2021 03:06'
 }
 GLProgram >> getBinary [
 
-	| binaryLength |
-	binaryLength := self getAttribute: GL_PROGRAM_BINARY_LENGTH.
-	binaryLength <= 0 ifTrue: [^ #[]].
-	IntegerArray new: 1 during: [:pFormat |
-		ByteArray new: binaryLength during: [:result |
-			GL getProgramBinary: id with: binaryLength with: nil with: pFormat with: result.
-			^  pFormat first -> result]]
+	 ^ manager mainImp getProgramBinary: self
 ]
 
 {
 	#category : #'error handling',
-	#'squeak_changestamp' : 'stlu 12/8/2020 17:27'
+	#'squeak_changestamp' : 'stlu 7/30/2021 03:10'
 }
 GLProgram >> getInfoLog [
 
-	| length |
-	length := self getInfoLogLength.
-	length < 0 ifTrue: [^ ''].
-	ByteArray new: length during: [:result |
-		GL getProgramInfoLog: id with: result size with: nil with: result.
-		^ result allButLast "remove null-terminator" utf8Decoded withSqueakLineEndings]
-]
-
-{
-	#category : #'error handling',
-	#'squeak_changestamp' : 'stlu 10/28/2020 14:37'
-}
-GLProgram >> getInfoLogLength [
-
-	^ self getAttribute: GL_INFO_LOG_LENGTH
+	^ manager mainImp getProgramInfoLog: self
 ]
 
 {
@@ -306,16 +305,6 @@ GLProgram >> isProgram [
 
 {
 	#category : #testing,
-	#'squeak_changestamp' : 'stlu 11/3/2020 15:37'
-}
-GLProgram >> isValid [
-
-	GL validateProgram: id.
-	^ (self getAttribute: GL_VALIDATE_STATUS) = GL_TRUE
-]
-
-{
-	#category : #testing,
 	#'squeak_changestamp' : 'stlu 10/27/2020 12:17'
 }
 GLProgram >> lastLinkingSucceeded [
@@ -325,14 +314,14 @@ GLProgram >> lastLinkingSucceeded [
 
 {
 	#category : #actions,
-	#'squeak_changestamp' : 'stlu 12/14/2020 12:29'
+	#'squeak_changestamp' : 'stlu 7/30/2021 03:42'
 }
 GLProgram >> link [
 
-	GL linkProgram: id.
+	manager mainImp linkProgram: self.
 	self lastLinkingSucceeded
 		ifTrue: [self linkingSucceeded]
-		ifFalse: [self linkingFailed]
+		ifFalse: [self linkingFailed].
 ]
 
 {
@@ -400,19 +389,4 @@ GLProgram >> use [
 GLProgram >> useDuring: aBlock [
 
 	^ self boundDuring: aBlock
-]
-
-{
-	#category : #actions,
-	#'squeak_changestamp' : 'stlu 5/11/2021 12:56'
-}
-GLProgram >> validate [
-
-	self hasValidID ifFalse: [
-		self notify: 'ID does not correspond to a program object'.
-		^ false].
-	self isValid ifFalse: [
-		self notify: self getInfoLog.
-		^ false].
-	^ true
 ]

@@ -85,15 +85,6 @@ GLVertexArrayManager >> initialize [
 ]
 
 {
-	#category : #testing,
-	#'squeak_changestamp' : 'stlu 5/11/2021 12:53'
-}
-GLVertexArrayManager >> isValidID: anInteger [
-
-	^ GL isVertexArray: anInteger
-]
-
-{
 	#category : #implementors,
 	#'squeak_changestamp' : 'stlu 5/15/2021 14:10'
 }

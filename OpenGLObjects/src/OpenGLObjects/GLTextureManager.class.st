@@ -12,12 +12,12 @@ Class {
 
 {
 	#category : #'texture image units',
-	#'squeak_changestamp' : 'stlu 5/14/2021 22:39'
+	#'squeak_changestamp' : 'stlu 7/30/2021 02:17'
 }
 GLTextureManager >> activateTextureImageUnitAt: index [
 
-	GL activeTexture: GL_TEXTURE0 + index.
-	activeTextureImageUnitIndex := index
+	mainImp activateTextureImageUnitAt: index.
+	activeTextureImageUnitIndex := index.
 ]
 
 {
@@ -168,15 +168,6 @@ GLTextureManager >> initializeTextureImageUnits [
 		textureImageUnits
 			at: index
 			put: GLTextureImageUnit new].
-]
-
-{
-	#category : #testing,
-	#'squeak_changestamp' : 'stlu 5/11/2021 12:53'
-}
-GLTextureManager >> isValidID: anInteger [
-
-	^ GL isTexture: anInteger
 ]
 
 {

@@ -5,6 +5,15 @@ Class {
 }
 
 {
+	#category : #'texture image units',
+	#'squeak_changestamp' : 'stlu 7/30/2021 02:17'
+}
+GLTextureImp >> activateTextureImageUnitAt: index [
+
+	GL activeTexture: GL_TEXTURE0 + index.
+]
+
+{
 	#category : #binding,
 	#'squeak_changestamp' : 'stlu 7/29/2021 23:50'
 }

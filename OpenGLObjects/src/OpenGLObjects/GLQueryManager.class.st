@@ -72,15 +72,6 @@ GLQueryManager >> isResultAvailable: aQuery [
 ]
 
 {
-	#category : #testing,
-	#'squeak_changestamp' : 'stlu 5/24/2021 12:43'
-}
-GLQueryManager >> isValidID: anInteger [
-
-	^ GL isQuery: anInteger
-]
-
-{
 	#category : #implementors,
 	#'squeak_changestamp' : 'stlu 5/24/2021 18:03'
 }

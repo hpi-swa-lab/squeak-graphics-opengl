@@ -84,12 +84,3 @@ GLBufferManager >> initialize [
 	mainImp := GLBufferImp new.
 	creationImp := GLDirectStateAccessImp new.
 ]
-
-{
-	#category : #testing,
-	#'squeak_changestamp' : 'stlu 5/11/2021 12:50'
-}
-GLBufferManager >> isValidID: anInteger [
-
-	^ GL isBuffer: anInteger
-]

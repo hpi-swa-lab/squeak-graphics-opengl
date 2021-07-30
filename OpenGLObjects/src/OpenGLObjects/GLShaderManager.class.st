@@ -36,12 +36,3 @@ GLShaderManager >> initialize [
 	mainImp := GLShaderImp new.
 	creationImp := GLShaderImp new.
 ]
-
-{
-	#category : #testing,
-	#'squeak_changestamp' : 'stlu 5/11/2021 12:53'
-}
-GLShaderManager >> isValidID: anInteger [
-
-	^ GL isShader: anInteger
-]

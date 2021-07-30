@@ -126,15 +126,6 @@ GLObject >> delete [
 ]
 
 {
-	#category : #testing,
-	#'squeak_changestamp' : 'stlu 5/15/2021 03:07'
-}
-GLObject >> hasValidID [
-
-	^ self manager isValidID: id
-]
-
-{
 	#category : #comparing,
 	#'squeak_changestamp' : 'stlu 5/15/2021 03:07'
 }
