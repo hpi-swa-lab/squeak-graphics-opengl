@@ -26,6 +26,48 @@ GLDirectStateAccessImp >> blit: mask from: readFramebuffer bounds: readBounds to
 ]
 
 {
+	#category : #buffers,
+	#'squeak_changestamp' : 'stlu 7/29/2021 22:38'
+}
+GLDirectStateAccessImp >> createBufferIDs: count [
+
+	| ids |
+	ids := IntegerArray new: count.
+	self createBufferIDs: count into: ids.
+	^ ids
+]
+
+{
+	#category : #buffers,
+	#'squeak_changestamp' : 'stlu 7/29/2021 22:38'
+}
+GLDirectStateAccessImp >> createBufferIDs: count into: anIntegerArray [
+
+	GL createBuffers: count with: anIntegerArray.
+]
+
+{
+	#category : #framebuffers,
+	#'squeak_changestamp' : 'stlu 7/29/2021 23:21'
+}
+GLDirectStateAccessImp >> createFramebufferIDs: count [
+
+	| ids |
+	ids := IntegerArray new: count.
+	self createFramebufferIDs: count into: ids.
+	^ ids
+]
+
+{
+	#category : #framebuffers,
+	#'squeak_changestamp' : 'stlu 7/29/2021 23:21'
+}
+GLDirectStateAccessImp >> createFramebufferIDs: count into: anIntegerArray [
+
+	GL createFramebuffers: count with: anIntegerArray.
+]
+
+{
 	#category : #'vertex arrays',
 	#'squeak_changestamp' : 'stlu 7/29/2021 13:03'
 }

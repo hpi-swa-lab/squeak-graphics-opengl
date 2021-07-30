@@ -59,6 +59,15 @@ GLProgramImp >> createProgramID [
 ]
 
 {
+	#category : #deletion,
+	#'squeak_changestamp' : 'stlu 7/30/2021 01:39'
+}
+GLProgramImp >> deleteProgram: aProgram [
+
+	GL deleteProgram: aProgram id.
+]
+
+{
 	#category : #'uniform setters',
 	#'squeak_changestamp' : 'stlu 7/29/2021 21:48'
 }
@@ -708,4 +717,13 @@ GLProgramImp >> setUniform: aUniform toUnsignedIntegers: uint1 _: uint2 _: uint3
 		GL
 			uniform4ui: aUniform location
 			with: uint1 with: uint2 with: uint3 with: uint4].
+]
+
+{
+	#category : #binding,
+	#'squeak_changestamp' : 'stlu 7/29/2021 23:14'
+}
+GLProgramImp >> useProgram: programOrNil [
+
+	GL useProgram: (programOrNil ifNil: [0] ifNotNil: [programOrNil id]).
 ]

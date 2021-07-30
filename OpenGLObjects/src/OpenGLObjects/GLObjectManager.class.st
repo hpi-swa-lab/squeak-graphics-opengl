@@ -6,7 +6,8 @@ Class {
 	#superclass : #Object,
 	#instVars : [
 		'objects',
-		'context'
+		'context',
+		'mainImp'
 	],
 	#pools : [
 		'GLConstants'
@@ -47,11 +48,11 @@ GLObjectManager >> context: aContext [
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 5/11/2021 12:06'
+	#'squeak_changestamp' : 'stlu 7/28/2021 14:20'
 }
 GLObjectManager >> initialize [
 
-	objects := OrderedCollection new.
+	objects := Set new: 100.
 ]
 
 {
@@ -61,6 +62,24 @@ GLObjectManager >> initialize [
 GLObjectManager >> isValidID: anInteger [
 
 	^ self subclassResponsibility
+]
+
+{
+	#category : #implementors,
+	#'squeak_changestamp' : 'stlu 7/29/2021 23:26'
+}
+GLObjectManager >> mainImp [
+
+	^ mainImp
+]
+
+{
+	#category : #implementors,
+	#'squeak_changestamp' : 'stlu 7/29/2021 23:26'
+}
+GLObjectManager >> mainImp: anObject [
+
+	mainImp := anObject.
 ]
 
 {
@@ -87,9 +106,18 @@ GLObjectManager >> printOn: aStream [
 
 {
 	#category : #registration,
-	#'squeak_changestamp' : 'stlu 4/25/2021 13:44'
+	#'squeak_changestamp' : 'stlu 7/28/2021 17:53'
 }
 GLObjectManager >> register: aGLObject [
 
-	^ objects add: aGLObject
+	objects add: aGLObject.
+]
+
+{
+	#category : #registration,
+	#'squeak_changestamp' : 'stlu 7/28/2021 17:53'
+}
+GLObjectManager >> unregister: aGLObject [
+
+	objects remove: aGLObject.
 ]

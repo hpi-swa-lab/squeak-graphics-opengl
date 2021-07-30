@@ -8,7 +8,7 @@ Class {
 }
 
 {
-	#category : #imps,
+	#category : #implementors,
 	#'squeak_changestamp' : 'stlu 4/25/2021 22:42'
 }
 GLShaderManager >> creationImp [
@@ -17,7 +17,7 @@ GLShaderManager >> creationImp [
 ]
 
 {
-	#category : #imps,
+	#category : #implementors,
 	#'squeak_changestamp' : 'stlu 4/25/2021 22:42'
 }
 GLShaderManager >> creationImp: anObject [
@@ -27,12 +27,14 @@ GLShaderManager >> creationImp: anObject [
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 7/29/2021 20:11'
+	#'squeak_changestamp' : 'stlu 7/29/2021 23:46'
 }
 GLShaderManager >> initialize [
 
 	super initialize.
-	creationImp := GLShaderImp new
+	
+	mainImp := GLShaderImp new.
+	creationImp := GLShaderImp new.
 ]
 
 {

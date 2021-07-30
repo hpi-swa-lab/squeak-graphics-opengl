@@ -11,13 +11,14 @@ Class {
 
 {
 	#category : #binding,
-	#'squeak_changestamp' : 'stlu 7/26/2021 13:49'
+	#'squeak_changestamp' : 'stlu 7/29/2021 23:38'
 }
 GLRenderbufferManager >> bindRenderbuffer: renderbufferOrNil [
 
-	GL
-		bindRenderbuffer: GL_RENDERBUFFER
-		with: (renderbufferOrNil ifNil: [0] ifNotNil: [renderbufferOrNil id]).
+	boundRenderbuffer == renderbufferOrNil ifTrue: [^ self].
+
+	mainImp bindRenderbuffer: renderbufferOrNil.
+	
 	boundRenderbuffer := renderbufferOrNil.
 ]
 
@@ -45,7 +46,7 @@ GLRenderbufferManager >> boundRenderbuffer [
 ]
 
 {
-	#category : #imps,
+	#category : #implementors,
 	#'squeak_changestamp' : 'stlu 4/26/2021 12:46'
 }
 GLRenderbufferManager >> creationImp [
@@ -54,7 +55,7 @@ GLRenderbufferManager >> creationImp [
 ]
 
 {
-	#category : #imps,
+	#category : #implementors,
 	#'squeak_changestamp' : 'stlu 4/26/2021 12:46'
 }
 GLRenderbufferManager >> creationImp: anObject [
@@ -64,11 +65,13 @@ GLRenderbufferManager >> creationImp: anObject [
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 7/29/2021 20:10'
+	#'squeak_changestamp' : 'stlu 7/29/2021 23:46'
 }
 GLRenderbufferManager >> initialize [
 
 	super initialize.
+	
+	mainImp := GLRenderbufferImp new.
 	creationImp := GLRenderbufferImp new.
 	stateAccessImp := GLDirectStateAccessImp new.
 ]
@@ -83,7 +86,7 @@ GLRenderbufferManager >> isValidID: anInteger [
 ]
 
 {
-	#category : #imps,
+	#category : #implementors,
 	#'squeak_changestamp' : 'stlu 5/15/2021 14:32'
 }
 GLRenderbufferManager >> stateAccessImp [
@@ -92,7 +95,7 @@ GLRenderbufferManager >> stateAccessImp [
 ]
 
 {
-	#category : #imps,
+	#category : #implementors,
 	#'squeak_changestamp' : 'stlu 5/15/2021 14:32'
 }
 GLRenderbufferManager >> stateAccessImp: anObject [

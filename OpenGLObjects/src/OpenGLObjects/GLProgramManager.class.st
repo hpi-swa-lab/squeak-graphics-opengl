@@ -4,6 +4,7 @@ Class {
 	#instVars : [
 		'currentProgram',
 		'staticPrograms',
+		'mainImp',
 		'creationImp',
 		'uniformSetterImp',
 		'interfaceQueryImp'
@@ -12,21 +13,12 @@ Class {
 }
 
 {
-	#category : #imps,
-	#'squeak_changestamp' : 'stlu 4/25/2021 22:48'
+	#category : #implementors,
+	#'squeak_changestamp' : 'stlu 7/29/2021 23:16'
 }
 GLProgramManager >> creationImp [
 
-	^ creationImp
-]
-
-{
-	#category : #imps,
-	#'squeak_changestamp' : 'stlu 4/25/2021 22:48'
-}
-GLProgramManager >> creationImp: anObject [
-
-	creationImp := anObject
+	^ mainImp
 ]
 
 {
@@ -39,30 +31,21 @@ GLProgramManager >> currentProgram [
 ]
 
 {
-	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 5/15/2021 14:49'
-}
-GLProgramManager >> currentProgram: anObject [
-
-	currentProgram := anObject
-]
-
-{
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 7/29/2021 21:53'
+	#'squeak_changestamp' : 'stlu 7/29/2021 23:16'
 }
 GLProgramManager >> initialize [
 
 	super initialize.
 	staticPrograms := IdentityDictionary new.
 	
-	creationImp := GLProgramImp new.
+	mainImp := GLProgramImp new.
 	interfaceQueryImp := GLSeparateShaderObjectsImp new.
 	uniformSetterImp := GLSeparateShaderObjectsImp new.
 ]
 
 {
-	#category : #imps,
+	#category : #implementors,
 	#'squeak_changestamp' : 'stlu 5/15/2021 13:48'
 }
 GLProgramManager >> interfaceQueryImp [
@@ -71,7 +54,7 @@ GLProgramManager >> interfaceQueryImp [
 ]
 
 {
-	#category : #imps,
+	#category : #implementors,
 	#'squeak_changestamp' : 'stlu 5/15/2021 13:48'
 }
 GLProgramManager >> interfaceQueryImp: anObject [
@@ -98,16 +81,7 @@ GLProgramManager >> staticPrograms [
 ]
 
 {
-	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 5/15/2021 16:47'
-}
-GLProgramManager >> staticPrograms: anObject [
-
-	staticPrograms := anObject
-]
-
-{
-	#category : #imps,
+	#category : #implementors,
 	#'squeak_changestamp' : 'stlu 5/15/2021 13:58'
 }
 GLProgramManager >> uniformSetterImp [
@@ -116,7 +90,7 @@ GLProgramManager >> uniformSetterImp [
 ]
 
 {
-	#category : #imps,
+	#category : #implementors,
 	#'squeak_changestamp' : 'stlu 5/15/2021 13:58'
 }
 GLProgramManager >> uniformSetterImp: anObject [
@@ -126,22 +100,24 @@ GLProgramManager >> uniformSetterImp: anObject [
 
 {
 	#category : #binding,
-	#'squeak_changestamp' : 'stlu 5/15/2021 14:53'
+	#'squeak_changestamp' : 'stlu 7/29/2021 23:19'
 }
 GLProgramManager >> useProgram: programOrNil [
 
-	GL useProgram: (programOrNil ifNil: [0] ifNotNil: [programOrNil id]).
+	currentProgram == programOrNil ifTrue: [^ self].
+	
+	mainImp useProgram: programOrNil.
+	
 	currentProgram := programOrNil.
 ]
 
 {
 	#category : #binding,
-	#'squeak_changestamp' : 'stlu 5/15/2021 15:15'
+	#'squeak_changestamp' : 'stlu 7/29/2021 23:19'
 }
 GLProgramManager >> useProgram: programOrNil during: aBlock [
 
 	| previous |
-	currentProgram == programOrNil ifTrue: [^ aBlock value].
 	previous := currentProgram.
 	self useProgram: programOrNil.
 	^ aBlock ensure: [

@@ -29,7 +29,7 @@ GLQueryManager >> activeTimeElapsedQuery: anObject [
 ]
 
 {
-	#category : #imps,
+	#category : #implementors,
 	#'squeak_changestamp' : 'stlu 5/24/2021 12:42'
 }
 GLQueryManager >> creationImp [
@@ -38,7 +38,7 @@ GLQueryManager >> creationImp [
 ]
 
 {
-	#category : #imps,
+	#category : #implementors,
 	#'squeak_changestamp' : 'stlu 5/24/2021 12:42'
 }
 GLQueryManager >> creationImp: anObject [
@@ -48,11 +48,13 @@ GLQueryManager >> creationImp: anObject [
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 5/24/2021 18:03'
+	#'squeak_changestamp' : 'stlu 7/29/2021 23:46'
 }
 GLQueryManager >> initialize [
 
 	super initialize.
+	
+	mainImp := GLQueryImp new.
 	creationImp := GLQueryImp new.
 	scopingImp := GLQueryImp new.
 	retrievalImp := GLQueryImp new.
@@ -79,7 +81,7 @@ GLQueryManager >> isValidID: anInteger [
 ]
 
 {
-	#category : #imps,
+	#category : #implementors,
 	#'squeak_changestamp' : 'stlu 5/24/2021 18:03'
 }
 GLQueryManager >> retrievalImp [
@@ -88,7 +90,7 @@ GLQueryManager >> retrievalImp [
 ]
 
 {
-	#category : #imps,
+	#category : #implementors,
 	#'squeak_changestamp' : 'stlu 5/24/2021 18:03'
 }
 GLQueryManager >> retrievalImp: anObject [
@@ -97,7 +99,7 @@ GLQueryManager >> retrievalImp: anObject [
 ]
 
 {
-	#category : #imps,
+	#category : #implementors,
 	#'squeak_changestamp' : 'stlu 5/24/2021 17:29'
 }
 GLQueryManager >> scopingImp [
@@ -106,7 +108,7 @@ GLQueryManager >> scopingImp [
 ]
 
 {
-	#category : #imps,
+	#category : #implementors,
 	#'squeak_changestamp' : 'stlu 5/24/2021 17:29'
 }
 GLQueryManager >> scopingImp: anObject [

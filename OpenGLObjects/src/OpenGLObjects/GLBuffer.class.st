@@ -51,7 +51,7 @@ GLBuffer class >> generate [
 
 {
 	#category : #'instance creation',
-	#'squeak_changestamp' : 'stlu 4/26/2021 12:18'
+	#'squeak_changestamp' : 'stlu 7/29/2021 23:23'
 }
 GLBuffer class >> generate: count [
 
@@ -59,7 +59,7 @@ GLBuffer class >> generate: count [
 	manager := self manager.
 	^ self
 		manager: manager
-		ids: (manager creationImp generateBufferIDs: count)
+		ids: (manager mainImp generateBufferIDs: count)
 ]
 
 {
@@ -197,16 +197,17 @@ GLBuffer >> data: aRawBitsArray size: byteSize offset: byteOffset [
 ]
 
 {
-	#category : #'initialize-release',
-	#'squeak_changestamp' : 'stlu 11/3/2020 15:32'
+	#category : #initialization,
+	#'squeak_changestamp' : 'stlu 7/30/2021 01:33'
 }
 GLBuffer >> delete [
 
-	GL deleteBuffers: 1 with: (IntegerArray with: id)
+	manager mainImp deleteBuffer: self.
+	super delete.
 ]
 
 {
-	#category : #'initialize-release',
+	#category : #initialization,
 	#'squeak_changestamp' : 'stlu 12/1/2020 02:41'
 }
 GLBuffer >> initialize [

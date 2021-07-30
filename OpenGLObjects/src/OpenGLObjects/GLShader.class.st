@@ -141,12 +141,13 @@ GLShader >> compileSource: newSource [
 ]
 
 {
-	#category : #'initialize-release',
-	#'squeak_changestamp' : 'stlu 11/3/2020 15:39'
+	#category : #initialization,
+	#'squeak_changestamp' : 'stlu 7/30/2021 01:50'
 }
 GLShader >> delete [
 
-	GL deleteShader: id
+	manager mainImp deleteShader: self.
+	super delete.
 ]
 
 {
@@ -222,7 +223,7 @@ GLShader >> getType [
 ]
 
 {
-	#category : #'initialize-release',
+	#category : #initialization,
 	#'squeak_changestamp' : 'stlu 2/7/2021 15:53'
 }
 GLShader >> initialize [

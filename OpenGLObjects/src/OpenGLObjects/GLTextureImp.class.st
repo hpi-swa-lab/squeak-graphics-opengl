@@ -6,25 +6,25 @@ Class {
 
 {
 	#category : #binding,
-	#'squeak_changestamp' : 'stlu 7/29/2021 20:12'
+	#'squeak_changestamp' : 'stlu 7/29/2021 23:50'
 }
 GLTextureImp >> bindTexture: textureOrNil to: targetEnum [
 
 	GL
 		bindTexture: targetEnum
-		with: (textureOrNil ifNil: [0] ifNotNil: [textureOrNil id])
+		with: (textureOrNil ifNil: [0] ifNotNil: [textureOrNil id]).
 ]
 
 {
 	#category : #binding,
-	#'squeak_changestamp' : 'stlu 7/29/2021 20:12'
+	#'squeak_changestamp' : 'stlu 7/29/2021 23:50'
 }
 GLTextureImp >> bindTexture: textureOrNil to: targetEnum at: textureImageUnitIndex [
 
 	GLTexture
 		activateTextureImageUnitAt: textureImageUnitIndex
 		during: [
-			self bindTexture: textureOrNil to: targetEnum]
+			self bindTexture: textureOrNil to: targetEnum].
 ]
 
 {
@@ -46,6 +46,17 @@ GLTextureImp >> createTextureIDs: count target: textureTargetEnum [
 GLTextureImp >> createTextureIDs: count target: textureTargetEnum into: anIntegerArray [
 
 	GL createTextures: textureTargetEnum with: count with: anIntegerArray
+]
+
+{
+	#category : #deletion,
+	#'squeak_changestamp' : 'stlu 7/30/2021 01:48'
+}
+GLTextureImp >> deleteTexture: aTexture [
+
+	GL
+		deleteTextures: 1
+		with: (WordArray with: aTexture id).
 ]
 
 {

@@ -13,16 +13,15 @@ Class {
 
 {
 	#category : #binding,
-	#'squeak_changestamp' : 'stlu 7/26/2021 13:22'
+	#'squeak_changestamp' : 'stlu 7/29/2021 23:11'
 }
 GLFramebufferManager >> bindDrawFramebuffer: framebufferOrNil [
 
 	drawFramebuffer == framebufferOrNil ifTrue: [^ self].
 	
-	GL
-		bindFramebuffer: GL_DRAW_FRAMEBUFFER
-		with: (framebufferOrNil ifNil: [0] ifNotNil: [framebufferOrNil id]).
-	drawFramebuffer := framebufferOrNil
+	mainImp bindFramebuffer: framebufferOrNil to: GL_DRAW_FRAMEBUFFER.
+	
+	drawFramebuffer := framebufferOrNil.
 ]
 
 {
@@ -40,16 +39,15 @@ GLFramebufferManager >> bindDrawFramebuffer: framebufferOrNil during: aBlock [
 
 {
 	#category : #binding,
-	#'squeak_changestamp' : 'stlu 7/26/2021 13:24'
+	#'squeak_changestamp' : 'stlu 7/29/2021 23:10'
 }
 GLFramebufferManager >> bindFramebuffer: framebufferOrNil [
 
 	(readFramebuffer == framebufferOrNil
 		and: [drawFramebuffer == framebufferOrNil]) ifTrue: [^ self].
 
-	GL
-		bindFramebuffer: GL_FRAMEBUFFER
-		with: (framebufferOrNil ifNil: [0] ifNotNil: [framebufferOrNil id]).
+	mainImp bindFramebuffer: framebufferOrNil to: GL_FRAMEBUFFER.
+	
 	drawFramebuffer := framebufferOrNil.
 	readFramebuffer := framebufferOrNil.
 ]
@@ -75,15 +73,14 @@ GLFramebufferManager >> bindFramebuffer: framebufferOrNil during: aBlock [
 
 {
 	#category : #binding,
-	#'squeak_changestamp' : 'stlu 7/26/2021 13:23'
+	#'squeak_changestamp' : 'stlu 7/29/2021 23:11'
 }
 GLFramebufferManager >> bindReadFramebuffer: framebufferOrNil [
 
 	readFramebuffer == framebufferOrNil ifTrue: [^ self].
 
-	GL
-		bindFramebuffer: GL_READ_FRAMEBUFFER
-		with: (framebufferOrNil ifNil: [0] ifNotNil: [framebufferOrNil id]).
+	mainImp bindFramebuffer: framebufferOrNil to: GL_READ_FRAMEBUFFER.
+	
 	readFramebuffer := framebufferOrNil.
 ]
 
@@ -101,7 +98,7 @@ GLFramebufferManager >> bindReadFramebuffer: framebufferOrNil during: aBlock [
 ]
 
 {
-	#category : #imps,
+	#category : #implementors,
 	#'squeak_changestamp' : 'stlu 4/26/2021 12:39'
 }
 GLFramebufferManager >> creationImp [
@@ -110,7 +107,7 @@ GLFramebufferManager >> creationImp [
 ]
 
 {
-	#category : #imps,
+	#category : #implementors,
 	#'squeak_changestamp' : 'stlu 4/26/2021 12:39'
 }
 GLFramebufferManager >> creationImp: anObject [
@@ -156,7 +153,7 @@ GLFramebufferManager >> drawFramebuffer: anObject [
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 7/29/2021 20:09'
+	#'squeak_changestamp' : 'stlu 7/29/2021 23:09'
 }
 GLFramebufferManager >> initialize [
 
@@ -164,7 +161,8 @@ GLFramebufferManager >> initialize [
 	defaultFramebuffer := GLDefaultFramebuffer manager: self id: 0.
 	readFramebuffer := drawFramebuffer := defaultFramebuffer.
 	
-	creationImp := GLFramebufferImp new.
+	mainImp := GLFramebufferImp new.
+	creationImp := GLDirectStateAccessImp new.
 	stateAccessImp := GLDirectStateAccessImp new.
 ]
 
@@ -196,7 +194,7 @@ GLFramebufferManager >> readFramebuffer: anObject [
 ]
 
 {
-	#category : #imps,
+	#category : #implementors,
 	#'squeak_changestamp' : 'stlu 5/15/2021 14:17'
 }
 GLFramebufferManager >> stateAccessImp [
@@ -205,7 +203,7 @@ GLFramebufferManager >> stateAccessImp [
 ]
 
 {
-	#category : #imps,
+	#category : #implementors,
 	#'squeak_changestamp' : 'stlu 5/15/2021 14:17'
 }
 GLFramebufferManager >> stateAccessImp: anObject [

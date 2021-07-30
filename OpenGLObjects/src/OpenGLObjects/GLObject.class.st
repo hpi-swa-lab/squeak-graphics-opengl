@@ -58,7 +58,7 @@ GLObject class >> manager [
 
 {
 	#category : #'instance creation',
-	#'squeak_changestamp' : 'stlu 5/14/2021 16:45'
+	#'squeak_changestamp' : 'stlu 7/28/2021 14:51'
 }
 GLObject class >> manager: aManager id: anInteger [
 
@@ -66,7 +66,6 @@ GLObject class >> manager: aManager id: anInteger [
 		manager: aManager;
 		id: anInteger;
 		initialize;
-		register;
 		yourself
 ]
 
@@ -117,12 +116,13 @@ GLObject >> context [
 ]
 
 {
-	#category : #'initialize-release',
-	#'squeak_changestamp' : 'stlu 10/29/2020 01:29'
+	#category : #initialization,
+	#'squeak_changestamp' : 'stlu 7/28/2021 18:16'
 }
 GLObject >> delete [
 
-	id := -1 "Obviously invalid"
+	self unregister.
+	self invalidate.
 ]
 
 {
@@ -159,6 +159,24 @@ GLObject >> id [
 GLObject >> id: anInteger [
 
 	id := anInteger
+]
+
+{
+	#category : #initialization,
+	#'squeak_changestamp' : 'stlu 7/28/2021 14:52'
+}
+GLObject >> initialize [
+
+	self register.
+]
+
+{
+	#category : #initialization,
+	#'squeak_changestamp' : 'stlu 7/28/2021 17:56'
+}
+GLObject >> invalidate [
+
+	id := #deleted.
 ]
 
 {
@@ -255,10 +273,19 @@ GLObject >> printOn: aStream [
 ]
 
 {
-	#category : #'initialize-release',
-	#'squeak_changestamp' : 'stlu 5/14/2021 16:46'
+	#category : #initialization,
+	#'squeak_changestamp' : 'stlu 7/28/2021 17:53'
 }
 GLObject >> register [
 
-	manager register: self
+	manager register: self.
+]
+
+{
+	#category : #initialization,
+	#'squeak_changestamp' : 'stlu 7/28/2021 17:53'
+}
+GLObject >> unregister [
+
+	manager unregister: self.
 ]

@@ -5,8 +5,7 @@ Class {
 		'textureImageUnits',
 		'activeTextureImageUnitIndex',
 		'creationImp',
-		'stateAccessImp',
-		'bindingImp'
+		'stateAccessImp'
 	],
 	#category : #'OpenGLObjects-Textures'
 }
@@ -55,53 +54,77 @@ GLTextureManager >> activeTextureImageUnitIndex [
 
 {
 	#category : #binding,
-	#'squeak_changestamp' : 'stlu 5/14/2021 21:18'
+	#'squeak_changestamp' : 'stlu 7/30/2021 00:56'
 }
 GLTextureManager >> bindTexture: textureOrNil ofClass: aClass [
 
-	bindingImp
+	| textureImageUnit |
+	textureImageUnit := self activeTextureImageUnit.
+	(aClass privateGetBindingIn: textureImageUnit) == textureOrNil ifTrue: [^ self].
+
+	mainImp
 		bindTexture: textureOrNil
 		to: aClass target.
-	aClass
-		privateSetBindingIn: self activeTextureImageUnit
-		to: textureOrNil.
+	
+	aClass privateSetBindingIn: textureImageUnit to: textureOrNil.
 ]
 
 {
 	#category : #binding,
-	#'squeak_changestamp' : 'stlu 5/14/2021 21:16'
+	#'squeak_changestamp' : 'stlu 7/30/2021 00:48'
 }
 GLTextureManager >> bindTexture: textureOrNil ofClass: aClass at: textureImageUnitIndex [
 
-	bindingImp
+	| textureImageUnit |
+	textureImageUnit := self textureImageUnitAt: textureImageUnitIndex.
+	(aClass privateGetBindingIn: textureImageUnit) == textureOrNil ifTrue: [^ self].
+	
+	mainImp
 		bindTexture: textureOrNil
 		to: aClass target
 		at: textureImageUnitIndex.
-	aClass
-		privateSetBindingIn: (self textureImageUnitAt: textureImageUnitIndex)
-		to: textureOrNil.
+	
+	aClass privateSetBindingIn: textureImageUnit to: textureOrNil.
 ]
 
 {
-	#category : #imps,
-	#'squeak_changestamp' : 'stlu 5/14/2021 14:37'
+	#category : #binding,
+	#'squeak_changestamp' : 'stlu 7/30/2021 00:54'
 }
-GLTextureManager >> bindingImp [
+GLTextureManager >> bindTexture: textureOrNil ofClass: aClass at: textureImageUnitIndex during: aBlock [
 
-	^ bindingImp
+	| previous |
+	previous := aClass privateGetBindingIn: (self textureImageUnitAt: textureImageUnitIndex).
+	self
+		bindTexture: textureOrNil
+		ofClass: aClass
+		at: textureImageUnitIndex.
+	^ aBlock ensure: [
+		self
+			bindTexture: previous
+			ofClass: aClass
+			at: textureImageUnitIndex]
 ]
 
 {
-	#category : #imps,
-	#'squeak_changestamp' : 'stlu 5/14/2021 14:37'
+	#category : #binding,
+	#'squeak_changestamp' : 'stlu 7/30/2021 00:58'
 }
-GLTextureManager >> bindingImp: anObject [
+GLTextureManager >> bindTexture: textureOrNil ofClass: aClass during: aBlock [
 
-	bindingImp := anObject
+	| previous |
+	previous := aClass privateGetBindingIn: self activeTextureImageUnit.
+	self
+		bindTexture: textureOrNil
+		ofClass: aClass.
+	^ aBlock ensure: [
+		self
+			bindTexture: previous
+			ofClass: aClass]
 ]
 
 {
-	#category : #imps,
+	#category : #implementors,
 	#'squeak_changestamp' : 'stlu 4/26/2021 13:17'
 }
 GLTextureManager >> creationImp [
@@ -110,7 +133,7 @@ GLTextureManager >> creationImp [
 ]
 
 {
-	#category : #imps,
+	#category : #implementors,
 	#'squeak_changestamp' : 'stlu 5/11/2021 14:03'
 }
 GLTextureManager >> creationImp: anObject [
@@ -120,7 +143,7 @@ GLTextureManager >> creationImp: anObject [
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 7/29/2021 20:15'
+	#'squeak_changestamp' : 'stlu 7/29/2021 23:49'
 }
 GLTextureManager >> initialize [
 
@@ -129,9 +152,9 @@ GLTextureManager >> initialize [
 	activeTextureImageUnitIndex := 0. "zero-indexed"
 	self initializeTextureImageUnits.
 	
+	mainImp := GLTextureImp new.
 	creationImp := GLTextureImp new.
 	stateAccessImp := GLDirectStateAccessImp new.
-	bindingImp := GLTextureImp new.
 ]
 
 {
@@ -157,7 +180,7 @@ GLTextureManager >> isValidID: anInteger [
 ]
 
 {
-	#category : #imps,
+	#category : #implementors,
 	#'squeak_changestamp' : 'stlu 5/11/2021 14:03'
 }
 GLTextureManager >> stateAccessImp [
@@ -166,7 +189,7 @@ GLTextureManager >> stateAccessImp [
 ]
 
 {
-	#category : #imps,
+	#category : #implementors,
 	#'squeak_changestamp' : 'stlu 5/11/2021 14:03'
 }
 GLTextureManager >> stateAccessImp: anObject [

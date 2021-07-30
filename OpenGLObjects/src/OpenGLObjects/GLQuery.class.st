@@ -28,7 +28,7 @@ GLQuery class >> generate [
 
 {
 	#category : #'instance creation',
-	#'squeak_changestamp' : 'stlu 5/24/2021 13:30'
+	#'squeak_changestamp' : 'stlu 7/29/2021 23:24'
 }
 GLQuery class >> generate: count [
 
@@ -36,7 +36,7 @@ GLQuery class >> generate: count [
 	manager := self manager.
 	^ self
 		manager: manager
-		ids: (manager creationImp generateQueryIDs: count)
+		ids: (manager mainImp generateQueryIDs: count)
 ]
 
 {
@@ -55,6 +55,16 @@ GLQuery class >> manager [
 GLQuery class >> target [
 
 	self subclassResponsibility.
+]
+
+{
+	#category : #initialization,
+	#'squeak_changestamp' : 'stlu 7/30/2021 01:49'
+}
+GLQuery >> delete [
+
+	manager mainImp deleteQuery: self.
+	super delete.
 ]
 
 {

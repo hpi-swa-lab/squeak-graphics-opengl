@@ -42,7 +42,7 @@ GLVertexArray class >> generate [
 
 {
 	#category : #'instance creation',
-	#'squeak_changestamp' : 'stlu 4/26/2021 12:53'
+	#'squeak_changestamp' : 'stlu 7/29/2021 23:24'
 }
 GLVertexArray class >> generate: count [
 
@@ -50,7 +50,7 @@ GLVertexArray class >> generate: count [
 	manager := self manager.
 	^ self
 		manager: manager
-		ids: (manager creationImp generateVertexArrayIDs: count)
+		ids: (manager mainImp generateVertexArrayIDs: count)
 ]
 
 {
@@ -131,12 +131,13 @@ GLVertexArray >> boundDuring: aBlock [
 ]
 
 {
-	#category : #'initialize-release',
-	#'squeak_changestamp' : 'stlu 11/3/2020 15:41'
+	#category : #initialization,
+	#'squeak_changestamp' : 'stlu 7/30/2021 01:51'
 }
 GLVertexArray >> delete [
 
-	GL deleteVertexArrays: 1 with: (IntegerArray with: id)
+	manager mainImp deleteVertexArray: self.
+	super delete.
 ]
 
 {
@@ -247,7 +248,7 @@ GLVertexArray >> drawElements: primitiveTypeEnum count: numVertices startingAt: 
 ]
 
 {
-	#category : #'initialize-release',
+	#category : #initialization,
 	#'squeak_changestamp' : 'stlu 3/17/2021 12:30'
 }
 GLVertexArray >> initialize [

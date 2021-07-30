@@ -171,6 +171,16 @@ GLProgram >> boundDuring: aBlock [
 ]
 
 {
+	#category : #initialization,
+	#'squeak_changestamp' : 'stlu 7/30/2021 01:39'
+}
+GLProgram >> delete [
+
+	manager mainImp deleteProgram: self.
+	super delete.
+]
+
+{
 	#category : #actions,
 	#'squeak_changestamp' : 'stlu 12/8/2020 16:30'
 }

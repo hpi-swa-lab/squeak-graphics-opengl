@@ -11,14 +11,15 @@ Class {
 
 {
 	#category : #binding,
-	#'squeak_changestamp' : 'stlu 5/15/2021 16:14'
+	#'squeak_changestamp' : 'stlu 7/30/2021 01:17'
 }
 GLVertexArrayManager >> bindVertexArray: vertexArrayOrNil [
 
 	boundVertexArray == vertexArrayOrNil ifTrue: [^ self].
 	
-	GL bindVertexArray: (vertexArrayOrNil ifNil: [0] ifNotNil: [vertexArrayOrNil id]).
-	boundVertexArray := vertexArrayOrNil
+	mainImp bindVertexArray: vertexArrayOrNil.
+	
+	boundVertexArray := vertexArrayOrNil.
 ]
 
 {
@@ -53,7 +54,7 @@ GLVertexArrayManager >> boundVertexArray: anObject [
 ]
 
 {
-	#category : #accessing,
+	#category : #implementors,
 	#'squeak_changestamp' : 'stlu 4/26/2021 12:54'
 }
 GLVertexArrayManager >> creationImp [
@@ -62,7 +63,7 @@ GLVertexArrayManager >> creationImp [
 ]
 
 {
-	#category : #accessing,
+	#category : #implementors,
 	#'squeak_changestamp' : 'stlu 4/26/2021 12:54'
 }
 GLVertexArrayManager >> creationImp: anObject [
@@ -72,11 +73,13 @@ GLVertexArrayManager >> creationImp: anObject [
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 7/29/2021 20:19'
+	#'squeak_changestamp' : 'stlu 7/29/2021 23:41'
 }
 GLVertexArrayManager >> initialize [
 
 	super initialize.
+	
+	mainImp := GLVertexArrayImp new.
 	creationImp := GLVertexArrayImp new.
 	stateAccessImp := GLDirectStateAccessImp new.
 ]
@@ -91,7 +94,7 @@ GLVertexArrayManager >> isValidID: anInteger [
 ]
 
 {
-	#category : #accessing,
+	#category : #implementors,
 	#'squeak_changestamp' : 'stlu 5/15/2021 14:10'
 }
 GLVertexArrayManager >> stateAccessImp [
@@ -100,7 +103,7 @@ GLVertexArrayManager >> stateAccessImp [
 ]
 
 {
-	#category : #accessing,
+	#category : #implementors,
 	#'squeak_changestamp' : 'stlu 5/15/2021 14:10'
 }
 GLVertexArrayManager >> stateAccessImp: anObject [

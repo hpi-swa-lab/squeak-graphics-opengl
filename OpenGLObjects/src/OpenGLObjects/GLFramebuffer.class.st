@@ -84,7 +84,7 @@ GLFramebuffer class >> generate [
 
 {
 	#category : #'instance creation',
-	#'squeak_changestamp' : 'stlu 7/26/2021 13:18'
+	#'squeak_changestamp' : 'stlu 7/29/2021 23:23'
 }
 GLFramebuffer class >> generate: count [
 
@@ -92,7 +92,7 @@ GLFramebuffer class >> generate: count [
 	manager := self manager.
 	^ self
 		manager: manager
-		ids: (manager creationImp generateFramebufferIDs: count)
+		ids: (manager mainImp generateFramebufferIDs: count)
 ]
 
 {
@@ -434,12 +434,13 @@ GLFramebuffer >> completionStatusFor: targetEnum [
 ]
 
 {
-	#category : #'initialize-release',
-	#'squeak_changestamp' : 'stlu 11/3/2020 15:35'
+	#category : #initialization,
+	#'squeak_changestamp' : 'stlu 7/30/2021 01:38'
 }
 GLFramebuffer >> delete [
 	
-	GL deleteFramebuffers: 1 with: (IntegerArray with: id).
+	manager mainImp deleteFramebuffer: self.
+	super delete.
 ]
 
 {

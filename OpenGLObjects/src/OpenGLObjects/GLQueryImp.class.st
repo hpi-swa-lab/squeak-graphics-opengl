@@ -35,6 +35,17 @@ GLQueryImp >> createQueryIDs: count target: queryTargetEnum into: anIntegerArray
 ]
 
 {
+	#category : #deletion,
+	#'squeak_changestamp' : 'stlu 7/30/2021 01:48'
+}
+GLQueryImp >> deleteQuery: aQuery [
+
+	GL
+		deleteQueries: 1
+		with: (WordArray with: aQuery id).
+]
+
+{
 	#category : #scoping,
 	#'squeak_changestamp' : 'stlu 5/24/2021 17:48'
 }

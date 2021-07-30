@@ -64,7 +64,7 @@ GLTexture class >> generate [
 
 {
 	#category : #'instance creation',
-	#'squeak_changestamp' : 'stlu 4/26/2021 13:11'
+	#'squeak_changestamp' : 'stlu 7/29/2021 23:24'
 }
 GLTexture class >> generate: count [
 
@@ -72,7 +72,7 @@ GLTexture class >> generate: count [
 	manager := self manager.
 	^ self
 		manager: manager
-		ids: (manager creationImp generateTextureIDs: count)
+		ids: (manager mainImp generateTextureIDs: count)
 ]
 
 {
@@ -208,33 +208,27 @@ GLTexture >> borderColor: aColor [
 
 {
 	#category : #binding,
-	#'squeak_changestamp' : 'stlu 5/14/2021 21:22'
+	#'squeak_changestamp' : 'stlu 7/30/2021 01:05'
 }
 GLTexture >> boundAt: textureImageUnitIndex during: aBlock [
 
-	| previous |
-	(previous := self class boundAt: textureImageUnitIndex) = self ifTrue: [^ aBlock value].
-	self bindAt: textureImageUnitIndex.
-	^ aBlock ensure: [
-		manager
-			bindTexture: previous "could be nil"
-			ofClass: self class
-			at: textureImageUnitIndex]
+	^ manager
+		bindTexture: self
+		ofClass: self class
+		at: textureImageUnitIndex
+		during: aBlock
 ]
 
 {
 	#category : #binding,
-	#'squeak_changestamp' : 'stlu 5/15/2021 15:20'
+	#'squeak_changestamp' : 'stlu 7/30/2021 01:06'
 }
 GLTexture >> boundDuring: aBlock [
 
-	| previous |
-	(previous := self class bound) == self ifTrue: [^ aBlock value].
-	self bind.
-	^ aBlock ensure: [
-		manager
-			bindTexture: previous "could be nil"
-			ofClass: self class]
+	^ manager
+		bindTexture: self
+		ofClass: self class
+		during: aBlock
 ]
 
 {
@@ -281,6 +275,16 @@ GLTexture >> comparisonMode: enum [
 		texture: self
 		setParameter: GL_TEXTURE_COMPARE_MODE
 		toInteger: enum
+]
+
+{
+	#category : #initialization,
+	#'squeak_changestamp' : 'stlu 7/30/2021 01:50'
+}
+GLTexture >> delete [
+
+	manager mainImp deleteTexture: self.
+	super delete.
 ]
 
 {

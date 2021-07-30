@@ -5,6 +5,17 @@ Class {
 }
 
 {
+	#category : #binding,
+	#'squeak_changestamp' : 'stlu 7/29/2021 23:02'
+}
+GLBufferImp >> bindBuffer: bufferOrNil to: targetEnum [
+
+	GL
+		bindBuffer: targetEnum
+		with: (bufferOrNil ifNil: [0] ifNotNil: [bufferOrNil id]).
+]
+
+{
 	#category : #'state access',
 	#'squeak_changestamp' : 'stlu 7/29/2021 20:08'
 }
@@ -15,23 +26,23 @@ GLBufferImp >> clearBuffer: aBuffer data: aRawBitsArray providedFormat: provided
 
 {
 	#category : #creation,
-	#'squeak_changestamp' : 'stlu 4/26/2021 12:26'
+	#'squeak_changestamp' : 'stlu 7/29/2021 23:23'
 }
 GLBufferImp >> createBufferIDs: count [
 
-	| ids |
-	ids := IntegerArray new: count.
-	self createBufferIDs: count into: ids.
-	^ ids
+	self flag: #todo. "should be generate + bind"
+	^ self generateBufferIDs: count
 ]
 
 {
-	#category : #creation,
-	#'squeak_changestamp' : 'stlu 4/26/2021 12:25'
+	#category : #deletion,
+	#'squeak_changestamp' : 'stlu 7/30/2021 01:49'
 }
-GLBufferImp >> createBufferIDs: count into: anIntegerArray [
+GLBufferImp >> deleteBuffer: aBuffer [
 
-	GL createBuffers: count with: anIntegerArray
+	GL
+		deleteBuffers: 1
+		with: (WordArray with: aBuffer id).
 ]
 
 {
@@ -48,11 +59,11 @@ GLBufferImp >> generateBufferIDs: count [
 
 {
 	#category : #creation,
-	#'squeak_changestamp' : 'stlu 4/25/2021 23:14'
+	#'squeak_changestamp' : 'stlu 7/29/2021 22:41'
 }
 GLBufferImp >> generateBufferIDs: count into: anIntegerArray [
 
-	GL genBuffers: count with: anIntegerArray
+	GL genBuffers: count with: anIntegerArray.
 ]
 
 {

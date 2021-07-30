@@ -37,7 +37,7 @@ GLRenderbuffer class >> generate [
 
 {
 	#category : #'instance creation',
-	#'squeak_changestamp' : 'stlu 7/26/2021 13:51'
+	#'squeak_changestamp' : 'stlu 7/29/2021 23:24'
 }
 GLRenderbuffer class >> generate: count [
 
@@ -45,7 +45,7 @@ GLRenderbuffer class >> generate: count [
 	manager := self manager.
 	^ self
 		manager: manager
-		ids: (manager creationImp generateRenderbufferIDs: count)
+		ids: (manager mainImp generateRenderbufferIDs: count)
 ]
 
 {
@@ -82,6 +82,16 @@ GLRenderbuffer >> bind [
 GLRenderbuffer >> boundDuring: aBlock [
 
 	^ manager bindRenderbuffer: self during: aBlock
+]
+
+{
+	#category : #initialization,
+	#'squeak_changestamp' : 'stlu 7/30/2021 01:50'
+}
+GLRenderbuffer >> delete [
+
+	manager mainImp deleteRenderbuffer: self.
+	super delete.
 ]
 
 {
