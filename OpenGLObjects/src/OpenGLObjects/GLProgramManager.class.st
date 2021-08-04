@@ -4,7 +4,6 @@ Class {
 	#instVars : [
 		'currentProgram',
 		'staticPrograms',
-		'mainImp',
 		'creationImp',
 		'uniformSetterImp',
 		'interfaceQueryImp'

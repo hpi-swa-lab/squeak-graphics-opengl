@@ -68,11 +68,16 @@ GLBufferImp >> generateBufferIDs: count into: anIntegerArray [
 
 {
 	#category : #'state access',
-	#'squeak_changestamp' : 'stlu 7/29/2021 20:08'
+	#'squeak_changestamp' : 'stlu 8/4/2021 14:21'
 }
-GLBufferImp >> initBuffer: aBuffer data: aRawBitsArray size: byteSize usage: usageEnum [
+GLBufferImp >> initBuffer: aBuffer data: rawBitsOrNil size: byteSize usage: usageEnum [
 
-	self notYetImplemented.
+	aBuffer boundDuring: [
+		GL
+			bufferData: aBuffer target
+			with: byteSize
+			with: (rawBitsOrNil ifNotNil: [rawBitsOrNil getHandle])
+			with: usageEnum].
 ]
 
 {
@@ -85,16 +90,22 @@ GLBufferImp >> initBuffer: aBuffer immutableData: aRawBitsArray size: byteSize u
 ]
 
 {
-	#category : #invalidation,
-	#'squeak_changestamp' : 'stlu 7/29/2021 20:08'
+	#category : #'state access',
+	#'squeak_changestamp' : 'stlu 8/4/2021 14:52'
 }
 GLBufferImp >> invalidateData: aBuffer [
 
-	self notYetImplemented.
+	"https://www.khronos.org/opengl/wiki/Buffer_Object#Invalidation"
+	"For buffer objects with non-immutable storage, a buffer can be invalidated by calling glBufferData with the exact same size and usage hint as before, and with a NULL data parameter. This is an older method of invalidation, and it should only be used when the others are not available."
+	self
+		initBuffer: aBuffer
+		data: nil
+		size: aBuffer size
+		usage: aBuffer usage.
 ]
 
 {
-	#category : #invalidation,
+	#category : #'state access',
 	#'squeak_changestamp' : 'stlu 7/29/2021 20:08'
 }
 GLBufferImp >> invalidateSubData: aBuffer offset: byteOffset length: byteLength [
@@ -131,9 +142,14 @@ GLBufferImp >> unmapBuffer: aBuffer [
 
 {
 	#category : #'state access',
-	#'squeak_changestamp' : 'stlu 7/29/2021 20:07'
+	#'squeak_changestamp' : 'stlu 8/4/2021 14:27'
 }
-GLBufferImp >> updateBuffer: aBuffer data: aRawBitsArray size: byteSize offset: byteOffset [
+GLBufferImp >> updateBuffer: aBuffer data: rawBitsOrNil size: byteSize offset: byteOffset [
 
-	self notYetImplemented.
+	aBuffer boundDuring: [
+		GL
+			bufferSubData: aBuffer target
+			with: byteOffset
+			with: byteSize
+			with: (rawBitsOrNil ifNotNil: [rawBitsOrNil getHandle])].
 ]

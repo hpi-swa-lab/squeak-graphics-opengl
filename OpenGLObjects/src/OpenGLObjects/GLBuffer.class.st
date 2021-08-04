@@ -180,7 +180,7 @@ GLBuffer >> data: aRawBitsArray size: byteSize [
 
 {
 	#category : #data,
-	#'squeak_changestamp' : 'stlu 5/20/2021 14:54'
+	#'squeak_changestamp' : 'stlu 8/4/2021 14:42'
 }
 GLBuffer >> data: aRawBitsArray size: byteSize offset: byteOffset [
 
@@ -188,12 +188,11 @@ GLBuffer >> data: aRawBitsArray size: byteSize offset: byteOffset [
 		usage ifNil: [^ self error: 'Buffer store needs to be initialized. See #usage:size:data:'].
 		byteOffset ~= 0 ifTrue: [^ self error: 'Allocated buffer store too small. Auto-reinitialization would leave undefined gap.'].
 		^ self usage: usage size: byteSize data: aRawBitsArray].
-	self boundDuring: [
-		GL
-			bufferSubData: target
-			with: byteOffset
-			with: byteSize
-			with: aRawBitsArray getHandle]
+	manager stateAccessImp
+		updateBuffer: self
+		data: aRawBitsArray
+		size: byteSize
+		offset: byteOffset.
 ]
 
 {
@@ -208,22 +207,22 @@ GLBuffer >> delete [
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 12/1/2020 02:41'
+	#'squeak_changestamp' : 'stlu 8/4/2021 14:37'
 }
 GLBuffer >> initialize [
 
 	super initialize.
 	target := self class defaultTarget.
-	size := 0
+	size := 0.
 ]
 
 {
 	#category : #data,
-	#'squeak_changestamp' : 'stlu 7/28/2021 17:58'
+	#'squeak_changestamp' : 'stlu 8/4/2021 14:46'
 }
 GLBuffer >> invalidateData [
 
-	self stateAccess invalidateData: self.
+	manager stateAccessImp invalidateData: self.
 ]
 
 {
@@ -251,15 +250,6 @@ GLBuffer >> orphan [
 GLBuffer >> size [
 
 	^ size
-]
-
-{
-	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 12/28/2020 11:53'
-}
-GLBuffer >> stateAccess [
-
-	^ nil
 ]
 
 {
@@ -444,16 +434,15 @@ GLBuffer >> usage: usageEnum size: byteSize [
 
 {
 	#category : #data,
-	#'squeak_changestamp' : 'stlu 5/20/2021 14:56'
+	#'squeak_changestamp' : 'stlu 8/4/2021 14:44'
 }
-GLBuffer >> usage: usageEnum size: byteSize data: rawBitsArrayOrNil [
+GLBuffer >> usage: usageEnum size: byteSize data: rawBitsOrNil [
 
-	self boundDuring: [
-		GL
-			bufferData: target
-			with: byteSize
-			with: (rawBitsArrayOrNil ifNotNil: [rawBitsArrayOrNil getHandle])
-			with: usageEnum].
+	manager stateAccessImp
+		initBuffer: self
+		data: rawBitsOrNil
+		size: byteSize
+		usage: usageEnum.
 	size := byteSize.
 	usage := usageEnum.
 ]

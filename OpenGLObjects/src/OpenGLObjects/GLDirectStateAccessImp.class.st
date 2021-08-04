@@ -201,6 +201,28 @@ GLDirectStateAccessImp >> generateMipmap: aTexture [
 ]
 
 {
+	#category : #buffers,
+	#'squeak_changestamp' : 'stlu 8/4/2021 14:24'
+}
+GLDirectStateAccessImp >> initBuffer: aBuffer data: rawBitsOrNil size: byteSize usage: usageEnum [
+
+	GL
+		namedBufferData: aBuffer id
+		with: byteSize
+		with: (rawBitsOrNil ifNotNil: [rawBitsOrNil getHandle])
+		with: usageEnum.
+]
+
+{
+	#category : #buffers,
+	#'squeak_changestamp' : 'stlu 8/4/2021 14:49'
+}
+GLDirectStateAccessImp >> invalidateData: aBuffer [
+
+	GL invalidateBufferData: aBuffer id.
+]
+
+{
 	#category : #renderbuffers,
 	#'squeak_changestamp' : 'stlu 7/29/2021 13:09'
 }
@@ -320,6 +342,19 @@ GLDirectStateAccessImp >> texture: aTexture setParameter: parameterEnum toUnsign
 		textureParameterIuiv: aTexture id
 		with: parameterEnum
 		with: aWordArray
+]
+
+{
+	#category : #buffers,
+	#'squeak_changestamp' : 'stlu 8/4/2021 14:36'
+}
+GLDirectStateAccessImp >> updateBuffer: aBuffer data: rawBitsOrNil size: byteSize offset: byteOffset [
+
+	GL
+		namedBufferSubData: aBuffer id
+		with: byteOffset
+		with: byteSize
+		with: (rawBitsOrNil ifNotNil: [rawBitsOrNil getHandle]).
 ]
 
 {

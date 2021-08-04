@@ -3,7 +3,8 @@ Class {
 	#superclass : #GLObjectManager,
 	#instVars : [
 		'bindings',
-		'creationImp'
+		'creationImp',
+		'stateAccessImp'
 	],
 	#category : #'OpenGLObjects-Buffers'
 }
@@ -72,7 +73,7 @@ GLBufferManager >> creationImp: anObject [
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 7/29/2021 22:57'
+	#'squeak_changestamp' : 'stlu 8/4/2021 14:38'
 }
 GLBufferManager >> initialize [
 
@@ -83,4 +84,23 @@ GLBufferManager >> initialize [
 	
 	mainImp := GLBufferImp new.
 	creationImp := GLDirectStateAccessImp new.
+	stateAccessImp := GLDirectStateAccessImp new.
+]
+
+{
+	#category : #implementors,
+	#'squeak_changestamp' : 'stlu 8/4/2021 14:39'
+}
+GLBufferManager >> stateAccessImp [
+
+	^ stateAccessImp
+]
+
+{
+	#category : #implementors,
+	#'squeak_changestamp' : 'stlu 8/4/2021 14:39'
+}
+GLBufferManager >> stateAccessImp: anObject [
+
+	stateAccessImp := anObject.
 ]
