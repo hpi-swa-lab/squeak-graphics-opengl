@@ -310,17 +310,19 @@ LOGLBreakout >> processPriority [
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 1/8/2021 13:58'
+	#'squeak_changestamp' : 'stlu 8/6/2021 15:19'
 }
 LOGLBreakout >> projection [
 
 	^ projection ifNil: [
-		projection := Matrix4x4 ortho: (0@0 corner: self extent) near: -1.0 far: 1.0]
+		projection := Matrix4x4
+			ortho: (0@0 extent: window framebufferExtent)
+			near: -1.0 far: 1.0]
 ]
 
 {
 	#category : #rendering,
-	#'squeak_changestamp' : 'stlu 5/24/2021 22:47'
+	#'squeak_changestamp' : 'stlu 8/6/2021 15:28'
 }
 LOGLBreakout >> render [
 
@@ -344,7 +346,7 @@ LOGLBreakout >> render [
 			particles draw.
 			ball draw: renderer.
 		effects endRender.
-		effects render: timeOfLastFrame]
+		effects render: timeOfLastFrame].
 ]
 
 {
@@ -410,11 +412,11 @@ LOGLBreakout >> resetPowerUps [
 
 {
 	#category : #setup,
-	#'squeak_changestamp' : 'stlu 1/9/2021 18:11'
+	#'squeak_changestamp' : 'stlu 8/6/2021 15:15'
 }
 LOGLBreakout >> setUp [
 
-	extent := window extent.
+	extent := window framebufferExtent.
 	lives := 3.
 	shakeTime := 0.0.
 	powerUps := OrderedCollection new.

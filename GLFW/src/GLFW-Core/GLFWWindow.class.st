@@ -80,6 +80,15 @@ GLFWWindow >> aspectRatio: pointOrNumber [
 ]
 
 {
+	#category : #'keyboard input',
+	#'squeak_changestamp' : 'stlu 7/2/2021 23:51'
+}
+GLFWWindow >> charCallback: aBlock [
+
+	GLFW setCharCallback: self with: aBlock
+]
+
+{
 	#category : #callbacks,
 	#'squeak_changestamp' : 'stlu 2/12/2021 23:54'
 }

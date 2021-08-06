@@ -49,7 +49,7 @@ LOGLBreakoutSpriteRenderer >> drawSprite: aTexture position: position extent: ex
 
 {
 	#category : #rendering,
-	#'squeak_changestamp' : 'stlu 5/15/2021 02:55'
+	#'squeak_changestamp' : 'stlu 8/6/2021 16:17'
 }
 LOGLBreakoutSpriteRenderer >> drawSprite: aTexture position: position extent: extent rotation: degrees color: color [
 
@@ -63,9 +63,9 @@ LOGLBreakoutSpriteRenderer >> drawSprite: aTexture position: position extent: ex
 		model := model translatedBy: position.
 		
 		program uniforms
-			model: model;
-			spriteColor: color;
-			sprite: 0.
+			uModel: model;
+			uSpriteColor: color;
+			sSprite: 0.
 		
 		aTexture bind.
 		vao drawArrays: GL TRIANGLES count: 6]
@@ -73,7 +73,7 @@ LOGLBreakoutSpriteRenderer >> drawSprite: aTexture position: position extent: ex
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 1/7/2021 14:00'
+	#'squeak_changestamp' : 'stlu 8/6/2021 16:10'
 }
 LOGLBreakoutSpriteRenderer >> initialize [
 
@@ -89,18 +89,18 @@ LOGLBreakoutSpriteRenderer >> initialize [
 	
 	vao boundDuring: [
 		vbo boundDuring: [
-			program inputs vertex
+			program inputs aVertex
 				stride: 4 * 4
 				offset: 0]]
 ]
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 1/6/2021 13:54'
+	#'squeak_changestamp' : 'stlu 8/6/2021 16:21'
 }
 LOGLBreakoutSpriteRenderer >> projection: aMatrix4x4 [
 
-	program uniforms projection: aMatrix4x4
+	program uniforms uProjection: aMatrix4x4.
 ]
 
 {

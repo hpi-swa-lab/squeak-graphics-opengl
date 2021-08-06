@@ -6,44 +6,44 @@ Class {
 
 {
 	#category : #'shader code',
-	#'squeak_changestamp' : 'stlu 1/8/2021 15:01'
+	#'squeak_changestamp' : 'stlu 8/6/2021 16:23'
 }
 LOGLBreakoutParticleProgram class >> fragmentShader [
 
 	^ '#version 330 core
-in vec2 TexCoords;
-in vec4 ParticleColor;
-out vec4 color;
+in vec2 vTexCoords;
+in vec4 vParticleColor;
+out vec4 oColor;
 
-uniform sampler2D sprite;
+uniform sampler2D sSprite;
 
-void main()
-{
-    color = texture(sprite, TexCoords) * ParticleColor;
+void main() {
+	oColor = texture(sSprite, vTexCoords) * vParticleColor;
 }'
 ]
 
 {
 	#category : #'shader code',
-	#'squeak_changestamp' : 'stlu 1/8/2021 12:20'
+	#'squeak_changestamp' : 'stlu 8/6/2021 16:15'
 }
 LOGLBreakoutParticleProgram class >> vertexShader [
 
 	^ '#version 330 core
-layout (location = 0) in vec4 vertex; // <vec2 position, vec2 texCoords>
+layout (location = 0) in vec4 aVertex; // <vec2 position, vec2 texCoords>
 
-out vec2 TexCoords;
-out vec4 ParticleColor;
+out vec2 vTexCoords;
+out vec4 vParticleColor;
 
-uniform mat4 projection;
-uniform vec2 offset;
-uniform vec4 color;
+uniform mat4 uProjection;
+uniform vec2 uOffset;
+uniform vec4 uColor;
+
+#define SCALE 10.0f
 
 void main()
 {
-    float scale = 10.0f;
-    TexCoords = vertex.zw;
-    ParticleColor = color;
-    gl_Position = projection * vec4((vertex.xy * scale) + offset, 0.0, 1.0);
+	vTexCoords = aVertex.zw;
+	vParticleColor = uColor;
+	gl_Position = uProjection * vec4((aVertex.xy * SCALE) + uOffset, 0.0, 1.0);
 }'
 ]

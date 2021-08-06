@@ -6,42 +6,39 @@ Class {
 
 {
 	#category : #'shader code',
-	#'squeak_changestamp' : 'stlu 1/6/2021 13:28'
+	#'squeak_changestamp' : 'stlu 8/6/2021 16:20'
 }
 LOGLBreakoutSpriteProgram class >> fragmentShader [
 
 	^ '#version 330 core
-in vec2 TexCoords;
-out vec4 color;
+in vec2 vTexCoords;
+out vec4 oColor;
 
-uniform sampler2D sprite;
-uniform vec3 spriteColor;
+uniform sampler2D sSprite;
+uniform vec3 uSpriteColor;
 
-void main()
-{
-    
-    color = vec4(spriteColor, 1.0) * texture(sprite, TexCoords);
+void main() {
+	oColor = vec4(uSpriteColor, 1.0) * texture(sSprite, vTexCoords);
 }'
 ]
 
 {
 	#category : #'shader code',
-	#'squeak_changestamp' : 'stlu 1/6/2021 13:29'
+	#'squeak_changestamp' : 'stlu 8/6/2021 16:19'
 }
 LOGLBreakoutSpriteProgram class >> vertexShader [
 
 	^ '#version 330 core
-layout (location = 0) in vec4 vertex; // <vec2 position, vec2 texCoords>
+layout (location = 0) in vec4 aVertex; // <vec2 position, vec2 texCoords>
 
-out vec2 TexCoords;
+out vec2 vTexCoords;
 
-uniform mat4 model;
+uniform mat4 uModel;
 // note that we''re omitting the view matrix; the view never changes so we basically have an identity view matrix and can therefore omit it.
-uniform mat4 projection;
+uniform mat4 uProjection;
 
-void main()
-{
-    TexCoords = vertex.zw;
-    gl_Position = projection * model * vec4(vertex.xy, 0.0, 1.0);
+void main() {
+	vTexCoords = aVertex.zw;
+	gl_Position = uProjection * uModel * vec4(aVertex.xy, 0.0, 1.0);
 }'
 ]

@@ -45,7 +45,7 @@ LOGLBreakoutParticleGenerator >> amount: anObject [
 
 {
 	#category : #rendering,
-	#'squeak_changestamp' : 'stlu 5/15/2021 02:55'
+	#'squeak_changestamp' : 'stlu 8/6/2021 16:15'
 }
 LOGLBreakoutParticleGenerator >> draw [
 	"render all particles"
@@ -58,8 +58,8 @@ LOGLBreakoutParticleGenerator >> draw [
 				particles do: [:particle |
 					particle isAlive ifTrue: [
 						program uniforms
-							offset: particle position;
-							color: particle color.
+							uOffset: particle position;
+							uColor: particle color.
 						vao drawArrays: GL TRIANGLES count: 6]]]]].
 	
 	"don't forget to reset to default blending mode"
@@ -100,7 +100,7 @@ LOGLBreakoutParticleGenerator >> firstUnusedParticleIndex [
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 1/8/2021 13:59'
+	#'squeak_changestamp' : 'stlu 8/6/2021 16:16'
 }
 LOGLBreakoutParticleGenerator >> initialize [
 
@@ -110,14 +110,14 @@ LOGLBreakoutParticleGenerator >> initialize [
 	vbo := GLBuffer create.
 	program := LOGLBreakoutParticleProgram create.
 	
-	program uniforms sprite: 0.
+	program uniforms sSprite: 0.
 	
 	vao boundDuring: [
 		vbo boundDuring: [
 			vbo
 				usage: GL STATIC_DRAW
 				data: self particleQuad.
-			program inputs vertex
+			program inputs aVertex
 				stride: 4 * 4
 				offset: 0]].
 	
@@ -164,11 +164,11 @@ LOGLBreakoutParticleGenerator >> program: anObject [
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 1/8/2021 13:51'
+	#'squeak_changestamp' : 'stlu 8/6/2021 16:16'
 }
 LOGLBreakoutParticleGenerator >> projection: aMatrix4x4 [
 
-	program uniforms projection: aMatrix4x4
+	program uniforms uProjection: aMatrix4x4
 ]
 
 {

@@ -44,91 +44,88 @@ LOGLBreakoutPostProcessingProgram class >> fragmentShader: out inputs: in unifor
 
 {
 	#category : #'shader code',
-	#'squeak_changestamp' : 'stlu 5/15/2021 14:23'
+	#'squeak_changestamp' : 'stlu 8/6/2021 16:06'
 }
 LOGLBreakoutPostProcessingProgram class >> glslFragmentShader [
 
 	^ '#version 330 core
-in vec2 TexCoords;
-out vec4 color;
+in vec2 vTexCoords;
+out vec4 oColor;
 
-uniform sampler2D scene;
-uniform vec2 offsets[9];
-uniform int edgeKernel[9];
-uniform float blurKernel[9];
+uniform sampler2D sScene;
+uniform vec2 uOffsets[9];
+uniform int uEdgeKernel[9];
+uniform float uBlurKernel[9];
 
-uniform bool chaos;
-uniform bool confuse;
-uniform bool shake;
+uniform bool uChaos;
+uniform bool uConfuse;
+uniform bool uShake;
 
-void main()
-{
-    // zero out memory since an out variable is initialized with undefined values by default 
-    color = vec4(0.0f);
+void main() {
+	// zero out memory since an out variable is initialized with undefined values by default 
+	oColor = vec4(0.0f);
 
-    vec3 sample[9];
-    // sample from texture offsets if using convolution matrix
-    if(chaos || shake)
-        for(int i = 0; i < 9; i++)
-            sample[i] = vec3(texture(scene, TexCoords.st + offsets[i]));
+	vec3 sample[9];
+	// sample from texture offsets if using convolution matrix
+	if (uChaos || uShake) {
+		for (int i = 0; i < 9; i++) {
+			sample[i] = vec3(texture(sScene, vTexCoords.st + uOffsets[i]));
+		}
+	}
 
-    // process effects
-    if(chaos)
-    {           
-        for(int i = 0; i < 9; i++)
-            color += vec4(sample[i] * edgeKernel[i], 0.0f);
-        color.a = 1.0f;
-    }
-    else if(confuse)
-    {
-        color = vec4(1.0 - texture(scene, TexCoords).rgb, 1.0);
-    }
-    else if(shake)
-    {
-        for(int i = 0; i < 9; i++)
-            color += vec4(sample[i] * blurKernel[i], 0.0f);
-        color.a = 1.0f;
-    }
-    else
-    {
-        color =  texture(scene, TexCoords);
-    }
+	// process effects
+	if (uChaos) {           
+		for (int i = 0; i < 9; i++) {
+			oColor += vec4(sample[i] * uEdgeKernel[i], 0.0f);
+		}
+		oColor.a = 1.0f;
+	} else if (uConfuse) {
+		oColor = vec4(1.0 - texture(sScene, vTexCoords).rgb, 1.0);
+	} else if (uShake) {
+		for (int i = 0; i < 9; i++) {
+			oColor += vec4(sample[i] * uBlurKernel[i], 0.0f);
+		}
+		oColor.a = 1.0f;
+	} else {
+		oColor = texture(sScene, vTexCoords);
+	}
 }'
 ]
 
 {
 	#category : #'shader code',
-	#'squeak_changestamp' : 'stlu 2/23/2021 16:41'
+	#'squeak_changestamp' : 'stlu 8/6/2021 16:06'
 }
 LOGLBreakoutPostProcessingProgram class >> glslVertexShader [
 
 	^ '#version 330 core
-layout (location = 0) in vec4 vertex; // <vec2 position, vec2 texCoords>
+layout (location = 0) in vec4 aVertex; // <vec2 position, vec2 texCoords>
 
-out vec2 TexCoords;
+out vec2 vTexCoords;
 
-uniform bool chaos;
-uniform bool confuse;
-uniform bool shake;
-uniform float time;
+uniform bool uChaos;
+uniform bool uConfuse;
+uniform bool uShake;
+uniform float uTime;
 
 void main() {
-    gl_Position = vec4(vertex.xy, 0.0f, 1.0f); 
-    vec2 texture = vertex.zw;
-    if (chaos) {
-        float strength = 0.3;
-        vec2 pos = vec2(texture.x + sin(time) * strength, texture.y + cos(time) * strength);        
-        TexCoords = pos;
-    } else if (confuse) {
-        TexCoords = vec2(1.0 - texture.x, 1.0 - texture.y);
-    } else {
-        TexCoords = texture;
-    }
-    if (shake) {
-        float strength = 0.01;
-        gl_Position.x += cos(time * 10) * strength;        
-        gl_Position.y += cos(time * 15) * strength;        
-    }
+	gl_Position = vec4(aVertex.xy, 0.0f, 1.0f); 
+	vec2 texture = aVertex.zw;
+	if (uChaos) {
+		float strength = 0.3;
+		vec2 pos = vec2(texture.x + sin(uTime) * strength, texture.y + cos(uTime) * strength);        
+		vTexCoords = pos;
+	} else if(uConfuse) {
+		vTexCoords = vec2(1.0 - texture.x, 1.0 - texture.y);
+	} else {
+		vTexCoords = texture;
+	}
+	
+	if (uShake) {
+		float strength = 0.01;
+		gl_Position.x += cos(uTime * 10) * strength;        
+		gl_Position.y += cos(uTime * 15) * strength;        
+	}
 }'
 ]
 

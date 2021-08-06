@@ -40,7 +40,7 @@ LOGLBreakoutPostProcessor >> beginRender [
 ]
 
 {
-	#category : #initialization,
+	#category : #data,
 	#'squeak_changestamp' : 'stlu 1/8/2021 16:25'
 }
 LOGLBreakoutPostProcessor >> blurKernel [
@@ -89,7 +89,7 @@ LOGLBreakoutPostProcessor >> confusion: anObject [
 ]
 
 {
-	#category : #initialization,
+	#category : #data,
 	#'squeak_changestamp' : 'stlu 1/8/2021 16:23'
 }
 LOGLBreakoutPostProcessor >> edgeKernel [
@@ -184,7 +184,7 @@ LOGLBreakoutPostProcessor >> initialize [
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 1/10/2021 19:11'
+	#'squeak_changestamp' : 'stlu 8/6/2021 16:09'
 }
 LOGLBreakoutPostProcessor >> initializeRenderData [
 
@@ -198,19 +198,19 @@ LOGLBreakoutPostProcessor >> initializeRenderData [
 			vbo
 				usage: GL STATIC_DRAW
 				data: self vertices.
-			program inputs vertex
+			program inputs aVertex
 				stride: 4 * 4
 				offset: 0]].
 	
 	program uniforms
-		scene: 0;
-		offsets: self offsets;
-		edgeKernel: self edgeKernel;
-		blurKernel: self blurKernel
+		sScene: 0;
+		uOffsets: self offsets;
+		uEdgeKernel: self edgeKernel;
+		uBlurKernel: self blurKernel
 ]
 
 {
-	#category : #initialization,
+	#category : #data,
 	#'squeak_changestamp' : 'stlu 1/8/2021 17:56'
 }
 LOGLBreakoutPostProcessor >> offsets [
@@ -233,16 +233,16 @@ LOGLBreakoutPostProcessor >> offsets [
 
 {
 	#category : #rendering,
-	#'squeak_changestamp' : 'stlu 5/15/2021 02:55'
+	#'squeak_changestamp' : 'stlu 8/6/2021 16:08'
 }
 LOGLBreakoutPostProcessor >> render: secs [
 
 	program useDuring: [
 		program uniforms
-			time: secs asFloat;
-			confuse: confusion;
-			chaos: chaos;
-			shake: shake.
+			uTime: secs asFloat;
+			uConfuse: confusion;
+			uChaos: chaos;
+			uShake: shake.
 		texture boundDuring: [
 			vao drawArrays: GL TRIANGLES count: 6]]
 ]
@@ -284,7 +284,7 @@ LOGLBreakoutPostProcessor >> texture: anObject [
 ]
 
 {
-	#category : #initialization,
+	#category : #data,
 	#'squeak_changestamp' : 'stlu 1/8/2021 16:13'
 }
 LOGLBreakoutPostProcessor >> vertices [
