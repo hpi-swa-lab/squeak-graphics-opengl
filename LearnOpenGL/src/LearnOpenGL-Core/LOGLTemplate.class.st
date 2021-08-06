@@ -40,6 +40,15 @@ LOGLTemplate >> baseWindowTitle [
 ]
 
 {
+	#category : #callbacks,
+	#'squeak_changestamp' : 'stlu 8/6/2021 15:12'
+}
+LOGLTemplate >> framebufferExtentChanged: newExtent [
+	"whenever the window's framebuffer extent changes (by OS or user resize) this callback function executes"
+	GL viewport: (0@0 extent: newExtent).
+]
+
+{
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 6/17/2021 12:29'
 }
@@ -84,6 +93,15 @@ LOGLTemplate >> isModal [
 	#'squeak_changestamp' : 'stlu 6/30/2021 10:17'
 }
 LOGLTemplate >> key: key scanCode: scanCode changedTo: state with: mods [
+
+	"do nothing by default"
+]
+
+{
+	#category : #input,
+	#'squeak_changestamp' : 'stlu 7/2/2021 23:52'
+}
+LOGLTemplate >> keyStroke: codePoint [
 
 	"do nothing by default"
 ]
@@ -172,12 +190,12 @@ LOGLTemplate >> processPriority [
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 6/30/2021 10:11'
+	#'squeak_changestamp' : 'stlu 8/6/2021 15:12'
 }
 LOGLTemplate >> registerCallbacks [
 
 	window framebufferExtentCallback: [:w :width :height |
-		self windowExtentChanged: width @ height].
+		self framebufferExtentChanged: width @ height].
 	
 	window scrollCallback: [:w :xOffset :yOffset |
 		self scrolledBy: xOffset @ yOffset].
@@ -190,6 +208,9 @@ LOGLTemplate >> registerCallbacks [
 	
 	window keyCallback: [:w :key :scancode :state :mods |
 		self key: key scanCode: scancode changedTo: state with: mods].
+	
+	window charCallback: [:w :codepoint |
+		self keyStroke: codepoint].
 ]
 
 {
@@ -378,15 +399,6 @@ LOGLTemplate >> vSync [
 LOGLTemplate >> window [
 
 	^ window
-]
-
-{
-	#category : #callbacks,
-	#'squeak_changestamp' : 'stlu 6/17/2021 14:46'
-}
-LOGLTemplate >> windowExtentChanged: newExtent [
-	"glfw: whenever the window size changed (by OS or user resize) this callback function executes"
-	GL viewport: (0@0 extent: newExtent)
 ]
 
 {
