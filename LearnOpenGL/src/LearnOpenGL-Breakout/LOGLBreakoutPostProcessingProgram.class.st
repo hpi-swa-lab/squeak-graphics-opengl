@@ -44,7 +44,7 @@ LOGLBreakoutPostProcessingProgram class >> fragmentShader: out inputs: in unifor
 
 {
 	#category : #'shader code',
-	#'squeak_changestamp' : 'stlu 8/6/2021 16:06'
+	#'squeak_changestamp' : 'stlu 8/6/2021 17:15'
 }
 LOGLBreakoutPostProcessingProgram class >> glslFragmentShader [
 
@@ -54,47 +54,40 @@ out vec4 oColor;
 
 uniform sampler2D sScene;
 uniform vec2 uOffsets[9];
-uniform int uEdgeKernel[9];
+uniform float uEdgeKernel[9];
 uniform float uBlurKernel[9];
 
-uniform bool uChaos;
-uniform bool uConfuse;
-uniform bool uShake;
+uniform bool uChaosIsActive;
+uniform bool uConfusionIsActive;
+uniform bool uShakeIsActive;
 
 void main() {
-	// zero out memory since an out variable is initialized with undefined values by default 
-	oColor = vec4(0.0f);
+	vec4 texel = texture(sScene, vTexCoords);
+	vec4 color = texel;
 
-	vec3 sample[9];
-	// sample from texture offsets if using convolution matrix
-	if (uChaos || uShake) {
-		for (int i = 0; i < 9; i++) {
-			sample[i] = vec3(texture(sScene, vTexCoords.st + uOffsets[i]));
+	if (uChaosIsActive || uShakeIsActive) {
+		float kernel[9];
+		kernel = uChaosIsActive ? uEdgeKernel : uBlurKernel;
+		color = vec4(0.0f, 0.0f, 0.0f, 1.0f);
+
+		for (int i = 0; i <= 8; i++) {
+			vec2 offset = uOffsets[i];
+			vec3 sample = texture(sScene, vTexCoords + offset).rgb;
+			color += vec4(sample * kernel[i], 0.0f);
 		}
 	}
-
-	// process effects
-	if (uChaos) {           
-		for (int i = 0; i < 9; i++) {
-			oColor += vec4(sample[i] * uEdgeKernel[i], 0.0f);
-		}
-		oColor.a = 1.0f;
-	} else if (uConfuse) {
-		oColor = vec4(1.0 - texture(sScene, vTexCoords).rgb, 1.0);
-	} else if (uShake) {
-		for (int i = 0; i < 9; i++) {
-			oColor += vec4(sample[i] * uBlurKernel[i], 0.0f);
-		}
-		oColor.a = 1.0f;
-	} else {
-		oColor = texture(sScene, vTexCoords);
+	
+	if (uConfusionIsActive) {
+		color = vec4(1.0 - texel.rgb, 1.0);
 	}
+	
+	oColor = color;
 }'
 ]
 
 {
 	#category : #'shader code',
-	#'squeak_changestamp' : 'stlu 8/6/2021 16:06'
+	#'squeak_changestamp' : 'stlu 8/6/2021 17:19'
 }
 LOGLBreakoutPostProcessingProgram class >> glslVertexShader [
 
@@ -103,29 +96,28 @@ layout (location = 0) in vec4 aVertex; // <vec2 position, vec2 texCoords>
 
 out vec2 vTexCoords;
 
-uniform bool uChaos;
-uniform bool uConfuse;
-uniform bool uShake;
+uniform bool uChaosIsActive;
+uniform bool uConfusionIsActive;
+uniform bool uShakeIsActive;
 uniform float uTime;
 
+#define SHAKE_STRENGTH 0.01
+#define CHAOS_STRENGTH 0.3
+
 void main() {
+	vec2 pos = aVertex.xy;
+	if (uShakeIsActive) {
+		pos += cos(vec2(10.0, 15.0) * uTime) * SHAKE_STRENGTH;
+	}
 	gl_Position = vec4(aVertex.xy, 0.0f, 1.0f); 
-	vec2 texture = aVertex.zw;
-	if (uChaos) {
-		float strength = 0.3;
-		vec2 pos = vec2(texture.x + sin(uTime) * strength, texture.y + cos(uTime) * strength);        
-		vTexCoords = pos;
-	} else if(uConfuse) {
-		vTexCoords = vec2(1.0 - texture.x, 1.0 - texture.y);
-	} else {
-		vTexCoords = texture;
+
+	vec2 texCoords = aVertex.zw;
+	if (uChaosIsActive) {
+		texCoords += vec2(sin(uTime), cos(uTime)) * CHAOS_STRENGTH;
+	} else if(uConfusionIsActive) {
+		texCoords = 1.0 - texCoords;
 	}
-	
-	if (uShake) {
-		float strength = 0.01;
-		gl_Position.x += cos(uTime * 10) * strength;        
-		gl_Position.y += cos(uTime * 15) * strength;        
-	}
+	vTexCoords = texCoords;
 }'
 ]
 
