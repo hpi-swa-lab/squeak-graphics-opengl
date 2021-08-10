@@ -41,12 +41,12 @@ GLExternalLibrary class >> context: aContext moduleName: aString [
 
 {
 	#category : #'class initialization',
-	#'squeak_changestamp' : 'stlu 4/15/2021 21:54'
+	#'squeak_changestamp' : 'stlu 8/10/2021 14:14'
 }
 GLExternalLibrary class >> initialize [
 
 	Instances := WeakOrderedCollection new.
-	Smalltalk addToShutDownList: self.
+	Smalltalk addToStartUpList: self.
 ]
 
 {
@@ -78,13 +78,12 @@ GLExternalLibrary class >> new [
 
 {
 	#category : #'class initialization',
-	#'squeak_changestamp' : 'stlu 4/15/2021 22:06'
+	#'squeak_changestamp' : 'stlu 8/10/2021 14:14'
 }
-GLExternalLibrary class >> shutDown: quitting [
+GLExternalLibrary class >> startUp: resuming [
 
-	self flag: #todo. "needs to happen after all shutdowns using the library"
-	quitting ifTrue: [
-		self invalidateInstances]
+	resuming ifTrue: [
+		self invalidateInstances].
 ]
 
 {
