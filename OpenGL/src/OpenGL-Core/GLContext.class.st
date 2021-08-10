@@ -7,7 +7,8 @@ Class {
 		'extensions',
 		'userData',
 		'isDestroyed',
-		'objectState'
+		'objectState',
+		'debugMessageCallback'
 	],
 	#pools : [
 		'GLConstants'
@@ -66,6 +67,24 @@ GLContext >> activate [
 GLContext >> deactivate [
 
 	self subclassResponsibility
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 8/10/2021 11:20'
+}
+GLContext >> debugMessageCallback [
+
+	^ debugMessageCallback
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 8/10/2021 11:20'
+}
+GLContext >> debugMessageCallback: anObject [
+
+	debugMessageCallback := anObject.
 ]
 
 {

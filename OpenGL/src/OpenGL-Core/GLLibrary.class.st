@@ -199,6 +199,38 @@ GLLibrary >> context: aContext [
 ]
 
 {
+	#category : #'error handling',
+	#'squeak_changestamp' : 'stlu 8/10/2021 14:03'
+}
+GLLibrary >> defaultDebugMessageCallback [
+
+	self notYetImplemented.
+	^ [:source :type :id :severity :length :message :userParam |
+		source caseOf: {
+			[GL_DEBUG_SOURCE_API] -> [].
+			[GL_DEBUG_SOURCE_SHADER_COMPILER] -> [].
+			[GL_DEBUG_SOURCE_WINDOW_SYSTEM] -> [].
+			[GL_DEBUG_SOURCE_THIRD_PARTY] -> [].
+			[GL_DEBUG_SOURCE_APPLICATION] -> [].
+			[GL_DEBUG_SOURCE_OTHER] -> []}.
+		type caseOf: {
+			[GL_DEBUG_TYPE_ERROR] -> [].
+			[GL_DEBUG_TYPE_DEPRECATED_BEHAVIOR] -> [].
+			[GL_DEBUG_TYPE_UNDEFINED_BEHAVIOR] -> [].
+			[GL_DEBUG_TYPE_PERFORMANCE] -> [].
+			[GL_DEBUG_TYPE_PORTABILITY] -> [].
+			[GL_DEBUG_TYPE_MARKER] -> [].
+			[GL_DEBUG_TYPE_PUSH_GROUP] -> [].
+			[GL_DEBUG_TYPE_POP_GROUP] -> [].
+			[GL_DEBUG_TYPE_OTHER] -> []}.
+		severity caseOf: {
+			[GL_DEBUG_SEVERITY_HIGH] -> [].
+			[GL_DEBUG_SEVERITY_MEDIUM] -> [].
+			[GL_DEBUG_SEVERITY_LOW] -> [].
+			[GL_DEBUG_SEVERITY_NOTIFICATION] -> []}]
+]
+
+{
 	#category : #'context handling',
 	#'squeak_changestamp' : 'stlu 4/16/2021 09:51'
 }
@@ -604,6 +636,20 @@ GLLibrary >> profile [
 GLLibrary >> rendererString [
 
 	^ self stringStateNamed: GL_RENDERER
+]
+
+{
+	#category : #'error handling',
+	#'squeak_changestamp' : 'stlu 8/10/2021 11:21'
+}
+GLLibrary >> setDebugMessageCallback: aBlock [
+	"[:source :type :id :severity :length :message :userParam | ]"
+	| callback |
+	callback := FFICallback
+		signature: '<callback: void (*)(GLenum GLenum GLuint GLenum GLsizei GLchar* void*)>'
+		block: aBlock.
+	self debugMessageCallback: callback with: nil.
+	context debugMessageCallback: callback.
 ]
 
 {
