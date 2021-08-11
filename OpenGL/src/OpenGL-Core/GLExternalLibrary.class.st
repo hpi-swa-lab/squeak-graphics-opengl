@@ -50,7 +50,7 @@ GLExternalLibrary class >> initialize [
 ]
 
 {
-	#category : #'class initialization',
+	#category : #'system startup',
 	#'squeak_changestamp' : 'stlu 4/16/2021 17:05'
 }
 GLExternalLibrary class >> invalidateInstances [
@@ -77,7 +77,7 @@ GLExternalLibrary class >> new [
 ]
 
 {
-	#category : #'class initialization',
+	#category : #'system startup',
 	#'squeak_changestamp' : 'stlu 8/10/2021 14:14'
 }
 GLExternalLibrary class >> startUp: resuming [

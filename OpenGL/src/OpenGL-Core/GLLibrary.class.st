@@ -78,13 +78,14 @@ GLLibrary class >> example2 [ "self example2"
 
 {
 	#category : #'class initialization',
-	#'squeak_changestamp' : 'stlu 4/20/2021 19:40'
+	#'squeak_changestamp' : 'stlu 8/11/2021 12:51'
 }
 GLLibrary class >> initialize [
 
 	GLConstants initialize.
 	self initializeGL.
-	self initializeErrorMessages
+	self initializeErrorMessages.
+	Smalltalk addToStartUpList: self.
 ]
 
 {
@@ -114,6 +115,16 @@ GLLibrary class >> initializeErrorMessages [
 GLLibrary class >> initializeGL [
 
 	Environment current at: #GL put: GLInvalidLibrary new.
+]
+
+{
+	#category : #'system startup',
+	#'squeak_changestamp' : 'stlu 8/11/2021 12:52'
+}
+GLLibrary class >> startUp: resuming [
+
+	resuming ifTrue: [
+		self initializeGL].
 ]
 
 {
