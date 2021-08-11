@@ -161,6 +161,30 @@ LOGLTemplate >> mousePositionChangedTo: aPoint [
 ]
 
 {
+	#category : #'window title',
+	#'squeak_changestamp' : 'stlu 8/11/2021 17:12'
+}
+LOGLTemplate >> printWindowTitleOn: aStream [
+
+	aStream nextPutAll: self baseWindowTitle.
+	(self showFrameTimeInWindowTitle and: [frameTimes notEmpty]) ifTrue: [
+		aStream
+			nextPutAll: ' | FT: ';
+			nextPutAll: (frameTimes average / 1e3 printShowingMaxDecimalPlaces: 3);
+			nextPutAll: 'ms'].
+	(self showRenderTimeInWindowTitle and: [renderTimes notEmpty]) ifTrue: [
+		aStream
+			nextPutAll: ' | RT: ';
+			nextPutAll: (frameTimes average / 1e3 printShowingMaxDecimalPlaces: 3);
+			nextPutAll: 'ms'].
+	(self showGPUTimeInWindowTitle and: [gpuTimes notEmpty]) ifTrue: [
+		aStream
+			nextPutAll: ' | GPU: ';
+			nextPutAll: (gpuTimes average / 1e3 printShowingMaxDecimalPlaces: 3);
+			nextPutAll: 'us']
+]
+
+{
 	#category : #input,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:46'
 }
@@ -403,27 +427,12 @@ LOGLTemplate >> window [
 
 {
 	#category : #'window title',
-	#'squeak_changestamp' : 'stlu 6/17/2021 13:12'
+	#'squeak_changestamp' : 'stlu 8/11/2021 17:12'
 }
 LOGLTemplate >> windowTitle [
 
 	^ String streamContents: [:stream |
-		stream nextPutAll: self baseWindowTitle.
-		(self showFrameTimeInWindowTitle and: [frameTimes notEmpty]) ifTrue: [
-			stream
-				nextPutAll: ' | FT: ';
-				nextPutAll: (frameTimes average / 1e3 printShowingMaxDecimalPlaces: 3);
-				nextPutAll: 'ms'].
-		(self showRenderTimeInWindowTitle and: [renderTimes notEmpty]) ifTrue: [
-			stream
-				nextPutAll: ' | RT: ';
-				nextPutAll: (frameTimes average / 1e3 printShowingMaxDecimalPlaces: 3);
-				nextPutAll: 'ms'].
-		(self showGPUTimeInWindowTitle and: [gpuTimes notEmpty]) ifTrue: [
-			stream
-				nextPutAll: ' | GPU: ';
-				nextPutAll: (gpuTimes average / 1e3 printShowingMaxDecimalPlaces: 3);
-				nextPutAll: 'us']]
+		self printWindowTitleOn: stream]
 ]
 
 {
