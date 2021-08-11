@@ -89,7 +89,7 @@ GLUnpackLibrary >> library: aLibrary [
 
 {
 	#category : #compiling,
-	#'squeak_changestamp' : 'stlu 7/22/2021 19:12'
+	#'squeak_changestamp' : 'stlu 8/11/2021 13:27'
 }
 GLUnpackLibrary >> typesToUnpack [
 
@@ -97,5 +97,5 @@ GLUnpackLibrary >> typesToUnpack [
 	reason being that enums can also be valid inputs for arguments with these more generic types.
 	this should not pose a problem, since all other valid objects are idempotent to #value.
 	may even need to be expanded in the future."
-	^ #( 'GLenum' 'GLbitfield' 'GLint' 'GLuint' )
+	^ #( 'GLenum' 'GLbitfield' 'GLint' 'GLuint' 'GLboolean' )
 ]
