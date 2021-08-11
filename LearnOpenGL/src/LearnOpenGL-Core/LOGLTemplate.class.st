@@ -284,14 +284,14 @@ LOGLTemplate >> renderLoop [
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 6/17/2021 13:13'
+	#'squeak_changestamp' : 'stlu 8/11/2021 15:45'
 }
 LOGLTemplate >> run [
 
 	"GLFW init."
 	GLFW targetVersion: (GL33 profile: #core).
 	GLFW windowHint: GLFW_FLOATING with: true.
-	GLFW windowHint: GLFW_OPENGL_DEBUG_CONTEXT with: true.
+	GLFW windowHint: GLFW_OPENGL_DEBUG_CONTEXT with: false.
 
 	window := GLFWWindow
 				extent: self initialWindowExtent
