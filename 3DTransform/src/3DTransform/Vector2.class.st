@@ -51,18 +51,20 @@ Vector2 >> asPoint [
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 8/12/2021 18:11'
 }
 Vector2 >> u [
-	^self floatAt: 1
+
+	^ self componentAt: 1
 ]
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 8/12/2021 18:16'
 }
 Vector2 >> u: aFloat [
-	self floatAt: 1 put: aFloat
+
+	self componentAt: 1 put: aFloat.
 ]
 
 {
@@ -76,18 +78,20 @@ Vector2 >> u: uValue v: vValue [
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 8/12/2021 18:11'
 }
 Vector2 >> v [
-	^self floatAt: 2
+
+	^ self componentAt: 2
 ]
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 8/12/2021 18:16'
 }
 Vector2 >> v: aFloat [
-	self floatAt: 2 put: aFloat
+
+	self componentAt: 2 put: aFloat.
 ]
 
 {
@@ -100,10 +104,11 @@ Vector2 >> x [
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 8/12/2021 18:16'
 }
 Vector2 >> x: aFloat [
-	self floatAt: 1 put: aFloat
+
+	self componentAt: 1 put: aFloat.
 ]
 
 {
@@ -125,8 +130,9 @@ Vector2 >> y [
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 8/12/2021 18:16'
 }
 Vector2 >> y: aFloat [
-	self floatAt: 2 put: aFloat
+
+	self componentAt: 2 put: aFloat.
 ]

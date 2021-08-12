@@ -61,12 +61,12 @@ Quaternion class >> identity [
 
 {
 	#category : #'class initialization',
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 8/12/2021 18:14'
 }
 Quaternion class >> initialize [
 	"Quaternion initialize"
 	QuaternionIdentity := self new.
-	QuaternionIdentity floatAt: 1 put: 1.0.
+	QuaternionIdentity componentAt: 1 put: 1.0.
 ]
 
 {

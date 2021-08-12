@@ -121,50 +121,56 @@ VectorColor3 >> asVectorColor4 [
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 8/12/2021 18:11'
 }
 VectorColor3 >> b [
-	^self floatAt: 3
+
+	^ self componentAt: 3
 ]
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 8/12/2021 18:11'
 }
 VectorColor3 >> blue [
-	^self floatAt: 3
+
+	^ self componentAt: 3
 ]
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 8/12/2021 18:17'
 }
 VectorColor3 >> blue: aNumber [
-	self floatAt: 3 put: aNumber
+
+	self componentAt: 3 put: aNumber.
 ]
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 8/12/2021 18:12'
 }
 VectorColor3 >> g [
-	^self floatAt: 2
+
+	^ self componentAt: 2
 ]
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 8/12/2021 18:12'
 }
 VectorColor3 >> green [
-	^self floatAt: 2
+
+	^ self componentAt: 2
 ]
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 8/12/2021 18:17'
 }
 VectorColor3 >> green: aNumber [
-	self floatAt: 2 put: aNumber
+
+	self componentAt: 2 put: aNumber.
 ]
 
 {
@@ -221,10 +227,11 @@ VectorColor3 >> privateLoadFrom: srcObject [
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 8/12/2021 18:12'
 }
 VectorColor3 >> r [
-	^self floatAt: 1
+
+	^ self componentAt: 1
 ]
 
 {
@@ -251,16 +258,18 @@ VectorColor3 >> r: rValue g: gValue b: bValue a: aValue [
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 8/12/2021 18:12'
 }
 VectorColor3 >> red [
-	^self floatAt: 1
+
+	^ self componentAt: 1
 ]
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 8/12/2021 18:17'
 }
 VectorColor3 >> red: aNumber [
-	self floatAt: 1 put: aNumber
+
+	self componentAt: 1 put: aNumber.
 ]

@@ -18,7 +18,7 @@ VectorColor4Array class >> contentsClass [
 
 {
 	#category : #'special ops',
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 8/12/2021 18:07'
 }
 VectorColor4Array >> += aColor [
 	"Add the given color to all the elements in the receiver"
@@ -27,41 +27,39 @@ VectorColor4Array >> += aColor [
 	g := aColor green.
 	b := aColor blue.
 	a := aColor alpha.
-	1 to: self basicSize by: 4 do:[:i|
-		self floatAt: i put: (self floatAt: i) + r.
-		self floatAt: i+1 put: (self floatAt: i+1) + g.
-		self floatAt: i+2 put: (self floatAt: i+2) + b.
-		self floatAt: i+3 put: (self floatAt: i+3) + a.
-	].
+	1 to: self basicSize by: 4 do: [:i |
+		self componentAt: i put: (self componentAt: i) + r.
+		self componentAt: i+1 put: (self componentAt: i+1) + g.
+		self componentAt: i+2 put: (self componentAt: i+2) + b.
+		self componentAt: i+3 put: (self componentAt: i+3) + a].
 ]
 
 {
 	#category : #'special ops',
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 8/12/2021 18:07'
 }
 VectorColor4Array >> add: aColor4 at: index [
 	| baseIdx |
 	baseIdx := index-1*4.
-	self floatAt: baseIdx+1 put: (self floatAt: baseIdx+1) + aColor4 red.
-	self floatAt: baseIdx+2 put: (self floatAt: baseIdx+2) + aColor4 green.
-	self floatAt: baseIdx+3 put: (self floatAt: baseIdx+3) + aColor4 blue.
-	self floatAt: baseIdx+4 put: (self floatAt: baseIdx+4) + aColor4 alpha.
+	self componentAt: baseIdx+1 put: (self componentAt: baseIdx+1) + aColor4 red.
+	self componentAt: baseIdx+2 put: (self componentAt: baseIdx+2) + aColor4 green.
+	self componentAt: baseIdx+3 put: (self componentAt: baseIdx+3) + aColor4 blue.
+	self componentAt: baseIdx+4 put: (self componentAt: baseIdx+4) + aColor4 alpha.
 
 ]
 
 {
 	#category : #'special ops',
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 8/12/2021 18:08'
 }
 VectorColor4Array >> clampAllFrom: minValue to: maxValue [
 	"Clamp all elements in the receiver to be in the range (minValue, maxValue)"
-	| value |
-	1 to: self basicSize do:[:i|
-		value := self floatAt: i.
+	1 to: self basicSize do: [:i |
+		| value |
+		value := self componentAt: i.
 		value := value min: maxValue.
 		value := value max: minValue.
-		self floatAt: i put: value.
-	].
+		self componentAt: i put: value].
 ]
 
 {

@@ -53,26 +53,29 @@ VectorColor class >> red: r green: g blue: b alpha: a [
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 8/12/2021 18:11'
 }
 VectorColor >> a [
-	^self floatAt: 4
+
+	^ self componentAt: 4
 ]
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 8/12/2021 18:11'
 }
 VectorColor >> alpha [
-	^self floatAt: 4
+
+	^ self componentAt: 4
 ]
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 8/12/2021 18:16'
 }
 VectorColor >> alpha: aNumber [
-	self floatAt: 4 put: aNumber
+
+	self componentAt: 4 put: aNumber.
 ]
 
 {
@@ -112,26 +115,29 @@ VectorColor >> asVectorColor [
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 8/12/2021 18:11'
 }
 VectorColor >> b [
-	^self floatAt: 3
+
+	^ self componentAt: 3
 ]
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 8/12/2021 18:11'
 }
 VectorColor >> blue [
-	^self floatAt: 3
+
+	^ self componentAt: 3
 ]
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 8/12/2021 18:16'
 }
 VectorColor >> blue: aNumber [
-	self floatAt: 3 put: aNumber
+
+	self componentAt: 3 put: aNumber.
 ]
 
 {
@@ -148,26 +154,29 @@ VectorColor >> copyFrom: array [
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 8/12/2021 18:11'
 }
 VectorColor >> g [
-	^self floatAt: 2
+
+	^ self componentAt: 2
 ]
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 8/12/2021 18:11'
 }
 VectorColor >> green [
-	^self floatAt: 2
+
+	^ self componentAt: 2
 ]
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 8/12/2021 18:17'
 }
 VectorColor >> green: aNumber [
-	self floatAt: 2 put: aNumber
+
+	self componentAt: 2 put: aNumber.
 ]
 
 {
@@ -224,10 +233,11 @@ VectorColor >> privateLoadFrom: srcObject [
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 8/12/2021 18:11'
 }
 VectorColor >> r [
-	^self floatAt: 1
+
+	^ self componentAt: 1
 ]
 
 {
@@ -243,16 +253,18 @@ VectorColor >> r: rValue g: gValue b: bValue a: aValue [
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 8/12/2021 18:11'
 }
 VectorColor >> red [
-	^self floatAt: 1
+
+	^ self componentAt: 1
 ]
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 8/12/2021 18:17'
 }
 VectorColor >> red: aNumber [
-	self floatAt: 1 put: aNumber
+
+	self componentAt: 1 put: aNumber.
 ]
