@@ -10,7 +10,8 @@ Class {
 		'frameTimes',
 		'renderTimes',
 		'gpuTimes',
-		'timeOfLastWindowTitle'
+		'timeOfLastWindowTitle',
+		'numFrames'
 	],
 	#pools : [
 		'GLConstants',
@@ -161,6 +162,15 @@ LOGLTemplate >> mousePositionChangedTo: aPoint [
 ]
 
 {
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 8/12/2021 13:22'
+}
+LOGLTemplate >> numFrames [
+
+	^ numFrames
+]
+
+{
 	#category : #'window title',
 	#'squeak_changestamp' : 'stlu 8/11/2021 17:12'
 }
@@ -257,7 +267,7 @@ LOGLTemplate >> render: deltaSecs [
 
 {
 	#category : #running,
-	#'squeak_changestamp' : 'stlu 6/17/2021 13:14'
+	#'squeak_changestamp' : 'stlu 8/12/2021 13:21'
 }
 LOGLTemplate >> renderLoop [
 
@@ -279,12 +289,13 @@ LOGLTemplate >> renderLoop [
 			GLFW pollEvents].
 		self shouldUpdateWindowTitle ifTrue: [self updateWindowTitle].
 		timeOfLastFrame := currentFrameTime.
+		numFrames := numFrames + 1.
 		self isModal ifFalse: [Processor yield]]
 ]
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 8/11/2021 15:45'
+	#'squeak_changestamp' : 'stlu 8/12/2021 13:21'
 }
 LOGLTemplate >> run [
 
@@ -300,6 +311,7 @@ LOGLTemplate >> run [
 	window ifNil: [^ self error: 'Failed to create GLFW window'].
 	timeOfLastFrame := Time utcMicrosecondClock / 1e6.
 	timeOfLastWindowTitle := Time utcMicrosecondClock.
+	numFrames := 0.
 	
 	library := window context library withErrorChecking withVersionChecking.
 	library makeCurrentDuring: [
