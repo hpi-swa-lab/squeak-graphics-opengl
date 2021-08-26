@@ -32,27 +32,21 @@ GLTexture2D class >> target [
 ]
 
 {
-	#category : #binding,
-	#'squeak_changestamp' : 'stlu 11/3/2020 15:31'
+	#category : #converting,
+	#'squeak_changestamp' : 'stlu 8/27/2021 00:10'
 }
 GLTexture2D >> asForm [
 
-	| bufSize data |
-	bufSize := self extent area * 4.
-	data := ByteArray new: bufSize.
+	| form |
+	form := Form extent: self extent depth: 32.
 	GL
 		getTextureImage: id
 		with: 0
 		with: GL_BGRA
-		with: GL_UNSIGNED_INT_8_8_8_8
-		with: bufSize
-		with: data.
-	^ Form
-		extent: self extent
-		depth: 32
-		bits: ((Bitmap new: bufSize)
-			copyFromByteArray: data;
-			yourself)
+		with: GL_UNSIGNED_BYTE
+		with: form bits byteSize
+		with: form bits.
+	^ form
 ]
 
 {
