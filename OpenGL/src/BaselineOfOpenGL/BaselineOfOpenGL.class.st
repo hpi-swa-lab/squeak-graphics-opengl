@@ -6,7 +6,7 @@ Class {
 
 {
 	#category : #baseline,
-	#'squeak_changestamp' : 'stlu 6/11/2021 10:19'
+	#'squeak_changestamp' : 'stlu 8/27/2021 00:06'
 }
 BaselineOfOpenGL >> baseline: spec [
 	<baseline>
@@ -16,7 +16,7 @@ BaselineOfOpenGL >> baseline: spec [
 				spec
 					className: 'ConfigurationOfFFI';
 					repository: 'http://www.squeaksource.com/MetacelloRepository';
-					version: '2.0'];
+					versionString: #development];
 			
 			package: 'OpenGL-Types' with: [spec requires: #('FFI')];
 			package: 'OpenGL-Core' with: [spec requires: #('FFI' 'OpenGL-Types')];
