@@ -9,11 +9,14 @@ Class {
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 8/28/2021 13:57'
 }
 GLFWWindow class >> current [
 
-	^ self window: GLFW getCurrentContext
+	| window |
+	^ (window := GLFW getCurrentContext) isNull
+		ifTrue: [nil]
+		ifFalse: [window]
 ]
 
 {
@@ -27,27 +30,16 @@ GLFWWindow class >> extent: aPoint title: aString [
 
 {
 	#category : #'instance creation',
-	#'squeak_changestamp' : 'stlu 1/6/2021 14:00'
+	#'squeak_changestamp' : 'stlu 8/28/2021 13:52'
 }
 GLFWWindow class >> extent: aPoint title: aString monitor: monitor share: window [
 
-	^ self window: (GLFW
-					createWindow: aPoint x
-					with: aPoint y
-					with: aString
-					with: monitor
-					with: window)
-]
-
-{
-	#category : #private,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
-}
-GLFWWindow class >> window: aWindow [
-
-	^ aWindow isNull
-		ifTrue: [nil]
-		ifFalse: [aWindow]
+	^ GLFW
+		createWindow: aPoint x
+		with: aPoint y
+		with: aString
+		with: monitor
+		with: window
 ]
 
 {

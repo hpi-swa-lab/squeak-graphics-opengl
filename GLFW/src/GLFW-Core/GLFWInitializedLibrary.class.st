@@ -59,28 +59,31 @@ GLFWInitializedLibrary >> contexts [
 
 {
 	#category : #callbacks,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 8/28/2021 12:39'
 }
-GLFWInitializedLibrary >> createCallback: aBlock signature: aString named: aSymbol [
-
+GLFWInitializedLibrary >> createCallback: aBlock signature: aString named: aSymbol during: oneArgBlock [
+	"for global callbacks"
 	^ self
 		createCallback: aBlock
 		signature: aString
 		named: aSymbol
 		forWindow: self
+		during: oneArgBlock
 ]
 
 {
 	#category : #callbacks,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 8/28/2021 12:36'
 }
-GLFWInitializedLibrary >> createCallback: aBlock signature: aString named: aSymbol forWindow: aWindow [
+GLFWInitializedLibrary >> createCallback: callbackBlock signature: callbackSignature named: aSymbol forWindow: aWindow during: oneArgBlock [
 
-	^ (self callbacksForWindow: aWindow)
-		at: aSymbol
-		put: (FFICallback
-				signature: aString
-				block: aBlock)
+	| windowCallbacks newCallback oldCallback |
+	windowCallbacks := self callbacksForWindow: aWindow.
+	oldCallback := windowCallbacks at: aSymbol ifAbsent: nil.
+	newCallback := callbackBlock signature: callbackSignature.
+	^ [oneArgBlock value: newCallback] ensure: [
+		oldCallback ifNotNil: [oldCallback free].
+		windowCallbacks at: aSymbol put: newCallback]
 ]
 
 {
@@ -105,12 +108,19 @@ GLFWInitializedLibrary >> createStandardCursor: shape [
 
 {
 	#category : #'api - window creation',
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 8/28/2021 13:52'
 }
 GLFWInitializedLibrary >> createWindow: width with: height with: title with: monitor with: share [
 
-	<apicall: GLFWWindow* 'glfwCreateWindow' (int int string GLFWMonitor* GLFWWindow*)>
-	^ self externalCallFailed
+	| window |
+	window := self
+		privateCreateWindow: width asInteger
+		with: height asInteger
+		with: title
+		with: monitor
+		with: share.
+	window isNull ifTrue: [^ nil].
+	^ window
 ]
 
 {
@@ -146,12 +156,15 @@ GLFWInitializedLibrary >> destroyCursor: cursor [
 
 {
 	#category : #'api - window creation',
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 8/28/2021 13:36'
 }
-GLFWInitializedLibrary >> destroyWindow: handle [
+GLFWInitializedLibrary >> destroyWindow: aWindow [
 
-	<apicall: void 'glfwDestroyWindow' (GLFWWindow*)>
-	^ self externalCallFailed
+	self privateDestroyWindow: aWindow.
+	(callbacks removeKey: aWindow ifAbsent: nil) ifNotNil: [:windowCallbacks |
+		windowCallbacks valuesDo: [:callback |
+			callback free]].
+	contexts removeKey: aWindow ifAbsent: nil.
 ]
 
 {
@@ -697,6 +710,26 @@ GLFWInitializedLibrary >> postEmptyEvent [
 
 {
 	#category : #private,
+	#'squeak_changestamp' : 'stlu 8/28/2021 13:47'
+}
+GLFWInitializedLibrary >> privateCreateWindow: width with: height with: title with: monitor with: share [
+
+	<apicall: GLFWWindow* 'glfwCreateWindow' (int int string GLFWMonitor* GLFWWindow*)>
+	^ self externalCallFailed
+]
+
+{
+	#category : #private,
+	#'squeak_changestamp' : 'stlu 8/28/2021 13:23'
+}
+GLFWInitializedLibrary >> privateDestroyWindow: handle [
+
+	<apicall: void 'glfwDestroyWindow' (GLFWWindow*)>
+	^ self externalCallFailed
+]
+
+{
+	#category : #private,
 	#'squeak_changestamp' : 'stlu 6/6/2021 15:36'
 }
 GLFWInitializedLibrary >> privateSetCharCallback: aWindow with: anFFICallback [
@@ -927,38 +960,34 @@ GLFWInitializedLibrary >> restoreWindow: window [
 
 {
 	#category : #'api - keyboard input',
-	#'squeak_changestamp' : 'stlu 6/6/2021 15:31'
+	#'squeak_changestamp' : 'stlu 8/28/2021 12:49'
 }
 GLFWInitializedLibrary >> setCharCallback: aWindow with: aBlock [
 
-	| callback |
-	callback := self
-					createCallback: aBlock
-					signature: '<callback: void (*)(GLFWWindow* uint)>'
-						"GLFWwindow* window, unsigned int codepoint"
-					named: #char
-					forWindow: aWindow.
 	self
-		privateSetCharCallback: aWindow
-		with: callback
+		createCallback: aBlock
+		signature: '<callback: void (*)(GLFWWindow* uint)>'
+			"GLFWwindow* window, unsigned int codepoint"
+		named: #char
+		forWindow: aWindow
+		during: [:callback |
+			self privateSetCharCallback: aWindow with: callback].
 ]
 
 {
 	#category : #'api - keyboard input',
-	#'squeak_changestamp' : 'stlu 6/6/2021 15:31'
+	#'squeak_changestamp' : 'stlu 8/28/2021 12:49'
 }
 GLFWInitializedLibrary >> setCharModsCallback: aWindow with: aBlock [
 
-	| callback |
-	callback := self
-					createCallback: aBlock
-					signature: '<callback: void (*)(GLFWWindow* uint int)>'
-						"GLFWwindow* window, unsigned int codepoint, int mods"
-					named: #charMods
-					forWindow: aWindow.
 	self
-		privateSetCharModsCallback: aWindow
-		with: callback
+		createCallback: aBlock
+		signature: '<callback: void (*)(GLFWWindow* uint int)>'
+			"GLFWwindow* window, unsigned int codepoint, int mods"
+		named: #charMods
+		forWindow: aWindow
+		during: [:callback |
+			self privateSetCharModsCallback: aWindow with: callback].
 ]
 
 {
@@ -983,20 +1012,18 @@ GLFWInitializedLibrary >> setCursor: window with: cursor [
 
 {
 	#category : #'api - mouse input',
-	#'squeak_changestamp' : 'stlu 6/6/2021 15:32'
+	#'squeak_changestamp' : 'stlu 8/28/2021 12:49'
 }
 GLFWInitializedLibrary >> setCursorEnterCallback: aWindow with: aBlock [
 
-	| callback |
-	callback := self
-					createCallback: aBlock
-					signature: '<callback: void (*)(GLFWWindow* int)>'
-						"GLFWwindow* window, int entered"
-					named: #cursorEnter
-					forWindow: aWindow.
 	self
-		privateSetCursorEnterCallback: aWindow
-		with: callback
+		createCallback: aBlock
+		signature: '<callback: void (*)(GLFWWindow* int)>'
+			"GLFWwindow* window, int entered"
+		named: #cursorEnter
+		forWindow: aWindow
+		during: [:callback |
+			self privateSetCursorEnterCallback: aWindow with: callback].
 ]
 
 {
@@ -1011,56 +1038,50 @@ GLFWInitializedLibrary >> setCursorPos: window with: xpos with: ypos [
 
 {
 	#category : #'api - mouse input',
-	#'squeak_changestamp' : 'stlu 6/6/2021 15:32'
+	#'squeak_changestamp' : 'stlu 8/28/2021 12:49'
 }
 GLFWInitializedLibrary >> setCursorPosCallback: aWindow with: aBlock [
 
-	| callback |
-	callback := self
-					createCallback: aBlock
-					signature: '<callback: void (*)(GLFWWindow* double double)>'
-						"GLFWwindow* window, double xpos, double ypos"
-					named: #cursorPos
-					forWindow: aWindow.
 	self
-		privateSetCursorPosCallback: aWindow
-		with: callback
+		createCallback: aBlock
+		signature: '<callback: void (*)(GLFWWindow* double double)>'
+			"GLFWwindow* window, double xpos, double ypos"
+		named: #cursorPos
+		forWindow: aWindow
+		during: [:callback |
+			self privateSetCursorPosCallback: aWindow with: callback].
 ]
 
 {
 	#category : #'api - mouse input',
-	#'squeak_changestamp' : 'stlu 6/6/2021 15:32'
+	#'squeak_changestamp' : 'stlu 8/28/2021 12:49'
 }
 GLFWInitializedLibrary >> setDropCallback: aWindow with: aBlock [
 
-	| callback |
-	callback := self
-					createCallback: aBlock
-					signature: '<callback: void (*)(GLFWWindow* int string*)>'
-						"GLFWwindow* window, int path_count, const char* paths[]"
-					named: #drop
-					forWindow: aWindow.
 	self
-		privateSetDropCallback: aWindow
-		with: callback
+		createCallback: aBlock
+		signature: '<callback: void (*)(GLFWWindow* int string*)>'
+			"GLFWwindow* window, int path_count, const char* paths[]"
+		named: #drop
+		forWindow: aWindow
+		during: [:callback |
+			self privateSetDropCallback: aWindow with: callback].
 ]
 
 {
 	#category : #'api - window callbacks',
-	#'squeak_changestamp' : 'stlu 6/6/2021 15:32'
+	#'squeak_changestamp' : 'stlu 8/28/2021 12:49'
 }
 GLFWInitializedLibrary >> setFramebufferSizeCallback: aWindow with: aBlock [
 
-	| callback |
-	callback := self
-					createCallback: aBlock
-					signature: '<callback: void (*)(GLFWWindow* int int)>'
-						"GLFWwindow* window, int width, int height"
-					named: #framebufferSize
-					forWindow: aWindow.
 	self
-		privateSetFramebufferSizeCallback: aWindow
-		with: callback
+		createCallback: aBlock
+		signature: '<callback: void (*)(GLFWWindow* int int)>'
+			"GLFWwindow* window, int width, int height"
+		named: #framebufferSize
+		forWindow: aWindow
+		during: [:callback |
+			self privateSetFramebufferSizeCallback: aWindow with: callback].
 ]
 
 {
@@ -1095,17 +1116,17 @@ GLFWInitializedLibrary >> setInputMode: window with: mode with: value [
 
 {
 	#category : #'api - joystick input',
-	#'squeak_changestamp' : 'stlu 6/6/2021 15:32'
+	#'squeak_changestamp' : 'stlu 8/28/2021 12:53'
 }
 GLFWInitializedLibrary >> setJoystickCallback: aBlock [
 
-	| callback |
-	callback := self
-					createCallback: aBlock
-					signature: '<callback: void (*)(int int)>'
-						"int jid, int event"
-					named: #joystick.
-	self privateSetJoystickCallback: callback
+	self
+		createCallback: aBlock
+		signature: '<callback: void (*)(int int)>'
+			"int jid, int event"
+		named: #joystick
+		during: [:callback |
+			self privateSetJoystickCallback: callback].
 ]
 
 {
@@ -1120,35 +1141,33 @@ GLFWInitializedLibrary >> setJoystickUserPointer: jid with: pointer [
 
 {
 	#category : #'api - keyboard input',
-	#'squeak_changestamp' : 'stlu 6/6/2021 15:32'
+	#'squeak_changestamp' : 'stlu 8/28/2021 12:49'
 }
 GLFWInitializedLibrary >> setKeyCallback: aWindow with: aBlock [
 	
-	| callback |
-	callback := self
-					createCallback: aBlock
-					signature: '<callback: void (*)(GLFWWindow* int int int int)>'
-						"GLFWwindow* window, int key, int scancode, int action, int mods"
-					named: #key
-					forWindow: aWindow.
 	self
-		privateSetKeyCallback: aWindow
-		with: callback
+		createCallback: aBlock
+		signature: '<callback: void (*)(GLFWWindow* int int int int)>'
+			"GLFWwindow* window, int key, int scancode, int action, int mods"
+		named: #key
+		forWindow: aWindow
+		during: [:callback |
+			self privateSetKeyCallback: aWindow with: callback].
 ]
 
 {
 	#category : #'api - monitors',
-	#'squeak_changestamp' : 'stlu 6/6/2021 15:32'
+	#'squeak_changestamp' : 'stlu 8/28/2021 12:53'
 }
 GLFWInitializedLibrary >> setMonitorCallback: aBlock [
 
-	| callback |
-	callback := self
-					createCallback: aBlock
-					signature: '<callback: void (*)(GLFWMonitor* int)>'
-						"GLFWmonitor* monitor, int event"
-					named: #monitor.
-	self privateSetMonitorCallback: callback
+	self
+		createCallback: aBlock
+		signature: '<callback: void (*)(GLFWMonitor* int)>'
+			"GLFWmonitor* monitor, int event"
+		named: #monitor
+		during: [:callback |
+			self privateSetMonitorCallback: callback].
 ]
 
 {
@@ -1163,38 +1182,34 @@ GLFWInitializedLibrary >> setMonitorUserPointer: monitor with: pointer [
 
 {
 	#category : #'api - mouse input',
-	#'squeak_changestamp' : 'stlu 6/6/2021 15:32'
+	#'squeak_changestamp' : 'stlu 8/28/2021 12:49'
 }
 GLFWInitializedLibrary >> setMouseButtonCallback: aWindow with: aBlock [
 
-	| callback |
-	callback := self
-					createCallback: aBlock
-					signature: '<callback: void (*)(GLFWWindow* int int int)>'
-						"GLFWwindow* window, int button, int action, int mods"
-					named: #mouseButton
-					forWindow: aWindow.
 	self
-		privateSetMouseButtonCallback: aWindow
-		with: callback
+		createCallback: aBlock
+		signature: '<callback: void (*)(GLFWWindow* int int int)>'
+			"GLFWwindow* window, int button, int action, int mods"
+		named: #mouseButton
+		forWindow: aWindow
+		during: [:callback |
+			self privateSetMouseButtonCallback: aWindow with: callback].
 ]
 
 {
 	#category : #'api - mouse input',
-	#'squeak_changestamp' : 'stlu 6/6/2021 15:32'
+	#'squeak_changestamp' : 'stlu 8/28/2021 12:49'
 }
 GLFWInitializedLibrary >> setScrollCallback: aWindow with: aBlock [
 
-	| callback |
-	callback := self
-					createCallback: aBlock
-					signature: '<callback: void (*)(GLFWWindow* double double)>'
-						"GLFWwindow* window, double xoffset, double yoffset"
-					named: #scroll
-					forWindow: aWindow.
 	self
-		privateSetScrollCallback: aWindow
-		with: callback
+		createCallback: aBlock
+		signature: '<callback: void (*)(GLFWWindow* double double)>'
+			"GLFWwindow* window, double xoffset, double yoffset"
+		named: #scroll
+		forWindow: aWindow
+		during: [:callback |
+			self privateSetScrollCallback: aWindow with: callback].
 ]
 
 {
@@ -1229,56 +1244,50 @@ GLFWInitializedLibrary >> setWindowAttrib: window with: attrib with: value [
 
 {
 	#category : #'api - window callbacks',
-	#'squeak_changestamp' : 'stlu 6/6/2021 15:32'
+	#'squeak_changestamp' : 'stlu 8/28/2021 12:49'
 }
 GLFWInitializedLibrary >> setWindowCloseCallback: aWindow with: aBlock [
 
-	| callback |
-	callback := self
-					createCallback: aBlock
-					signature: '<callback: void (*)(GLFWWindow*)>'
-						"GLFWwindow* window"
-					named: #windowClose
-					forWindow: aWindow.
 	self
-		privateSetWindowCloseCallback: aWindow
-		with: callback
+		createCallback: aBlock
+		signature: '<callback: void (*)(GLFWWindow*)>'
+			"GLFWwindow* window"
+		named: #windowClose
+		forWindow: aWindow
+		during: [:callback |
+			self privateSetWindowCloseCallback: aWindow with: callback].
 ]
 
 {
 	#category : #'api - window callbacks',
-	#'squeak_changestamp' : 'stlu 6/6/2021 15:32'
+	#'squeak_changestamp' : 'stlu 8/28/2021 12:49'
 }
 GLFWInitializedLibrary >> setWindowContentScaleCallback: aWindow with: aBlock [
 
-	| callback |
-	callback := self
-					createCallback: aBlock
-					signature: '<callback: void (*)(GLFWWindow* float float)>'
-						"GLFWwindow* window, float xscale, float yscale"
-					named: #windowContentScale
-					forWindow: aWindow.
 	self
-		privateSetWindowContentScaleCallback: aWindow
-		with: callback
+		createCallback: aBlock
+		signature: '<callback: void (*)(GLFWWindow* float float)>'
+			"GLFWwindow* window, float xscale, float yscale"
+		named: #windowContentScale
+		forWindow: aWindow
+		during: [:callback |
+			self privateSetWindowContentScaleCallback: aWindow with: callback].
 ]
 
 {
 	#category : #'api - window callbacks',
-	#'squeak_changestamp' : 'stlu 6/6/2021 15:32'
+	#'squeak_changestamp' : 'stlu 8/28/2021 12:50'
 }
 GLFWInitializedLibrary >> setWindowFocusCallback: aWindow with: aBlock [
 
-	| callback |
-	callback := self
-					createCallback: aBlock
-					signature: '<callback: void (*)(GLFWWindow* int)>'
-						"GLFWwindow* window, int focused"
-					named: #windowFocus
-					forWindow: aWindow.
 	self
-		privateSetWindowFocusCallback: aWindow
-		with: callback
+		createCallback: aBlock
+		signature: '<callback: void (*)(GLFWWindow* int)>'
+			"GLFWwindow* window, int focused"
+		named: #windowFocus
+		forWindow: aWindow
+		during: [:callback |
+			self privateSetWindowFocusCallback: aWindow with: callback].
 ]
 
 {
@@ -1293,38 +1302,34 @@ GLFWInitializedLibrary >> setWindowIcon: window with: count with: images [
 
 {
 	#category : #'api - window callbacks',
-	#'squeak_changestamp' : 'stlu 6/6/2021 15:32'
+	#'squeak_changestamp' : 'stlu 8/28/2021 12:50'
 }
 GLFWInitializedLibrary >> setWindowIconifyCallback: aWindow with: aBlock [
 
-	| callback |
-	callback := self
-					createCallback: aBlock
-					signature: '<callback: void (*)(GLFWWindow* int)>'
-						"GLFWwindow* window, int iconified"
-					named: #windowIconify
-					forWindow: aWindow.
 	self
-		privateSetWindowIconifyCallback: aWindow
-		with: callback
+		createCallback: aBlock
+		signature: '<callback: void (*)(GLFWWindow* int)>'
+			"GLFWwindow* window, int iconified"
+		named: #windowIconify
+		forWindow: aWindow
+		during: [:callback |
+			self privateSetWindowIconifyCallback: aWindow with: callback].
 ]
 
 {
 	#category : #'api - window callbacks',
-	#'squeak_changestamp' : 'stlu 6/6/2021 15:32'
+	#'squeak_changestamp' : 'stlu 8/28/2021 12:51'
 }
 GLFWInitializedLibrary >> setWindowMaximizeCallback: aWindow with: aBlock [
 
-	| callback |
-	callback := self
-					createCallback: aBlock
-					signature: '<callback: void (*)(GLFWWindow* int)>'
-						"GLFWwindow* window, int maximized"
-					named: #windowMaximize
-					forWindow: aWindow.
 	self
-		privateSetWindowMaximizeCallback: aWindow
-		with: callback
+		createCallback: aBlock
+		signature: '<callback: void (*)(GLFWWindow* int)>'
+			"GLFWwindow* window, int maximized"
+		named: #windowMaximize
+		forWindow: aWindow
+		during: [:callback |
+			self privateSetWindowMaximizeCallback: aWindow with: callback].
 ]
 
 {
@@ -1359,38 +1364,34 @@ GLFWInitializedLibrary >> setWindowPos: window with: xpos with: ypos [
 
 {
 	#category : #'api - window callbacks',
-	#'squeak_changestamp' : 'stlu 6/6/2021 15:33'
+	#'squeak_changestamp' : 'stlu 8/28/2021 12:51'
 }
 GLFWInitializedLibrary >> setWindowPosCallback: aWindow with: aBlock [
 
-	| callback |
-	callback := self
-					createCallback: aBlock
-					signature: '<callback: void (*)(GLFWWindow* int int)>'
-						"GLFWwindow* window, int xpos, int ypos"
-					named: #windowPos
-					forWindow: aWindow.
 	self
-		privateSetWindowPosCallback: aWindow
-		with: callback
+		createCallback: aBlock
+		signature: '<callback: void (*)(GLFWWindow* int int)>'
+			"GLFWwindow* window, int xpos, int ypos"
+		named: #windowPos
+		forWindow: aWindow
+		during: [:callback |
+			self privateSetWindowPosCallback: aWindow with: callback].
 ]
 
 {
 	#category : #'api - window callbacks',
-	#'squeak_changestamp' : 'stlu 6/6/2021 15:33'
+	#'squeak_changestamp' : 'stlu 8/28/2021 12:51'
 }
 GLFWInitializedLibrary >> setWindowRefreshCallback: aWindow with: aBlock [
 
-	| callback |
-	callback := self
-					createCallback: aBlock
-					signature: '<callback: void (*)(GLFWWindow*)>'
-						"GLFWwindow* window"
-					named: #windowRefresh
-					forWindow: aWindow.
 	self
-		privateSetWindowRefreshCallback: aWindow
-		with: callback
+		createCallback: aBlock
+		signature: '<callback: void (*)(GLFWWindow*)>'
+			"GLFWwindow* window"
+		named: #windowRefresh
+		forWindow: aWindow
+		during: [:callback |
+			self privateSetWindowRefreshCallback: aWindow with: callback].
 ]
 
 {
@@ -1415,20 +1416,18 @@ GLFWInitializedLibrary >> setWindowSize: window with: width with: height [
 
 {
 	#category : #'api - window callbacks',
-	#'squeak_changestamp' : 'stlu 6/6/2021 15:33'
+	#'squeak_changestamp' : 'stlu 8/28/2021 12:52'
 }
 GLFWInitializedLibrary >> setWindowSizeCallback: aWindow with: aBlock [
 
-	| callback |
-	callback := self
-					createCallback: aBlock
-					signature: '<callback: void (*)(GLFWWindow* int int)>'
-						"GLFWwindow* window, int width, int height"
-					named: #windowSize
-					forWindow: aWindow.
 	self
-		privateSetWindowSizeCallback: aWindow
-		with: callback
+		createCallback: aBlock
+		signature: '<callback: void (*)(GLFWWindow* int int)>'
+			"GLFWwindow* window, int width, int height"
+		named: #windowSize
+		forWindow: aWindow
+		during: [:callback |
+			self privateSetWindowSizeCallback: aWindow with: callback].
 ]
 
 {
@@ -1493,11 +1492,14 @@ GLFWInitializedLibrary >> swapInterval: aNumber [
 
 {
 	#category : #'api - init',
-	#'squeak_changestamp' : 'stlu 4/21/2021 10:59'
+	#'squeak_changestamp' : 'stlu 8/28/2021 14:57'
 }
 GLFWInitializedLibrary >> terminate [
 
 	self privateTerminate.
+	callbacks valuesDo: [:windowCallbacks |
+		windowCallbacks valuesDo: [:callback |
+			callback free]].
 	self beUninitializedLibrary.
 ]
 

@@ -3274,12 +3274,12 @@ GLFWUninitializedLibrary >> X11_INSTANCE_NAME [
 
 {
 	#category : #converting,
-	#'squeak_changestamp' : 'stlu 4/21/2021 10:58'
+	#'squeak_changestamp' : 'stlu 8/28/2021 13:27'
 }
 GLFWUninitializedLibrary >> beInitializedLibrary [
 
 	self changeClassTo: GLFWInitializedLibrary.
-	callbacks := WeakKeyDictionary new.
+	callbacks := Dictionary new.
 	contexts := Dictionary new.
 ]
 
@@ -4218,14 +4218,12 @@ GLFWUninitializedLibrary >> setDropCallback: aWindow with: aBlock [
 
 {
 	#category : #'api - init',
-	#'squeak_changestamp' : 'stlu 6/6/2021 15:33'
+	#'squeak_changestamp' : 'stlu 8/27/2021 14:43'
 }
 GLFWUninitializedLibrary >> setErrorCallback: aBlock [
 
-	errorCallback := FFICallback
-						signature: '<callback: void (*)(int string)>'
-						block: aBlock self.
-	self privateSetErrorCallback: errorCallback
+	errorCallback := aBlock signature: '<callback: void (*)(int string)>'.
+	self privateSetErrorCallback: errorCallback.
 ]
 
 {

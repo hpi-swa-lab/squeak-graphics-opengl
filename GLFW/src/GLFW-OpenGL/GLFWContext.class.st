@@ -11,6 +11,18 @@ Class {
 }
 
 {
+	#category : #private,
+	#'squeak_changestamp' : 'stlu 8/28/2021 14:01'
+}
+GLFWContext class >> newForWindow: aWindow [
+
+	^ self basicNew
+		window: aWindow;
+		initialize;
+		yourself
+]
+
+{
 	#category : #'instance creation',
 	#'squeak_changestamp' : 'stlu 4/16/2021 10:35'
 }
@@ -25,17 +37,14 @@ GLFWContext class >> newIn: bounds version: aGLVersion title: aString [
 
 {
 	#category : #'instance creation',
-	#'squeak_changestamp' : 'stlu 2/12/2021 22:59'
+	#'squeak_changestamp' : 'stlu 8/28/2021 14:05'
 }
 GLFWContext class >> window: aWindow [
 
 	^ GLFW contexts
 		at: aWindow
 		ifAbsentPut: [
-			self basicNew
-				window: aWindow;
-				initialize;
-				yourself]
+			self newForWindow: aWindow]
 ]
 
 {
@@ -134,13 +143,12 @@ GLFWContext >> deactivate [
 
 {
 	#category : #'context actions',
-	#'squeak_changestamp' : 'stlu 12/8/2020 17:47'
+	#'squeak_changestamp' : 'stlu 8/28/2021 13:29'
 }
 GLFWContext >> destroy [
 
 	super destroy.
 	window ifNotNil: [
-		GLFW contexts removeKey: window.
 		window destroy]
 ]
 
