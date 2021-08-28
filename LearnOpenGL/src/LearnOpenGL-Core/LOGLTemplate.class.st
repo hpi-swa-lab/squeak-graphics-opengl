@@ -172,7 +172,7 @@ LOGLTemplate >> numFrames [
 
 {
 	#category : #'window title',
-	#'squeak_changestamp' : 'stlu 8/11/2021 17:12'
+	#'squeak_changestamp' : 'stlu 8/27/2021 14:28'
 }
 LOGLTemplate >> printWindowTitleOn: aStream [
 
@@ -182,10 +182,15 @@ LOGLTemplate >> printWindowTitleOn: aStream [
 			nextPutAll: ' | FT: ';
 			nextPutAll: (frameTimes average / 1e3 printShowingMaxDecimalPlaces: 3);
 			nextPutAll: 'ms'].
+	(self showFrameTimeInWindowTitle and: [frameTimes notEmpty]) ifTrue: [
+		aStream
+			nextPutAll: ' | Jank: ';
+			nextPutAll: (frameTimes max / 1e3 printShowingMaxDecimalPlaces: 3);
+			nextPutAll: 'ms'].
 	(self showRenderTimeInWindowTitle and: [renderTimes notEmpty]) ifTrue: [
 		aStream
 			nextPutAll: ' | RT: ';
-			nextPutAll: (frameTimes average / 1e3 printShowingMaxDecimalPlaces: 3);
+			nextPutAll: (renderTimes average / 1e3 printShowingMaxDecimalPlaces: 3);
 			nextPutAll: 'ms'].
 	(self showGPUTimeInWindowTitle and: [gpuTimes notEmpty]) ifTrue: [
 		aStream
@@ -372,6 +377,15 @@ LOGLTemplate >> showFrameTimeInWindowTitle [
 	#'squeak_changestamp' : 'stlu 6/17/2021 12:33'
 }
 LOGLTemplate >> showGPUTimeInWindowTitle [
+
+	^ true
+]
+
+{
+	#category : #testing,
+	#'squeak_changestamp' : 'stlu 8/27/2021 10:46'
+}
+LOGLTemplate >> showJankInWindowTitle [
 
 	^ true
 ]
