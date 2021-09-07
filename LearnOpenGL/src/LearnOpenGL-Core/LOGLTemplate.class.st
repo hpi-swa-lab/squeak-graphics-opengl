@@ -74,12 +74,11 @@ LOGLTemplate >> framebufferExtentChanged: newExtent [
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 6/17/2021 12:29'
+	#'squeak_changestamp' : 'stlu 9/1/2021 17:17'
 }
 LOGLTemplate >> gpuTimeQuery [
 
-	^ gpuTimeQuery ifNil: [
-		gpuTimeQuery := GLTimeElapsed create]
+	^ gpuTimeQueries last
 ]
 
 {
@@ -178,6 +177,19 @@ LOGLTemplate >> logGPUTime: nanoseconds [
 
 {
 	#category : #logging,
+	#'squeak_changestamp' : 'stlu 9/1/2021 17:31'
+}
+LOGLTemplate >> logGPUTimes [
+
+	gpuTimeQueries copy do: [:query |
+		query isResultAvailable ifFalse: [^ self].
+		self logGPUTime: query result.
+		query delete.
+		gpuTimeQueries removeFirst].
+]
+
+{
+	#category : #logging,
 	#'squeak_changestamp' : 'stlu 6/17/2021 11:17'
 }
 LOGLTemplate >> logRenderTime: microseconds [
@@ -210,6 +222,15 @@ LOGLTemplate >> mouseButton: button changedTo: state with: modifierKeys [
 LOGLTemplate >> mousePositionChangedTo: aPoint [
 
 	"do nothing by default"
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 9/1/2021 17:17'
+}
+LOGLTemplate >> newGPUTimeQuery [
+
+	^ gpuTimeQueries addLast: GLTimeElapsedQuery create
 ]
 
 {
@@ -334,7 +355,7 @@ LOGLTemplate >> render: deltaSecs [
 
 {
 	#category : #running,
-	#'squeak_changestamp' : 'stlu 8/12/2021 13:21'
+	#'squeak_changestamp' : 'stlu 9/1/2021 17:18'
 }
 LOGLTemplate >> renderLoop [
 
@@ -346,13 +367,13 @@ LOGLTemplate >> renderLoop [
 		library makeCurrentDuring: [
 			| frameStartTime |
 			self processInput: delta.
-			self gpuTimeQuery during: [
+			self newGPUTimeQuery during: [
 				frameStartTime := Time utcMicrosecondClock.
 				self render: delta.
 				self logRenderTime: Time utcMicrosecondClock - frameStartTime].
 			window swapBuffers.
-			self logGPUTime: gpuTimeQuery result. "returns only when GPU is done"
 			self logFrameTime: Time utcMicrosecondClock - frameStartTime.
+			self logGPUTimes.
 			GLFW pollEvents].
 		self shouldUpdateWindowTitle ifTrue: [self updateWindowTitle].
 		timeOfLastFrame := currentFrameTime.
