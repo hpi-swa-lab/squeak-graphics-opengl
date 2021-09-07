@@ -6,12 +6,13 @@ Class {
 		'renderProcess',
 		'window',
 		'timeOfLastFrame',
-		'gpuTimeQuery',
+		'gpuTimeQueries',
 		'frameTimes',
 		'renderTimes',
 		'gpuTimes',
 		'timeOfLastWindowTitle',
-		'numFrames'
+		'numFrames',
+		'isModal'
 	],
 	#pools : [
 		'GLConstants',
@@ -38,6 +39,28 @@ LOGLTemplate class >> run [
 LOGLTemplate >> baseWindowTitle [
 
 	^ self class name asString
+]
+
+{
+	#category : #modality,
+	#'squeak_changestamp' : 'stlu 9/6/2021 14:10'
+}
+LOGLTemplate >> beModal [
+
+	isModal := true.
+	renderProcess ifNotNil: [:process |
+		process priority: self modalProcessPriority].
+]
+
+{
+	#category : #modality,
+	#'squeak_changestamp' : 'stlu 9/6/2021 14:10'
+}
+LOGLTemplate >> beNonModal [
+
+	isModal := false.
+	renderProcess ifNotNil: [:process |
+		process priority: self nonModalProcessPriority].
 ]
 
 {
@@ -70,7 +93,7 @@ LOGLTemplate >> initialWindowExtent [
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 6/17/2021 13:11'
+	#'squeak_changestamp' : 'stlu 9/6/2021 13:49'
 }
 LOGLTemplate >> initialize [
 
@@ -78,28 +101,47 @@ LOGLTemplate >> initialize [
 	frameTimes := LOGLFrameHistory new: 120.
 	renderTimes := LOGLFrameHistory new: 120.
 	gpuTimes := LOGLFrameHistory new: 120.
+	
+	gpuTimeQueries := OrderedCollection new.
+	
+	isModal := self isModalByDefault.
 ]
 
 {
-	#category : #testing,
-	#'squeak_changestamp' : 'stlu 1/8/2021 11:48'
+	#category : #modality,
+	#'squeak_changestamp' : 'stlu 9/6/2021 13:48'
 }
 LOGLTemplate >> isModal [
+
+	^ isModal
+]
+
+{
+	#category : #modality,
+	#'squeak_changestamp' : 'stlu 9/6/2021 14:07'
+}
+LOGLTemplate >> isModalByDefault [
 
 	^ false
 ]
 
 {
-	#category : #input,
-	#'squeak_changestamp' : 'stlu 6/30/2021 10:17'
+	#category : #callbacks,
+	#'squeak_changestamp' : 'stlu 9/6/2021 14:05'
 }
 LOGLTemplate >> key: key scanCode: scanCode changedTo: state with: mods [
 
-	"do nothing by default"
+	(key = GLFW_KEY_ESCAPE and: [state = GLFW_RELEASE]) ifTrue: [
+		window shouldClose: true].
+	
+	(key = GLFW_KEY_M
+		and: [state = GLFW_RELEASE]
+		and: [mods anyMask: GLFW_MOD_CONTROL]) ifTrue: [
+			self toggleModal].
 ]
 
 {
-	#category : #input,
+	#category : #callbacks,
 	#'squeak_changestamp' : 'stlu 7/2/2021 23:52'
 }
 LOGLTemplate >> keyStroke: codePoint [
@@ -144,7 +186,16 @@ LOGLTemplate >> logRenderTime: microseconds [
 ]
 
 {
-	#category : #input,
+	#category : #modality,
+	#'squeak_changestamp' : 'stlu 9/6/2021 14:11'
+}
+LOGLTemplate >> modalProcessPriority [
+
+	^ Processor userInterruptPriority
+]
+
+{
+	#category : #callbacks,
 	#'squeak_changestamp' : 'stlu 6/30/2021 09:26'
 }
 LOGLTemplate >> mouseButton: button changedTo: state with: modifierKeys [
@@ -153,12 +204,21 @@ LOGLTemplate >> mouseButton: button changedTo: state with: modifierKeys [
 ]
 
 {
-	#category : #input,
+	#category : #callbacks,
 	#'squeak_changestamp' : 'stlu 6/30/2021 09:22'
 }
 LOGLTemplate >> mousePositionChangedTo: aPoint [
 
 	"do nothing by default"
+]
+
+{
+	#category : #modality,
+	#'squeak_changestamp' : 'stlu 9/6/2021 14:11'
+}
+LOGLTemplate >> nonModalProcessPriority [
+
+	^ Processor userBackgroundPriority
 ]
 
 {
@@ -219,12 +279,14 @@ LOGLTemplate >> processInput: deltaSecs [
 ]
 
 {
-	#category : #running,
-	#'squeak_changestamp' : 'stlu 1/7/2021 12:24'
+	#category : #modality,
+	#'squeak_changestamp' : 'stlu 9/6/2021 14:12'
 }
 LOGLTemplate >> processPriority [
 
-	^ Processor userBackgroundPriority
+	^ self isModal
+		ifTrue: [self modalProcessPriority]
+		ifFalse: [self nonModalProcessPriority]
 ]
 
 {
@@ -300,7 +362,7 @@ LOGLTemplate >> renderLoop [
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 8/12/2021 13:21'
+	#'squeak_changestamp' : 'stlu 9/6/2021 13:52'
 }
 LOGLTemplate >> run [
 
@@ -322,13 +384,13 @@ LOGLTemplate >> run [
 	library makeCurrentDuring: [
 		GLFW swapInterval: (self vSync ifTrue: [1] ifFalse: [0]).
 		self registerCallbacks.
-		self setUp.].
+		self setUp].
 	
-	self spawnNewRenderProcess
+	self spawnNewRenderProcess.
 ]
 
 {
-	#category : #input,
+	#category : #callbacks,
 	#'squeak_changestamp' : 'stlu 2/1/2021 14:51'
 }
 LOGLTemplate >> scrolledBy: offset [
@@ -401,7 +463,7 @@ LOGLTemplate >> showRenderTimeInWindowTitle [
 
 {
 	#category : #running,
-	#'squeak_changestamp' : 'stlu 4/16/2021 10:42'
+	#'squeak_changestamp' : 'stlu 9/6/2021 13:54'
 }
 LOGLTemplate >> spawnNewRenderProcess [
 
@@ -411,7 +473,7 @@ LOGLTemplate >> spawnNewRenderProcess [
 				self tearDown.
 				library context destroy]
 	] newProcess priority: self processPriority.
-	renderProcess resume
+	renderProcess resume.
 ]
 
 {
@@ -421,6 +483,17 @@ LOGLTemplate >> spawnNewRenderProcess [
 LOGLTemplate >> tearDown [
 
 	
+]
+
+{
+	#category : #modality,
+	#'squeak_changestamp' : 'stlu 9/6/2021 14:11'
+}
+LOGLTemplate >> toggleModal [
+
+	self isModal
+		ifTrue: [self beNonModal]
+		ifFalse: [self beModal].
 ]
 
 {

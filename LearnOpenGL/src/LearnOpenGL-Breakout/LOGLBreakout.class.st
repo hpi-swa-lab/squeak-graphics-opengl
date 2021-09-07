@@ -215,15 +215,6 @@ LOGLBreakout >> isKeyPressed: key [
 ]
 
 {
-	#category : #testing,
-	#'squeak_changestamp' : 'stlu 1/8/2021 15:16'
-}
-LOGLBreakout >> isModal [
-
-	^ false
-]
-
-{
 	#category : #'power ups',
 	#'squeak_changestamp' : 'stlu 1/9/2021 18:40'
 }
@@ -295,17 +286,6 @@ LOGLBreakout >> processInput: elapsedSecs [
 					ball position: ball position + (distance @ 0)]]].
 		(self isKeyPressed: GLFW_KEY_SPACE) ifTrue: [
 			ball isStuck: false]]
-]
-
-{
-	#category : #rendering,
-	#'squeak_changestamp' : 'stlu 1/8/2021 11:52'
-}
-LOGLBreakout >> processPriority [
-
-	^ self isModal
-		ifTrue: [Processor userInterruptPriority]
-		ifFalse: [Processor userBackgroundPriority]
 ]
 
 {
