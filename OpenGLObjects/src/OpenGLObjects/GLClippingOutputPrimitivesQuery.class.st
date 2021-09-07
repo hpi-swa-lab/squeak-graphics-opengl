@@ -1,5 +1,5 @@
 Class {
-	#name : #GLClippingOutputPrimitives,
+	#name : #GLClippingOutputPrimitivesQuery,
 	#superclass : #GLScopedQuery,
 	#category : #'OpenGLObjects-Queries'
 }
@@ -8,7 +8,7 @@ Class {
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 5/24/2021 17:34'
 }
-GLClippingOutputPrimitives class >> target [
+GLClippingOutputPrimitivesQuery class >> target [
 
 	^ GL_CLIPPING_OUTPUT_PRIMITIVES
 ]

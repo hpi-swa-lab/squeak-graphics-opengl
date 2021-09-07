@@ -7,7 +7,7 @@ Each combination of vertex stream and query target maintains a separate active q
 The number of vertex streams is given by the value of the implementation-dependent constant MAX_VERTEX_STREAMS.
 "
 Class {
-	#name : #GLPrimitivesGenerated,
+	#name : #GLPrimitivesGeneratedQuery,
 	#superclass : #GLScopedQuery,
 	#category : #'OpenGLObjects-Queries',
 	#'squeak_changestamp' : 'stlu 5/24/2021 15:19'
@@ -17,7 +17,7 @@ Class {
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 5/24/2021 17:35'
 }
-GLPrimitivesGenerated class >> target [
+GLPrimitivesGeneratedQuery class >> target [
 
 	^ GL_PRIMITIVES_GENERATED
 ]

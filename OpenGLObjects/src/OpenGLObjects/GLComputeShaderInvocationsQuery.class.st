@@ -1,5 +1,5 @@
 Class {
-	#name : #GLGeometryShaderInvocations,
+	#name : #GLComputeShaderInvocationsQuery,
 	#superclass : #GLScopedQuery,
 	#category : #'OpenGLObjects-Queries'
 }
@@ -8,7 +8,7 @@ Class {
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 5/24/2021 17:34'
 }
-GLGeometryShaderInvocations class >> target [
+GLComputeShaderInvocationsQuery class >> target [
 
-	^ GL_GEOMETRY_SHADER_INVOCATIONS
+	^ GL_COMPUTE_SHADER_INVOCATIONS
 ]

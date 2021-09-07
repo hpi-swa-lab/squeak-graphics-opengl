@@ -1,5 +1,5 @@
 Class {
-	#name : #GLVertexShaderInvocations,
+	#name : #GLVertexShaderInvocationsQuery,
 	#superclass : #GLScopedQuery,
 	#category : #'OpenGLObjects-Queries'
 }
@@ -8,7 +8,7 @@ Class {
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 5/24/2021 17:37'
 }
-GLVertexShaderInvocations class >> target [
+GLVertexShaderInvocationsQuery class >> target [
 
 	^ GL_VERTEX_SHADER_INVOCATIONS
 ]

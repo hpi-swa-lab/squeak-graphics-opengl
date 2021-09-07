@@ -6,7 +6,7 @@ Restarting a primitive topology using the primitive restart index has no effect 
 Incomplete primitives may or may not be counted.
 "
 Class {
-	#name : #GLPrimitivesSubmitted,
+	#name : #GLPrimitivesSubmittedQuery,
 	#superclass : #GLScopedQuery,
 	#category : #'OpenGLObjects-Queries',
 	#'squeak_changestamp' : 'stlu 5/24/2021 15:25'
@@ -16,7 +16,7 @@ Class {
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 5/24/2021 17:35'
 }
-GLPrimitivesSubmitted class >> target [
+GLPrimitivesSubmittedQuery class >> target [
 
 	^ GL_PRIMITIVES_SUBMITTED
 ]

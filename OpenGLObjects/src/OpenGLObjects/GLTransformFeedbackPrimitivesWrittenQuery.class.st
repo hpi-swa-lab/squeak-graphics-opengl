@@ -7,7 +7,7 @@ Each combination of vertex stream and query target maintains a separate active q
 The number of vertex streams is given by the value of the implementation-dependent constant MAX_VERTEX_STREAMS.
 "
 Class {
-	#name : #GLTransformFeedbackPrimitivesWritten,
+	#name : #GLTransformFeedbackPrimitivesWrittenQuery,
 	#superclass : #GLScopedQuery,
 	#category : #'OpenGLObjects-Queries',
 	#'squeak_changestamp' : 'stlu 5/24/2021 15:19'
@@ -17,7 +17,7 @@ Class {
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 5/24/2021 17:36'
 }
-GLTransformFeedbackPrimitivesWritten class >> target [
+GLTransformFeedbackPrimitivesWrittenQuery class >> target [
 
 	^ GL_TRANSFORM_FEEDBACK_PRIMITIVES_WRITTEN
 ]

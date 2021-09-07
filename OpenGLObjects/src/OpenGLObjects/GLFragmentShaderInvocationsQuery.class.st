@@ -1,5 +1,5 @@
 Class {
-	#name : #GLGeometryShaderPrimitivesEmitted,
+	#name : #GLFragmentShaderInvocationsQuery,
 	#superclass : #GLScopedQuery,
 	#category : #'OpenGLObjects-Queries'
 }
@@ -8,7 +8,7 @@ Class {
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 5/24/2021 17:34'
 }
-GLGeometryShaderPrimitivesEmitted class >> target [
+GLFragmentShaderInvocationsQuery class >> target [
 
-	^ GL_GEOMETRY_SHADER_PRIMITIVES_EMITTED
+	^ GL_FRAGMENT_SHADER_INVOCATIONS
 ]

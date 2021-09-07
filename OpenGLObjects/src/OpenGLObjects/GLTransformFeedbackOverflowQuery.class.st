@@ -8,7 +8,7 @@ The number of vertex streams is given by the value of the implementation-depende
 When active without specifying a vertex stream and transform feedback is active, a primitive to be recorded on ANY stream that does not fit in one of the buffer objects used for capture will cause the overflow state to be set to true.
 "
 Class {
-	#name : #GLTransformFeedbackOverflow,
+	#name : #GLTransformFeedbackOverflowQuery,
 	#superclass : #GLScopedQuery,
 	#category : #'OpenGLObjects-Queries',
 	#'squeak_changestamp' : 'stlu 5/24/2021 15:19'
@@ -18,7 +18,7 @@ Class {
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 5/24/2021 17:36'
 }
-GLTransformFeedbackOverflow class >> target [
+GLTransformFeedbackOverflowQuery class >> target [
 
 	^ GL_TRANSFORM_FEEDBACK_OVERFLOW
 ]

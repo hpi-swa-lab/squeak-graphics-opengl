@@ -6,7 +6,7 @@ In the case of primitive types with adjacency information, implementations may o
 In the case of line loop primitives, implementations are allowed to count the first vertex twice for the purposes of VERTICES_SUBMITTED queries. Additionally, vertices corresponding to incomplete primitives may or may not be counted.
 "
 Class {
-	#name : #GLVerticesSubmitted,
+	#name : #GLVerticesSubmittedQuery,
 	#superclass : #GLScopedQuery,
 	#category : #'OpenGLObjects-Queries',
 	#'squeak_changestamp' : 'stlu 5/24/2021 14:37'
@@ -16,7 +16,7 @@ Class {
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 5/24/2021 17:37'
 }
-GLVerticesSubmitted class >> target [
+GLVerticesSubmittedQuery class >> target [
 
 	^ GL_VERTICES_SUBMITTED
 ]
