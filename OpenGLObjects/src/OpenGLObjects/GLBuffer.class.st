@@ -243,11 +243,12 @@ GLBuffer class >> targets [
 
 {
 	#category : #binding,
-	#'squeak_changestamp' : 'stlu 9/9/2021 14:24'
+	#'squeak_changestamp' : 'stlu 9/9/2021 15:58'
 }
 GLBuffer >> bind [
 
 	self deprecated: 'Use #bindAs* directly instead.'.
+	self bindAsArrayBuffer.
 ]
 
 {
@@ -542,11 +543,12 @@ GLBuffer >> boundAsUniformBufferDuring: aBlock [
 
 {
 	#category : #binding,
-	#'squeak_changestamp' : 'stlu 9/9/2021 14:25'
+	#'squeak_changestamp' : 'stlu 9/9/2021 15:58'
 }
 GLBuffer >> boundDuring: aBlock [
 
 	self deprecated: 'Use #boundAs*During: directly instead.'.
+	^ self boundAsArrayBufferDuring: aBlock
 ]
 
 {
