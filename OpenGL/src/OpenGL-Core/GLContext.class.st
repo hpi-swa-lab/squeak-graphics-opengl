@@ -163,6 +163,15 @@ GLContext >> initializeVersion [
 
 {
 	#category : #testing,
+	#'squeak_changestamp' : 'stlu 9/9/2021 15:33'
+}
+GLContext >> isCurrent [
+
+	^ self = GL context
+]
+
+{
+	#category : #testing,
 	#'squeak_changestamp' : 'stlu 12/8/2020 16:15'
 }
 GLContext >> isDestroyed [

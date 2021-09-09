@@ -276,25 +276,27 @@ GLShader >> methodChanged: anEvent [
 
 {
 	#category : #private,
-	#'squeak_changestamp' : 'stlu 2/7/2021 15:32'
+	#'squeak_changestamp' : 'stlu 9/9/2021 15:31'
 }
 GLShader >> setSource: aString [
 
-	| utf8Bytes |
+	| utf8Bytes data arrayOfStrings |
 	utf8Bytes := aString withUnixLineEndings utf8Encoded.
 	
-	ExternalData allocate: utf8Bytes size + 1 type: ExternalType string do: [:data |
-		| arrayOfStrings |
-		1 to: utf8Bytes size do: [:index |
-			data getHandle byteAt: index put: (utf8Bytes at: index)].
-		data getHandle byteAt: utf8Bytes size + 1 put: 0.
+	"copy utf8 to heap memory since we need a pointable address"
+	data := ExternalType uint8_t allocateExternal: utf8Bytes size + 1.
+	1 to: utf8Bytes size do: [:index |
+		data unsignedByteAt: index put: (utf8Bytes at: index)].
+	data unsignedByteAt: utf8Bytes size + 1 put: 0.
+
+	"store data address to first slot of array"
+	arrayOfStrings := ExternalType string allocate: 1.
+	arrayOfStrings at: 1 put: data.
+
+	GL shaderSource: id with: 1 with: arrayOfStrings with: nil.
 	
-		self flag: #todo. "Complicated FFI interaction"	
-		arrayOfStrings := (ByteArray new: ExternalType void asPointerType byteSize)
-						 	pointerAt: 1 put: data getHandle;
-							yourself.
-	
-		GL shaderSource: id with: 1 with: arrayOfStrings with: nil]
+	"don't free data to avoid double free"
+	arrayOfStrings free.
 ]
 
 {

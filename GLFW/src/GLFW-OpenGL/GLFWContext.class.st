@@ -238,13 +238,17 @@ GLFWContext >> releaseBehavior [
 
 {
 	#category : #'context actions',
-	#'squeak_changestamp' : 'stlu 4/16/2021 14:07'
+	#'squeak_changestamp' : 'stlu 9/9/2021 15:39'
 }
 GLFWContext >> resolveFunctionAddress: functionName [
 
 	| result |
-	self assert: self = GL context.
-	^ (result := GLFW getProcAddress: functionName) isNull ifFalse: [result getHandle]
+	self assert: self isCurrent.
+	result := GLFW getProcAddress: functionName.
+	result isNull ifFalse: [
+		"we require ExternalAddress but have ExternalData"
+		^ result getHandle].
+	^ nil
 ]
 
 {
