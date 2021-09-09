@@ -46,7 +46,7 @@ LOGLHelloTriangleIndexed >> isWireframe [
 
 {
 	#category : #running,
-	#'squeak_changestamp' : 'stlu 4/16/2021 15:33'
+	#'squeak_changestamp' : 'stlu 9/9/2021 14:27'
 }
 LOGLHelloTriangleIndexed >> setUp [
 
@@ -56,10 +56,9 @@ LOGLHelloTriangleIndexed >> setUp [
 	super setUp.
 	
 	ebo := GLBuffer create.
-	ebo target: GL_ELEMENT_ARRAY_BUFFER.
 	
 	vao boundDuring: [
-		ebo bind.
+		vao elementArrayBuffer: ebo.
 		ebo usage: GL_STATIC_DRAW data: self indices].
 ]
 

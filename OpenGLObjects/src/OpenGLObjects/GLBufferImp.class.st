@@ -68,13 +68,13 @@ GLBufferImp >> generateBufferIDs: count into: anIntegerArray [
 
 {
 	#category : #'state access',
-	#'squeak_changestamp' : 'stlu 8/4/2021 14:21'
+	#'squeak_changestamp' : 'stlu 9/9/2021 14:17'
 }
 GLBufferImp >> initBuffer: aBuffer data: rawBitsOrNil size: byteSize usage: usageEnum [
 
-	aBuffer boundDuring: [
+	aBuffer boundAsArrayBufferDuring: [
 		GL
-			bufferData: aBuffer target
+			bufferData: GL_ARRAY_BUFFER
 			with: byteSize
 			with: (rawBitsOrNil ifNotNil: [rawBitsOrNil getHandle])
 			with: usageEnum].
@@ -142,13 +142,13 @@ GLBufferImp >> unmapBuffer: aBuffer [
 
 {
 	#category : #'state access',
-	#'squeak_changestamp' : 'stlu 8/4/2021 14:27'
+	#'squeak_changestamp' : 'stlu 9/9/2021 14:18'
 }
 GLBufferImp >> updateBuffer: aBuffer data: rawBitsOrNil size: byteSize offset: byteOffset [
 
-	aBuffer boundDuring: [
+	aBuffer boundAsArrayBufferDuring: [
 		GL
-			bufferSubData: aBuffer target
+			bufferSubData: GL_ARRAY_BUFFER
 			with: byteOffset
 			with: byteSize
 			with: (rawBitsOrNil ifNotNil: [rawBitsOrNil getHandle])].

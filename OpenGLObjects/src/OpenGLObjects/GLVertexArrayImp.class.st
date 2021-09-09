@@ -65,3 +65,15 @@ GLVertexArrayImp >> generateVertexArrayIDs: count into: anIntegerArray [
 
 	GL genVertexArrays: count with: anIntegerArray
 ]
+
+{
+	#category : #binding,
+	#'squeak_changestamp' : 'stlu 9/9/2021 11:48'
+}
+GLVertexArrayImp >> vertexArray: aVertexArray bindElementArrayBuffer: bufferOrNil [
+
+	aVertexArray boundDuring: [
+		GLBuffer manager mainImp
+			bindBuffer: bufferOrNil
+			to: GL_ELEMENT_ARRAY_BUFFER].
+]

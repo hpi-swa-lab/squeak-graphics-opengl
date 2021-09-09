@@ -248,6 +248,41 @@ GLVertexArray >> drawElements: primitiveTypeEnum count: numVertices startingAt: 
 ]
 
 {
+	#category : #'rendering - indexed',
+	#'squeak_changestamp' : 'stlu 9/9/2021 10:40'
+}
+GLVertexArray >> drawElements: primitiveTypeEnum count: numVertices type: indexTypeEnum [
+
+	self
+		drawElements: primitiveTypeEnum
+		count: numVertices
+		startingAt: 0
+		type: indexTypeEnum.
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 9/9/2021 11:35'
+}
+GLVertexArray >> elementArrayBuffer [
+
+	^ elementArrayBuffer
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 9/9/2021 11:48'
+}
+GLVertexArray >> elementArrayBuffer: bufferOrNil [
+
+	elementArrayBuffer == bufferOrNil ifTrue: [^ self].
+	manager mainImp
+		vertexArray: self
+		bindElementArrayBuffer: bufferOrNil.
+	elementArrayBuffer := bufferOrNil.
+]
+
+{
 	#category : #initialization,
 	#'squeak_changestamp' : 'stlu 3/17/2021 12:30'
 }
