@@ -73,7 +73,7 @@ LOGLBreakoutSpriteRenderer >> drawSprite: aTexture position: position extent: ex
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 8/6/2021 16:10'
+	#'squeak_changestamp' : 'stlu 9/9/2021 15:48'
 }
 LOGLBreakoutSpriteRenderer >> initialize [
 
@@ -88,7 +88,7 @@ LOGLBreakoutSpriteRenderer >> initialize [
 		data: self vertices.
 	
 	vao boundDuring: [
-		vbo boundDuring: [
+		vbo boundAsArrayBufferDuring: [
 			program inputs aVertex
 				stride: 4 * 4
 				offset: 0]]

@@ -100,7 +100,7 @@ LOGLBreakoutParticleGenerator >> firstUnusedParticleIndex [
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 8/6/2021 16:16'
+	#'squeak_changestamp' : 'stlu 9/9/2021 15:47'
 }
 LOGLBreakoutParticleGenerator >> initialize [
 
@@ -113,7 +113,7 @@ LOGLBreakoutParticleGenerator >> initialize [
 	program uniforms sSprite: 0.
 	
 	vao boundDuring: [
-		vbo boundDuring: [
+		vbo boundAsArrayBufferDuring: [
 			vbo
 				usage: GL STATIC_DRAW
 				data: self particleQuad.

@@ -184,7 +184,7 @@ LOGLBreakoutPostProcessor >> initialize [
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 8/6/2021 16:09'
+	#'squeak_changestamp' : 'stlu 9/9/2021 15:48'
 }
 LOGLBreakoutPostProcessor >> initializeRenderData [
 
@@ -194,7 +194,7 @@ LOGLBreakoutPostProcessor >> initializeRenderData [
 	vbo := GLBuffer create.
 	
 	vao boundDuring: [
-		vbo boundDuring: [
+		vbo boundAsArrayBufferDuring: [
 			vbo
 				usage: GL STATIC_DRAW
 				data: self vertices.
