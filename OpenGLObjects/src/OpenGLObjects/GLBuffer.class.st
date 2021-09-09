@@ -10,7 +10,7 @@ Class {
 
 {
 	#category : #bindings,
-	#'squeak_changestamp' : 'stlu 9/9/2021 14:53'
+	#'squeak_changestamp' : 'stlu 9/9/2021 15:56'
 }
 GLBuffer class >> boundAsArrayBuffer [
 
@@ -19,7 +19,7 @@ GLBuffer class >> boundAsArrayBuffer [
 
 {
 	#category : #bindings,
-	#'squeak_changestamp' : 'stlu 9/9/2021 14:53'
+	#'squeak_changestamp' : 'stlu 9/9/2021 15:56'
 }
 GLBuffer class >> boundAsAtomicCounterBuffer [
 
@@ -28,7 +28,7 @@ GLBuffer class >> boundAsAtomicCounterBuffer [
 
 {
 	#category : #bindings,
-	#'squeak_changestamp' : 'stlu 9/9/2021 14:53'
+	#'squeak_changestamp' : 'stlu 9/9/2021 15:56'
 }
 GLBuffer class >> boundAsCopyReadBuffer [
 
@@ -37,7 +37,7 @@ GLBuffer class >> boundAsCopyReadBuffer [
 
 {
 	#category : #bindings,
-	#'squeak_changestamp' : 'stlu 9/9/2021 14:53'
+	#'squeak_changestamp' : 'stlu 9/9/2021 15:56'
 }
 GLBuffer class >> boundAsCopyWriteBuffer [
 
@@ -46,7 +46,7 @@ GLBuffer class >> boundAsCopyWriteBuffer [
 
 {
 	#category : #bindings,
-	#'squeak_changestamp' : 'stlu 9/9/2021 14:53'
+	#'squeak_changestamp' : 'stlu 9/9/2021 15:56'
 }
 GLBuffer class >> boundAsDispatchIndirectBuffer [
 
@@ -55,7 +55,7 @@ GLBuffer class >> boundAsDispatchIndirectBuffer [
 
 {
 	#category : #bindings,
-	#'squeak_changestamp' : 'stlu 9/9/2021 14:53'
+	#'squeak_changestamp' : 'stlu 9/9/2021 15:56'
 }
 GLBuffer class >> boundAsDrawIndirectBuffer [
 
@@ -64,7 +64,7 @@ GLBuffer class >> boundAsDrawIndirectBuffer [
 
 {
 	#category : #bindings,
-	#'squeak_changestamp' : 'stlu 9/9/2021 14:53'
+	#'squeak_changestamp' : 'stlu 9/9/2021 15:56'
 }
 GLBuffer class >> boundAsParameterBuffer [
 
@@ -73,7 +73,7 @@ GLBuffer class >> boundAsParameterBuffer [
 
 {
 	#category : #bindings,
-	#'squeak_changestamp' : 'stlu 9/9/2021 14:53'
+	#'squeak_changestamp' : 'stlu 9/9/2021 15:56'
 }
 GLBuffer class >> boundAsPixelPackBuffer [
 
@@ -82,7 +82,7 @@ GLBuffer class >> boundAsPixelPackBuffer [
 
 {
 	#category : #bindings,
-	#'squeak_changestamp' : 'stlu 9/9/2021 14:53'
+	#'squeak_changestamp' : 'stlu 9/9/2021 15:56'
 }
 GLBuffer class >> boundAsPixelUnpackBuffer [
 
@@ -91,7 +91,7 @@ GLBuffer class >> boundAsPixelUnpackBuffer [
 
 {
 	#category : #bindings,
-	#'squeak_changestamp' : 'stlu 9/9/2021 14:53'
+	#'squeak_changestamp' : 'stlu 9/9/2021 15:56'
 }
 GLBuffer class >> boundAsQueryBuffer [
 
@@ -100,7 +100,7 @@ GLBuffer class >> boundAsQueryBuffer [
 
 {
 	#category : #bindings,
-	#'squeak_changestamp' : 'stlu 9/9/2021 14:53'
+	#'squeak_changestamp' : 'stlu 9/9/2021 15:56'
 }
 GLBuffer class >> boundAsShaderStorageBuffer [
 
@@ -109,7 +109,7 @@ GLBuffer class >> boundAsShaderStorageBuffer [
 
 {
 	#category : #bindings,
-	#'squeak_changestamp' : 'stlu 9/9/2021 14:53'
+	#'squeak_changestamp' : 'stlu 9/9/2021 15:56'
 }
 GLBuffer class >> boundAsTextureBuffer [
 
@@ -118,7 +118,7 @@ GLBuffer class >> boundAsTextureBuffer [
 
 {
 	#category : #bindings,
-	#'squeak_changestamp' : 'stlu 9/9/2021 14:53'
+	#'squeak_changestamp' : 'stlu 9/9/2021 15:56'
 }
 GLBuffer class >> boundAsTransformFeedbackBuffer [
 
@@ -127,7 +127,7 @@ GLBuffer class >> boundAsTransformFeedbackBuffer [
 
 {
 	#category : #bindings,
-	#'squeak_changestamp' : 'stlu 9/9/2021 14:53'
+	#'squeak_changestamp' : 'stlu 9/9/2021 15:56'
 }
 GLBuffer class >> boundAsUniformBuffer [
 
@@ -136,7 +136,7 @@ GLBuffer class >> boundAsUniformBuffer [
 
 {
 	#category : #bindings,
-	#'squeak_changestamp' : 'stlu 9/9/2021 14:53'
+	#'squeak_changestamp' : 'stlu 9/9/2021 15:56'
 }
 GLBuffer class >> boundTo: targetEnum [
 	"Please avoid. Use respective #boundAs* selector directly instead."
@@ -252,7 +252,7 @@ GLBuffer >> bind [
 
 {
 	#category : #binding,
-	#'squeak_changestamp' : 'stlu 9/9/2021 14:53'
+	#'squeak_changestamp' : 'stlu 9/9/2021 15:56'
 }
 GLBuffer >> bindAsArrayBuffer [
 
@@ -261,16 +261,7 @@ GLBuffer >> bindAsArrayBuffer [
 
 {
 	#category : #binding,
-	#'squeak_changestamp' : 'stlu 9/9/2021 14:53'
-}
-GLBuffer >> bindAsArrayBufferDuring: aBlock [
-
-	^ manager bindArrayBuffer: self during: aBlock
-]
-
-{
-	#category : #binding,
-	#'squeak_changestamp' : 'stlu 9/9/2021 14:53'
+	#'squeak_changestamp' : 'stlu 9/9/2021 15:56'
 }
 GLBuffer >> bindAsAtomicCounterBuffer [
 
@@ -279,16 +270,7 @@ GLBuffer >> bindAsAtomicCounterBuffer [
 
 {
 	#category : #binding,
-	#'squeak_changestamp' : 'stlu 9/9/2021 14:53'
-}
-GLBuffer >> bindAsAtomicCounterBufferDuring: aBlock [
-
-	^ manager bindAtomicCounterBuffer: self during: aBlock
-]
-
-{
-	#category : #binding,
-	#'squeak_changestamp' : 'stlu 9/9/2021 14:53'
+	#'squeak_changestamp' : 'stlu 9/9/2021 15:56'
 }
 GLBuffer >> bindAsCopyReadBuffer [
 
@@ -297,16 +279,7 @@ GLBuffer >> bindAsCopyReadBuffer [
 
 {
 	#category : #binding,
-	#'squeak_changestamp' : 'stlu 9/9/2021 14:53'
-}
-GLBuffer >> bindAsCopyReadBufferDuring: aBlock [
-
-	^ manager bindCopyReadBuffer: self during: aBlock
-]
-
-{
-	#category : #binding,
-	#'squeak_changestamp' : 'stlu 9/9/2021 14:53'
+	#'squeak_changestamp' : 'stlu 9/9/2021 15:56'
 }
 GLBuffer >> bindAsCopyWriteBuffer [
 
@@ -315,16 +288,7 @@ GLBuffer >> bindAsCopyWriteBuffer [
 
 {
 	#category : #binding,
-	#'squeak_changestamp' : 'stlu 9/9/2021 14:53'
-}
-GLBuffer >> bindAsCopyWriteBufferDuring: aBlock [
-
-	^ manager bindCopyWriteBuffer: self during: aBlock
-]
-
-{
-	#category : #binding,
-	#'squeak_changestamp' : 'stlu 9/9/2021 14:53'
+	#'squeak_changestamp' : 'stlu 9/9/2021 15:56'
 }
 GLBuffer >> bindAsDispatchIndirectBuffer [
 
@@ -333,16 +297,7 @@ GLBuffer >> bindAsDispatchIndirectBuffer [
 
 {
 	#category : #binding,
-	#'squeak_changestamp' : 'stlu 9/9/2021 14:53'
-}
-GLBuffer >> bindAsDispatchIndirectBufferDuring: aBlock [
-
-	^ manager bindDispatchIndirectBuffer: self during: aBlock
-]
-
-{
-	#category : #binding,
-	#'squeak_changestamp' : 'stlu 9/9/2021 14:53'
+	#'squeak_changestamp' : 'stlu 9/9/2021 15:56'
 }
 GLBuffer >> bindAsDrawIndirectBuffer [
 
@@ -351,16 +306,7 @@ GLBuffer >> bindAsDrawIndirectBuffer [
 
 {
 	#category : #binding,
-	#'squeak_changestamp' : 'stlu 9/9/2021 14:53'
-}
-GLBuffer >> bindAsDrawIndirectBufferDuring: aBlock [
-
-	^ manager bindDrawIndirectBuffer: self during: aBlock
-]
-
-{
-	#category : #binding,
-	#'squeak_changestamp' : 'stlu 9/9/2021 14:53'
+	#'squeak_changestamp' : 'stlu 9/9/2021 15:56'
 }
 GLBuffer >> bindAsParameterBuffer [
 
@@ -369,16 +315,7 @@ GLBuffer >> bindAsParameterBuffer [
 
 {
 	#category : #binding,
-	#'squeak_changestamp' : 'stlu 9/9/2021 14:53'
-}
-GLBuffer >> bindAsParameterBufferDuring: aBlock [
-
-	^ manager bindParameterBuffer: self during: aBlock
-]
-
-{
-	#category : #binding,
-	#'squeak_changestamp' : 'stlu 9/9/2021 14:53'
+	#'squeak_changestamp' : 'stlu 9/9/2021 15:56'
 }
 GLBuffer >> bindAsPixelPackBuffer [
 
@@ -387,16 +324,7 @@ GLBuffer >> bindAsPixelPackBuffer [
 
 {
 	#category : #binding,
-	#'squeak_changestamp' : 'stlu 9/9/2021 14:53'
-}
-GLBuffer >> bindAsPixelPackBufferDuring: aBlock [
-
-	^ manager bindPixelPackBuffer: self during: aBlock
-]
-
-{
-	#category : #binding,
-	#'squeak_changestamp' : 'stlu 9/9/2021 14:53'
+	#'squeak_changestamp' : 'stlu 9/9/2021 15:56'
 }
 GLBuffer >> bindAsPixelUnpackBuffer [
 
@@ -405,16 +333,7 @@ GLBuffer >> bindAsPixelUnpackBuffer [
 
 {
 	#category : #binding,
-	#'squeak_changestamp' : 'stlu 9/9/2021 14:53'
-}
-GLBuffer >> bindAsPixelUnpackBufferDuring: aBlock [
-
-	^ manager bindPixelUnpackBuffer: self during: aBlock
-]
-
-{
-	#category : #binding,
-	#'squeak_changestamp' : 'stlu 9/9/2021 14:53'
+	#'squeak_changestamp' : 'stlu 9/9/2021 15:56'
 }
 GLBuffer >> bindAsQueryBuffer [
 
@@ -423,16 +342,7 @@ GLBuffer >> bindAsQueryBuffer [
 
 {
 	#category : #binding,
-	#'squeak_changestamp' : 'stlu 9/9/2021 14:53'
-}
-GLBuffer >> bindAsQueryBufferDuring: aBlock [
-
-	^ manager bindQueryBuffer: self during: aBlock
-]
-
-{
-	#category : #binding,
-	#'squeak_changestamp' : 'stlu 9/9/2021 14:53'
+	#'squeak_changestamp' : 'stlu 9/9/2021 15:56'
 }
 GLBuffer >> bindAsShaderStorageBuffer [
 
@@ -441,16 +351,7 @@ GLBuffer >> bindAsShaderStorageBuffer [
 
 {
 	#category : #binding,
-	#'squeak_changestamp' : 'stlu 9/9/2021 14:53'
-}
-GLBuffer >> bindAsShaderStorageBufferDuring: aBlock [
-
-	^ manager bindShaderStorageBuffer: self during: aBlock
-]
-
-{
-	#category : #binding,
-	#'squeak_changestamp' : 'stlu 9/9/2021 14:53'
+	#'squeak_changestamp' : 'stlu 9/9/2021 15:56'
 }
 GLBuffer >> bindAsTextureBuffer [
 
@@ -459,16 +360,7 @@ GLBuffer >> bindAsTextureBuffer [
 
 {
 	#category : #binding,
-	#'squeak_changestamp' : 'stlu 9/9/2021 14:53'
-}
-GLBuffer >> bindAsTextureBufferDuring: aBlock [
-
-	^ manager bindTextureBuffer: self during: aBlock
-]
-
-{
-	#category : #binding,
-	#'squeak_changestamp' : 'stlu 9/9/2021 14:53'
+	#'squeak_changestamp' : 'stlu 9/9/2021 15:56'
 }
 GLBuffer >> bindAsTransformFeedbackBuffer [
 
@@ -477,16 +369,7 @@ GLBuffer >> bindAsTransformFeedbackBuffer [
 
 {
 	#category : #binding,
-	#'squeak_changestamp' : 'stlu 9/9/2021 14:53'
-}
-GLBuffer >> bindAsTransformFeedbackBufferDuring: aBlock [
-
-	^ manager bindTransformFeedbackBuffer: self during: aBlock
-]
-
-{
-	#category : #binding,
-	#'squeak_changestamp' : 'stlu 9/9/2021 14:53'
+	#'squeak_changestamp' : 'stlu 9/9/2021 15:56'
 }
 GLBuffer >> bindAsUniformBuffer [
 
@@ -495,16 +378,7 @@ GLBuffer >> bindAsUniformBuffer [
 
 {
 	#category : #binding,
-	#'squeak_changestamp' : 'stlu 9/9/2021 14:53'
-}
-GLBuffer >> bindAsUniformBufferDuring: aBlock [
-
-	^ manager bindUniformBuffer: self during: aBlock
-]
-
-{
-	#category : #binding,
-	#'squeak_changestamp' : 'stlu 9/9/2021 14:53'
+	#'squeak_changestamp' : 'stlu 9/9/2021 15:56'
 }
 GLBuffer >> bindTo: targetEnum [
 	"Please avoid. Use respective #bindAs* selector directly instead."
@@ -542,6 +416,132 @@ GLBuffer >> bindTo: targetEnum [
 
 {
 	#category : #binding,
+	#'squeak_changestamp' : 'stlu 9/9/2021 15:56'
+}
+GLBuffer >> boundAsArrayBufferDuring: aBlock [
+
+	^ manager bindArrayBuffer: self during: aBlock
+]
+
+{
+	#category : #binding,
+	#'squeak_changestamp' : 'stlu 9/9/2021 15:56'
+}
+GLBuffer >> boundAsAtomicCounterBufferDuring: aBlock [
+
+	^ manager bindAtomicCounterBuffer: self during: aBlock
+]
+
+{
+	#category : #binding,
+	#'squeak_changestamp' : 'stlu 9/9/2021 15:56'
+}
+GLBuffer >> boundAsCopyReadBufferDuring: aBlock [
+
+	^ manager bindCopyReadBuffer: self during: aBlock
+]
+
+{
+	#category : #binding,
+	#'squeak_changestamp' : 'stlu 9/9/2021 15:56'
+}
+GLBuffer >> boundAsCopyWriteBufferDuring: aBlock [
+
+	^ manager bindCopyWriteBuffer: self during: aBlock
+]
+
+{
+	#category : #binding,
+	#'squeak_changestamp' : 'stlu 9/9/2021 15:56'
+}
+GLBuffer >> boundAsDispatchIndirectBufferDuring: aBlock [
+
+	^ manager bindDispatchIndirectBuffer: self during: aBlock
+]
+
+{
+	#category : #binding,
+	#'squeak_changestamp' : 'stlu 9/9/2021 15:56'
+}
+GLBuffer >> boundAsDrawIndirectBufferDuring: aBlock [
+
+	^ manager bindDrawIndirectBuffer: self during: aBlock
+]
+
+{
+	#category : #binding,
+	#'squeak_changestamp' : 'stlu 9/9/2021 15:56'
+}
+GLBuffer >> boundAsParameterBufferDuring: aBlock [
+
+	^ manager bindParameterBuffer: self during: aBlock
+]
+
+{
+	#category : #binding,
+	#'squeak_changestamp' : 'stlu 9/9/2021 15:56'
+}
+GLBuffer >> boundAsPixelPackBufferDuring: aBlock [
+
+	^ manager bindPixelPackBuffer: self during: aBlock
+]
+
+{
+	#category : #binding,
+	#'squeak_changestamp' : 'stlu 9/9/2021 15:56'
+}
+GLBuffer >> boundAsPixelUnpackBufferDuring: aBlock [
+
+	^ manager bindPixelUnpackBuffer: self during: aBlock
+]
+
+{
+	#category : #binding,
+	#'squeak_changestamp' : 'stlu 9/9/2021 15:56'
+}
+GLBuffer >> boundAsQueryBufferDuring: aBlock [
+
+	^ manager bindQueryBuffer: self during: aBlock
+]
+
+{
+	#category : #binding,
+	#'squeak_changestamp' : 'stlu 9/9/2021 15:56'
+}
+GLBuffer >> boundAsShaderStorageBufferDuring: aBlock [
+
+	^ manager bindShaderStorageBuffer: self during: aBlock
+]
+
+{
+	#category : #binding,
+	#'squeak_changestamp' : 'stlu 9/9/2021 15:56'
+}
+GLBuffer >> boundAsTextureBufferDuring: aBlock [
+
+	^ manager bindTextureBuffer: self during: aBlock
+]
+
+{
+	#category : #binding,
+	#'squeak_changestamp' : 'stlu 9/9/2021 15:56'
+}
+GLBuffer >> boundAsTransformFeedbackBufferDuring: aBlock [
+
+	^ manager bindTransformFeedbackBuffer: self during: aBlock
+]
+
+{
+	#category : #binding,
+	#'squeak_changestamp' : 'stlu 9/9/2021 15:56'
+}
+GLBuffer >> boundAsUniformBufferDuring: aBlock [
+
+	^ manager bindUniformBuffer: self during: aBlock
+]
+
+{
+	#category : #binding,
 	#'squeak_changestamp' : 'stlu 9/9/2021 14:25'
 }
 GLBuffer >> boundDuring: aBlock [
@@ -551,7 +551,7 @@ GLBuffer >> boundDuring: aBlock [
 
 {
 	#category : #binding,
-	#'squeak_changestamp' : 'stlu 9/9/2021 14:53'
+	#'squeak_changestamp' : 'stlu 9/9/2021 15:56'
 }
 GLBuffer >> boundTo: targetEnum during: aBlock [
 	"Please avoid. Use respective #boundAs*During: selector directly instead."

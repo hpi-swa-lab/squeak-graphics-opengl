@@ -2,7 +2,7 @@ Extension { #name : #GLBufferManager }
 
 {
 	#category : #'*OpenGLObjects-Generation',
-	#'squeak_changestamp' : 'stlu 9/9/2021 14:53'
+	#'squeak_changestamp' : 'stlu 9/9/2021 15:56'
 }
 GLBufferManager class >> generateBindingMethods [
 "
@@ -64,7 +64,7 @@ GLBufferManager class >> generateBindingMethods [
 			classified: #binding.
 		
 		GLBuffer compile: (
-'bindAs{3}During: aBlock
+'boundAs{3}During: aBlock
 
 	^ manager bind{3}: self during: aBlock' format: formatArgs)
 			classified: #binding.
