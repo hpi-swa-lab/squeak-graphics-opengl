@@ -335,92 +335,92 @@ GLVertexArray >> drawElements: primitiveTypeEnum numVertices: numVertices indexT
 
 {
 	#category : #'drawing elements',
-	#'squeak_changestamp' : 'stlu 9/10/2021 12:43'
+	#'squeak_changestamp' : 'stlu 9/10/2021 13:32'
 }
-GLVertexArray >> drawElements: primitiveTypeEnum numVertices: numVertices startingVertex: elementBufferOffset indexType: indexTypeEnum [
+GLVertexArray >> drawElements: primitiveTypeEnum numVertices: numVertices startingVertex: startingVertex indexType: indexTypeEnum [
 	"indexTypeEnum must be one of UNSIGNED_BYTE, UNSIGNED_SHORT, or UNSIGNED_INT"
 	self boundDuring: [
 		GL
 			drawElements: primitiveTypeEnum
 			with: numVertices
 			with: indexTypeEnum
-			with: (ExternalAddress fromInteger: elementBufferOffset)].
+			with: (ExternalAddress fromInteger: startingVertex)].
 ]
 
 {
 	#category : #'drawing elements',
-	#'squeak_changestamp' : 'stlu 9/10/2021 13:00'
+	#'squeak_changestamp' : 'stlu 9/10/2021 13:32'
 }
-GLVertexArray >> drawElements: primitiveTypeEnum numVertices: numVertices startingVertex: elementBufferOffset indexType: indexTypeEnum indexOffset: indexOffset [
+GLVertexArray >> drawElements: primitiveTypeEnum numVertices: numVertices startingVertex: startingVertex indexType: indexTypeEnum indexOffset: indexOffset [
 	"indexTypeEnum must be one of UNSIGNED_BYTE, UNSIGNED_SHORT, or UNSIGNED_INT"
 	self boundDuring: [
 		GL
 			drawElementsBaseVertex: primitiveTypeEnum
 			with: numVertices
 			with: indexTypeEnum
-			with: (ExternalAddress fromInteger: elementBufferOffset)
+			with: (ExternalAddress fromInteger: startingVertex)
 			with: indexOffset].
 ]
 
 {
 	#category : #'drawing elements',
-	#'squeak_changestamp' : 'stlu 9/10/2021 12:43'
+	#'squeak_changestamp' : 'stlu 9/10/2021 13:32'
 }
-GLVertexArray >> drawElements: primitiveTypeEnum numVertices: numVertices startingVertex: elementBufferOffset indexType: indexTypeEnum numInstances: numInstances [
+GLVertexArray >> drawElements: primitiveTypeEnum numVertices: numVertices startingVertex: startingVertex indexType: indexTypeEnum numInstances: numInstances [
 	"indexTypeEnum must be one of UNSIGNED_BYTE, UNSIGNED_SHORT, or UNSIGNED_INT"
 	self boundDuring: [
 		GL
 			drawElementsInstanced: primitiveTypeEnum
 			with: numVertices
 			with: indexTypeEnum
-			with: (ExternalAddress fromInteger: elementBufferOffset)
+			with: (ExternalAddress fromInteger: startingVertex)
 			with: numInstances].
 ]
 
 {
 	#category : #'drawing elements',
-	#'squeak_changestamp' : 'stlu 9/10/2021 13:00'
+	#'squeak_changestamp' : 'stlu 9/10/2021 13:32'
 }
-GLVertexArray >> drawElements: primitiveTypeEnum numVertices: numVertices startingVertex: elementBufferOffset indexType: indexTypeEnum numInstances: numInstances indexOffset: indexOffset [
+GLVertexArray >> drawElements: primitiveTypeEnum numVertices: numVertices startingVertex: startingVertex indexType: indexTypeEnum numInstances: numInstances indexOffset: indexOffset [
 	"indexTypeEnum must be one of UNSIGNED_BYTE, UNSIGNED_SHORT, or UNSIGNED_INT"
 	self boundDuring: [
 		GL
 			drawElementsInstancedBaseVertex: primitiveTypeEnum
 			with: numVertices
 			with: indexTypeEnum
-			with: (ExternalAddress fromInteger: elementBufferOffset)
+			with: (ExternalAddress fromInteger: startingVertex)
 			with: numInstances
 			with: indexOffset].
 ]
 
 {
 	#category : #'drawing elements',
-	#'squeak_changestamp' : 'stlu 9/10/2021 12:43'
+	#'squeak_changestamp' : 'stlu 9/10/2021 13:32'
 }
-GLVertexArray >> drawElements: primitiveTypeEnum numVertices: numVertices startingVertex: elementBufferOffset indexType: indexTypeEnum numInstances: numInstances startingInstance: startingInstance [
+GLVertexArray >> drawElements: primitiveTypeEnum numVertices: numVertices startingVertex: startingVertex indexType: indexTypeEnum numInstances: numInstances startingInstance: startingInstance [
 	"indexTypeEnum must be one of UNSIGNED_BYTE, UNSIGNED_SHORT, or UNSIGNED_INT"
 	self boundDuring: [
 		GL
 			drawElementsInstancedBaseInstance: primitiveTypeEnum
 			with: numVertices
 			with: indexTypeEnum
-			with: (ExternalAddress fromInteger: elementBufferOffset)
+			with: (ExternalAddress fromInteger: startingVertex)
 			with: numInstances
 			with: startingInstance].
 ]
 
 {
 	#category : #'drawing elements',
-	#'squeak_changestamp' : 'stlu 9/10/2021 13:00'
+	#'squeak_changestamp' : 'stlu 9/10/2021 13:32'
 }
-GLVertexArray >> drawElements: primitiveTypeEnum numVertices: numVertices startingVertex: elementBufferOffset indexType: indexTypeEnum numInstances: numInstances startingInstance: startingInstance indexOffset: indexOffset [
+GLVertexArray >> drawElements: primitiveTypeEnum numVertices: numVertices startingVertex: startingVertex indexType: indexTypeEnum numInstances: numInstances startingInstance: startingInstance indexOffset: indexOffset [
 	"indexTypeEnum must be one of UNSIGNED_BYTE, UNSIGNED_SHORT, or UNSIGNED_INT"
 	self boundDuring: [
 		GL
 			drawElementsInstancedBaseVertexBaseInstance: primitiveTypeEnum
 			with: numVertices
 			with: indexTypeEnum
-			with: (ExternalAddress fromInteger: elementBufferOffset)
+			with: (ExternalAddress fromInteger: startingVertex)
 			with: numInstances
 			with: indexOffset
 			with: startingInstance].
