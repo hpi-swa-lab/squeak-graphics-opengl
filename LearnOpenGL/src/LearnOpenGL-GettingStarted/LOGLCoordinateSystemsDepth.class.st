@@ -9,7 +9,7 @@ Class {
 
 {
 	#category : #running,
-	#'squeak_changestamp' : 'stlu 5/24/2021 22:46'
+	#'squeak_changestamp' : 'stlu 9/10/2021 13:07'
 }
 LOGLCoordinateSystemsDepth >> draw [
 
@@ -21,7 +21,7 @@ LOGLCoordinateSystemsDepth >> draw [
 		model: model;
 		view: self viewMatrix;
 		projection: self projectionMatrix.
-	vao drawArrays: GL_TRIANGLES count: 36
+	vao drawArrays: GL_TRIANGLES numVertices: 36.
 ]
 
 {

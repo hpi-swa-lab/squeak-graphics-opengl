@@ -141,123 +141,289 @@ GLVertexArray >> delete [
 ]
 
 {
-	#category : #rendering,
-	#'squeak_changestamp' : 'stlu 3/14/2021 16:58'
+	#category : #'drawing arrays',
+	#'squeak_changestamp' : 'stlu 9/10/2021 12:43'
 }
 GLVertexArray >> drawArrays: primitiveTypeEnum command: aDrawArraysIndirectCommand [
 
 	self boundDuring: [
 		GL
 			drawArraysIndirect: primitiveTypeEnum
-			with: aDrawArraysIndirectCommand]
+			with: aDrawArraysIndirectCommand].
 ]
 
 {
-	#category : #rendering,
-	#'squeak_changestamp' : 'stlu 3/14/2021 17:13'
+	#category : #'drawing arrays',
+	#'squeak_changestamp' : 'stlu 9/10/2021 12:43'
 }
-GLVertexArray >> drawArrays: primitiveTypeEnum count: numVertices [
+GLVertexArray >> drawArrays: primitiveTypeEnum numVertices: numVertices [
 
 	self
 		drawArrays: primitiveTypeEnum
-		count: numVertices
-		startingAt: 0
+		numVertices: numVertices
+		startingVertex: 0.
 ]
 
 {
-	#category : #rendering,
-	#'squeak_changestamp' : 'stlu 3/14/2021 17:13'
+	#category : #'drawing arrays',
+	#'squeak_changestamp' : 'stlu 9/10/2021 12:43'
 }
-GLVertexArray >> drawArrays: primitiveTypeEnum count: numVertices numInstances: numInstances [
+GLVertexArray >> drawArrays: primitiveTypeEnum numVertices: numVertices numInstances: numInstances [
 
 	self
 		drawArrays: primitiveTypeEnum
-		count: numVertices
-		startingAt: 0
+		numVertices: numVertices
+		startingVertex: 0
+		numInstances: numInstances.
+]
+
+{
+	#category : #'drawing arrays',
+	#'squeak_changestamp' : 'stlu 9/10/2021 12:43'
+}
+GLVertexArray >> drawArrays: primitiveTypeEnum numVertices: numVertices numInstances: numInstances startingInstance: startingInstance [
+
+	self
+		drawArrays: primitiveTypeEnum
+		numVertices: numVertices
+		startingVertex: 0
 		numInstances: numInstances
+		startingInstance: startingInstance.
 ]
 
 {
-	#category : #rendering,
-	#'squeak_changestamp' : 'stlu 3/14/2021 17:12'
+	#category : #'drawing arrays',
+	#'squeak_changestamp' : 'stlu 9/10/2021 12:43'
 }
-GLVertexArray >> drawArrays: primitiveTypeEnum count: numVertices numInstances: numInstances baseInstance: baseInstance [
-
-	self
-		drawArrays: primitiveTypeEnum
-		count: numVertices
-		startingAt: 0
-		numInstances: numInstances
-		baseInstance: baseInstance
-]
-
-{
-	#category : #rendering,
-	#'squeak_changestamp' : 'stlu 3/14/2021 17:01'
-}
-GLVertexArray >> drawArrays: primitiveTypeEnum count: numVertices startingAt: startingIndex [
+GLVertexArray >> drawArrays: primitiveTypeEnum numVertices: numVertices startingVertex: startingVertex [
 
 	self boundDuring: [
 		GL
 			drawArrays: primitiveTypeEnum
-			with: startingIndex
-			with: numVertices]
+			with: startingVertex
+			with: numVertices].
 ]
 
 {
-	#category : #rendering,
-	#'squeak_changestamp' : 'stlu 3/14/2021 17:02'
+	#category : #'drawing arrays',
+	#'squeak_changestamp' : 'stlu 9/10/2021 12:44'
 }
-GLVertexArray >> drawArrays: primitiveTypeEnum count: numVertices startingAt: startingIndex numInstances: numInstances [
+GLVertexArray >> drawArrays: primitiveTypeEnum numVertices: numVertices startingVertex: startingVertex numInstances: numInstances [
 
 	self boundDuring: [
 		GL
 			drawArraysInstanced: primitiveTypeEnum
-			with: startingIndex
+			with: startingVertex
 			with: numVertices
-			with: numInstances]
+			with: numInstances].
 ]
 
 {
-	#category : #rendering,
-	#'squeak_changestamp' : 'stlu 3/14/2021 17:02'
+	#category : #'drawing arrays',
+	#'squeak_changestamp' : 'stlu 9/10/2021 12:44'
 }
-GLVertexArray >> drawArrays: primitiveTypeEnum count: numVertices startingAt: startingIndex numInstances: numInstances baseInstance: baseInstance [
+GLVertexArray >> drawArrays: primitiveTypeEnum numVertices: numVertices startingVertex: startingVertex numInstances: numInstances startingInstance: startingInstance [
 
 	self boundDuring: [
 		GL
 			drawArraysInstancedBaseInstance: primitiveTypeEnum
-			with: startingIndex
+			with: startingVertex
 			with: numVertices
 			with: numInstances
-			with: baseInstance]
+			with: startingInstance].
 ]
 
 {
-	#category : #'rendering - indexed',
-	#'squeak_changestamp' : 'stlu 3/14/2021 17:59'
+	#category : #'drawing elements',
+	#'squeak_changestamp' : 'stlu 9/10/2021 12:45'
 }
-GLVertexArray >> drawElements: primitiveTypeEnum count: numVertices startingAt: elementBufferOffset type: indexTypeEnum [
+GLVertexArray >> drawElements: primitiveTypeEnum indexType: indexTypeEnum command: aDrawElementsIndirectCommand [
+	"indexTypeEnum must be one of UNSIGNED_BYTE, UNSIGNED_SHORT, or UNSIGNED_INT"
+	self boundDuring: [
+		GL
+			drawElementsIndirect: primitiveTypeEnum
+			with: indexTypeEnum
+			with: aDrawElementsIndirectCommand].
+]
+
+{
+	#category : #'drawing elements',
+	#'squeak_changestamp' : 'stlu 9/10/2021 12:29'
+}
+GLVertexArray >> drawElements: primitiveTypeEnum numVertices: numVertices indexType: indexTypeEnum [
+
+	self
+		drawElements: primitiveTypeEnum
+		numVertices: numVertices
+		startingVertex: 0
+		indexType: indexTypeEnum.
+]
+
+{
+	#category : #'drawing elements',
+	#'squeak_changestamp' : 'stlu 9/10/2021 13:00'
+}
+GLVertexArray >> drawElements: primitiveTypeEnum numVertices: numVertices indexType: indexTypeEnum indexOffset: indexOffset [
+
+	self
+		drawElements: primitiveTypeEnum
+		numVertices: numVertices
+		startingVertex: 0
+		indexType: indexTypeEnum
+		indexOffset: indexOffset.
+]
+
+{
+	#category : #'drawing elements',
+	#'squeak_changestamp' : 'stlu 9/10/2021 12:29'
+}
+GLVertexArray >> drawElements: primitiveTypeEnum numVertices: numVertices indexType: indexTypeEnum numInstances: numInstances [
+
+	self
+		drawElements: primitiveTypeEnum
+		numVertices: numVertices
+		startingVertex: 0
+		indexType: indexTypeEnum
+		numInstances: numInstances.
+]
+
+{
+	#category : #'drawing elements',
+	#'squeak_changestamp' : 'stlu 9/10/2021 13:00'
+}
+GLVertexArray >> drawElements: primitiveTypeEnum numVertices: numVertices indexType: indexTypeEnum numInstances: numInstances indexOffset: indexOffset [
+
+	self
+		drawElements: primitiveTypeEnum
+		numVertices: numVertices
+		startingVertex: 0
+		indexType: indexTypeEnum
+		numInstances: numInstances
+		indexOffset: indexOffset.
+]
+
+{
+	#category : #'drawing elements',
+	#'squeak_changestamp' : 'stlu 9/10/2021 12:29'
+}
+GLVertexArray >> drawElements: primitiveTypeEnum numVertices: numVertices indexType: indexTypeEnum numInstances: numInstances startingInstance: startingInstance [
+
+	self
+		drawElements: primitiveTypeEnum
+		numVertices: numVertices
+		startingVertex: 0
+		indexType: indexTypeEnum
+		numInstances: numInstances
+		startingInstance: startingInstance.
+]
+
+{
+	#category : #'drawing elements',
+	#'squeak_changestamp' : 'stlu 9/10/2021 13:00'
+}
+GLVertexArray >> drawElements: primitiveTypeEnum numVertices: numVertices indexType: indexTypeEnum numInstances: numInstances startingInstance: startingInstance indexOffset: indexOffset [
+
+	self
+		drawElements: primitiveTypeEnum
+		numVertices: numVertices
+		startingVertex: 0
+		indexType: indexTypeEnum
+		numInstances: numInstances
+		startingInstance: startingInstance
+		indexOffset: indexOffset.
+]
+
+{
+	#category : #'drawing elements',
+	#'squeak_changestamp' : 'stlu 9/10/2021 12:43'
+}
+GLVertexArray >> drawElements: primitiveTypeEnum numVertices: numVertices startingVertex: elementBufferOffset indexType: indexTypeEnum [
 	"indexTypeEnum must be one of UNSIGNED_BYTE, UNSIGNED_SHORT, or UNSIGNED_INT"
 	self boundDuring: [
 		GL
 			drawElements: primitiveTypeEnum
 			with: numVertices
 			with: indexTypeEnum
-			with: (ExternalAddress fromInteger: elementBufferOffset)]
+			with: (ExternalAddress fromInteger: elementBufferOffset)].
 ]
 
 {
-	#category : #'rendering - indexed',
-	#'squeak_changestamp' : 'stlu 9/9/2021 10:40'
+	#category : #'drawing elements',
+	#'squeak_changestamp' : 'stlu 9/10/2021 13:00'
 }
-GLVertexArray >> drawElements: primitiveTypeEnum count: numVertices type: indexTypeEnum [
+GLVertexArray >> drawElements: primitiveTypeEnum numVertices: numVertices startingVertex: elementBufferOffset indexType: indexTypeEnum indexOffset: indexOffset [
+	"indexTypeEnum must be one of UNSIGNED_BYTE, UNSIGNED_SHORT, or UNSIGNED_INT"
+	self boundDuring: [
+		GL
+			drawElementsBaseVertex: primitiveTypeEnum
+			with: numVertices
+			with: indexTypeEnum
+			with: (ExternalAddress fromInteger: elementBufferOffset)
+			with: indexOffset].
+]
 
-	self
-		drawElements: primitiveTypeEnum
-		count: numVertices
-		startingAt: 0
-		type: indexTypeEnum.
+{
+	#category : #'drawing elements',
+	#'squeak_changestamp' : 'stlu 9/10/2021 12:43'
+}
+GLVertexArray >> drawElements: primitiveTypeEnum numVertices: numVertices startingVertex: elementBufferOffset indexType: indexTypeEnum numInstances: numInstances [
+	"indexTypeEnum must be one of UNSIGNED_BYTE, UNSIGNED_SHORT, or UNSIGNED_INT"
+	self boundDuring: [
+		GL
+			drawElementsInstanced: primitiveTypeEnum
+			with: numVertices
+			with: indexTypeEnum
+			with: (ExternalAddress fromInteger: elementBufferOffset)
+			with: numInstances].
+]
+
+{
+	#category : #'drawing elements',
+	#'squeak_changestamp' : 'stlu 9/10/2021 13:00'
+}
+GLVertexArray >> drawElements: primitiveTypeEnum numVertices: numVertices startingVertex: elementBufferOffset indexType: indexTypeEnum numInstances: numInstances indexOffset: indexOffset [
+	"indexTypeEnum must be one of UNSIGNED_BYTE, UNSIGNED_SHORT, or UNSIGNED_INT"
+	self boundDuring: [
+		GL
+			drawElementsInstancedBaseVertex: primitiveTypeEnum
+			with: numVertices
+			with: indexTypeEnum
+			with: (ExternalAddress fromInteger: elementBufferOffset)
+			with: numInstances
+			with: indexOffset].
+]
+
+{
+	#category : #'drawing elements',
+	#'squeak_changestamp' : 'stlu 9/10/2021 12:43'
+}
+GLVertexArray >> drawElements: primitiveTypeEnum numVertices: numVertices startingVertex: elementBufferOffset indexType: indexTypeEnum numInstances: numInstances startingInstance: startingInstance [
+	"indexTypeEnum must be one of UNSIGNED_BYTE, UNSIGNED_SHORT, or UNSIGNED_INT"
+	self boundDuring: [
+		GL
+			drawElementsInstancedBaseInstance: primitiveTypeEnum
+			with: numVertices
+			with: indexTypeEnum
+			with: (ExternalAddress fromInteger: elementBufferOffset)
+			with: numInstances
+			with: startingInstance].
+]
+
+{
+	#category : #'drawing elements',
+	#'squeak_changestamp' : 'stlu 9/10/2021 13:00'
+}
+GLVertexArray >> drawElements: primitiveTypeEnum numVertices: numVertices startingVertex: elementBufferOffset indexType: indexTypeEnum numInstances: numInstances startingInstance: startingInstance indexOffset: indexOffset [
+	"indexTypeEnum must be one of UNSIGNED_BYTE, UNSIGNED_SHORT, or UNSIGNED_INT"
+	self boundDuring: [
+		GL
+			drawElementsInstancedBaseVertexBaseInstance: primitiveTypeEnum
+			with: numVertices
+			with: indexTypeEnum
+			with: (ExternalAddress fromInteger: elementBufferOffset)
+			with: numInstances
+			with: indexOffset
+			with: startingInstance].
 ]
 
 {
@@ -309,32 +475,31 @@ GLVertexArray >> isVertexArray [
 ]
 
 {
-	#category : #rendering,
-	#'squeak_changestamp' : 'stlu 3/15/2021 16:09'
+	#category : #'drawing arrays',
+	#'squeak_changestamp' : 'stlu 9/10/2021 12:52'
 }
-GLVertexArray >> multiDrawArrays: primitiveTypeEnum counts: rawBitsCountsArray startIndices: rawBitsStartsArray drawCount: drawCount [
+GLVertexArray >> multiDrawArrays: primitiveTypeEnum numVertices: rawBitsArrayOfNumVertices startVertices: rawBitsArrayOfStartVertices numDraws: numDraws [
 
 	self boundDuring: [
 		GL
 			multiDrawArrays: primitiveTypeEnum
-			with: rawBitsStartsArray
-			with: rawBitsCountsArray
-			with: drawCount]
+			with: rawBitsArrayOfStartVertices
+			with: rawBitsArrayOfNumVertices
+			with: numDraws].
 ]
 
 {
-	#category : #rendering,
-	#'squeak_changestamp' : 'stlu 3/15/2021 16:10'
+	#category : #'drawing arrays',
+	#'squeak_changestamp' : 'stlu 9/10/2021 12:56'
 }
-GLVertexArray >> multiDrawArraysIndirect: primitiveTypeEnum commands: rawBitsArrayOfDrawArraysIndirectCommand drawCount: drawCount stride: byteStride [
+GLVertexArray >> multiDrawArraysIndirect: primitiveTypeEnum commands: contiguousMemoryOfDrawArraysIndirectCommands numCommands: numCommands stride: byteStrideBetweenCommands [
 
-	self flag: #todo. "add remaining draw commands"
 	self boundDuring: [
 		GL
 			multiDrawArraysIndirect: primitiveTypeEnum
-			with: rawBitsArrayOfDrawArraysIndirectCommand
-			with: drawCount
-			with: byteStride]
+			with: contiguousMemoryOfDrawArraysIndirectCommands
+			with: numCommands
+			with: byteStrideBetweenCommands].
 ]
 
 {

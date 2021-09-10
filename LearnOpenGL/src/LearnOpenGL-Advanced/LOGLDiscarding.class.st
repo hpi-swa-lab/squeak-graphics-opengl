@@ -14,7 +14,7 @@ Class {
 
 {
 	#category : #running,
-	#'squeak_changestamp' : 'stlu 6/27/2021 18:51'
+	#'squeak_changestamp' : 'stlu 9/10/2021 13:08'
 }
 LOGLDiscarding >> draw [
 
@@ -24,7 +24,7 @@ LOGLDiscarding >> draw [
 	program uniforms texture1: 3.
 	self transparentLocations do: [:location |
 		program uniforms model: (Matrix4x4 withOffset: location).
-		vao drawArrays: GL_TRIANGLES count: 6]
+		vao drawArrays: GL_TRIANGLES numVertices: 6].
 ]
 
 {

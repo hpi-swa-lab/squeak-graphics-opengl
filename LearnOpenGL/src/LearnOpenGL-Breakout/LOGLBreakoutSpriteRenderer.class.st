@@ -49,7 +49,7 @@ LOGLBreakoutSpriteRenderer >> drawSprite: aTexture position: position extent: ex
 
 {
 	#category : #rendering,
-	#'squeak_changestamp' : 'stlu 8/6/2021 16:17'
+	#'squeak_changestamp' : 'stlu 9/10/2021 13:11'
 }
 LOGLBreakoutSpriteRenderer >> drawSprite: aTexture position: position extent: extent rotation: degrees color: color [
 
@@ -68,7 +68,7 @@ LOGLBreakoutSpriteRenderer >> drawSprite: aTexture position: position extent: ex
 			sSprite: 0.
 		
 		aTexture bind.
-		vao drawArrays: GL TRIANGLES count: 6]
+		vao drawArrays: GL TRIANGLES numVertices: 6].
 ]
 
 {

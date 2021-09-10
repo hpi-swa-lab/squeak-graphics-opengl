@@ -49,7 +49,7 @@ LOGLInstancing >> quadVertices [
 
 {
 	#category : #running,
-	#'squeak_changestamp' : 'stlu 4/15/2021 12:10'
+	#'squeak_changestamp' : 'stlu 9/10/2021 13:08'
 }
 LOGLInstancing >> render [
 
@@ -59,8 +59,8 @@ LOGLInstancing >> render [
 	program useDuring: [
 		vao
 			drawArrays: GL_TRIANGLES
-			count: 6
-			numInstances: 100]
+			numVertices: 6
+			numInstances: 100].
 ]
 
 {

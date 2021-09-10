@@ -68,21 +68,21 @@ LOGLDepthTesting >> cubeVertices [
 
 {
 	#category : #rendering,
-	#'squeak_changestamp' : 'stlu 6/27/2021 18:50'
+	#'squeak_changestamp' : 'stlu 9/10/2021 13:07'
 }
 LOGLDepthTesting >> draw [
 
 	(vao vertexBufferBindingAt: 0) buffer: cubeVBO.
 	program uniforms texture1: 1.
 	program uniforms model: (Matrix4x4 withOffset: -1.0 @ 0.0 @ -1.0).
-	vao drawArrays: GL_TRIANGLES count: 36.
+	vao drawArrays: GL_TRIANGLES numVertices: 36.
 	program uniforms model: (Matrix4x4 withOffset: 2.0 @ 0.0 @ 0.0).
-	vao drawArrays: GL_TRIANGLES count: 36.
+	vao drawArrays: GL_TRIANGLES numVertices: 36.
 
 	(vao vertexBufferBindingAt: 0) buffer: planeVBO.
 	program uniforms texture1: 2.
 	program uniforms model: Matrix4x4 identity.
-	vao drawArrays: GL_TRIANGLES count: 6
+	vao drawArrays: GL_TRIANGLES numVertices: 6.
 ]
 
 {

@@ -233,7 +233,7 @@ LOGLBreakoutPostProcessor >> offsets [
 
 {
 	#category : #rendering,
-	#'squeak_changestamp' : 'stlu 8/6/2021 16:35'
+	#'squeak_changestamp' : 'stlu 9/10/2021 13:11'
 }
 LOGLBreakoutPostProcessor >> render: secs [
 
@@ -244,7 +244,7 @@ LOGLBreakoutPostProcessor >> render: secs [
 			uChaosIsActive: chaos;
 			uShakeIsActive: shake.
 		texture boundDuring: [
-			vao drawArrays: GL TRIANGLES count: 6]]
+			vao drawArrays: GL TRIANGLES numVertices: 6]].
 ]
 
 {

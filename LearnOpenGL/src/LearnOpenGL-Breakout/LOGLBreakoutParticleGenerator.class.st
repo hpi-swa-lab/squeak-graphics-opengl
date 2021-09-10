@@ -45,7 +45,7 @@ LOGLBreakoutParticleGenerator >> amount: anObject [
 
 {
 	#category : #rendering,
-	#'squeak_changestamp' : 'stlu 8/6/2021 16:15'
+	#'squeak_changestamp' : 'stlu 9/10/2021 13:11'
 }
 LOGLBreakoutParticleGenerator >> draw [
 	"render all particles"
@@ -60,10 +60,10 @@ LOGLBreakoutParticleGenerator >> draw [
 						program uniforms
 							uOffset: particle position;
 							uColor: particle color.
-						vao drawArrays: GL TRIANGLES count: 6]]]]].
+						vao drawArrays: GL TRIANGLES numVertices: 6]]]]].
 	
 	"don't forget to reset to default blending mode"
-	GL blendFunc: GL SRC_ALPHA with: GL ONE_MINUS_SRC_ALPHA
+	GL blendFunc: GL SRC_ALPHA with: GL ONE_MINUS_SRC_ALPHA.
 ]
 
 {

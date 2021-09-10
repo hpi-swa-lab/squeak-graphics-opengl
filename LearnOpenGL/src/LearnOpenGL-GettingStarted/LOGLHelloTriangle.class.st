@@ -14,11 +14,11 @@ Class {
 
 {
 	#category : #running,
-	#'squeak_changestamp' : 'stlu 3/15/2021 16:22'
+	#'squeak_changestamp' : 'stlu 9/10/2021 13:08'
 }
 LOGLHelloTriangle >> draw [
 
-	vao drawArrays: GL_TRIANGLES count: 3
+	vao drawArrays: GL_TRIANGLES numVertices: 3.
 ]
 
 {

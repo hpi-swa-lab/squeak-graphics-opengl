@@ -6,17 +6,17 @@ Class {
 
 {
 	#category : #'field definition',
-	#'squeak_changestamp' : 'stlu 3/14/2021 13:25'
+	#'squeak_changestamp' : 'stlu 9/10/2021 12:59'
 }
 GLDrawArraysIndirectCommand class >> fields [
 	"
 	self defineFields.
 	"
 	^ #(
-		(count			'uint32_t')
-		(primCount		'uint32_t')
-		(first			'uint32_t')
-		(baseInstance	'uint32_t')
+		(numVertices		'uint32_t')
+		(numInstances		'uint32_t')
+		(startingVertex		'uint32_t')
+		(startingInstance	'uint32_t')
 	)
 "
 typedef  struct {

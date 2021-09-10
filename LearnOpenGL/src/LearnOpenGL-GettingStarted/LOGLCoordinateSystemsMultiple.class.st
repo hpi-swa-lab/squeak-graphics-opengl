@@ -28,7 +28,7 @@ LOGLCoordinateSystemsMultiple >> cubePositions [
 
 {
 	#category : #running,
-	#'squeak_changestamp' : 'stlu 3/15/2021 16:20'
+	#'squeak_changestamp' : 'stlu 9/10/2021 13:11'
 }
 LOGLCoordinateSystemsMultiple >> draw [
 
@@ -42,5 +42,5 @@ LOGLCoordinateSystemsMultiple >> draw [
 		model := Matrix4x4 withRotation: angle around: 1.0 @ 0.3 @ 0.5.
 		model := model translatedBy: (Vector3 from: position).
 		program uniforms model: model.
-		vao drawArrays: GL_TRIANGLES count: 36]
+		vao drawArrays: GL_TRIANGLES numVertices: 36].
 ]
