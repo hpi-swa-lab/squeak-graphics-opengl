@@ -1,7 +1,7 @@
 Class {
 	#name : #GLDrawElementsIndirectCommand,
 	#superclass : #ExternalStructure,
-	#category : #'OpenGLObjects-VertexArrays'
+	#category : #'OpenGL-Types'
 }
 
 {
