@@ -22656,7 +22656,7 @@ GLRegistry >> EQUIV [
 
 {
 	#category : #'enums - extensions',
-	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
+	#'squeak_changestamp' : 'stlu 9/15/2021 14:10'
 }
 GLRegistry >> ETC1_RGB8_OES [
 
@@ -22665,6 +22665,7 @@ GLRegistry >> ETC1_RGB8_OES [
 	
 	<glEnum: #'GL_ETC1_RGB8_OES'>
 	<glValue: 16r8D64>
+	<glGroups: #(#InternalFormat #SizedInternalFormat)>
 	<glVendor: #OES>
 	<glSuffix: #OES>
 	^ GL_ETC1_RGB8_OES
@@ -23545,7 +23546,7 @@ GLRegistry >> FENCE_STATUS_NV [
 
 {
 	#category : #'enums - extensions',
-	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
+	#'squeak_changestamp' : 'stlu 9/15/2021 14:10'
 }
 GLRegistry >> FETCH_PER_SAMPLE_ARM [
 
@@ -23553,6 +23554,7 @@ GLRegistry >> FETCH_PER_SAMPLE_ARM [
 	
 	<glEnum: #'GL_FETCH_PER_SAMPLE_ARM'>
 	<glValue: 16r8F65>
+	<glGroups: #(#EnableCap #GetPName)>
 	<glVendor: #ARM>
 	<glSuffix: #ARM>
 	^ GL_FETCH_PER_SAMPLE_ARM
@@ -26619,7 +26621,7 @@ GLRegistry >> FRAGMENT_SHADER_DISCARDS_SAMPLES_EXT [
 
 {
 	#category : #'enums - extensions',
-	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
+	#'squeak_changestamp' : 'stlu 9/15/2021 14:10'
 }
 GLRegistry >> FRAGMENT_SHADER_FRAMEBUFFER_FETCH_MRT_ARM [
 
@@ -26627,6 +26629,7 @@ GLRegistry >> FRAGMENT_SHADER_FRAMEBUFFER_FETCH_MRT_ARM [
 	
 	<glEnum: #'GL_FRAGMENT_SHADER_FRAMEBUFFER_FETCH_MRT_ARM'>
 	<glValue: 16r8F66>
+	<glGroups: #(#GetPName)>
 	<glVendor: #ARM>
 	<glSuffix: #ARM>
 	^ GL_FRAGMENT_SHADER_FRAMEBUFFER_FETCH_MRT_ARM
@@ -65630,7 +65633,7 @@ GLRegistry >> RENDER [
 
 {
 	#category : #enums,
-	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
+	#'squeak_changestamp' : 'stlu 9/15/2021 14:10'
 }
 GLRegistry >> RENDERBUFFER [
 
@@ -65647,7 +65650,7 @@ GLRegistry >> RENDERBUFFER [
 	
 	<glEnum: #'GL_RENDERBUFFER'>
 	<glValue: 16r8D41>
-	<glGroups: #(#CopyImageSubDataTarget #ObjectIdentifier #RenderbufferTarget)>
+	<glGroups: #(#CopyImageSubDataTarget #ObjectIdentifier #RenderbufferTarget #TextureTarget)>
 	<glVendor: #ARB>
 	^ GL_RENDERBUFFER
 ]
@@ -67779,7 +67782,7 @@ GLRegistry >> RGB5 [
 
 {
 	#category : #enums,
-	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
+	#'squeak_changestamp' : 'stlu 9/15/2021 14:10'
 }
 GLRegistry >> RGB565 [
 
@@ -67791,13 +67794,14 @@ GLRegistry >> RGB565 [
 	
 	<glEnum: #'GL_RGB565'>
 	<glValue: 16r8D62>
+	<glGroups: #(#InternalFormat #SizedInternalFormat)>
 	<glVendor: #OES>
 	^ GL_RGB565
 ]
 
 {
 	#category : #'enums - extensions',
-	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
+	#'squeak_changestamp' : 'stlu 9/15/2021 14:10'
 }
 GLRegistry >> RGB565_OES [
 
@@ -67807,6 +67811,7 @@ GLRegistry >> RGB565_OES [
 	
 	<glEnum: #'GL_RGB565_OES'>
 	<glValue: 16r8D62>
+	<glGroups: #(#InternalFormat #SizedInternalFormat)>
 	<glVendor: #OES>
 	<glSuffix: #OES>
 	^ GL_RGB565_OES
@@ -101883,7 +101888,7 @@ GLRegistry >> compressedMultiTexImage3DEXT: texunit with: target with: level wit
 
 {
 	#category : #'commands - extensions',
-	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
+	#'squeak_changestamp' : 'stlu 9/15/2021 14:10'
 }
 GLRegistry >> compressedMultiTexSubImage1DEXT: texunit with: target with: level with: xoffset with: width with: format with: imageSize with: bits [
 
@@ -101897,7 +101902,7 @@ GLRegistry >> compressedMultiTexSubImage1DEXT: texunit with: target with: level 
 	<glArg: 'level' type: 'GLint' group: #CheckedInt32>
 	<glArg: 'xoffset' type: 'GLint' group: #CheckedInt32>
 	<glArg: 'width' type: 'GLsizei'>
-	<glArg: 'format' type: 'GLenum' group: #PixelFormat>
+	<glArg: 'format' type: 'GLenum' group: #InternalFormat>
 	<glArg: 'imageSize' type: 'GLsizei'>
 	<glArg: 'bits' type: 'void*' size: 'imageSize'>
 	
@@ -101907,7 +101912,7 @@ GLRegistry >> compressedMultiTexSubImage1DEXT: texunit with: target with: level 
 
 {
 	#category : #'commands - extensions',
-	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
+	#'squeak_changestamp' : 'stlu 9/15/2021 14:10'
 }
 GLRegistry >> compressedMultiTexSubImage2DEXT: texunit with: target with: level with: xoffset with: yoffset with: width with: height with: format with: imageSize with: bits [
 
@@ -101923,7 +101928,7 @@ GLRegistry >> compressedMultiTexSubImage2DEXT: texunit with: target with: level 
 	<glArg: 'yoffset' type: 'GLint' group: #CheckedInt32>
 	<glArg: 'width' type: 'GLsizei'>
 	<glArg: 'height' type: 'GLsizei'>
-	<glArg: 'format' type: 'GLenum' group: #PixelFormat>
+	<glArg: 'format' type: 'GLenum' group: #InternalFormat>
 	<glArg: 'imageSize' type: 'GLsizei'>
 	<glArg: 'bits' type: 'void*' size: 'imageSize'>
 	
@@ -101933,7 +101938,7 @@ GLRegistry >> compressedMultiTexSubImage2DEXT: texunit with: target with: level 
 
 {
 	#category : #'commands - extensions',
-	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
+	#'squeak_changestamp' : 'stlu 9/15/2021 14:10'
 }
 GLRegistry >> compressedMultiTexSubImage3DEXT: texunit with: target with: level with: xoffset with: yoffset with: zoffset with: width with: height with: depth with: format with: imageSize with: bits [
 
@@ -101951,7 +101956,7 @@ GLRegistry >> compressedMultiTexSubImage3DEXT: texunit with: target with: level 
 	<glArg: 'width' type: 'GLsizei'>
 	<glArg: 'height' type: 'GLsizei'>
 	<glArg: 'depth' type: 'GLsizei'>
-	<glArg: 'format' type: 'GLenum' group: #PixelFormat>
+	<glArg: 'format' type: 'GLenum' group: #InternalFormat>
 	<glArg: 'imageSize' type: 'GLsizei'>
 	<glArg: 'bits' type: 'void*' size: 'imageSize'>
 	
@@ -102132,7 +102137,7 @@ GLRegistry >> compressedTexImage3DOES: target with: level with: internalformat w
 
 {
 	#category : #commands,
-	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
+	#'squeak_changestamp' : 'stlu 9/15/2021 14:10'
 }
 GLRegistry >> compressedTexSubImage1D: target with: level with: xoffset with: width with: format with: imageSize with: data [
 
@@ -102145,7 +102150,7 @@ GLRegistry >> compressedTexSubImage1D: target with: level with: xoffset with: wi
 	<glArg: 'level' type: 'GLint' group: #CheckedInt32>
 	<glArg: 'xoffset' type: 'GLint' group: #CheckedInt32>
 	<glArg: 'width' type: 'GLsizei'>
-	<glArg: 'format' type: 'GLenum' group: #PixelFormat>
+	<glArg: 'format' type: 'GLenum' group: #InternalFormat>
 	<glArg: 'imageSize' type: 'GLsizei'>
 	<glArg: 'data' type: 'void*' group: #CompressedTextureARB size: 'imageSize'>
 	
@@ -102155,7 +102160,7 @@ GLRegistry >> compressedTexSubImage1D: target with: level with: xoffset with: wi
 
 {
 	#category : #'commands - extensions',
-	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
+	#'squeak_changestamp' : 'stlu 9/15/2021 14:10'
 }
 GLRegistry >> compressedTexSubImage1DARB: target with: level with: xoffset with: width with: format with: imageSize with: data [
 
@@ -102168,7 +102173,7 @@ GLRegistry >> compressedTexSubImage1DARB: target with: level with: xoffset with:
 	<glArg: 'level' type: 'GLint' group: #CheckedInt32>
 	<glArg: 'xoffset' type: 'GLint' group: #CheckedInt32>
 	<glArg: 'width' type: 'GLsizei'>
-	<glArg: 'format' type: 'GLenum' group: #PixelFormat>
+	<glArg: 'format' type: 'GLenum' group: #InternalFormat>
 	<glArg: 'imageSize' type: 'GLsizei'>
 	<glArg: 'data' type: 'void*' group: #CompressedTextureARB size: 'imageSize'>
 	
@@ -102178,7 +102183,7 @@ GLRegistry >> compressedTexSubImage1DARB: target with: level with: xoffset with:
 
 {
 	#category : #commands,
-	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
+	#'squeak_changestamp' : 'stlu 9/15/2021 14:10'
 }
 GLRegistry >> compressedTexSubImage2D: target with: level with: xoffset with: yoffset with: width with: height with: format with: imageSize with: data [
 
@@ -102196,7 +102201,7 @@ GLRegistry >> compressedTexSubImage2D: target with: level with: xoffset with: yo
 	<glArg: 'yoffset' type: 'GLint' group: #CheckedInt32>
 	<glArg: 'width' type: 'GLsizei'>
 	<glArg: 'height' type: 'GLsizei'>
-	<glArg: 'format' type: 'GLenum' group: #PixelFormat>
+	<glArg: 'format' type: 'GLenum' group: #InternalFormat>
 	<glArg: 'imageSize' type: 'GLsizei'>
 	<glArg: 'data' type: 'void*' group: #CompressedTextureARB size: 'imageSize'>
 	
@@ -102206,7 +102211,7 @@ GLRegistry >> compressedTexSubImage2D: target with: level with: xoffset with: yo
 
 {
 	#category : #'commands - extensions',
-	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
+	#'squeak_changestamp' : 'stlu 9/15/2021 14:10'
 }
 GLRegistry >> compressedTexSubImage2DARB: target with: level with: xoffset with: yoffset with: width with: height with: format with: imageSize with: data [
 
@@ -102221,7 +102226,7 @@ GLRegistry >> compressedTexSubImage2DARB: target with: level with: xoffset with:
 	<glArg: 'yoffset' type: 'GLint' group: #CheckedInt32>
 	<glArg: 'width' type: 'GLsizei'>
 	<glArg: 'height' type: 'GLsizei'>
-	<glArg: 'format' type: 'GLenum' group: #PixelFormat>
+	<glArg: 'format' type: 'GLenum' group: #InternalFormat>
 	<glArg: 'imageSize' type: 'GLsizei'>
 	<glArg: 'data' type: 'void*' group: #CompressedTextureARB size: 'imageSize'>
 	
@@ -102231,7 +102236,7 @@ GLRegistry >> compressedTexSubImage2DARB: target with: level with: xoffset with:
 
 {
 	#category : #commands,
-	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
+	#'squeak_changestamp' : 'stlu 9/15/2021 14:10'
 }
 GLRegistry >> compressedTexSubImage3D: target with: level with: xoffset with: yoffset with: zoffset with: width with: height with: depth with: format with: imageSize with: data [
 
@@ -102249,7 +102254,7 @@ GLRegistry >> compressedTexSubImage3D: target with: level with: xoffset with: yo
 	<glArg: 'width' type: 'GLsizei'>
 	<glArg: 'height' type: 'GLsizei'>
 	<glArg: 'depth' type: 'GLsizei'>
-	<glArg: 'format' type: 'GLenum' group: #PixelFormat>
+	<glArg: 'format' type: 'GLenum' group: #InternalFormat>
 	<glArg: 'imageSize' type: 'GLsizei'>
 	<glArg: 'data' type: 'void*' group: #CompressedTextureARB size: 'imageSize'>
 	
@@ -102259,7 +102264,7 @@ GLRegistry >> compressedTexSubImage3D: target with: level with: xoffset with: yo
 
 {
 	#category : #'commands - extensions',
-	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
+	#'squeak_changestamp' : 'stlu 9/15/2021 14:10'
 }
 GLRegistry >> compressedTexSubImage3DARB: target with: level with: xoffset with: yoffset with: zoffset with: width with: height with: depth with: format with: imageSize with: data [
 
@@ -102276,7 +102281,7 @@ GLRegistry >> compressedTexSubImage3DARB: target with: level with: xoffset with:
 	<glArg: 'width' type: 'GLsizei'>
 	<glArg: 'height' type: 'GLsizei'>
 	<glArg: 'depth' type: 'GLsizei'>
-	<glArg: 'format' type: 'GLenum' group: #PixelFormat>
+	<glArg: 'format' type: 'GLenum' group: #InternalFormat>
 	<glArg: 'imageSize' type: 'GLsizei'>
 	<glArg: 'data' type: 'void*' group: #CompressedTextureARB size: 'imageSize'>
 	
@@ -102286,7 +102291,7 @@ GLRegistry >> compressedTexSubImage3DARB: target with: level with: xoffset with:
 
 {
 	#category : #'commands - extensions',
-	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
+	#'squeak_changestamp' : 'stlu 9/15/2021 14:10'
 }
 GLRegistry >> compressedTexSubImage3DOES: target with: level with: xoffset with: yoffset with: zoffset with: width with: height with: depth with: format with: imageSize with: data [
 
@@ -102302,7 +102307,7 @@ GLRegistry >> compressedTexSubImage3DOES: target with: level with: xoffset with:
 	<glArg: 'width' type: 'GLsizei'>
 	<glArg: 'height' type: 'GLsizei'>
 	<glArg: 'depth' type: 'GLsizei'>
-	<glArg: 'format' type: 'GLenum' group: #PixelFormat>
+	<glArg: 'format' type: 'GLenum' group: #InternalFormat>
 	<glArg: 'imageSize' type: 'GLsizei'>
 	<glArg: 'data' type: 'void*' size: 'imageSize'>
 	
@@ -102387,7 +102392,7 @@ GLRegistry >> compressedTextureImage3DEXT: texture with: target with: level with
 
 {
 	#category : #commands,
-	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
+	#'squeak_changestamp' : 'stlu 9/15/2021 14:10'
 }
 GLRegistry >> compressedTextureSubImage1D: texture with: level with: xoffset with: width with: format with: imageSize with: data [
 
@@ -102401,7 +102406,7 @@ GLRegistry >> compressedTextureSubImage1D: texture with: level with: xoffset wit
 	<glArg: 'level' type: 'GLint'>
 	<glArg: 'xoffset' type: 'GLint'>
 	<glArg: 'width' type: 'GLsizei'>
-	<glArg: 'format' type: 'GLenum' group: #PixelFormat>
+	<glArg: 'format' type: 'GLenum' group: #InternalFormat>
 	<glArg: 'imageSize' type: 'GLsizei'>
 	<glArg: 'data' type: 'void*'>
 	
@@ -102411,7 +102416,7 @@ GLRegistry >> compressedTextureSubImage1D: texture with: level with: xoffset wit
 
 {
 	#category : #'commands - extensions',
-	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
+	#'squeak_changestamp' : 'stlu 9/15/2021 14:10'
 }
 GLRegistry >> compressedTextureSubImage1DEXT: texture with: target with: level with: xoffset with: width with: format with: imageSize with: bits [
 
@@ -102425,7 +102430,7 @@ GLRegistry >> compressedTextureSubImage1DEXT: texture with: target with: level w
 	<glArg: 'level' type: 'GLint' group: #CheckedInt32>
 	<glArg: 'xoffset' type: 'GLint' group: #CheckedInt32>
 	<glArg: 'width' type: 'GLsizei'>
-	<glArg: 'format' type: 'GLenum' group: #PixelFormat>
+	<glArg: 'format' type: 'GLenum' group: #InternalFormat>
 	<glArg: 'imageSize' type: 'GLsizei'>
 	<glArg: 'bits' type: 'void*' size: 'imageSize'>
 	
@@ -102435,7 +102440,7 @@ GLRegistry >> compressedTextureSubImage1DEXT: texture with: target with: level w
 
 {
 	#category : #commands,
-	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
+	#'squeak_changestamp' : 'stlu 9/15/2021 14:10'
 }
 GLRegistry >> compressedTextureSubImage2D: texture with: level with: xoffset with: yoffset with: width with: height with: format with: imageSize with: data [
 
@@ -102451,7 +102456,7 @@ GLRegistry >> compressedTextureSubImage2D: texture with: level with: xoffset wit
 	<glArg: 'yoffset' type: 'GLint'>
 	<glArg: 'width' type: 'GLsizei'>
 	<glArg: 'height' type: 'GLsizei'>
-	<glArg: 'format' type: 'GLenum' group: #PixelFormat>
+	<glArg: 'format' type: 'GLenum' group: #InternalFormat>
 	<glArg: 'imageSize' type: 'GLsizei'>
 	<glArg: 'data' type: 'void*'>
 	
@@ -102461,7 +102466,7 @@ GLRegistry >> compressedTextureSubImage2D: texture with: level with: xoffset wit
 
 {
 	#category : #'commands - extensions',
-	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
+	#'squeak_changestamp' : 'stlu 9/15/2021 14:10'
 }
 GLRegistry >> compressedTextureSubImage2DEXT: texture with: target with: level with: xoffset with: yoffset with: width with: height with: format with: imageSize with: bits [
 
@@ -102477,7 +102482,7 @@ GLRegistry >> compressedTextureSubImage2DEXT: texture with: target with: level w
 	<glArg: 'yoffset' type: 'GLint' group: #CheckedInt32>
 	<glArg: 'width' type: 'GLsizei'>
 	<glArg: 'height' type: 'GLsizei'>
-	<glArg: 'format' type: 'GLenum' group: #PixelFormat>
+	<glArg: 'format' type: 'GLenum' group: #InternalFormat>
 	<glArg: 'imageSize' type: 'GLsizei'>
 	<glArg: 'bits' type: 'void*' size: 'imageSize'>
 	
@@ -102487,7 +102492,7 @@ GLRegistry >> compressedTextureSubImage2DEXT: texture with: target with: level w
 
 {
 	#category : #commands,
-	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
+	#'squeak_changestamp' : 'stlu 9/15/2021 14:10'
 }
 GLRegistry >> compressedTextureSubImage3D: texture with: level with: xoffset with: yoffset with: zoffset with: width with: height with: depth with: format with: imageSize with: data [
 
@@ -102505,7 +102510,7 @@ GLRegistry >> compressedTextureSubImage3D: texture with: level with: xoffset wit
 	<glArg: 'width' type: 'GLsizei'>
 	<glArg: 'height' type: 'GLsizei'>
 	<glArg: 'depth' type: 'GLsizei'>
-	<glArg: 'format' type: 'GLenum' group: #PixelFormat>
+	<glArg: 'format' type: 'GLenum' group: #InternalFormat>
 	<glArg: 'imageSize' type: 'GLsizei'>
 	<glArg: 'data' type: 'void*'>
 	
@@ -102515,7 +102520,7 @@ GLRegistry >> compressedTextureSubImage3D: texture with: level with: xoffset wit
 
 {
 	#category : #'commands - extensions',
-	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
+	#'squeak_changestamp' : 'stlu 9/15/2021 14:10'
 }
 GLRegistry >> compressedTextureSubImage3DEXT: texture with: target with: level with: xoffset with: yoffset with: zoffset with: width with: height with: depth with: format with: imageSize with: bits [
 
@@ -102533,7 +102538,7 @@ GLRegistry >> compressedTextureSubImage3DEXT: texture with: target with: level w
 	<glArg: 'width' type: 'GLsizei'>
 	<glArg: 'height' type: 'GLsizei'>
 	<glArg: 'depth' type: 'GLsizei'>
-	<glArg: 'format' type: 'GLenum' group: #PixelFormat>
+	<glArg: 'format' type: 'GLenum' group: #InternalFormat>
 	<glArg: 'imageSize' type: 'GLsizei'>
 	<glArg: 'bits' type: 'void*' size: 'imageSize'>
 	
@@ -126977,7 +126982,7 @@ GLRegistry >> multTransposeMatrixxOES: m [
 
 {
 	#category : #commands,
-	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
+	#'squeak_changestamp' : 'stlu 9/15/2021 14:10'
 }
 GLRegistry >> multiDrawArrays: mode with: first with: count with: drawcount [
 
@@ -126987,8 +126992,8 @@ GLRegistry >> multiDrawArrays: mode with: first with: count with: drawcount [
 	<glAliases: #(#glMultiDrawArraysEXT)>
 	<glReturn: 'void'>
 	<glArg: 'mode' type: 'GLenum' group: #PrimitiveType>
-	<glArg: 'first' type: 'GLint*' size: 'COMPSIZE(drawcount)'>
-	<glArg: 'count' type: 'GLsizei*' size: 'COMPSIZE(drawcount)'>
+	<glArg: 'first' type: 'GLint*' size: 'drawcount'>
+	<glArg: 'count' type: 'GLsizei*' size: 'drawcount'>
 	<glArg: 'drawcount' type: 'GLsizei'>
 	
 	<apicall: void 'glMultiDrawArrays' (GLenum GLint* GLsizei* GLsizei)>
@@ -126997,7 +127002,7 @@ GLRegistry >> multiDrawArrays: mode with: first with: count with: drawcount [
 
 {
 	#category : #'commands - extensions',
-	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
+	#'squeak_changestamp' : 'stlu 9/15/2021 14:10'
 }
 GLRegistry >> multiDrawArraysEXT: mode with: first with: count with: primcount [
 
@@ -127009,8 +127014,8 @@ GLRegistry >> multiDrawArraysEXT: mode with: first with: count with: primcount [
 	<glAliases: #(#glMultiDrawArrays)>
 	<glReturn: 'void'>
 	<glArg: 'mode' type: 'GLenum' group: #PrimitiveType>
-	<glArg: 'first' type: 'GLint*' size: 'COMPSIZE(primcount)'>
-	<glArg: 'count' type: 'GLsizei*' size: 'COMPSIZE(primcount)'>
+	<glArg: 'first' type: 'GLint*' size: 'primcount'>
+	<glArg: 'count' type: 'GLsizei*' size: 'primcount'>
 	<glArg: 'primcount' type: 'GLsizei'>
 	
 	<apicall: void 'glMultiDrawArraysEXT' (GLenum GLint* GLsizei* GLsizei)>
@@ -127041,7 +127046,7 @@ GLRegistry >> multiDrawArraysIndirect: mode with: indirect with: drawcount with:
 
 {
 	#category : #'commands - extensions',
-	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
+	#'squeak_changestamp' : 'stlu 9/15/2021 14:10'
 }
 GLRegistry >> multiDrawArraysIndirectAMD: mode with: indirect with: primcount with: stride [
 
@@ -127051,7 +127056,7 @@ GLRegistry >> multiDrawArraysIndirectAMD: mode with: indirect with: primcount wi
 	<glAliases: #(#glMultiDrawArraysIndirectEXT #glMultiDrawArraysIndirect)>
 	<glReturn: 'void'>
 	<glArg: 'mode' type: 'GLenum' group: #PrimitiveType>
-	<glArg: 'indirect' type: 'void*'>
+	<glArg: 'indirect' type: 'void*' size: 'COMPSIZE(primcount,stride)'>
 	<glArg: 'primcount' type: 'GLsizei'>
 	<glArg: 'stride' type: 'GLsizei'>
 	
@@ -127186,7 +127191,7 @@ GLRegistry >> multiDrawElementArrayAPPLE: mode with: first with: count with: pri
 
 {
 	#category : #commands,
-	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
+	#'squeak_changestamp' : 'stlu 9/15/2021 14:10'
 }
 GLRegistry >> multiDrawElements: mode with: count with: type with: indices with: drawcount [
 
@@ -127196,9 +127201,9 @@ GLRegistry >> multiDrawElements: mode with: count with: type with: indices with:
 	<glAliases: #(#glMultiDrawElementsEXT)>
 	<glReturn: 'void'>
 	<glArg: 'mode' type: 'GLenum' group: #PrimitiveType>
-	<glArg: 'count' type: 'GLsizei*' size: 'COMPSIZE(drawcount)'>
+	<glArg: 'count' type: 'GLsizei*' size: 'drawcount'>
 	<glArg: 'type' type: 'GLenum' group: #DrawElementsType>
-	<glArg: 'indices' type: 'void**' size: 'COMPSIZE(drawcount)'>
+	<glArg: 'indices' type: 'void**' size: 'drawcount'>
 	<glArg: 'drawcount' type: 'GLsizei'>
 	
 	<apicall: void 'glMultiDrawElements' (GLenum GLsizei* GLenum void** GLsizei)>
@@ -127207,7 +127212,7 @@ GLRegistry >> multiDrawElements: mode with: count with: type with: indices with:
 
 {
 	#category : #commands,
-	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
+	#'squeak_changestamp' : 'stlu 9/15/2021 14:10'
 }
 GLRegistry >> multiDrawElementsBaseVertex: mode with: count with: type with: indices with: drawcount with: basevertex [
 
@@ -127219,11 +127224,11 @@ GLRegistry >> multiDrawElementsBaseVertex: mode with: count with: type with: ind
 	<glAliases: #(#glMultiDrawElementsBaseVertexEXT)>
 	<glReturn: 'void'>
 	<glArg: 'mode' type: 'GLenum' group: #PrimitiveType>
-	<glArg: 'count' type: 'GLsizei*' size: 'COMPSIZE(drawcount)'>
+	<glArg: 'count' type: 'GLsizei*' size: 'drawcount'>
 	<glArg: 'type' type: 'GLenum' group: #DrawElementsType>
-	<glArg: 'indices' type: 'void**' size: 'COMPSIZE(drawcount)'>
+	<glArg: 'indices' type: 'void**' size: 'drawcount'>
 	<glArg: 'drawcount' type: 'GLsizei'>
-	<glArg: 'basevertex' type: 'GLint*' size: 'COMPSIZE(drawcount)'>
+	<glArg: 'basevertex' type: 'GLint*' size: 'drawcount'>
 	
 	<apicall: void 'glMultiDrawElementsBaseVertex' (GLenum GLsizei* GLenum void** GLsizei GLint*)>
 	^ self externalCallFailed
@@ -127231,7 +127236,7 @@ GLRegistry >> multiDrawElementsBaseVertex: mode with: count with: type with: ind
 
 {
 	#category : #'commands - extensions',
-	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
+	#'squeak_changestamp' : 'stlu 9/15/2021 14:10'
 }
 GLRegistry >> multiDrawElementsBaseVertexEXT: mode with: count with: type with: indices with: drawcount with: basevertex [
 
@@ -127242,11 +127247,11 @@ GLRegistry >> multiDrawElementsBaseVertexEXT: mode with: count with: type with: 
 	<glAliases: #(#glMultiDrawElementsBaseVertex)>
 	<glReturn: 'void'>
 	<glArg: 'mode' type: 'GLenum' group: #PrimitiveType>
-	<glArg: 'count' type: 'GLsizei*' size: 'COMPSIZE(drawcount)'>
+	<glArg: 'count' type: 'GLsizei*' size: 'drawcount'>
 	<glArg: 'type' type: 'GLenum' group: #DrawElementsType>
-	<glArg: 'indices' type: 'void**' size: 'COMPSIZE(drawcount)'>
+	<glArg: 'indices' type: 'void**' size: 'drawcount'>
 	<glArg: 'drawcount' type: 'GLsizei'>
-	<glArg: 'basevertex' type: 'GLint*' size: 'COMPSIZE(drawcount)'>
+	<glArg: 'basevertex' type: 'GLint*' size: 'drawcount'>
 	
 	<apicall: void 'glMultiDrawElementsBaseVertexEXT' (GLenum GLsizei* GLenum void** GLsizei GLint*)>
 	^ self externalCallFailed
@@ -127254,7 +127259,7 @@ GLRegistry >> multiDrawElementsBaseVertexEXT: mode with: count with: type with: 
 
 {
 	#category : #'commands - extensions',
-	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
+	#'squeak_changestamp' : 'stlu 9/15/2021 14:10'
 }
 GLRegistry >> multiDrawElementsEXT: mode with: count with: type with: indices with: primcount [
 
@@ -127266,9 +127271,9 @@ GLRegistry >> multiDrawElementsEXT: mode with: count with: type with: indices wi
 	<glAliases: #(#glMultiDrawElements)>
 	<glReturn: 'void'>
 	<glArg: 'mode' type: 'GLenum' group: #PrimitiveType>
-	<glArg: 'count' type: 'GLsizei*' size: 'COMPSIZE(primcount)'>
+	<glArg: 'count' type: 'GLsizei*' size: 'primcount'>
 	<glArg: 'type' type: 'GLenum' group: #DrawElementsType>
-	<glArg: 'indices' type: 'void**' size: 'COMPSIZE(primcount)'>
+	<glArg: 'indices' type: 'void**' size: 'primcount'>
 	<glArg: 'primcount' type: 'GLsizei'>
 	
 	<apicall: void 'glMultiDrawElementsEXT' (GLenum GLsizei* GLenum void** GLsizei)>
@@ -127300,7 +127305,7 @@ GLRegistry >> multiDrawElementsIndirect: mode with: type with: indirect with: dr
 
 {
 	#category : #'commands - extensions',
-	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
+	#'squeak_changestamp' : 'stlu 9/15/2021 14:10'
 }
 GLRegistry >> multiDrawElementsIndirectAMD: mode with: type with: indirect with: primcount with: stride [
 
@@ -127311,7 +127316,7 @@ GLRegistry >> multiDrawElementsIndirectAMD: mode with: type with: indirect with:
 	<glReturn: 'void'>
 	<glArg: 'mode' type: 'GLenum' group: #PrimitiveType>
 	<glArg: 'type' type: 'GLenum' group: #DrawElementsType>
-	<glArg: 'indirect' type: 'void*'>
+	<glArg: 'indirect' type: 'void*' size: 'COMPSIZE(primcount,stride)'>
 	<glArg: 'primcount' type: 'GLsizei'>
 	<glArg: 'stride' type: 'GLsizei'>
 	
@@ -127494,7 +127499,7 @@ GLRegistry >> multiDrawRangeElementArrayAPPLE: mode with: start with: end with: 
 
 {
 	#category : #'commands - extensions',
-	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
+	#'squeak_changestamp' : 'stlu 9/15/2021 14:10'
 }
 GLRegistry >> multiModeDrawArraysIBM: mode with: first with: count with: primcount with: modestride [
 
@@ -127502,9 +127507,9 @@ GLRegistry >> multiModeDrawArraysIBM: mode with: first with: count with: primcou
 	
 	<glCommand: #glMultiModeDrawArraysIBM>
 	<glReturn: 'void'>
-	<glArg: 'mode' type: 'GLenum*' group: #PrimitiveType size: 'COMPSIZE(primcount)'>
-	<glArg: 'first' type: 'GLint*' size: 'COMPSIZE(primcount)'>
-	<glArg: 'count' type: 'GLsizei*' size: 'COMPSIZE(primcount)'>
+	<glArg: 'mode' type: 'GLenum*' group: #PrimitiveType size: 'COMPSIZE(primcount,modestride)'>
+	<glArg: 'first' type: 'GLint*' size: 'primcount'>
+	<glArg: 'count' type: 'GLsizei*' size: 'primcount'>
 	<glArg: 'primcount' type: 'GLsizei'>
 	<glArg: 'modestride' type: 'GLint'>
 	
@@ -127514,7 +127519,7 @@ GLRegistry >> multiModeDrawArraysIBM: mode with: first with: count with: primcou
 
 {
 	#category : #'commands - extensions',
-	#'squeak_changestamp' : 'stlu 4/13/2021 12:29'
+	#'squeak_changestamp' : 'stlu 9/15/2021 14:10'
 }
 GLRegistry >> multiModeDrawElementsIBM: mode with: count with: type with: indices with: primcount with: modestride [
 
@@ -127522,10 +127527,10 @@ GLRegistry >> multiModeDrawElementsIBM: mode with: count with: type with: indice
 	
 	<glCommand: #glMultiModeDrawElementsIBM>
 	<glReturn: 'void'>
-	<glArg: 'mode' type: 'GLenum*' group: #PrimitiveType size: 'COMPSIZE(primcount)'>
-	<glArg: 'count' type: 'GLsizei*' size: 'COMPSIZE(primcount)'>
+	<glArg: 'mode' type: 'GLenum*' group: #PrimitiveType size: 'COMPSIZE(primcount,modestride)'>
+	<glArg: 'count' type: 'GLsizei*' size: 'primcount'>
 	<glArg: 'type' type: 'GLenum' group: #DrawElementsType>
-	<glArg: 'indices' type: 'void**' size: 'COMPSIZE(primcount)'>
+	<glArg: 'indices' type: 'void**' size: 'primcount'>
 	<glArg: 'primcount' type: 'GLsizei'>
 	<glArg: 'modestride' type: 'GLint'>
 	
