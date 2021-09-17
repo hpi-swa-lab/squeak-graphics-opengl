@@ -10,7 +10,8 @@ Class {
 		'contexts'
 	],
 	#classVars : [
-		'ErrorMessages'
+		'ErrorMessages',
+		'PrintableKeys'
 	],
 	#pools : [
 		'GLFWConstants'
@@ -79,7 +80,7 @@ GLFWUninitializedLibrary class >> example2 [ "self example2"
 
 {
 	#category : #'class initialization',
-	#'squeak_changestamp' : 'stlu 4/21/2021 10:32'
+	#'squeak_changestamp' : 'stlu 9/17/2021 11:23'
 }
 GLFWUninitializedLibrary class >> initialize [
 
@@ -87,6 +88,7 @@ GLFWUninitializedLibrary class >> initialize [
 	Smalltalk addToShutDownList: self "after: GLContext". "hard dependency on OpenGL"
 	Smalltalk addToStartUpList: self.
 	self initializeErrorMessages.
+	self initializePrintableKeys.
 	self registerNewInstance.
 ]
 
@@ -112,6 +114,80 @@ GLFWUninitializedLibrary class >> initializeErrorMessages [
 		GLFW_FEATURE_UNAVAILABLE -> 'Feature unavailable. The requested feature is not provided by the platform, so GLFW is unable to implement it.'.
 		GLFW_FEATURE_UNIMPLEMENTED -> 'Feature unimplemented. The requested feature has not yet been implemented in GLFW for this platform.'
 	} as: Dictionary
+]
+
+{
+	#category : #'class initialization',
+	#'squeak_changestamp' : 'stlu 9/17/2021 11:23'
+}
+GLFWUninitializedLibrary class >> initializePrintableKeys [
+
+	PrintableKeys := Set newFrom: {
+		GLFW_KEY_APOSTROPHE.
+		GLFW_KEY_COMMA.
+		GLFW_KEY_MINUS.
+		GLFW_KEY_PERIOD.
+		GLFW_KEY_SLASH.
+		GLFW_KEY_SEMICOLON.
+		GLFW_KEY_EQUAL.
+		GLFW_KEY_LEFT_BRACKET.
+		GLFW_KEY_RIGHT_BRACKET.
+		GLFW_KEY_BACKSLASH.
+		GLFW_KEY_WORLD_1.
+		GLFW_KEY_WORLD_2.
+		GLFW_KEY_0.
+		GLFW_KEY_1.
+		GLFW_KEY_2.
+		GLFW_KEY_3.
+		GLFW_KEY_4.
+		GLFW_KEY_5.
+		GLFW_KEY_6.
+		GLFW_KEY_7.
+		GLFW_KEY_8.
+		GLFW_KEY_9.
+		GLFW_KEY_A.
+		GLFW_KEY_B.
+		GLFW_KEY_C.
+		GLFW_KEY_D.
+		GLFW_KEY_E.
+		GLFW_KEY_F.
+		GLFW_KEY_G.
+		GLFW_KEY_H.
+		GLFW_KEY_I.
+		GLFW_KEY_J.
+		GLFW_KEY_K.
+		GLFW_KEY_L.
+		GLFW_KEY_M.
+		GLFW_KEY_N.
+		GLFW_KEY_O.
+		GLFW_KEY_P.
+		GLFW_KEY_Q.
+		GLFW_KEY_R.
+		GLFW_KEY_S.
+		GLFW_KEY_T.
+		GLFW_KEY_U.
+		GLFW_KEY_V.
+		GLFW_KEY_W.
+		GLFW_KEY_X.
+		GLFW_KEY_Y.
+		GLFW_KEY_Z.
+		GLFW_KEY_KP_0.
+		GLFW_KEY_KP_1.
+		GLFW_KEY_KP_2.
+		GLFW_KEY_KP_3.
+		GLFW_KEY_KP_4.
+		GLFW_KEY_KP_5.
+		GLFW_KEY_KP_6.
+		GLFW_KEY_KP_7.
+		GLFW_KEY_KP_8.
+		GLFW_KEY_KP_9.
+		GLFW_KEY_KP_DECIMAL.
+		GLFW_KEY_KP_DIVIDE.
+		GLFW_KEY_KP_MULTIPLY.
+		GLFW_KEY_KP_SUBTRACT.
+		GLFW_KEY_KP_ADD.
+		GLFW_KEY_KP_EQUAL.
+	}.
 ]
 
 {
@@ -4007,6 +4083,15 @@ GLFWUninitializedLibrary >> initHint: hint with: value [
 ]
 
 {
+	#category : #testing,
+	#'squeak_changestamp' : 'stlu 9/17/2021 11:26'
+}
+GLFWUninitializedLibrary >> isPrintableKey: keyEnum [
+
+	^ PrintableKeys includes: keyEnum
+]
+
+{
 	#category : #'api - joystick input',
 	#'squeak_changestamp' : 'stlu 4/21/2021 10:20'
 }
@@ -4075,6 +4160,15 @@ GLFWUninitializedLibrary >> postEmptyEvent [
 
 	self init ifTrue: [
 		^ self postEmptyEvent]
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 9/17/2021 11:28'
+}
+GLFWUninitializedLibrary >> printableKeys [
+
+	^ PrintableKeys
 ]
 
 {
