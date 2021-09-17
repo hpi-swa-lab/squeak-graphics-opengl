@@ -350,12 +350,12 @@ GLFWInitializedLibrary >> getKey: window with: key [
 
 {
 	#category : #'api - keyboard input',
-	#'squeak_changestamp' : 'stlu 2/12/2021 02:36'
+	#'squeak_changestamp' : 'stlu 9/17/2021 10:52'
 }
 GLFWInitializedLibrary >> getKeyName: key with: scancode [
 
-	<apicall: string 'glfwGetKeyName' (int int)>
-	^ self externalCallFailed
+	^ (self privateGetKeyName: key with: scancode)
+		ifNotNil: [:keyName | keyName utf8ToSqueak]
 ]
 
 {
@@ -725,6 +725,16 @@ GLFWInitializedLibrary >> privateCreateWindow: width with: height with: title wi
 GLFWInitializedLibrary >> privateDestroyWindow: handle [
 
 	<apicall: void 'glfwDestroyWindow' (GLFWWindow*)>
+	^ self externalCallFailed
+]
+
+{
+	#category : #private,
+	#'squeak_changestamp' : 'stlu 9/17/2021 10:51'
+}
+GLFWInitializedLibrary >> privateGetKeyName: key with: scancode [
+
+	<apicall: string 'glfwGetKeyName' (int int)>
 	^ self externalCallFailed
 ]
 
