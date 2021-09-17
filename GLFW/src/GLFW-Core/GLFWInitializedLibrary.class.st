@@ -360,11 +360,11 @@ GLFWInitializedLibrary >> getKeyName: key with: scancode [
 
 {
 	#category : #'api - keyboard input',
-	#'squeak_changestamp' : 'stlu 2/12/2021 02:36'
+	#'squeak_changestamp' : 'stlu 9/17/2021 11:37'
 }
 GLFWInitializedLibrary >> getKeyScancode: key [
 
-	<apicall: string 'glfwGetKeyScancode' (int)>
+	<apicall: int 'glfwGetKeyScancode' (int)>
 	^ self externalCallFailed
 ]
 
