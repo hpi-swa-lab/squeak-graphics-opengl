@@ -1,6 +1,6 @@
 Class {
-	#name : #GLGenType,
-	#superclass : #GLGenRegistryObject,
+	#name : #GLType,
+	#superclass : #GLRegistryElement,
 	#category : #'OpenGL-Generation'
 }
 
@@ -8,7 +8,7 @@ Class {
 	#category : #'instance creation',
 	#'squeak_changestamp' : 'stlu 4/11/2021 13:29'
 }
-GLGenType class >> fromXMLTag: tag [
+GLType class >> fromXMLTag: tag [
 
 	^ self new
 		initializeWithXMLTag: tag;
@@ -19,7 +19,7 @@ GLGenType class >> fromXMLTag: tag [
 	#category : #initialization,
 	#'squeak_changestamp' : 'stlu 4/11/2021 13:31'
 }
-GLGenType >> initializeWithXMLTag: tag [
+GLType >> initializeWithXMLTag: tag [
 
 	tag elementsDo: [:nameTag |
 		nameTag tag = #name ifTrue: [

@@ -1,5 +1,5 @@
 Class {
-	#name : #GLGenDefinition,
+	#name : #GLRegistryElementDefinition,
 	#superclass : #Object,
 	#instVars : [
 		'isExtension',
@@ -15,7 +15,7 @@ Class {
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 9/15/2021 14:35'
 }
-GLGenDefinition >> api [
+GLRegistryElementDefinition >> api [
 
 	^ api
 ]
@@ -24,7 +24,7 @@ GLGenDefinition >> api [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 9/15/2021 14:35'
 }
-GLGenDefinition >> api: anObject [
+GLRegistryElementDefinition >> api: anObject [
 
 	api := anObject.
 ]
@@ -33,7 +33,7 @@ GLGenDefinition >> api: anObject [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 9/20/2021 13:08'
 }
-GLGenDefinition >> extension [
+GLRegistryElementDefinition >> extension [
 
 	^ version
 ]
@@ -42,7 +42,7 @@ GLGenDefinition >> extension [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 9/15/2021 14:35'
 }
-GLGenDefinition >> isExtension [
+GLRegistryElementDefinition >> isExtension [
 
 	^ isExtension
 ]
@@ -51,7 +51,7 @@ GLGenDefinition >> isExtension [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 9/15/2021 14:35'
 }
-GLGenDefinition >> isExtension: anObject [
+GLRegistryElementDefinition >> isExtension: anObject [
 
 	isExtension := anObject.
 ]
@@ -60,7 +60,7 @@ GLGenDefinition >> isExtension: anObject [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 9/15/2021 14:35'
 }
-GLGenDefinition >> isRemoval [
+GLRegistryElementDefinition >> isRemoval [
 
 	^ isRemoval
 ]
@@ -69,7 +69,7 @@ GLGenDefinition >> isRemoval [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 9/15/2021 14:35'
 }
-GLGenDefinition >> isRemoval: anObject [
+GLRegistryElementDefinition >> isRemoval: anObject [
 
 	isRemoval := anObject.
 ]
@@ -78,7 +78,7 @@ GLGenDefinition >> isRemoval: anObject [
 	#category : #printing,
 	#'squeak_changestamp' : 'stlu 9/20/2021 13:16'
 }
-GLGenDefinition >> printOn: aStream [
+GLRegistryElementDefinition >> printOn: aStream [
 
 	self printPragmaOn: aStream.
 ]
@@ -87,7 +87,7 @@ GLGenDefinition >> printOn: aStream [
 	#category : #printing,
 	#'squeak_changestamp' : 'stlu 9/20/2021 13:16'
 }
-GLGenDefinition >> printPragmaOn: aStream [
+GLRegistryElementDefinition >> printPragmaOn: aStream [
 
 	aStream
 		nextPutAll: '<glAPI: ';
@@ -116,7 +116,7 @@ GLGenDefinition >> printPragmaOn: aStream [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 9/15/2021 14:35'
 }
-GLGenDefinition >> profile [
+GLRegistryElementDefinition >> profile [
 
 	^ profile
 ]
@@ -125,7 +125,7 @@ GLGenDefinition >> profile [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 9/15/2021 14:35'
 }
-GLGenDefinition >> profile: anObject [
+GLRegistryElementDefinition >> profile: anObject [
 
 	profile := anObject.
 ]
@@ -134,7 +134,7 @@ GLGenDefinition >> profile: anObject [
 	#category : #initialization,
 	#'squeak_changestamp' : 'stlu 9/15/2021 14:31'
 }
-GLGenDefinition >> removeIn: apiSymbol profile: profileSymbolOrNil version: versionString [
+GLRegistryElementDefinition >> removeIn: apiSymbol profile: profileSymbolOrNil version: versionString [
 
 	isExtension := false.
 	isRemoval := true.
@@ -147,7 +147,7 @@ GLGenDefinition >> removeIn: apiSymbol profile: profileSymbolOrNil version: vers
 	#category : #initialization,
 	#'squeak_changestamp' : 'stlu 9/15/2021 14:34'
 }
-GLGenDefinition >> requireIn: apiSymbol profile: profileSymbolOrNil extension: extensionName [
+GLRegistryElementDefinition >> requireIn: apiSymbol profile: profileSymbolOrNil extension: extensionName [
 
 	isExtension := true.
 	isRemoval := false.
@@ -160,7 +160,7 @@ GLGenDefinition >> requireIn: apiSymbol profile: profileSymbolOrNil extension: e
 	#category : #initialization,
 	#'squeak_changestamp' : 'stlu 9/15/2021 14:35'
 }
-GLGenDefinition >> requireIn: apiSymbol profile: profileSymbolOrNil version: versionString [
+GLRegistryElementDefinition >> requireIn: apiSymbol profile: profileSymbolOrNil version: versionString [
 
 	isExtension := false.
 	isRemoval := false.
@@ -173,7 +173,7 @@ GLGenDefinition >> requireIn: apiSymbol profile: profileSymbolOrNil version: ver
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 9/15/2021 14:35'
 }
-GLGenDefinition >> version [
+GLRegistryElementDefinition >> version [
 
 	^ version
 ]
@@ -182,7 +182,7 @@ GLGenDefinition >> version [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 9/15/2021 14:35'
 }
-GLGenDefinition >> version: anObject [
+GLRegistryElementDefinition >> version: anObject [
 
 	version := anObject.
 ]

@@ -1,6 +1,6 @@
 Class {
-	#name : #GLGenConstantsPoolGenerator,
-	#superclass : #GLGenGenerator,
+	#name : #GLConstantsPoolGenerator,
+	#superclass : #GLRegistryGenerator,
 	#instVars : [
 		'targetClass'
 	],
@@ -11,7 +11,7 @@ Class {
 	#category : #'constants pool',
 	#'squeak_changestamp' : 'stlu 7/22/2021 15:28'
 }
-GLGenConstantsPoolGenerator >> generate: aRegistry [
+GLConstantsPoolGenerator >> generate: aRegistry [
 
 	self targetClass ifNil: [^ self error: 'Please specify a target class'].
 	self generate: aRegistry into: self targetClass
@@ -21,7 +21,7 @@ GLGenConstantsPoolGenerator >> generate: aRegistry [
 	#category : #'constants pool',
 	#'squeak_changestamp' : 'stlu 4/12/2021 18:09'
 }
-GLGenConstantsPoolGenerator >> generate: aRegistry into: aClass [
+GLConstantsPoolGenerator >> generate: aRegistry into: aClass [
 
 	self generateVariables: aRegistry into: aClass.
 	self generateInitializers: aRegistry into: aClass theMetaClass.
@@ -31,9 +31,9 @@ GLGenConstantsPoolGenerator >> generate: aRegistry into: aClass [
 
 {
 	#category : #'constants pool',
-	#'squeak_changestamp' : 'stlu 7/22/2021 15:46'
+	#'squeak_changestamp' : 'stlu 9/20/2021 14:05'
 }
-GLGenConstantsPoolGenerator >> generateInitializers: aRegistry into: aClass [
+GLConstantsPoolGenerator >> generateInitializers: aRegistry into: aClass [
 
 	| enums mainSource padding groupSize groupIndex numInitializers |
 	enums := aRegistry enums values.
@@ -65,7 +65,7 @@ GLGenConstantsPoolGenerator >> generateInitializers: aRegistry into: aClass [
 							stream
 								cr; tab;
 								nextPutAll: enum name;
-								nextPutAll: ' := GLEnum value: ';
+								nextPutAll: ' := GLConstant value: ';
 								nextPutAll: enum valueString;
 								nextPutAll: ' name: ';
 								nextPutAll: enum name storeString;
@@ -78,7 +78,7 @@ GLGenConstantsPoolGenerator >> generateInitializers: aRegistry into: aClass [
 	#category : #'constants pool',
 	#'squeak_changestamp' : 'stlu 4/12/2021 18:04'
 }
-GLGenConstantsPoolGenerator >> generateVariables: aRegistry into: aClass [
+GLConstantsPoolGenerator >> generateVariables: aRegistry into: aClass [
 
 	| haves shoulds toAdd toRemove |
 	haves := aClass classVarNames asSet.
@@ -105,7 +105,7 @@ GLGenConstantsPoolGenerator >> generateVariables: aRegistry into: aClass [
 	#category : #initialization,
 	#'squeak_changestamp' : 'stlu 4/12/2021 18:06'
 }
-GLGenConstantsPoolGenerator >> initialize [
+GLConstantsPoolGenerator >> initialize [
 
 	super initialize.
 	targetClass := self environment at: #GLConstants ifAbsent: []
@@ -115,7 +115,7 @@ GLGenConstantsPoolGenerator >> initialize [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 4/12/2021 18:05'
 }
-GLGenConstantsPoolGenerator >> targetClass [
+GLConstantsPoolGenerator >> targetClass [
 
 	^ targetClass
 ]
@@ -124,7 +124,7 @@ GLGenConstantsPoolGenerator >> targetClass [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 4/12/2021 18:05'
 }
-GLGenConstantsPoolGenerator >> targetClass: anObject [
+GLConstantsPoolGenerator >> targetClass: anObject [
 
 	targetClass := anObject
 ]

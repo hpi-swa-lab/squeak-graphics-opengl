@@ -1,6 +1,6 @@
 Class {
-	#name : #GLGenRegistryGenerator,
-	#superclass : #GLGenGenerator,
+	#name : #GLLibraryMethodGenerator,
+	#superclass : #GLRegistryGenerator,
 	#instVars : [
 		'targetClass'
 	],
@@ -11,7 +11,7 @@ Class {
 	#category : #'method sources',
 	#'squeak_changestamp' : 'stlu 9/15/2021 14:07'
 }
-GLGenRegistryGenerator >> commandCategory: aCommand [
+GLLibraryMethodGenerator >> commandCategory: aCommand [
 
 	aCommand hasDefinitions ifFalse: [^ #'commands - unused'].
 	aCommand isEverRemoved ifTrue: [^ #'commands - removed'].
@@ -24,7 +24,7 @@ GLGenRegistryGenerator >> commandCategory: aCommand [
 	#category : #'method sources',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:28'
 }
-GLGenRegistryGenerator >> commandSource: aCommand [
+GLLibraryMethodGenerator >> commandSource: aCommand [
 
 	^ String streamContents: [:stream |
 		self printCommandSignature: aCommand on: stream.
@@ -41,7 +41,7 @@ GLGenRegistryGenerator >> commandSource: aCommand [
 	#category : #'method sources',
 	#'squeak_changestamp' : 'stlu 9/15/2021 14:08'
 }
-GLGenRegistryGenerator >> enumCategory: anEnum [
+GLLibraryMethodGenerator >> enumCategory: anEnum [
 
 	anEnum hasDefinitions ifFalse: [^ #'enums - unused'].
 	anEnum isEverRemoved ifTrue: [^ #'enums - removed'].
@@ -54,7 +54,7 @@ GLGenRegistryGenerator >> enumCategory: anEnum [
 	#category : #'method sources',
 	#'squeak_changestamp' : 'stlu 12/28/2020 18:17'
 }
-GLGenRegistryGenerator >> enumSignature: anEnum [
+GLLibraryMethodGenerator >> enumSignature: anEnum [
 
 	| name |
 	name := anEnum name.
@@ -67,7 +67,7 @@ GLGenRegistryGenerator >> enumSignature: anEnum [
 	#category : #'method sources',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
 }
-GLGenRegistryGenerator >> enumSource: anEnum [
+GLLibraryMethodGenerator >> enumSource: anEnum [
 
 	^ String streamContents: [:stream |
 		self printEnumSignature: anEnum on: stream.
@@ -83,7 +83,7 @@ GLGenRegistryGenerator >> enumSource: anEnum [
 	#category : #generation,
 	#'squeak_changestamp' : 'stlu 4/12/2021 17:20'
 }
-GLGenRegistryGenerator >> generate: aRegistry [
+GLLibraryMethodGenerator >> generate: aRegistry [
 
 	self generateRegistry: aRegistry
 ]
@@ -92,7 +92,7 @@ GLGenRegistryGenerator >> generate: aRegistry [
 	#category : #generation,
 	#'squeak_changestamp' : 'stlu 4/12/2021 18:47'
 }
-GLGenRegistryGenerator >> generateCommand: aCommand [
+GLLibraryMethodGenerator >> generateCommand: aCommand [
 
 	aCommand numParameters >= 16 ifTrue: [
 		"Cannot generate methods with more than 15 arguments"
@@ -108,7 +108,7 @@ GLGenRegistryGenerator >> generateCommand: aCommand [
 	#category : #generation,
 	#'squeak_changestamp' : 'stlu 4/12/2021 20:19'
 }
-GLGenRegistryGenerator >> generateCommands: aCollection [
+GLLibraryMethodGenerator >> generateCommands: aCollection [
 
 	'Compile commands'
 		displayProgressFrom: 0 to: aCollection size
@@ -122,7 +122,7 @@ GLGenRegistryGenerator >> generateCommands: aCollection [
 	#category : #generation,
 	#'squeak_changestamp' : 'stlu 4/12/2021 18:32'
 }
-GLGenRegistryGenerator >> generateEnum: anEnum [
+GLLibraryMethodGenerator >> generateEnum: anEnum [
 
 	self
 		compile: (self enumSource: anEnum)
@@ -134,7 +134,7 @@ GLGenRegistryGenerator >> generateEnum: anEnum [
 	#category : #generation,
 	#'squeak_changestamp' : 'stlu 4/12/2021 20:19'
 }
-GLGenRegistryGenerator >> generateEnums: aCollection [
+GLLibraryMethodGenerator >> generateEnums: aCollection [
 
 	'Compile enums'
 		displayProgressFrom: 0 to: aCollection size
@@ -148,7 +148,7 @@ GLGenRegistryGenerator >> generateEnums: aCollection [
 	#category : #generation,
 	#'squeak_changestamp' : 'stlu 4/12/2021 20:20'
 }
-GLGenRegistryGenerator >> generateRegistry: aRegistry [
+GLLibraryMethodGenerator >> generateRegistry: aRegistry [
 
 	self generateCommands: aRegistry commands.
 	self generateEnums: aRegistry enums.
@@ -159,7 +159,7 @@ GLGenRegistryGenerator >> generateRegistry: aRegistry [
 	#category : #initialization,
 	#'squeak_changestamp' : 'stlu 4/12/2021 18:17'
 }
-GLGenRegistryGenerator >> initialize [
+GLLibraryMethodGenerator >> initialize [
 
 	super initialize.
 	targetClass := self environment at: #GLRegistry ifAbsent: []
@@ -169,7 +169,7 @@ GLGenRegistryGenerator >> initialize [
 	#category : #'method sources',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:26'
 }
-GLGenRegistryGenerator >> printCommandPragmas: aCommand on: aStream [
+GLLibraryMethodGenerator >> printCommandPragmas: aCommand on: aStream [
 
 	aStream
 		nextPutAll: '<glCommand: ';
@@ -218,7 +218,7 @@ GLGenRegistryGenerator >> printCommandPragmas: aCommand on: aStream [
 	#category : #'method sources',
 	#'squeak_changestamp' : 'stlu 3/3/2021 15:07'
 }
-GLGenRegistryGenerator >> printCommandSignature: aCommand on: aStream [
+GLLibraryMethodGenerator >> printCommandSignature: aCommand on: aStream [
 
 	| selector firstLowerIndex lowerUpTo |
 	selector := aCommand name allButFirst: 2. "remove 'gl' prefix"
@@ -244,7 +244,7 @@ GLGenRegistryGenerator >> printCommandSignature: aCommand on: aStream [
 	#category : #'method sources',
 	#'squeak_changestamp' : 'stlu 9/20/2021 13:42'
 }
-GLGenRegistryGenerator >> printDefinitionPragmas: aRegistryElement on: aStream [
+GLLibraryMethodGenerator >> printDefinitionPragmas: aRegistryElement on: aStream [
 
 	aRegistryElement definitions do: [:definition |
 		definition printPragmaOn: aStream.
@@ -257,7 +257,7 @@ GLGenRegistryGenerator >> printDefinitionPragmas: aRegistryElement on: aStream [
 	#category : #'method sources',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:20'
 }
-GLGenRegistryGenerator >> printEnumPragmas: anEnum on: aStream [
+GLLibraryMethodGenerator >> printEnumPragmas: anEnum on: aStream [
 
 	aStream
 		nextPutAll: '<glEnum: ';
@@ -314,7 +314,7 @@ GLGenRegistryGenerator >> printEnumPragmas: anEnum on: aStream [
 	#category : #'method sources',
 	#'squeak_changestamp' : 'stlu 4/13/2021 12:22'
 }
-GLGenRegistryGenerator >> printEnumSignature: anEnum on: aStream [
+GLLibraryMethodGenerator >> printEnumSignature: anEnum on: aStream [
 
 	aStream nextPutAll: (self enumSignature: anEnum)
 ]
@@ -323,7 +323,7 @@ GLGenRegistryGenerator >> printEnumSignature: anEnum on: aStream [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 4/12/2021 18:16'
 }
-GLGenRegistryGenerator >> targetClass [
+GLLibraryMethodGenerator >> targetClass [
 
 	^ targetClass
 ]
@@ -332,7 +332,7 @@ GLGenRegistryGenerator >> targetClass [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 4/12/2021 18:16'
 }
-GLGenRegistryGenerator >> targetClass: anObject [
+GLLibraryMethodGenerator >> targetClass: anObject [
 
 	targetClass := anObject
 ]

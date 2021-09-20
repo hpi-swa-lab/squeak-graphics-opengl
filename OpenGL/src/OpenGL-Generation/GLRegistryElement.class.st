@@ -1,5 +1,5 @@
 Class {
-	#name : #GLGenRegistryObject,
+	#name : #GLRegistryElement,
 	#superclass : #Object,
 	#instVars : [
 		'name',
@@ -16,7 +16,7 @@ Class {
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 9/13/2021 16:09'
 }
-GLGenRegistryObject class >> extensionVendors [
+GLRegistryElement class >> extensionVendors [
 
 	^ ExtensionVendors ifNil: [
 		ExtensionVendors := #(
@@ -62,7 +62,7 @@ GLGenRegistryObject class >> extensionVendors [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 4/12/2021 19:37'
 }
-GLGenRegistryObject >> addAlias: aString [
+GLRegistryElement >> addAlias: aString [
 
 	aString ~= name ifTrue: [
 		aliases add: aString]
@@ -72,7 +72,7 @@ GLGenRegistryObject >> addAlias: aString [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 4/12/2021 18:49'
 }
-GLGenRegistryObject >> aliases [
+GLRegistryElement >> aliases [
 
 	^ aliases
 ]
@@ -81,7 +81,7 @@ GLGenRegistryObject >> aliases [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 9/20/2021 13:13'
 }
-GLGenRegistryObject >> definitions [
+GLRegistryElement >> definitions [
 
 	^ definitions
 ]
@@ -90,7 +90,7 @@ GLGenRegistryObject >> definitions [
 	#category : #testing,
 	#'squeak_changestamp' : 'stlu 9/15/2021 14:07'
 }
-GLGenRegistryObject >> hasDefinitions [
+GLRegistryElement >> hasDefinitions [
 
 	^ definitions notEmpty
 ]
@@ -99,7 +99,7 @@ GLGenRegistryObject >> hasDefinitions [
 	#category : #initialization,
 	#'squeak_changestamp' : 'stlu 9/20/2021 13:14'
 }
-GLGenRegistryObject >> initialize [
+GLRegistryElement >> initialize [
 
 	aliases := Set new.
 	definitions := OrderedCollection new.
@@ -109,7 +109,7 @@ GLGenRegistryObject >> initialize [
 	#category : #testing,
 	#'squeak_changestamp' : 'stlu 9/15/2021 14:36'
 }
-GLGenRegistryObject >> isEverRemoved [
+GLRegistryElement >> isEverRemoved [
 
 	^ definitions anySatisfy: [:each | each isRemoval]
 ]
@@ -118,7 +118,7 @@ GLGenRegistryObject >> isEverRemoved [
 	#category : #testing,
 	#'squeak_changestamp' : 'stlu 9/15/2021 14:36'
 }
-GLGenRegistryObject >> isOnlyDefinedInExtensions [
+GLRegistryElement >> isOnlyDefinedInExtensions [
 
 	^ definitions allSatisfy: [:each | each isExtension]
 ]
@@ -127,7 +127,7 @@ GLGenRegistryObject >> isOnlyDefinedInExtensions [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/1/2020 19:34'
 }
-GLGenRegistryObject >> name [
+GLRegistryElement >> name [
 
 	^ name
 ]
@@ -136,18 +136,18 @@ GLGenRegistryObject >> name [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/1/2020 21:29'
 }
-GLGenRegistryObject >> name: stringOrSymbol [
+GLRegistryElement >> name: stringOrSymbol [
 
 	name := stringOrSymbol
 ]
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 9/15/2021 14:33'
+	#'squeak_changestamp' : 'stlu 9/20/2021 14:16'
 }
-GLGenRegistryObject >> removeIn: apiSymbol profile: profileSymbolOrNil version: versionString [
+GLRegistryElement >> removeIn: apiSymbol profile: profileSymbolOrNil version: versionString [
 
-	definitions add: (GLGenDefinition new
+	definitions add: (GLRegistryElementDefinition new
 		removeIn: apiSymbol
 		profile: profileSymbolOrNil
 		version: versionString).
@@ -155,11 +155,11 @@ GLGenRegistryObject >> removeIn: apiSymbol profile: profileSymbolOrNil version: 
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 9/15/2021 14:34'
+	#'squeak_changestamp' : 'stlu 9/20/2021 14:17'
 }
-GLGenRegistryObject >> requireIn: apiSymbol profile: profileSymbolOrNil extension: extensionName [
+GLRegistryElement >> requireIn: apiSymbol profile: profileSymbolOrNil extension: extensionName [
 
-	definitions add: (GLGenDefinition new
+	definitions add: (GLRegistryElementDefinition new
 		requireIn: apiSymbol
 		profile: profileSymbolOrNil
 		extension: extensionName).
@@ -167,11 +167,11 @@ GLGenRegistryObject >> requireIn: apiSymbol profile: profileSymbolOrNil extensio
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 9/15/2021 14:35'
+	#'squeak_changestamp' : 'stlu 9/20/2021 14:17'
 }
-GLGenRegistryObject >> requireIn: apiSymbol profile: profileSymbolOrNil version: versionString [
+GLRegistryElement >> requireIn: apiSymbol profile: profileSymbolOrNil version: versionString [
 
-	definitions add: (GLGenDefinition new
+	definitions add: (GLRegistryElementDefinition new
 		requireIn: apiSymbol
 		profile: profileSymbolOrNil
 		version: versionString).

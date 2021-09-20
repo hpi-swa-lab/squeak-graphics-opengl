@@ -11,7 +11,7 @@ GLRegistry fromWeb generate.
 The registry object is not modified to generate code and can hence be used multiple times to do so.
 "
 Class {
-	#name : #GLGenRegistry,
+	#name : #GLRegistry,
 	#superclass : #Object,
 	#instVars : [
 		'commands',
@@ -26,7 +26,7 @@ Class {
 	#category : #'instance creation',
 	#'squeak_changestamp' : 'stlu 10/31/2020 23:18'
 }
-GLGenRegistry class >> fromFile: filePath [
+GLRegistry class >> fromFile: filePath [
 
 	^ self fromXML: (XMLDOMParser parseDocumentFrom: filePath asURI contentStream)
 ]
@@ -35,7 +35,7 @@ GLGenRegistry class >> fromFile: filePath [
 	#category : #'instance creation',
 	#'squeak_changestamp' : 'stlu 11/6/2020 17:49'
 }
-GLGenRegistry class >> fromUrl: urlString [
+GLRegistry class >> fromUrl: urlString [
 
 	| response |
 	response := WebClient httpGet: urlString.
@@ -47,7 +47,7 @@ GLGenRegistry class >> fromUrl: urlString [
 	#category : #'instance creation',
 	#'squeak_changestamp' : 'stlu 11/6/2020 17:52'
 }
-GLGenRegistry class >> fromWeb [
+GLRegistry class >> fromWeb [
 
 	^ self fromUrl: 'https://raw.githubusercontent.com/KhronosGroup/OpenGL-Registry/master/xml/gl.xml'
 ]
@@ -56,7 +56,7 @@ GLGenRegistry class >> fromWeb [
 	#category : #'instance creation',
 	#'squeak_changestamp' : 'stlu 4/11/2021 13:32'
 }
-GLGenRegistry class >> fromXML: xml [
+GLRegistry class >> fromXML: xml [
 
 	^ self fromXMLTag: (xml firstTagNamed: #registry)
 ]
@@ -65,7 +65,7 @@ GLGenRegistry class >> fromXML: xml [
 	#category : #'instance creation',
 	#'squeak_changestamp' : 'stlu 4/11/2021 13:32'
 }
-GLGenRegistry class >> fromXMLTag: tag [
+GLRegistry class >> fromXMLTag: tag [
 
 	^ self new
 		initializeWithXMLTag: tag;
@@ -76,7 +76,7 @@ GLGenRegistry class >> fromXMLTag: tag [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/2/2020 13:20'
 }
-GLGenRegistry >> addCommand: command [
+GLRegistry >> addCommand: command [
 
 	^ commands
 		at: command name
@@ -88,7 +88,7 @@ GLGenRegistry >> addCommand: command [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/2/2020 13:20'
 }
-GLGenRegistry >> addEnum: enum [
+GLRegistry >> addEnum: enum [
 
 	^ enums
 		at: enum name
@@ -100,7 +100,7 @@ GLGenRegistry >> addEnum: enum [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 2/17/2021 17:45'
 }
-GLGenRegistry >> addExtension: extension [
+GLRegistry >> addExtension: extension [
 
 	^ extensions
 		at: extension name
@@ -111,7 +111,7 @@ GLGenRegistry >> addExtension: extension [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 4/11/2021 13:36'
 }
-GLGenRegistry >> addType: aType [
+GLRegistry >> addType: aType [
 
 	^ types
 		at: aType name
@@ -122,7 +122,7 @@ GLGenRegistry >> addType: aType [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 4/12/2021 19:41'
 }
-GLGenRegistry >> commandNamed: aString [
+GLRegistry >> commandNamed: aString [
 
 	^ commands at: aString
 ]
@@ -131,7 +131,7 @@ GLGenRegistry >> commandNamed: aString [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 10/31/2020 22:19'
 }
-GLGenRegistry >> commands [
+GLRegistry >> commands [
 
 	^ commands
 ]
@@ -140,7 +140,7 @@ GLGenRegistry >> commands [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 4/12/2021 19:41'
 }
-GLGenRegistry >> enumNamed: aString [
+GLRegistry >> enumNamed: aString [
 
 	^ enums at: aString
 ]
@@ -149,21 +149,21 @@ GLGenRegistry >> enumNamed: aString [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 10/31/2020 22:19'
 }
-GLGenRegistry >> enums [
+GLRegistry >> enums [
 
 	^ enums
 ]
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 4/12/2021 19:51'
+	#'squeak_changestamp' : 'stlu 9/20/2021 14:25'
 }
-GLGenRegistry >> gatherCommands: registryTag [
+GLRegistry >> gatherCommands: registryTag [
 
 	registryTag tagsNamed: #commands do: [:commandsTag |
 		commandsTag tagsNamed: #command do: [:commandTag |
 			| command |
-			command := GLGenCommand fromXMLTag: commandTag.
+			command := GLCommand fromXMLTag: commandTag.
 			self addCommand: command]].
 	
 	self commands values do: [:command |
@@ -176,9 +176,9 @@ GLGenRegistry >> gatherCommands: registryTag [
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 4/12/2021 19:42'
+	#'squeak_changestamp' : 'stlu 9/20/2021 14:25'
 }
-GLGenRegistry >> gatherEnums: registryTag [
+GLRegistry >> gatherEnums: registryTag [
 
 	registryTag tagsNamed: #enums do: [:enumsTag |
 		| vendor type namespace group |
@@ -188,7 +188,7 @@ GLGenRegistry >> gatherEnums: registryTag [
 		group := enumsTag attributes at: #group ifAbsent: [].
 		enumsTag tagsNamed: #enum do: [:enumTag |
 			| enum |
-			enum := GLGenEnum fromXMLTag: enumTag.
+			enum := GLEnum fromXMLTag: enumTag.
 			enum vendor: vendor.
 			enum type: type.
 			enum namespace: namespace.
@@ -207,7 +207,7 @@ GLGenRegistry >> gatherEnums: registryTag [
 	#category : #initialization,
 	#'squeak_changestamp' : 'stlu 4/12/2021 13:18'
 }
-GLGenRegistry >> gatherExtensions: registryTag [
+GLRegistry >> gatherExtensions: registryTag [
 
 	registryTag tagsNamed: #extensions do: [:extensionsTag |
 		extensionsTag tagsNamed: #extension do: [:extensionTag |
@@ -243,7 +243,7 @@ GLGenRegistry >> gatherExtensions: registryTag [
 	#category : #initialization,
 	#'squeak_changestamp' : 'stlu 4/12/2021 19:42'
 }
-GLGenRegistry >> gatherFeatures: registryTag [
+GLRegistry >> gatherFeatures: registryTag [
 
 	registryTag tagsNamed: #feature do: [:featureTag |
 		| api version |
@@ -268,20 +268,20 @@ GLGenRegistry >> gatherFeatures: registryTag [
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 4/12/2021 16:59'
+	#'squeak_changestamp' : 'stlu 9/20/2021 14:26'
 }
-GLGenRegistry >> gatherTypes: registryTag [
+GLRegistry >> gatherTypes: registryTag [
 
 	registryTag tagsNamed: #types do: [:typesTag |
 		typesTag elementsDo: [:typeTag |
-			self addType: (GLGenType fromXMLTag: typeTag)]].
+			self addType: (GLType fromXMLTag: typeTag)]].
 ]
 
 {
 	#category : #initialization,
 	#'squeak_changestamp' : 'stlu 4/11/2021 13:35'
 }
-GLGenRegistry >> initialize [
+GLRegistry >> initialize [
 
 	super initialize.
 	enums := Dictionary new: 7000.
@@ -294,7 +294,7 @@ GLGenRegistry >> initialize [
 	#category : #initialization,
 	#'squeak_changestamp' : 'stlu 4/11/2021 13:59'
 }
-GLGenRegistry >> initializeWithXMLTag: registryTag [
+GLRegistry >> initializeWithXMLTag: registryTag [
 
 	name := 'gl.xml'.
 	
@@ -309,7 +309,7 @@ GLGenRegistry >> initializeWithXMLTag: registryTag [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 4/12/2021 19:41'
 }
-GLGenRegistry >> typeNamed: aString [
+GLRegistry >> typeNamed: aString [
 
 	^ types at: aString
 ]
@@ -318,7 +318,7 @@ GLGenRegistry >> typeNamed: aString [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 4/11/2021 13:41'
 }
-GLGenRegistry >> types [
+GLRegistry >> types [
 
 	^ types
 ]

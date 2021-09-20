@@ -1,6 +1,6 @@
 Class {
-	#name : #GLGenEnum,
-	#superclass : #GLGenRegistryObject,
+	#name : #GLEnum,
+	#superclass : #GLRegistryElement,
 	#instVars : [
 		'value',
 		'namespace',
@@ -18,7 +18,7 @@ Class {
 	#category : #helpers,
 	#'squeak_changestamp' : 'stlu 10/31/2020 23:06'
 }
-GLGenEnum class >> convertEnumValueString: aString [
+GLEnum class >> convertEnumValueString: aString [
 
 	^ (aString beginsWith: '0x')
 		ifTrue: [	Number
@@ -31,7 +31,7 @@ GLGenEnum class >> convertEnumValueString: aString [
 	#category : #'instance creation',
 	#'squeak_changestamp' : 'stlu 3/4/2021 11:36'
 }
-GLGenEnum class >> fromXMLTag: tag [
+GLEnum class >> fromXMLTag: tag [
 
 	^ self new
 		initializeWithXMLTag: tag;
@@ -42,7 +42,7 @@ GLGenEnum class >> fromXMLTag: tag [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 3/5/2021 12:50'
 }
-GLGenEnum >> addGroup: aString [
+GLEnum >> addGroup: aString [
 
 	groups add: aString
 ]
@@ -51,7 +51,7 @@ GLGenEnum >> addGroup: aString [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 3/4/2021 12:05'
 }
-GLGenEnum >> api [
+GLEnum >> api [
 
 	^ api
 ]
@@ -60,7 +60,7 @@ GLGenEnum >> api [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 10/31/2020 22:19'
 }
-GLGenEnum >> groups [
+GLEnum >> groups [
 
 	^ groups
 ]
@@ -69,7 +69,7 @@ GLGenEnum >> groups [
 	#category : #initialization,
 	#'squeak_changestamp' : 'stlu 4/12/2021 18:49'
 }
-GLGenEnum >> initialize [
+GLEnum >> initialize [
 
 	super initialize.
 	groups := Set new
@@ -79,7 +79,7 @@ GLGenEnum >> initialize [
 	#category : #initialization,
 	#'squeak_changestamp' : 'stlu 9/13/2021 16:10'
 }
-GLGenEnum >> initializeWithXMLTag: tag [
+GLEnum >> initializeWithXMLTag: tag [
 
 	name := tag attributeAt: #name.
 	value := self class convertEnumValueString: (tag attributeAt: #value).
@@ -102,7 +102,7 @@ GLGenEnum >> initializeWithXMLTag: tag [
 	#category : #testing,
 	#'squeak_changestamp' : 'stlu 3/4/2021 12:13'
 }
-GLGenEnum >> isBitmask [
+GLEnum >> isBitmask [
 
 	^ type = 'bitmask'
 ]
@@ -111,7 +111,7 @@ GLGenEnum >> isBitmask [
 	#category : #testing,
 	#'squeak_changestamp' : 'stlu 12/28/2020 13:52'
 }
-GLGenEnum >> isEnum [
+GLEnum >> isEnum [
 
 	^ true
 ]
@@ -120,7 +120,7 @@ GLGenEnum >> isEnum [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 3/4/2021 12:24'
 }
-GLGenEnum >> namespace [
+GLEnum >> namespace [
 
 	^ namespace
 ]
@@ -129,7 +129,7 @@ GLGenEnum >> namespace [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 3/4/2021 12:24'
 }
-GLGenEnum >> namespace: anObject [
+GLEnum >> namespace: anObject [
 
 	namespace := anObject
 ]
@@ -138,7 +138,7 @@ GLGenEnum >> namespace: anObject [
 	#category : #printing,
 	#'squeak_changestamp' : 'stlu 3/5/2021 13:31'
 }
-GLGenEnum >> printOn: aStream [
+GLEnum >> printOn: aStream [
 
 	aStream
 		nextPutAll: name;
@@ -150,7 +150,7 @@ GLGenEnum >> printOn: aStream [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 3/4/2021 12:27'
 }
-GLGenEnum >> suffix [
+GLEnum >> suffix [
 
 	^ suffix
 ]
@@ -159,7 +159,7 @@ GLGenEnum >> suffix [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 3/4/2021 12:14'
 }
-GLGenEnum >> type [
+GLEnum >> type [
 
 	^ type
 ]
@@ -168,7 +168,7 @@ GLGenEnum >> type [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 3/4/2021 12:14'
 }
-GLGenEnum >> type: anObject [
+GLEnum >> type: anObject [
 
 	type := anObject
 ]
@@ -177,7 +177,7 @@ GLGenEnum >> type: anObject [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 3/4/2021 12:19'
 }
-GLGenEnum >> typeSuffix [
+GLEnum >> typeSuffix [
 
 	^ typeSuffix
 ]
@@ -186,7 +186,7 @@ GLGenEnum >> typeSuffix [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 10/31/2020 23:00'
 }
-GLGenEnum >> value [
+GLEnum >> value [
 
 	^ value
 ]
@@ -195,7 +195,7 @@ GLGenEnum >> value [
 	#category : #printing,
 	#'squeak_changestamp' : 'stlu 3/5/2021 13:30'
 }
-GLGenEnum >> valueString [
+GLEnum >> valueString [
 
 	^ value storeStringBase: (self isBitmask ifTrue: [2] ifFalse: [16])
 ]
@@ -204,7 +204,7 @@ GLGenEnum >> valueString [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 3/4/2021 11:40'
 }
-GLGenEnum >> vendor [
+GLEnum >> vendor [
 
 	^ vendor
 ]
@@ -213,7 +213,7 @@ GLGenEnum >> vendor [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 3/4/2021 11:40'
 }
-GLGenEnum >> vendor: anObject [
+GLEnum >> vendor: anObject [
 
 	vendor := anObject
 ]

@@ -1,6 +1,6 @@
 Class {
-	#name : #GLGenCommand,
-	#superclass : #GLGenRegistryObject,
+	#name : #GLCommand,
+	#superclass : #GLRegistryElement,
 	#instVars : [
 		'parameters',
 		'returnType',
@@ -13,7 +13,7 @@ Class {
 	#category : #'instance creation',
 	#'squeak_changestamp' : 'stlu 4/11/2021 13:54'
 }
-GLGenCommand class >> fromXMLTag: tag [
+GLCommand class >> fromXMLTag: tag [
 
 	^ self new
 		initializeWithXMLTag: tag;
@@ -24,7 +24,7 @@ GLGenCommand class >> fromXMLTag: tag [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/1/2020 00:23'
 }
-GLGenCommand >> addParameter: param [
+GLCommand >> addParameter: param [
 
 	parameters add: param
 ]
@@ -33,7 +33,7 @@ GLGenCommand >> addParameter: param [
 	#category : #printing,
 	#'squeak_changestamp' : 'stlu 12/28/2020 16:36'
 }
-GLGenCommand >> ffiPragma [
+GLCommand >> ffiPragma [
 
 	^ String streamContents: [:stream |
 		self printFFIPragmaOn: stream]
@@ -41,14 +41,14 @@ GLGenCommand >> ffiPragma [
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 4/12/2021 19:47'
+	#'squeak_changestamp' : 'stlu 9/20/2021 14:16'
 }
-GLGenCommand >> initializeWithXMLTag: commandTag [
+GLCommand >> initializeWithXMLTag: commandTag [
 
 	| protoTag |
 	protoTag := commandTag firstTagNamed: #proto.
 	name := (protoTag firstTagNamed: #name) contentString.
-	returnType := GLGenParameter getType: protoTag.
+	returnType := GLCommandParameter getType: protoTag.
 	returnGroup := commandTag attributes at: #group ifAbsent: [].
 	
 	aliases := Set new.
@@ -58,7 +58,7 @@ GLGenCommand >> initializeWithXMLTag: commandTag [
 	parameters := OrderedCollection new.
 	commandTag tagsNamed: #param do: [:paramTag |
 		| param |
-		param := GLGenParameter fromXMLTag: paramTag.
+		param := GLCommandParameter fromXMLTag: paramTag.
 		param command: self.
 		self addParameter: param].
 ]
@@ -67,7 +67,7 @@ GLGenCommand >> initializeWithXMLTag: commandTag [
 	#category : #testing,
 	#'squeak_changestamp' : 'stlu 12/28/2020 13:52'
 }
-GLGenCommand >> isCommand [
+GLCommand >> isCommand [
 
 	^ true
 ]
@@ -76,7 +76,7 @@ GLGenCommand >> isCommand [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 4/12/2021 18:47'
 }
-GLGenCommand >> numParameters [
+GLCommand >> numParameters [
 
 	^ parameters size
 ]
@@ -85,7 +85,7 @@ GLGenCommand >> numParameters [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 10/31/2020 22:20'
 }
-GLGenCommand >> parameters [
+GLCommand >> parameters [
 
 	^ parameters
 ]
@@ -94,7 +94,7 @@ GLGenCommand >> parameters [
 	#category : #printing,
 	#'squeak_changestamp' : 'stlu 11/2/2020 19:53'
 }
-GLGenCommand >> printFFIPragmaOn: aStream [
+GLCommand >> printFFIPragmaOn: aStream [
 
 	aStream
 		nextPutAll: '<apicall: ';
@@ -114,7 +114,7 @@ GLGenCommand >> printFFIPragmaOn: aStream [
 	#category : #printing,
 	#'squeak_changestamp' : 'stlu 11/1/2020 20:56'
 }
-GLGenCommand >> printOn: aStream [
+GLCommand >> printOn: aStream [
 
 	aStream
 		nextPutAll: returnType;
@@ -131,7 +131,7 @@ GLGenCommand >> printOn: aStream [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 3/3/2021 13:11'
 }
-GLGenCommand >> returnGroup [
+GLCommand >> returnGroup [
 
 	^ returnGroup
 ]
@@ -140,7 +140,7 @@ GLGenCommand >> returnGroup [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 10/31/2020 22:20'
 }
-GLGenCommand >> returnType [
+GLCommand >> returnType [
 
 	^ returnType
 ]

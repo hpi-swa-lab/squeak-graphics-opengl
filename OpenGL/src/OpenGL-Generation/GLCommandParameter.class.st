@@ -1,5 +1,5 @@
 Class {
-	#name : #GLGenParameter,
+	#name : #GLCommandParameter,
 	#superclass : #Object,
 	#instVars : [
 		'name',
@@ -15,7 +15,7 @@ Class {
 	#category : #'instance creation',
 	#'squeak_changestamp' : 'stlu 4/11/2021 13:50'
 }
-GLGenParameter class >> fromXMLTag: tag [
+GLCommandParameter class >> fromXMLTag: tag [
 
 	^ self new
 		initializeWithXMLTag: tag;
@@ -26,7 +26,7 @@ GLGenParameter class >> fromXMLTag: tag [
 	#category : #helpers,
 	#'squeak_changestamp' : 'stlu 10/31/2020 23:49'
 }
-GLGenParameter class >> getType: xmlTag [
+GLCommandParameter class >> getType: xmlTag [
 
 	| result |
 	result := String streamContents: [:stream |
@@ -43,7 +43,7 @@ GLGenParameter class >> getType: xmlTag [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 10/31/2020 22:19'
 }
-GLGenParameter >> command [
+GLCommandParameter >> command [
 
 	^ command
 ]
@@ -52,7 +52,7 @@ GLGenParameter >> command [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 4/11/2021 13:52'
 }
-GLGenParameter >> command: aCommand [
+GLCommandParameter >> command: aCommand [
 
 	command := aCommand
 ]
@@ -61,7 +61,7 @@ GLGenParameter >> command: aCommand [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 10/31/2020 22:19'
 }
-GLGenParameter >> group [
+GLCommandParameter >> group [
 
 	^ group
 ]
@@ -70,19 +70,19 @@ GLGenParameter >> group [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 4/12/2021 17:25'
 }
-GLGenParameter >> group: anObject [
+GLCommandParameter >> group: anObject [
 
 	group := anObject
 ]
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 4/12/2021 16:58'
+	#'squeak_changestamp' : 'stlu 9/20/2021 14:16'
 }
-GLGenParameter >> initializeWithXMLTag: paramTag [
+GLCommandParameter >> initializeWithXMLTag: paramTag [
 
 	name := (paramTag firstTagNamed: #name) contentString.
-	type := GLGenParameter getType: paramTag.
+	type := GLCommandParameter getType: paramTag.
 	
 	length := paramTag attributes at: #len ifAbsent: [].
 	group := paramTag attributes at: #group ifAbsent: [].
@@ -92,7 +92,7 @@ GLGenParameter >> initializeWithXMLTag: paramTag [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 10/31/2020 22:19'
 }
-GLGenParameter >> length [
+GLCommandParameter >> length [
 
 	^ length
 ]
@@ -101,7 +101,7 @@ GLGenParameter >> length [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 4/12/2021 17:25'
 }
-GLGenParameter >> length: anObject [
+GLCommandParameter >> length: anObject [
 
 	length := anObject
 ]
@@ -110,7 +110,7 @@ GLGenParameter >> length: anObject [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 4/12/2021 17:26'
 }
-GLGenParameter >> name [
+GLCommandParameter >> name [
 
 	^ name
 ]
@@ -119,7 +119,7 @@ GLGenParameter >> name [
 	#category : #printing,
 	#'squeak_changestamp' : 'stlu 11/1/2020 20:50'
 }
-GLGenParameter >> printOn: aStream [
+GLCommandParameter >> printOn: aStream [
 
 	aStream
 		nextPutAll: type;
@@ -131,7 +131,7 @@ GLGenParameter >> printOn: aStream [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 10/31/2020 22:19'
 }
-GLGenParameter >> type [
+GLCommandParameter >> type [
 
 	^ type
 ]
@@ -140,7 +140,7 @@ GLGenParameter >> type [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 4/12/2021 17:25'
 }
-GLGenParameter >> type: anObject [
+GLCommandParameter >> type: anObject [
 
 	type := anObject
 ]
