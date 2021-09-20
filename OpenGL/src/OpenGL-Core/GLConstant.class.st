@@ -1,22 +1,22 @@
 "
-I am, for most intents and purposes, a named integer.
+I am, for all intents and purposes, a named integer.
 "
 Class {
-	#name : #GLEnum,
+	#name : #GLConstant,
 	#superclass : #Magnitude,
 	#instVars : [
 		'value',
 		'name'
 	],
 	#category : #'OpenGL-Core',
-	#'squeak_changestamp' : 'stlu 7/22/2021 19:23'
+	#'squeak_changestamp' : 'stlu 9/20/2021 14:07'
 }
 
 {
 	#category : #'instance creation',
 	#'squeak_changestamp' : 'stlu 7/22/2021 15:32'
 }
-GLEnum class >> value: anInteger [
+GLConstant class >> value: anInteger [
 
 	^ self value: anInteger name: ''
 ]
@@ -25,7 +25,7 @@ GLEnum class >> value: anInteger [
 	#category : #'instance creation',
 	#'squeak_changestamp' : 'stlu 7/22/2021 15:31'
 }
-GLEnum class >> value: anInteger name: aString [
+GLConstant class >> value: anInteger name: aString [
 
 	^ self basicNew
 		initializeValue: anInteger name: aString;
@@ -36,7 +36,7 @@ GLEnum class >> value: anInteger name: aString [
 	#category : #arithmetic,
 	#'squeak_changestamp' : 'stlu 7/22/2021 18:44'
 }
-GLEnum >> * aNumber [
+GLConstant >> * aNumber [
 
 	^ value * aNumber
 ]
@@ -45,7 +45,7 @@ GLEnum >> * aNumber [
 	#category : #arithmetic,
 	#'squeak_changestamp' : 'stlu 7/22/2021 18:43'
 }
-GLEnum >> + aNumber [
+GLConstant >> + aNumber [
 
 	^ value + aNumber
 ]
@@ -54,7 +54,7 @@ GLEnum >> + aNumber [
 	#category : #arithmetic,
 	#'squeak_changestamp' : 'stlu 7/22/2021 18:43'
 }
-GLEnum >> - aNumber [
+GLConstant >> - aNumber [
 
 	^ value - aNumber
 ]
@@ -63,7 +63,7 @@ GLEnum >> - aNumber [
 	#category : #arithmetic,
 	#'squeak_changestamp' : 'stlu 7/22/2021 18:53'
 }
-GLEnum >> / aNumber [
+GLConstant >> / aNumber [
 
 	^ value / aNumber
 ]
@@ -72,7 +72,7 @@ GLEnum >> / aNumber [
 	#category : #arithmetic,
 	#'squeak_changestamp' : 'stlu 7/22/2021 18:53'
 }
-GLEnum >> // aNumber [
+GLConstant >> // aNumber [
 
 	^ value // aNumber
 ]
@@ -81,7 +81,7 @@ GLEnum >> // aNumber [
 	#category : #'bit manipulation',
 	#'squeak_changestamp' : 'stlu 7/22/2021 18:48'
 }
-GLEnum >> << shiftAmount [
+GLConstant >> << shiftAmount [
 
 	^ value << shiftAmount
 ]
@@ -90,7 +90,7 @@ GLEnum >> << shiftAmount [
 	#category : #comparing,
 	#'squeak_changestamp' : 'stlu 7/22/2021 18:56'
 }
-GLEnum >> = anObject [
+GLConstant >> = anObject [
 
 	^ value = anObject
 ]
@@ -99,7 +99,7 @@ GLEnum >> = anObject [
 	#category : #'bit manipulation',
 	#'squeak_changestamp' : 'stlu 7/22/2021 18:48'
 }
-GLEnum >> >> shiftAmount [
+GLConstant >> >> shiftAmount [
 
 	^ value >> shiftAmount
 ]
@@ -108,7 +108,7 @@ GLEnum >> >> shiftAmount [
 	#category : #arithmetic,
 	#'squeak_changestamp' : 'stlu 7/22/2021 18:53'
 }
-GLEnum >> \\ aNumber [
+GLConstant >> \\ aNumber [
 
 	^ value \\ aNumber
 ]
@@ -117,7 +117,7 @@ GLEnum >> \\ aNumber [
 	#category : #arithmetic,
 	#'squeak_changestamp' : 'stlu 7/22/2021 18:54'
 }
-GLEnum >> abs [
+GLConstant >> abs [
 
 	^ value abs
 ]
@@ -126,7 +126,7 @@ GLEnum >> abs [
 	#category : #converting,
 	#'squeak_changestamp' : 'stlu 7/22/2021 18:31'
 }
-GLEnum >> adaptToFloat: rcvr andSend: selector [
+GLConstant >> adaptToFloat: rcvr andSend: selector [
 
 	^ rcvr perform: selector with: value asFloat
 ]
@@ -135,7 +135,7 @@ GLEnum >> adaptToFloat: rcvr andSend: selector [
 	#category : #converting,
 	#'squeak_changestamp' : 'stlu 7/22/2021 18:33'
 }
-GLEnum >> adaptToFraction: rcvr andSend: selector [
+GLConstant >> adaptToFraction: rcvr andSend: selector [
 
 	^ rcvr perform: selector with: value asFraction
 ]
@@ -144,7 +144,7 @@ GLEnum >> adaptToFraction: rcvr andSend: selector [
 	#category : #converting,
 	#'squeak_changestamp' : 'stlu 7/22/2021 18:32'
 }
-GLEnum >> adaptToInteger: rcvr andSend: selector [
+GLConstant >> adaptToInteger: rcvr andSend: selector [
 
 	^ rcvr perform: selector with: value
 ]
@@ -153,7 +153,7 @@ GLEnum >> adaptToInteger: rcvr andSend: selector [
 	#category : #'bit manipulation',
 	#'squeak_changestamp' : 'stlu 7/22/2021 18:48'
 }
-GLEnum >> allMask: mask [
+GLConstant >> allMask: mask [
 
 	^ value allMask: mask
 ]
@@ -162,7 +162,7 @@ GLEnum >> allMask: mask [
 	#category : #'bit manipulation',
 	#'squeak_changestamp' : 'stlu 7/22/2021 18:49'
 }
-GLEnum >> anyMask: mask [
+GLConstant >> anyMask: mask [
 
 	^ value anyMask: mask
 ]
@@ -171,7 +171,7 @@ GLEnum >> anyMask: mask [
 	#category : #'bit manipulation',
 	#'squeak_changestamp' : 'stlu 7/22/2021 18:49'
 }
-GLEnum >> bitAnd: anInteger [
+GLConstant >> bitAnd: anInteger [
 
 	^ value bitAnd: anInteger
 ]
@@ -180,7 +180,7 @@ GLEnum >> bitAnd: anInteger [
 	#category : #'bit manipulation',
 	#'squeak_changestamp' : 'stlu 7/22/2021 18:49'
 }
-GLEnum >> bitAt: anInteger [
+GLConstant >> bitAt: anInteger [
 
 	^ value bitAt: anInteger
 ]
@@ -189,7 +189,7 @@ GLEnum >> bitAt: anInteger [
 	#category : #'bit manipulation',
 	#'squeak_changestamp' : 'stlu 7/22/2021 18:50'
 }
-GLEnum >> bitAt: anInteger put: value [
+GLConstant >> bitAt: anInteger put: value [
 
 	^ value bitAt: anInteger put: value
 ]
@@ -198,7 +198,7 @@ GLEnum >> bitAt: anInteger put: value [
 	#category : #'bit manipulation',
 	#'squeak_changestamp' : 'stlu 7/22/2021 18:50'
 }
-GLEnum >> bitClear: aMask [
+GLConstant >> bitClear: aMask [
 
 	^ value bitClear: aMask
 ]
@@ -207,7 +207,7 @@ GLEnum >> bitClear: aMask [
 	#category : #'bit manipulation',
 	#'squeak_changestamp' : 'stlu 7/22/2021 18:50'
 }
-GLEnum >> bitCount [
+GLConstant >> bitCount [
 
 	^ value bitCount
 ]
@@ -216,7 +216,7 @@ GLEnum >> bitCount [
 	#category : #'bit manipulation',
 	#'squeak_changestamp' : 'stlu 7/22/2021 18:50'
 }
-GLEnum >> bitInvert [
+GLConstant >> bitInvert [
 
 	^ value bitInvert
 ]
@@ -225,7 +225,7 @@ GLEnum >> bitInvert [
 	#category : #'bit manipulation',
 	#'squeak_changestamp' : 'stlu 7/22/2021 18:49'
 }
-GLEnum >> bitOr: anInteger [
+GLConstant >> bitOr: anInteger [
 
 	^ value bitOr: anInteger
 ]
@@ -234,7 +234,7 @@ GLEnum >> bitOr: anInteger [
 	#category : #'bit manipulation',
 	#'squeak_changestamp' : 'stlu 7/22/2021 18:51'
 }
-GLEnum >> bitReverse: highBit [
+GLConstant >> bitReverse: highBit [
 
 	^ value bitReverse: highBit
 ]
@@ -243,7 +243,7 @@ GLEnum >> bitReverse: highBit [
 	#category : #'bit manipulation',
 	#'squeak_changestamp' : 'stlu 7/22/2021 18:51'
 }
-GLEnum >> bitShift: shiftCount [
+GLConstant >> bitShift: shiftCount [
 
 	^ value bitShift: shiftCount
 ]
@@ -252,7 +252,7 @@ GLEnum >> bitShift: shiftCount [
 	#category : #'bit manipulation',
 	#'squeak_changestamp' : 'stlu 7/22/2021 18:49'
 }
-GLEnum >> bitXor: anInteger [
+GLConstant >> bitXor: anInteger [
 
 	^ value bitXor: anInteger
 ]
@@ -261,7 +261,7 @@ GLEnum >> bitXor: anInteger [
 	#category : #comparing,
 	#'squeak_changestamp' : 'stlu 7/22/2021 18:56'
 }
-GLEnum >> hash [
+GLConstant >> hash [
 
 	^ value hash
 ]
@@ -270,7 +270,7 @@ GLEnum >> hash [
 	#category : #'bit manipulation',
 	#'squeak_changestamp' : 'stlu 7/22/2021 18:51'
 }
-GLEnum >> highBit [
+GLConstant >> highBit [
 
 	^ value highBit
 ]
@@ -279,7 +279,7 @@ GLEnum >> highBit [
 	#category : #initialization,
 	#'squeak_changestamp' : 'stlu 7/22/2021 15:30'
 }
-GLEnum >> initializeValue: anInteger name: aString [
+GLConstant >> initializeValue: anInteger name: aString [
 
 	value := anInteger.
 	name := aString.
@@ -289,7 +289,7 @@ GLEnum >> initializeValue: anInteger name: aString [
 	#category : #testing,
 	#'squeak_changestamp' : 'stlu 7/22/2021 17:52'
 }
-GLEnum >> isNumber [
+GLConstant >> isNumber [
 
 	^ true
 ]
@@ -298,7 +298,7 @@ GLEnum >> isNumber [
 	#category : #'bit manipulation',
 	#'squeak_changestamp' : 'stlu 7/22/2021 18:52'
 }
-GLEnum >> lowBit [
+GLConstant >> lowBit [
 
 	^ value lowBit
 ]
@@ -307,7 +307,7 @@ GLEnum >> lowBit [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 7/22/2021 15:30'
 }
-GLEnum >> name [
+GLConstant >> name [
 
 	^ name
 ]
@@ -316,7 +316,7 @@ GLEnum >> name [
 	#category : #arithmetic,
 	#'squeak_changestamp' : 'stlu 7/22/2021 18:54'
 }
-GLEnum >> negated [
+GLConstant >> negated [
 
 	^ value negated
 ]
@@ -325,7 +325,7 @@ GLEnum >> negated [
 	#category : #'bit manipulation',
 	#'squeak_changestamp' : 'stlu 7/22/2021 18:52'
 }
-GLEnum >> noMask: mask [
+GLConstant >> noMask: mask [
 
 	^ value noMask: mask
 ]
@@ -334,7 +334,7 @@ GLEnum >> noMask: mask [
 	#category : #printing,
 	#'squeak_changestamp' : 'stlu 7/22/2021 15:42'
 }
-GLEnum >> printOn: aStream [
+GLConstant >> printOn: aStream [
 
 	aStream nextPut: $<.
 	name
@@ -347,7 +347,7 @@ GLEnum >> printOn: aStream [
 	#category : #arithmetic,
 	#'squeak_changestamp' : 'stlu 7/22/2021 18:54'
 }
-GLEnum >> quo: aNumber [
+GLConstant >> quo: aNumber [
 
 	^ value quo: aNumber
 ]
@@ -356,7 +356,7 @@ GLEnum >> quo: aNumber [
 	#category : #arithmetic,
 	#'squeak_changestamp' : 'stlu 7/22/2021 18:54'
 }
-GLEnum >> reciprocal [
+GLConstant >> reciprocal [
 
 	^ value reciprocal
 ]
@@ -365,7 +365,7 @@ GLEnum >> reciprocal [
 	#category : #arithmetic,
 	#'squeak_changestamp' : 'stlu 7/22/2021 18:54'
 }
-GLEnum >> rem: aNumber [
+GLConstant >> rem: aNumber [
 
 	^ value rem: aNumber
 ]
@@ -374,7 +374,7 @@ GLEnum >> rem: aNumber [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 7/22/2021 15:30'
 }
-GLEnum >> value [
+GLConstant >> value [
 
 	^ value
 ]
