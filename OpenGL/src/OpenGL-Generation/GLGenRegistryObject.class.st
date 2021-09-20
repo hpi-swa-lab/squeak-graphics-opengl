@@ -43,49 +43,48 @@ GLGenRegistryObject >> aliases [
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 4/11/2021 12:56'
+	#'squeak_changestamp' : 'stlu 9/20/2021 13:13'
 }
 GLGenRegistryObject >> definitions [
 
-	^ definitions ifNil: [definitions := OrderedCollection new]
+	^ definitions
 ]
 
 {
-	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 4/12/2021 18:49'
+	#category : #testing,
+	#'squeak_changestamp' : 'stlu 9/15/2021 14:07'
 }
-GLGenRegistryObject >> definitions: anObject [
+GLGenRegistryObject >> hasDefinitions [
 
-	definitions := anObject
+	^ definitions notEmpty
 ]
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 4/12/2021 18:50'
+	#'squeak_changestamp' : 'stlu 9/20/2021 13:14'
 }
 GLGenRegistryObject >> initialize [
 
-	aliases := Set new
+	aliases := Set new.
+	definitions := OrderedCollection new.
 ]
 
 {
 	#category : #testing,
-	#'squeak_changestamp' : 'stlu 4/19/2021 19:44'
+	#'squeak_changestamp' : 'stlu 9/15/2021 14:36'
 }
 GLGenRegistryObject >> isEverRemoved [
 
-	^ definitions anySatisfy: [:each |
-		each second = #remove]
+	^ definitions anySatisfy: [:each | each isRemoval]
 ]
 
 {
 	#category : #testing,
-	#'squeak_changestamp' : 'stlu 4/12/2021 18:30'
+	#'squeak_changestamp' : 'stlu 9/15/2021 14:36'
 }
 GLGenRegistryObject >> isOnlyDefinedInExtensions [
 
-	^ definitions allSatisfy: [:each |
-		each first = #extension]
+	^ definitions allSatisfy: [:each | each isExtension]
 ]
 
 {
@@ -108,27 +107,36 @@ GLGenRegistryObject >> name: stringOrSymbol [
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 4/12/2021 12:50'
+	#'squeak_changestamp' : 'stlu 9/15/2021 14:33'
 }
 GLGenRegistryObject >> removeIn: apiSymbol profile: profileSymbolOrNil version: versionString [
 
-	self definitions add: { #feature . #remove . apiSymbol . profileSymbolOrNil . versionString }
+	definitions add: (GLGenDefinition new
+		removeIn: apiSymbol
+		profile: profileSymbolOrNil
+		version: versionString).
 ]
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 4/12/2021 12:51'
+	#'squeak_changestamp' : 'stlu 9/15/2021 14:34'
 }
 GLGenRegistryObject >> requireIn: apiSymbol profile: profileSymbolOrNil extension: extensionName [
 
-	self definitions add: { #extension . #require . apiSymbol . profileSymbolOrNil . extensionName }
+	definitions add: (GLGenDefinition new
+		requireIn: apiSymbol
+		profile: profileSymbolOrNil
+		extension: extensionName).
 ]
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 4/12/2021 12:50'
+	#'squeak_changestamp' : 'stlu 9/15/2021 14:35'
 }
 GLGenRegistryObject >> requireIn: apiSymbol profile: profileSymbolOrNil version: versionString [
 
-	self definitions add: { #feature . #require . apiSymbol . profileSymbolOrNil . versionString }
+	definitions add: (GLGenDefinition new
+		requireIn: apiSymbol
+		profile: profileSymbolOrNil
+		version: versionString).
 ]

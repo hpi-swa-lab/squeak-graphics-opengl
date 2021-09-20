@@ -9,11 +9,11 @@ Class {
 
 {
 	#category : #'method sources',
-	#'squeak_changestamp' : 'stlu 4/19/2021 19:43'
+	#'squeak_changestamp' : 'stlu 9/15/2021 14:07'
 }
 GLGenRegistryGenerator >> commandCategory: aCommand [
 
-	aCommand definitions ifEmpty: [^ #'commands - unused'].
+	aCommand hasDefinitions ifFalse: [^ #'commands - unused'].
 	aCommand isEverRemoved ifTrue: [^ #'commands - removed'].
 	^ aCommand isOnlyDefinedInExtensions
 		ifTrue: [#'commands - extensions']
@@ -39,11 +39,11 @@ GLGenRegistryGenerator >> commandSource: aCommand [
 
 {
 	#category : #'method sources',
-	#'squeak_changestamp' : 'stlu 4/19/2021 19:43'
+	#'squeak_changestamp' : 'stlu 9/15/2021 14:08'
 }
 GLGenRegistryGenerator >> enumCategory: anEnum [
 
-	anEnum definitions ifEmpty: [^ #'enums - unused'].
+	anEnum hasDefinitions ifFalse: [^ #'enums - unused'].
 	anEnum isEverRemoved ifTrue: [^ #'enums - removed'].
 	^ anEnum isOnlyDefinedInExtensions
 		ifTrue: [#'enums - extensions']
@@ -242,50 +242,14 @@ GLGenRegistryGenerator >> printCommandSignature: aCommand on: aStream [
 
 {
 	#category : #'method sources',
-	#'squeak_changestamp' : 'stlu 4/12/2021 13:56'
+	#'squeak_changestamp' : 'stlu 9/20/2021 13:42'
 }
-GLGenRegistryGenerator >> printDefinitionPragma: anArray on: aStream [
+GLGenRegistryGenerator >> printDefinitionPragmas: aRegistryElement on: aStream [
 
-	| action api |
-	api := anArray third.
-	action := anArray second.
-	aStream
-		nextPutAll: '<glAPI: ';
-		store: api asSymbol.
-	anArray fourth ifNotNil: [:profile |
-		aStream
-			nextPutAll: ' profile: ';
-			store: profile asSymbol].
-	
-	anArray first caseOf: {
-		[#feature] -> [
-			| version |
-			version := anArray fifth.
-			aStream
-				nextPutAll: (action caseOf: {
-								[#require] -> [' since: '].
-								[#remove] -> [' until: ']});
-				store: version asString].
-		[#extension] -> [
-			| extension |
-			extension := anArray fifth.
-			aStream
-				nextPutAll: ' extension: ';
-				store: extension asSymbol]}.
-	
-	aStream nextPut: $>.
-]
-
-{
-	#category : #'method sources',
-	#'squeak_changestamp' : 'stlu 4/13/2021 12:24'
-}
-GLGenRegistryGenerator >> printDefinitionPragmas: aRegistryObject on: aStream [
-
-	aRegistryObject definitions do: [:definition |
-		self printDefinitionPragma: definition on: aStream.
+	aRegistryElement definitions do: [:definition |
+		definition printPragmaOn: aStream.
 		aStream cr; tab].
-	aRegistryObject definitions ifNotEmpty: [
+	aRegistryElement hasDefinitions ifTrue: [
 		aStream cr; tab].
 ]
 
