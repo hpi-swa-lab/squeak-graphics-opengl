@@ -101,12 +101,12 @@ GLExternalLibrary >> doesNotUnderstand: aMessage [
 
 {
 	#category : #'dynamic lookup',
-	#'squeak_changestamp' : 'stlu 4/15/2021 11:25'
+	#'squeak_changestamp' : 'stlu 9/20/2021 14:45'
 }
 GLExternalLibrary >> install: aSelector [
 
 	| registryMethod copiedMethod |
-	registryMethod := GLRegistry compiledMethodAt: aSelector ifAbsent: [^ nil].
+	registryMethod := GLLibraryMethods compiledMethodAt: aSelector ifAbsent: [^ nil].
 	copiedMethod := registryMethod shallowCopy.
 	
 	"assumption: commands have external functions, enums don't"

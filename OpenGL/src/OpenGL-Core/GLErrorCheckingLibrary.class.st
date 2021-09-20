@@ -78,12 +78,12 @@ GLErrorCheckingLibrary >> getError [
 
 {
 	#category : #compiling,
-	#'squeak_changestamp' : 'stlu 6/17/2021 21:02'
+	#'squeak_changestamp' : 'stlu 9/20/2021 14:45'
 }
 GLErrorCheckingLibrary >> install: aSelector [
 
 	| registryMethod signature template source |
-	registryMethod := GLRegistry compiledMethodAt: aSelector ifAbsent: [^ nil].
+	registryMethod := GLLibraryMethods compiledMethodAt: aSelector ifAbsent: [^ nil].
 	"assumption: method signature is on a single line ended by a carriage return."
 	signature := registryMethod getSource asString copyUpTo: Character cr.
 	template := (registryMethod pragmaAt: #glCommand:)

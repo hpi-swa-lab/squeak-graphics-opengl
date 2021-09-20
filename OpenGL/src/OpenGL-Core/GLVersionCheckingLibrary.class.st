@@ -206,12 +206,12 @@ GLVersionCheckingLibrary >> glAPI: apiSymbol until: versionString [
 
 {
 	#category : #compiling,
-	#'squeak_changestamp' : 'stlu 5/26/2021 13:02'
+	#'squeak_changestamp' : 'stlu 9/20/2021 14:45'
 }
 GLVersionCheckingLibrary >> install: aSelector [
 
 	| registryMethod pragmas signature |
-	registryMethod := GLRegistry compiledMethodAt: aSelector ifAbsent: [^ nil].
+	registryMethod := GLLibraryMethods compiledMethodAt: aSelector ifAbsent: [^ nil].
 	"assumption: method signature is on a single line ended by a carriage return."
 	signature := registryMethod getSource asString copyUpTo: Character cr.
 	pragmas := registryMethod pragmas.
