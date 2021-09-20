@@ -77,7 +77,7 @@ GLGenEnum >> initialize [
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 3/5/2021 13:03'
+	#'squeak_changestamp' : 'stlu 9/13/2021 16:10'
 }
 GLGenEnum >> initializeWithXMLTag: tag [
 
@@ -93,7 +93,7 @@ GLGenEnum >> initializeWithXMLTag: tag [
 	api := tag attributes at: #api ifAbsent: [].
 	typeSuffix := tag attributes at: #type ifAbsent: [].
 	suffix := (name findTokens: '_') last.
-	(self class suffixes includes: suffix) ifFalse: [suffix := nil].
+	(self class extensionVendors includes: suffix) ifFalse: [suffix := nil].
 	
 	tag attributes at: #alias ifPresent: [:alias | self addAlias: alias].
 ]

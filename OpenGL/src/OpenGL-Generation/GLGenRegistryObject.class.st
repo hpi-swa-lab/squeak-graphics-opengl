@@ -7,19 +7,55 @@ Class {
 		'aliases'
 	],
 	#classVars : [
-		'Suffixes'
+		'ExtensionVendors'
 	],
 	#category : #'OpenGL-Generation'
 }
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 3/5/2021 12:58'
+	#'squeak_changestamp' : 'stlu 9/13/2021 16:09'
 }
-GLGenRegistryObject class >> suffixes [
+GLGenRegistryObject class >> extensionVendors [
 
-	^ Suffixes ifNil: [
-		Suffixes := #('3DFX' '3DL' 'AMD' 'APPLE' 'ARB' 'ARM' 'ATI' 'DMP' 'EXT' 'FJ' 'GREMEDY' 'HP' 'I3D' 'IBM' 'IMG' 'INGR' 'INTEL' 'KHR' 'MESA' 'MESAX' 'NV' 'NVX' 'OES' 'OML' 'OVR' 'PGI' 'QCOM' 'REND' 'S3TC' 'SGI' 'SGIS' 'SGIX' 'SUN' 'SUNX' 'WIN') asSet]
+	^ ExtensionVendors ifNil: [
+		ExtensionVendors := #(
+			'3DFX'
+			'3DL'
+			'AMD'
+			'APPLE'
+			'ARB'
+			'ARM'
+			'ATI'
+			'DMP'
+			'EXT'
+			'FJ'
+			'GREMEDY'
+			'HP'
+			'I3D'
+			'IBM'
+			'IMG'
+			'INGR'
+			'INTEL'
+			'KHR'
+			'MESA'
+			'MESAX'
+			'NV'
+			'NVX'
+			'OES'
+			'OML'
+			'OVR'
+			'PGI'
+			'QCOM'
+			'REND'
+			'S3TC'
+			'SGI'
+			'SGIS'
+			'SGIX'
+			'SUN'
+			'SUNX'
+			'WIN'
+			) asSet]
 ]
 
 {
