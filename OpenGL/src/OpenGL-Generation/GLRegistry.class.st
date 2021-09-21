@@ -19,8 +19,76 @@ Class {
 		'types',
 		'extensions'
 	],
+	#classVars : [
+		'ClearCurrentOnSave',
+		'Current',
+		'DefaultUrlToRetrieveXML'
+	],
 	#category : #'OpenGL-Generation'
 }
+
+{
+	#category : #cache,
+	#'squeak_changestamp' : 'stlu 9/21/2021 16:37'
+}
+GLRegistry class >> clearCurrent [
+
+	Current := nil.
+]
+
+{
+	#category : #preferences,
+	#'squeak_changestamp' : 'stlu 9/21/2021 16:36'
+}
+GLRegistry class >> clearCurrentOnSave [
+
+	<preference: 'Clear cached OpenGL registry when saving'
+		category: 'OpenGL' 
+		description: 'Clear the currently cached OpenGL registry whenever Squeak is saved. Doing so reduces the saved .image file size by ~5MB. The registry will have to be retrieved again when loading new registry elements.' 
+		type: #Boolean>
+	^ ClearCurrentOnSave ifNil: [true]
+]
+
+{
+	#category : #preferences,
+	#'squeak_changestamp' : 'stlu 9/21/2021 16:36'
+}
+GLRegistry class >> clearCurrentOnSave: aBoolean [
+
+	ClearCurrentOnSave := aBoolean.
+]
+
+{
+	#category : #cache,
+	#'squeak_changestamp' : 'stlu 9/21/2021 16:18'
+}
+GLRegistry class >> current [
+
+	^ Current ifNil: [
+		Current := self fromUrl: self defaultUrlToRetrieveXML]
+]
+
+{
+	#category : #preferences,
+	#'squeak_changestamp' : 'stlu 9/21/2021 16:18'
+}
+GLRegistry class >> defaultUrlToRetrieveXML [
+
+	<preference: 'Default url to retrieve registry XML'
+		category: 'OpenGL' 
+		description: 'When the current OpenGL registry is needed, the given url will be used to retrieve the XML specification of the OpenGL registry. Also allows local file paths (file://).'
+		type: #String>
+	^ DefaultUrlToRetrieveXML ifNil: [self urlOfCanonicalXML]
+]
+
+{
+	#category : #preferences,
+	#'squeak_changestamp' : 'stlu 9/21/2021 16:32'
+}
+GLRegistry class >> defaultUrlToRetrieveXML: aString [
+
+	^ DefaultUrlToRetrieveXML := aString
+]
 
 {
 	#category : #'instance creation',
@@ -33,23 +101,18 @@ GLRegistry class >> fromFile: filePath [
 
 {
 	#category : #'instance creation',
-	#'squeak_changestamp' : 'stlu 11/6/2020 17:49'
+	#'squeak_changestamp' : 'stlu 9/21/2021 16:03'
 }
-GLRegistry class >> fromUrl: urlString [
+GLRegistry class >> fromUrl: aString [
 
-	| response |
-	response := WebClient httpGet: urlString.
-	response isSuccess ifFalse: [^ self error: 'Failed to fetch XML'].
-	^ self fromXML: (XMLDOMParser parseDocumentFrom: response content readStream)
-]
-
-{
-	#category : #'instance creation',
-	#'squeak_changestamp' : 'stlu 11/6/2020 17:52'
-}
-GLRegistry class >> fromWeb [
-
-	^ self fromUrl: 'https://raw.githubusercontent.com/KhronosGroup/OpenGL-Registry/master/xml/gl.xml'
+	aString asUrl retrieveContents ifNotNil: [:mimeDoc |
+		[
+			| xml |
+			xml := XMLDOMParser parseDocumentFrom: mimeDoc contentStream.
+			^ self fromXML: xml
+		] on: SAXException do: [
+			self error: 'Failed to parse registry xml']].
+	self error: 'Could not retreive registry xml from given Url'.
 ]
 
 {
@@ -70,6 +133,42 @@ GLRegistry class >> fromXMLTag: tag [
 	^ self new
 		initializeWithXMLTag: tag;
 		yourself
+]
+
+{
+	#category : #'class initialization',
+	#'squeak_changestamp' : 'stlu 9/21/2021 16:24'
+}
+GLRegistry class >> initialize [
+
+	Smalltalk addToShutDownList: self.
+]
+
+{
+	#category : #cache,
+	#'squeak_changestamp' : 'stlu 9/21/2021 16:41'
+}
+GLRegistry class >> setupLocalXML [
+
+	self notYetImplemented.
+]
+
+{
+	#category : #'system startup',
+	#'squeak_changestamp' : 'stlu 9/21/2021 16:37'
+}
+GLRegistry class >> shutDown: quitting [
+
+	self clearCurrent.
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 9/21/2021 16:09'
+}
+GLRegistry class >> urlOfCanonicalXML [
+
+	^ 'https://raw.githubusercontent.com/KhronosGroup/OpenGL-Registry/main/xml/gl.xml'
 ]
 
 {

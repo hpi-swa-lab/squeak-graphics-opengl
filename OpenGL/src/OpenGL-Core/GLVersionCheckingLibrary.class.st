@@ -39,14 +39,14 @@ GLVersionCheckingLibrary class >> around: aLibrary targetExtensions: collectionO
 
 {
 	#category : #'instance creation',
-	#'squeak_changestamp' : 'stlu 4/22/2021 14:26'
+	#'squeak_changestamp' : 'stlu 9/21/2021 13:30'
 }
 GLVersionCheckingLibrary class >> around: aLibrary targetVersion: aVersion [
 
 	^ self
 		around: aLibrary
 		targetVersion: aVersion
-		targetExtensions: nil "allow all extensions by default"
+		targetExtensions: #() "allow no extensions by default"
 ]
 
 {
@@ -149,13 +149,14 @@ GLVersionCheckingLibrary >> glAPI: apiSymbol extension: extensionSymbol [
 
 {
 	#category : #'version testing',
-	#'squeak_changestamp' : 'stlu 4/22/2021 14:22'
+	#'squeak_changestamp' : 'stlu 9/21/2021 13:22'
 }
-GLVersionCheckingLibrary >> glAPI: apiSymbol profile: profileSymbol extension: extensionSymbol [
+GLVersionCheckingLibrary >> glAPI: apiSymbol profile: profileSymbolOrNil extension: extensionSymbol [
 
 	self targetExtensions ifNil: [^ true].
-	(self targetVersion isAPI: apiSymbol) ifFalse: [^ nil].
-	(self targetVersion matchesProfile: profileSymbol) ifFalse: [^ nil].
+	self targetVersion ifNotNil: [:version |
+		(version isAPI: apiSymbol) ifFalse: [^ nil].
+		(version matchesProfile: profileSymbolOrNil) ifFalse: [^ nil]].
 	(self targetExtensions includes: extensionSymbol) ifFalse: [^ nil].
 	^ true
 ]

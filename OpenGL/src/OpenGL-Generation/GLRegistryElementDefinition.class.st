@@ -21,6 +21,24 @@ GLRegistryElementDefinition >> api [
 ]
 
 {
+	#category : #testing,
+	#'squeak_changestamp' : 'stlu 9/21/2021 13:35'
+}
+GLRegistryElementDefinition >> checkVersion: glVersionOrNil extensions: extensionsOrNil [
+
+	isExtension
+		ifTrue: [	extensionsOrNil ifNil: [^ true]]
+		ifFalse: [glVersionOrNil ifNil: [^ isRemoval ifTrue: [nil] ifFalse: [true]]].
+	glVersionOrNil ifNotNil: [:glVersion |
+		(glVersion isAPI: api) ifFalse: [^ nil].
+		(glVersion matchesProfile: profile) ifFalse: [^ nil]].
+	isExtension
+		ifTrue: [(extensionsOrNil includes: version) ifFalse: [^ nil]]
+		ifFalse: [(glVersionOrNil isBelowVersionString: version) ifTrue: [^ nil]].
+	^ isRemoval not
+]
+
+{
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 9/20/2021 13:08'
 }

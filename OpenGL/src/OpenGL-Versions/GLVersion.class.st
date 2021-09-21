@@ -178,21 +178,6 @@ GLVersion >> getVersion: aLibrary [
 ]
 
 {
-	#category : #'version testing',
-	#'squeak_changestamp' : 'stlu 4/16/2021 20:30'
-}
-GLVersion >> includesMethod: aRegistryMethod [
-
-	| result |
-	result := false.
-	aRegistryMethod pragmas do: [:pragma |
-		(pragma keyword beginsWith: 'glAPI') ifTrue: [
-			(pragma message sendTo: self) ifNotNil: [:newResult |
-				result := newResult]]].
-	^ result
-]
-
-{
 	#category : #initialization,
 	#'squeak_changestamp' : 'stlu 4/15/2021 18:07'
 }
@@ -245,13 +230,13 @@ GLVersion >> major [
 
 {
 	#category : #'version testing',
-	#'squeak_changestamp' : 'stlu 4/17/2021 10:21'
+	#'squeak_changestamp' : 'stlu 9/20/2021 15:31'
 }
-GLVersion >> matchesProfile: profileSymbol [
+GLVersion >> matchesProfile: profileSymbolOrNil [
 
-	profileSymbol ifNil: [^ true].
+	profileSymbolOrNil ifNil: [^ true].
 	self profile ifNil: [^ true].
-	self profile = profileSymbol ifTrue: [^ true].
+	self profile = profileSymbolOrNil ifTrue: [^ true].
 	
 	^ false
 ]

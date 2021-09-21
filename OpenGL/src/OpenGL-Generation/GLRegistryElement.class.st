@@ -127,6 +127,53 @@ GLRegistryElement >> initializeWithXMLTag: tag [
 
 {
 	#category : #testing,
+	#'squeak_changestamp' : 'stlu 9/21/2021 14:04'
+}
+GLRegistryElement >> isDefinedInAPI: apiSymbol [
+
+	^ definitions anySatisfy: [:definition |
+		definition isExtension not
+			and: [definition isRemoval not]
+			and: [definition api = apiSymbol]]
+]
+
+{
+	#category : #testing,
+	#'squeak_changestamp' : 'stlu 9/21/2021 13:51'
+}
+GLRegistryElement >> isDefinedInExtensions: extensionsOrNil [
+
+	extensionsOrNil ifNil: [^ true].
+	^ definitions anySatisfy: [:definition |
+		definition isExtension and: [
+			(extensionsOrNil includes: definition version)]]
+]
+
+{
+	#category : #testing,
+	#'squeak_changestamp' : 'stlu 9/20/2021 17:07'
+}
+GLRegistryElement >> isDefinedInVersion: glVersion [
+
+	^ self isDefinedInVersion: glVersion extensions: #()
+]
+
+{
+	#category : #testing,
+	#'squeak_changestamp' : 'stlu 9/21/2021 13:32'
+}
+GLRegistryElement >> isDefinedInVersion: glVersionOrNil extensions: extensionsOrNil [
+
+	| result |
+	result := false.
+	definitions do: [:definition |
+		(definition checkVersion: glVersionOrNil extensions: extensionsOrNil) ifNotNil: [:newResult |
+			result := newResult]].
+	^ result
+]
+
+{
+	#category : #testing,
 	#'squeak_changestamp' : 'stlu 9/15/2021 14:36'
 }
 GLRegistryElement >> isEverRemoved [
