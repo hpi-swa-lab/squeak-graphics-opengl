@@ -24,7 +24,7 @@ GLLibraryMethodGenerator >> commandCategory: aCommand [
 
 {
 	#category : #'method sources',
-	#'squeak_changestamp' : 'stlu 9/21/2021 11:01'
+	#'squeak_changestamp' : 'stlu 9/21/2021 11:13'
 }
 GLLibraryMethodGenerator >> commandSource: aCommand [
 
@@ -33,10 +33,10 @@ GLLibraryMethodGenerator >> commandSource: aCommand [
 		stream cr.
 		shouldCompileDefinitionPragmas ifTrue: [
 			self printDefinitionPragmas: aCommand on: stream.
-			aCommand hasDefinitions ifTrue: [stream cr; tab]].
+			aCommand hasDefinitions ifTrue: [stream cr]].
 		shouldCompileDescriptionPragmas ifTrue: [
 			self printCommandPragmas: aCommand on: stream.
-			stream cr; tab].
+			stream cr].
 		stream cr; tab.
 		aCommand printFFIPragmaOn: stream.
 		stream cr; tab.
@@ -71,7 +71,7 @@ GLLibraryMethodGenerator >> enumSignature: anEnum [
 
 {
 	#category : #'method sources',
-	#'squeak_changestamp' : 'stlu 9/21/2021 11:02'
+	#'squeak_changestamp' : 'stlu 9/21/2021 11:13'
 }
 GLLibraryMethodGenerator >> enumSource: anEnum [
 
@@ -80,7 +80,7 @@ GLLibraryMethodGenerator >> enumSource: anEnum [
 		stream cr.
 		shouldCompileDefinitionPragmas ifTrue: [
 			self printDefinitionPragmas: anEnum on: stream.
-			anEnum hasDefinitions ifTrue: [stream cr; tab]].
+			anEnum hasDefinitions ifTrue: [stream cr]].
 		shouldCompileDescriptionPragmas ifTrue: [
 			self printEnumPragmas: anEnum on: stream].
 		stream
