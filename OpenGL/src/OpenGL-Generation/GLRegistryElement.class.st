@@ -59,6 +59,17 @@ GLRegistryElement class >> extensionVendors [
 ]
 
 {
+	#category : #'instance creation',
+	#'squeak_changestamp' : 'stlu 9/20/2021 15:02'
+}
+GLRegistryElement class >> fromXMLTag: tag [
+
+	^ self new
+		initializeWithXMLTag: tag;
+		yourself
+]
+
+{
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 4/12/2021 19:37'
 }
@@ -103,6 +114,15 @@ GLRegistryElement >> initialize [
 
 	aliases := Set new.
 	definitions := OrderedCollection new.
+]
+
+{
+	#category : #initialization,
+	#'squeak_changestamp' : 'stlu 9/20/2021 15:03'
+}
+GLRegistryElement >> initializeWithXMLTag: tag [
+
+	self subclassResponsibility.
 ]
 
 {

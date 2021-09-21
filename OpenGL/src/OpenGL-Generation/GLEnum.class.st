@@ -28,17 +28,6 @@ GLEnum class >> convertEnumValueString: aString [
 ]
 
 {
-	#category : #'instance creation',
-	#'squeak_changestamp' : 'stlu 3/4/2021 11:36'
-}
-GLEnum class >> fromXMLTag: tag [
-
-	^ self new
-		initializeWithXMLTag: tag;
-		yourself
-]
-
-{
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 3/5/2021 12:50'
 }

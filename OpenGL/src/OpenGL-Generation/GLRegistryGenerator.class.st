@@ -2,14 +2,15 @@ Class {
 	#name : #GLRegistryGenerator,
 	#superclass : #Object,
 	#instVars : [
-		'generatedMethods'
+		'generatedMethods',
+		'shouldCompileSilently'
 	],
 	#category : #'OpenGL-Generation'
 }
 
 {
 	#category : #helpers,
-	#'squeak_changestamp' : 'stlu 4/12/2021 17:35'
+	#'squeak_changestamp' : 'stlu 9/20/2021 17:38'
 }
 GLRegistryGenerator >> compile: sourceString classified: categorySymbol into: aClass [
 
@@ -22,16 +23,19 @@ GLRegistryGenerator >> compile: sourceString classified: categorySymbol into: aC
 		aClass organization classify: selector under: categorySymbol logged: false.
 		^ self].
 	
-	aClass compile: sourceString classified: categorySymbol
+	shouldCompileSilently
+		ifTrue: [aClass compileSilently: sourceString classified: categorySymbol]
+		ifFalse: [aClass compile: sourceString classified: categorySymbol].
 ]
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 4/12/2021 17:43'
+	#'squeak_changestamp' : 'stlu 9/20/2021 17:36'
 }
 GLRegistryGenerator >> initialize [
 
 	generatedMethods := Set new.
+	shouldCompileSilently := false.
 ]
 
 {
@@ -55,4 +59,22 @@ GLRegistryGenerator >> removeNonGeneratedMethodsIn: aClass [
 		reference := MethodReference class: aClass selector: selector.
 		(generatedMethods includes: reference) ifFalse: [
 			aClass removeSelector: selector]]
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 9/20/2021 17:36'
+}
+GLRegistryGenerator >> shouldCompileSilently [
+
+	^ shouldCompileSilently
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 9/20/2021 17:36'
+}
+GLRegistryGenerator >> shouldCompileSilently: anObject [
+
+	shouldCompileSilently := anObject.
 ]

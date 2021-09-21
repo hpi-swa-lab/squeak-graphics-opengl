@@ -2,7 +2,9 @@ Class {
 	#name : #GLLibraryMethodGenerator,
 	#superclass : #GLRegistryGenerator,
 	#instVars : [
-		'targetClass'
+		'targetClass',
+		'shouldCompileDescriptionPragmas',
+		'shouldCompileDefinitionPragmas'
 	],
 	#category : #'OpenGL-Generation'
 }
@@ -22,15 +24,19 @@ GLLibraryMethodGenerator >> commandCategory: aCommand [
 
 {
 	#category : #'method sources',
-	#'squeak_changestamp' : 'stlu 4/13/2021 12:28'
+	#'squeak_changestamp' : 'stlu 9/21/2021 11:01'
 }
 GLLibraryMethodGenerator >> commandSource: aCommand [
 
 	^ String streamContents: [:stream |
 		self printCommandSignature: aCommand on: stream.
-		stream cr; cr; tab.
-		self printDefinitionPragmas: aCommand on: stream.
-		self printCommandPragmas: aCommand on: stream.
+		stream cr.
+		shouldCompileDefinitionPragmas ifTrue: [
+			self printDefinitionPragmas: aCommand on: stream.
+			aCommand hasDefinitions ifTrue: [stream cr; tab]].
+		shouldCompileDescriptionPragmas ifTrue: [
+			self printCommandPragmas: aCommand on: stream.
+			stream cr; tab].
 		stream cr; tab.
 		aCommand printFFIPragmaOn: stream.
 		stream cr; tab.
@@ -65,16 +71,20 @@ GLLibraryMethodGenerator >> enumSignature: anEnum [
 
 {
 	#category : #'method sources',
-	#'squeak_changestamp' : 'stlu 4/13/2021 12:31'
+	#'squeak_changestamp' : 'stlu 9/21/2021 11:02'
 }
 GLLibraryMethodGenerator >> enumSource: anEnum [
 
 	^ String streamContents: [:stream |
 		self printEnumSignature: anEnum on: stream.
-		stream cr; cr; tab.
-		self printDefinitionPragmas: anEnum on: stream.
-		self printEnumPragmas: anEnum on: stream.
+		stream cr.
+		shouldCompileDefinitionPragmas ifTrue: [
+			self printDefinitionPragmas: anEnum on: stream.
+			anEnum hasDefinitions ifTrue: [stream cr; tab]].
+		shouldCompileDescriptionPragmas ifTrue: [
+			self printEnumPragmas: anEnum on: stream].
 		stream
+			cr; tab;
 			nextPutAll: '^ ';
 			nextPutAll: anEnum name]
 ]
@@ -157,46 +167,49 @@ GLLibraryMethodGenerator >> generateRegistry: aRegistry [
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 4/12/2021 18:17'
+	#'squeak_changestamp' : 'stlu 9/21/2021 10:58'
 }
 GLLibraryMethodGenerator >> initialize [
 
 	super initialize.
-	targetClass := self environment at: #GLRegistry ifAbsent: []
+	targetClass := self environment at: #GLLibraryMethods ifAbsent: [].
+	
+	shouldCompileDefinitionPragmas := true.
+	shouldCompileDescriptionPragmas := true.
 ]
 
 {
 	#category : #'method sources',
-	#'squeak_changestamp' : 'stlu 4/13/2021 12:26'
+	#'squeak_changestamp' : 'stlu 9/20/2021 17:47'
 }
 GLLibraryMethodGenerator >> printCommandPragmas: aCommand on: aStream [
 
 	aStream
+		cr; tab;
 		nextPutAll: '<glCommand: ';
 		store: aCommand name asSymbol;
-		nextPut: $>;
-		cr; tab.
+		nextPut: $>.
 	
 	aCommand aliases ifNotEmpty: [:aliases |
 		aStream
+			cr; tab;
 			nextPutAll: '<glAliases: ';
 			store: (aliases collect: [:alias | alias asSymbol] as: Array);
-			nextPut: $>;
-			cr; tab].
+			nextPut: $>].
 	
 	aStream
+		cr; tab;
 		nextPutAll: '<glReturn: ';
 		store: aCommand returnType asString.
 	aCommand returnGroup ifNotNil: [:group |
 		aStream
 			nextPutAll: ' group: ';
 			store: group asSymbol].
-	aStream
-		nextPut: $>;
-		cr; tab.
+	aStream nextPut: $>.
 	
 	aCommand parameters do: [:param |
 		aStream
+			cr; tab;
 			nextPutAll: '<glArg: ';
 			store: param name asString;
 			nextPutAll: ' type: ';
@@ -209,9 +222,7 @@ GLLibraryMethodGenerator >> printCommandPragmas: aCommand on: aStream [
 			aStream
 				nextPutAll: ' size: ';
 				store: length].
-		aStream
-			nextPut: $>;
-			cr; tab].
+		aStream nextPut: $>].
 ]
 
 {
@@ -242,72 +253,70 @@ GLLibraryMethodGenerator >> printCommandSignature: aCommand on: aStream [
 
 {
 	#category : #'method sources',
-	#'squeak_changestamp' : 'stlu 9/20/2021 13:42'
+	#'squeak_changestamp' : 'stlu 9/20/2021 17:50'
 }
 GLLibraryMethodGenerator >> printDefinitionPragmas: aRegistryElement on: aStream [
 
 	aRegistryElement definitions do: [:definition |
-		definition printPragmaOn: aStream.
-		aStream cr; tab].
-	aRegistryElement hasDefinitions ifTrue: [
-		aStream cr; tab].
+		aStream cr; tab.
+		definition printPragmaOn: aStream].
 ]
 
 {
 	#category : #'method sources',
-	#'squeak_changestamp' : 'stlu 4/13/2021 12:20'
+	#'squeak_changestamp' : 'stlu 9/20/2021 18:12'
 }
 GLLibraryMethodGenerator >> printEnumPragmas: anEnum on: aStream [
 
 	aStream
+		cr; tab;
 		nextPutAll: '<glEnum: ';
 		store: anEnum name asSymbol;
-		nextPut: $>;
-		cr; tab.
+		nextPut: $>.
 	
 	anEnum aliases ifNotEmpty: [:aliases |
 		aStream
+			cr; tab;
 			nextPutAll: '<glAliases: ';
 			store: (aliases collect: [:alias | alias asSymbol] as: Array);
-			nextPut: $>;
-			cr; tab].
+			nextPut: $>].
 	
 	aStream
+		cr; tab;
 		nextPutAll: '<glValue: ';
 		nextPutAll: anEnum valueString;
-		nextPut: $>;
-		cr; tab.
+		nextPut: $>.
 	
 	anEnum groups ifNotEmpty: [:groups |
 		| groupArray |
 		groupArray := groups collect: [:group | group asSymbol] as: Array.
 		groupArray sort.
 		aStream
+			cr; tab;
 			nextPutAll: '<glGroups: ';
 			store: groupArray;
-			nextPut: $>;
-			cr; tab].
+			nextPut: $>].
 	
 	self flag: #todo. "additional newline"
 	
 	anEnum vendor ifNotNil: [:vendor |
 		aStream
+			cr; tab;
 			nextPutAll: '<glVendor: ';
 			store: vendor asSymbol;
-			nextPut: $>;
-			cr; tab].
+			nextPut: $>].
 		
 	anEnum suffix ifNotNil: [:suffix |
 		aStream
+			cr; tab;
 			nextPutAll: '<glSuffix: ';
 			store: suffix asSymbol;
-			nextPut: $>;
-			cr; tab].
+			nextPut: $>].
 	
 	anEnum isBitmask ifTrue: [
 		aStream
-			nextPutAll: '<glBitmask>';
-			cr; tab].
+			cr; tab;
+			nextPutAll: '<glBitmask>'].
 ]
 
 {
@@ -317,6 +326,42 @@ GLLibraryMethodGenerator >> printEnumPragmas: anEnum on: aStream [
 GLLibraryMethodGenerator >> printEnumSignature: anEnum on: aStream [
 
 	aStream nextPutAll: (self enumSignature: anEnum)
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 9/20/2021 17:33'
+}
+GLLibraryMethodGenerator >> shouldCompileDefinitionPragmas [
+
+	^ shouldCompileDefinitionPragmas
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 9/20/2021 17:33'
+}
+GLLibraryMethodGenerator >> shouldCompileDefinitionPragmas: anObject [
+
+	shouldCompileDefinitionPragmas := anObject.
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 9/20/2021 17:33'
+}
+GLLibraryMethodGenerator >> shouldCompileDescriptionPragmas [
+
+	^ shouldCompileDescriptionPragmas
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 9/20/2021 17:33'
+}
+GLLibraryMethodGenerator >> shouldCompileDescriptionPragmas: anObject [
+
+	shouldCompileDescriptionPragmas := anObject.
 ]
 
 {

@@ -5,17 +5,6 @@ Class {
 }
 
 {
-	#category : #'instance creation',
-	#'squeak_changestamp' : 'stlu 4/11/2021 13:29'
-}
-GLType class >> fromXMLTag: tag [
-
-	^ self new
-		initializeWithXMLTag: tag;
-		yourself
-]
-
-{
 	#category : #initialization,
 	#'squeak_changestamp' : 'stlu 4/11/2021 13:31'
 }

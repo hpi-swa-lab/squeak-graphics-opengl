@@ -10,17 +10,6 @@ Class {
 }
 
 {
-	#category : #'instance creation',
-	#'squeak_changestamp' : 'stlu 4/11/2021 13:54'
-}
-GLCommand class >> fromXMLTag: tag [
-
-	^ self new
-		initializeWithXMLTag: tag;
-		yourself
-]
-
-{
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/1/2020 00:23'
 }

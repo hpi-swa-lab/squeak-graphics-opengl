@@ -292,12 +292,10 @@ GLRegistry >> initialize [
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 4/11/2021 13:59'
+	#'squeak_changestamp' : 'stlu 9/20/2021 15:00'
 }
 GLRegistry >> initializeWithXMLTag: registryTag [
 
-	name := 'gl.xml'.
-	
 	self gatherTypes: registryTag.
 	self gatherEnums: registryTag.
 	self gatherCommands: registryTag.

@@ -22,15 +22,6 @@ GLRegistryElementDefinition >> api [
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 9/15/2021 14:35'
-}
-GLRegistryElementDefinition >> api: anObject [
-
-	api := anObject.
-]
-
-{
-	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 9/20/2021 13:08'
 }
 GLRegistryElementDefinition >> extension [
@@ -51,27 +42,9 @@ GLRegistryElementDefinition >> isExtension [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 9/15/2021 14:35'
 }
-GLRegistryElementDefinition >> isExtension: anObject [
-
-	isExtension := anObject.
-]
-
-{
-	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 9/15/2021 14:35'
-}
 GLRegistryElementDefinition >> isRemoval [
 
 	^ isRemoval
-]
-
-{
-	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 9/15/2021 14:35'
-}
-GLRegistryElementDefinition >> isRemoval: anObject [
-
-	isRemoval := anObject.
 ]
 
 {
@@ -122,15 +95,6 @@ GLRegistryElementDefinition >> profile [
 ]
 
 {
-	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 9/15/2021 14:35'
-}
-GLRegistryElementDefinition >> profile: anObject [
-
-	profile := anObject.
-]
-
-{
 	#category : #initialization,
 	#'squeak_changestamp' : 'stlu 9/15/2021 14:31'
 }
@@ -176,13 +140,4 @@ GLRegistryElementDefinition >> requireIn: apiSymbol profile: profileSymbolOrNil 
 GLRegistryElementDefinition >> version [
 
 	^ version
-]
-
-{
-	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 9/15/2021 14:35'
-}
-GLRegistryElementDefinition >> version: anObject [
-
-	version := anObject.
 ]
