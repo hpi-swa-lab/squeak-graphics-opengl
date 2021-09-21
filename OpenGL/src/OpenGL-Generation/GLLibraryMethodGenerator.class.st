@@ -264,7 +264,7 @@ GLLibraryMethodGenerator >> printDefinitionPragmas: aRegistryElement on: aStream
 
 {
 	#category : #'method sources',
-	#'squeak_changestamp' : 'stlu 9/20/2021 18:12'
+	#'squeak_changestamp' : 'stlu 9/21/2021 11:18'
 }
 GLLibraryMethodGenerator >> printEnumPragmas: anEnum on: aStream [
 
@@ -292,31 +292,9 @@ GLLibraryMethodGenerator >> printEnumPragmas: anEnum on: aStream [
 		groupArray := groups collect: [:group | group asSymbol] as: Array.
 		groupArray sort.
 		aStream
-			cr; tab;
 			nextPutAll: '<glGroups: ';
 			store: groupArray;
 			nextPut: $>].
-	
-	self flag: #todo. "additional newline"
-	
-	anEnum vendor ifNotNil: [:vendor |
-		aStream
-			cr; tab;
-			nextPutAll: '<glVendor: ';
-			store: vendor asSymbol;
-			nextPut: $>].
-		
-	anEnum suffix ifNotNil: [:suffix |
-		aStream
-			cr; tab;
-			nextPutAll: '<glSuffix: ';
-			store: suffix asSymbol;
-			nextPut: $>].
-	
-	anEnum isBitmask ifTrue: [
-		aStream
-			cr; tab;
-			nextPutAll: '<glBitmask>'].
 ]
 
 {
