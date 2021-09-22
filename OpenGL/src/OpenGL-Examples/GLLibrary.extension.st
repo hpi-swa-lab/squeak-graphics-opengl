@@ -2,22 +2,28 @@ Extension { #name : #GLLibrary }
 
 {
 	#category : #'*OpenGL-Examples',
-	#'squeak_changestamp' : 'stlu 4/16/2021 14:34'
+	#'squeak_changestamp' : 'stlu 9/22/2021 13:57'
 }
-GLLibrary class >> example1 [ "self example1"
-	"A minimal OpenGL example.
-	Prints information about the created OpenGL context to the Transcript."
+GLLibrary class >> example1 [
+	"
+	self example1.
+	"
+	"Prints information about the OpenGL context created by the B3DAcceleratorPlugin to the Transcript."
 	| lib bounds |
-	self flag: #todo. "Correct place for this example?"
-	self flag: #todo. "Move away from B3D since the plugin is only really available on LInux"
 	bounds := 0@0 extent: 400@400.
 	lib := (B3DContext bounds: bounds) library.
 	[
 		Transcript
+			openIfNone;
+			cr; nextPutAll: '** OpenGL version **';
 			cr; nextPutAll: lib versionString;
+			cr; nextPutAll: '** OpenGL vendor **';
 			cr; nextPutAll: lib vendorString;
+			cr; nextPutAll: '** OpenGL renderer **';
 			cr; nextPutAll: lib rendererString;
+			cr; nextPutAll: '** OpenGL GLSL version **';
 			cr; nextPutAll: lib shadingLanguageVersionString;
+			cr; nextPutAll: '** OpenGL extensions **';
 			cr.
 		lib extensions do: [:ext |
 			Transcript nextPutAll: ext; cr].
@@ -27,14 +33,41 @@ GLLibrary class >> example1 [ "self example1"
 
 {
 	#category : #'*OpenGL-Examples',
-	#'squeak_changestamp' : 'stlu 4/17/2021 11:19'
+	#'squeak_changestamp' : 'stlu 9/22/2021 13:56'
 }
-GLLibrary class >> example2 [ "self example2"
-	"A very simple OpenGL 1.0 example showing a rotating red rectangle on white background.
+GLLibrary class >> example2 [
+	"
+	self example2.
+	"
+	"A simple OpenGL example that (slowly) cycles through colors.
+	Click anywhere to dismiss it."
+	| context library |
+	"There are different ways to get ahold of an OpenGL context. Squeak by default ships with the external `B3DAcceleratorPlugin` that can be used to create a context overlaying an area of the native Squeak window."
+	context := B3DContext bounds: (0@0 extent: 400@400).
+	"To actually interact with OpenGL we need the library as it was created by the context. There are some wrapper libraries that provide additional features, but the innermost library should always be this one."
+	library := context library.
+	[
+		"We need to tell OpenGL which context to activate."
+		library makeCurrentDuring: [
+			"From here on out we can refer to our library using the global variable `GL`."
+			[Sensor anyButtonPressed] whileFalse: [
+				GL clearColor: (Color h: Time utcMicrosecondClock / 2e4 \\ 360.0 s: 1.0 v: 1.0).
+				GL clear: GL_COLOR_BUFFER_BIT.
+				context swapBuffers]]
+	] ensure: [context destroy]
+]
+
+{
+	#category : #'*OpenGL-Examples',
+	#'squeak_changestamp' : 'stlu 9/22/2021 13:38'
+}
+GLLibrary class >> example3 [
+	"
+	self example3.
+	"
+	"A simple OpenGL 1.0 (i.e. deprecated) example showing a rotating red rectangle on white background.
 	Click anywhere to dismiss it."
 	| context |
-	self flag: #todo. "Correct place for this example?"
-	self flag: #todo. "Move away from B3D since the plugin is only really available on LInux"
 	context := B3DContext bounds: (0@0 extent: 400@400).
 	[
 		(context library withVersionChecking: GL10 new) makeCurrentDuring: [
