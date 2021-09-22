@@ -101,20 +101,19 @@ GLExternalLibrary class >> startUp: resuming [
 
 {
 	#category : #'dynamic lookup',
-	#'squeak_changestamp' : 'stlu 4/14/2021 17:35'
+	#'squeak_changestamp' : 'stlu 9/22/2021 17:33'
 }
 GLExternalLibrary >> doesNotUnderstand: aMessage [
 
 	(self install: aMessage selector) ifNotNil: [
 		^ aMessage sendTo: self].
 	
-	self flag: #todo. "better feedback / error handling when dynamic lookup fails"
 	^ super doesNotUnderstand: aMessage
 ]
 
 {
 	#category : #'dynamic lookup',
-	#'squeak_changestamp' : 'stlu 9/20/2021 14:45'
+	#'squeak_changestamp' : 'stlu 9/22/2021 17:32'
 }
 GLExternalLibrary >> install: aSelector [
 
@@ -125,7 +124,8 @@ GLExternalLibrary >> install: aSelector [
 	"assumption: commands have external functions, enums don't"
 	registryMethod externalLibraryFunction ifNotNil: [:func |
 		| functionAddress copiedFunc |
-		functionAddress := (self context resolveFunctionAddress: func name asString) ifNil: [^ nil].
+		functionAddress := (self context resolveFunctionAddress: func name asString) ifNil: [
+			^ self error: 'Failed function address resolution of #' , func name].
 		
 		copiedFunc := func shallowCopy.
 		copiedFunc setModule: self moduleName.
