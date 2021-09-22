@@ -101,17 +101,20 @@ GLRegistry class >> fromFile: filePath [
 
 {
 	#category : #'instance creation',
-	#'squeak_changestamp' : 'stlu 9/21/2021 16:03'
+	#'squeak_changestamp' : 'stlu 9/22/2021 14:09'
 }
 GLRegistry class >> fromUrl: aString [
 
-	aString asUrl retrieveContents ifNotNil: [:mimeDoc |
-		[
-			| xml |
-			xml := XMLDOMParser parseDocumentFrom: mimeDoc contentStream.
-			^ self fromXML: xml
-		] on: SAXException do: [
-			self error: 'Failed to parse registry xml']].
+	UIManager default
+		informUser: 'Retrieving OpenGL registry XML'
+		during: [
+			aString asUrl retrieveContents ifNotNil: [:mimeDoc |
+				[
+					| xml |
+					xml := XMLDOMParser parseDocumentFrom: mimeDoc contentStream.
+					^ self fromXML: xml
+				] on: SAXException do: [
+					self error: 'Failed to parse registry xml']]].
 	self error: 'Could not retreive registry xml from given Url'.
 ]
 
