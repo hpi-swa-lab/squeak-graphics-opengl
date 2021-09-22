@@ -77,6 +77,19 @@ GLExternalLibrary class >> new [
 ]
 
 {
+	#category : #'instance creation',
+	#'squeak_changestamp' : 'stlu 9/22/2021 13:08'
+}
+GLExternalLibrary class >> newEnvironment [
+
+	^ super newEnvironment
+		"required for parsing FFI pragmas (see Parser >> #externalFunctionDeclaration)"
+		at: #ExternalFunction put: ExternalFunction;
+		at: #ExternalLibraryFunction put: ExternalLibraryFunction;
+		yourself
+]
+
+{
 	#category : #'system startup',
 	#'squeak_changestamp' : 'stlu 8/10/2021 14:14'
 }
