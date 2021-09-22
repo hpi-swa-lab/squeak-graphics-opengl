@@ -6,7 +6,7 @@ Class {
 
 {
 	#category : #baseline,
-	#'squeak_changestamp' : 'stlu 9/22/2021 11:17'
+	#'squeak_changestamp' : 'stlu 9/22/2021 14:32'
 }
 BaselineOfOpenGL >> baseline: spec [
 	<baseline>
@@ -22,12 +22,42 @@ BaselineOfOpenGL >> baseline: spec [
 			package: 'OpenGL-Generation' with: [spec requires: #('OpenGL-Types')];
 			package: 'OpenGL-Core' with: [spec requires: #('OpenGL-Generation')];
 			package: 'OpenGL-Versions' with: [spec requires: #('OpenGL-Core')];
-			package: 'OpenGL-Balloon3D' with: [spec requires: #('OpenGL-Core')].
+			package: 'OpenGL-Balloon3D' with: [spec requires: #('OpenGL-Core')];
+			package: 'OpenGL-Examples' with: [
+				spec
+					requires: #('OpenGL-Balloon3D');
+					postLoadDoIt: #postLoadForExamples].
 		
 		spec
 			group: 'default' with: #('all');
 			group: 'core' with: #('OpenGL-Core' 'OpenGL-Versions');
-			group: 'all' with: #('core' 'OpenGL-Balloon3D')].
+			group: 'all' with: #('core' 'OpenGL-Balloon3D' 'OpenGL-Examples')].
+]
+
+{
+	#category : #scripts,
+	#'squeak_changestamp' : 'stlu 9/22/2021 14:36'
+}
+BaselineOfOpenGL >> postLoadForExamples [
+
+	GLLibraryMethods loadCommands: #(
+		"Used during context creation"
+		glGetString
+		glGetStringi
+		glGetIntegerv
+		glGetError
+
+		"Universally required"
+		glClearColor
+		glClear
+
+		"Deprecated OpenGL"
+		glDisable
+		glRotatef
+		glColor3f
+		glBegin
+		glVertex2f
+		glEnd).
 ]
 
 {
