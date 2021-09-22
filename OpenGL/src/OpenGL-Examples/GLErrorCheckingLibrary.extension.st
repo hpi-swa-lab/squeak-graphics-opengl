@@ -2,7 +2,7 @@ Extension { #name : #GLErrorCheckingLibrary }
 
 {
 	#category : #'*OpenGL-Examples',
-	#'squeak_changestamp' : 'stlu 9/22/2021 14:17'
+	#'squeak_changestamp' : 'stlu 9/22/2021 14:42'
 }
 GLErrorCheckingLibrary class >> example1 [
 	"
@@ -19,5 +19,5 @@ GLErrorCheckingLibrary class >> example1 [
 		[Sensor anyButtonPressed] whileFalse: [
 			GL clear: GL_COLOR. "invalid enum. should be GL_COLOR_BUFFER_BIT"
 			context swapBuffers]]
-	] ensure: [context destroy]
+	] ensure: [context destroy].
 ]

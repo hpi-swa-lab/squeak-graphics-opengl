@@ -2,7 +2,7 @@ Extension { #name : #GLVersionCheckingLibrary }
 
 {
 	#category : #'*OpenGL-Examples',
-	#'squeak_changestamp' : 'stlu 9/22/2021 14:13'
+	#'squeak_changestamp' : 'stlu 9/22/2021 14:42'
 }
 GLVersionCheckingLibrary class >> example1 [
 	"
@@ -32,5 +32,5 @@ GLVersionCheckingLibrary class >> example1 [
 			GL end. "removed in OpenGL 3.2 Core Profile"
 			
 			context swapBuffers]]
-	] ensure: [context destroy]
+	] ensure: [context destroy].
 ]
