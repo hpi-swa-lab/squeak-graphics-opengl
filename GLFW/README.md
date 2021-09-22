@@ -20,6 +20,8 @@ Metacello new
 	load.
 ```
 
+To see which dependencies will be installed or to find different load targets, look at the project's Metacello [baseline](./src/BaselineOfGLFW/BaselineOfGLFW.class.st).
+
 ## Usage
 All GLFW functions can be accessed through the library object referred to by the global variable `GLFW`.
 

@@ -17,6 +17,8 @@ Metacello new
 	load.
 ```
 
+To see which dependencies will be installed or to find different load targets, look at the project's Metacello [baseline](./src/BaselineOf3DTransform/BaselineOf3DTransform.class.st).
+
 <!-- references -->
 [Squeak/Smalltalk]: https://squeak.org
 [CroquetGL]: http://www.squeaksource.com/CroquetGL.html

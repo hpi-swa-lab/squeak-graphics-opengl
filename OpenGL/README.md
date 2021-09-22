@@ -6,7 +6,6 @@ The bindings provided in this project support all OpenGL APIs (OpenGL, OpenGL ES
 Originally inspired by and forked from [CroquetGL], a lot of the glue code and book-keeping mechanisms were stripped away since they were enmeshed with a specific OpenGL API and version. An object-oriented interface to modern OpenGL based on this project's bindings can be found in [OpenGL Objects][OpenGLObjects].
 
 ## Installation
-> Note: This may take a while.
 
 ```smalltalk
 Metacello new
@@ -15,27 +14,32 @@ Metacello new
 	load.
 ```
 
-> **On Windows**: To create contexts via the Squeak3D plugin, make sure your VM is set to support OpenGL instead of D3D by default. To do this, press F2 or go to the system menu, into the "Display and Sound" section and ensure the preference "Use OpenGL (instead of D3D)" is ENABLED.
+To see which dependencies will be installed or to find different load targets, look at the project's Metacello [baseline](./src/BaselineOfOpenGL/BaselineOfOpenGL.class.st).
 
 ## Usage
-The OpenGL graphics library requires a context object for API calls. The following example creates a context through [GLFW].
+The OpenGL graphics library requires a context object for API calls. The following example creates a context via the `B3DAcceleratorPlugin` shipped with Squeak as an external plugin by default. Another option would have been [GLFW].
+
+> **On Windows**: To create contexts via the `B3DAcceleratorPlugin`, make sure your VM is set to support OpenGL instead of D3D by default. To do this, press F2 or go to the system menu, into the "Display and Sound" section and ensure the preference "Use OpenGL (instead of D3D)" is ENABLED.
 
 ```smalltalk
-| window library |
-window := GLFWWindow extent: 400 @ 400 title: 'Example'.
-window ifNil: [^ self error: 'GLFW Error'].
-library := GLExternalLibrary context: window context.
-
-[library makeCurrentDuring: ["Activates the library's context and sets `GL` to library."
-	"During this block, library's context is activated and `GL` refers to library."
-	"Users can now call API functions on the global variable `GL`."
-	GL clearColor: Color red. "The library supports some useful convenience functions."
-	[window shouldClose] whileFalse: [
-		GL clear: GL COLOR_BUFFER_BIT. "The library can also answer enum values."
-		"..."
-		window context swapBuffers.
-		GLFW pollEvents]]
-] ensure: [window context destroy]
+| context library |
+"The `B3DAcceleratorPlugin` creates a context overlaying an area of the native Squeak window."
+context := B3DContext bounds: (0@0 extent: 400@400).
+library := context library.
+[
+	"Activates the library's context and sets the global `GL` to library."
+	library makeCurrentDuring: [
+		"During this block, we can refer to our library using the global variable `GL`."
+		"Users can now call API functions on the global variable `GL`."
+		[Sensor anyButtonPressed] whileFalse: [
+			"The library supports some convenience functions."
+			GL clearColor: (Color h: Time utcMicrosecondClock / 2e4 \\ 360.0 s: 1.0 v: 1.0).
+			"While using the shared pool `GLConstants` is the preferred way to access OpenGL enums,
+			the library can also answer enums. This makes scripting easier."
+			GL clear: GL COLOR_BUFFER_BIT.
+			"..."
+			context swapBuffers]]
+] ensure: [context destroy].
 ```
 
 ### Automatic error checking
@@ -60,9 +64,42 @@ When writing user code meant to satisfy one or more specific OpenGL versions, it
 ```
 
 ### Registry
-All of OpenGL's APIs share a list of available commands (functions) and enums (constants). The same command/enum can belong to multiple APIs and extensions. These relationships as well as the commands and enums themselves are defined and maintained in the [OpenGL Registry]. The class `GLRegistry` contains a Smalltalk mirror of this specification derived by code generation.
+All of OpenGL's APIs share a list of available commands (functions) and enums (constants). The same command/enum can belong to multiple APIs and extensions. These relationships as well as the commands and enums themselves are defined and maintained in the [OpenGL Registry]. The class `GLLibraryMethods` contains a partial Smalltalk mirror of this specification derived by code generation.
 
 Access to enums should preferably be made through the shared pool `GLConstants`.
+
+#### Loading registry methods
+Users are required to specify which commands and enums of the OpenGL standard they actually use.
+
+```smalltalk
+GLLibraryMethods
+	loadAll;
+	loadAPI: #gl;
+	loadVersion: (GL33 profile: #core);
+
+	loadExtensions: #(GL_ARB_separate_shader_objects GL_KHR_debug);
+	loadExtension: #GL_ARB_separate_shader_objects;
+
+	loadAllCommands;
+	loadCommands: #(glBegin glEnd);
+	loadCommand: #glGetError;
+
+	loadAllEnums;
+	loadEnums: #(GL_COLOR_BUFFER_BIT GL_DEPTH_BUFFER_BIT);
+	loadEnum: #GL_BLEND;
+
+	loadElementsSatisfying: [:each |
+		"see `GLRegistryElement`"
+		each isOnlyDefinedInExtensions not ].
+```
+
+#### Configuring code generation
+The code generation used when loading registry methods can be configured using preferences:
+* `GLLibraryMethods >> #silentCompilationEnabled`
+* `GLLibraryMethods >> #definitionPragmasEnabled`
+* `GLLibraryMethods >> #descriptionPragmasEnabled`
+* `GLRegistry >> #defaultUrlToRetrieveXML`
+* `GLRegistry >> #clearCurrentOnSave`
 
 #### Example command
 ```smalltalk
@@ -96,18 +133,7 @@ GLRegistry >> STACK_OVERFLOW "Selector to get enum value. No 'GL_' prefix (some 
 	<glEnum: #'GL_STACK_OVERFLOW'> "Real enum name."
 	<glValue: 16r503> "Enum value"
 	<glGroups: #(#ErrorCode)> "Enum groups this enum belongs to. Sometimes part of a command's parameter or return value metadata."
-	<glVendor: #ARB>
 	^ GL_STACK_OVERFLOW "Access to shared pool GLConstants"
-```
-
-## (Re-)Generating the registry
-The [OpenGL XML registry][OpenGL Registry] is constantly evolving, even now. Updating the Smalltalk mirror to reflect recent changes can be done by running the following code:
-
-```smalltalk
-| registry |
-registry := GLGenRegistry fromWeb.
-GLGenConstantsPoolGenerator new generate: registry. "updates GLConstants"
-GLGenRegistryGenerator new generate: registry. "updates GLRegistry"
 ```
 
 <!-- references -->

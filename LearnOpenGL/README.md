@@ -17,6 +17,8 @@ Metacello new
 	load.
 ```
 
+To see which dependencies will be installed or to find different load targets, look at the project's Metacello [baseline](./src/BaselineOfLearnOpenGL/BaselineOfLearnOpenGL.class.st).
+
 ## Usage
 There are quite a few examples to try out and inspect:
 ```smalltalk

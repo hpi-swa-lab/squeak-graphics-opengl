@@ -17,6 +17,8 @@ Metacello new
 	load.
 ```
 
+To see which dependencies will be installed or to find different load targets, look at the project's Metacello [baseline](./src/BaselineOfOpenGLObjects/BaselineOfOpenGLObjects.class.st).
+
 ## Usage
 
 See [LearnOpenGL] for numerous examples.
