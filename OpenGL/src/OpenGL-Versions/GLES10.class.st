@@ -42,12 +42,12 @@ GLES10 >> apiString [
 
 {
 	#category : #parameters,
-	#'squeak_changestamp' : 'stlu 4/15/2021 19:16'
+	#'squeak_changestamp' : 'stlu 9/22/2021 13:25'
 }
 GLES10 >> getVersion: aLibrary [
 
 	| versionString tokens |
-	versionString := aLibrary getVersionString.
+	versionString := aLibrary versionString.
 	"OpenGL ES-XX N.M" "XX={CM,CL}"
 	tokens := versionString findTokens: '. '.
 	^ { tokens third asInteger . tokens fourth asInteger }
