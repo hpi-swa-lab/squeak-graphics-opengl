@@ -41,9 +41,12 @@ GLFWUninitializedLibrary class >> compileConstantAccessors [
 
 {
 	#category : #examples,
-	#'squeak_changestamp' : 'stlu 4/21/2021 11:02'
+	#'squeak_changestamp' : 'stlu 9/22/2021 17:35'
 }
-GLFWUninitializedLibrary class >> example1 [ "self example1"
+GLFWUninitializedLibrary class >> example1 [
+	"
+	self example1.
+	"
 	"A minimal GLFW example window. Dismiss by clicking anywhere inside Squeak.
 	Do NOT force quit the window (unless you want your Squeak to force quit too)."
 	| window |
@@ -52,14 +55,17 @@ GLFWUninitializedLibrary class >> example1 [ "self example1"
 					title: 'GLFW example1'.
 	window ifNil: [^ self error: 'GLFW Error'].
 	[[Sensor anyButtonPressed] whileFalse]
-		ensure: [window destroy]
+		ensure: [window destroy].
 ]
 
 {
 	#category : #examples,
-	#'squeak_changestamp' : 'stlu 4/21/2021 11:02'
+	#'squeak_changestamp' : 'stlu 9/22/2021 17:35'
 }
-GLFWUninitializedLibrary class >> example2 [ "self example2"
+GLFWUninitializedLibrary class >> example2 [
+	"
+	self example2.
+	"
 	"A minimal OpenGL example with GLFW."
 	| window context |
 	window := GLFWWindow
@@ -75,7 +81,7 @@ GLFWUninitializedLibrary class >> example2 [ "self example2"
 			"your OpenGL code here"
 			context swapBuffers.
 			GLFW pollEvents]]
-	] ensure: [context destroy]
+	] ensure: [context destroy].
 ]
 
 {
