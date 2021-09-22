@@ -48,6 +48,16 @@ GLObject class >> create: count [
 ]
 
 {
+	#category : #'class initialization',
+	#'squeak_changestamp' : 'stlu 9/22/2021 14:47'
+}
+GLObject class >> initialize [
+	"We could be much more specific here, but this should catch everything we'll ever need."
+	GLLibraryMethods loadVersion: (GL46 profile: #core).
+	GLLibraryMethods loadVersion: GLES32 new.
+]
+
+{
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 4/26/2021 12:13'
 }
