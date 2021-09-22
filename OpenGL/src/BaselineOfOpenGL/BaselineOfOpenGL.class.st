@@ -6,7 +6,7 @@ Class {
 
 {
 	#category : #baseline,
-	#'squeak_changestamp' : 'stlu 8/27/2021 00:06'
+	#'squeak_changestamp' : 'stlu 9/22/2021 11:17'
 }
 BaselineOfOpenGL >> baseline: spec [
 	<baseline>
@@ -19,17 +19,15 @@ BaselineOfOpenGL >> baseline: spec [
 					versionString: #development];
 			
 			package: 'OpenGL-Types' with: [spec requires: #('FFI')];
-			package: 'OpenGL-Core' with: [spec requires: #('FFI' 'OpenGL-Types')];
-			package: 'OpenGL-Versions' with: [spec requires: #('OpenGL-Core')];
 			package: 'OpenGL-Generation' with: [spec requires: #('OpenGL-Types')];
+			package: 'OpenGL-Core' with: [spec requires: #('OpenGL-Generation')];
+			package: 'OpenGL-Versions' with: [spec requires: #('OpenGL-Core')];
 			package: 'OpenGL-Balloon3D' with: [spec requires: #('OpenGL-Core')].
 		
 		spec
 			group: 'default' with: #('all');
 			group: 'core' with: #('OpenGL-Core' 'OpenGL-Versions');
-			group: 'generation' with: #('OpenGL-Generation');
-			group: 'balloon3D' with: #('OpenGL-Balloon3D');
-			group: 'all' with: #('core' 'generation' 'balloon3D')]
+			group: 'all' with: #('core' 'OpenGL-Balloon3D')].
 ]
 
 {
