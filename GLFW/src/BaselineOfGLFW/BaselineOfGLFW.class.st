@@ -6,7 +6,7 @@ Class {
 
 {
 	#category : #baseline,
-	#'squeak_changestamp' : 'stlu 8/27/2021 00:07'
+	#'squeak_changestamp' : 'stlu 9/25/2021 00:50'
 }
 BaselineOfGLFW >> baseline: spec [
 	<baseline>
@@ -18,7 +18,9 @@ BaselineOfGLFW >> baseline: spec [
 					repository: 'http://www.squeaksource.com/MetacelloRepository';
 					versionString: #development];
 			baseline: 'OpenGL' with: [
-				spec repository: 'github://hpi-swa-lab/squeak-graphics-opengl:main/OpenGL/src/'];
+				spec
+					repository: 'github://hpi-swa-lab/squeak-graphics-opengl:main/OpenGL/src/';
+					loads: #('core')];
 			
 			package: 'GLFW-Core' with: [spec requires: #('FFI')];
 			package: 'GLFW-OpenGL' with: [spec requires: #('GLFW-Core' 'OpenGL')].
