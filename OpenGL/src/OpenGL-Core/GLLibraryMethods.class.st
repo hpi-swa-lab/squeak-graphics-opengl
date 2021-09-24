@@ -1,9 +1,6 @@
 "
-I am the definitive collection of all commands (functions) and enums (constants) defined by the OpenGL registry.
-
-All of my methods were generated from the XML maintained in the official GitHub repository https://github.com/KhronosGroup/OpenGL-Registry
-Changes made to methods in this class will be disregarded during code generation.
-Code generation logic can be found in the GLGenRegistryGenerator class, if loaded.
+I am the definitive collection of all commands (functions) and enums (constants) available in `GLLibrary`.
+Users are responsible for loading the commands and enums they require (see the class-side `loading` protocol).
 
 ---
 Note: There is exactly 1 conflicting enum definition which is currently not properly reflected in the generated code: GL_ACTIVE_PROGRAM_EXT
@@ -22,7 +19,7 @@ Class {
 		'GLConstants'
 	],
 	#category : #'OpenGL-Core',
-	#'squeak_changestamp' : 'stlu 4/14/2021 14:48'
+	#'squeak_changestamp' : 'stlu 9/24/2021 12:36'
 }
 
 {
