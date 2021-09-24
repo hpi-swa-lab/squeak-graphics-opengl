@@ -13,6 +13,8 @@ GLFW source repository: https://github.com/glfw/glfw
 
 > By default also installs [OpenGL]. Alternatively, you can specify `load: #core` instead of `load` to only install GLFW
 
+> Requires at least [metacello@`88e4d13`](https://github.com/Metacello/metacello/commit/88e4d1341906b1eb591ba4f05a5df10d021cc2a9) on Windows.
+
 ```smalltalk
 Metacello new
 	baseline: 'GLFW';

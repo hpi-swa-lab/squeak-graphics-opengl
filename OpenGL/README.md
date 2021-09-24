@@ -7,6 +7,8 @@ Originally inspired by and forked from [CroquetGL], a lot of the glue code and b
 
 ## Installation
 
+> Requires at least [metacello@`88e4d13`](https://github.com/Metacello/metacello/commit/88e4d1341906b1eb591ba4f05a5df10d021cc2a9) on Windows.
+
 ```smalltalk
 Metacello new
 	baseline: 'OpenGL';
@@ -103,7 +105,7 @@ The code generation used when loading registry methods can be configured using p
 
 #### Example command
 ```smalltalk
-GLRegistry >> clear: mask "Selector to call this command. No 'gl' prefix and lower-case."
+GLLibraryMethods >> clear: mask "Selector to call this command. No 'gl' prefix and lower-case."
 
 	<glAPI: #gl since: '1.0'> "Command is in API OpenGL since version 1.0"
 	<glAPI: #gles1 since: '1.0'> "Command is in API OpenGL ES 1.x since version 1.0"
@@ -120,7 +122,7 @@ GLRegistry >> clear: mask "Selector to call this command. No 'gl' prefix and low
 
 #### Example enum
 ```smalltalk
-GLRegistry >> STACK_OVERFLOW "Selector to get enum value. No 'GL_' prefix (some exceptions)"
+GLLibraryMethods >> STACK_OVERFLOW "Selector to get enum value. No 'GL_' prefix (some exceptions)"
 
 	<glAPI: #gl since: '1.0'>
 	<glAPI: #gl profile: #core until: '3.2'> "Command was removed from core profile of API OpenGL in version 3.2"

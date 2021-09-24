@@ -10,6 +10,8 @@ Still very much work in progress.
 
 > Requires VM newer than the one bundled with trunk images by default (202003021730) for FloatArrays to work correctly
 
+> Requires at least [metacello@`88e4d13`](https://github.com/Metacello/metacello/commit/88e4d1341906b1eb591ba4f05a5df10d021cc2a9) on Windows.
+
 ```smalltalk
 Metacello new
 	baseline: 'OpenGLObjects';
