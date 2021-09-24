@@ -1,4 +1,4 @@
 Package {
-	#'squeak_changestamp' : true,
-	#name : #'OpenGL-Examples'
+	#name : #'OpenGL-Examples',
+	#'squeak_changestamp' : true
 }
