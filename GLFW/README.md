@@ -29,11 +29,15 @@ All GLFW functions can be accessed through the library object referred to by the
 GLFW pollEvents. "selectors drop the 'glfw' prefix and start lower-case"
 ```
 
+---
+
 All GLFW constants can also be accessed through the library object. However, when possible, the shared pool `GLFWConstants` should be used instead.
 
 ```smalltalk
 GLFW CURSOR_HIDDEN. "answers 16r34002. selectors drop the 'GLFW_' prefix"
 ```
+
+---
 
 Many of GLFW's functions are essentially methods that require their first parameter to be the struct handle of the object they're operating on. In order to simplify interaction with GLFW, these methods were reified into Smalltalk classes.
 
@@ -48,6 +52,8 @@ GLFWWindow >> shouldClose
 
 	^ GLFW windowShouldClose: self
 ```
+
+---
 
 Additionally,  **`init` and `terminate` do not need to be called manually**. The library initializes itself lazily when required and terminates when Squeak is shut down. Terminate can come in handy when dealing with leftover windows, though.
 
