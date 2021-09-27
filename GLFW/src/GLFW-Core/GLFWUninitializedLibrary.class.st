@@ -42,7 +42,7 @@ GLFWUninitializedLibrary class >> compileConstantAccessors [
 
 {
 	#category : #examples,
-	#'squeak_changestamp' : 'stlu 9/22/2021 17:35'
+	#'squeak_changestamp' : 'stlu 9/24/2021 23:42'
 }
 GLFWUninitializedLibrary class >> example1 [
 	"
@@ -52,8 +52,8 @@ GLFWUninitializedLibrary class >> example1 [
 	Do NOT force quit the window (unless you want your Squeak to force quit too)."
 	| window |
 	window := GLFWWindow
-					extent: 400 @ 400
-					title: 'GLFW example1'.
+		extent: 400 @ 400
+		title: thisContext homeMethod reference.
 	window ifNil: [^ self error: 'GLFW Error'].
 	[[Sensor anyButtonPressed] whileFalse]
 		ensure: [window destroy].
@@ -61,7 +61,7 @@ GLFWUninitializedLibrary class >> example1 [
 
 {
 	#category : #examples,
-	#'squeak_changestamp' : 'stlu 9/22/2021 17:35'
+	#'squeak_changestamp' : 'stlu 9/24/2021 23:41'
 }
 GLFWUninitializedLibrary class >> example2 [
 	"
@@ -70,8 +70,8 @@ GLFWUninitializedLibrary class >> example2 [
 	"A minimal OpenGL example with GLFW."
 	| window context |
 	window := GLFWWindow
-					extent: 400 @ 400
-					title: 'GLFW example2'.
+		extent: 400 @ 400
+		title: thisContext homeMethod reference.
 	window ifNil: [^ self error: 'GLFW Error'].
 	context := window context.
 	
