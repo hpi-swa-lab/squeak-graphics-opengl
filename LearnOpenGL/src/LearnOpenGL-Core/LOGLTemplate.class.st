@@ -42,28 +42,6 @@ LOGLTemplate >> baseWindowTitle [
 ]
 
 {
-	#category : #modality,
-	#'squeak_changestamp' : 'stlu 9/6/2021 14:10'
-}
-LOGLTemplate >> beModal [
-
-	isModal := true.
-	renderProcess ifNotNil: [:process |
-		process priority: self modalProcessPriority].
-]
-
-{
-	#category : #modality,
-	#'squeak_changestamp' : 'stlu 9/6/2021 14:10'
-}
-LOGLTemplate >> beNonModal [
-
-	isModal := false.
-	renderProcess ifNotNil: [:process |
-		process priority: self nonModalProcessPriority].
-]
-
-{
 	#category : #callbacks,
 	#'squeak_changestamp' : 'stlu 8/6/2021 15:12'
 }
@@ -113,6 +91,17 @@ LOGLTemplate >> initialize [
 LOGLTemplate >> isModal [
 
 	^ isModal
+]
+
+{
+	#category : #modality,
+	#'squeak_changestamp' : 'stlu 9/27/2021 14:59'
+}
+LOGLTemplate >> isModal: aBoolean [
+
+	isModal := aBoolean.
+	renderProcess ifNotNil: [:process |
+		process priority: (self processPriorityForModality: aBoolean)].
 ]
 
 {
@@ -300,11 +289,11 @@ LOGLTemplate >> processInput: deltaSecs [
 
 {
 	#category : #modality,
-	#'squeak_changestamp' : 'stlu 9/6/2021 14:12'
+	#'squeak_changestamp' : 'stlu 9/27/2021 14:58'
 }
-LOGLTemplate >> processPriority [
+LOGLTemplate >> processPriorityForModality: aBoolean [
 
-	^ self isModal
+	^ aBoolean
 		ifTrue: [self modalProcessPriority]
 		ifFalse: [self nonModalProcessPriority]
 ]
@@ -483,7 +472,7 @@ LOGLTemplate >> showRenderTimeInWindowTitle [
 
 {
 	#category : #running,
-	#'squeak_changestamp' : 'stlu 9/6/2021 13:54'
+	#'squeak_changestamp' : 'stlu 9/27/2021 14:58'
 }
 LOGLTemplate >> spawnNewRenderProcess [
 
@@ -492,7 +481,7 @@ LOGLTemplate >> spawnNewRenderProcess [
 			ensure: [
 				self tearDown.
 				library context destroy]
-	] newProcess priority: self processPriority.
+	] newProcess priority: (self processPriorityForModality: self isModal).
 	renderProcess resume.
 ]
 
@@ -507,13 +496,11 @@ LOGLTemplate >> tearDown [
 
 {
 	#category : #modality,
-	#'squeak_changestamp' : 'stlu 9/6/2021 14:11'
+	#'squeak_changestamp' : 'stlu 9/27/2021 14:56'
 }
 LOGLTemplate >> toggleModal [
 
-	self isModal
-		ifTrue: [self beNonModal]
-		ifFalse: [self beModal].
+	self isModal: self isModal not.
 ]
 
 {
