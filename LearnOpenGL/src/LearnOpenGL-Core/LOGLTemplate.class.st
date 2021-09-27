@@ -241,11 +241,13 @@ LOGLTemplate >> numFrames [
 
 {
 	#category : #'window title',
-	#'squeak_changestamp' : 'stlu 8/27/2021 14:28'
+	#'squeak_changestamp' : 'stlu 9/27/2021 14:51'
 }
 LOGLTemplate >> printWindowTitleOn: aStream [
 
 	aStream nextPutAll: self baseWindowTitle.
+	self isModal ifTrue: [
+		aStream nextPutAll: ' (modal)'].
 	(self showFrameTimeInWindowTitle and: [frameTimes notEmpty]) ifTrue: [
 		aStream
 			nextPutAll: ' | FT: ';
