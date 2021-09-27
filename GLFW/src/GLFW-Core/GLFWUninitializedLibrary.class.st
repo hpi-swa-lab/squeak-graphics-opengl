@@ -4090,6 +4090,16 @@ GLFWUninitializedLibrary >> initHint: hint with: value [
 
 {
 	#category : #testing,
+	#'squeak_changestamp' : 'stlu 9/27/2021 14:40'
+}
+GLFWUninitializedLibrary >> isFunctionKey: keyEnum [
+
+	^ keyEnum >= GLFW_KEY_F1
+		or: [keyEnum <= GLFW_KEY_F25]
+]
+
+{
+	#category : #testing,
 	#'squeak_changestamp' : 'stlu 9/17/2021 11:26'
 }
 GLFWUninitializedLibrary >> isPrintableKey: keyEnum [
@@ -4146,6 +4156,16 @@ GLFWUninitializedLibrary >> messageForErrorCode: anInteger [
 	^ ErrorMessages
 		at: anInteger
 		ifAbsent: ['Unknown error ' , anInteger asString]
+]
+
+{
+	#category : #helpers,
+	#'squeak_changestamp' : 'stlu 9/27/2021 14:40'
+}
+GLFWUninitializedLibrary >> numberOfFunctionKey: keyEnum [
+
+	(self isFunctionKey: keyEnum) ifFalse: [^ nil].
+	^ keyEnum - GLFW_KEY_F1 + 1
 ]
 
 {

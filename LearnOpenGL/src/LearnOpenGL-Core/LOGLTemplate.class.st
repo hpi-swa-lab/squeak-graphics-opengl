@@ -126,17 +126,16 @@ LOGLTemplate >> isModalByDefault [
 
 {
 	#category : #callbacks,
-	#'squeak_changestamp' : 'stlu 9/6/2021 14:05'
+	#'squeak_changestamp' : 'stlu 9/27/2021 14:46'
 }
 LOGLTemplate >> key: key scanCode: scanCode changedTo: state with: mods [
 
 	(key = GLFW_KEY_ESCAPE and: [state = GLFW_RELEASE]) ifTrue: [
 		window shouldClose: true].
 	
-	(key = GLFW_KEY_M
-		and: [state = GLFW_RELEASE]
-		and: [mods anyMask: GLFW_MOD_CONTROL]) ifTrue: [
-			self toggleModal].
+	(GLFW numberOfFunctionKey: key) ifNotNil: [:fNumber |
+		state = GLFW_RELEASE ifTrue: [
+			fNumber = 1 ifTrue: [self toggleModal]]].
 ]
 
 {
