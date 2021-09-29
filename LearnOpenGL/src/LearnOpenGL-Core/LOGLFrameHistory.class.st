@@ -4,7 +4,7 @@ An unlimited number of objects can be added to me, however, I only remember the 
 "
 Class {
 	#name : #LOGLFrameHistory,
-	#superclass : #Collection,
+	#superclass : #SequenceableCollection,
 	#instVars : [
 		'array',
 		'firstIndex',
@@ -44,22 +44,35 @@ LOGLFrameHistory >> add: anObject [
 ]
 
 {
-	#category : #enumerating,
-	#'squeak_changestamp' : 'stlu 6/17/2021 11:03'
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 9/29/2021 13:42'
 }
-LOGLFrameHistory >> do: aBlock [
+LOGLFrameHistory >> at: anInteger [
 
-	-1 to: tally - 2 do: [:offset |
-		aBlock value: (array at: (firstIndex + offset \\ array size) + 1)]
+	(anInteger < 1 or: [anInteger > tally]) ifTrue: [
+		self error: 'attempt to index a non-existent element'].
+	^ array at: (firstIndex - 2 + anInteger \\ array size) + 1
 ]
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 6/17/2021 11:09'
+	#'squeak_changestamp' : 'stlu 9/29/2021 13:42'
 }
-LOGLFrameHistory >> remove: oldObject ifAbsent: anExceptionBlock [
+LOGLFrameHistory >> at: anInteger put: anObject [
 
-	self shouldNotImplement.
+	(anInteger < 1 or: [anInteger > tally]) ifTrue: [
+		self error: 'attempt to index a non-existent element'].
+	^ array at: (firstIndex - 2 + anInteger \\ array size) + 1 put: anObject
+]
+
+{
+	#category : #enumerating,
+	#'squeak_changestamp' : 'stlu 9/29/2021 13:39'
+}
+LOGLFrameHistory >> do: aBlock [
+
+	-1 to: tally - 2 do: [:offset |
+		aBlock value: (array at: (firstIndex + offset \\ array size) + 1)].
 ]
 
 {
