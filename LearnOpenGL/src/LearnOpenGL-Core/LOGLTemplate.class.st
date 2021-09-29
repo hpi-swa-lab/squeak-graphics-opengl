@@ -10,6 +10,7 @@ Class {
 		'frameTimes',
 		'renderTimes',
 		'gpuTimes',
+		'gcHistory',
 		'timeOfLastWindowTitle',
 		'numFrames',
 		'isModal'
@@ -52,6 +53,20 @@ LOGLTemplate >> framebufferExtentChanged: newExtent [
 
 {
 	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 9/29/2021 13:52'
+}
+LOGLTemplate >> gcPercentage [
+
+	| start stop gcMilliseconds totalMicroseconds |
+	start := gcHistory last.
+	stop := gcHistory first.
+	gcMilliseconds := stop second - start second.
+	totalMicroseconds := stop first - start first.
+	^ gcMilliseconds * 1000 * 100 / totalMicroseconds
+]
+
+{
+	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 9/1/2021 17:17'
 }
 LOGLTemplate >> gpuTimeQuery [
@@ -70,7 +85,7 @@ LOGLTemplate >> initialWindowExtent [
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 9/6/2021 13:49'
+	#'squeak_changestamp' : 'stlu 9/29/2021 13:44'
 }
 LOGLTemplate >> initialize [
 
@@ -78,6 +93,7 @@ LOGLTemplate >> initialize [
 	frameTimes := LOGLFrameHistory new: 120.
 	renderTimes := LOGLFrameHistory new: 120.
 	gpuTimes := LOGLFrameHistory new: 120.
+	gcHistory := LOGLFrameHistory new: 121.
 	
 	gpuTimeQueries := OrderedCollection new.
 	
@@ -152,6 +168,18 @@ LOGLTemplate >> library [
 LOGLTemplate >> logFrameTime: microseconds [
 
 	frameTimes add: microseconds asFloat
+]
+
+{
+	#category : #logging,
+	#'squeak_changestamp' : 'stlu 9/29/2021 13:47'
+}
+LOGLTemplate >> logGC [
+
+	gcHistory add: {
+		Time utcMicrosecondClock.
+		(Smalltalk vmParameterAt: 8) + (Smalltalk vmParameterAt: 10).
+	}.
 ]
 
 {
@@ -241,7 +269,7 @@ LOGLTemplate >> numFrames [
 
 {
 	#category : #'window title',
-	#'squeak_changestamp' : 'stlu 9/27/2021 14:51'
+	#'squeak_changestamp' : 'stlu 9/29/2021 13:53'
 }
 LOGLTemplate >> printWindowTitleOn: aStream [
 
@@ -267,7 +295,12 @@ LOGLTemplate >> printWindowTitleOn: aStream [
 		aStream
 			nextPutAll: ' | GPU: ';
 			nextPutAll: (gpuTimes average / 1e3 printShowingMaxDecimalPlaces: 3);
-			nextPutAll: 'us']
+			nextPutAll: 'us'].
+	(self showGCPressureInWindowTitle and: [gcHistory size >= 2]) ifTrue: [
+		aStream
+			nextPutAll: ' | GC: ';
+			nextPutAll: (self gcPercentage printShowingMaxDecimalPlaces: 2);
+			nextPutAll: '%'].
 ]
 
 {
@@ -345,14 +378,14 @@ LOGLTemplate >> render: deltaSecs [
 
 {
 	#category : #running,
-	#'squeak_changestamp' : 'stlu 9/1/2021 17:18'
+	#'squeak_changestamp' : 'stlu 9/28/2021 17:48'
 }
 LOGLTemplate >> renderLoop [
 
 	[self shouldClose] whileFalse: [
-		| time currentFrameTime delta |
-		time := Time utcMicrosecondClock.
+		| currentFrameTime delta |
 		currentFrameTime := Time utcMicrosecondClock / 1e6.
+		self logGC.
 		delta := currentFrameTime - timeOfLastFrame.
 		library makeCurrentDuring: [
 			| frameStartTime |
@@ -441,6 +474,15 @@ LOGLTemplate >> shouldUpdateWindowTitle [
 	#'squeak_changestamp' : 'stlu 6/17/2021 12:33'
 }
 LOGLTemplate >> showFrameTimeInWindowTitle [
+
+	^ true
+]
+
+{
+	#category : #testing,
+	#'squeak_changestamp' : 'stlu 9/28/2021 17:51'
+}
+LOGLTemplate >> showGCPressureInWindowTitle [
 
 	^ true
 ]
