@@ -85,15 +85,15 @@ LOGLTemplate >> initialWindowExtent [
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 9/29/2021 13:44'
+	#'squeak_changestamp' : 'stlu 10/1/2021 14:16'
 }
 LOGLTemplate >> initialize [
 
 	"remember last 120 frames"
-	frameTimes := LOGLFrameHistory new: 120.
-	renderTimes := LOGLFrameHistory new: 120.
-	gpuTimes := LOGLFrameHistory new: 120.
-	gcHistory := LOGLFrameHistory new: 121.
+	frameTimes := RingBuffer new: 120.
+	renderTimes := RingBuffer new: 120.
+	gpuTimes := RingBuffer new: 120.
+	gcHistory := RingBuffer new: 121.
 	
 	gpuTimeQueries := OrderedCollection new.
 	
@@ -130,7 +130,7 @@ LOGLTemplate >> isModalByDefault [
 ]
 
 {
-	#category : #callbacks,
+	#category : #input,
 	#'squeak_changestamp' : 'stlu 9/27/2021 14:46'
 }
 LOGLTemplate >> key: key scanCode: scanCode changedTo: state with: mods [
@@ -144,7 +144,7 @@ LOGLTemplate >> key: key scanCode: scanCode changedTo: state with: mods [
 ]
 
 {
-	#category : #callbacks,
+	#category : #input,
 	#'squeak_changestamp' : 'stlu 7/2/2021 23:52'
 }
 LOGLTemplate >> keyStroke: codePoint [
@@ -223,7 +223,7 @@ LOGLTemplate >> modalProcessPriority [
 ]
 
 {
-	#category : #callbacks,
+	#category : #input,
 	#'squeak_changestamp' : 'stlu 6/30/2021 09:26'
 }
 LOGLTemplate >> mouseButton: button changedTo: state with: modifierKeys [
@@ -232,7 +232,7 @@ LOGLTemplate >> mouseButton: button changedTo: state with: modifierKeys [
 ]
 
 {
-	#category : #callbacks,
+	#category : #input,
 	#'squeak_changestamp' : 'stlu 6/30/2021 09:22'
 }
 LOGLTemplate >> mousePositionChangedTo: aPoint [
@@ -434,7 +434,7 @@ LOGLTemplate >> run [
 ]
 
 {
-	#category : #callbacks,
+	#category : #input,
 	#'squeak_changestamp' : 'stlu 2/1/2021 14:51'
 }
 LOGLTemplate >> scrolledBy: offset [

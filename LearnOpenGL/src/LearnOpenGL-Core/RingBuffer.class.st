@@ -3,7 +3,7 @@ I am similar to an LRU cache.
 An unlimited number of objects can be added to me, however, I only remember the newest `n`.
 "
 Class {
-	#name : #LOGLFrameHistory,
+	#name : #RingBuffer,
 	#superclass : #SequenceableCollection,
 	#instVars : [
 		'array',
@@ -18,7 +18,7 @@ Class {
 	#category : #'instance creation',
 	#'squeak_changestamp' : 'stlu 6/17/2021 10:45'
 }
-LOGLFrameHistory class >> new [
+RingBuffer class >> new [
 
 	^ self new: 120
 ]
@@ -27,7 +27,7 @@ LOGLFrameHistory class >> new [
 	#category : #'instance creation',
 	#'squeak_changestamp' : 'stlu 6/17/2021 10:44'
 }
-LOGLFrameHistory class >> new: sizeRequested [
+RingBuffer class >> new: sizeRequested [
 
 	^ super new setCollection: (Array new: sizeRequested)
 ]
@@ -36,7 +36,7 @@ LOGLFrameHistory class >> new: sizeRequested [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 6/17/2021 11:08'
 }
-LOGLFrameHistory >> add: anObject [
+RingBuffer >> add: anObject [
 
 	firstIndex := (firstIndex - 2 \\ array size) + 1.
 	tally := tally + 1 min: array size.
@@ -47,7 +47,7 @@ LOGLFrameHistory >> add: anObject [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 9/29/2021 13:42'
 }
-LOGLFrameHistory >> at: anInteger [
+RingBuffer >> at: anInteger [
 
 	(anInteger < 1 or: [anInteger > tally]) ifTrue: [
 		self error: 'attempt to index a non-existent element'].
@@ -58,7 +58,7 @@ LOGLFrameHistory >> at: anInteger [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 9/29/2021 13:42'
 }
-LOGLFrameHistory >> at: anInteger put: anObject [
+RingBuffer >> at: anInteger put: anObject [
 
 	(anInteger < 1 or: [anInteger > tally]) ifTrue: [
 		self error: 'attempt to index a non-existent element'].
@@ -69,7 +69,7 @@ LOGLFrameHistory >> at: anInteger put: anObject [
 	#category : #enumerating,
 	#'squeak_changestamp' : 'stlu 9/29/2021 13:39'
 }
-LOGLFrameHistory >> do: aBlock [
+RingBuffer >> do: aBlock [
 
 	-1 to: tally - 2 do: [:offset |
 		aBlock value: (array at: (firstIndex + offset \\ array size) + 1)].
@@ -79,7 +79,7 @@ LOGLFrameHistory >> do: aBlock [
 	#category : #initialization,
 	#'squeak_changestamp' : 'stlu 6/17/2021 10:57'
 }
-LOGLFrameHistory >> setCollection: aCollection [
+RingBuffer >> setCollection: aCollection [
 
 	array := aCollection.
 	firstIndex := 1.
@@ -90,7 +90,7 @@ LOGLFrameHistory >> setCollection: aCollection [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 6/17/2021 11:08'
 }
-LOGLFrameHistory >> size [
+RingBuffer >> size [
 
 	^ tally
 ]

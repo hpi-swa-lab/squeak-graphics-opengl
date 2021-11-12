@@ -31,6 +31,15 @@ CircularOrderedCollection class >> new: sizeRequested [
 ]
 
 {
+	#category : #'instance creation',
+	#'squeak_changestamp' : 'stlu 10/1/2021 13:53'
+}
+CircularOrderedCollection class >> ofSize: n [
+	"Create a new collection of size n with nil as its elements."
+	^ (self new: n) setSizeToCapacity
+]
+
+{
 	#category : #adding,
 	#'squeak_changestamp' : 'stlu 9/30/2021 15:50'
 }
@@ -204,13 +213,13 @@ CircularOrderedCollection >> grow [
 
 {
 	#category : #growing,
-	#'squeak_changestamp' : 'stlu 9/30/2021 17:25'
+	#'squeak_changestamp' : 'stlu 10/1/2021 15:46'
 }
 CircularOrderedCollection >> growTo: newSize [
 
 	| newArray |
-	newSize < array size ifTrue: [
-		^ self error: 'cannot shrink'].
+	newSize < tally ifTrue: [
+		^ self error: 'cannot shrink below current size'].
 	newArray := self arrayType new: newSize.
 	firstIndex <= lastIndex
 		ifTrue: [
@@ -249,15 +258,29 @@ CircularOrderedCollection >> last [
 
 {
 	#category : #removing,
-	#'squeak_changestamp' : 'stlu 9/30/2021 18:01'
+	#'squeak_changestamp' : 'stlu 10/1/2021 16:11'
 }
 CircularOrderedCollection >> removeFirst: n [
 
+	| result numFront |
 	(n < 0 or: [n > tally]) ifTrue: [self errorNoSuchElement].
-	firstIndex := array size - firstIndex >= n
-		ifTrue: [firstIndex + n]
-		ifFalse: [lastIndex + n - tally + 1].
+	(numFront := array size - firstIndex + 1) >= n
+		ifTrue: [
+			| lastIndexToRemove |
+			result := array copyFrom: firstIndex to: (lastIndexToRemove := firstIndex + n - 1).
+			array from: firstIndex to: lastIndexToRemove put: nil]
+		ifFalse: [
+			result := self arrayType new: n.
+			result replaceFrom: 1 to: numFront with: array startingAt: firstIndex.
+			array from: firstIndex to: array size put: nil.
+			n > numFront ifTrue: [
+				result replaceFrom: numFront + 1 to: n with: array startingAt: 1.
+				array from: 1 to: n - numFront put: nil]].
+	numFront > n
+		ifTrue: [firstIndex := firstIndex + n]
+		ifFalse: [firstIndex := lastIndex + n - tally + 1].
 	tally := tally - n.
+	^ result
 ]
 
 {
@@ -283,6 +306,17 @@ CircularOrderedCollection >> setCollection: aCollection [
 	firstIndex := 1.
 	lastIndex := array size.
 	tally := 0.
+]
+
+{
+	#category : #initialization,
+	#'squeak_changestamp' : 'stlu 10/1/2021 13:54'
+}
+CircularOrderedCollection >> setSizeToCapacity [
+
+	firstIndex := 1.
+	lastIndex := array size.
+	tally := array size.
 ]
 
 {
