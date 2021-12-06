@@ -579,6 +579,20 @@ Matrix2x3 >> setScale: aPoint [
 
 {
 	#category : #initialization,
+	#'squeak_changestamp' : 'stlu 12/6/2021 13:49'
+}
+Matrix2x3 >> setTo: aMatrix2x3 [
+
+	a11 := aMatrix2x3 a11.
+	a12 := aMatrix2x3 a12.
+	a13 := aMatrix2x3 a13.
+	a21 := aMatrix2x3 a21.
+	a22 := aMatrix2x3 a22.
+	a23 := aMatrix2x3 a23.
+]
+
+{
+	#category : #initialization,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Matrix2x3 >> setZero [
