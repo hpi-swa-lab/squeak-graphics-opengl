@@ -91,28 +91,28 @@ GLDirectStateAccessImp >> enableVertexAttribute: aVertexAttribute [
 
 {
 	#category : #framebuffers,
-	#'squeak_changestamp' : 'stlu 7/29/2021 13:12'
+	#'squeak_changestamp' : 'stlu 12/8/2021 14:31'
 }
-GLDirectStateAccessImp >> framebuffer: aFramebuffer attach2DTexture: a2DTexture level: mipMapLevel to: attachmentEnum [
-
-	GL
-		namedFramebufferTexture: aFramebuffer id
-		with: attachmentEnum
-		with: a2DTexture id
-		with: mipMapLevel
-]
-
-{
-	#category : #framebuffers,
-	#'squeak_changestamp' : 'stlu 7/29/2021 13:12'
-}
-GLDirectStateAccessImp >> framebuffer: aFramebuffer attachRenderbuffer: aRenderbuffer to: attachmentEnum [
+GLDirectStateAccessImp >> framebuffer: aFramebuffer attachRenderbuffer: aRenderbuffer as: attachmentEnum [
 
 	GL
 		namedFramebufferRenderbuffer: aFramebuffer id
 		with: attachmentEnum
 		with: GL_RENDERBUFFER
 		with: aRenderbuffer id
+]
+
+{
+	#category : #framebuffers,
+	#'squeak_changestamp' : 'stlu 12/8/2021 14:42'
+}
+GLDirectStateAccessImp >> framebuffer: aFramebuffer attachTexture: aTexture level: mipMapLevel as: attachmentEnum [
+
+	GL
+		namedFramebufferTexture: aFramebuffer id
+		with: attachmentEnum
+		with: aTexture id
+		with: mipMapLevel.
 ]
 
 {
@@ -182,13 +182,40 @@ GLDirectStateAccessImp >> framebuffer: aFramebuffer clearStencilBufferTo: anInte
 
 {
 	#category : #framebuffers,
-	#'squeak_changestamp' : 'stlu 7/29/2021 13:13'
+	#'squeak_changestamp' : 'stlu 12/7/2021 15:10'
 }
-GLDirectStateAccessImp >> framebuffer: aFramebuffer completionStatusFor: targetEnum [
+GLDirectStateAccessImp >> framebuffer: aFramebuffer completenessStatusFor: targetEnum [
 
 	^ GL
 		checkNamedFramebufferStatus: aFramebuffer id
 		with: targetEnum
+]
+
+{
+	#category : #framebuffers,
+	#'squeak_changestamp' : 'stlu 12/7/2021 17:11'
+}
+GLDirectStateAccessImp >> framebuffer: aFramebuffer getIntegerParameter: parameterEnum [
+
+	| result |
+	result := IntegerArray new: 1.
+	GL
+		getNamedFramebufferParameteriv: aFramebuffer id
+		with: parameterEnum
+		with: result.
+	^ result first
+]
+
+{
+	#category : #framebuffers,
+	#'squeak_changestamp' : 'stlu 12/7/2021 17:14'
+}
+GLDirectStateAccessImp >> framebuffer: aFramebuffer setParameter: parameterEnum toInteger: anInteger [
+
+	GL
+		namedFramebufferParameteri: aFramebuffer id
+		with: parameterEnum
+		with: anInteger.
 ]
 
 {

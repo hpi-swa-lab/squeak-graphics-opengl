@@ -136,7 +136,7 @@ LOGLBreakoutPostProcessor >> extent: anObject [
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 7/26/2021 13:43'
+	#'squeak_changestamp' : 'stlu 12/8/2021 14:57'
 }
 LOGLBreakoutPostProcessor >> initialize [
 
@@ -154,8 +154,8 @@ LOGLBreakoutPostProcessor >> initialize [
 	rbo bind.
 	
 	rbo initializeStorage: extent format: GL RGB samples: 4.
-	msfbo attachRenderbuffer: rbo to: GL COLOR_ATTACHMENT0.
-	msfbo checkCompletionStatus.
+	msfbo attachColorRenderbuffer: rbo at: 0.
+	msfbo checkCompletenessStatus.
 	
 	fbo bind.
 	texture boundDuring: [
@@ -174,12 +174,12 @@ LOGLBreakoutPostProcessor >> initialize [
 			magnificationFilter: GL LINEAR;
 			wrapS: GL REPEAT;
 			wrapT: GL REPEAT].
-	fbo attach2DTexture: texture to: GL COLOR_ATTACHMENT0.
-	fbo checkCompletionStatus.
+	fbo attachColorTexture: texture level: 0 at: 0.
+	fbo checkCompletenessStatus.
 	
 	fbo unbind.
 	
-	self initializeRenderData
+	self initializeRenderData.
 ]
 
 {

@@ -323,6 +323,15 @@ GLLibrary >> maxArrayTextureLayers [
 
 {
 	#category : #limits,
+	#'squeak_changestamp' : 'stlu 12/7/2021 15:53'
+}
+GLLibrary >> maxColorAttachments [
+	"Maximum number of color attachments available in framebuffers. At least 8."
+	^ self integerStateNamed: GL_MAX_COLOR_ATTACHMENTS
+]
+
+{
+	#category : #limits,
 	#'squeak_changestamp' : 'stlu 5/11/2021 15:28'
 }
 GLLibrary >> maxCombinedImageUniforms [
