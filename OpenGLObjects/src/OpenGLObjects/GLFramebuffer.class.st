@@ -14,126 +14,134 @@ Class {
 
 {
 	#category : #attachments,
-	#'squeak_changestamp' : 'stlu 12/8/2021 14:47'
+	#'squeak_changestamp' : 'stlu 12/8/2021 15:38'
 }
-GLFramebuffer >> attachColorRenderbuffer: aRenderbuffer at: colorAttachmentIndex [
+GLFramebuffer >> attachColorRenderbuffer: aRenderbufferOrNil at: colorAttachmentIndex [
 
 	manager stateAccessImp
 		framebuffer: self
-		attachRenderbuffer: aRenderbuffer
+		attachRenderbuffer: aRenderbufferOrNil
 		as: GL_COLOR_ATTACHMENT0 + colorAttachmentIndex.
 	colorAttachments
 		at: colorAttachmentIndex + 1
-		put: (GLFramebufferRenderbufferAttachment renderbuffer: aRenderbuffer).
+		put: (aRenderbufferOrNil ifNotNil: [
+			GLFramebufferRenderbufferAttachment renderbuffer: aRenderbufferOrNil]).
 ]
 
 {
 	#category : #attachments,
-	#'squeak_changestamp' : 'stlu 12/8/2021 14:48'
+	#'squeak_changestamp' : 'stlu 12/8/2021 15:41'
 }
-GLFramebuffer >> attachColorTexture: aTexture level: mipMapLevel at: colorAttachmentIndex [
+GLFramebuffer >> attachColorTexture: aTextureOrNil level: mipMapLevel at: colorAttachmentIndex [
 
 	manager stateAccessImp
 		framebuffer: self
-		attachTexture: aTexture
+		attachTexture: aTextureOrNil
 		level: mipMapLevel
 		as: GL_COLOR_ATTACHMENT0 + colorAttachmentIndex.
 	colorAttachments
 		at: colorAttachmentIndex + 1
-		put: (GLFramebufferTextureAttachment
-			texture: aTexture
+		put: (aTextureOrNil ifNotNil: [
+			GLFramebufferTextureAttachment
+				texture: aTextureOrNil
+				level: mipMapLevel
+				layer: 0]).
+]
+
+{
+	#category : #attachments,
+	#'squeak_changestamp' : 'stlu 12/8/2021 15:43'
+}
+GLFramebuffer >> attachDepthAndStencilRenderbuffer: aRenderbufferOrNil [
+
+	manager stateAccessImp
+		framebuffer: self
+		attachRenderbuffer: aRenderbufferOrNil
+		as: GL_DEPTH_STENCIL_ATTACHMENT.
+	depthAttachment := stencilAttachment := aRenderbufferOrNil ifNotNil: [
+		GLFramebufferRenderbufferAttachment renderbuffer: aRenderbufferOrNil].
+]
+
+{
+	#category : #attachments,
+	#'squeak_changestamp' : 'stlu 12/8/2021 15:42'
+}
+GLFramebuffer >> attachDepthAndStencilTexture: aTextureOrNil level: mipMapLevel [
+
+	manager stateAccessImp
+		framebuffer: self
+		attachTexture: aTextureOrNil
+		level: mipMapLevel
+		as: GL_DEPTH_STENCIL_ATTACHMENT.
+	depthAttachment := stencilAttachment := aTextureOrNil ifNotNil: [
+		GLFramebufferTextureAttachment
+			texture: aTextureOrNil
 			level: mipMapLevel
-			layer: 0).
+			layer: 0].
 ]
 
 {
 	#category : #attachments,
-	#'squeak_changestamp' : 'stlu 12/8/2021 15:04'
+	#'squeak_changestamp' : 'stlu 12/8/2021 15:43'
 }
-GLFramebuffer >> attachDepthAndStencilRenderbuffer: aRenderbuffer [
+GLFramebuffer >> attachDepthRenderbuffer: aRenderbufferOrNil [
 
 	manager stateAccessImp
 		framebuffer: self
-		attachRenderbuffer: aRenderbuffer
-		as: GL_DEPTH_STENCIL_ATTACHMENT.
-	depthAttachment := stencilAttachment := GLFramebufferRenderbufferAttachment renderbuffer: aRenderbuffer.
-]
-
-{
-	#category : #attachments,
-	#'squeak_changestamp' : 'stlu 12/8/2021 15:03'
-}
-GLFramebuffer >> attachDepthAndStencilTexture: aTexture level: mipMapLevel [
-
-	manager stateAccessImp
-		framebuffer: self
-		attachTexture: aTexture
-		level: mipMapLevel
-		as: GL_DEPTH_STENCIL_ATTACHMENT.
-	depthAttachment := stencilAttachment := GLFramebufferTextureAttachment
-		texture: aTexture
-		level: mipMapLevel
-		layer: 0.
-]
-
-{
-	#category : #attachments,
-	#'squeak_changestamp' : 'stlu 12/8/2021 14:55'
-}
-GLFramebuffer >> attachDepthRenderbuffer: aRenderbuffer [
-
-	manager stateAccessImp
-		framebuffer: self
-		attachRenderbuffer: aRenderbuffer
+		attachRenderbuffer: aRenderbufferOrNil
 		as: GL_DEPTH_ATTACHMENT.
-	depthAttachment := GLFramebufferRenderbufferAttachment renderbuffer: aRenderbuffer.
+	depthAttachment := aRenderbufferOrNil ifNotNil: [
+		GLFramebufferRenderbufferAttachment renderbuffer: aRenderbufferOrNil].
 ]
 
 {
 	#category : #attachments,
-	#'squeak_changestamp' : 'stlu 12/8/2021 14:52'
+	#'squeak_changestamp' : 'stlu 12/8/2021 15:42'
 }
-GLFramebuffer >> attachDepthTexture: aTexture level: mipMapLevel [
+GLFramebuffer >> attachDepthTexture: aTextureOrNil level: mipMapLevel [
 
 	manager stateAccessImp
 		framebuffer: self
-		attachTexture: aTexture
+		attachTexture: aTextureOrNil
 		level: mipMapLevel
 		as: GL_DEPTH_ATTACHMENT.
-	depthAttachment := GLFramebufferTextureAttachment
-		texture: aTexture
-		level: mipMapLevel
-		layer: 0.
+	depthAttachment := aTextureOrNil ifNotNil: [
+		GLFramebufferTextureAttachment
+			texture: aTextureOrNil
+			level: mipMapLevel
+			layer: 0].
 ]
 
 {
 	#category : #attachments,
-	#'squeak_changestamp' : 'stlu 12/8/2021 14:55'
+	#'squeak_changestamp' : 'stlu 12/8/2021 15:43'
 }
-GLFramebuffer >> attachStencilRenderbuffer: aRenderbuffer [
+GLFramebuffer >> attachStencilRenderbuffer: aRenderbufferOrNil [
 
 	manager stateAccessImp
 		framebuffer: self
-		attachRenderbuffer: aRenderbuffer
+		attachRenderbuffer: aRenderbufferOrNil
 		as: GL_STENCIL_ATTACHMENT.
-	stencilAttachment := GLFramebufferRenderbufferAttachment renderbuffer: aRenderbuffer.
+	stencilAttachment := aRenderbufferOrNil ifNotNil: [
+		GLFramebufferRenderbufferAttachment renderbuffer: aRenderbufferOrNil].
 ]
 
 {
 	#category : #attachments,
-	#'squeak_changestamp' : 'stlu 12/8/2021 14:53'
+	#'squeak_changestamp' : 'stlu 12/8/2021 15:42'
 }
-GLFramebuffer >> attachStencilTexture: aTexture level: mipMapLevel [
+GLFramebuffer >> attachStencilTexture: aTextureOrNil level: mipMapLevel [
 
 	manager stateAccessImp
 		framebuffer: self
-		attachTexture: aTexture
+		attachTexture: aTextureOrNil
 		level: mipMapLevel
 		as: GL_STENCIL_ATTACHMENT.
-	stencilAttachment := GLFramebufferTextureAttachment
-		texture: aTexture
-		level: mipMapLevel
-		layer: 0.
+	stencilAttachment := aTextureOrNil ifNotNil: [
+		GLFramebufferTextureAttachment
+			texture: aTextureOrNil
+			level: mipMapLevel
+			layer: 0].
 ]
 
 {

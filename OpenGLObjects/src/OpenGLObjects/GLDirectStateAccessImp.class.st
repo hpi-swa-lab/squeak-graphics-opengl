@@ -91,27 +91,27 @@ GLDirectStateAccessImp >> enableVertexAttribute: aVertexAttribute [
 
 {
 	#category : #framebuffers,
-	#'squeak_changestamp' : 'stlu 12/8/2021 14:31'
+	#'squeak_changestamp' : 'stlu 12/8/2021 15:39'
 }
-GLDirectStateAccessImp >> framebuffer: aFramebuffer attachRenderbuffer: aRenderbuffer as: attachmentEnum [
+GLDirectStateAccessImp >> framebuffer: aFramebuffer attachRenderbuffer: aRenderbufferOrNil as: attachmentEnum [
 
 	GL
 		namedFramebufferRenderbuffer: aFramebuffer id
 		with: attachmentEnum
 		with: GL_RENDERBUFFER
-		with: aRenderbuffer id
+		with: (aRenderbufferOrNil ifNil: [0] ifNotNil: [aRenderbufferOrNil id])
 ]
 
 {
 	#category : #framebuffers,
-	#'squeak_changestamp' : 'stlu 12/8/2021 14:42'
+	#'squeak_changestamp' : 'stlu 12/8/2021 15:40'
 }
-GLDirectStateAccessImp >> framebuffer: aFramebuffer attachTexture: aTexture level: mipMapLevel as: attachmentEnum [
+GLDirectStateAccessImp >> framebuffer: aFramebuffer attachTexture: aTextureOrNil level: mipMapLevel as: attachmentEnum [
 
 	GL
 		namedFramebufferTexture: aFramebuffer id
 		with: attachmentEnum
-		with: aTexture id
+		with: (aTextureOrNil ifNil: [0] ifNotNil: [aTextureOrNil id])
 		with: mipMapLevel.
 ]
 
