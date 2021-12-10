@@ -91,7 +91,7 @@ GLDirectStateAccessImp >> enableVertexAttribute: aVertexAttribute [
 
 {
 	#category : #framebuffers,
-	#'squeak_changestamp' : 'stlu 12/8/2021 15:39'
+	#'squeak_changestamp' : 'stlu 12/8/2021 15:46'
 }
 GLDirectStateAccessImp >> framebuffer: aFramebuffer attachRenderbuffer: aRenderbufferOrNil as: attachmentEnum [
 
@@ -99,7 +99,7 @@ GLDirectStateAccessImp >> framebuffer: aFramebuffer attachRenderbuffer: aRenderb
 		namedFramebufferRenderbuffer: aFramebuffer id
 		with: attachmentEnum
 		with: GL_RENDERBUFFER
-		with: (aRenderbufferOrNil ifNil: [0] ifNotNil: [aRenderbufferOrNil id])
+		with: (aRenderbufferOrNil ifNil: [0] ifNotNil: [aRenderbufferOrNil id]).
 ]
 
 {

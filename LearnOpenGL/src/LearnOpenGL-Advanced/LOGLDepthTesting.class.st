@@ -16,6 +16,18 @@ Class {
 }
 
 {
+	#category : #rendering,
+	#'squeak_changestamp' : 'stlu 12/9/2021 23:08'
+}
+LOGLDepthTesting >> cubeModelMatrices [
+
+	^ {
+		Matrix4x4 withOffset: -1.0 @ 0.0 @ -1.0.
+		Matrix4x4 withOffset: 2.0 @ 0.0 @ 0.0.
+	}
+]
+
+{
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 3/13/2021 00:59'
 }
@@ -68,16 +80,33 @@ LOGLDepthTesting >> cubeVertices [
 
 {
 	#category : #rendering,
-	#'squeak_changestamp' : 'stlu 9/10/2021 13:07'
+	#'squeak_changestamp' : 'stlu 12/9/2021 23:19'
 }
 LOGLDepthTesting >> draw [
 
+	self drawCubes: self cubeModelMatrices.
+	self drawPlane.
+]
+
+{
+	#category : #rendering,
+	#'squeak_changestamp' : 'stlu 12/9/2021 23:18'
+}
+LOGLDepthTesting >> drawCubes: modelMatrices [
+
 	(vao vertexBufferBindingAt: 0) buffer: cubeVBO.
 	program uniforms texture1: 1.
-	program uniforms model: (Matrix4x4 withOffset: -1.0 @ 0.0 @ -1.0).
-	vao drawArrays: GL_TRIANGLES numVertices: 36.
-	program uniforms model: (Matrix4x4 withOffset: 2.0 @ 0.0 @ 0.0).
-	vao drawArrays: GL_TRIANGLES numVertices: 36.
+	
+	modelMatrices do: [:modelMatrix |
+		program uniforms model: modelMatrix.
+		vao drawArrays: GL_TRIANGLES numVertices: 36].
+]
+
+{
+	#category : #rendering,
+	#'squeak_changestamp' : 'stlu 12/9/2021 14:29'
+}
+LOGLDepthTesting >> drawPlane [
 
 	(vao vertexBufferBindingAt: 0) buffer: planeVBO.
 	program uniforms texture1: 2.
