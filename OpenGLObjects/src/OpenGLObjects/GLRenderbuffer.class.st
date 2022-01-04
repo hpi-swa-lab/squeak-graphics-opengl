@@ -96,22 +96,25 @@ GLRenderbuffer >> delete [
 
 {
 	#category : #storage,
-	#'squeak_changestamp' : 'stlu 1/9/2021 14:15'
+	#'squeak_changestamp' : 'stlu 12/10/2021 15:45'
 }
-GLRenderbuffer >> initializeStorage: extent format: internalFormatEnum samples: numSamples [
+GLRenderbuffer >> initializeStorage: extent format: internalFormatEnum [
 
-	self stateAccessImp
+	manager stateAccessImp
 		renderbuffer: self
 		initializeStorage: extent
-		format: internalFormatEnum
-		samples: numSamples
+		format: internalFormatEnum.
 ]
 
 {
-	#category : #imps,
-	#'squeak_changestamp' : 'stlu 5/15/2021 14:33'
+	#category : #storage,
+	#'squeak_changestamp' : 'stlu 12/10/2021 15:45'
 }
-GLRenderbuffer >> stateAccessImp [
+GLRenderbuffer >> initializeStorage: extent format: internalFormatEnum samples: numSamples [
 
-	^ manager stateAccessImp
+	manager stateAccessImp
+		renderbuffer: self
+		initializeStorage: extent
+		format: internalFormatEnum
+		samples: numSamples.
 ]

@@ -251,6 +251,19 @@ GLDirectStateAccessImp >> invalidateData: aBuffer [
 
 {
 	#category : #renderbuffers,
+	#'squeak_changestamp' : 'stlu 12/10/2021 15:44'
+}
+GLDirectStateAccessImp >> renderbuffer: aRenderbuffer initializeStorage: extent format: internalFormatEnum [
+
+	GL
+		namedRenderbufferStorage: aRenderbuffer id
+		with: internalFormatEnum
+		with: extent x
+		with: extent y.
+]
+
+{
+	#category : #renderbuffers,
 	#'squeak_changestamp' : 'stlu 7/29/2021 13:09'
 }
 GLDirectStateAccessImp >> renderbuffer: aRenderbuffer initializeStorage: extent format: internalFormatEnum samples: numSamples [
