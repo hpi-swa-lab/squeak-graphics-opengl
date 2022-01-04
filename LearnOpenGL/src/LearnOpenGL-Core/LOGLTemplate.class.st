@@ -378,7 +378,7 @@ LOGLTemplate >> render: deltaSecs [
 
 {
 	#category : #running,
-	#'squeak_changestamp' : 'stlu 9/28/2021 17:48'
+	#'squeak_changestamp' : 'stlu 12/10/2021 15:58'
 }
 LOGLTemplate >> renderLoop [
 
@@ -389,6 +389,7 @@ LOGLTemplate >> renderLoop [
 		delta := currentFrameTime - timeOfLastFrame.
 		library makeCurrentDuring: [
 			| frameStartTime |
+			GLFW pollEvents.
 			self processInput: delta.
 			self newGPUTimeQuery during: [
 				frameStartTime := Time utcMicrosecondClock.
@@ -396,8 +397,7 @@ LOGLTemplate >> renderLoop [
 				self logRenderTime: Time utcMicrosecondClock - frameStartTime].
 			window swapBuffers.
 			self logFrameTime: Time utcMicrosecondClock - frameStartTime.
-			self logGPUTimes.
-			GLFW pollEvents].
+			self logGPUTimes].
 		self shouldUpdateWindowTitle ifTrue: [self updateWindowTitle].
 		timeOfLastFrame := currentFrameTime.
 		numFrames := numFrames + 1.
