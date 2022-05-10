@@ -7,7 +7,7 @@ In the case of line loop primitives, implementations are allowed to count the fi
 "
 Class {
 	#name : #GLVerticesSubmittedQuery,
-	#superclass : #GLScopedQuery,
+	#superclass : #GLPipelineStatisticsQuery,
 	#category : #'OpenGLObjects-Queries',
 	#'squeak_changestamp' : 'stlu 5/24/2021 14:37'
 }
@@ -19,4 +19,24 @@ Class {
 GLVerticesSubmittedQuery class >> target [
 
 	^ GL_VERTICES_SUBMITTED
+]
+
+{
+	#category : #scoping,
+	#'squeak_changestamp' : 'stlu 5/2/2022 17:03'
+}
+GLVerticesSubmittedQuery >> begin [
+
+	manager scopingImp beginQuery: self.
+	manager activeVerticesSubmittedQuery: self.
+]
+
+{
+	#category : #scoping,
+	#'squeak_changestamp' : 'stlu 5/2/2022 17:03'
+}
+GLVerticesSubmittedQuery >> end [
+
+	manager scopingImp endQuery: self.
+	manager activeVerticesSubmittedQuery: nil.
 ]

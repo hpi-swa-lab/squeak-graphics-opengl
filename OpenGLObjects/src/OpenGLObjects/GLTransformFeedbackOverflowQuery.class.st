@@ -22,3 +22,23 @@ GLTransformFeedbackOverflowQuery class >> target [
 
 	^ GL_TRANSFORM_FEEDBACK_OVERFLOW
 ]
+
+{
+	#category : #scoping,
+	#'squeak_changestamp' : 'stlu 5/2/2022 17:03'
+}
+GLTransformFeedbackOverflowQuery >> begin [
+
+	manager scopingImp beginQuery: self.
+	manager activeTransformFeedbackOverflowQuery: self.
+]
+
+{
+	#category : #scoping,
+	#'squeak_changestamp' : 'stlu 5/2/2022 17:03'
+}
+GLTransformFeedbackOverflowQuery >> end [
+
+	manager scopingImp endQuery: self.
+	manager activeTransformFeedbackOverflowQuery: nil.
+]

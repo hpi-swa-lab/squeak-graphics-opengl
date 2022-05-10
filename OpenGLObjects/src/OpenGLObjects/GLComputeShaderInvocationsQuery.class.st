@@ -1,6 +1,6 @@
 Class {
 	#name : #GLComputeShaderInvocationsQuery,
-	#superclass : #GLScopedQuery,
+	#superclass : #GLShaderInvocationsQuery,
 	#category : #'OpenGLObjects-Queries'
 }
 
@@ -11,4 +11,24 @@ Class {
 GLComputeShaderInvocationsQuery class >> target [
 
 	^ GL_COMPUTE_SHADER_INVOCATIONS
+]
+
+{
+	#category : #scoping,
+	#'squeak_changestamp' : 'stlu 5/2/2022 17:03'
+}
+GLComputeShaderInvocationsQuery >> begin [
+
+	manager scopingImp beginQuery: self.
+	manager activeComputeShaderInvocationsQuery: self.
+]
+
+{
+	#category : #scoping,
+	#'squeak_changestamp' : 'stlu 5/2/2022 17:03'
+}
+GLComputeShaderInvocationsQuery >> end [
+
+	manager scopingImp endQuery: self.
+	manager activeComputeShaderInvocationsQuery: nil.
 ]

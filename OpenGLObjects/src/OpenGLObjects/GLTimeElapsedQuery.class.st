@@ -21,7 +21,7 @@ GLTimeElapsedQuery class >> target [
 
 {
 	#category : #scoping,
-	#'squeak_changestamp' : 'stlu 5/24/2021 17:45'
+	#'squeak_changestamp' : 'stlu 5/2/2022 17:03'
 }
 GLTimeElapsedQuery >> begin [
 
@@ -31,7 +31,7 @@ GLTimeElapsedQuery >> begin [
 
 {
 	#category : #scoping,
-	#'squeak_changestamp' : 'stlu 5/24/2021 17:49'
+	#'squeak_changestamp' : 'stlu 5/2/2022 17:03'
 }
 GLTimeElapsedQuery >> end [
 

@@ -79,6 +79,17 @@ GLQuery >> isResultAvailable [
 ]
 
 {
+	#category : #retrieval,
+	#'squeak_changestamp' : 'stlu 5/2/2022 17:14'
+}
+GLQuery >> result [
+
+	^ manager retrievalImp
+		retrieveUINT64Parameter: GL_QUERY_RESULT
+		from: self
+]
+
+{
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 5/24/2021 17:31'
 }

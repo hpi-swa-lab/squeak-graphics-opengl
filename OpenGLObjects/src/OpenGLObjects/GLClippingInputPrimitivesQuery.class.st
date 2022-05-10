@@ -1,6 +1,6 @@
 Class {
 	#name : #GLClippingInputPrimitivesQuery,
-	#superclass : #GLScopedQuery,
+	#superclass : #GLPipelineStatisticsQuery,
 	#category : #'OpenGLObjects-Queries'
 }
 
@@ -11,4 +11,24 @@ Class {
 GLClippingInputPrimitivesQuery class >> target [
 
 	^ GL_CLIPPING_INPUT_PRIMITIVES
+]
+
+{
+	#category : #scoping,
+	#'squeak_changestamp' : 'stlu 5/2/2022 17:03'
+}
+GLClippingInputPrimitivesQuery >> begin [
+
+	manager scopingImp beginQuery: self.
+	manager activeClippingInputPrimitivesQuery: self.
+]
+
+{
+	#category : #scoping,
+	#'squeak_changestamp' : 'stlu 5/2/2022 17:03'
+}
+GLClippingInputPrimitivesQuery >> end [
+
+	manager scopingImp endQuery: self.
+	manager activeClippingInputPrimitivesQuery: nil.
 ]

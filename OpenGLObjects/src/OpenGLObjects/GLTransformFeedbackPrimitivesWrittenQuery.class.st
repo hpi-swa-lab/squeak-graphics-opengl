@@ -21,3 +21,23 @@ GLTransformFeedbackPrimitivesWrittenQuery class >> target [
 
 	^ GL_TRANSFORM_FEEDBACK_PRIMITIVES_WRITTEN
 ]
+
+{
+	#category : #scoping,
+	#'squeak_changestamp' : 'stlu 5/2/2022 17:03'
+}
+GLTransformFeedbackPrimitivesWrittenQuery >> begin [
+
+	manager scopingImp beginQuery: self.
+	manager activeTransformFeedbackPrimitivesWrittenQuery: self.
+]
+
+{
+	#category : #scoping,
+	#'squeak_changestamp' : 'stlu 5/2/2022 17:03'
+}
+GLTransformFeedbackPrimitivesWrittenQuery >> end [
+
+	manager scopingImp endQuery: self.
+	manager activeTransformFeedbackPrimitivesWrittenQuery: nil.
+]

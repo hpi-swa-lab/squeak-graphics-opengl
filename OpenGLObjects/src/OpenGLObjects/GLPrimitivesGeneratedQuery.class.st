@@ -21,3 +21,23 @@ GLPrimitivesGeneratedQuery class >> target [
 
 	^ GL_PRIMITIVES_GENERATED
 ]
+
+{
+	#category : #scoping,
+	#'squeak_changestamp' : 'stlu 5/2/2022 17:03'
+}
+GLPrimitivesGeneratedQuery >> begin [
+
+	manager scopingImp beginQuery: self.
+	manager activePrimitivesGeneratedQuery: self.
+]
+
+{
+	#category : #scoping,
+	#'squeak_changestamp' : 'stlu 5/2/2022 17:03'
+}
+GLPrimitivesGeneratedQuery >> end [
+
+	manager scopingImp endQuery: self.
+	manager activePrimitivesGeneratedQuery: nil.
+]

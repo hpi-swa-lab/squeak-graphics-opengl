@@ -7,7 +7,7 @@ Incomplete primitives may or may not be counted.
 "
 Class {
 	#name : #GLPrimitivesSubmittedQuery,
-	#superclass : #GLScopedQuery,
+	#superclass : #GLPipelineStatisticsQuery,
 	#category : #'OpenGLObjects-Queries',
 	#'squeak_changestamp' : 'stlu 5/24/2021 15:25'
 }
@@ -19,4 +19,24 @@ Class {
 GLPrimitivesSubmittedQuery class >> target [
 
 	^ GL_PRIMITIVES_SUBMITTED
+]
+
+{
+	#category : #scoping,
+	#'squeak_changestamp' : 'stlu 5/2/2022 17:03'
+}
+GLPrimitivesSubmittedQuery >> begin [
+
+	manager scopingImp beginQuery: self.
+	manager activePrimitivesSubmittedQuery: self.
+]
+
+{
+	#category : #scoping,
+	#'squeak_changestamp' : 'stlu 5/2/2022 17:03'
+}
+GLPrimitivesSubmittedQuery >> end [
+
+	manager scopingImp endQuery: self.
+	manager activePrimitivesSubmittedQuery: nil.
 ]
