@@ -9,13 +9,13 @@ Class {
 
 {
 	#category : #running,
-	#'squeak_changestamp' : 'stlu 9/10/2021 13:07'
+	#'squeak_changestamp' : 'stlu 4/30/2022 22:55'
 }
 LOGLCoordinateSystemsDepth >> draw [
 
 	| model |
 	model := Matrix4x4
-				withRotation: timeOfLastFrame radiansToDegrees * 50.0 degreesToRadians
+				withRotation: (timeOfLastFrame / 1e6) radiansToDegrees * 50.0 degreesToRadians
 				around: 0.5 @ 1.0 @ 0.0.
 	program uniforms
 		model: model;

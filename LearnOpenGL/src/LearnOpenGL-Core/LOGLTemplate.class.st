@@ -6,14 +6,20 @@ Class {
 		'renderProcess',
 		'window',
 		'timeOfLastFrame',
-		'gpuTimeQueries',
 		'frameTimes',
 		'renderTimes',
 		'gpuTimes',
 		'gcHistory',
 		'timeOfLastWindowTitle',
 		'numFrames',
-		'isModal'
+		'isModal',
+		'minimumFrameDistance',
+		'interFrameDelay',
+		'windowTitleUpdates',
+		'pendingGPUQueries',
+		'availableGPUQueries',
+		'gpuSamples',
+		'gpuPrimitives'
 	],
 	#pools : [
 		'GLConstants',
@@ -34,12 +40,60 @@ LOGLTemplate class >> run [
 ]
 
 {
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 4/30/2022 23:23'
+}
+LOGLTemplate >> assureInterFrameDelay [
+
+	^ (interFrameDelay isNil or: [interFrameDelay beingWaitedOn])
+		ifTrue: [interFrameDelay := Delay forMilliseconds: 0]
+		ifFalse: [interFrameDelay]
+]
+
+{
 	#category : #'window title',
-	#'squeak_changestamp' : 'stlu 6/17/2021 13:12'
+	#'squeak_changestamp' : 'stlu 5/2/2022 14:58'
 }
 LOGLTemplate >> baseWindowTitle [
 
-	^ self class name asString
+	^ self class name
+]
+
+{
+	#category : #'gpu queries',
+	#'squeak_changestamp' : 'stlu 5/2/2022 18:22'
+}
+LOGLTemplate >> beginGPUQueries [
+
+	| queries |
+	queries := availableGPUQueries notEmpty
+		ifTrue: [availableGPUQueries removeLast]
+		ifFalse: [{
+			"1" GLTimeElapsedQuery create.
+			"2" GLSamplesPassedQuery create.
+			"3" GLPrimitivesGeneratedQuery create.}].
+	queries do: [:query | query begin].
+	pendingGPUQueries addLast: queries.
+]
+
+{
+	#category : #initialization,
+	#'squeak_changestamp' : 'stlu 4/30/2022 23:01'
+}
+LOGLTemplate >> defaultMinimumFrameDistance [
+	"microseconds"
+	^ 16000
+]
+
+{
+	#category : #'gpu queries',
+	#'squeak_changestamp' : 'stlu 5/2/2022 17:52'
+}
+LOGLTemplate >> endGPUQueries [
+
+	| queries |
+	queries := pendingGPUQueries last.
+	queries do: [:query | query end].
 ]
 
 {
@@ -53,29 +107,18 @@ LOGLTemplate >> framebufferExtentChanged: newExtent [
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 9/29/2021 13:52'
+	#'squeak_changestamp' : 'stlu 5/2/2022 14:32'
 }
 LOGLTemplate >> gcPercentage [
 
-	| start stop gcMilliseconds totalMicroseconds |
-	start := gcHistory last.
-	stop := gcHistory first.
-	gcMilliseconds := stop second - start second.
-	totalMicroseconds := stop first - start first.
+	| gcMilliseconds totalMicroseconds |
+	gcMilliseconds := gcHistory second - gcHistory last.
+	totalMicroseconds := gcHistory first - (gcHistory atLast: 2).
 	^ gcMilliseconds * 1000 * 100 / totalMicroseconds
 ]
 
 {
-	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 9/1/2021 17:17'
-}
-LOGLTemplate >> gpuTimeQuery [
-
-	^ gpuTimeQueries last
-]
-
-{
-	#category : #accessing,
+	#category : #initialization,
 	#'squeak_changestamp' : 'stlu 1/7/2021 17:50'
 }
 LOGLTemplate >> initialWindowExtent [
@@ -85,19 +128,38 @@ LOGLTemplate >> initialWindowExtent [
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 10/1/2021 14:16'
+	#'squeak_changestamp' : 'stlu 5/2/2022 18:24'
 }
 LOGLTemplate >> initialize [
 
-	"remember last 120 frames"
-	frameTimes := RingBuffer new: 120.
-	renderTimes := RingBuffer new: 120.
-	gpuTimes := RingBuffer new: 120.
-	gcHistory := RingBuffer new: 121.
-	
-	gpuTimeQueries := OrderedCollection new.
+	| frames |
+	frames := 120. "remember last 120 frames"
+	frameTimes := RingBuffer new: frames.
+	renderTimes := RingBuffer new: frames.
+	gpuTimes := RingBuffer new: frames.
+	gcHistory := RingBuffer new: frames + 1 * 2.
+	gpuSamples := RingBuffer new: frames.
+	gpuPrimitives := RingBuffer new: frames.
 	
 	isModal := self isModalByDefault.
+	minimumFrameDistance := self defaultMinimumFrameDistance.
+	windowTitleUpdates := self windowTitleUpdatesDefault.
+]
+
+{
+	#category : #running,
+	#'squeak_changestamp' : 'stlu 5/2/2022 19:26'
+}
+LOGLTemplate >> interFramePause [
+
+	| millisecondsToWait |
+	self isModal ifTrue: [^ self].
+	millisecondsToWait := (timeOfLastFrame + minimumFrameDistance - Time utcMicrosecondClock roundUpTo: 1000) // 1000.
+	millisecondsToWait > 0 ifTrue: [| delay |
+		delay := self assureInterFrameDelay.
+		delay delayDuration: millisecondsToWait.
+		self isModal ifTrue: [delay busyWait] ifFalse: [delay wait]].
+	self isModal ifFalse: [Processor yield].
 ]
 
 {
@@ -131,7 +193,7 @@ LOGLTemplate >> isModalByDefault [
 
 {
 	#category : #input,
-	#'squeak_changestamp' : 'stlu 9/27/2021 14:46'
+	#'squeak_changestamp' : 'stlu 5/2/2022 19:35'
 }
 LOGLTemplate >> key: key scanCode: scanCode changedTo: state with: mods [
 
@@ -140,7 +202,9 @@ LOGLTemplate >> key: key scanCode: scanCode changedTo: state with: mods [
 	
 	(GLFW numberOfFunctionKey: key) ifNotNil: [:fNumber |
 		state = GLFW_RELEASE ifTrue: [
-			fNumber = 1 ifTrue: [self toggleModal]]].
+			fNumber = 1 ifTrue: [self toggleModal].
+			fNumber = 2 ifTrue: [self toggleWindowTitleUpdates].
+			fNumber = 3 ifTrue: [self saveLogs]]].
 ]
 
 {
@@ -172,36 +236,40 @@ LOGLTemplate >> logFrameTime: microseconds [
 
 {
 	#category : #logging,
-	#'squeak_changestamp' : 'stlu 9/29/2021 13:47'
+	#'squeak_changestamp' : 'stlu 5/2/2022 14:36'
 }
 LOGLTemplate >> logGC [
 
-	gcHistory add: {
-		Time utcMicrosecondClock.
-		(Smalltalk vmParameterAt: 8) + (Smalltalk vmParameterAt: 10).
-	}.
+	gcHistory
+		add: (Smalltalk vmParameterAt: 8) + (Smalltalk vmParameterAt: 10);
+		add: Time utcMicrosecondClock.
 ]
 
 {
 	#category : #logging,
-	#'squeak_changestamp' : 'stlu 6/17/2021 12:41'
+	#'squeak_changestamp' : 'stlu 5/2/2022 18:25'
+}
+LOGLTemplate >> logGPUPrimitives: count [
+
+	gpuPrimitives add: count.
+]
+
+{
+	#category : #logging,
+	#'squeak_changestamp' : 'stlu 5/2/2022 18:25'
+}
+LOGLTemplate >> logGPUSamples: count [
+
+	gpuSamples add: count.
+]
+
+{
+	#category : #logging,
+	#'squeak_changestamp' : 'stlu 5/2/2022 18:25'
 }
 LOGLTemplate >> logGPUTime: nanoseconds [
 
-	gpuTimes add: nanoseconds asFloat
-]
-
-{
-	#category : #logging,
-	#'squeak_changestamp' : 'stlu 9/1/2021 17:31'
-}
-LOGLTemplate >> logGPUTimes [
-
-	gpuTimeQueries copy do: [:query |
-		query isResultAvailable ifFalse: [^ self].
-		self logGPUTime: query result.
-		query delete.
-		gpuTimeQueries removeFirst].
+	gpuTimes add: nanoseconds asFloat.
 ]
 
 {
@@ -241,15 +309,6 @@ LOGLTemplate >> mousePositionChangedTo: aPoint [
 ]
 
 {
-	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 9/1/2021 17:17'
-}
-LOGLTemplate >> newGPUTimeQuery [
-
-	^ gpuTimeQueries addLast: GLTimeElapsedQuery create
-]
-
-{
 	#category : #modality,
 	#'squeak_changestamp' : 'stlu 9/6/2021 14:11'
 }
@@ -269,7 +328,7 @@ LOGLTemplate >> numFrames [
 
 {
 	#category : #'window title',
-	#'squeak_changestamp' : 'stlu 9/29/2021 13:53'
+	#'squeak_changestamp' : 'stlu 5/2/2022 18:36'
 }
 LOGLTemplate >> printWindowTitleOn: aStream [
 
@@ -277,30 +336,29 @@ LOGLTemplate >> printWindowTitleOn: aStream [
 	self isModal ifTrue: [
 		aStream nextPutAll: ' (modal)'].
 	(self showFrameTimeInWindowTitle and: [frameTimes notEmpty]) ifTrue: [
-		aStream
-			nextPutAll: ' | FT: ';
-			nextPutAll: (frameTimes average / 1e3 printShowingMaxDecimalPlaces: 3);
-			nextPutAll: 'ms'].
-	(self showFrameTimeInWindowTitle and: [frameTimes notEmpty]) ifTrue: [
-		aStream
-			nextPutAll: ' | Jank: ';
-			nextPutAll: (frameTimes max / 1e3 printShowingMaxDecimalPlaces: 3);
-			nextPutAll: 'ms'].
+		aStream nextPutAll: ' | FT: '.
+		frameTimes average / 1e3 printOn: aStream showingDecimalPlaces: 2.
+		aStream nextPutAll: ' - '.
+		frameTimes max / 1e3 printOn: aStream showingDecimalPlaces: 2.
+		aStream nextPutAll: 'ms'].
 	(self showRenderTimeInWindowTitle and: [renderTimes notEmpty]) ifTrue: [
-		aStream
-			nextPutAll: ' | RT: ';
-			nextPutAll: (renderTimes average / 1e3 printShowingMaxDecimalPlaces: 3);
-			nextPutAll: 'ms'].
+		aStream nextPutAll: ' | RT: '.
+		renderTimes average / 1e3 printOn: aStream showingDecimalPlaces: 2.
+		aStream nextPutAll: 'ms'].
 	(self showGPUTimeInWindowTitle and: [gpuTimes notEmpty]) ifTrue: [
-		aStream
-			nextPutAll: ' | GPU: ';
-			nextPutAll: (gpuTimes average / 1e3 printShowingMaxDecimalPlaces: 3);
-			nextPutAll: 'us'].
-	(self showGCPressureInWindowTitle and: [gcHistory size >= 2]) ifTrue: [
-		aStream
-			nextPutAll: ' | GC: ';
-			nextPutAll: (self gcPercentage printShowingMaxDecimalPlaces: 2);
-			nextPutAll: '%'].
+		aStream nextPutAll: ' | GPU: '.
+		gpuTimes average / 1e3 printOn: aStream showingDecimalPlaces: 0.
+		aStream nextPutAll: 'us'].
+	(self showGCPressureInWindowTitle and: [gcHistory size >= 4]) ifTrue: [
+		aStream nextPutAll: ' | GC: '.
+		self gcPercentage printOn: aStream showingDecimalPlaces: 2.
+		aStream nextPutAll: '%'].
+	(self showGPUSamplesInWindowTitle and: [gpuSamples notEmpty]) ifTrue: [
+		aStream nextPutAll: ' | S: '.
+		gpuSamples average truncated printOn: aStream].
+	(self showGPUPrimitivesInWindowTitle and: [gpuPrimitives notEmpty]) ifTrue: [
+		aStream nextPutAll: ' | P: '.
+		gpuPrimitives average truncated printOn: aStream].
 ]
 
 {
@@ -378,35 +436,52 @@ LOGLTemplate >> render: deltaSecs [
 
 {
 	#category : #running,
-	#'squeak_changestamp' : 'stlu 12/10/2021 15:58'
+	#'squeak_changestamp' : 'stlu 5/2/2022 17:58'
 }
 LOGLTemplate >> renderLoop [
 
 	[self shouldClose] whileFalse: [
 		| currentFrameTime delta |
-		currentFrameTime := Time utcMicrosecondClock / 1e6.
+		currentFrameTime := Time utcMicrosecondClock.
+		self logFrameTime: currentFrameTime - timeOfLastFrame.
 		self logGC.
-		delta := currentFrameTime - timeOfLastFrame.
+		delta := currentFrameTime - timeOfLastFrame / 1e6.
 		library makeCurrentDuring: [
 			| frameStartTime |
 			GLFW pollEvents.
 			self processInput: delta.
-			self newGPUTimeQuery during: [
-				frameStartTime := Time utcMicrosecondClock.
-				self render: delta.
-				self logRenderTime: Time utcMicrosecondClock - frameStartTime].
+			self beginGPUQueries.
+			frameStartTime := Time utcMicrosecondClock.
+			self render: delta.
+			self logRenderTime: Time utcMicrosecondClock - frameStartTime.
+			self endGPUQueries.
 			window swapBuffers.
-			self logFrameTime: Time utcMicrosecondClock - frameStartTime.
-			self logGPUTimes].
+			self retrieveGPUQueries].
 		self shouldUpdateWindowTitle ifTrue: [self updateWindowTitle].
 		timeOfLastFrame := currentFrameTime.
 		numFrames := numFrames + 1.
-		self isModal ifFalse: [Processor yield]]
+		self interFramePause].
 ]
 
 {
-	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 9/6/2021 13:52'
+	#category : #'gpu queries',
+	#'squeak_changestamp' : 'stlu 5/2/2022 18:26'
+}
+LOGLTemplate >> retrieveGPUQueries [
+
+	[pendingGPUQueries notEmpty] whileTrue: [| queries |
+		queries := pendingGPUQueries first.
+		queries do: [:query | query isResultAvailable ifFalse: [^ self]].
+		self logGPUTime: queries first result.
+		self logGPUSamples: queries second result.
+		self logGPUPrimitives: queries third result.
+		availableGPUQueries addLast: queries.
+		pendingGPUQueries removeFirst].
+]
+
+{
+	#category : #running,
+	#'squeak_changestamp' : 'stlu 5/2/2022 17:52'
 }
 LOGLTemplate >> run [
 
@@ -420,9 +495,12 @@ LOGLTemplate >> run [
 				title: self windowTitle.
 	
 	window ifNil: [^ self error: 'Failed to create GLFW window'].
-	timeOfLastFrame := Time utcMicrosecondClock / 1e6.
+	timeOfLastFrame := Time utcMicrosecondClock.
 	timeOfLastWindowTitle := Time utcMicrosecondClock.
 	numFrames := 0.
+	
+	pendingGPUQueries := OrderedCollection new.
+	availableGPUQueries := OrderedCollection new.
 	
 	library := window context library withErrorChecking withVersionChecking.
 	library makeCurrentDuring: [
@@ -431,6 +509,33 @@ LOGLTemplate >> run [
 		self setUp].
 	
 	self spawnNewRenderProcess.
+]
+
+{
+	#category : #logging,
+	#'squeak_changestamp' : 'stlu 5/2/2022 19:35'
+}
+LOGLTemplate >> saveLogs [
+
+	
+]
+
+{
+	#category : #logging,
+	#'squeak_changestamp' : 'stlu 5/2/2022 19:55'
+}
+LOGLTemplate >> saveLogsOn: aStream [
+
+	aStream nextPutAll: '"cycle","frame time","render time","GPU time","GC time","samples","primitives"'.
+	frameTimes size to: 1 by: -1 do: [:cycle |
+		aStream print: cycle.
+		aStream nextPut: $,.
+		(frameTimes at: cycle) / 1e3 printOn: aStream showingDecimalPlaces: 3.
+		(renderTimes at: cycle) / 1e3 printOn: aStream showingDecimalPlaces: 3.
+		(gpuTimes at: cycle) / 1e6 printOn: aStream showingDecimalPlaces: 3.
+		(gcHistory at: cycle * 2) - (gcHistory at: cycle * 2 + 2) printOn: aStream.
+		(gpuSamples at: cycle) printOn: aStream.
+		(gpuPrimitives at: cycle) printOn: aStream].
 ]
 
 {
@@ -462,11 +567,12 @@ LOGLTemplate >> shouldClose [
 
 {
 	#category : #'window title',
-	#'squeak_changestamp' : 'stlu 6/17/2021 13:18'
+	#'squeak_changestamp' : 'stlu 5/2/2022 15:00'
 }
 LOGLTemplate >> shouldUpdateWindowTitle [
 
-	^ (Time utcMicrosecondClock - timeOfLastWindowTitle) > self windowTitleUpdateInterval
+	^ windowTitleUpdates and: [
+		(Time utcMicrosecondClock - timeOfLastWindowTitle) > self windowTitleUpdateInterval]
 ]
 
 {
@@ -483,6 +589,24 @@ LOGLTemplate >> showFrameTimeInWindowTitle [
 	#'squeak_changestamp' : 'stlu 9/28/2021 17:51'
 }
 LOGLTemplate >> showGCPressureInWindowTitle [
+
+	^ true
+]
+
+{
+	#category : #testing,
+	#'squeak_changestamp' : 'stlu 5/2/2022 18:27'
+}
+LOGLTemplate >> showGPUPrimitivesInWindowTitle [
+
+	^ true
+]
+
+{
+	#category : #testing,
+	#'squeak_changestamp' : 'stlu 5/2/2022 18:27'
+}
+LOGLTemplate >> showGPUSamplesInWindowTitle [
 
 	^ true
 ]
@@ -549,6 +673,15 @@ LOGLTemplate >> toggleModal [
 
 {
 	#category : #'window title',
+	#'squeak_changestamp' : 'stlu 5/2/2022 14:56'
+}
+LOGLTemplate >> toggleWindowTitleUpdates [
+
+	self windowTitleUpdates: self windowTitleUpdates not.
+]
+
+{
+	#category : #'window title',
 	#'squeak_changestamp' : 'stlu 6/17/2021 13:19'
 }
 LOGLTemplate >> updateWindowTitle [
@@ -592,4 +725,31 @@ LOGLTemplate >> windowTitle [
 LOGLTemplate >> windowTitleUpdateInterval [
 	"Time in microseconds that needs to pass minimum, until the window title is changed."
 	^ 100000 "10 per second"
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 5/2/2022 14:59'
+}
+LOGLTemplate >> windowTitleUpdates [
+
+	^ windowTitleUpdates
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 5/2/2022 14:59'
+}
+LOGLTemplate >> windowTitleUpdates: anObject [
+
+	windowTitleUpdates := anObject.
+]
+
+{
+	#category : #'window title',
+	#'squeak_changestamp' : 'stlu 5/2/2022 14:57'
+}
+LOGLTemplate >> windowTitleUpdatesDefault [
+
+	^ true
 ]
