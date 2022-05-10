@@ -2,13 +2,11 @@ Extension { #name : #MorphicTransform }
 
 {
 	#category : #'*3DTransform',
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 4/22/2022 22:44'
 }
 MorphicTransform >> asMatrix2x3 [
 
-	^ ((Matrix2x3 withRotation: angle radiansToDegrees negated)
-			composedWithLocal: (Matrix2x3 withScale: scale))
-				offset: offset negated
+	^ Matrix2x3 identity setToMorphicTransform: self
 ]
 
 {

@@ -63,11 +63,11 @@ Matrix2x3 class >> new [
 
 {
 	#category : #'instance creation',
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 4/22/2022 22:23'
 }
-Matrix2x3 class >> withAngle: degrees [
+Matrix2x3 class >> withAngle: radians [
 
-	^ self identity setAngle: degrees
+	^ self identity setAngle: radians
 ]
 
 {
@@ -81,11 +81,11 @@ Matrix2x3 class >> withOffset: aScalar [
 
 {
 	#category : #'instance creation',
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 4/22/2022 22:23'
 }
 Matrix2x3 class >> withRotation: degrees [
 
-	^ self withAngle: degrees
+	^ self identity setAngle: degrees degreesToRadians
 ]
 
 {
@@ -418,16 +418,16 @@ Matrix2x3 >> invert [
 
 {
 	#category : #testing,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 4/12/2022 16:43'
 }
 Matrix2x3 >> isIdentity [
 
-	a13 = 0.0 ifFalse: [^ false].
-	a23 = 0.0 ifFalse: [^ false].
-	a11 = 1.0 ifFalse: [^ false].
-	a22 = 1.0 ifFalse: [^ false].
-	a12 = 0.0 ifFalse: [^ false].
-	^ a21 = 0.0
+	0.0 = a13 ifFalse: [^ false].
+	0.0 = a23 ifFalse: [^ false].
+	1.0 = a11 ifFalse: [^ false].
+	1.0 = a22 ifFalse: [^ false].
+	0.0 = a12 ifFalse: [^ false].
+	^ 0.0 = a21
 ]
 
 {
@@ -441,14 +441,14 @@ Matrix2x3 >> isMatrix2x3 [
 
 {
 	#category : #testing,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 4/12/2022 16:42'
 }
 Matrix2x3 >> isPureTranslation [
 
-	a11 = 1.0 ifFalse: [^ false].
-	a22 = 1.0 ifFalse: [^ false].
-	a12 = 0.0 ifFalse: [^ false].
-	^ a21 = 0.0
+	1.0 = a11 ifFalse: [^ false].
+	1.0 = a22 ifFalse: [^ false].
+	0.0 = a12 ifFalse: [^ false].
+	^ 0.0 = a21
 ]
 
 {
@@ -535,16 +535,15 @@ Matrix2x3 >> printOn: aStream [
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 4/22/2022 22:22'
 }
-Matrix2x3 >> setAngle: degrees [
+Matrix2x3 >> setAngle: radians [
 	"Set the raw rotation angle in the receiver"
-	| rad s c |
-	rad := degrees degreesToRadians.
-	s := rad sin.
-	c := rad cos.
+	| s c |
+	s := radians sin.
+	c := radians cos.
 	a11 := c. a12 := s negated.
-	a21 := s. a22 := c
+	a21 := s. a22 := c.
 ]
 
 {
@@ -593,10 +592,71 @@ Matrix2x3 >> setTo: aMatrix2x3 [
 
 {
 	#category : #initialization,
+	#'squeak_changestamp' : 'stlu 5/2/2022 15:56'
+}
+Matrix2x3 >> setToMorphicTransform: aMorphicTransform [
+
+	| radians scale scaleX scaleY sin cos offset |
+	radians := aMorphicTransform angle "negated".
+	0.0 = radians
+		ifTrue: [
+			sin := 0.0.
+			cos := 1.0]
+		ifFalse: [
+			sin := radians sin negated.
+			cos := radians cos].
+	(scale := aMorphicTransform scale) isPoint
+		ifTrue: [
+			scaleX := scale x asFloat.
+			scaleY := scale y asFloat]
+		ifFalse: [
+			scaleX := scaleY := scale asFloat].
+	a11 := scaleX * cos.
+	a12 := scaleY * sin negated.
+	a21 := scaleX * sin.
+	a22 := scaleY * cos.
+	offset := aMorphicTransform offset.
+	a13 := offset x negated asFloat.
+	a23 := offset y negated asFloat.
+]
+
+{
+	#category : #initialization,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Matrix2x3 >> setZero [
 
 	a11 := 0.0. a12 := 0.0. a13 := 0.0.
 	a21 := 0.0. a22 := 0.0. a23 := 0.0
+]
+
+{
+	#category : #transforming,
+	#'squeak_changestamp' : 'stlu 4/22/2022 21:22'
+}
+Matrix2x3 >> translateBy: aPoint [
+
+	| x y |
+	x := aPoint x asFloat.
+	y := aPoint y asFloat.
+	a13 := a11 * x + (a12 * y) + a13.
+	a23 := a21 * x + (a22 * y) + a23.
+]
+
+{
+	#category : #transforming,
+	#'squeak_changestamp' : 'stlu 4/22/2022 21:22'
+}
+Matrix2x3 >> translatedBy: aPoint [
+
+	^ self shallowCopy translateBy: aPoint
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 4/22/2022 21:48'
+}
+Matrix2x3 >> translation [
+	"Only accurate if #isPureTranslation returns true."
+	^ a13 @ a23
 ]
