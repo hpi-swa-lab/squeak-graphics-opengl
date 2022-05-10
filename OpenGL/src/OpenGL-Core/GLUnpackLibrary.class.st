@@ -11,18 +11,6 @@ Class {
 }
 
 {
-	#category : #'instance creation',
-	#'squeak_changestamp' : 'stlu 4/17/2021 10:29'
-}
-GLUnpackLibrary class >> around: aLibrary [
-
-	^ self new
-		library: aLibrary;
-		context: aLibrary context;
-		yourself
-]
-
-{
 	#category : #compiling,
 	#'squeak_changestamp' : 'stlu 7/22/2021 19:04'
 }
@@ -67,24 +55,6 @@ GLUnpackLibrary >> install: aSelector [
 	registryMethod numArgs = 0
 		ifTrue: [self compilePassthrough: signature]
 		ifFalse: [self compileUnpack: signature pragmas: pragmas].
-]
-
-{
-	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 4/15/2021 22:23'
-}
-GLUnpackLibrary >> library [
-
-	^ library
-]
-
-{
-	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 4/17/2021 10:29'
-}
-GLUnpackLibrary >> library: aLibrary [
-
-	library := aLibrary
 ]
 
 {

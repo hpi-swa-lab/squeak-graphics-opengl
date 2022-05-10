@@ -287,6 +287,15 @@ GLConstant >> initializeValue: anInteger name: aString [
 
 {
 	#category : #testing,
+	#'squeak_changestamp' : 'stlu 4/28/2022 17:10'
+}
+GLConstant >> isGLConstant [
+
+	^ true
+]
+
+{
+	#category : #testing,
 	#'squeak_changestamp' : 'stlu 7/22/2021 17:52'
 }
 GLConstant >> isNumber [

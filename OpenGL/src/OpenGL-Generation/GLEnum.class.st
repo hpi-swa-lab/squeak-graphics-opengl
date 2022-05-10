@@ -97,15 +97,6 @@ GLEnum >> isBitmask [
 ]
 
 {
-	#category : #testing,
-	#'squeak_changestamp' : 'stlu 12/28/2020 13:52'
-}
-GLEnum >> isEnum [
-
-	^ true
-]
-
-{
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 3/4/2021 12:24'
 }

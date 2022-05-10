@@ -66,11 +66,11 @@ GLLazyDecoratorLibrary >> library [
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 4/17/2021 10:29'
+	#'squeak_changestamp' : 'stlu 4/28/2022 17:03'
 }
 GLLazyDecoratorLibrary >> library: aLibrary [
 
-	library := aLibrary
+	library := aLibrary.
 ]
 
 {

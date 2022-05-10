@@ -186,25 +186,7 @@ GLVersionCheckingLibrary >> install: aSelector [
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 4/16/2021 17:29'
-}
-GLVersionCheckingLibrary >> library [
-
-	^ library
-]
-
-{
-	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 4/16/2021 17:29'
-}
-GLVersionCheckingLibrary >> library: anObject [
-
-	library := anObject
-]
-
-{
-	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 4/16/2021 17:54'
+	#'squeak_changestamp' : 'stlu 4/28/2022 17:02'
 }
 GLVersionCheckingLibrary >> targetExtensions [
 
@@ -213,16 +195,16 @@ GLVersionCheckingLibrary >> targetExtensions [
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 4/22/2021 14:21'
+	#'squeak_changestamp' : 'stlu 4/28/2022 17:02'
 }
-GLVersionCheckingLibrary >> targetExtensions: collectionOfSymbolsOrNil [
+GLVersionCheckingLibrary >> targetExtensions: anObject [
 
-	targetExtensions := collectionOfSymbolsOrNil ifNotNil: [:c | c asSet]
+	targetExtensions := anObject.
 ]
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 4/16/2021 17:30'
+	#'squeak_changestamp' : 'stlu 4/28/2022 17:02'
 }
 GLVersionCheckingLibrary >> targetVersion [
 
@@ -231,11 +213,11 @@ GLVersionCheckingLibrary >> targetVersion [
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 4/16/2021 17:30'
+	#'squeak_changestamp' : 'stlu 4/28/2022 17:02'
 }
 GLVersionCheckingLibrary >> targetVersion: anObject [
 
-	targetVersion := anObject
+	targetVersion := anObject.
 ]
 
 {
