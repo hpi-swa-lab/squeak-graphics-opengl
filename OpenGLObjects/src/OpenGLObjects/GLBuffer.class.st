@@ -627,10 +627,10 @@ GLBuffer >> data: aRawBitsArray size: byteSize [
 
 {
 	#category : #data,
-	#'squeak_changestamp' : 'stlu 8/4/2021 14:42'
+	#'squeak_changestamp' : 'stlu 4/21/2022 10:47'
 }
 GLBuffer >> data: aRawBitsArray size: byteSize offset: byteOffset [
-
+	"Updates the buffer object's data store at byteOffset with byteSize bytes from aRawBitsArray."
 	byteSize + byteOffset > size ifTrue: [
 		usage ifNil: [^ self error: 'Buffer store needs to be initialized. See #usage:size:data:'].
 		byteOffset ~= 0 ifTrue: [^ self error: 'Allocated buffer store too small. Auto-reinitialization would leave undefined gap.'].

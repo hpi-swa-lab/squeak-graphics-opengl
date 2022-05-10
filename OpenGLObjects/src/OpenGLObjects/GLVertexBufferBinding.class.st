@@ -49,6 +49,18 @@ GLVertexBufferBinding >> buffer: aBuffer [
 
 {
 	#category : #binding,
+	#'squeak_changestamp' : 'stlu 4/21/2022 13:13'
+}
+GLVertexBufferBinding >> buffer: aBuffer offset: byteOffset [
+
+	self
+		buffer: aBuffer
+		stride: stride
+		offset: byteOffset.
+]
+
+{
+	#category : #binding,
 	#'squeak_changestamp' : 'stlu 3/17/2021 22:37'
 }
 GLVertexBufferBinding >> buffer: aBuffer stride: byteStride [
@@ -61,10 +73,12 @@ GLVertexBufferBinding >> buffer: aBuffer stride: byteStride [
 
 {
 	#category : #binding,
-	#'squeak_changestamp' : 'stlu 5/15/2021 14:12'
+	#'squeak_changestamp' : 'stlu 4/21/2022 11:05'
 }
 GLVertexBufferBinding >> buffer: aBuffer stride: byteStride offset: byteOffset [
-
+	"Binds 'aBuffer' to this vertex buffer binding point.
+	'byteOffset' specifies the offset of the first element within aBuffer.
+	'byteStride' specifies the distance between elements within aBuffer (from start to start)."
 	vertexArray manager stateAccessImp
 		vertexBufferBinding: self
 		buffer: aBuffer
@@ -127,6 +141,18 @@ GLVertexBufferBinding >> location [
 GLVertexBufferBinding >> offset [
 
 	^ offset
+]
+
+{
+	#category : #binding,
+	#'squeak_changestamp' : 'stlu 4/21/2022 11:06'
+}
+GLVertexBufferBinding >> offset: byteOffset [
+
+	self
+		buffer: buffer
+		stride: stride
+		offset: byteOffset.
 ]
 
 {
