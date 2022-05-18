@@ -71,6 +71,15 @@ GLLibrary class >> startUp: resuming [
 ]
 
 {
+	#category : #'class initialization',
+	#'squeak_changestamp' : 'stlu 5/17/2022 10:13'
+}
+GLLibrary class >> unload [
+
+	Smalltalk removeFromStartUpList: self.
+]
+
+{
 	#category : #activation,
 	#'squeak_changestamp' : 'stlu 4/22/2021 11:54'
 }

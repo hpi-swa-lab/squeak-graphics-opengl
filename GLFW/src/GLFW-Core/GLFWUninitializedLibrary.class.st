@@ -409,6 +409,16 @@ GLFWUninitializedLibrary class >> startUp: resuming [
 ]
 
 {
+	#category : #'class initialization',
+	#'squeak_changestamp' : 'stlu 5/17/2022 10:12'
+}
+GLFWUninitializedLibrary class >> unload [
+
+	Smalltalk removeFromShutDownList: self.
+	Smalltalk removeFromStartUpList: self.
+]
+
+{
 	#category : #constants,
 	#'squeak_changestamp' : 'stlu 2/12/2021 00:19'
 }

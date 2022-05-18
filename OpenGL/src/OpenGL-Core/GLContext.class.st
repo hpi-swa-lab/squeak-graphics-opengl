@@ -52,6 +52,16 @@ GLContext class >> startUp: resuming [
 ]
 
 {
+	#category : #'class initialization',
+	#'squeak_changestamp' : 'stlu 5/17/2022 10:10'
+}
+GLContext class >> unload [
+
+	Smalltalk removeFromShutDownList: self.
+	Smalltalk removeFromStartUpList: self.
+]
+
+{
 	#category : #activation,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }

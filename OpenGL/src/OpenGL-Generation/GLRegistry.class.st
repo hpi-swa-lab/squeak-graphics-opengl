@@ -166,6 +166,15 @@ GLRegistry class >> shutDown: quitting [
 ]
 
 {
+	#category : #'class initialization',
+	#'squeak_changestamp' : 'stlu 5/17/2022 10:14'
+}
+GLRegistry class >> unload [
+
+	Smalltalk removeFromShutDownList: self.
+]
+
+{
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 9/21/2021 16:09'
 }

@@ -100,6 +100,15 @@ GLExternalLibrary class >> startUp: resuming [
 ]
 
 {
+	#category : #'class initialization',
+	#'squeak_changestamp' : 'stlu 5/17/2022 10:13'
+}
+GLExternalLibrary class >> unload [
+
+	Smalltalk removeFromStartUpList: self.
+]
+
+{
 	#category : #'dynamic lookup',
 	#'squeak_changestamp' : 'stlu 9/22/2021 17:33'
 }
