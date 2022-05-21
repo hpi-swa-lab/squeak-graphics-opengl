@@ -715,17 +715,17 @@ Matrix4x4 >> alternateRotation [
 
 {
 	#category : #converting,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 5/20/2022 14:05'
 }
 Matrix4x4 >> asMatrix2x3 [
 
 	^ Matrix2x3 identity
-		a11: self a11;
-		a12: self a12;
-		a21: self a21;
-		a22: self a22;
-		a13: self a14;
-		a23: self a24;
+		c1r1: self a11;
+		c2r1: self a12;
+		c1r2: self a21;
+		c2r2: self a22;
+		c3r1: self a14;
+		c3r2: self a24;
 		yourself
 ]
 

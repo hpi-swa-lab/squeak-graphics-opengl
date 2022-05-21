@@ -19,12 +19,12 @@ Class {
 	#name : #Matrix2x3,
 	#superclass : #DisplayTransform,
 	#instVars : [
-		'a11',
-		'a12',
-		'a13',
-		'a21',
-		'a22',
-		'a23'
+		'c1r1',
+		'c2r1',
+		'c3r1',
+		'c1r2',
+		'c2r2',
+		'c3r2'
 	],
 	#classVars : [
 		'Identity',
@@ -126,127 +126,127 @@ Matrix2x3 >> *= m2 [
 
 {
 	#category : #comparing,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 5/20/2022 13:56'
 }
 Matrix2x3 >> = aMatrix2x3 [
 
 	self == aMatrix2x3 ifTrue: [^ true].
 	self species == aMatrix2x3 species ifFalse: [^ false].
-	a11 = aMatrix2x3 a11 ifFalse: [^ false].
-	a12 = aMatrix2x3 a12 ifFalse: [^ false].
-	a13 = aMatrix2x3 a13 ifFalse: [^ false].
-	a21 = aMatrix2x3 a21 ifFalse: [^ false].
-	a22 = aMatrix2x3 a22 ifFalse: [^ false].
-	a23 = aMatrix2x3 a23 ifFalse: [^ false].
+	c1r1 = aMatrix2x3 c1r1 ifFalse: [^ false].
+	c2r1 = aMatrix2x3 c2r1 ifFalse: [^ false].
+	c3r1 = aMatrix2x3 c3r1 ifFalse: [^ false].
+	c1r2 = aMatrix2x3 c1r2 ifFalse: [^ false].
+	c2r2 = aMatrix2x3 c2r2 ifFalse: [^ false].
+	c3r2 = aMatrix2x3 c3r2 ifFalse: [^ false].
 	^ true
 ]
 
 {
-	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#category : #'accessing-compat',
+	#'squeak_changestamp' : 'stlu 5/20/2022 13:52'
 }
 Matrix2x3 >> a11 [
 
-	^ a11
+	^ c1r1
 ]
 
 {
-	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#category : #'accessing-compat',
+	#'squeak_changestamp' : 'stlu 5/20/2022 13:55'
 }
 Matrix2x3 >> a11: anObject [
 
-	a11 := anObject
+	c1r1 := anObject.
 ]
 
 {
-	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#category : #'accessing-compat',
+	#'squeak_changestamp' : 'stlu 5/20/2022 13:53'
 }
 Matrix2x3 >> a12 [
 
-	^ a12
+	^ c2r1
 ]
 
 {
-	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#category : #'accessing-compat',
+	#'squeak_changestamp' : 'stlu 5/20/2022 13:55'
 }
 Matrix2x3 >> a12: anObject [
 
-	a12 := anObject
+	c2r1 := anObject.
 ]
 
 {
-	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#category : #'accessing-compat',
+	#'squeak_changestamp' : 'stlu 5/20/2022 13:53'
 }
 Matrix2x3 >> a13 [
 
-	^ a13
+	^ c3r1
 ]
 
 {
-	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#category : #'accessing-compat',
+	#'squeak_changestamp' : 'stlu 5/20/2022 13:55'
 }
 Matrix2x3 >> a13: anObject [
 
-	a13 := anObject
+	c3r1 := anObject.
 ]
 
 {
-	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#category : #'accessing-compat',
+	#'squeak_changestamp' : 'stlu 5/20/2022 13:53'
 }
 Matrix2x3 >> a21 [
 
-	^ a21
+	^ c1r2
 ]
 
 {
-	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#category : #'accessing-compat',
+	#'squeak_changestamp' : 'stlu 5/20/2022 13:55'
 }
 Matrix2x3 >> a21: anObject [
 
-	a21 := anObject
+	c1r2 := anObject.
 ]
 
 {
-	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#category : #'accessing-compat',
+	#'squeak_changestamp' : 'stlu 5/20/2022 13:53'
 }
 Matrix2x3 >> a22 [
 
-	^ a22
+	^ c2r2
 ]
 
 {
-	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#category : #'accessing-compat',
+	#'squeak_changestamp' : 'stlu 5/20/2022 13:55'
 }
 Matrix2x3 >> a22: anObject [
 
-	a22 := anObject
+	c2r2 := anObject.
 ]
 
 {
-	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#category : #'accessing-compat',
+	#'squeak_changestamp' : 'stlu 5/20/2022 13:54'
 }
 Matrix2x3 >> a23 [
 
-	^ a23
+	^ c3r2
 ]
 
 {
-	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#category : #'accessing-compat',
+	#'squeak_changestamp' : 'stlu 5/20/2022 13:55'
 }
 Matrix2x3 >> a23: anObject [
 
-	a23 := anObject
+	c3r2 := anObject.
 ]
 
 {
@@ -260,59 +260,166 @@ Matrix2x3 >> asMatrix2x3 [
 
 {
 	#category : #converting,
-	#'squeak_changestamp' : 'stlu 5/20/2021 14:28'
+	#'squeak_changestamp' : 'stlu 5/20/2022 13:54'
 }
 Matrix2x3 >> asMatrix4x4 [
 
 	| m |
 	m := Matrix4x4 identity.
-	m a11: a11.
-	m a12: a12.
-	m a21: a21.
-	m a22: a22.
-	m a14: a13.
-	m a24: a23.
+	m a11: c1r1.
+	m a12: c2r1.
+	m a21: c1r2.
+	m a22: c2r2.
+	m a14: c3r1.
+	m a24: c3r2.
 	^ m
 ]
 
 {
 	#category : #converting,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 5/20/2022 13:54'
 }
 Matrix2x3 >> asMatrixTransform2x3 [
 
 	^ MatrixTransform2x3 new
-		a11: a11;
-		a12: a12;
-		a13: a13;
-		a21: a21;
-		a22: a22;
-		a23: a23;
+		a11: c1r1;
+		a12: c2r1;
+		a13: c3r1;
+		a21: c1r2;
+		a22: c2r2;
+		a23: c3r2;
 		yourself
 ]
 
 {
-	#category : #composing,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 5/20/2022 13:54'
 }
-Matrix2x3 >> composeWithLocal: aMatrix2x3 [
+Matrix2x3 >> c1r1 [
+
+	^ c1r1
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 5/20/2022 13:54'
+}
+Matrix2x3 >> c1r1: anObject [
+
+	c1r1 := anObject.
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 5/20/2022 13:54'
+}
+Matrix2x3 >> c1r2 [
+
+	^ c1r2
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 5/20/2022 13:54'
+}
+Matrix2x3 >> c1r2: anObject [
+
+	c1r2 := anObject.
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 5/20/2022 13:54'
+}
+Matrix2x3 >> c2r1 [
+
+	^ c2r1
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 5/20/2022 13:54'
+}
+Matrix2x3 >> c2r1: anObject [
+
+	c2r1 := anObject.
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 5/20/2022 13:54'
+}
+Matrix2x3 >> c2r2 [
+
+	^ c2r2
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 5/20/2022 13:54'
+}
+Matrix2x3 >> c2r2: anObject [
+
+	c2r2 := anObject.
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 5/20/2022 13:54'
+}
+Matrix2x3 >> c3r1 [
+
+	^ c3r1
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 5/20/2022 13:54'
+}
+Matrix2x3 >> c3r1: anObject [
+
+	c3r1 := anObject.
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 5/20/2022 13:54'
+}
+Matrix2x3 >> c3r2 [
+
+	^ c3r2
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 5/20/2022 13:54'
+}
+Matrix2x3 >> c3r2: anObject [
+
+	c3r2 := anObject.
+]
+
+{
+	#category : #composing,
+	#'squeak_changestamp' : 'stlu 5/20/2022 14:03'
+}
+Matrix2x3 >> composeWithLocal: rightMatrix [
 	"Compose the receiver with the local transformation passed in."
-	| b11 b12 b13 b21 b22 b23 tmp |
-	b11 := aMatrix2x3 a11.
-	b12 := aMatrix2x3 a12.
-	b13 := aMatrix2x3 a13.
-	b21 := aMatrix2x3 a21.
-	b22 := aMatrix2x3 a22.
-	b23 := aMatrix2x3 a23.
-	a13 := a13 + (a11 * b13) + (a12 * b23).
-	a23 := a23 + (a21 * b13) + (a22 * b23).
-	tmp := a11.
-	a11 := (tmp * b11) + (a12 * b21).
-	a12 := (tmp * b12) + (a12 * b22).
-	tmp := a21.
-	a21 := (tmp * b11) + (a22 * b21).
-	a22 := (tmp * b12) + (a22 * b22)
-	
+	| rc1r1 rc2r1 rc3r1 rc1r2 rc2r2 rc3r2 tmp |
+	rc1r1 := rightMatrix c1r1.
+	rc2r1 := rightMatrix c2r1.
+	rc3r1 := rightMatrix c3r1.
+	rc1r2 := rightMatrix c1r2.
+	rc2r2 := rightMatrix c2r2.
+	rc3r2 := rightMatrix c3r2.
+	c3r1 := c3r1 + (c1r1 * rc3r1) + (c2r1 * rc3r2).
+	c3r2 := c3r2 + (c1r2 * rc3r1) + (c2r2 * rc3r2).
+	tmp := c1r1.
+	c1r1 := (tmp * rc1r1) + (c2r1 * rc1r2).
+	c2r1 := (tmp * rc2r1) + (c2r1 * rc2r2).
+	tmp := c1r2.
+	c1r2 := (tmp * rc1r1) + (c2r2 * rc1r2).
+	c2r2 := (tmp * rc2r1) + (c2r2 * rc2r2).
 ]
 
 {
@@ -326,69 +433,94 @@ Matrix2x3 >> composedWithLocal: aTransformation [
 
 {
 	#category : #'transforming rects',
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 5/20/2022 13:45'
 }
-Matrix2x3 >> globalBoundsToLocal: aRectangle [
+Matrix2x3 >> globalBounds: globalRect toLocal: localRect [
 	"not the prettiest method, but quite a bit faster than super"
 	| minX minY maxX maxY pt |
 	self isPureTranslation ifTrue: [
 		"atm most transforms in use are pure translations, making this fast path well worth it"
-		^ (self globalPointToLocal: aRectangle topLeft)
-			corner: (self globalPointToLocal: aRectangle bottomRight)].
+		^ localRect
+			setOrigin: (self globalPointToLocal: globalRect topLeft)
+			corner: (self globalPointToLocal: globalRect bottomRight)].
 	
-	pt := self globalPointToLocal: aRectangle topLeft.
+	pt := self globalPointToLocal: globalRect topLeft.
 	minX := maxX := pt x.
 	minY := maxY := pt y.
 	
-	pt := self globalPointToLocal: aRectangle topRight.
+	pt := self globalPointToLocal: globalRect topRight.
 	minX := minX min: pt x.
 	maxX := maxX max: pt x.
 	minY := minY min: pt y.
 	maxY := maxY max: pt y.
 	
-	pt := self globalPointToLocal: aRectangle bottomRight.
+	pt := self globalPointToLocal: globalRect bottomRight.
 	minX := minX min: pt x.
 	maxX := maxX max: pt x.
 	minY := minY min: pt y.
 	maxY := maxY max: pt y.
 	
-	pt := self globalPointToLocal: aRectangle bottomLeft.
+	pt := self globalPointToLocal: globalRect bottomLeft.
 	minX := minX min: pt x.
 	maxX := maxX max: pt x.
 	minY := minY min: pt y.
 	maxY := maxY max: pt y.
 	
-	^ Rectangle origin: (minX @ minY) corner: (maxX @ maxY)
+	^ localRect left: minX right: maxX top: minY bottom: maxY
+]
+
+{
+	#category : #'transforming rects',
+	#'squeak_changestamp' : 'stlu 5/13/2022 13:18'
+}
+Matrix2x3 >> globalBoundsToLocal: aRectangle [
+
+	^ self globalBounds: aRectangle toLocal: Rectangle new
 ]
 
 {
 	#category : #'transforming points',
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 5/20/2022 13:54'
 }
 Matrix2x3 >> globalPointToLocal: aPoint [
 	"Transform aPoint from global coordinates into local coordinates"
 	| x y det |
-	det := (a11 * a22) - (a12 * a21).
+	det := (c1r1 * c2r2) - (c2r1 * c1r2).
 	det = 0.0 ifTrue: [^ 0.0@0.0]. "So we have at least a valid result"
-	x := aPoint x asFloat - a13.
-	y := aPoint y asFloat - a23.
-	^ (((x * a22) - (a12 * y)) / det)
-		@ (((a11 * y) - (x * a21)) / det)
+	x := aPoint x asFloat - c3r1.
+	y := aPoint y asFloat - c3r2.
+	^ (((x * c2r2) - (c2r1 * y)) / det)
+		@ (((c1r1 * y) - (x * c1r2)) / det)
+]
+
+{
+	#category : #'transforming points',
+	#'squeak_changestamp' : 'stlu 5/20/2022 14:09'
+}
+Matrix2x3 >> globalToLocalX: x y: y [
+	"Transform the point x@y from global coordinates into local coordinates"
+	| fx fy det |
+	det := (c1r1 * c2r2) - (c2r1 * c1r2).
+	det = 0.0 ifTrue: [^ 0.0@0.0]. "So we have at least a valid result"
+	fx := x asFloat - c3r1.
+	fy := y asFloat - c3r2.
+	^ (((fx * c2r2) - (c2r1 * fy)) / det)
+		@ (((c1r1 * fy) - (fx * c1r2)) / det)
 ]
 
 {
 	#category : #comparing,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 5/20/2022 13:54'
 }
 Matrix2x3 >> hash [
 
 	^ (((((self species hash
-		bitXor: a11 hash)
-			bitXor: a12 hash)
-				bitXor: a13 hash)
-					bitXor: a21 hash)
-						bitXor: a22 hash)
-							bitXor: a23 hash
+		bitXor: c1r1 hash)
+			bitXor: c2r1 hash)
+				bitXor: c3r1 hash)
+					bitXor: c1r2 hash)
+						bitXor: c2r2 hash)
+							bitXor: c3r2 hash
 ]
 
 {
@@ -402,7 +534,7 @@ Matrix2x3 >> inverseTransformation [
 
 {
 	#category : #transforming,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 5/20/2022 13:54'
 }
 Matrix2x3 >> invert [
 	"The inverse transformation is computed by first calculating
@@ -412,22 +544,22 @@ Matrix2x3 >> invert [
 	r3 := self globalPointToLocal: 0.0 @ 0.0.
 	r1 := (self globalPointToLocal: 1.0 @ 0.0) - r3.
 	r2 := (self globalPointToLocal: 0.0 @ 1.0) - r3.
-	a11 := r1 x. a12 := r2 x. a13 := r3 x.
-	a21 := r1 y. a22 := r2 y. a23 := r3 y
+	c1r1 := r1 x. c2r1 := r2 x. c3r1 := r3 x.
+	c1r2 := r1 y. c2r2 := r2 y. c3r2 := r3 y
 ]
 
 {
 	#category : #testing,
-	#'squeak_changestamp' : 'stlu 4/12/2022 16:43'
+	#'squeak_changestamp' : 'stlu 5/20/2022 13:54'
 }
 Matrix2x3 >> isIdentity [
 
-	0.0 = a13 ifFalse: [^ false].
-	0.0 = a23 ifFalse: [^ false].
-	1.0 = a11 ifFalse: [^ false].
-	1.0 = a22 ifFalse: [^ false].
-	0.0 = a12 ifFalse: [^ false].
-	^ 0.0 = a21
+	0.0 = c3r1 ifFalse: [^ false].
+	0.0 = c3r2 ifFalse: [^ false].
+	1.0 = c1r1 ifFalse: [^ false].
+	1.0 = c2r2 ifFalse: [^ false].
+	0.0 = c2r1 ifFalse: [^ false].
+	^ 0.0 = c1r2
 ]
 
 {
@@ -441,14 +573,14 @@ Matrix2x3 >> isMatrix2x3 [
 
 {
 	#category : #testing,
-	#'squeak_changestamp' : 'stlu 4/12/2022 16:42'
+	#'squeak_changestamp' : 'stlu 5/20/2022 13:53'
 }
 Matrix2x3 >> isPureTranslation [
 
-	1.0 = a11 ifFalse: [^ false].
-	1.0 = a22 ifFalse: [^ false].
-	0.0 = a12 ifFalse: [^ false].
-	^ 0.0 = a21
+	1.0 = c1r1 ifFalse: [^ false].
+	1.0 = c2r2 ifFalse: [^ false].
+	0.0 = c2r1 ifFalse: [^ false].
+	^ 0.0 = c1r2
 ]
 
 {
@@ -490,109 +622,122 @@ Matrix2x3 >> localBoundsToGlobal: aRectangle [
 
 {
 	#category : #'transforming points',
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 5/20/2022 13:54'
 }
 Matrix2x3 >> localPointToGlobal: aPoint [
 	"Transform aPoint from local coordinates into global coordinates"
 	| x y |
 	x := aPoint x asFloat.
 	y := aPoint y asFloat.
-	^ (a13 + (x * a11) + (y * a12))
-		@ (a23 + (x * a21) + (y * a22))
+	^ (c3r1 + (x * c1r1) + (y * c2r1))
+		@ (c3r2 + (x * c1r2) + (y * c2r2))
+]
+
+{
+	#category : #'transforming points',
+	#'squeak_changestamp' : 'stlu 5/20/2022 14:09'
+}
+Matrix2x3 >> localToGlobalX: x y: y [
+	"Transform the point x@y from local coordinates into global coordinates"
+	| fx fy |
+	fx := x asFloat.
+	fy := y asFloat.
+	^ (c3r1 + (fx * c1r1) + (fy * c2r1))
+		@ (c3r2 + (fx * c1r2) + (fy * c2r2))
 ]
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 5/20/2022 13:54'
 }
 Matrix2x3 >> offset [
 
-	^ a13 @ a23
+	^ c3r1 @ c3r2
 ]
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 5/20/2022 13:55'
 }
 Matrix2x3 >> offset: aScalar [
 
-	self setOffset: aScalar asPoint
+	self setOffset: aScalar asPoint.
 ]
 
 {
 	#category : #printing,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 5/20/2022 13:54'
 }
 Matrix2x3 >> printOn: aStream [
 
 	aStream
 		nextPutAll: self class name;
 		nextPut: $(;
-		print: a11; tab; print: a12; tab; print: a13;
-		cr; print: a21; tab; print: a22; tab; print: a23;
+		print: c1r1; tab; print: c2r1; tab; print: c3r1;
+		cr; print: c1r2; tab; print: c2r2; tab; print: c3r2;
 		nextPut:$).
 ]
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 4/22/2022 22:22'
+	#'squeak_changestamp' : 'stlu 5/20/2022 13:53'
 }
 Matrix2x3 >> setAngle: radians [
 	"Set the raw rotation angle in the receiver"
 	| s c |
 	s := radians sin.
 	c := radians cos.
-	a11 := c. a12 := s negated.
-	a21 := s. a22 := c.
+	c1r1 := c. c2r1 := s negated.
+	c1r2 := s. c2r2 := c.
 ]
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 5/20/2022 13:54'
 }
 Matrix2x3 >> setIdentity [
 
-	a11 := 1.0. a12 := 0.0. a13 := 0.0.
-	a21 := 0.0. a22 := 1.0. a23 := 0.0
+	c1r1 := 1.0. c2r1 := 0.0. c3r1 := 0.0.
+	c1r2 := 0.0. c2r2 := 1.0. c3r2 := 0.0
 ]
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 5/20/2022 13:54'
 }
 Matrix2x3 >> setOffset: aPoint [
 	"Set the raw offset in the receiver"
-	a13 := aPoint x asFloat.
-	a23 := aPoint y asFloat
+	c3r1 := aPoint x asFloat.
+	c3r2 := aPoint y asFloat
 ]
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 5/20/2022 13:53'
 }
 Matrix2x3 >> setScale: aPoint [
 	"Set the raw scale in the receiver"
-	a11 := aPoint x asFloat.
-	a22 := aPoint y asFloat
+	c1r1 := aPoint x asFloat.
+	c2r2 := aPoint y asFloat
 ]
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 12/6/2021 13:49'
+	#'squeak_changestamp' : 'stlu 5/20/2022 14:03'
 }
 Matrix2x3 >> setTo: aMatrix2x3 [
 
-	a11 := aMatrix2x3 a11.
-	a12 := aMatrix2x3 a12.
-	a13 := aMatrix2x3 a13.
-	a21 := aMatrix2x3 a21.
-	a22 := aMatrix2x3 a22.
-	a23 := aMatrix2x3 a23.
+	c1r1 := aMatrix2x3 c1r1.
+	c2r1 := aMatrix2x3 c2r1.
+	c3r1 := aMatrix2x3 c3r1.
+	c1r2 := aMatrix2x3 c1r2.
+	c2r2 := aMatrix2x3 c2r2.
+	c3r2 := aMatrix2x3 c3r2.
 ]
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 5/2/2022 15:56'
+	#'squeak_changestamp' : 'stlu 5/20/2022 13:54'
 }
 Matrix2x3 >> setToMorphicTransform: aMorphicTransform [
 
@@ -611,36 +756,36 @@ Matrix2x3 >> setToMorphicTransform: aMorphicTransform [
 			scaleY := scale y asFloat]
 		ifFalse: [
 			scaleX := scaleY := scale asFloat].
-	a11 := scaleX * cos.
-	a12 := scaleY * sin negated.
-	a21 := scaleX * sin.
-	a22 := scaleY * cos.
+	c1r1 := scaleX * cos.
+	c2r1 := scaleY * sin negated.
+	c1r2 := scaleX * sin.
+	c2r2 := scaleY * cos.
 	offset := aMorphicTransform offset.
-	a13 := offset x negated asFloat.
-	a23 := offset y negated asFloat.
+	c3r1 := offset x negated asFloat.
+	c3r2 := offset y negated asFloat.
 ]
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 5/20/2022 13:54'
 }
 Matrix2x3 >> setZero [
 
-	a11 := 0.0. a12 := 0.0. a13 := 0.0.
-	a21 := 0.0. a22 := 0.0. a23 := 0.0
+	c1r1 := 0.0. c2r1 := 0.0. c3r1 := 0.0.
+	c1r2 := 0.0. c2r2 := 0.0. c3r2 := 0.0
 ]
 
 {
 	#category : #transforming,
-	#'squeak_changestamp' : 'stlu 4/22/2022 21:22'
+	#'squeak_changestamp' : 'stlu 5/20/2022 13:54'
 }
 Matrix2x3 >> translateBy: aPoint [
 
 	| x y |
 	x := aPoint x asFloat.
 	y := aPoint y asFloat.
-	a13 := a11 * x + (a12 * y) + a13.
-	a23 := a21 * x + (a22 * y) + a23.
+	c3r1 := c1r1 * x + (c2r1 * y) + c3r1.
+	c3r2 := c1r2 * x + (c2r2 * y) + c3r2.
 ]
 
 {
@@ -654,9 +799,9 @@ Matrix2x3 >> translatedBy: aPoint [
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 4/22/2022 21:48'
+	#'squeak_changestamp' : 'stlu 5/20/2022 13:54'
 }
 Matrix2x3 >> translation [
 	"Only accurate if #isPureTranslation returns true."
-	^ a13 @ a23
+	^ c3r1 @ c3r2
 ]
