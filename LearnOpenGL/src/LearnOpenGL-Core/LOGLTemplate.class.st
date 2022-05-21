@@ -118,6 +118,18 @@ LOGLTemplate >> gcPercentage [
 ]
 
 {
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 5/21/2022 12:37'
+}
+LOGLTemplate >> gcTime [
+
+	| gcMilliseconds count |
+	gcMilliseconds := gcHistory second - gcHistory last.
+	count := gcHistory size // 2 - 1.
+	^ gcMilliseconds asFloat / count
+]
+
+{
 	#category : #initialization,
 	#'squeak_changestamp' : 'stlu 1/7/2021 17:50'
 }
@@ -328,7 +340,7 @@ LOGLTemplate >> numFrames [
 
 {
 	#category : #'window title',
-	#'squeak_changestamp' : 'stlu 5/2/2022 18:36'
+	#'squeak_changestamp' : 'stlu 5/21/2022 12:38'
 }
 LOGLTemplate >> printWindowTitleOn: aStream [
 
@@ -351,8 +363,10 @@ LOGLTemplate >> printWindowTitleOn: aStream [
 		aStream nextPutAll: 'us'].
 	(self showGCPressureInWindowTitle and: [gcHistory size >= 4]) ifTrue: [
 		aStream nextPutAll: ' | GC: '.
+		self gcTime printOn: aStream showingDecimalPlaces: 2.
+		aStream nextPutAll: 'ms ('.
 		self gcPercentage printOn: aStream showingDecimalPlaces: 2.
-		aStream nextPutAll: '%'].
+		aStream nextPutAll: '%)'].
 	(self showGPUSamplesInWindowTitle and: [gpuSamples notEmpty]) ifTrue: [
 		aStream nextPutAll: ' | S: '.
 		gpuSamples average truncated printOn: aStream].
