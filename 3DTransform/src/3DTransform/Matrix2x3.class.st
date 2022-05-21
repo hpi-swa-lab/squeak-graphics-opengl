@@ -44,12 +44,12 @@ Matrix2x3 class >> identity [
 
 {
 	#category : #'class initialization',
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 5/20/2022 13:24'
 }
 Matrix2x3 class >> initialize [
 
-	Identity := self basicNew setIdentity.
-	Zero := self basicNew setZero
+	Identity := self basicNew setIdentity beReadOnlyObject; yourself.
+	Zero := self basicNew setZero beReadOnlyObject; yourself.
 ]
 
 {
