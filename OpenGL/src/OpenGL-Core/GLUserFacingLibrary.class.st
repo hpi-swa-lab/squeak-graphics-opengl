@@ -204,23 +204,49 @@ GLUserFacingLibrary >> printSourceFor: registryMethod on: aStream [
 ]
 
 {
-	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 5/24/2022 17:49'
+	#category : #interfaces,
+	#'squeak_changestamp' : 'stlu 5/25/2022 14:01'
 }
-GLUserFacingLibrary >> requireExtensions: collectionOfExtensions [
+GLUserFacingLibrary >> requireContextInterface [
 
-	requiredInterfaces := requiredInterfaces copyWith: (GLInterface extensions: collectionOfExtensions).
+	self requireInterface: context interface.
+]
+
+{
+	#category : #interfaces,
+	#'squeak_changestamp' : 'stlu 5/25/2022 14:07'
+}
+GLUserFacingLibrary >> requireExtensions: collectionOfSymbols [
+
+	self requireInterface: (GLInterface extensions: collectionOfSymbols).
+]
+
+{
+	#category : #interfaces,
+	#'squeak_changestamp' : 'stlu 5/25/2022 13:57'
+}
+GLUserFacingLibrary >> requireInterface: aGLInterface [
+
+	requiredInterfaces := requiredInterfaces copyWith: aGLInterface.
 	self reset.
 ]
 
 {
-	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 5/24/2022 17:49'
+	#category : #interfaces,
+	#'squeak_changestamp' : 'stlu 5/25/2022 14:07'
 }
-GLUserFacingLibrary >> requireVersion: aGLVersion [
+GLUserFacingLibrary >> requireVersion: targetVersion [
 
-	requiredInterfaces := requiredInterfaces copyWith: (GLInterface version: aGLVersion).
-	self reset.
+	self requireInterface: (GLInterface version: targetVersion).
+]
+
+{
+	#category : #interfaces,
+	#'squeak_changestamp' : 'stlu 5/25/2022 14:06'
+}
+GLUserFacingLibrary >> requireVersion: targetVersionOrNil extensions: collectionOfSymbolsOrNil [
+
+	self requireInterface: (GLInterface version: targetVersionOrNil extensions: collectionOfSymbolsOrNil).
 ]
 
 {
@@ -294,4 +320,44 @@ GLUserFacingLibrary >> typesToUnpack [
 	this should not pose a problem, since all other valid objects are idempotent to #value.
 	may even need to be expanded in the future."
 	^ #( 'GLenum' 'GLbitfield' 'GLint' 'GLuint' 'GLboolean' )
+]
+
+{
+	#category : #interfaces,
+	#'squeak_changestamp' : 'stlu 5/25/2022 13:55'
+}
+GLUserFacingLibrary >> withErrorChecking [
+
+	self deprecated: 'Use #checksForErrors: instead.'.
+	self checksForErrors: true.
+]
+
+{
+	#category : #interfaces,
+	#'squeak_changestamp' : 'stlu 5/25/2022 14:02'
+}
+GLUserFacingLibrary >> withVersionChecking [
+
+	self deprecated: 'Use #requireContextInterface instead.'.
+	self requireContextInterface.
+]
+
+{
+	#category : #interfaces,
+	#'squeak_changestamp' : 'stlu 5/25/2022 14:05'
+}
+GLUserFacingLibrary >> withVersionChecking: targetVersionOrNil [
+
+	self deprecated: 'Use #requireVersion: instead.'.
+	self requireVersion: targetVersionOrNil.
+]
+
+{
+	#category : #interfaces,
+	#'squeak_changestamp' : 'stlu 5/25/2022 14:05'
+}
+GLUserFacingLibrary >> withVersionChecking: targetVersionOrNil extensions: collectionOfSymbolsOrNil [
+
+	self deprecated: 'Use #requireVersion:extensions: instead.'.
+	self requireVersion: targetVersionOrNil extensions: collectionOfSymbolsOrNil.
 ]
