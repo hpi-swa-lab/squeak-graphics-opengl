@@ -43,20 +43,22 @@ library := context library.
 ```
 
 ### Automatic error checking
-Whenever an API call to OpenGL fails, OpenGL internally sets a flag to denote the kind of error that occurred. To retrieve this flag, users need to manually call the `glGetError` function. To avoid interspersing this error check into user code after every API call, and allow dynamic activation of this behavior, libraries can be wrapped with an error checking layer that ensures a call to `glGetError` after very API call.
+Whenever an API call to OpenGL fails, OpenGL internally sets a flag to denote the kind of error that occurred. To retrieve this flag, users need to manually call the `glGetError` function. To avoid interspersing this error check into user code after every API call, and allow dynamic activation of this behavior, the library can be configured to automatically do error checking with `glGetError` after very API call.
 
 ```smalltalk
-library withErrorChecking makeCurrentDuring: [
+library makeCurrentDuring: [
+	GL checksForErrors: true.
 	"..."
 	GL clear: GL Color. "Invalid argument enum. Throws error immediately."
 	"..."]
 ```
 
 ### Automatic version checking
-When writing user code meant to satisfy one or more specific OpenGL versions, it may be helpful to codify and assert this constraint. Libraries can be wrapped with a version checking layer that ensures all API calls are part of a specified version and/or list of extensions.
+When writing user code meant to satisfy one or more specific OpenGL versions, it may be helpful to codify and assert this constraint. The library can be configured to ensure that all API calls are part of a set of versions and/or list of extensions.
 
 ```smalltalk
-(library withVersionChecking: (GL33 profile: #core) extensions: #()) makeCurrentDuring: [
+library makeCurrentDuring: [
+	GL requireVersion: (GL33 profile: #core).
 	"..."
 	GL clear: GL COLOR_BUFFER_BIT. "Available since OpenGL 1.0. Pass through."
 	GL begin: GL_POLYGON. "Removed in OpenGL 3.2 Core Profile. Throws error."
