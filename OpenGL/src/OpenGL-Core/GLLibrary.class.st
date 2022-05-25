@@ -10,7 +10,8 @@ Class {
 		'context'
 	],
 	#classVars : [
-		'ErrorMessages'
+		'ErrorMessages',
+		'InvalidLibrary'
 	],
 	#pools : [
 		'GLConstants'
@@ -21,11 +22,12 @@ Class {
 
 {
 	#category : #'class initialization',
-	#'squeak_changestamp' : 'stlu 8/11/2021 12:51'
+	#'squeak_changestamp' : 'stlu 5/24/2022 15:30'
 }
 GLLibrary class >> initialize [
 
 	GLConstants initialize.
+	InvalidLibrary := GLInvalidLibrary new.
 	self initializeGL.
 	self initializeErrorMessages.
 	Smalltalk addToStartUpList: self.
@@ -53,11 +55,31 @@ GLLibrary class >> initializeErrorMessages [
 
 {
 	#category : #'class initialization',
-	#'squeak_changestamp' : 'stlu 4/22/2021 11:59'
+	#'squeak_changestamp' : 'stlu 5/24/2022 15:30'
 }
 GLLibrary class >> initializeGL [
 
-	Environment current at: #GL put: GLInvalidLibrary new.
+	Environment current at: #GL put: InvalidLibrary.
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 5/24/2022 15:31'
+}
+GLLibrary class >> invalid [
+
+	^ InvalidLibrary
+]
+
+{
+	#category : #'subclass creation',
+	#'squeak_changestamp' : 'stlu 5/24/2022 17:22'
+}
+GLLibrary class >> newEnvironment [
+
+	^ super newEnvironment
+		import: Environment current;
+		yourself
 ]
 
 {
@@ -759,45 +781,4 @@ GLLibrary >> viewport: aRectangle during: aBlock [
 	self viewport: aRectangle.
 	aBlock value.
 	self viewport: previousViewport
-]
-
-{
-	#category : #converting,
-	#'squeak_changestamp' : 'stlu 4/16/2021 15:23'
-}
-GLLibrary >> withErrorChecking [
-
-	^ GLErrorCheckingLibrary around: self
-]
-
-{
-	#category : #converting,
-	#'squeak_changestamp' : 'stlu 4/17/2021 10:40'
-}
-GLLibrary >> withVersionChecking [
-
-	^ GLVersionCheckingLibrary around: self
-]
-
-{
-	#category : #converting,
-	#'squeak_changestamp' : 'stlu 4/17/2021 10:42'
-}
-GLLibrary >> withVersionChecking: targetVersion [
-
-	^ GLVersionCheckingLibrary
-		around: self
-		targetVersion: targetVersion
-]
-
-{
-	#category : #converting,
-	#'squeak_changestamp' : 'stlu 4/23/2021 14:28'
-}
-GLLibrary >> withVersionChecking: targetVersionOrNil extensions: collectionOfSymbolsOrNil [
-
-	^ GLVersionCheckingLibrary
-		around: self
-		targetVersion: targetVersionOrNil
-		targetExtensions: collectionOfSymbolsOrNil
 ]

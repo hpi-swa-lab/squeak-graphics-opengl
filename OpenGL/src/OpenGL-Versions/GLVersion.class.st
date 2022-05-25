@@ -112,6 +112,18 @@ GLVersion class >> profile: aSymbol [
 ]
 
 {
+	#category : #comparing,
+	#'squeak_changestamp' : 'stlu 5/24/2022 16:10'
+}
+GLVersion >> = otherVersion [
+
+	self == otherVersion ifTrue: [^ true].
+	self species = otherVersion species ifFalse: [^ false].
+	profile = otherVersion profile ifFalse: [^ false].
+	^ true
+]
+
+{
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/2/2020 15:11'
 }
@@ -175,6 +187,15 @@ GLVersion >> getShadingLanguageVersion: aLibrary [
 GLVersion >> getVersion: aLibrary [
 	"Returns an array of two elements, the major version and the minor version."
 	self subclassResponsibility
+]
+
+{
+	#category : #comparing,
+	#'squeak_changestamp' : 'stlu 5/24/2022 16:12'
+}
+GLVersion >> hash [
+
+	^ self species hash bitXor: profile hash
 ]
 
 {

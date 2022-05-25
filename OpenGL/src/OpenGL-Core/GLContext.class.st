@@ -5,6 +5,7 @@ Class {
 		'library',
 		'version',
 		'extensions',
+		'interface',
 		'userData',
 		'isDestroyed',
 		'objectState',
@@ -128,7 +129,7 @@ GLContext >> extensions [
 
 {
 	#category : #'initialize-release',
-	#'squeak_changestamp' : 'stlu 5/15/2021 16:50'
+	#'squeak_changestamp' : 'stlu 5/24/2022 17:44'
 }
 GLContext >> initialize [
 
@@ -137,6 +138,7 @@ GLContext >> initialize [
 	self initializeVersion.
 	self initializeLibrary.
 	self initializeExtensions.
+	self initializeInterface.
 	
 	self supportsGLObjects ifTrue: [
 		library makeCurrentDuring: [
@@ -155,11 +157,20 @@ GLContext >> initializeExtensions [
 
 {
 	#category : #'initialize-release',
-	#'squeak_changestamp' : 'stlu 7/22/2021 17:36'
+	#'squeak_changestamp' : 'stlu 5/24/2022 17:44'
+}
+GLContext >> initializeInterface [
+
+	interface := GLInterface version: version extensions: extensions.
+]
+
+{
+	#category : #'initialize-release',
+	#'squeak_changestamp' : 'stlu 5/24/2022 17:32'
 }
 GLContext >> initializeLibrary [
 
-	library := GLUnpackLibrary around: (GLExternalLibrary context: self).
+	library := GLUserFacingLibrary around: (GLExternalLibrary context: self).
 ]
 
 {
@@ -169,6 +180,15 @@ GLContext >> initializeLibrary [
 GLContext >> initializeVersion [
 
 	self subclassResponsibility
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 5/24/2022 17:44'
+}
+GLContext >> interface [
+
+	^ interface
 ]
 
 {

@@ -495,7 +495,7 @@ LOGLTemplate >> retrieveGPUQueries [
 
 {
 	#category : #running,
-	#'squeak_changestamp' : 'stlu 5/2/2022 17:52'
+	#'squeak_changestamp' : 'stlu 5/24/2022 17:44'
 }
 LOGLTemplate >> run [
 
@@ -516,7 +516,10 @@ LOGLTemplate >> run [
 	pendingGPUQueries := OrderedCollection new.
 	availableGPUQueries := OrderedCollection new.
 	
-	library := window context library withErrorChecking withVersionChecking.
+	library := window context library.
+	library checksForErrors: true.
+	library requiredInterfaces: { library context interface }.
+	
 	library makeCurrentDuring: [
 		GLFW swapInterval: (self vSync ifTrue: [1] ifFalse: [0]).
 		self registerCallbacks.
