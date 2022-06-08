@@ -372,10 +372,10 @@ GLLibrary >> maxCombinedImageUniforms [
 
 {
 	#category : #limits,
-	#'squeak_changestamp' : 'stlu 4/15/2021 18:37'
+	#'squeak_changestamp' : 'stlu 6/1/2022 14:43'
 }
 GLLibrary >> maxCombinedTextureImageUnits [
-	"Maximum number of texture image units. At least 80."
+	"Maximum number of texture image units. At least 80 (16 per shader stage)."
 	^ self integerStateNamed: GL_MAX_COMBINED_TEXTURE_IMAGE_UNITS
 ]
 
@@ -390,10 +390,10 @@ GLLibrary >> maxComputeImageUniforms [
 
 {
 	#category : #limits,
-	#'squeak_changestamp' : 'stlu 5/11/2021 15:21'
+	#'squeak_changestamp' : 'stlu 6/1/2022 14:42'
 }
 GLLibrary >> maxComputeTextureImageUnits [
-	"Maximum number of texture image units available to compute shaders."
+	"Maximum number of texture image units available to compute shaders. At least 16."
 	^ self integerStateNamed: GL_MAX_COMPUTE_TEXTURE_IMAGE_UNITS
 ]
 
@@ -408,10 +408,10 @@ GLLibrary >> maxFragmentImageUniforms [
 
 {
 	#category : #limits,
-	#'squeak_changestamp' : 'stlu 5/11/2021 15:21'
+	#'squeak_changestamp' : 'stlu 6/1/2022 14:42'
 }
 GLLibrary >> maxFragmentTextureImageUnits [
-	"Maximum number of texture image units available to fragment shaders."
+	"Maximum number of texture image units available to fragment shaders. At least 16."
 	^ self integerStateNamed: GL_MAX_TEXTURE_IMAGE_UNITS
 ]
 
@@ -426,10 +426,10 @@ GLLibrary >> maxGeometryImageUniforms [
 
 {
 	#category : #limits,
-	#'squeak_changestamp' : 'stlu 5/11/2021 15:21'
+	#'squeak_changestamp' : 'stlu 6/1/2022 14:42'
 }
 GLLibrary >> maxGeometryTextureImageUnits [
-	"Maximum number of texture image units available to geometry shaders."
+	"Maximum number of texture image units available to geometry shaders. At least 16."
 	^ self integerStateNamed: GL_MAX_GEOMETRY_TEXTURE_IMAGE_UNITS
 ]
 
@@ -444,10 +444,10 @@ GLLibrary >> maxTesselationControlImageUniforms [
 
 {
 	#category : #limits,
-	#'squeak_changestamp' : 'stlu 5/11/2021 15:21'
+	#'squeak_changestamp' : 'stlu 6/1/2022 14:42'
 }
 GLLibrary >> maxTesselationControlTextureImageUnits [
-	"Maximum number of texture image units available to tesselation control shaders."
+	"Maximum number of texture image units available to tesselation control shaders. At least 16."
 	^ self integerStateNamed: GL_MAX_TESS_CONTROL_TEXTURE_IMAGE_UNITS
 ]
 
@@ -462,10 +462,10 @@ GLLibrary >> maxTesselationEvaluationImageUniforms [
 
 {
 	#category : #limits,
-	#'squeak_changestamp' : 'stlu 5/11/2021 15:21'
+	#'squeak_changestamp' : 'stlu 6/1/2022 14:42'
 }
 GLLibrary >> maxTesselationEvaluationTextureImageUnits [
-	"Maximum number of texture image units available to tesselation evaluation shaders."
+	"Maximum number of texture image units available to tesselation evaluation shaders. At least 16."
 	^ self integerStateNamed: GL_MAX_TESS_EVALUATION_TEXTURE_IMAGE_UNITS
 ]
 
@@ -562,10 +562,10 @@ GLLibrary >> maxVertexImageUniforms [
 
 {
 	#category : #limits,
-	#'squeak_changestamp' : 'stlu 5/11/2021 15:21'
+	#'squeak_changestamp' : 'stlu 6/1/2022 14:39'
 }
 GLLibrary >> maxVertexTextureImageUnits [
-	"Maximum number of texture image units available to vertex shaders."
+	"Maximum number of texture image units available to vertex shaders. At least 16."
 	^ self integerStateNamed: GL_MAX_VERTEX_TEXTURE_IMAGE_UNITS
 ]
 
