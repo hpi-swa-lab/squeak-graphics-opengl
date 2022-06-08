@@ -77,6 +77,15 @@ LOGLTemplate >> beginGPUQueries [
 ]
 
 {
+	#category : #running,
+	#'squeak_changestamp' : 'stlu 6/3/2022 14:15'
+}
+LOGLTemplate >> close [
+
+	window shouldClose: true.
+]
+
+{
 	#category : #initialization,
 	#'squeak_changestamp' : 'stlu 4/30/2022 23:01'
 }
@@ -205,12 +214,12 @@ LOGLTemplate >> isModalByDefault [
 
 {
 	#category : #input,
-	#'squeak_changestamp' : 'stlu 5/2/2022 19:35'
+	#'squeak_changestamp' : 'stlu 6/3/2022 14:15'
 }
 LOGLTemplate >> key: key scanCode: scanCode changedTo: state with: mods [
 
 	(key = GLFW_KEY_ESCAPE and: [state = GLFW_RELEASE]) ifTrue: [
-		window shouldClose: true].
+		self close].
 	
 	(GLFW numberOfFunctionKey: key) ifNotNil: [:fNumber |
 		state = GLFW_RELEASE ifTrue: [
@@ -475,6 +484,15 @@ LOGLTemplate >> renderLoop [
 		timeOfLastFrame := currentFrameTime.
 		numFrames := numFrames + 1.
 		self interFramePause].
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 6/3/2022 14:24'
+}
+LOGLTemplate >> renderProcess [
+
+	^ renderProcess
 ]
 
 {
