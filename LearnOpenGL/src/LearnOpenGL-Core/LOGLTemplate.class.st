@@ -513,12 +513,12 @@ LOGLTemplate >> retrieveGPUQueries [
 
 {
 	#category : #running,
-	#'squeak_changestamp' : 'stlu 5/25/2022 14:09'
+	#'squeak_changestamp' : 'stlu 6/16/2022 16:31'
 }
 LOGLTemplate >> run [
 
 	"GLFW init."
-	GLFW targetVersion: (GL33 profile: #core).
+	GLFW targetVersion: self targetVersion.
 	GLFW windowHint: GLFW_FLOATING with: true.
 	GLFW windowHint: GLFW_OPENGL_DEBUG_CONTEXT with: false.
 
@@ -686,6 +686,15 @@ LOGLTemplate >> spawnNewRenderProcess [
 				library context destroy]
 	] newProcess priority: (self processPriorityForModality: self isModal).
 	renderProcess resume.
+]
+
+{
+	#category : #initialization,
+	#'squeak_changestamp' : 'stlu 6/16/2022 16:31'
+}
+LOGLTemplate >> targetVersion [
+
+	^ GL33 profile: #core
 ]
 
 {
