@@ -584,7 +584,7 @@ GLLibrary >> messageForErrorCode: anInteger [
 	#category : #'context handling',
 	#'squeak_changestamp' : 'stlu 4/15/2021 11:34'
 }
-GLLibrary >> newFrameDo: aBlock. [
+GLLibrary >> newFrameDo: aBlock [.
 
 	self deprecated.
 	self makeCurrentDuring: [
