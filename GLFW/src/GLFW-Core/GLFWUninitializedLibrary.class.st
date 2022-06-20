@@ -4832,11 +4832,13 @@ GLFWUninitializedLibrary >> swapInterval: aNumber [
 
 {
 	#category : #helpers,
-	#'squeak_changestamp' : 'stlu 4/16/2021 10:31'
+	#'squeak_changestamp' : 'stlu 6/20/2022 17:01'
 }
 GLFWUninitializedLibrary >> targetVersion: aGLVersion [
 
-	aGLVersion api caseOf: {
+	self flag: #todo. "OpenGL-related"
+
+	aGLVersion apiSymbol caseOf: {
 		[#gl] -> [self hintGLAPI].
 		[#gles1] -> [self hintGLES1API].
 		[#gles2] -> [self hintGLES2API]
@@ -4846,7 +4848,9 @@ GLFWUninitializedLibrary >> targetVersion: aGLVersion [
 	self hintMinorVersion: aGLVersion minor.
 	
 	"If requesting an OpenGL version below 3.2, 'any profile' must be used."
-	(aGLVersion api = #gl and: [aGLVersion asNumber < 32]) ifTrue: [
+	(aGLVersion apiSymbol = #gl
+		and: [aGLVersion major < 3
+			or: [aGLVersion major = 3 and: [aGLVersion minor < 2]]]) ifTrue: [
 		^ self hintAnyProfile].
 	
 	aGLVersion profile caseOf: {

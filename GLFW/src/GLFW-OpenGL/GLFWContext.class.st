@@ -85,9 +85,18 @@ GLFWContext >> clientAPIMinorVersion [
 
 {
 	#category : #'client api',
-	#'squeak_changestamp' : 'stlu 2/12/2021 22:39'
+	#'squeak_changestamp' : 'stlu 2/12/2021 22:40'
 }
-GLFWContext >> clientAPIName [
+GLFWContext >> clientAPIRevision [
+
+	^ window getAttribute: GLFW_CONTEXT_REVISION
+]
+
+{
+	#category : #'client api',
+	#'squeak_changestamp' : 'stlu 6/20/2022 17:02'
+}
+GLFWContext >> clientAPISymbol [
 
 	| api |
 	api := self clientAPI.
@@ -98,15 +107,6 @@ GLFWContext >> clientAPIName [
 			ifTrue: [^ #gles2]
 			ifFalse: [^ #gles1]].
 	self error: 'Unkown client API'
-]
-
-{
-	#category : #'client api',
-	#'squeak_changestamp' : 'stlu 2/12/2021 22:40'
-}
-GLFWContext >> clientAPIRevision [
-
-	^ window getAttribute: GLFW_CONTEXT_REVISION
 ]
 
 {
@@ -172,15 +172,14 @@ GLFWContext >> generatesErrors [
 
 {
 	#category : #'initialize-release',
-	#'squeak_changestamp' : 'stlu 4/16/2021 13:00'
+	#'squeak_changestamp' : 'stlu 6/20/2022 17:03'
 }
 GLFWContext >> initializeVersion [
 
-	version := GLVersion
-				api: self clientAPIName
-				major: self clientAPIMajorVersion
-				minor: self clientAPIMinorVersion
-				profile: self openGLProfile
+	version := (GLAPIType fromSymbol: self clientAPISymbol)
+		major: self clientAPIMajorVersion
+		minor: self clientAPIMinorVersion
+		profile: self openGLProfile.
 ]
 
 {

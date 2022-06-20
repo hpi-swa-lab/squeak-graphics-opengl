@@ -10,126 +10,107 @@ Class {
 	#name : #GLVersion,
 	#superclass : #Object,
 	#instVars : [
+		'api',
+		'major',
+		'minor',
 		'profile'
+	],
+	#classVars : [
+		'Instances'
 	],
 	#pools : [
 		'GLConstants'
+	],
+	#classInstVars : [
+		'searchInstance'
 	],
 	#category : #'OpenGL-Versions'
 }
 
 {
-	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 4/16/2021 10:23'
-}
-GLVersion class >> api [
-
-	^ nil
-]
-
-{
-	#category : #querying,
-	#'squeak_changestamp' : 'stlu 4/16/2021 10:38'
-}
-GLVersion class >> api: aSymbol [
-
-	^ GLVersion subclasses detect: [:cls | cls api = aSymbol]
-]
-
-{
 	#category : #'instance creation',
-	#'squeak_changestamp' : 'stlu 4/16/2021 10:25'
+	#'squeak_changestamp' : 'stlu 6/20/2022 16:14'
 }
-GLVersion class >> api: apiSymbol major: major minor: minor [
+GLVersion class >> api: anAPI major: majorVersion minor: minorVersion profile: profileSymbol [
 
-	^ ((self api: apiSymbol) major: major minor: minor) new
-]
-
-{
-	#category : #'instance creation',
-	#'squeak_changestamp' : 'stlu 4/16/2021 10:24'
-}
-GLVersion class >> api: apiSymbol major: major minor: minor profile: profileSymbol [
-
-	^ ((self api: apiSymbol) major: major minor: minor) profile: profileSymbol
-]
-
-{
-	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 2/18/2021 22:36'
-}
-GLVersion class >> defaultProfile [
-
-	^ nil
-]
-
-{
-	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 4/15/2021 18:02'
-}
-GLVersion class >> major [
-
-	^ nil
-]
-
-{
-	#category : #querying,
-	#'squeak_changestamp' : 'stlu 4/16/2021 10:23'
-}
-GLVersion class >> major: major minor: minor [
-
-	^ self withAllSubclasses detect: [:cls |
-		cls major = major and: [cls minor = minor]]
-]
-
-{
-	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 4/15/2021 18:01'
-}
-GLVersion class >> minor [
-
-	^ nil
-]
-
-{
-	#category : #'instance creation',
-	#'squeak_changestamp' : 'stlu 4/15/2021 14:20'
-}
-GLVersion class >> new [
-
-	^ self profile: self defaultProfile
-]
-
-{
-	#category : #'instance creation',
-	#'squeak_changestamp' : 'stlu 4/15/2021 18:07'
-}
-GLVersion class >> profile: aSymbol [
-
-	^ self basicNew
-		initializeWithProfile: aSymbol;
-		yourself
+	Instances ifNil: [Instances := Set new].
+	searchInstance ifNil: [searchInstance := self basicNew].
+	
+	searchInstance initializeAPI: anAPI major: majorVersion minor: minorVersion profile: profileSymbol.
+	^ Instances like: searchInstance ifAbsent: [| result |
+		result := searchInstance.
+		searchInstance := self basicNew.
+		result beReadOnlyObject.
+		Instances add: result]
 ]
 
 {
 	#category : #comparing,
-	#'squeak_changestamp' : 'stlu 5/24/2022 16:10'
+	#'squeak_changestamp' : 'stlu 6/20/2022 15:34'
+}
+GLVersion >> < aVersion [
+
+	^ aVersion > self
+]
+
+{
+	#category : #comparing,
+	#'squeak_changestamp' : 'stlu 6/20/2022 15:34'
+}
+GLVersion >> <= aVersion [
+
+	^ aVersion >= self
+]
+
+{
+	#category : #comparing,
+	#'squeak_changestamp' : 'stlu 6/20/2022 15:11'
 }
 GLVersion >> = otherVersion [
 
-	self == otherVersion ifTrue: [^ true].
-	self species = otherVersion species ifFalse: [^ false].
-	profile = otherVersion profile ifFalse: [^ false].
+	otherVersion == self ifTrue: [^ true].
+	otherVersion api = api ifFalse: [^ false].
+	otherVersion major = major ifFalse: [^ false].
+	otherVersion minor = minor ifFalse: [^ false].
+	otherVersion profile = profile ifFalse: [^ false].
 	^ true
 ]
 
 {
+	#category : #comparing,
+	#'squeak_changestamp' : 'stlu 6/20/2022 15:30'
+}
+GLVersion >> > aVersion [
+	"Answer whether the receiver is a follow-up to aVersion." 
+	aVersion api = api ifFalse: [^ false].
+	(aVersion profile isNil or: [profile isNil]) ifFalse: [
+		aVersion profile = profile ifFalse: [^ false]].
+	major > aVersion major ifTrue: [^ true].
+	^ major = aVersion major and: [
+		minor > aVersion minor]
+]
+
+{
+	#category : #comparing,
+	#'squeak_changestamp' : 'stlu 6/20/2022 15:33'
+}
+GLVersion >> >= aVersion [
+	"Answer whether the receiver is a follow-up to aVersion." 
+	aVersion api = api ifFalse: [^ false].
+	(aVersion profile isNil or: [profile isNil]) ifFalse: [
+		aVersion profile = profile ifFalse: [^ false]].
+	major > aVersion major ifTrue: [^ true].
+	^ major = aVersion major and: [
+		minor >= aVersion minor]
+]
+
+{
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 11/2/2020 15:11'
+	#'squeak_changestamp' : 'stlu 6/20/2022 15:03'
 }
 GLVersion >> api [
 
-	^ self class api
+	^ api
 ]
 
 {
@@ -142,13 +123,12 @@ GLVersion >> apiString [
 ]
 
 {
-	#category : #converting,
-	#'squeak_changestamp' : 'stlu 4/16/2021 10:30'
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 6/20/2022 15:36'
 }
-GLVersion >> asNumber [
+GLVersion >> apiSymbol [
 
-	self flag: #todo. "Do we really want to encourage this?"
-	^ self major * 10 + self minor
+	^ api symbol
 ]
 
 {
@@ -164,15 +144,6 @@ GLVersion >> getExtensions: aLibrary [
 
 {
 	#category : #parameters,
-	#'squeak_changestamp' : 'stlu 4/16/2021 14:08'
-}
-GLVersion >> getProfile: aLibrary [
-
-	^ nil
-]
-
-{
-	#category : #parameters,
 	#'squeak_changestamp' : 'stlu 4/15/2021 19:14'
 }
 GLVersion >> getShadingLanguageVersion: aLibrary [
@@ -181,50 +152,44 @@ GLVersion >> getShadingLanguageVersion: aLibrary [
 ]
 
 {
-	#category : #parameters,
-	#'squeak_changestamp' : 'stlu 4/15/2021 19:19'
-}
-GLVersion >> getVersion: aLibrary [
-	"Returns an array of two elements, the major version and the minor version."
-	self subclassResponsibility
-]
-
-{
 	#category : #comparing,
-	#'squeak_changestamp' : 'stlu 5/24/2022 16:12'
+	#'squeak_changestamp' : 'stlu 6/20/2022 15:14'
 }
 GLVersion >> hash [
 
-	^ self species hash bitXor: profile hash
+	^ ((api hash bitXor: major hash) bitXor: minor hash) bitXor: profile hash
 ]
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 4/15/2021 18:07'
+	#'squeak_changestamp' : 'stlu 6/20/2022 14:56'
 }
-GLVersion >> initializeWithProfile: aSymbol [
+GLVersion >> initializeAPI: anAPI major: majorVersion minor: minorVersion profile: profileSymbol [
 
-	profile := aSymbol
+	api := anAPI.
+	major := majorVersion.
+	minor := minorVersion.
+	profile := profileSymbol.
 ]
 
 {
 	#category : #'version testing',
-	#'squeak_changestamp' : 'stlu 4/17/2021 10:21'
+	#'squeak_changestamp' : 'stlu 6/20/2022 17:08'
 }
 GLVersion >> isAPI: apiSymbol [
 
-	^ self api = apiSymbol
+	^ apiSymbol = api symbol
 ]
 
 {
 	#category : #'version testing',
-	#'squeak_changestamp' : 'stlu 4/16/2021 20:39'
+	#'squeak_changestamp' : 'stlu 6/20/2022 15:16'
 }
-GLVersion >> isBelowMajor: major minor: minor [
+GLVersion >> isBelowMajor: majorVersion minor: minorVersion [
 
-	self major < major ifTrue: [^ true].
-	^ (self major = major)
-		and: [self minor < minor]
+	major < majorVersion ifTrue: [^ true].
+	^ (major = majorVersion)
+		and: [minor < minorVersion]
 ]
 
 {
@@ -242,59 +207,60 @@ GLVersion >> isBelowVersionString: versionString [
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 4/15/2021 18:06'
+	#'squeak_changestamp' : 'stlu 6/20/2022 15:03'
 }
 GLVersion >> major [
 
-	^ self class major
+	^ major
 ]
 
 {
 	#category : #'version testing',
-	#'squeak_changestamp' : 'stlu 9/20/2021 15:31'
+	#'squeak_changestamp' : 'stlu 6/20/2022 15:17'
 }
 GLVersion >> matchesProfile: profileSymbolOrNil [
 
 	profileSymbolOrNil ifNil: [^ true].
-	self profile ifNil: [^ true].
-	self profile = profileSymbolOrNil ifTrue: [^ true].
-	
+	profile ifNil: [^ true].
+	profileSymbolOrNil = profile ifTrue: [^ true].
 	^ false
 ]
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 4/15/2021 18:06'
+	#'squeak_changestamp' : 'stlu 6/20/2022 15:03'
 }
 GLVersion >> minor [
 
-	^ self class minor
+	^ minor
 ]
 
 {
 	#category : #'external functions',
-	#'squeak_changestamp' : 'stlu 4/15/2021 19:19'
+	#'squeak_changestamp' : 'stlu 6/20/2022 15:15'
 }
 GLVersion >> moduleName [
 
-	self subclassResponsibility
+	^ api moduleName
 ]
 
 {
 	#category : #printing,
-	#'squeak_changestamp' : 'stlu 4/17/2021 10:10'
+	#'squeak_changestamp' : 'stlu 6/20/2022 15:57'
 }
 GLVersion >> printOn: aStream [
 
 	aStream
-		nextPutAll: self apiString;
+		nextPutAll: (api ifNil: [''] ifNotNil: [api label]);
 		space;
-		nextPutAll: self versionString.
+		store: major;
+		nextPut: $.;
+		store: minor.
 	
-	self profile ifNotNil: [
+	profile ifNotNil: [
 		aStream
 			nextPutAll: ' (';
-			nextPutAll: self profileString;
+			nextPutAll: profile asString capitalized;
 			nextPutAll: ' Profile)']
 ]
 

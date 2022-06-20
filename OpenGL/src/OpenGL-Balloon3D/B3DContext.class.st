@@ -66,23 +66,22 @@ B3DContext >> endFrame [
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 9/22/2021 13:14'
+	#'squeak_changestamp' : 'stlu 6/20/2022 16:49'
 }
 B3DContext >> initializeVersion [
 	"B3D does not offer any information on the created context.
 	We need to determine the version through api calls."
-	version := GL10 new.
+	version := GL10.
 	self initializeLibrary.
 	library makeCurrentDuring: [
-		| majorMinor profile |
-		majorMinor := GL version.
+		| majorMinor major minor profile |
+		majorMinor := GL majorMinor.
 		GL checkForError. "just called 1st OpenGL command - check it worked"
+		major := majorMinor first.
+		minor := majorMinor second.
+		version := GLAPI major: major minor: minor profile: nil.
 		profile := GL profile.
-		version := GLVersion
-					api: #gl
-					major: majorMinor first
-					minor: majorMinor second
-					profile: profile].
+		version := GLAPI major: major minor: minor profile: profile].
 ]
 
 {

@@ -5943,6 +5943,9 @@ Class {
 		'GL_ZOOM_Y',
 		'GL_Z_EXT'
 	],
+	#pools : [
+		'GLVersions'
+	],
 	#category : #'OpenGL-Core',
 	#'squeak_changestamp' : 'stlu 9/24/2021 12:29'
 }

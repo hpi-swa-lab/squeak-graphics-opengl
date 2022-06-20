@@ -237,11 +237,13 @@ GLLibrary >> endFrame [
 
 {
 	#category : #'convencience api',
-	#'squeak_changestamp' : 'stlu 4/15/2021 19:11'
+	#'squeak_changestamp' : 'stlu 6/20/2022 17:06'
 }
 GLLibrary >> extensions [
 
-	^ self context version getExtensions: self
+	^ (context version >= GL30 or: [context version >= GLES30])
+		ifTrue: [self getExtensionsNew]
+		ifFalse: [self getExtensionsOld]
 ]
 
 {
@@ -251,6 +253,32 @@ GLLibrary >> extensions [
 GLLibrary >> extensionsString [
 
 	^ self stringStateNamed: GL_EXTENSIONS
+]
+
+{
+	#category : #'convencience api',
+	#'squeak_changestamp' : 'stlu 6/20/2022 16:58'
+}
+GLLibrary >> getExtensionsNew [
+
+	| extensions |
+	extensions := Array new: self numExtensions.
+	1 to: extensions size do: [:i |
+		| extensionName |
+		extensionName := self stringStateNamed: GL_EXTENSIONS at: i - 1.
+		extensions at: i put: extensionName asSymbol].
+	^ extensions
+]
+
+{
+	#category : #'convencience api',
+	#'squeak_changestamp' : 'stlu 6/20/2022 16:57'
+}
+GLLibrary >> getExtensionsOld [
+
+	^ Array streamContents: [:stream |
+		self extensionsString splitBy: ' ' do: [:extensionName |
+			stream nextPut: extensionName asSymbol]]
 ]
 
 {
@@ -315,6 +343,15 @@ GLLibrary >> integerStateNamed: enum ofSize: numElements [
 	data := IntegerArray new: numElements.
 	self getIntegerv: enum with: data.
 	^ data
+]
+
+{
+	#category : #'convencience api',
+	#'squeak_changestamp' : 'stlu 6/20/2022 16:39'
+}
+GLLibrary >> majorMinor [
+
+	^ context version api versionStringToMajorMinor: self versionString
 ]
 
 {
@@ -616,11 +653,24 @@ GLLibrary >> objectState [
 
 {
 	#category : #'convencience api',
-	#'squeak_changestamp' : 'stlu 4/16/2021 14:12'
+	#'squeak_changestamp' : 'stlu 6/20/2022 16:48'
 }
 GLLibrary >> profile [
 
-	^ self context version getProfile: self
+	| version |
+	version := context version.
+	version >= GL32 ifTrue: [
+		^ version api maskToProfile: self profileMask].
+	^ nil
+]
+
+{
+	#category : #'convencience api',
+	#'squeak_changestamp' : 'stlu 6/20/2022 16:34'
+}
+GLLibrary >> profileMask [
+
+	^ self integerStateNamed: GL_CONTEXT_PROFILE_MASK
 ]
 
 {
@@ -648,11 +698,14 @@ GLLibrary >> setDebugMessageCallback: aBlock [
 
 {
 	#category : #'convencience api',
-	#'squeak_changestamp' : 'stlu 4/15/2021 19:21'
+	#'squeak_changestamp' : 'stlu 6/20/2022 18:17'
 }
-GLLibrary >> shadingLanguageVersion [
+GLLibrary >> shadingLanguageMajorMinor [
 
-	^ self context version getShadingLanguageVersion: self
+	| version |
+	version := context version.
+	(version < GL20 or: [version >= GLES10]) ifTrue: [^ #(0 0)].
+	^ context version api shadingLanguageVersionStringToMajorMinor: self shadingLanguageVersionString
 ]
 
 {
@@ -724,15 +777,6 @@ GLLibrary >> userData [
 GLLibrary >> vendorString [
 
 	^ self stringStateNamed: GL_VENDOR
-]
-
-{
-	#category : #'convencience api',
-	#'squeak_changestamp' : 'stlu 4/15/2021 19:22'
-}
-GLLibrary >> version [
-
-	^ self context version getVersion: self
 ]
 
 {

@@ -2,7 +2,7 @@ Extension { #name : #GLLibrary }
 
 {
 	#category : #'*OpenGL-Examples',
-	#'squeak_changestamp' : 'stlu 9/24/2021 23:35'
+	#'squeak_changestamp' : 'stlu 6/20/2022 18:19'
 }
 GLLibrary class >> example1 [
 	"
@@ -20,15 +20,15 @@ GLLibrary class >> example1 [
 		library makeCurrentDuring: [
 			Transcript
 				openIfNone;
-				cr; nextPutAll: '** OpenGL version **';
+				cr; nextPutAll: '== OpenGL version ==';
 				cr; nextPutAll: library versionString;
-				cr; nextPutAll: '** OpenGL vendor **';
+				cr; nextPutAll: '== OpenGL vendor ==';
 				cr; nextPutAll: library vendorString;
-				cr; nextPutAll: '** OpenGL renderer **';
+				cr; nextPutAll: '== OpenGL renderer ==';
 				cr; nextPutAll: library rendererString;
-				cr; nextPutAll: '** OpenGL GLSL version **';
+				cr; nextPutAll: '== OpenGL GLSL version ==';
 				cr; nextPutAll: library shadingLanguageVersionString;
-				cr; nextPutAll: '** OpenGL extensions **';
+				cr; nextPutAll: '== OpenGL extensions ==';
 				cr.
 			library extensions do: [:ext |
 				Transcript nextPutAll: ext; cr].
@@ -140,7 +140,7 @@ GLLibrary class >> example4 [
 
 {
 	#category : #'*OpenGL-Examples',
-	#'squeak_changestamp' : 'stlu 5/24/2022 18:03'
+	#'squeak_changestamp' : 'stlu 6/20/2022 15:04'
 }
 GLLibrary class >> example5 [
 	"
@@ -158,7 +158,7 @@ GLLibrary class >> example5 [
 	[
 		window context library makeCurrentDuring: [
 			"require OpenGL 3.3 Core Profile"
-			GL requireVersion: (GL33 profile: #core).
+			GL requireVersion: GL33Core.
 			
 			GL disable: GL_DEPTH_TEST.
 			GL clearColor: 1.0 with: 1.0 with: 1.0 with: 1.0.

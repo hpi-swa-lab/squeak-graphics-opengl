@@ -690,11 +690,11 @@ LOGLTemplate >> spawnNewRenderProcess [
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 6/16/2022 16:31'
+	#'squeak_changestamp' : 'stlu 6/20/2022 15:06'
 }
 LOGLTemplate >> targetVersion [
 
-	^ GL33 profile: #core
+	^ GL33Core
 ]
 
 {
