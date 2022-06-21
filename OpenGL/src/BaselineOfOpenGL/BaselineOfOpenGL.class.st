@@ -6,7 +6,7 @@ Class {
 
 {
 	#category : #baseline,
-	#'squeak_changestamp' : 'stlu 11/8/2021 15:01'
+	#'squeak_changestamp' : 'stlu 6/21/2022 11:05'
 }
 BaselineOfOpenGL >> baseline: spec [
 	<baseline>
@@ -22,10 +22,10 @@ BaselineOfOpenGL >> baseline: spec [
 					repository: 'github://hpi-swa-lab/squeak-graphics-opengl:main/GLFW/src/';
 					loads: #('openGL')];"
 			
+			package: 'OpenGL-Constants';
 			package: 'OpenGL-Types' with: [spec requires: #('FFI')];
-			package: 'OpenGL-Generation' with: [spec requires: #('OpenGL-Types')];
-			package: 'OpenGL-Core' with: [spec requires: #('OpenGL-Generation')];
-			package: 'OpenGL-Versions' with: [spec requires: #('OpenGL-Core')];
+			package: 'OpenGL-Generation' with: [spec requires: #('OpenGL-Types' 'OpenGL-Constants')];
+			package: 'OpenGL-Core' with: [spec requires: #('OpenGL-Generation' 'OpenGL-Constants')];
 			package: 'OpenGL-Balloon3D' with: [spec requires: #('OpenGL-Core')];
 			package: 'OpenGL-Examples' with: [
 				spec
