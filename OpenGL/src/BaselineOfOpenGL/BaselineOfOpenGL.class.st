@@ -6,7 +6,7 @@ Class {
 
 {
 	#category : #baseline,
-	#'squeak_changestamp' : 'stlu 6/21/2022 11:05'
+	#'squeak_changestamp' : 'stlu 6/21/2022 12:02'
 }
 BaselineOfOpenGL >> baseline: spec [
 	<baseline>
@@ -35,7 +35,7 @@ BaselineOfOpenGL >> baseline: spec [
 		
 		spec
 			group: 'default' with: #('all');
-			group: 'core' with: #('OpenGL-Core' 'OpenGL-Versions');
+			group: 'core' with: #('OpenGL-Core');
 			group: 'all' with: #('core' 'OpenGL-Balloon3D' 'OpenGL-Examples')].
 ]
 
