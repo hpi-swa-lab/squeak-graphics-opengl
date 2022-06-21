@@ -22,7 +22,7 @@ GLRegistryElementDefinition >> api [
 
 {
 	#category : #testing,
-	#'squeak_changestamp' : 'stlu 9/21/2021 13:35'
+	#'squeak_changestamp' : 'stlu 6/21/2022 12:17'
 }
 GLRegistryElementDefinition >> checkVersion: glVersionOrNil extensions: extensionsOrNil [
 
@@ -30,7 +30,7 @@ GLRegistryElementDefinition >> checkVersion: glVersionOrNil extensions: extensio
 		ifTrue: [	extensionsOrNil ifNil: [^ true]]
 		ifFalse: [glVersionOrNil ifNil: [^ isRemoval ifTrue: [nil] ifFalse: [true]]].
 	glVersionOrNil ifNotNil: [:glVersion |
-		(glVersion isAPI: api) ifFalse: [^ nil].
+		(glVersion apiSymbol = api) ifFalse: [^ nil].
 		(glVersion matchesProfile: profile) ifFalse: [^ nil]].
 	isExtension
 		ifTrue: [(extensionsOrNil includes: version) ifFalse: [^ nil]]

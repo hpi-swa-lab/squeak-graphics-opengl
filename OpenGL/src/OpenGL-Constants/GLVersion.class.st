@@ -174,15 +174,6 @@ GLVersion >> initializeAPI: anAPI major: majorVersion minor: minorVersion profil
 
 {
 	#category : #'version testing',
-	#'squeak_changestamp' : 'stlu 6/20/2022 17:08'
-}
-GLVersion >> isAPI: apiSymbol [
-
-	^ apiSymbol = api symbol
-]
-
-{
-	#category : #'version testing',
 	#'squeak_changestamp' : 'stlu 6/20/2022 15:16'
 }
 GLVersion >> isBelowMajor: majorVersion minor: minorVersion [

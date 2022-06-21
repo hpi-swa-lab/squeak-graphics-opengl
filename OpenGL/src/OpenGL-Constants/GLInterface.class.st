@@ -9,7 +9,7 @@ Class {
 		'version',
 		'extensions'
 	],
-	#category : #'OpenGL-Core',
+	#category : #'OpenGL-Constants',
 	#'squeak_changestamp' : '<historical>'
 }
 
@@ -104,13 +104,13 @@ GLInterface >> glAPI: apiSymbol extension: extensionSymbol [
 
 {
 	#category : #'version testing',
-	#'squeak_changestamp' : 'stlu 5/23/2022 14:42'
+	#'squeak_changestamp' : 'stlu 6/21/2022 12:16'
 }
 GLInterface >> glAPI: apiSymbol profile: profileSymbolOrNil extension: extensionSymbol [
 
 	extensions ifNil: [^ true].
 	version ifNotNil: [
-		(version isAPI: apiSymbol) ifFalse: [^ nil].
+		(version apiSymbol = apiSymbol) ifFalse: [^ nil].
 		(version matchesProfile: profileSymbolOrNil) ifFalse: [^ nil]].
 	(extensions includes: extensionSymbol) ifFalse: [^ nil].
 	^ true
@@ -118,12 +118,12 @@ GLInterface >> glAPI: apiSymbol profile: profileSymbolOrNil extension: extension
 
 {
 	#category : #'version testing',
-	#'squeak_changestamp' : 'stlu 5/23/2022 14:42'
+	#'squeak_changestamp' : 'stlu 6/21/2022 12:17'
 }
 GLInterface >> glAPI: apiSymbol profile: profileSymbol since: versionString [
 
 	version ifNil: [^ true].
-	(version isAPI: apiSymbol) ifFalse: [^ nil].
+	(version apiSymbol = apiSymbol) ifFalse: [^ nil].
 	(version matchesProfile: profileSymbol) ifFalse: [^ nil].
 	(version isBelowVersionString: versionString) ifTrue: [^ nil].
 	^ true
@@ -131,12 +131,12 @@ GLInterface >> glAPI: apiSymbol profile: profileSymbol since: versionString [
 
 {
 	#category : #'version testing',
-	#'squeak_changestamp' : 'stlu 5/23/2022 14:43'
+	#'squeak_changestamp' : 'stlu 6/21/2022 12:17'
 }
 GLInterface >> glAPI: apiSymbol profile: profileSymbol until: versionString [
 
 	version ifNil: [^ nil].
-	(version isAPI: apiSymbol) ifFalse: [^ nil].
+	(version apiSymbol = apiSymbol) ifFalse: [^ nil].
 	(version matchesProfile: profileSymbol) ifFalse: [^ nil].
 	(version isBelowVersionString: versionString) ifTrue: [^ nil].
 	^ false
