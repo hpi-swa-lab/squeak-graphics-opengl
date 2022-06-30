@@ -418,6 +418,15 @@ GLLibrary >> maxCombinedTextureImageUnits [
 
 {
 	#category : #limits,
+	#'squeak_changestamp' : 'stlu 6/17/2022 15:03'
+}
+GLLibrary >> maxCombinedUniformBlocks [
+	"Maximum number of uniform blocks per program. At least 70."
+	^ self integerStateNamed: GL_MAX_COMBINED_UNIFORM_BLOCKS
+]
+
+{
+	#category : #limits,
 	#'squeak_changestamp' : 'stlu 5/11/2021 15:27'
 }
 GLLibrary >> maxComputeImageUniforms [
@@ -432,6 +441,15 @@ GLLibrary >> maxComputeImageUniforms [
 GLLibrary >> maxComputeTextureImageUnits [
 	"Maximum number of texture image units available to compute shaders. At least 16."
 	^ self integerStateNamed: GL_MAX_COMPUTE_TEXTURE_IMAGE_UNITS
+]
+
+{
+	#category : #limits,
+	#'squeak_changestamp' : 'stlu 6/17/2022 15:02'
+}
+GLLibrary >> maxComputeUniformBlocks [
+	"Maximum number of uniform blocks per compute shader. At least 14."
+	^ self integerStateNamed: GL_MAX_COMPUTE_UNIFORM_BLOCKS
 ]
 
 {
@@ -454,6 +472,15 @@ GLLibrary >> maxFragmentTextureImageUnits [
 
 {
 	#category : #limits,
+	#'squeak_changestamp' : 'stlu 6/17/2022 15:03'
+}
+GLLibrary >> maxFragmentUniformBlocks [
+	"Maximum number of uniform blocks per fragment shader. At least 12."
+	^ self integerStateNamed: GL_MAX_FRAGMENT_UNIFORM_BLOCKS
+]
+
+{
+	#category : #limits,
 	#'squeak_changestamp' : 'stlu 5/11/2021 15:27'
 }
 GLLibrary >> maxGeometryImageUniforms [
@@ -468,6 +495,15 @@ GLLibrary >> maxGeometryImageUniforms [
 GLLibrary >> maxGeometryTextureImageUnits [
 	"Maximum number of texture image units available to geometry shaders. At least 16."
 	^ self integerStateNamed: GL_MAX_GEOMETRY_TEXTURE_IMAGE_UNITS
+]
+
+{
+	#category : #limits,
+	#'squeak_changestamp' : 'stlu 6/17/2022 15:04'
+}
+GLLibrary >> maxGeometryUniformBlocks [
+	"Maximum number of uniform blocks per geometry shader. At least 12."
+	^ self integerStateNamed: GL_MAX_GEOMETRY_UNIFORM_BLOCKS
 ]
 
 {
@@ -526,19 +562,19 @@ GLLibrary >> maxTextureSize [
 
 {
 	#category : #limits,
-	#'squeak_changestamp' : 'stlu 4/15/2021 18:38'
+	#'squeak_changestamp' : 'stlu 6/17/2022 15:44'
 }
 GLLibrary >> maxUniformBlockSize [
-	"Maximum size in basic machine units of a uniform block. At least 16384."
+	"Maximum size in basic machine units (bytes) of a uniform block. At least 16384."
 	^ self integerStateNamed: GL_MAX_UNIFORM_BLOCK_SIZE
 ]
 
 {
 	#category : #limits,
-	#'squeak_changestamp' : 'stlu 4/15/2021 18:38'
+	#'squeak_changestamp' : 'stlu 6/17/2022 14:58'
 }
 GLLibrary >> maxUniformBufferBindings [
-	"Maximum number of uniform buffer binding points on the context. At least 36."
+	"Maximum number of uniform buffer binding points. At least 36."
 	^ self integerStateNamed: GL_MAX_UNIFORM_BUFFER_BINDINGS
 ]
 
@@ -604,6 +640,15 @@ GLLibrary >> maxVertexImageUniforms [
 GLLibrary >> maxVertexTextureImageUnits [
 	"Maximum number of texture image units available to vertex shaders. At least 16."
 	^ self integerStateNamed: GL_MAX_VERTEX_TEXTURE_IMAGE_UNITS
+]
+
+{
+	#category : #limits,
+	#'squeak_changestamp' : 'stlu 6/17/2022 15:01'
+}
+GLLibrary >> maxVertexUniformBlocks [
+	"Maximum number of uniform blocks per vertex shader. At least 12."
+	^ self integerStateNamed: GL_MAX_VERTEX_UNIFORM_BLOCKS
 ]
 
 {
