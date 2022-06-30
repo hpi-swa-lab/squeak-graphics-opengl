@@ -18,13 +18,12 @@ Class {
 
 {
 	#category : #'instance creation',
-	#'squeak_changestamp' : 'stlu 5/11/2021 12:09'
+	#'squeak_changestamp' : 'stlu 6/20/2022 11:37'
 }
 GLObjectManager class >> context: aContext [
 
 	^ self basicNew
-		context: aContext;
-		initialize;
+		initializeForContext: aContext;
 		yourself
 ]
 
@@ -38,21 +37,23 @@ GLObjectManager >> context [
 ]
 
 {
-	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 5/11/2021 12:06'
+	#category : #initialization,
+	#'squeak_changestamp' : 'stlu 6/20/2022 11:46'
 }
-GLObjectManager >> context: aContext [
+GLObjectManager >> initializeForContext: aContext [
 
 	context := aContext.
+	objects := Set new: 100.
+	self initializeImplementorsForVersion: aContext version.
 ]
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 7/28/2021 14:20'
+	#'squeak_changestamp' : 'stlu 6/20/2022 11:45'
 }
-GLObjectManager >> initialize [
+GLObjectManager >> initializeImplementorsForVersion: aVersion [
 
-	objects := Set new: 100.
+	
 ]
 
 {

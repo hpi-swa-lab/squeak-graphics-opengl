@@ -31,13 +31,20 @@ GLProgramManager >> currentProgram [
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 7/29/2021 23:16'
+	#'squeak_changestamp' : 'stlu 6/20/2022 11:49'
 }
-GLProgramManager >> initialize [
+GLProgramManager >> initializeForContext: aContext [
 
-	super initialize.
+	super initializeForContext: aContext.
 	staticPrograms := IdentityDictionary new.
-	
+]
+
+{
+	#category : #initialization,
+	#'squeak_changestamp' : 'stlu 6/20/2022 11:48'
+}
+GLProgramManager >> initializeImplementorsForVersion: aVersion [
+
 	mainImp := GLProgramImp new.
 	interfaceQueryImp := GLSeparateShaderObjectsImp new.
 	uniformSetterImp := GLSeparateShaderObjectsImp new.

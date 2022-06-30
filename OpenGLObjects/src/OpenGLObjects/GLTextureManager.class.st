@@ -143,15 +143,21 @@ GLTextureManager >> creationImp: anObject [
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 7/29/2021 23:49'
+	#'squeak_changestamp' : 'stlu 6/20/2022 11:49'
 }
-GLTextureManager >> initialize [
+GLTextureManager >> initializeForContext: aContext [
 
-	super initialize.
-	
+	super initializeForContext: aContext.
 	activeTextureImageUnitIndex := 0. "zero-indexed"
 	self initializeTextureImageUnits.
-	
+]
+
+{
+	#category : #initialization,
+	#'squeak_changestamp' : 'stlu 6/20/2022 11:47'
+}
+GLTextureManager >> initializeImplementorsForVersion: aVersion [
+
 	mainImp := GLTextureImp new.
 	creationImp := GLTextureImp new.
 	stateAccessImp := GLDirectStateAccessImp new.

@@ -333,12 +333,10 @@ GLQueryManager >> creationImp: anObject [
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 7/29/2021 23:46'
+	#'squeak_changestamp' : 'stlu 6/20/2022 11:48'
 }
-GLQueryManager >> initialize [
+GLQueryManager >> initializeImplementorsForVersion: aVersion [
 
-	super initialize.
-	
 	mainImp := GLQueryImp new.
 	creationImp := GLQueryImp new.
 	scopingImp := GLQueryImp new.

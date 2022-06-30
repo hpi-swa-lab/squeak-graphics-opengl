@@ -73,11 +73,9 @@ GLVertexArrayManager >> creationImp: anObject [
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 7/29/2021 23:41'
+	#'squeak_changestamp' : 'stlu 6/20/2022 11:46'
 }
-GLVertexArrayManager >> initialize [
-
-	super initialize.
+GLVertexArrayManager >> initializeImplementorsForVersion: aVersion [
 	
 	mainImp := GLVertexArrayImp new.
 	creationImp := GLVertexArrayImp new.

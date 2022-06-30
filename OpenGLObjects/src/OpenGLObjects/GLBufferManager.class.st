@@ -552,12 +552,10 @@ GLBufferManager >> drawIndirectBuffer [
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 9/9/2021 14:56'
+	#'squeak_changestamp' : 'stlu 6/20/2022 11:49'
 }
-GLBufferManager >> initialize [
+GLBufferManager >> initializeImplementorsForVersion: aVersion [
 
-	super initialize.
-	
 	mainImp := GLBufferImp new.
 	creationImp := GLDirectStateAccessImp new.
 	stateAccessImp := GLDirectStateAccessImp new.

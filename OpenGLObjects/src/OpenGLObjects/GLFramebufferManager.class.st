@@ -153,14 +153,21 @@ GLFramebufferManager >> drawFramebuffer: anObject [
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 7/29/2021 23:09'
+	#'squeak_changestamp' : 'stlu 6/20/2022 11:49'
 }
-GLFramebufferManager >> initialize [
+GLFramebufferManager >> initializeForContext: aContext [
 
-	super initialize.
+	super initializeForContext: aContext.
 	defaultFramebuffer := GLDefaultFramebuffer manager: self id: 0.
 	readFramebuffer := drawFramebuffer := defaultFramebuffer.
-	
+]
+
+{
+	#category : #initialization,
+	#'squeak_changestamp' : 'stlu 6/20/2022 11:49'
+}
+GLFramebufferManager >> initializeImplementorsForVersion: aVersion [
+
 	mainImp := GLFramebufferImp new.
 	creationImp := GLDirectStateAccessImp new.
 	stateAccessImp := GLDirectStateAccessImp new.

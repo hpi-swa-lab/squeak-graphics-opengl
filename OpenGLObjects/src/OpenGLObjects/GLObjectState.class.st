@@ -64,6 +64,22 @@ GLObjectState >> initializeForContext: aContext [
 ]
 
 {
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 6/20/2022 11:42'
+}
+GLObjectState >> managersDo: aBlock [
+
+	aBlock value: textureManager.
+	aBlock value: bufferManager.
+	aBlock value: shaderManager.
+	aBlock value: programManager.
+	aBlock value: vertexArrayManager.
+	aBlock value: queryManager.
+	aBlock value: framebufferManager.
+	aBlock value: renderbufferManager.
+]
+
+{
 	#category : #managers,
 	#'squeak_changestamp' : 'stlu 4/25/2021 22:54'
 }
